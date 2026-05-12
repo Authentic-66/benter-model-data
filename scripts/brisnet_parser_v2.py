@@ -270,44 +270,48 @@ def parse_brisnet(text, track_code='GP'):
 
         # ── Is this a horse page? (has 'Own:') ────────────────────────────────
         if 'Own:' not in page:
-            # Summary/stats page — grab purse if available
             purse_m = re.search(r'Purse\s+\$([\d,]+)', page)
             if purse_m and current_race:
                 races[current_race]['purse'] = f"${purse_m.group(1)}"
             continue
 
-        # ── Extract horse data using 'Own:' as anchor ─────────────────────────
-        horse = '?'
-        pp_num = 0
-        ml = '?'
-        trainer = '?'
-        trainer_stats = ''
-        jockey = '?'
-        sire = '?'
-        prime_power = '?'
-        pp_rank = '?'
-        days_off = 0
-        pos_angles = []
-        neg_angles = []
-        claim_price = None
+        # ── Prime Power map: keyed by PP# from full-page horse-name lines ─────
+        # Full-page format: "{PP}  {Name} ... Prime Power: {val} ({rank})"
+        pp_power_map = {}
+        for line in lines:
+            pm = re.match(r'^\s*(\d{1,2})\s+[A-Z][A-Za-z].*?Prime Power:\s*([\d.]+)\s*\((\d+)', line)
+            if pm:
+                pp_power_map[int(pm.group(1))] = (pm.group(2), pm.group(3))
+        # CT-style fallback: Prime Power in page header without PP# prefix
+        if not pp_power_map:
+            ppm = re.search(r'Prime\s+P(?:ower)?[:\s]*([\d.]+)\s*\((\d+)', lines[0])
+            if ppm:
+                pp_power_map[-1] = (ppm.group(1), ppm.group(2))
 
-        # Find Own: line — pdfplumber may or may not include leading PP#
-        for j, line in enumerate(lines):
-            om = re.match(r'^(\d+)\s+Own:', line)
+        # ── Find every Own: line on this page ─────────────────────────────────
+        own_indices = [j for j, line in enumerate(lines)
+                       if re.match(r'^(\d+)\s+Own:', line) or re.match(r'^\s*Own:', line)]
+
+        for oi, own_idx in enumerate(own_indices):
+            # ── Per-horse state ───────────────────────────────────────────────
+            horse = '?'; pp_num = 0; ml = '?'; trainer = '?'; trainer_stats = ''
+            jockey = '?'; sire = '?'; prime_power = '?'; pp_rank = '?'
+            days_off = 0; pos_angles = []; neg_angles = []; claim_price = None
+
+            # ── PP# from Own: line or backward search ─────────────────────────
+            own_line = lines[own_idx]
+            om = re.match(r'^(\d+)\s+Own:', own_line)
             if om:
                 pp_num = int(om.group(1))
-            elif re.match(r'^\s*Own:', line):
-                # Left-crop format: no leading number — hunt backward for PP#
-                for k in range(j-1, max(0, j-8), -1):
+            else:
+                for k in range(own_idx - 1, max(0, own_idx - 8), -1):
                     nm = re.match(r'^\s*(\d+)\s+[A-Z][a-z]', lines[k])
                     if nm:
                         pp_num = int(nm.group(1))
                         break
-            else:
-                continue
 
-            # Horse name: search backwards from Own: line
-            for k in range(j-1, max(0, j-6), -1):
+            # ── Horse name: search backward from Own: ─────────────────────────
+            for k in range(own_idx - 1, max(0, own_idx - 6), -1):
                 prev = lines[k]
                 hm = re.search(r'([A-Z][A-Za-z\'"\-\. ]+?)\s+\([A-Z/EP]+\s+\d+\)', prev)
                 if hm:
@@ -316,125 +320,127 @@ def parse_brisnet(text, track_code='GP'):
                     if claim_m:
                         claim_price = claim_m.group(1)
                     break
-            break
 
-        # Prime Power: check header line and early lines
-        ppm = re.search(r'Prime\s+P(?:ower)?[:\s]*([\d.]+)\s*\((\d+)', lines[0])
-        if ppm:
-            prime_power = ppm.group(1)
-            pp_rank = ppm.group(2)
+            # ── Prime Power from pre-built map ────────────────────────────────
+            if pp_num in pp_power_map:
+                prime_power, pp_rank = pp_power_map[pp_num]
+            elif -1 in pp_power_map:
+                prime_power, pp_rank = pp_power_map[-1]
 
-        # Scan all lines for remaining fields
-        for j, line in enumerate(lines):
+            # ── Block: own_idx-4 to next Own: (exclusive) ────────────────────
+            block_start = max(0, own_idx - 4)
+            block_end = own_indices[oi + 1] if oi + 1 < len(own_indices) else len(lines)
+            block = lines[block_start:block_end]
 
-            # Prime Power (in body)
-            if prime_power == '?':
-                ppm = re.search(r'Prime Power:\s*([\d.]+)\s*\((\d+)', line)
-                if ppm:
-                    prime_power = ppm.group(1)
-                    pp_rank = ppm.group(2)
+            # ── Scan block for remaining fields ───────────────────────────────
+            for bi, line in enumerate(block):
 
-            # ML odds: "9/2  White, Red..." — silks line
-            if ml == '?':
-                ml_m = re.match(r'^(\d+/\d+|\d+)\s+[A-Z][a-z]', line.strip())
-                if ml_m and 'Own:' not in line and 'Trnr:' not in line and 'Sire' not in line:
-                    val = ml_m.group(1)
-                    if '/' in val or (val.isdigit() and 1 <= int(val) <= 99):
-                        ml = val
+                # Prime Power fallback (block may include it for some formats)
+                if prime_power == '?':
+                    ppm = re.search(r'Prime Power:\s*([\d.]+)\s*\((\d+)', line)
+                    if ppm:
+                        prime_power = ppm.group(1)
+                        pp_rank = ppm.group(2)
 
-            # Trainer
-            if trainer == '?':
-                tm = re.search(r'Trnr:\s*([^\n(]+?)\s*\((\d+)\s*/\s*(\d+)\s+(\d+)%\)', line)
-                if tm:
-                    trainer = tm.group(1).strip()
-                    trainer_stats = f"{tm.group(2)} sts {tm.group(4)}%"
-                else:
-                    tm2 = re.search(r'Trnr:\s*([^\n(]+?)\s*\((\d+)\s+(\d+)-(\d+)-(\d+)\s+(\d+)%\)', line)
-                    if tm2:
-                        trainer = tm2.group(1).strip()
-                        trainer_stats = f"{tm2.group(2)} sts {tm2.group(3)}-{tm2.group(4)}-{tm2.group(5)} {tm2.group(6)}%"
+                # ML odds: silks line starts with fraction/integer then color word
+                if ml == '?':
+                    ml_m = re.match(r'^(\d+/\d+|\d+)\s+[A-Z][a-z]', line.strip())
+                    if ml_m and 'Own:' not in line and 'Trnr:' not in line and 'Sire' not in line:
+                        val = ml_m.group(1)
+                        if '/' in val or (val.isdigit() and 1 <= int(val) <= 99):
+                            ml = val
 
-            # Jockey: "LASTNAME FIRSTNAME (N/ N N%)"
-            if jockey == '?':
-                jm = re.search(r'^([A-Z]{2,}(?:\s+[A-Z]+){0,3})\s+\(\d+/\s*\d+\s+\d+%\)', line)
-                if jm:
-                    jockey = jm.group(1).title()
+                # Trainer: handles "(N sts N%)" and "(N N-N-N N%)" formats
+                if trainer == '?':
+                    tm = re.search(r'Trnr:\s*([^\n(]+?)\s*\((\d+)\s*/\s*(\d+)\s+(\d+)%\)', line)
+                    if tm:
+                        trainer = tm.group(1).strip()
+                        trainer_stats = f"{tm.group(2)} sts {tm.group(4)}%"
+                    else:
+                        tm2 = re.search(r'Trnr:\s*([^\n(]+?)\s*\((\d+)\s+(\d+)-(\d+)-(\d+)\s+(\d+)%\)', line)
+                        if tm2:
+                            trainer = tm2.group(1).strip()
+                            trainer_stats = f"{tm2.group(2)} sts {tm2.group(3)}-{tm2.group(4)}-{tm2.group(5)} {tm2.group(6)}%"
 
-            # Sire: multiple formats
-            if sire == '?':
-                sm = re.search(r'Sire\s*:\s*=?([A-Z][A-Za-z\'"\-\. \(\)]+?)\s*\(', line)
-                if sm:
-                    sire_raw = sm.group(1).strip()
-                    # Remove sale info etc
-                    sire = re.sub(r'\s*\([^)]*\)\s*$', '', sire_raw).strip()
-                elif re.search(r'Sire\s*:\s*$', line.strip()):
-                    # Sire on next line
-                    if j+1 < len(lines):
-                        next_line = lines[j+1].strip().lstrip('=')
-                        sn = re.match(r'([A-Z][A-Za-z\'"\-\. ]+?)\s*[\($]', next_line)
-                        if sn:
-                            sire = sn.group(1).strip()
+                # Jockey: "LASTNAME FIRSTNAME (N N-N-N N%)" or "(N/ N N%)"
+                if jockey == '?':
+                    jm = re.search(r'^([A-Z]{2,}(?:\s+[A-Z]+){0,3})\s+\(\d+[\s/]', line)
+                    if jm:
+                        jockey = jm.group(1).title()
 
-            # Days off
-            if days_off == 0:
-                dm = re.search(r'(\d+)\s+days\s+away', line)
-                if dm:
-                    days_off = int(dm.group(1))
+                # Sire
+                if sire == '?':
+                    sm = re.search(r'Sire\s*:\s*=?([A-Z][A-Za-z\'"\-\. \(\)]+?)\s*\(', line)
+                    if sm:
+                        sire_raw = sm.group(1).strip()
+                        sire = re.sub(r'\s*\([^)]*\)\s*$', '', sire_raw).strip()
+                    elif re.search(r'Sire\s*:\s*$', line.strip()):
+                        abs_next = block_start + bi + 1
+                        if abs_next < len(lines):
+                            nxt = lines[abs_next].strip().lstrip('=')
+                            sn = re.match(r'([A-Z][A-Za-z\'"\-\. ]+?)\s*[\($]', nxt)
+                            if sn:
+                                sire = sn.group(1).strip()
 
-            # Angles
-            if 'ñ' in line:
-                for ang in re.findall(r'ñ\s*([^ñ×\n]+)', line):
-                    a = ang.strip()
-                    if len(a) > 4:
-                        pos_angles.append(a[:65])
-            if '×' in line:
-                for ang in re.findall(r'×\s*([^ñ×\n]+)', line):
-                    a = ang.strip()
-                    if len(a) > 4:
-                        neg_angles.append(a[:65])
+                # Days off
+                if days_off == 0:
+                    dm = re.search(r'(\d+)\s+days\s+away', line)
+                    if dm:
+                        days_off = int(dm.group(1))
 
-        if horse == '?' or pp_num == 0:
-            continue
+                # Angles
+                if 'ñ' in line:
+                    for ang in re.findall(r'ñ\s*([^ñ×\n]+)', line):
+                        a = ang.strip()
+                        if len(a) > 4:
+                            pos_angles.append(a[:65])
+                if '×' in line:
+                    for ang in re.findall(r'×\s*([^ñ×\n]+)', line):
+                        a = ang.strip()
+                        if len(a) > 4:
+                            neg_angles.append(a[:65])
 
-        # ── Apply model signals ───────────────────────────────────────────────
-        signals = []
-        track_trainers = IRON_TRAINERS.get(track_code, {})
+            if horse == '?' or pp_num == 0:
+                continue
 
-        for key, (sig, desc) in track_trainers.items():
-            if key.lower() in trainer.lower():
-                signals.append(('TRAINER', sig, desc))
-                break
+            # ── Apply model signals ───────────────────────────────────────────
+            signals = []
+            track_trainers = IRON_TRAINERS.get(track_code, {})
 
-        for key, (sig, desc) in IRON_SIRES.items():
-            if key.lower() in sire.lower():
-                signals.append(('SIRE', sig, desc))
-                break
+            for key, (sig, desc) in track_trainers.items():
+                if key.lower() in trainer.lower():
+                    signals.append(('TRAINER', sig, desc))
+                    break
 
-        for key, (sig, desc) in IRON_HORSES.items():
-            if key.lower() in horse.lower():
-                signals.append(('HORSE', sig, desc))
-                break
+            for key, (sig, desc) in IRON_SIRES.items():
+                if key.lower() in sire.lower():
+                    signals.append(('SIRE', sig, desc))
+                    break
 
-        # Special rules
-        trainer_rules = TRAINER_RULES.get(track_code, {})
-        special_rule = ''
-        for key, rule in trainer_rules.items():
-            if key.lower() in trainer.lower():
-                special_rule = rule
-                break
+            for key, (sig, desc) in IRON_HORSES.items():
+                if key.lower() in horse.lower():
+                    signals.append(('HORSE', sig, desc))
+                    break
 
-        horse_data = {
-            'pp': pp_num, 'name': horse, 'ml': ml,
-            'trainer': trainer, 'trainer_stats': trainer_stats,
-            'jockey': jockey, 'sire': sire,
-            'prime_power': prime_power, 'pp_rank': pp_rank,
-            'days_off': days_off, 'claim': claim_price,
-            'pos_angles': pos_angles[:4], 'neg_angles': neg_angles[:3],
-            'signals': signals, 'special_rule': special_rule,
-        }
+            trainer_rules = TRAINER_RULES.get(track_code, {})
+            special_rule = ''
+            for key, rule in trainer_rules.items():
+                if key.lower() in trainer.lower():
+                    special_rule = rule
+                    break
 
-        if not any(h['name'] == horse for h in races[current_race]['horses']):
-            races[current_race]['horses'].append(horse_data)
+            horse_data = {
+                'pp': pp_num, 'name': horse, 'ml': ml,
+                'trainer': trainer, 'trainer_stats': trainer_stats,
+                'jockey': jockey, 'sire': sire,
+                'prime_power': prime_power, 'pp_rank': pp_rank,
+                'days_off': days_off, 'claim': claim_price,
+                'pos_angles': pos_angles[:4], 'neg_angles': neg_angles[:3],
+                'signals': signals, 'special_rule': special_rule,
+            }
+
+            if not any(h['name'] == horse for h in races[current_race]['horses']):
+                races[current_race]['horses'].append(horse_data)
 
     return dict(races)
 
