@@ -1,0 +1,7 @@
+# Benter Model Picks — CT May 9, 2026
+# Format: TRACK RACE HORSE SIGNAL [BETS]
+CT 1 KeenTalent TRAINER WPS
+CT 2 RagtimeScribble SIRE WPS
+CT 3 BigJoeB TRAINER WPS
+CT 4 HeyBoots HORSE WPS
+CT 5 GreatFiber SIRE WPS
