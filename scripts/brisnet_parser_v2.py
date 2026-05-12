@@ -9,6 +9,11 @@ import re, sys, subprocess
 from pathlib import Path
 from collections import defaultdict
 
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except AttributeError:
+    pass
+
 # ── MODEL SIGNAL DATABASES ────────────────────────────────────────────────────
 IRON_TRAINERS = {
     'CT': {
@@ -209,11 +214,19 @@ TRAINER_RULES = {
 
 def extract_text(filepath):
     path = Path(filepath)
-    if path.suffix.lower() == '.pdf':
+    if path.suffix.lower() != '.pdf':
+        return path.read_text(errors='replace')
+    try:
         result = subprocess.run(['pdftotext', '-layout', str(path), '-'],
                                capture_output=True, text=True, errors='replace')
-        return result.stdout
-    return path.read_text(errors='replace')
+        if result.returncode == 0 and result.stdout.strip():
+            return result.stdout
+    except FileNotFoundError:
+        pass
+    import pdfplumber
+    with pdfplumber.open(path) as pdf:
+        pages = [page.extract_text(layout=True) or '' for page in pdf.pages]
+    return '\f'.join(pages)
 
 def parse_brisnet(text, track_code='GP'):
     pages = text.split('\f')
