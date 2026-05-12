@@ -224,8 +224,12 @@ def extract_text(filepath):
     except FileNotFoundError:
         pass
     import pdfplumber
+    pages = []
     with pdfplumber.open(path) as pdf:
-        pages = [page.extract_text(layout=True) or '' for page in pdf.pages]
+        for page in pdf.pages:
+            full = page.extract_text(layout=True) or ''
+            left = page.crop((0, 0, page.width * 0.52, page.height)).extract_text() or ''
+            pages.append(full + '\n' + left)
     return '\f'.join(pages)
 
 def parse_brisnet(text, track_code='GP'):
@@ -240,10 +244,12 @@ def parse_brisnet(text, track_code='GP'):
         lines = page.split('\n')
         header = lines[0]
 
-        # ── Race number from header ───────────────────────────────────────────
-        race_m = re.search(r'Race\s+(\d+)', header)
-        if race_m:
-            current_race = int(race_m.group(1))
+        # ── Race number from header (check first 10 lines; pdfplumber may offset) ─
+        for hline in lines[:10]:
+            race_m = re.search(r'\bRace\s+(\d+)\b', hline)
+            if race_m:
+                current_race = int(race_m.group(1))
+                break
 
         # ── Race conditions from header ───────────────────────────────────────
         if current_race and not races[current_race]['conditions']:
@@ -285,25 +291,32 @@ def parse_brisnet(text, track_code='GP'):
         neg_angles = []
         claim_price = None
 
-        # Find Own: line → PP# is at start of that line
+        # Find Own: line — pdfplumber may or may not include leading PP#
         for j, line in enumerate(lines):
             om = re.match(r'^(\d+)\s+Own:', line)
             if om:
                 pp_num = int(om.group(1))
-
-                # Horse name: search backwards from Own: line
-                for k in range(j-1, max(0, j-4), -1):
-                    prev = lines[k]
-                    # Pattern: spaces + HorseName (Type N) + optional $claim + breed info
-                    hm = re.search(r'([A-Z][A-Za-z\'"\-\. ]+?)\s+\([A-Z/EP]+\s+\d+\)', prev)
-                    if hm:
-                        horse = hm.group(1).strip()
-                        # Claim price
-                        claim_m = re.search(r'\$(\d{1,3},?\d{3})', prev)
-                        if claim_m:
-                            claim_price = claim_m.group(1)
+            elif re.match(r'^\s*Own:', line):
+                # Left-crop format: no leading number — hunt backward for PP#
+                for k in range(j-1, max(0, j-8), -1):
+                    nm = re.match(r'^\s*(\d+)\s+[A-Z][a-z]', lines[k])
+                    if nm:
+                        pp_num = int(nm.group(1))
                         break
-                break
+            else:
+                continue
+
+            # Horse name: search backwards from Own: line
+            for k in range(j-1, max(0, j-6), -1):
+                prev = lines[k]
+                hm = re.search(r'([A-Z][A-Za-z\'"\-\. ]+?)\s+\([A-Z/EP]+\s+\d+\)', prev)
+                if hm:
+                    horse = hm.group(1).strip()
+                    claim_m = re.search(r'\$(\d{1,3},?\d{3})', prev)
+                    if claim_m:
+                        claim_price = claim_m.group(1)
+                    break
+            break
 
         # Prime Power: check header line and early lines
         ppm = re.search(r'Prime\s+P(?:ower)?[:\s]*([\d.]+)\s*\((\d+)', lines[0])
