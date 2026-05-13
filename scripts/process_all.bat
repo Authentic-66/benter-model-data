@@ -3,6 +3,9 @@ title Process All Results
 set "SCRIPTS=%~dp0"
 for %%d in ("%SCRIPTS%..") do set "BASE=%%~fd"
 
+for /f %%d in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMdd"') do set "TODAY=%%d"
+if not exist "%SCRIPTS%results-logs\" mkdir "%SCRIPTS%results-logs"
+
 echo.
 echo ########################################################################
 echo   BENTER MODEL -- PROCESS ALL RESULTS
@@ -21,9 +24,14 @@ echo   No result PDF found - skipping
 goto :fp_section
 
 :ct_run
+set "LOGFILE=%SCRIPTS%results-logs\RESULTS_CT_%TODAY%.txt"
+echo Results CT  [%TODAY%] > "%LOGFILE%"
 echo   File: %PDF%
+echo   File: %PDF% >> "%LOGFILE%"
 echo.
-py "%SCRIPTS%process_results.py" "%BASE%\CharlesTown\ct-results-2026\%PDF%" CT
+echo. >> "%LOGFILE%"
+py -u "%SCRIPTS%process_results.py" "%BASE%\CharlesTown\ct-results-2026\%PDF%" CT 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+echo   Results logged: results-logs\RESULTS_CT_%TODAY%.txt
 
 :: ── FAIRMOUNT PARK (FP) ──────────────────────────────────────────────────
 :fp_section
@@ -39,9 +47,14 @@ echo   No result PDF found - skipping
 goto :gp_section
 
 :fp_run
+set "LOGFILE=%SCRIPTS%results-logs\RESULTS_FP_%TODAY%.txt"
+echo Results FP  [%TODAY%] > "%LOGFILE%"
 echo   File: %PDF%
+echo   File: %PDF% >> "%LOGFILE%"
 echo.
-py "%SCRIPTS%process_results.py" "%BASE%\Fairmount Park\fp-results-2026\%PDF%" FP
+echo. >> "%LOGFILE%"
+py -u "%SCRIPTS%process_results.py" "%BASE%\Fairmount Park\fp-results-2026\%PDF%" FP 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+echo   Results logged: results-logs\RESULTS_FP_%TODAY%.txt
 
 :: ── GULFSTREAM PARK (GP) ─────────────────────────────────────────────────
 :gp_section
@@ -57,9 +70,14 @@ echo   No result PDF found - skipping
 goto :evd_section
 
 :gp_run
+set "LOGFILE=%SCRIPTS%results-logs\RESULTS_GP_%TODAY%.txt"
+echo Results GP  [%TODAY%] > "%LOGFILE%"
 echo   File: %PDF%
+echo   File: %PDF% >> "%LOGFILE%"
 echo.
-py "%SCRIPTS%process_results.py" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" GP
+echo. >> "%LOGFILE%"
+py -u "%SCRIPTS%process_results.py" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" GP 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+echo   Results logged: results-logs\RESULTS_GP_%TODAY%.txt
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
 :evd_section
@@ -75,9 +93,14 @@ echo   No result PDF found - skipping
 goto :done
 
 :evd_run
+set "LOGFILE=%SCRIPTS%results-logs\RESULTS_EVD_%TODAY%.txt"
+echo Results EVD  [%TODAY%] > "%LOGFILE%"
 echo   File: %PDF%
+echo   File: %PDF% >> "%LOGFILE%"
 echo.
-py "%SCRIPTS%process_results.py" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" EVD
+echo. >> "%LOGFILE%"
+py -u "%SCRIPTS%process_results.py" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" EVD 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+echo   Results logged: results-logs\RESULTS_EVD_%TODAY%.txt
 
 :done
 echo.

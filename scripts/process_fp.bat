@@ -4,16 +4,28 @@ set "SCRIPTS=%~dp0"
 for %%d in ("%SCRIPTS%..") do set "BASE=%%~fd"
 set "RESDIR=%BASE%\Fairmount Park\fp-results-2026"
 
+for /f %%d in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMdd"') do set "TODAY=%%d"
+if not exist "%SCRIPTS%results-logs\" mkdir "%SCRIPTS%results-logs"
+set "LOGFILE=%SCRIPTS%results-logs\RESULTS_FP_%TODAY%.txt"
+echo Results FP  [%TODAY%] > "%LOGFILE%"
+
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%RESDIR%\*.pdf" 2^>nul') do (
     set "PDF=%%f"
     goto :run
 )
 echo No result PDF found in: %RESDIR%
+echo No result PDF found in: %RESDIR% >> "%LOGFILE%"
 pause & exit /b 1
 
 :run
 echo Processing FP: %PDF%
+echo Processing FP: %PDF% >> "%LOGFILE%"
 echo.
-py "%SCRIPTS%process_results.py" "%RESDIR%\%PDF%" FP
+echo. >> "%LOGFILE%"
+py -u "%SCRIPTS%process_results.py" "%RESDIR%\%PDF%" FP 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+echo.
+echo. >> "%LOGFILE%"
+echo Log saved: %LOGFILE%
+echo Log saved: %LOGFILE% >> "%LOGFILE%"
 echo.
 pause
