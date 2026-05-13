@@ -6,6 +6,7 @@ Usage: python3 brisnet_parser_v2.py <pp_file.pdf|txt> [TRACK_CODE]
 """
 
 import re, sys, subprocess
+from datetime import date
 from pathlib import Path
 from collections import defaultdict
 
@@ -526,6 +527,34 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
     return all_picks
 
 
+def write_picks_file(all_picks, track_code, filepath):
+    """Write picks_TRACK_DATE.txt next to this script for roi_tracker.py."""
+    stem = Path(filepath).stem.upper()
+    tc = track_code.upper()
+
+    # TRACKMMDDDYYUSA  e.g. CT050926USA, FP051226USA
+    m = re.match(rf'^{re.escape(tc)}(\d{{2}})(\d{{2}})(\d{{2}})USA$', stem)
+    if m:
+        date_str = f"{m.group(1)}{m.group(2)}20{m.group(3)}"
+    else:
+        # TRACKx?MMDD  e.g. CTX0507Y, GPX0508X, EVD0509Y
+        m = re.match(rf'^{re.escape(tc)}[X]?(\d{{2}})(\d{{2}})', stem)
+        date_str = f"{m.group(1)}{m.group(2)}{date.today().year}" if m else stem
+
+    out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
+    lines = [
+        f"# Benter Model Picks - {tc} {date_str}",
+        "# Format: TRACK RACE HORSE SIGNAL BETS",
+    ]
+    for rn, h in sorted(all_picks, key=lambda x: x[0]):
+        sig_type = h['signals'][0][0]
+        horse_name = h['name'].replace(' ', '')
+        lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS")
+
+    out_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    return out_path
+
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage: python3 brisnet_parser_v2.py <file.pdf|txt> [TRACK]")
@@ -544,4 +573,7 @@ if __name__ == '__main__':
     races = parse_brisnet(text, track)
     total = sum(len(r['horses']) for r in races.values())
     print(f"Found {len(races)} races, {total} horses\n")
-    print_card(races, track_names.get(track, track), 'Today', 'Fast', track_code=track)
+    all_picks = print_card(races, track_names.get(track, track), 'Today', 'Fast', track_code=track)
+    if all_picks:
+        out = write_picks_file(all_picks, track, filepath)
+        print(f"picks file → {out.name}")

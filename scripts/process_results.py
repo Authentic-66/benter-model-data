@@ -25,7 +25,7 @@ COND_MAP = {
     'ALLOWANCEOPTIONALCLAIMING': 'AOC', 'ALLOWANCE': 'ALW',
     'CLAIMING': 'CLM', 'STAKES': 'STK', 'HANDICAP': 'HCP',
     'STARTERCLAIMING': 'STC', 'STARTERALLOWANCE': 'STA',
-    'WAIVERCLAIMING': 'WVC',
+    'STARTEROPTIONALCLAIMING': 'SOC', 'WAIVERCLAIMING': 'WVC',
 }
 
 DIST_PATTERNS = [
@@ -180,7 +180,7 @@ def parse_results(text):
         # Row 3 (3rd):                   SHOW  $1.00Superfecta ...
         payout_idx = None
         for i, line in enumerate(lines):
-            if re.search(r'Pgm\s+Horse\s+Win\s+Place\s+Show', line):
+            if re.search(r'Pgm\s+Horse\s+Win\s+Place', line):
                 payout_idx = i
                 break
 
