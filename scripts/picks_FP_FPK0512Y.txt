@@ -1,0 +1,25 @@
+# Benter Model Picks - FP FPK0512Y
+# Format: TRACK RACE HORSE SIGNAL BETS
+FP 1 LastArrow TRAINER WPS
+FP 2 WarriorofGold TRAINER WPS
+FP 2 AwesomeDrew TRAINER WPS
+FP 3 Grayhop TRAINER WPS
+FP 3 Weslan SIRE WPS
+FP 3 HandOverMyHeart TRAINER WPS
+FP 3 FastCrossTraffic TRAINER WPS
+FP 4 Nella TRAINER WPS
+FP 4 Try SIRE WPS
+FP 4 MidnightMs TRAINER WPS
+FP 5 Nandina TRAINER WPS
+FP 5 DivaLasVegas SIRE WPS
+FP 6 PassingPassion TRAINER WPS
+FP 6 HotT'mater TRAINER WPS
+FP 6 HarperBriana TRAINER WPS
+FP 7 AmericanWarrior TRAINER WPS
+FP 7 JimmiesBigDay TRAINER WPS
+FP 7 DustDancer TRAINER WPS
+FP 7 ChrysoAlogo TRAINER WPS
+FP 8 PlayTwenty TRAINER WPS
+FP 8 RocktheBirdhouse TRAINER WPS
+FP 8 Onacounta TRAINER WPS
+FP 8 ScrappyPatch TRAINER WPS
