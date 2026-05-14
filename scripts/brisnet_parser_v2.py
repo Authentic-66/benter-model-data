@@ -446,6 +446,23 @@ def parse_brisnet(text, track_code='GP'):
     return dict(races)
 
 
+def is_strong_pick(h):
+    """True only for iron trainer (🔥), trainer+sire double, or iron horse (🔥). Excludes ✅-only."""
+    signals = h['signals']
+    if not signals:
+        return False
+    sig_types = {s[0] for s in signals}
+    for sig_type, sig, desc in signals:
+        if sig_type == 'TRAINER' and '🔥' in sig:
+            return True
+    if 'TRAINER' in sig_types and 'SIRE' in sig_types:
+        return True
+    for sig_type, sig, desc in signals:
+        if sig_type == 'HORSE' and '🔥' in sig:
+            return True
+    return False
+
+
 def print_card(races, track_name, date_str, track_conditions, scratches=None, track_code='GP'):
     if scratches is None:
         scratches = {}
@@ -484,7 +501,8 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
 
         for h in active:
             has_signal = bool(h['signals'])
-            flag = '⭐' if has_signal else '  '
+            strong = is_strong_pick(h)
+            flag = '⭐' if strong else ('·' if has_signal else '  ')
             pp_str = f"{h['prime_power']}({h['pp_rank']})" if h['prime_power'] != '?' else '?'
 
             print(f"\n  {flag} {h['pp']:>2}: {h['name']:<27} {h['ml']:>5}  {pp_str:>10}  {h['trainer'][:28]}")
@@ -504,7 +522,7 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
             for ang in h['neg_angles'][:1]:
                 print(f"        ❌ {ang}")
 
-            if has_signal:
+            if strong:
                 race_picks.append(h)
                 all_picks.append((rn, h))
 
