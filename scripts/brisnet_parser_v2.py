@@ -545,6 +545,58 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
     return all_picks
 
 
+def extract_file_date(filepath, track_code, text=''):
+    """Return the race date from the filename pattern or file text; None if not found."""
+    stem = Path(filepath).stem.upper()
+    tc = track_code.upper()
+
+    # TRACKMMDDDYYUSA  e.g. CT050926USA, GP050826USA
+    m = re.match(rf'^{re.escape(tc)}(\d{{2}})(\d{{2}})(\d{{2}})USA$', stem)
+    if m:
+        try:
+            return date(2000 + int(m.group(3)), int(m.group(1)), int(m.group(2)))
+        except ValueError:
+            pass
+
+    # TRACKx?MMDD...  e.g. CTX0507Y, GPX0508X, EVD0509Y
+    m = re.match(rf'^{re.escape(tc)}[X]?(\d{{2}})(\d{{2}})', stem)
+    if m:
+        try:
+            return date(date.today().year, int(m.group(1)), int(m.group(2)))
+        except ValueError:
+            pass
+
+    # Fall back: scan first 3 000 chars of extracted text
+    if text:
+        sample = text[:3000]
+        dm = re.search(r'\b(\d{1,2})/(\d{1,2})/(\d{2,4})\b', sample)
+        if dm:
+            month, day, year = int(dm.group(1)), int(dm.group(2)), int(dm.group(3))
+            if year < 100:
+                year += 2000
+            try:
+                return date(year, month, day)
+            except ValueError:
+                pass
+        MONTHS = {
+            'january': 1, 'february': 2, 'march': 3, 'april': 4,
+            'may': 5, 'june': 6, 'july': 7, 'august': 8,
+            'september': 9, 'october': 10, 'november': 11, 'december': 12,
+        }
+        dm = re.search(
+            r'\b(January|February|March|April|May|June|July|August|'
+            r'September|October|November|December)\s+(\d{1,2}),?\s+(\d{4})\b',
+            sample, re.IGNORECASE,
+        )
+        if dm:
+            try:
+                return date(int(dm.group(3)), MONTHS[dm.group(1).lower()], int(dm.group(2)))
+            except ValueError:
+                pass
+
+    return None
+
+
 def write_picks_file(all_picks, track_code, filepath):
     """Write picks_TRACK_DATE.txt next to this script for roi_tracker.py."""
     stem = Path(filepath).stem.upper()
@@ -588,6 +640,15 @@ if __name__ == '__main__':
 
     print(f"Parsing {filepath} for {track}...")
     text = extract_text(filepath)
+
+    race_date = extract_file_date(filepath, track, text)
+    today = date.today()
+    if race_date is None:
+        print(f"WARNING: Could not determine race date for {Path(filepath).name} — proceeding anyway.")
+    elif race_date != today:
+        print(f"SKIP: {Path(filepath).name} is dated {race_date.strftime('%m/%d/%Y')} — not today ({today.strftime('%m/%d/%Y')}). Skipping.")
+        sys.exit(0)
+
     races = parse_brisnet(text, track)
     total = sum(len(r['horses']) for r in races.values())
     print(f"Found {len(races)} races, {total} horses\n")
