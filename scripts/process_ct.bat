@@ -18,6 +18,12 @@ echo No result PDF found in: %RESDIR% >> "%LOGFILE%"
 pause & exit /b 1
 
 :run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%RESDIR%\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo File date [%FILEDATE%] does not match today [%TODAY%] - skipping CT
+    echo File date [%FILEDATE%] does not match today [%TODAY%] - skipping CT >> "%LOGFILE%"
+    pause & exit /b 0
+)
 echo Processing CT: %PDF%
 echo Processing CT: %PDF% >> "%LOGFILE%"
 echo.

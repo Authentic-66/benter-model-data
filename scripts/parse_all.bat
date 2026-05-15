@@ -24,6 +24,11 @@ echo   No PP file found - skipping
 goto :fp_section
 
 :ct_run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\CharlesTown\ct-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping CT
+    goto :fp_section
+)
 echo   File: %PDF%
 echo.
 py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\CharlesTown\ct-pps-files\%PDF%" CT
@@ -43,6 +48,11 @@ echo   No PP file found - skipping
 goto :gp_section
 
 :fp_run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Fairmount Park\fp-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping FP
+    goto :gp_section
+)
 echo   File: %PDF%
 echo.
 py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Fairmount Park\fp-pps-files\%PDF%" FP
@@ -62,6 +72,11 @@ echo   No PP file found - skipping
 goto :evd_section
 
 :gp_run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Gulfstream Park\gp-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping GP
+    goto :evd_section
+)
 echo   File: %PDF%
 echo.
 py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Gulfstream Park\gp-pps-files\%PDF%" GP
@@ -81,6 +96,11 @@ echo   No PP file found - skipping
 goto :done
 
 :evd_run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Evangeline Downs\evd-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping EVD
+    goto :done
+)
 echo   File: %PDF%
 echo.
 py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Evangeline Downs\evd-pps-files\%PDF%" EVD
