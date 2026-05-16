@@ -24,12 +24,6 @@ echo   No result PDF found - skipping
 goto :fp_section
 
 :ct_run
-set "FILEDATE="
-for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\CharlesTown\ct-results-2026\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
-if not "%FILEDATE%"=="%TODAY%" (
-    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping CT
-    goto :fp_section
-)
 set "LOGFILE=%SCRIPTS%results-logs\RESULTS_CT_%TODAY%.txt"
 echo Results CT  [%TODAY%] > "%LOGFILE%"
 echo   File: %PDF%
@@ -53,12 +47,6 @@ echo   No result PDF found - skipping
 goto :gp_section
 
 :fp_run
-set "FILEDATE="
-for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Fairmount Park\fp-results-2026\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
-if not "%FILEDATE%"=="%TODAY%" (
-    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping FP
-    goto :gp_section
-)
 set "LOGFILE=%SCRIPTS%results-logs\RESULTS_FP_%TODAY%.txt"
 echo Results FP  [%TODAY%] > "%LOGFILE%"
 echo   File: %PDF%
@@ -82,12 +70,6 @@ echo   No result PDF found - skipping
 goto :evd_section
 
 :gp_run
-set "FILEDATE="
-for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Gulfstream Park\gp-results-2026\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
-if not "%FILEDATE%"=="%TODAY%" (
-    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping GP
-    goto :evd_section
-)
 set "LOGFILE=%SCRIPTS%results-logs\RESULTS_GP_%TODAY%.txt"
 echo Results GP  [%TODAY%] > "%LOGFILE%"
 echo   File: %PDF%
@@ -111,12 +93,6 @@ echo   No result PDF found - skipping
 goto :done
 
 :evd_run
-set "FILEDATE="
-for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Evangeline Downs\evd-results-2026\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
-if not "%FILEDATE%"=="%TODAY%" (
-    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping EVD
-    goto :done
-)
 set "LOGFILE=%SCRIPTS%results-logs\RESULTS_EVD_%TODAY%.txt"
 echo Results EVD  [%TODAY%] > "%LOGFILE%"
 echo   File: %PDF%
