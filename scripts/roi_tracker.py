@@ -37,7 +37,7 @@ from process_results import extract_text, parse_results, TRACK_NAMES
 
 def load_picks(filepath):
     picks = []
-    with open(filepath, errors='replace') as f:
+    with open(filepath, encoding='utf-8', errors='replace') as f:
         for lineno, raw in enumerate(f, 1):
             line = raw.strip()
             if not line or line.startswith('#'):

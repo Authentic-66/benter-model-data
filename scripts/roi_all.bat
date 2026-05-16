@@ -37,7 +37,7 @@ goto :fp_section
 call :log "  Picks: %CT_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%CT_PICKS%" "%BASE%\CharlesTown\ct-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%CT_PICKS%" "%BASE%\CharlesTown\ct-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 
 :: ── FAIRMOUNT PARK (FP) ──────────────────────────────────────────────────
 :fp_section
@@ -64,7 +64,7 @@ goto :gp_section
 call :log "  Picks: %FP_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%FP_PICKS%" "%BASE%\Fairmount Park\fp-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%FP_PICKS%" "%BASE%\Fairmount Park\fp-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 
 :: ── GULFSTREAM PARK (GP) ─────────────────────────────────────────────────
 :gp_section
@@ -91,7 +91,7 @@ goto :evd_section
 call :log "  Picks: %GP_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%GP_PICKS%" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%GP_PICKS%" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
 :evd_section
@@ -107,18 +107,21 @@ call :log "  No picks_EVD_*.txt found - run parse_evd.bat first"
 goto :done
 
 :evd_picks_ok
-for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Evangeline Downs\evd-results-2026\*.pdf" 2^>nul') do (
+:: Extract date from picks filename: picks_EVD_20260515.txt -> 20260515
+set "PICKSDATE=%EVD_PICKS:picks_EVD_=%"
+set "PICKSDATE=%PICKSDATE:.txt=%"
+for /f "delims=" %%f in ('powershell -NoProfile -Command "Get-ChildItem '%BASE%\Evangeline Downs\evd-results-2026\*.pdf' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime.ToString('yyyyMMdd') -eq $env:PICKSDATE } | Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty Name"') do (
     set "PDF=%%f"
     goto :evd_run
 )
-call :log "  No result PDF found - skipping"
+call :log "  No result PDF found for picks date %PICKSDATE% - skipping"
 goto :done
 
 :evd_run
 call :log "  Picks: %EVD_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%EVD_PICKS%" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%EVD_PICKS%" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 
 :done
 call :log ""

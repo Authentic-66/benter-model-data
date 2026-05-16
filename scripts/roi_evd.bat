@@ -18,12 +18,16 @@ echo No picks_EVD_*.txt found in scripts folder. Run parse_evd.bat first. >> "%L
 pause & exit /b 1
 
 :gotpicks
-for /f "delims=" %%f in ('dir /b /o-d /a-d "%RESDIR%\*.pdf" 2^>nul') do (
+:: Extract date from picks filename: picks_EVD_20260515.txt -> 20260515
+set "PICKSDATE=%PICKS:picks_EVD_=%"
+set "PICKSDATE=%PICKSDATE:.txt=%"
+
+for /f "delims=" %%f in ('powershell -NoProfile -Command "Get-ChildItem '%RESDIR%\*.pdf' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime.ToString('yyyyMMdd') -eq $env:PICKSDATE } | Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty Name"') do (
     set "PDF=%%f"
     goto :run
 )
-echo No result PDF found in: %RESDIR%
-echo No result PDF found in: %RESDIR% >> "%LOGFILE%"
+echo No result PDF found for picks date %PICKSDATE% in: %RESDIR%
+echo No result PDF found for picks date %PICKSDATE% in: %RESDIR% >> "%LOGFILE%"
 pause & exit /b 1
 
 :run
@@ -31,7 +35,7 @@ echo ROI: %PICKS% + %PDF%
 echo ROI: %PICKS% + %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%PICKS%" "%RESDIR%\%PDF%" 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%PICKS%" "%RESDIR%\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 echo.
 echo. >> "%LOGFILE%"
 echo Log saved: %LOGFILE%
