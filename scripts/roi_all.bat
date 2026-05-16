@@ -37,7 +37,7 @@ goto :fp_section
 call :log "  Picks: %CT_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%CT_PICKS%" "%BASE%\CharlesTown\ct-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%roi_tracker.py' '%SCRIPTS%%CT_PICKS%' '%BASE%\CharlesTown\ct-results-2026\%PDF%' 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 
 :: ── FAIRMOUNT PARK (FP) ──────────────────────────────────────────────────
 :fp_section
@@ -64,7 +64,7 @@ goto :gp_section
 call :log "  Picks: %FP_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%FP_PICKS%" "%BASE%\Fairmount Park\fp-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%roi_tracker.py' '%SCRIPTS%%FP_PICKS%' '%BASE%\Fairmount Park\fp-results-2026\%PDF%' 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 
 :: ── GULFSTREAM PARK (GP) ─────────────────────────────────────────────────
 :gp_section
@@ -91,7 +91,7 @@ goto :evd_section
 call :log "  Picks: %GP_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%GP_PICKS%" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%roi_tracker.py' '%SCRIPTS%%GP_PICKS%' '%BASE%\Gulfstream Park\gp-results-2026\%PDF%' 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
 :evd_section
@@ -121,7 +121,7 @@ goto :done
 call :log "  Picks: %EVD_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%EVD_PICKS%" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%roi_tracker.py' '%SCRIPTS%%EVD_PICKS%' '%BASE%\Evangeline Downs\evd-results-2026\%PDF%' 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 
 :done
 call :log ""

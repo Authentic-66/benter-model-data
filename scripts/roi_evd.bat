@@ -35,7 +35,7 @@ echo ROI: %PICKS% + %PDF%
 echo ROI: %PICKS% + %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%PICKS%" "%RESDIR%\%PDF%" 2>&1 | powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $input | Tee-Object -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%roi_tracker.py' '%SCRIPTS%%PICKS%' '%RESDIR%\%PDF%' 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 echo.
 echo. >> "%LOGFILE%"
 echo Log saved: %LOGFILE%

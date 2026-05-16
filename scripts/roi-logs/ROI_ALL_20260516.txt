@@ -1,15 +1,77 @@
 ROI All Tracks  [20260516] 
+======================================================================== 
+  No result PDF found for picks date 05152026 - skipping 
  
 ######################################################################## 
-  BENTER MODEL -- ROI ALL TRACKS 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260516.txt 
+######################################################################## 
+ 
+======================================================================== 
+  GULFSTREAM PARK (GP) 
+======================================================================== 
+  Picks: picks_GP_05152026.txt 
+  Result: GP051526USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_GP_05152026.txt...
+  16 pick(s) loaded
+
+Loading result PDFs...
+  Parsing GP051526USA.pdf [GP]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  —  ROI SUMMARY
+============================================================================
+
+  ── GULFSTREAM PARK (GP) ─────────────────────────────────────────
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  ····································································
+  R1    VanCleef                 TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R2    TouchofHonor             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    SheilaMagic              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    Chucky'sRide             TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R3    GlancingMyWay            TRAINER   WPS     2  $6.00  $18.60    +$12.60
+  R4    Kraken                   TRAINER   WPS     2  $6.00  $ 4.50     -$1.50
+  R5    NoOtherLikeYou           TRAINER   WPS     2  $6.00  $14.20     +$8.20
+  R5    InTiming                 TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R5    MotownDiva               TRAINER   WPS     1  $6.00  $33.00    +$27.00
+  R7    LindsaySmiles            TRAINER   WPS     2  $6.00  $ 5.80     -$0.20
+  R7    SouperLandslide          TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R8    SendCash                 TRAINER   WPS     1  $6.00  $10.00     +$4.00
+  R8    Camigol                  TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R8    StepSlow                 TRAINER   WPS     3  $6.00  $ 2.40     -$3.60
+  R9    Palazzi                  TRAINER   WPS     1  $6.00  $11.60     +$5.60
+  R9    WalkinginMemphis         TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  ····································································
+  SUBTOTAL                                         $96.00  $100.10     +$4.10  ROI: +4.3%
+
+============================================================================
+  OVERALL TOTAL                                    $96.00  $100.10     +$4.10  ROI: +4.3%
+============================================================================
+
+ 
+======================================================================== 
+  EVANGELINE DOWNS (EVD) 
+======================================================================== 
+  No result PDF found for picks date 05152026 - skipping 
+ 
+######################################################################## 
   ALL TRACKS COMPLETE 
 ######################################################################## 
  
 Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260516.txt 
  
 ======================================================================== 
-  CHARLES TOWN (CT) 
+  EVANGELINE DOWNS (EVD) 
 ======================================================================== 
-  Picks: picks_CT_05152026.txt 
-  Result: CT051526USA.pdf 
+  No result PDF found for picks date 05152026 - skipping 
  
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260516.txt 
