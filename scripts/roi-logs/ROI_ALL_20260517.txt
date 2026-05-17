@@ -1,0 +1,66 @@
+ROI All Tracks  [20260517] 
+======================================================================== 
+  No result PDF found for picks date 05152026 - skipping 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260517.txt 
+######################################################################## 
+ 
+======================================================================== 
+  GULFSTREAM PARK (GP) 
+======================================================================== 
+  Picks: picks_GP_05152026.txt 
+  Result: GP051626USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_GP_05152026.txt...
+  16 pick(s) loaded
+
+Loading result PDFs...
+  Parsing GP051626USA.pdf [GP]...
+    11 race(s) loaded
+
+============================================================================
+  BENTER MODEL  —  ROI SUMMARY
+============================================================================
+
+  ── GULFSTREAM PARK (GP) ─────────────────────────────────────────
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  ····································································
+  R1    VanCleef                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    TouchofHonor             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    SheilaMagic              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    Chucky'sRide             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    GlancingMyWay            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    Kraken                   TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    NoOtherLikeYou           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    InTiming                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    MotownDiva               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    LindsaySmiles            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    SouperLandslide          TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    SendCash                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Camigol                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    StepSlow                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    Palazzi                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    WalkinginMemphis         TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  ····································································
+  SUBTOTAL                                         $96.00  $  0.00    -$96.00  ROI: -100.0%
+
+============================================================================
+  OVERALL TOTAL                                    $96.00  $  0.00    -$96.00  ROI: -100.0%
+============================================================================
+
+ 
+======================================================================== 
+  EVANGELINE DOWNS (EVD) 
+======================================================================== 
+  No result PDF found for picks date 05152026 - skipping 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260517.txt 
