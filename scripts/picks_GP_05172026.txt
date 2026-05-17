@@ -1,0 +1,19 @@
+# Benter Model Picks - GP 05172026
+# Format: TRACK RACE HORSE SIGNAL BETS
+GP 1 KissedbyKarma TRAINER WPS
+GP 1 StarshipSakura TRAINER WPS
+GP 1 She'sLit TRAINER WPS
+GP 2 YankeeDrummer TRAINER WPS
+GP 3 FortunateRyder TRAINER WPS
+GP 4 GoodPaynter TRAINER WPS
+GP 5 BoomboxBetty TRAINER WPS
+GP 5 Jayana TRAINER WPS
+GP 6 LopingAlong TRAINER WPS
+GP 6 MustBetheShoes TRAINER WPS
+GP 7 Complexed TRAINER WPS
+GP 7 RefinedHonor TRAINER WPS
+GP 7 NobleTiger TRAINER WPS
+GP 8 Hawk TRAINER WPS
+GP 8 Monster TRAINER WPS
+GP 9 AwesomeTrain TRAINER WPS
+GP 10 PeppermintMan TRAINER WPS
