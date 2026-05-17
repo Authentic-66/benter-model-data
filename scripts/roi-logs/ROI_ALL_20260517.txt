@@ -12,12 +12,12 @@ Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scri
 ======================================================================== 
   GULFSTREAM PARK (GP) 
 ======================================================================== 
-  Picks: picks_GP_05152026.txt 
+  Picks: picks_GP_05172026.txt 
   Result: GP051626USA.pdf 
  
 
-Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_GP_05152026.txt...
-  16 pick(s) loaded
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_GP_05172026.txt...
+  17 pick(s) loaded
 
 Loading result PDFs...
   Parsing GP051626USA.pdf [GP]...
@@ -30,29 +30,41 @@ Loading result PDFs...
   ── GULFSTREAM PARK (GP) ─────────────────────────────────────────
   Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
   ····································································
-  R1    VanCleef                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R2    TouchofHonor             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R2    SheilaMagic              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R3    Chucky'sRide             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R3    GlancingMyWay            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R4    Kraken                   TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R5    NoOtherLikeYou           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R5    InTiming                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R5    MotownDiva               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R7    LindsaySmiles            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R7    SouperLandslide          TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R8    SendCash                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R8    Camigol                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R8    StepSlow                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R9    Palazzi                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R9    WalkinginMemphis         TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R1    KissedbyKarma            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R1    StarshipSakura           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R1    She'sLit                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    YankeeDrummer            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    FortunateRyder           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    GoodPaynter              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    BoomboxBetty             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    Jayana                   TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    LopingAlong              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    MustBetheShoes           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    Complexed                TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    RefinedHonor             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    NobleTiger               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Hawk                     TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Monster                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    AwesomeTrain             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R10   PeppermintMan            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
   ····································································
-  SUBTOTAL                                         $96.00  $  0.00    -$96.00  ROI: -100.0%
+  SUBTOTAL                                         $102.00  $  0.00   -$102.00  ROI: -100.0%
 
 ============================================================================
-  OVERALL TOTAL                                    $96.00  $  0.00    -$96.00  ROI: -100.0%
+  OVERALL TOTAL                                    $102.00  $  0.00   -$102.00  ROI: -100.0%
 ============================================================================
 
+ 
+======================================================================== 
+  EVANGELINE DOWNS (EVD) 
+======================================================================== 
+  No result PDF found for picks date 05152026 - skipping 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260517.txt 
  
 ======================================================================== 
   EVANGELINE DOWNS (EVD) 
