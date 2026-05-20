@@ -35,7 +35,9 @@ echo ROI: %PICKS% + %PDF%
 echo ROI: %PICKS% + %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%roi_tracker.py' '%SCRIPTS%%PICKS%' '%RESDIR%\%PDF%' 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%PICKS%" "%RESDIR%\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 echo.
 echo. >> "%LOGFILE%"
 echo Log saved: %LOGFILE%
