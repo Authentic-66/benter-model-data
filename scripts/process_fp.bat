@@ -22,7 +22,7 @@ echo Processing FP: %PDF%
 echo Processing FP: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; py -u '%SCRIPTS%process_results.py' '%RESDIR%\%PDF%' FP 2>&1 | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; py -u '%SCRIPTS%process_results.py' '%RESDIR%\%PDF%' FP 2>&1 | ForEach-Object { Write-Host $_; $_ } | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 echo.
 echo. >> "%LOGFILE%"
 echo Log saved: %LOGFILE%
