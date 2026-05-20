@@ -25,7 +25,7 @@ goto :fp_section
 
 :ct_run
 set "LOGFILE=%SCRIPTS%results-logs\RESULTS_CT_%TODAY%.txt"
-echo Results CT  [%TODAY%] > "%LOGFILE%"
+powershell -NoProfile -Command "Set-Content -Path '%LOGFILE%' -Value 'Results CT [%TODAY%]' -Encoding UTF8"
 echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
@@ -48,7 +48,7 @@ goto :gp_section
 
 :fp_run
 set "LOGFILE=%SCRIPTS%results-logs\RESULTS_FP_%TODAY%.txt"
-echo Results FP  [%TODAY%] > "%LOGFILE%"
+powershell -NoProfile -Command "Set-Content -Path '%LOGFILE%' -Value 'Results FP [%TODAY%]' -Encoding UTF8"
 echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
@@ -71,7 +71,7 @@ goto :evd_section
 
 :gp_run
 set "LOGFILE=%SCRIPTS%results-logs\RESULTS_GP_%TODAY%.txt"
-echo Results GP  [%TODAY%] > "%LOGFILE%"
+powershell -NoProfile -Command "Set-Content -Path '%LOGFILE%' -Value 'Results GP [%TODAY%]' -Encoding UTF8"
 echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
@@ -94,7 +94,7 @@ goto :done
 
 :evd_run
 set "LOGFILE=%SCRIPTS%results-logs\RESULTS_EVD_%TODAY%.txt"
-echo Results EVD  [%TODAY%] > "%LOGFILE%"
+powershell -NoProfile -Command "Set-Content -Path '%LOGFILE%' -Value 'Results EVD [%TODAY%]' -Encoding UTF8"
 echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.

@@ -7,7 +7,7 @@ set "RESDIR=%BASE%\CharlesTown\ct-results-2026"
 for /f %%d in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMdd"') do set "TODAY=%%d"
 if not exist "%SCRIPTS%results-logs\" mkdir "%SCRIPTS%results-logs"
 set "LOGFILE=%SCRIPTS%results-logs\RESULTS_CT_%TODAY%.txt"
-echo Results CT  [%TODAY%] > "%LOGFILE%"
+powershell -NoProfile -Command "Set-Content -Path '%LOGFILE%' -Value 'Results CT [%TODAY%]' -Encoding UTF8"
 
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%RESDIR%\*.pdf" 2^>nul') do (
     set "PDF=%%f"
