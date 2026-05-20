@@ -599,18 +599,8 @@ def extract_file_date(filepath, track_code, text=''):
 
 def write_picks_file(all_picks, track_code, filepath):
     """Write picks_TRACK_DATE.txt next to this script for roi_tracker.py."""
-    stem = Path(filepath).stem.upper()
     tc = track_code.upper()
-
-    # TRACKMMDDDYYUSA  e.g. CT050926USA, FP051226USA
-    m = re.match(rf'^{re.escape(tc)}(\d{{2}})(\d{{2}})(\d{{2}})USA$', stem)
-    if m:
-        date_str = f"{m.group(1)}{m.group(2)}20{m.group(3)}"
-    else:
-        # TRACKx?MMDD  e.g. CTX0507Y, GPX0508X, EVD0509Y
-        m = re.match(rf'^{re.escape(tc)}[X]?(\d{{2}})(\d{{2}})', stem)
-        date_str = f"{m.group(1)}{m.group(2)}{date.today().year}" if m else stem
-
+    date_str = date.today().strftime('%m%d%Y')
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",

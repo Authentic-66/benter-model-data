@@ -22,7 +22,7 @@ echo Processing FP: %PDF%
 echo Processing FP: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-py -u "%SCRIPTS%process_results.py" "%RESDIR%\%PDF%" FP 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%process_results.py' '%RESDIR%\%PDF%' FP 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 echo.
 echo. >> "%LOGFILE%"
 echo Log saved: %LOGFILE%

@@ -30,7 +30,7 @@ echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-py -u "%SCRIPTS%process_results.py" "%BASE%\CharlesTown\ct-results-2026\%PDF%" CT 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%process_results.py' '%BASE%\CharlesTown\ct-results-2026\%PDF%' CT 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 echo   Results logged: results-logs\RESULTS_CT_%TODAY%.txt
 
 :: ── FAIRMOUNT PARK (FP) ──────────────────────────────────────────────────
@@ -53,7 +53,7 @@ echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-py -u "%SCRIPTS%process_results.py" "%BASE%\Fairmount Park\fp-results-2026\%PDF%" FP 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%process_results.py' '%BASE%\Fairmount Park\fp-results-2026\%PDF%' FP 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 echo   Results logged: results-logs\RESULTS_FP_%TODAY%.txt
 
 :: ── GULFSTREAM PARK (GP) ─────────────────────────────────────────────────
@@ -76,7 +76,7 @@ echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-py -u "%SCRIPTS%process_results.py" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" GP 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%process_results.py' '%BASE%\Gulfstream Park\gp-results-2026\%PDF%' GP 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 echo   Results logged: results-logs\RESULTS_GP_%TODAY%.txt
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
@@ -99,7 +99,7 @@ echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-py -u "%SCRIPTS%process_results.py" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" EVD 2>&1 | powershell -NoProfile -Command "$input | Tee-Object -FilePath '%LOGFILE%' -Append"
+powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; $out = py -u '%SCRIPTS%process_results.py' '%BASE%\Evangeline Downs\evd-results-2026\%PDF%' EVD 2>&1; $out | Write-Host; $out | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
 echo   Results logged: results-logs\RESULTS_EVD_%TODAY%.txt
 
 :done
