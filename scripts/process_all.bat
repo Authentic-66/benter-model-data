@@ -30,7 +30,9 @@ echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; py -u '%SCRIPTS%process_results.py' '%BASE%\CharlesTown\ct-results-2026\%PDF%' CT 2>&1 | ForEach-Object { Write-Host $_; $_ } | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+py -u "%SCRIPTS%process_results.py" "%BASE%\CharlesTown\ct-results-2026\%PDF%" CT > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 echo   Results logged: results-logs\RESULTS_CT_%TODAY%.txt
 
 :: ── FAIRMOUNT PARK (FP) ──────────────────────────────────────────────────
@@ -53,7 +55,9 @@ echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; py -u '%SCRIPTS%process_results.py' '%BASE%\Fairmount Park\fp-results-2026\%PDF%' FP 2>&1 | ForEach-Object { Write-Host $_; $_ } | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+py -u "%SCRIPTS%process_results.py" "%BASE%\Fairmount Park\fp-results-2026\%PDF%" FP > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 echo   Results logged: results-logs\RESULTS_FP_%TODAY%.txt
 
 :: ── GULFSTREAM PARK (GP) ─────────────────────────────────────────────────
@@ -76,7 +80,9 @@ echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; py -u '%SCRIPTS%process_results.py' '%BASE%\Gulfstream Park\gp-results-2026\%PDF%' GP 2>&1 | ForEach-Object { Write-Host $_; $_ } | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+py -u "%SCRIPTS%process_results.py" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" GP > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 echo   Results logged: results-logs\RESULTS_GP_%TODAY%.txt
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
@@ -99,7 +105,9 @@ echo   File: %PDF%
 echo   File: %PDF% >> "%LOGFILE%"
 echo.
 echo. >> "%LOGFILE%"
-powershell -NoProfile -Command "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; py -u '%SCRIPTS%process_results.py' '%BASE%\Evangeline Downs\evd-results-2026\%PDF%' EVD 2>&1 | ForEach-Object { Write-Host $_; $_ } | Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+py -u "%SCRIPTS%process_results.py" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" EVD > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 echo   Results logged: results-logs\RESULTS_EVD_%TODAY%.txt
 
 :done

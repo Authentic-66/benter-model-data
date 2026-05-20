@@ -65,14 +65,3 @@ Loading result PDFs...
 ######################################################################## 
  
 Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260519.txt 
- 
-======================================================================== 
-  EVANGELINE DOWNS (EVD) 
-======================================================================== 
-  No result PDF found for picks date 05152026 - skipping 
- 
-######################################################################## 
-  ALL TRACKS COMPLETE 
-######################################################################## 
- 
-Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260519.txt 
