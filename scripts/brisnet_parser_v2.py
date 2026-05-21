@@ -558,8 +558,8 @@ def extract_file_date(filepath, track_code, text=''):
         except ValueError:
             pass
 
-    # TRACKx?MMDD...  e.g. CTX0507Y, GPX0508X, EVD0509Y
-    m = re.match(rf'^{re.escape(tc)}[X]?(\d{{2}})(\d{{2}})', stem)
+    # TRACKx?MMDD...  e.g. CTX0507Y, GPX0508X, EVD0509Y, FPK0519Y
+    m = re.match(rf'^{re.escape(tc)}[A-Z]?(\d{{2}})(\d{{2}})', stem)
     if m:
         try:
             return date(date.today().year, int(m.group(1)), int(m.group(2)))

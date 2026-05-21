@@ -55,7 +55,54 @@ Loading result PDFs...
 ======================================================================== 
   EVANGELINE DOWNS (EVD) 
 ======================================================================== 
-  No result PDF found for picks date 05152026 - skipping 
+  Picks: picks_EVD_05152026.txt 
+  Result: EVD051426USA.pdf 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260519.txt 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_EVD_05152026.txt...
+  23 pick(s) loaded
+
+Loading result PDFs...
+  Parsing EVD051426USA.pdf [EVD]...
+    8 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ EVANGELINE DOWNS (EVD) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    Lolo'sGirl               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R1    ChargingOvatime          TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    AmericanVision           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    Consecrated              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    FieldStudy               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    Uninspired               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    Ken'sLegacy              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    CajunCoaster             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    FeathersRoad             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    Julia'sWarrior           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    Pinedale                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    CrimsonStorm             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    MySpecialStar            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    KohentheMan              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    ClearlyCredo             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    Begforforgiveness        TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    JohnnyPodres             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    Clarestown               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    Atmosphere               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    FreddiebyaNose           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    AllerVite                TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Seehoss                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    YourLadyship             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NO RESULT]
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $138.00  $  0.00   -$138.00  ROI: -100.0%
+
+============================================================================
+  OVERALL TOTAL                                    $138.00  $  0.00   -$138.00  ROI: -100.0%
+============================================================================
+
  
 ######################################################################## 
   ALL TRACKS COMPLETE 
@@ -152,7 +199,54 @@ Loading result PDFs...
 ======================================================================== 
   EVANGELINE DOWNS (EVD) 
 ======================================================================== 
-  No result PDF found for picks date 05152026 - skipping 
+  Picks: picks_EVD_05152026.txt 
+  Result: EVD051426USA.pdf 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260519.txt 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_EVD_05152026.txt...
+  23 pick(s) loaded
+
+Loading result PDFs...
+  Parsing EVD051426USA.pdf [EVD]...
+    8 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ EVANGELINE DOWNS (EVD) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    Lolo'sGirl               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R1    ChargingOvatime          TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    AmericanVision           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    Consecrated              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    FieldStudy               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    Uninspired               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    Ken'sLegacy              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    CajunCoaster             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    FeathersRoad             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    Julia'sWarrior           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    Pinedale                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    CrimsonStorm             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    MySpecialStar            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    KohentheMan              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    ClearlyCredo             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    Begforforgiveness        TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    JohnnyPodres             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    Clarestown               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    Atmosphere               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    FreddiebyaNose           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    AllerVite                TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Seehoss                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    YourLadyship             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NO RESULT]
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $138.00  $  0.00   -$138.00  ROI: -100.0%
+
+============================================================================
+  OVERALL TOTAL                                    $138.00  $  0.00   -$138.00  ROI: -100.0%
+============================================================================
+
  
 ######################################################################## 
   ALL TRACKS COMPLETE 

@@ -113,10 +113,10 @@ call :log "  No picks_EVD_*.txt found - run parse_evd.bat first"
 goto :done
 
 :evd_picks_ok
-:: Extract date from picks filename: picks_EVD_20260515.txt -> 20260515
+:: Extract date from picks filename: picks_EVD_05152026.txt -> 05152026
 set "PICKSDATE=%EVD_PICKS:picks_EVD_=%"
 set "PICKSDATE=%PICKSDATE:.txt=%"
-for /f "delims=" %%f in ('powershell -NoProfile -Command "Get-ChildItem '%BASE%\Evangeline Downs\evd-results-2026\*.pdf' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime.ToString('yyyyMMdd') -eq $env:PICKSDATE } | Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty Name"') do (
+for /f "delims=" %%f in ('powershell -NoProfile -Command "Get-ChildItem '%BASE%\Evangeline Downs\evd-results-2026\*.pdf' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime.ToString('MMddyyyy') -eq $env:PICKSDATE } | Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty Name"') do (
     set "PDF=%%f"
     goto :evd_run
 )

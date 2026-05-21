@@ -18,11 +18,11 @@ echo No picks_EVD_*.txt found in scripts folder. Run parse_evd.bat first. >> "%L
 pause & exit /b 1
 
 :gotpicks
-:: Extract date from picks filename: picks_EVD_20260515.txt -> 20260515
+:: Extract date from picks filename: picks_EVD_05152026.txt -> 05152026
 set "PICKSDATE=%PICKS:picks_EVD_=%"
 set "PICKSDATE=%PICKSDATE:.txt=%"
 
-for /f "delims=" %%f in ('powershell -NoProfile -Command "Get-ChildItem '%RESDIR%\*.pdf' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime.ToString('yyyyMMdd') -eq $env:PICKSDATE } | Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty Name"') do (
+for /f "delims=" %%f in ('powershell -NoProfile -Command "Get-ChildItem '%RESDIR%\*.pdf' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime.ToString('MMddyyyy') -eq $env:PICKSDATE } | Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty Name"') do (
     set "PDF=%%f"
     goto :run
 )
