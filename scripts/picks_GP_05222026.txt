@@ -1,0 +1,13 @@
+# Benter Model Picks - GP 05222026
+# Format: TRACK RACE HORSE SIGNAL BETS
+GP 1 ElusiveChalice TRAINER WPS
+GP 1 DiamondDancer TRAINER WPS
+GP 2 AwesomeNoah TRAINER WPS
+GP 2 Strike TRAINER WPS
+GP 2 Astrogem TRAINER WPS
+GP 3 SmartStriker TRAINER WPS
+GP 4 LizLovesShopping TRAINER WPS
+GP 5 MissValentina TRAINER WPS
+GP 7 Mia'sAngel TRAINER WPS
+GP 8 Pardo TRAINER WPS
+GP 9 StrategicWarrior TRAINER WPS

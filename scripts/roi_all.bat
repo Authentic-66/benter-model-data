@@ -110,24 +110,137 @@ for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_EVD_*.txt" 2^>nul') d
     goto :evd_picks_ok
 )
 call :log "  No picks_EVD_*.txt found - run parse_evd.bat first"
-goto :done
+goto :dd_section
 
 :evd_picks_ok
-:: Extract date from picks filename: picks_EVD_05152026.txt -> 05152026
-set "PICKSDATE=%EVD_PICKS:picks_EVD_=%"
-set "PICKSDATE=%PICKSDATE:.txt=%"
-for /f "delims=" %%f in ('powershell -NoProfile -Command "Get-ChildItem '%BASE%\Evangeline Downs\evd-results-2026\*.pdf' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime.ToString('MMddyyyy') -eq $env:PICKSDATE } | Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty Name"') do (
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Evangeline Downs\evd-results-2026\*.pdf" 2^>nul') do (
     set "PDF=%%f"
     goto :evd_run
 )
-call :log "  No result PDF found for picks date %PICKSDATE% - skipping"
-goto :done
+call :log "  No result PDF found - skipping"
+goto :dd_section
 
 :evd_run
 call :log "  Picks: %EVD_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%EVD_PICKS%" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+
+:: ── DELTA DOWNS (DD) ──────────────────────────────────────────────────────
+:dd_section
+call :log ""
+call :log "========================================================================"
+call :log "  DELTA DOWNS (DD)"
+call :log "========================================================================"
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_DD_*.txt" 2^>nul') do (
+    set "DD_PICKS=%%f"
+    goto :dd_picks_ok
+)
+call :log "  No picks_DD_*.txt found - run parse_dd.bat first"
+goto :fg_section
+
+:dd_picks_ok
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Delta Downs\dd-results-2025\*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :dd_run
+)
+call :log "  No result PDF found - skipping"
+goto :fg_section
+
+:dd_run
+call :log "  Picks: %DD_PICKS%"
+call :log "  Result: %PDF%"
+call :log ""
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%DD_PICKS%" "%BASE%\Delta Downs\dd-results-2025\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+
+:: ── FAIR GROUNDS (FG) ─────────────────────────────────────────────────────
+:fg_section
+call :log ""
+call :log "========================================================================"
+call :log "  FAIR GROUNDS (FG)"
+call :log "========================================================================"
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_FG_*.txt" 2^>nul') do (
+    set "FG_PICKS=%%f"
+    goto :fg_picks_ok
+)
+call :log "  No picks_FG_*.txt found - run parse_fg.bat first"
+goto :mvr_section
+
+:fg_picks_ok
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Fair Grounds\fg-results-2026\*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :fg_run
+)
+call :log "  No result PDF found - skipping"
+goto :mvr_section
+
+:fg_run
+call :log "  Picks: %FG_PICKS%"
+call :log "  Result: %PDF%"
+call :log ""
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%FG_PICKS%" "%BASE%\Fair Grounds\fg-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+
+:: ── MAHONING VALLEY (MVR) ─────────────────────────────────────────────────
+:mvr_section
+call :log ""
+call :log "========================================================================"
+call :log "  MAHONING VALLEY (MVR)"
+call :log "========================================================================"
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_MVR_*.txt" 2^>nul') do (
+    set "MVR_PICKS=%%f"
+    goto :mvr_picks_ok
+)
+call :log "  No picks_MVR_*.txt found - run parse_mvr.bat first"
+goto :lrl_section
+
+:mvr_picks_ok
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Mahoning Valley\mvr-2026-results\*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :mvr_run
+)
+call :log "  No result PDF found - skipping"
+goto :lrl_section
+
+:mvr_run
+call :log "  Picks: %MVR_PICKS%"
+call :log "  Result: %PDF%"
+call :log ""
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%MVR_PICKS%" "%BASE%\Mahoning Valley\mvr-2026-results\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+
+:: ── LAUREL PARK (LRL) ────────────────────────────────────────────────────
+:lrl_section
+call :log ""
+call :log "========================================================================"
+call :log "  LAUREL PARK (LRL)"
+call :log "========================================================================"
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_LRL_*.txt" 2^>nul') do (
+    set "LRL_PICKS=%%f"
+    goto :lrl_picks_ok
+)
+call :log "  No picks_LRL_*.txt found - run parse_lrl.bat first"
+goto :done
+
+:lrl_picks_ok
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Laurel Park\lrl-results-2026\*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :lrl_run
+)
+call :log "  No result PDF found - skipping"
+goto :done
+
+:lrl_run
+call :log "  Picks: %LRL_PICKS%"
+call :log "  Result: %PDF%"
+call :log ""
+py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%LRL_PICKS%" "%BASE%\Laurel Park\lrl-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 

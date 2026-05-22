@@ -93,18 +93,114 @@ for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Evangeline Downs\evd-pps-file
     goto :evd_run
 )
 echo   No PP file found - skipping
-goto :done
+goto :dd_section
 
 :evd_run
 for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Evangeline Downs\evd-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
 if not "%FILEDATE%"=="%TODAY%" (
     echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping EVD
-    goto :done
+    goto :dd_section
 )
 echo   File: %PDF%
 echo.
 py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Evangeline Downs\evd-pps-files\%PDF%" EVD
 call :log_picks EVD
+
+:: ── DELTA DOWNS (DD) ──────────────────────────────────────────────────────
+:dd_section
+echo.
+echo ========================================================================
+echo   DELTA DOWNS (DD)
+echo ========================================================================
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Delta Downs\dd-pps-files\*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :dd_run
+)
+echo   No PP file found - skipping
+goto :fg_section
+
+:dd_run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Delta Downs\dd-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping DD
+    goto :fg_section
+)
+echo   File: %PDF%
+echo.
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Delta Downs\dd-pps-files\%PDF%" DD
+call :log_picks DD
+
+:: ── FAIR GROUNDS (FG) ─────────────────────────────────────────────────────
+:fg_section
+echo.
+echo ========================================================================
+echo   FAIR GROUNDS (FG)
+echo ========================================================================
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Fair Grounds\fg-pps-files\*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :fg_run
+)
+echo   No PP file found - skipping
+goto :mvr_section
+
+:fg_run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Fair Grounds\fg-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping FG
+    goto :mvr_section
+)
+echo   File: %PDF%
+echo.
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Fair Grounds\fg-pps-files\%PDF%" FG
+call :log_picks FG
+
+:: ── MAHONING VALLEY (MVR) ─────────────────────────────────────────────────
+:mvr_section
+echo.
+echo ========================================================================
+echo   MAHONING VALLEY (MVR)
+echo ========================================================================
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Mahoning Valley\mvr-pps-files\*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :mvr_run
+)
+echo   No PP file found - skipping
+goto :lrl_section
+
+:mvr_run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Mahoning Valley\mvr-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping MVR
+    goto :lrl_section
+)
+echo   File: %PDF%
+echo.
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Mahoning Valley\mvr-pps-files\%PDF%" MVR
+call :log_picks MVR
+
+:: ── LAUREL PARK (LRL) ────────────────────────────────────────────────────
+:lrl_section
+echo.
+echo ========================================================================
+echo   LAUREL PARK (LRL)
+echo ========================================================================
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Laurel Park\laurel-pp-files\*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :lrl_run
+)
+echo   No PP file found - skipping
+goto :done
+
+:lrl_run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Laurel Park\laurel-pp-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping LRL
+    goto :done
+)
+echo   File: %PDF%
+echo.
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Laurel Park\laurel-pp-files\%PDF%" LRL
+call :log_picks LRL
 
 :done
 echo.
