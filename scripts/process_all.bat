@@ -24,15 +24,19 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\CharlesTown\ct-results-2026\*
     set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
     set "FILEDATE=20!YY!!MM!!DD!"
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_CT_!FILEDATE!.txt"
-    powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results CT [!FILEDATE!]' -Encoding UTF8"
-    echo   File: %%f
-    echo   File: %%f >> "!LOGFILE!"
-    echo.
-    echo. >> "!LOGFILE!"
-    py -u "%SCRIPTS%process_results.py" "%BASE%\CharlesTown\ct-results-2026\%%f" CT > "%TEMP%\results_tmp.txt" 2>&1
-    type "%TEMP%\results_tmp.txt"
-    powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
-    echo   Results logged: results-logs\RESULTS_CT_!FILEDATE!.txt
+    if exist "!LOGFILE!" (
+        echo   Already processed: %%f - skipping
+    ) else (
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results CT [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "%BASE%\CharlesTown\ct-results-2026\%%f" CT > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_CT_!FILEDATE!.txt
+    )
 )
 if "!CT_FOUND!"=="0" echo   No result PDF found - skipping
 
@@ -49,15 +53,19 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Fairmount Park\fp-results-202
     set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
     set "FILEDATE=20!YY!!MM!!DD!"
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_FP_!FILEDATE!.txt"
-    powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results FP [!FILEDATE!]' -Encoding UTF8"
-    echo   File: %%f
-    echo   File: %%f >> "!LOGFILE!"
-    echo.
-    echo. >> "!LOGFILE!"
-    py -u "%SCRIPTS%process_results.py" "%BASE%\Fairmount Park\fp-results-2026\%%f" FP > "%TEMP%\results_tmp.txt" 2>&1
-    type "%TEMP%\results_tmp.txt"
-    powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
-    echo   Results logged: results-logs\RESULTS_FP_!FILEDATE!.txt
+    if exist "!LOGFILE!" (
+        echo   Already processed: %%f - skipping
+    ) else (
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results FP [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "%BASE%\Fairmount Park\fp-results-2026\%%f" FP > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_FP_!FILEDATE!.txt
+    )
 )
 if "!FP_FOUND!"=="0" echo   No result PDF found - skipping
 
@@ -74,15 +82,19 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Gulfstream Park\gp-results-20
     set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
     set "FILEDATE=20!YY!!MM!!DD!"
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_GP_!FILEDATE!.txt"
-    powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results GP [!FILEDATE!]' -Encoding UTF8"
-    echo   File: %%f
-    echo   File: %%f >> "!LOGFILE!"
-    echo.
-    echo. >> "!LOGFILE!"
-    py -u "%SCRIPTS%process_results.py" "%BASE%\Gulfstream Park\gp-results-2026\%%f" GP > "%TEMP%\results_tmp.txt" 2>&1
-    type "%TEMP%\results_tmp.txt"
-    powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
-    echo   Results logged: results-logs\RESULTS_GP_!FILEDATE!.txt
+    if exist "!LOGFILE!" (
+        echo   Already processed: %%f - skipping
+    ) else (
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results GP [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "%BASE%\Gulfstream Park\gp-results-2026\%%f" GP > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_GP_!FILEDATE!.txt
+    )
 )
 if "!GP_FOUND!"=="0" echo   No result PDF found - skipping
 
@@ -99,15 +111,19 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Evangeline Downs\evd-results-
     set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
     set "FILEDATE=20!YY!!MM!!DD!"
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_EVD_!FILEDATE!.txt"
-    powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results EVD [!FILEDATE!]' -Encoding UTF8"
-    echo   File: %%f
-    echo   File: %%f >> "!LOGFILE!"
-    echo.
-    echo. >> "!LOGFILE!"
-    py -u "%SCRIPTS%process_results.py" "%BASE%\Evangeline Downs\evd-results-2026\%%f" EVD > "%TEMP%\results_tmp.txt" 2>&1
-    type "%TEMP%\results_tmp.txt"
-    powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
-    echo   Results logged: results-logs\RESULTS_EVD_!FILEDATE!.txt
+    if exist "!LOGFILE!" (
+        echo   Already processed: %%f - skipping
+    ) else (
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results EVD [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "%BASE%\Evangeline Downs\evd-results-2026\%%f" EVD > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_EVD_!FILEDATE!.txt
+    )
 )
 if "!EVD_FOUND!"=="0" echo   No result PDF found - skipping
 
@@ -122,15 +138,19 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Delta Downs\dd-results-2025\*
     set "STEM=%%~nf"
     set "FILEDATE=!STEM:~0,8!"
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_DD_!FILEDATE!.txt"
-    powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results DD [!FILEDATE!]' -Encoding UTF8"
-    echo   File: %%f
-    echo   File: %%f >> "!LOGFILE!"
-    echo.
-    echo. >> "!LOGFILE!"
-    py -u "%SCRIPTS%process_results.py" "%BASE%\Delta Downs\dd-results-2025\%%f" DD > "%TEMP%\results_tmp.txt" 2>&1
-    type "%TEMP%\results_tmp.txt"
-    powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
-    echo   Results logged: results-logs\RESULTS_DD_!FILEDATE!.txt
+    if exist "!LOGFILE!" (
+        echo   Already processed: %%f - skipping
+    ) else (
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results DD [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "%BASE%\Delta Downs\dd-results-2025\%%f" DD > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_DD_!FILEDATE!.txt
+    )
 )
 if "!DD_FOUND!"=="0" echo   No result PDF found - skipping
 
@@ -158,15 +178,19 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Fair Grounds\fg-results-2026\
     set "STEM=%%~nf"
     set "FILEDATE=!STEM:~0,8!"
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_FG_!FILEDATE!.txt"
-    powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results FG [!FILEDATE!]' -Encoding UTF8"
-    echo   File: %%f
-    echo   File: %%f >> "!LOGFILE!"
-    echo.
-    echo. >> "!LOGFILE!"
-    py -u "%SCRIPTS%process_results.py" "%BASE%\Fair Grounds\fg-results-2026\%%f" FG > "%TEMP%\results_tmp.txt" 2>&1
-    type "%TEMP%\results_tmp.txt"
-    powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
-    echo   Results logged: results-logs\RESULTS_FG_!FILEDATE!.txt
+    if exist "!LOGFILE!" (
+        echo   Already processed: %%f - skipping
+    ) else (
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results FG [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "%BASE%\Fair Grounds\fg-results-2026\%%f" FG > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_FG_!FILEDATE!.txt
+    )
 )
 
 :: ── MAHONING VALLEY (MVR) ─────────────────────────────────────────────────
@@ -194,15 +218,19 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Mahoning Valley\mvr-2026-resu
     set "STEM=%%~nf"
     set "FILEDATE=!STEM:~0,8!"
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_MVR_!FILEDATE!.txt"
-    powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results MVR [!FILEDATE!]' -Encoding UTF8"
-    echo   File: %%f
-    echo   File: %%f >> "!LOGFILE!"
-    echo.
-    echo. >> "!LOGFILE!"
-    py -u "%SCRIPTS%process_results.py" "%BASE%\Mahoning Valley\mvr-2026-results\%%f" MVR > "%TEMP%\results_tmp.txt" 2>&1
-    type "%TEMP%\results_tmp.txt"
-    powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
-    echo   Results logged: results-logs\RESULTS_MVR_!FILEDATE!.txt
+    if exist "!LOGFILE!" (
+        echo   Already processed: %%f - skipping
+    ) else (
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results MVR [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "%BASE%\Mahoning Valley\mvr-2026-results\%%f" MVR > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_MVR_!FILEDATE!.txt
+    )
 )
 
 :: ── LAUREL PARK (LRL) ────────────────────────────────────────────────────
@@ -217,15 +245,19 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Laurel Park\lrl-results-2026\
     set "STEM=%%~nf"
     set "FILEDATE=!STEM:~0,8!"
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_LRL_!FILEDATE!.txt"
-    powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results LRL [!FILEDATE!]' -Encoding UTF8"
-    echo   File: %%f
-    echo   File: %%f >> "!LOGFILE!"
-    echo.
-    echo. >> "!LOGFILE!"
-    py -u "%SCRIPTS%process_results.py" "%BASE%\Laurel Park\lrl-results-2026\%%f" LRL > "%TEMP%\results_tmp.txt" 2>&1
-    type "%TEMP%\results_tmp.txt"
-    powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
-    echo   Results logged: results-logs\RESULTS_LRL_!FILEDATE!.txt
+    if exist "!LOGFILE!" (
+        echo   Already processed: %%f - skipping
+    ) else (
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results LRL [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "%BASE%\Laurel Park\lrl-results-2026\%%f" LRL > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_LRL_!FILEDATE!.txt
+    )
 )
 if "!LRL_FOUND!"=="0" echo   No result PDF found - skipping
 
