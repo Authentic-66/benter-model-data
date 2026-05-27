@@ -70,8 +70,9 @@ set "DD=%DATERAW:~2,2%"
 set "YY=%DATERAW:~6,2%"
 set "YYYY=%DATERAW:~4,4%"
 set "PICKSDATE=%YYYY%%MM%%DD%"
+set "FP_DIR=%BASE%\Fairmount Park\fp-results-2026"
 :: FP result PDF: FP[MM][DD][YY]USA.pdf
-for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Fairmount Park\fp-results-2026\FP%MM%%DD%%YY%USA.pdf" 2^>nul') do (
+for /f "delims=" %%f in ('dir /b /a-d "%FP_DIR%\FP%MM%%DD%%YY%USA.pdf" 2^>nul') do (
     set "PDF=%%f"
     goto :fp_run
 )
@@ -82,7 +83,9 @@ goto :gp_section
 call :log "  Picks: %FP_PICKS%"
 call :log "  Result: %PDF%"
 call :log ""
-py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%FP_PICKS%" "%BASE%\Fairmount Park\fp-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
+set "FP_PICKS_PATH=%SCRIPTS%%FP_PICKS%"
+set "FP_PDF_PATH=%FP_DIR%\%PDF%"
+py -u "%SCRIPTS%roi_tracker.py" "%FP_PICKS_PATH%" "%FP_PDF_PATH%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 

@@ -1,4 +1,25 @@
 ROI All Tracks  [20260526] 
+======================================================================== 
+  DELTA DOWNS (DD) 
+======================================================================== 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts" C:\Users\bornr\OneDrive\Documents\GitHub...
+Traceback (most recent call last):
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 233, in <module>
+    run(sys.argv[1], sys.argv[2:])
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 189, in run
+    picks = load_picks(picks_file)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 40, in load_picks
+    with open(filepath, encoding='utf-8', errors='replace') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\bornr\\OneDrive\\Documents\\GitHub Files\\benter-model-data\\scripts" C:\\Users\\bornr\\OneDrive\\Documents\\GitHub'
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
  
 ======================================================================== 
   LAUREL PARK (LRL) 
@@ -31,8 +52,322 @@ Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scri
 ######################################################################## 
  
 Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
-  BENTER MODEL -- ROI ALL TRACKS 
+  Result: GP052226USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_GP_05222026.txt...
+  11 pick(s) loaded
+
+Loading result PDFs...
+  Parsing GP052226USA.pdf [GP]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ GULFSTREAM PARK (GP) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    ElusiveChalice           TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R1    DiamondDancer            TRAINER   WPS     3  $6.00  $ 2.80     -$3.20
+  R2    AwesomeNoah              TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R2    Strike                   TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R2    Astrogem                 TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R3    SmartStriker             TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R4    LizLovesShopping         TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R5    MissValentina            TRAINER   WPS     2  $6.00  $11.80     +$5.80
+  R7    Mia'sAngel               TRAINER   WPS     3  $6.00  $ 4.40     -$1.60
+  R8    Pardo                    TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R9    StrategicWarrior         TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $66.00  $ 19.00    -$47.00  ROI: -71.2%
+
+============================================================================
+  OVERALL TOTAL                                    $66.00  $ 19.00    -$47.00  ROI: -71.2%
+============================================================================
+
+ 
+======================================================================== 
+  EVANGELINE DOWNS (EVD) 
+ 
 ######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+  Picks: picks_EVD_05222026.txt 
+  Result: EVD052226USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_EVD_05222026.txt...
+  27 pick(s) loaded
+
+Loading result PDFs...
+  Parsing EVD052226USA.pdf [EVD]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ EVANGELINE DOWNS (EVD) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    WhiskeyChasin            TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R1    MyOtherHalf              TRAINER   WPS     1  $6.00  $ 8.80     +$2.80
+  R2    Twofexusnexus            TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R2    BindFaith                TRAINER   WPS     3  $6.00  $ 9.40     +$3.40
+  R2    SupremeCapo              TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R2    GlobalStage              TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R4    Jamesy'sEmpire           TRAINER   WPS     3  $6.00  $ 3.00     -$3.00
+  R4    LilSweetThang            TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R4    FirstClassHarlow         TRAINER   WPS    11  $6.00  $ 0.00     -$6.00
+  R4    HighstakesHustler        TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R4    RighteousStar            TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R5    StrongPromise            TRAINER   WPS     3  $6.00  $ 2.10     -$3.90
+  R5    Achromedoutcat           TRAINER   WPS     1  $6.00  $ 8.70     +$2.70
+  R5    WiseAnchor               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    Carpis                   TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R5    Astrologysprotege        TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    StraightDropbilly        TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R7    DragonNavy               TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R8    GrandAcademic            TRAINER   WPS     2  $6.00  $17.60    +$11.60
+  R8    GorillaTrek              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Mr.Faversham             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    BigDrinker               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Publius                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    He'sExaggerating         TRAINER   WPS     3  $6.00  $ 2.10     -$3.90
+  R9    BlackberryCrown          TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R9    RunningBayou             TRAINER   WPS     2  $6.00  $ 4.30     -$1.70
+  R9    PineappleWilly           TRAINER   WPS     1  $6.00  $ 7.50     +$1.50
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $162.00  $ 63.50    -$98.50  ROI: -60.8%
+
+============================================================================
+  OVERALL TOTAL                                    $162.00  $ 63.50    -$98.50  ROI: -60.8%
+============================================================================
+
+ 
+======================================================================== 
+  DELTA DOWNS (DD) 
+======================================================================== 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts" C:\Users\bornr\OneDrive\Documents\GitHub...
+Traceback (most recent call last):
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 233, in <module>
+    run(sys.argv[1], sys.argv[2:])
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 189, in run
+    picks = load_picks(picks_file)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 40, in load_picks
+    with open(filepath, encoding='utf-8', errors='replace') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\bornr\\OneDrive\\Documents\\GitHub Files\\benter-model-data\\scripts" C:\\Users\\bornr\\OneDrive\\Documents\\GitHub'
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+ 
+======================================================================== 
+  FAIR GROUNDS (FG) 
+======================================================================== 
+  No picks_FG_*.txt found - run parse_fg.bat first 
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+######################################################################## 
+  BENTER MODEL -- ROI ALL TRACKS 
+ 
+======================================================================== 
+  EVANGELINE DOWNS (EVD) 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+  Picks: picks_EVD_05222026.txt 
+  Result: EVD052226USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_EVD_05222026.txt...
+  27 pick(s) loaded
+
+Loading result PDFs...
+  Parsing EVD052226USA.pdf [EVD]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ EVANGELINE DOWNS (EVD) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    WhiskeyChasin            TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R1    MyOtherHalf              TRAINER   WPS     1  $6.00  $ 8.80     +$2.80
+  R2    Twofexusnexus            TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R2    BindFaith                TRAINER   WPS     3  $6.00  $ 9.40     +$3.40
+  R2    SupremeCapo              TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R2    GlobalStage              TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R4    Jamesy'sEmpire           TRAINER   WPS     3  $6.00  $ 3.00     -$3.00
+  R4    LilSweetThang            TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R4    FirstClassHarlow         TRAINER   WPS    11  $6.00  $ 0.00     -$6.00
+  R4    HighstakesHustler        TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R4    RighteousStar            TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R5    StrongPromise            TRAINER   WPS     3  $6.00  $ 2.10     -$3.90
+  R5    Achromedoutcat           TRAINER   WPS     1  $6.00  $ 8.70     +$2.70
+  R5    WiseAnchor               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    Carpis                   TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R5    Astrologysprotege        TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    StraightDropbilly        TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R7    DragonNavy               TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R8    GrandAcademic            TRAINER   WPS     2  $6.00  $17.60    +$11.60
+  R8    GorillaTrek              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Mr.Faversham             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    BigDrinker               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Publius                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    He'sExaggerating         TRAINER   WPS     3  $6.00  $ 2.10     -$3.90
+  R9    BlackberryCrown          TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R9    RunningBayou             TRAINER   WPS     2  $6.00  $ 4.30     -$1.70
+  R9    PineappleWilly           TRAINER   WPS     1  $6.00  $ 7.50     +$1.50
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $162.00  $ 63.50    -$98.50  ROI: -60.8%
+
+============================================================================
+  OVERALL TOTAL                                    $162.00  $ 63.50    -$98.50  ROI: -60.8%
+============================================================================
+
+ 
+======================================================================== 
+  DELTA DOWNS (DD) 
+======================================================================== 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts" C:\Users\bornr\OneDrive\Documents\GitHub...
+Traceback (most recent call last):
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 233, in <module>
+    run(sys.argv[1], sys.argv[2:])
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 189, in run
+    picks = load_picks(picks_file)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 40, in load_picks
+    with open(filepath, encoding='utf-8', errors='replace') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\bornr\\OneDrive\\Documents\\GitHub Files\\benter-model-data\\scripts" C:\\Users\\bornr\\OneDrive\\Documents\\GitHub'
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+ 
+======================================================================== 
+  FAIR GROUNDS (FG) 
+======================================================================== 
+  No picks_FG_*.txt found - run parse_fg.bat first 
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+  No picks_FG_*.txt found - run parse_fg.bat first 
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+======================================================================== 
+  CHARLES TOWN (CT) 
+======================================================================== 
+  FAIR GROUNDS (FG) 
+======================================================================== 
+  No picks_FG_*.txt found - run parse_fg.bat first 
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+Usage: python roi_tracker.py <picks.txt> <result.pdf> [result.pdf ...]
+
+picks.txt format (one pick per line):
+  TRACK  RACE  HORSE  SIGNAL  [BETS]
+  CT     3     BigJoeB        TRAINER   WPS
+  CT     4     HeyBoots       HORSE
+  GP     2     SomHorse       TRAINER   W
+ 
+======================================================================== 
+  GULFSTREAM PARK (GP) 
 ======================================================================== 
 ======================================================================== 
   DELTA DOWNS (DD) 
@@ -238,58 +573,12 @@ Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scri
  
 Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
 ======================================================================== 
-  CHARLES TOWN (CT) 
-  LAUREL PARK (LRL) 
-======================================================================== 
-  No picks_LRL_*.txt found - run parse_lrl.bat first 
- 
-######################################################################## 
-  ALL TRACKS COMPLETE 
-######################################################################## 
- 
-Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
- 
-
-Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts" C:\Users\bornr\OneDrive\Documents\GitHub...
-Traceback (most recent call last):
-  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 233, in <module>
-    run(sys.argv[1], sys.argv[2:])
-  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 189, in run
-    picks = load_picks(picks_file)
-            ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 40, in load_picks
-    with open(filepath, encoding='utf-8', errors='replace') as f:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-OSError: [Errno 22] Invalid argument: 'C:\\Users\\bornr\\OneDrive\\Documents\\GitHub Files\\benter-model-data\\scripts" C:\\Users\\bornr\\OneDrive\\Documents\\GitHub'
- 
-======================================================================== 
-  LAUREL PARK (LRL) 
-======================================================================== 
-  No picks_LRL_*.txt found - run parse_lrl.bat first 
- 
-######################################################################## 
-  ALL TRACKS COMPLETE 
-######################################################################## 
- 
-Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
-  No result PDF found for picks date 20260521 - skipping CT 
- 
-======================================================================== 
   FAIRMOUNT PARK (FP) 
-  Result: EVD052226USA.pdf 
  
-
-Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts" C:\Users\bornr\OneDrive\Documents\GitHub...
-Traceback (most recent call last):
-  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 233, in <module>
-    run(sys.argv[1], sys.argv[2:])
-  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 189, in run
-    picks = load_picks(picks_file)
-            ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 40, in load_picks
-    with open(filepath, encoding='utf-8', errors='replace') as f:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-OSError: [Errno 22] Invalid argument: 'C:\\Users\\bornr\\OneDrive\\Documents\\GitHub Files\\benter-model-data\\scripts" C:\\Users\\bornr\\OneDrive\\Documents\\GitHub'
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
  
 ######################################################################## 
   ALL TRACKS COMPLETE 
@@ -297,12 +586,6 @@ OSError: [Errno 22] Invalid argument: 'C:\\Users\\bornr\\OneDrive\\Documents\\Gi
  
 Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
   Picks: picks_FP_05262026.txt 
-  Result: FP052626USA.pdf 
-  No picks_FG_*.txt found - run parse_fg.bat first 
- 
-======================================================================== 
-  MAHONING VALLEY (MVR) 
-======================================================================== 
   No picks_MVR_*.txt found - run parse_mvr.bat first 
  
 ======================================================================== 
@@ -315,6 +598,7 @@ Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scri
 ######################################################################## 
  
 Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+ 
 
 Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_FP_05262026.txt...
   21 pick(s) loaded
@@ -453,6 +737,91 @@ Loading result PDFs...
  
 ======================================================================== 
   EVANGELINE DOWNS (EVD) 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
+  Picks: picks_EVD_05222026.txt 
+  Result: EVD052226USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_EVD_05222026.txt...
+  27 pick(s) loaded
+
+Loading result PDFs...
+  Parsing EVD052226USA.pdf [EVD]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ EVANGELINE DOWNS (EVD) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    WhiskeyChasin            TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R1    MyOtherHalf              TRAINER   WPS     1  $6.00  $ 8.80     +$2.80
+  R2    Twofexusnexus            TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R2    BindFaith                TRAINER   WPS     3  $6.00  $ 9.40     +$3.40
+  R2    SupremeCapo              TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R2    GlobalStage              TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R4    Jamesy'sEmpire           TRAINER   WPS     3  $6.00  $ 3.00     -$3.00
+  R4    LilSweetThang            TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R4    FirstClassHarlow         TRAINER   WPS    11  $6.00  $ 0.00     -$6.00
+  R4    HighstakesHustler        TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R4    RighteousStar            TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R5    StrongPromise            TRAINER   WPS     3  $6.00  $ 2.10     -$3.90
+  R5    Achromedoutcat           TRAINER   WPS     1  $6.00  $ 8.70     +$2.70
+  R5    WiseAnchor               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    Carpis                   TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R5    Astrologysprotege        TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    StraightDropbilly        TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R7    DragonNavy               TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R8    GrandAcademic            TRAINER   WPS     2  $6.00  $17.60    +$11.60
+  R8    GorillaTrek              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Mr.Faversham             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    BigDrinker               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    Publius                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    He'sExaggerating         TRAINER   WPS     3  $6.00  $ 2.10     -$3.90
+  R9    BlackberryCrown          TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R9    RunningBayou             TRAINER   WPS     2  $6.00  $ 4.30     -$1.70
+  R9    PineappleWilly           TRAINER   WPS     1  $6.00  $ 7.50     +$1.50
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $162.00  $ 63.50    -$98.50  ROI: -60.8%
+
+============================================================================
+  OVERALL TOTAL                                    $162.00  $ 63.50    -$98.50  ROI: -60.8%
+============================================================================
+
+ 
+======================================================================== 
+  DELTA DOWNS (DD) 
+======================================================================== 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts" C:\Users\bornr\OneDrive\Documents\GitHub...
+Traceback (most recent call last):
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 233, in <module>
+    run(sys.argv[1], sys.argv[2:])
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 189, in run
+    picks = load_picks(picks_file)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi_tracker.py", line 40, in load_picks
+    with open(filepath, encoding='utf-8', errors='replace') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\bornr\\OneDrive\\Documents\\GitHub Files\\benter-model-data\\scripts" C:\\Users\\bornr\\OneDrive\\Documents\\GitHub'
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
  
 ######################################################################## 
   ALL TRACKS COMPLETE 
