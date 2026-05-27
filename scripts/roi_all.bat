@@ -26,17 +26,19 @@ call :log "  No picks_CT_*.txt found - run parse_ct.bat first"
 goto :fp_section
 
 :ct_picks_ok
-:: picks_CT_MMDDYYYY.txt  →  prefix "picks_CT_" is 9 chars
+:: picks_CT_MMDDYYYY.txt — "picks_CT_" prefix is 9 chars
 set "DATERAW=%CT_PICKS:~9,8%"
 set "MM=%DATERAW:~0,2%"
 set "DD=%DATERAW:~2,2%"
 set "YY=%DATERAW:~6,2%"
-set "PICKSDATE=%DATERAW:~4,4%%MM%%DD%"
-if exist "%BASE%\CharlesTown\ct-results-2026\CT%MM%%DD%%YY%USA.pdf" (
-    set "PDF=CT%MM%%DD%%YY%USA.pdf"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
+:: CT result PDF: CT[MM][DD][YY]USA.pdf
+for /f "delims=" %%f in ('dir /b /a-d "%BASE%\CharlesTown\ct-results-2026\CT%MM%%DD%%YY%USA.pdf" 2^>nul') do (
+    set "PDF=%%f"
     goto :ct_run
 )
-call :log "  No result found for picks date %PICKSDATE%"
+call :log "  No result PDF found for picks date %PICKSDATE% - skipping CT"
 goto :fp_section
 
 :ct_run
@@ -61,17 +63,19 @@ call :log "  No picks_FP_*.txt found - run parse_fp.bat first"
 goto :gp_section
 
 :fp_picks_ok
-:: picks_FP_MMDDYYYY.txt  →  prefix "picks_FP_" is 9 chars
+:: picks_FP_MMDDYYYY.txt — "picks_FP_" prefix is 9 chars
 set "DATERAW=%FP_PICKS:~9,8%"
 set "MM=%DATERAW:~0,2%"
 set "DD=%DATERAW:~2,2%"
 set "YY=%DATERAW:~6,2%"
-set "PICKSDATE=%DATERAW:~4,4%%MM%%DD%"
-if exist "%BASE%\Fairmount Park\fp-results-2026\FP%MM%%DD%%YY%USA.pdf" (
-    set "PDF=FP%MM%%DD%%YY%USA.pdf"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
+:: FP result PDF: FP[MM][DD][YY]USA.pdf
+for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Fairmount Park\fp-results-2026\FP%MM%%DD%%YY%USA.pdf" 2^>nul') do (
+    set "PDF=%%f"
     goto :fp_run
 )
-call :log "  No result found for picks date %PICKSDATE%"
+call :log "  No result PDF found for picks date %PICKSDATE% - skipping FP"
 goto :gp_section
 
 :fp_run
@@ -96,17 +100,19 @@ call :log "  No picks_GP_*.txt found - run parse_gp.bat first"
 goto :evd_section
 
 :gp_picks_ok
-:: picks_GP_MMDDYYYY.txt  →  prefix "picks_GP_" is 9 chars
+:: picks_GP_MMDDYYYY.txt — "picks_GP_" prefix is 9 chars
 set "DATERAW=%GP_PICKS:~9,8%"
 set "MM=%DATERAW:~0,2%"
 set "DD=%DATERAW:~2,2%"
 set "YY=%DATERAW:~6,2%"
-set "PICKSDATE=%DATERAW:~4,4%%MM%%DD%"
-if exist "%BASE%\Gulfstream Park\gp-results-2026\GP%MM%%DD%%YY%USA.pdf" (
-    set "PDF=GP%MM%%DD%%YY%USA.pdf"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
+:: GP result PDF: GP[MM][DD][YY]USA.pdf
+for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Gulfstream Park\gp-results-2026\GP%MM%%DD%%YY%USA.pdf" 2^>nul') do (
+    set "PDF=%%f"
     goto :gp_run
 )
-call :log "  No result found for picks date %PICKSDATE%"
+call :log "  No result PDF found for picks date %PICKSDATE% - skipping GP"
 goto :evd_section
 
 :gp_run
@@ -131,17 +137,19 @@ call :log "  No picks_EVD_*.txt found - run parse_evd.bat first"
 goto :dd_section
 
 :evd_picks_ok
-:: picks_EVD_MMDDYYYY.txt  →  prefix "picks_EVD_" is 10 chars
+:: picks_EVD_MMDDYYYY.txt — "picks_EVD_" prefix is 10 chars
 set "DATERAW=%EVD_PICKS:~10,8%"
 set "MM=%DATERAW:~0,2%"
 set "DD=%DATERAW:~2,2%"
 set "YY=%DATERAW:~6,2%"
-set "PICKSDATE=%DATERAW:~4,4%%MM%%DD%"
-if exist "%BASE%\Evangeline Downs\evd-results-2026\EVD%MM%%DD%%YY%USA.pdf" (
-    set "PDF=EVD%MM%%DD%%YY%USA.pdf"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
+:: EVD result PDF: EVD[MM][DD][YY]USA.pdf
+for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Evangeline Downs\evd-results-2026\EVD%MM%%DD%%YY%USA.pdf" 2^>nul') do (
+    set "PDF=%%f"
     goto :evd_run
 )
-call :log "  No result found for picks date %PICKSDATE%"
+call :log "  No result PDF found for picks date %PICKSDATE% - skipping EVD"
 goto :dd_section
 
 :evd_run
@@ -166,17 +174,18 @@ call :log "  No picks_DD_*.txt found - run parse_dd.bat first"
 goto :fg_section
 
 :dd_picks_ok
-:: picks_DD_MMDDYYYY.txt  →  prefix "picks_DD_" is 9 chars
-:: DD uses standard format: YYYYMMDD-usa-ded-a-d.standard.pdf
+:: picks_DD_MMDDYYYY.txt — "picks_DD_" prefix is 9 chars
+:: DD result PDF: YYYYMMDD-usa-ded-a-d.standard.pdf
 set "DATERAW=%DD_PICKS:~9,8%"
 set "MM=%DATERAW:~0,2%"
 set "DD=%DATERAW:~2,2%"
-set "PICKSDATE=%DATERAW:~4,4%%MM%%DD%"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
 for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Delta Downs\dd-results-2025\%PICKSDATE%-usa-*.pdf" 2^>nul') do (
     set "PDF=%%f"
     goto :dd_run
 )
-call :log "  No result found for picks date %PICKSDATE%"
+call :log "  No result PDF found for picks date %PICKSDATE% - skipping DD"
 goto :fg_section
 
 :dd_run
@@ -201,17 +210,18 @@ call :log "  No picks_FG_*.txt found - run parse_fg.bat first"
 goto :mvr_section
 
 :fg_picks_ok
-:: picks_FG_MMDDYYYY.txt  →  prefix "picks_FG_" is 9 chars
-:: FG uses standard format: YYYYMMDD-usa-fg-a-d.standard.pdf
+:: picks_FG_MMDDYYYY.txt — "picks_FG_" prefix is 9 chars
+:: FG result PDF: YYYYMMDD-usa-fg-a-d.standard.pdf
 set "DATERAW=%FG_PICKS:~9,8%"
 set "MM=%DATERAW:~0,2%"
 set "DD=%DATERAW:~2,2%"
-set "PICKSDATE=%DATERAW:~4,4%%MM%%DD%"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
 for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Fair Grounds\fg-results-2026\%PICKSDATE%-usa-*.pdf" 2^>nul') do (
     set "PDF=%%f"
     goto :fg_run
 )
-call :log "  No result found for picks date %PICKSDATE%"
+call :log "  No result PDF found for picks date %PICKSDATE% - skipping FG"
 goto :mvr_section
 
 :fg_run
@@ -236,17 +246,18 @@ call :log "  No picks_MVR_*.txt found - run parse_mvr.bat first"
 goto :lrl_section
 
 :mvr_picks_ok
-:: picks_MVR_MMDDYYYY.txt  →  prefix "picks_MVR_" is 10 chars
-:: MVR uses standard format: YYYYMMDD-usa-mvr-a-d.standard.pdf
+:: picks_MVR_MMDDYYYY.txt — "picks_MVR_" prefix is 10 chars
+:: MVR result PDF: YYYYMMDD-usa-mvr-a-d.standard.pdf
 set "DATERAW=%MVR_PICKS:~10,8%"
 set "MM=%DATERAW:~0,2%"
 set "DD=%DATERAW:~2,2%"
-set "PICKSDATE=%DATERAW:~4,4%%MM%%DD%"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
 for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Mahoning Valley\mvr-2026-results\%PICKSDATE%-usa-*.pdf" 2^>nul') do (
     set "PDF=%%f"
     goto :mvr_run
 )
-call :log "  No result found for picks date %PICKSDATE%"
+call :log "  No result PDF found for picks date %PICKSDATE% - skipping MVR"
 goto :lrl_section
 
 :mvr_run
@@ -271,17 +282,18 @@ call :log "  No picks_LRL_*.txt found - run parse_lrl.bat first"
 goto :done
 
 :lrl_picks_ok
-:: picks_LRL_MMDDYYYY.txt  →  prefix "picks_LRL_" is 10 chars
-:: LRL uses standard format: YYYYMMDD-usa-lrl-a-d.standard.pdf
+:: picks_LRL_MMDDYYYY.txt — "picks_LRL_" prefix is 10 chars
+:: LRL result PDF: YYYYMMDD-usa-lrl-a-d.standard.pdf
 set "DATERAW=%LRL_PICKS:~10,8%"
 set "MM=%DATERAW:~0,2%"
 set "DD=%DATERAW:~2,2%"
-set "PICKSDATE=%DATERAW:~4,4%%MM%%DD%"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
 for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Laurel Park\lrl-results-2026\%PICKSDATE%-usa-*.pdf" 2^>nul') do (
     set "PDF=%%f"
     goto :lrl_run
 )
-call :log "  No result found for picks date %PICKSDATE%"
+call :log "  No result PDF found for picks date %PICKSDATE% - skipping LRL"
 goto :done
 
 :lrl_run
