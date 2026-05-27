@@ -309,8 +309,8 @@ Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scri
  
 Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
 ======================================================================== 
-  Picks: picks_FP_FPK0519Y.txt 
-  Result: FP052326USA.pdf 
+  Picks: picks_FP_05262026.txt 
+  Result: FP052626USA.pdf 
  
 
 Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts" C:\Users\bornr\OneDrive\Documents\GitHub...
@@ -373,11 +373,11 @@ Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scri
  
 Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260526.txt 
 
-Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_FP_FPK0519Y.txt...
-  12 pick(s) loaded
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_FP_05262026.txt...
+  21 pick(s) loaded
 
 Loading result PDFs...
-  Parsing FP052326USA.pdf [FP]...
+  Parsing FP052626USA.pdf [FP]...
     8 race(s) loaded
 
 ============================================================================
@@ -387,23 +387,32 @@ Loading result PDFs...
   â”€â”€ FAIRMOUNT PARK (FP) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
   Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
-  R1    Somnus                   TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R1    CallMeDrossel            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R3    EpicPrankster            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R3    BeeBluff                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R3    LookNMightyFine          TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R4    SaintGhaaleb             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R4    WildwoodTriple           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R5    PrinceDay                TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R5    BrownReserve             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R6    Realta                   TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R7    SpanishCara              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
-  R8    HialeahHottie            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R1    LuckyMonica              TRAINER   WPS     1  $6.00  $11.40     +$5.40
+  R2    DillonRocks              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    SwaggyGeorge             TRAINER   WPS     2  $6.00  $ 4.80     -$1.20
+  R2    RiskyBoy                 TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R3    GoodandNaughty           TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R3    JustSqueezingBy          TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R3    QueenGita                TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R4    Karazest                 TRAINER   WPS     2  $6.00  $ 8.20     +$2.20
+  R4    EnchantedMoment          TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R4    KyOSister                TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R4    TurtlePace               TRAINER   WPS     3  $6.00  $ 3.00     -$3.00
+  R5    WildwoodAttack           TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R5    SocoKid                  TRAINER   WPS     1  $6.00  $ 7.90     +$1.90
+  R6    Natalia'sRap             TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R6    JetPack                  TRAINER   WPS     1  $6.00  $ 7.30     +$1.30
+  R7    Smoked                   TRAINER   WPS     2  $6.00  $ 4.70     -$1.30
+  R7    ChanceTaker              TRAINER   WPS     1  $6.00  $11.10     +$5.10
+  R7    SaintGhaaleb             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    ReyannoRoyal             TRAINER   WPS     9  $6.00  $ 0.00     -$6.00
+  R8    Fasttimesatmidnite       TRAINER   WPS     3  $6.00  $ 2.20     -$3.80
+  R8    WinWithColor             TRAINER   WPS     2  $6.00  $ 5.20     -$0.80
   Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
-  SUBTOTAL                                         $72.00  $  0.00    -$72.00  ROI: -100.0%
+  SUBTOTAL                                         $126.00  $ 65.80    -$60.20  ROI: -47.8%
 
 ============================================================================
-  OVERALL TOTAL                                    $72.00  $  0.00    -$72.00  ROI: -100.0%
+  OVERALL TOTAL                                    $126.00  $ 65.80    -$60.20  ROI: -47.8%
 ============================================================================
 
  
