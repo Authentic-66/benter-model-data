@@ -72,16 +72,31 @@ def all_files_for_prefix(folder, prefix):
     Return every file matching PREFIX_TRACK_YYYYMMDD.txt as a sorted list of
     (track, Path, date_str) tuples.  Used for results so all race days are written.
     """
-    found = []
-    for f in folder.glob(f"{prefix}_*.txt"):
-        m = re.match(rf"^{prefix}_([A-Z]+)_(\d{{8}})\.txt$", f.name)
-        if m:
-            track, date = m.group(1), m.group(2)
-            if track == "ALL":
-                continue
-            if date < "20260101":
-                continue
-            found.append((track, f, date))
+    glob_hits = list(folder.glob(f"{prefix}_*.txt"))
+    print(f"  [debug] glob '{prefix}_*.txt' in {folder.name}/ → {len(glob_hits)} files")
+
+    no_match, skip_all, skip_date, found = 0, 0, 0, []
+    pattern = re.compile(rf"^{prefix}_([A-Z]+)_(\d{{8}})\.txt$")
+    for f in glob_hits:
+        m = pattern.match(f.name)
+        if not m:
+            print(f"  [debug]   regex no-match: {f.name}")
+            no_match += 1
+            continue
+        track, date = m.group(1), m.group(2)
+        if track == "ALL":
+            skip_all += 1
+            continue
+        if date < "20260101":
+            skip_date += 1
+            continue
+        found.append((track, f, date))
+
+    print(f"  [debug] kept={len(found)}  no-match={no_match}  "
+          f"skip_ALL={skip_all}  skip_pre2026={skip_date}")
+    if glob_hits and no_match == len(glob_hits):
+        print(f"  [debug] sample filenames: "
+              + ", ".join(f.name for f in glob_hits[:5]))
     return sorted(found)
 
 def upsert_sheet(wb, name):
@@ -351,21 +366,30 @@ def main():
 
     # ── Results (results-logs) — all files, skip existing sheets ─────────
     if RESULTS_DIR.exists():
+        print(f"\nResults dir: {RESULTS_DIR}")
         all_results = all_files_for_prefix(RESULTS_DIR, "RESULTS")
         if not all_results:
             print("  results-logs/ is empty — run process_ct.bat / process_fp.bat first")
+        else:
+            print(f"  Processing {len(all_results)} results files ...")
         for track, path, date_str in all_results:
             name = sheet_name(track, date_str, "Results")
             if name in wb.sheetnames:
                 print(f"  = {name}  (already exists, skipping)")
                 continue
-            races = parse_results_log(path.read_text(encoding="utf-8", errors="replace"))
-            if races:
-                print(f"  + {name}  ({len(races)} races)")
-                write_results_sheet(wb, name, races)
-                added.append(name)
-            else:
-                print(f"  - {path.name}: no race data found")
+            print(f"  ? {path.name} → '{name}' ...", end=" ", flush=True)
+            try:
+                races = parse_results_log(
+                    path.read_text(encoding="utf-8", errors="replace")
+                )
+                if races:
+                    print(f"{len(races)} races")
+                    write_results_sheet(wb, name, races)
+                    added.append(name)
+                else:
+                    print("no race data found")
+            except Exception as exc:
+                print(f"ERROR: {exc}")
     else:
         print("  results-logs/ not found — run process_ct.bat / process_fp.bat first")
 
