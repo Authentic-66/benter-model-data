@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(py *)"
+      "PowerShell(py *)",
+      "Bash(py update_workbook.py)",
+      "Bash(dir *)"
     ]
   }
 }

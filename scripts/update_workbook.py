@@ -146,7 +146,9 @@ def parse_results_log(text):
 
     for line in text.splitlines():
         # Race header: "  RACE 1  —  CLM  |  6F  |  Dirt  |  $20,000"
-        m = re.match(r"^\s+RACE\s+(\d+)\s+[—\-]+\s*(.*)", line)
+        # The dash may be rendered as the raw UTF-8 bytes of em-dash re-decoded
+        # through Windows-1252 (â€"), so match any non-space token after the number.
+        m = re.match(r"^\s+RACE\s+(\d+)\s+\S+\s+(.*)", line)
         if m:
             in_finishers = False
             parts = [p.strip() for p in m.group(2).split("|")]
@@ -373,6 +375,7 @@ def main():
         else:
             print(f"  Processing {len(all_results)} results files ...")
         for track, path, date_str in all_results:
+            date_str = date_str[:8]
             name = sheet_name(track, date_str, "Results")
             if name in wb.sheetnames:
                 print(f"  = {name}  (already exists, skipping)")

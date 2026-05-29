@@ -78,9 +78,21 @@ set "GP_FOUND=0"
 for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Gulfstream Park\gp-results-2026\*.pdf" 2^>nul') do (
     set "GP_FOUND=1"
     set "STEM=%%~nf"
-    set "DIGITS=!STEM:~2,6!"
-    set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
-    set "FILEDATE=20!YY!!MM!!DD!"
+    :: Detect filename format by checking first two characters and presence of dots
+    set "NODT=!STEM:.=!"
+    if "!STEM:~0,2!"=="GP" (
+        :: Format: GP[MM][DD][YY]USA.pdf  e.g. GP050826USA.pdf
+        set "DIGITS=!STEM:~2,6!"
+        set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
+        set "FILEDATE=20!YY!!MM!!DD!"
+    ) else if "!NODT!" neq "!STEM!" (
+        :: Format: MM.DD.YY GP Results.pdf  e.g. 01.08.26 GP Results.pdf
+        set "MM=!STEM:~0,2!" & set "DD=!STEM:~3,2!" & set "YY=!STEM:~6,2!"
+        set "FILEDATE=20!YY!!MM!!DD!"
+    ) else (
+        :: Format: YYYYMMDD-usa-gp-a-d.standard.pdf
+        set "FILEDATE=!STEM:~0,8!"
+    )
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_GP_!FILEDATE!.txt"
     if exist "!LOGFILE!" (
         echo   Already processed: %%f - skipping
