@@ -1,10 +1,13 @@
 """
 update_workbook.py
-Reads the most recent handicap-logs, results-logs, and roi-logs files
-and appends the data as new sheets to the model workbook.
+Reads handicap-logs, results-logs, and roi-logs files and writes sheets
+to the model workbook.
+
+  - Picks / ROI:   most-recent file per track (upsert)
+  - Results:       ALL files per track; skips sheets that already exist
 
 Sheet naming: "{TRACK} {Month D YYYY} Picks/Results/ROI"
-  e.g. "FP May 12 2026 Picks", "CT May 9 2026 Results"
+  e.g. "FP May 12 2026 Picks", "CT May 28 2026 Results"
 
 Usage: python update_workbook.py
 """
@@ -63,6 +66,21 @@ def latest_by_track(folder, prefix):
             if track not in result or date > result[track][1]:
                 result[track] = (f, date)
     return result
+
+def all_files_for_prefix(folder, prefix):
+    """
+    Return every file matching PREFIX_TRACK_YYYYMMDD.txt as a sorted list of
+    (track, Path, date_str) tuples.  Used for results so all race days are written.
+    """
+    found = []
+    for f in folder.glob(f"{prefix}_*.txt"):
+        m = re.match(rf"^{prefix}_([A-Z]+)_(\d{{8}})\.txt$", f.name)
+        if m:
+            track, date = m.group(1), m.group(2)
+            if track == "ALL":
+                continue
+            found.append((track, f, date))
+    return sorted(found)
 
 def upsert_sheet(wb, name):
     """Delete sheet if it already exists, then create fresh."""
@@ -329,13 +347,16 @@ def main():
     else:
         print("  handicap-logs/ not found — run parse_ct.bat / parse_fp.bat first")
 
-    # ── Results (results-logs) ────────────────────────────────────────────
+    # ── Results (results-logs) — all files, skip existing sheets ─────────
     if RESULTS_DIR.exists():
-        track_files = latest_by_track(RESULTS_DIR, "RESULTS")
-        if not track_files:
+        all_results = all_files_for_prefix(RESULTS_DIR, "RESULTS")
+        if not all_results:
             print("  results-logs/ is empty — run process_ct.bat / process_fp.bat first")
-        for track, (path, date_str) in sorted(track_files.items()):
-            name  = sheet_name(track, date_str, "Results")
+        for track, path, date_str in all_results:
+            name = sheet_name(track, date_str, "Results")
+            if name in wb.sheetnames:
+                print(f"  = {name}  (already exists, skipping)")
+                continue
             races = parse_results_log(path.read_text(encoding="utf-8", errors="replace"))
             if races:
                 print(f"  + {name}  ({len(races)} races)")
