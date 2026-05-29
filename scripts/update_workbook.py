@@ -367,6 +367,8 @@ def main():
         print("  handicap-logs/ not found — run parse_ct.bat / parse_fp.bat first")
 
     # ── Results (results-logs) — all files, skip existing sheets ─────────
+    results_skipped = 0
+    results_errored = 0
     if RESULTS_DIR.exists():
         print(f"\nResults dir: {RESULTS_DIR}")
         all_results = all_files_for_prefix(RESULTS_DIR, "RESULTS")
@@ -376,9 +378,15 @@ def main():
             print(f"  Processing {len(all_results)} results files ...")
         for track, path, date_str in all_results:
             date_str = date_str[:8]
-            name = sheet_name(track, date_str, "Results")
+            try:
+                name = sheet_name(track, date_str, "Results")
+            except ValueError as exc:
+                print(f"  ! {path.name}: bad date '{date_str}' — skipping ({exc})")
+                results_errored += 1
+                continue
             if name in wb.sheetnames:
                 print(f"  = {name}  (already exists, skipping)")
+                results_skipped += 1
                 continue
             print(f"  ? {path.name} → '{name}' ...", end=" ", flush=True)
             try:
@@ -391,8 +399,10 @@ def main():
                     added.append(name)
                 else:
                     print("no race data found")
+                    results_errored += 1
             except Exception as exc:
                 print(f"ERROR: {exc}")
+                results_errored += 1
     else:
         print("  results-logs/ not found — run process_ct.bat / process_fp.bat first")
 
@@ -414,14 +424,27 @@ def main():
     else:
         print("  roi-logs/ not found — run roi_ct.bat / roi_fp.bat first")
 
+    sheets_before = len(wb.sheetnames) - len(added)
+    sheets_after  = len(wb.sheetnames)
+
+    print(f"\n{'='*60}")
+    print(f"  SUMMARY")
+    print(f"{'='*60}")
+    print(f"  Sheets added   : {len(added)}")
+    print(f"  Sheets skipped : {results_skipped}  (already existed)")
+    print(f"  Errored/bad    : {results_errored}  (bad date or no race data)")
+    print(f"  Sheet count    : {sheets_before} → {sheets_after}")
+    print(f"{'='*60}")
+
     if not added:
-        print("\nNo sheets added — run the parse / process / roi batch files first.")
+        print("  No new sheets to save.")
         return
 
     wb.save(WORKBOOK_PATH)
-    print(f"\nSaved {len(added)} sheet(s) to {WORKBOOK_PATH.name}:")
+    print(f"  Saved to: {WORKBOOK_PATH.name}")
+    print()
     for s in added:
-        print(f"  {s}")
+        print(f"    + {s}")
 
 
 if __name__ == "__main__":

@@ -78,14 +78,16 @@ set "GP_FOUND=0"
 for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Gulfstream Park\gp-results-2026\*.pdf" 2^>nul') do (
     set "GP_FOUND=1"
     set "STEM=%%~nf"
-    :: Detect filename format by checking first two characters and presence of dots
-    set "NODT=!STEM:.=!"
+    :: Detect filename format.
+    :: Check GP prefix first, then MM.DD.YY (dot at position 2), then YYYYMMDD.
+    :: The old NODT trick was wrong: YYYYMMDD-...-d.standard has a dot in .standard
+    :: and was being misclassified into the MM.DD.YY branch.
     if "!STEM:~0,2!"=="GP" (
         :: Format: GP[MM][DD][YY]USA.pdf  e.g. GP050826USA.pdf
         set "DIGITS=!STEM:~2,6!"
         set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
         set "FILEDATE=20!YY!!MM!!DD!"
-    ) else if "!NODT!" neq "!STEM!" (
+    ) else if "!STEM:~2,1!"=="." (
         :: Format: MM.DD.YY GP Results.pdf  e.g. 01.08.26 GP Results.pdf
         set "MM=!STEM:~0,2!" & set "DD=!STEM:~3,2!" & set "YY=!STEM:~6,2!"
         set "FILEDATE=20!YY!!MM!!DD!"
@@ -93,6 +95,7 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Gulfstream Park\gp-results-20
         :: Format: YYYYMMDD-usa-gp-a-d.standard.pdf
         set "FILEDATE=!STEM:~0,8!"
     )
+    echo   [GP] %%f  ^|  date: !FILEDATE!
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_GP_!FILEDATE!.txt"
     if exist "!LOGFILE!" (
         echo   Already processed: %%f - skipping
