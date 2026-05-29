@@ -64,7 +64,7 @@ Official Equibase result charts for completed race cards.
 
 **Naming conventions:**
 - `20240103-usa-ct-a-d.standard.pdf` — standard format: `[YYYYMMDD]-usa-[track]-a-d.standard.pdf`
-- `CT010226USA.pdf` — alternate format: `[TRACK][day][month][year]USA.pdf`
+- `CT052826USA.pdf` — alternate format: `[TRACK][month][day][year]USA.pdf`
 - `ST0506.pdf` — Hong Kong Sha Tin format: `[TRACK][month][day].pdf`
 
 ## Data Coverage

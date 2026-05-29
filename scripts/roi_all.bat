@@ -48,6 +48,7 @@ call :log ""
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%CT_PICKS%" "%BASE%\CharlesTown\ct-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :fp_section
 
 :: ── FAIRMOUNT PARK (FP) ──────────────────────────────────────────────────
 :fp_section
@@ -88,6 +89,7 @@ set "FP_PDF_PATH=%FP_DIR%\%PDF%"
 py -u "%SCRIPTS%roi_tracker.py" "%FP_PICKS_PATH%" "%FP_PDF_PATH%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :gp_section
 
 :: ── GULFSTREAM PARK (GP) ─────────────────────────────────────────────────
 :gp_section
@@ -125,6 +127,7 @@ call :log ""
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%GP_PICKS%" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :evd_section
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
 :evd_section
@@ -162,6 +165,7 @@ call :log ""
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%EVD_PICKS%" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :dd_section
 
 :: ── DELTA DOWNS (DD) ──────────────────────────────────────────────────────
 :dd_section
@@ -198,6 +202,7 @@ call :log ""
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%DD_PICKS%" "%BASE%\Delta Downs\dd-results-2025\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :fg_section
 
 :: ── FAIR GROUNDS (FG) ─────────────────────────────────────────────────────
 :fg_section
@@ -234,6 +239,7 @@ call :log ""
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%FG_PICKS%" "%BASE%\Fair Grounds\fg-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :mvr_section
 
 :: ── MAHONING VALLEY (MVR) ─────────────────────────────────────────────────
 :mvr_section
@@ -270,6 +276,7 @@ call :log ""
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%MVR_PICKS%" "%BASE%\Mahoning Valley\mvr-2026-results\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :lrl_section
 
 :: ── LAUREL PARK (LRL) ────────────────────────────────────────────────────
 :lrl_section
@@ -306,6 +313,7 @@ call :log ""
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%LRL_PICKS%" "%BASE%\Laurel Park\lrl-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :done
 
 :done
 call :log ""
@@ -317,9 +325,10 @@ echo Log saved: %LOGFILE%
 echo Log saved: %LOGFILE% >> "%LOGFILE%"
 echo.
 pause
-goto :eof
+exit /b 0
 
+exit /b 0
 :log
 echo(%~1
 echo(%~1 >> "%LOGFILE%"
-exit /b
+exit /b 0
