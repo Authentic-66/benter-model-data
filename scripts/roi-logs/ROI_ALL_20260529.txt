@@ -1,0 +1,18 @@
+ROI All Tracks  [20260529] 
+ 
+######################################################################## 
+  BENTER MODEL -- ROI ALL TRACKS 
+ 
+======================================================================== 
+  FAIR GROUNDS (FG) 
+======================================================================== 
+  No picks_FG_*.txt found - run parse_fg.bat first 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260529.txt 
