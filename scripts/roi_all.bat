@@ -8,21 +8,30 @@ if not exist "%SCRIPTS%roi-logs\" mkdir "%SCRIPTS%roi-logs"
 set "LOGFILE=%SCRIPTS%roi-logs\ROI_ALL_%TODAY%.txt"
 echo ROI All Tracks  [%TODAY%] > "%LOGFILE%"
 
-call :log ""
-call :log "########################################################################"
-call :log "  BENTER MODEL -- ROI ALL TRACKS"
-call :log "########################################################################"
+echo.
+echo ########################################################################
+echo   BENTER MODEL -- ROI ALL TRACKS
+echo ########################################################################
+echo. >> "%LOGFILE%"
+echo ######################################################################## >> "%LOGFILE%"
+echo   BENTER MODEL -- ROI ALL TRACKS >> "%LOGFILE%"
+echo ######################################################################## >> "%LOGFILE%"
 
 :: ── CHARLES TOWN (CT) ────────────────────────────────────────────────────
-call :log ""
-call :log "========================================================================"
-call :log "  CHARLES TOWN (CT)"
-call :log "========================================================================"
+echo.
+echo ========================================================================
+echo   CHARLES TOWN (CT)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   CHARLES TOWN (CT) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_CT_*.txt" 2^>nul') do (
     set "CT_PICKS=%%f"
     goto :ct_picks_ok
 )
-call :log "  No picks_CT_*.txt found - run parse_ct.bat first"
+echo   No picks_CT_*.txt found - run parse_ct.bat first
+echo   No picks_CT_*.txt found - run parse_ct.bat first >> "%LOGFILE%"
 goto :fp_section
 
 :ct_picks_ok
@@ -38,13 +47,17 @@ for /f "delims=" %%f in ('dir /b /a-d "%BASE%\CharlesTown\ct-results-2026\CT%MM%
     set "PDF=%%f"
     goto :ct_run
 )
-call :log "  No result PDF found for picks date %PICKSDATE% - skipping CT"
+echo   No result PDF found for picks date %PICKSDATE% - skipping CT
+echo   No result PDF found for picks date %PICKSDATE% - skipping CT >> "%LOGFILE%"
 goto :fp_section
 
 :ct_run
-call :log "  Picks: %CT_PICKS%"
-call :log "  Result: %PDF%"
-call :log ""
+echo   Picks: %CT_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %CT_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%CT_PICKS%" "%BASE%\CharlesTown\ct-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
@@ -52,15 +65,20 @@ goto :fp_section
 
 :: ── FAIRMOUNT PARK (FP) ──────────────────────────────────────────────────
 :fp_section
-call :log ""
-call :log "========================================================================"
-call :log "  FAIRMOUNT PARK (FP)"
-call :log "========================================================================"
+echo.
+echo ========================================================================
+echo   FAIRMOUNT PARK (FP)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   FAIRMOUNT PARK (FP) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_FP_*.txt" 2^>nul') do (
     set "FP_PICKS=%%f"
     goto :fp_picks_ok
 )
-call :log "  No picks_FP_*.txt found - run parse_fp.bat first"
+echo   No picks_FP_*.txt found - run parse_fp.bat first
+echo   No picks_FP_*.txt found - run parse_fp.bat first >> "%LOGFILE%"
 goto :gp_section
 
 :fp_picks_ok
@@ -77,13 +95,17 @@ for /f "delims=" %%f in ('dir /b /a-d "%FP_DIR%\FP%MM%%DD%%YY%USA.pdf" 2^>nul') 
     set "PDF=%%f"
     goto :fp_run
 )
-call :log "  No result PDF found for picks date %PICKSDATE% - skipping FP"
+echo   No result PDF found for picks date %PICKSDATE% - skipping FP
+echo   No result PDF found for picks date %PICKSDATE% - skipping FP >> "%LOGFILE%"
 goto :gp_section
 
 :fp_run
-call :log "  Picks: %FP_PICKS%"
-call :log "  Result: %PDF%"
-call :log ""
+echo   Picks: %FP_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %FP_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
 set "FP_PICKS_PATH=%SCRIPTS%%FP_PICKS%"
 set "FP_PDF_PATH=%FP_DIR%\%PDF%"
 py -u "%SCRIPTS%roi_tracker.py" "%FP_PICKS_PATH%" "%FP_PDF_PATH%" > "%TEMP%\results_tmp.txt" 2>&1
@@ -93,15 +115,20 @@ goto :gp_section
 
 :: ── GULFSTREAM PARK (GP) ─────────────────────────────────────────────────
 :gp_section
-call :log ""
-call :log "========================================================================"
-call :log "  GULFSTREAM PARK (GP)"
-call :log "========================================================================"
+echo.
+echo ========================================================================
+echo   GULFSTREAM PARK (GP)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   GULFSTREAM PARK (GP) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_GP_*.txt" 2^>nul') do (
     set "GP_PICKS=%%f"
     goto :gp_picks_ok
 )
-call :log "  No picks_GP_*.txt found - run parse_gp.bat first"
+echo   No picks_GP_*.txt found - run parse_gp.bat first
+echo   No picks_GP_*.txt found - run parse_gp.bat first >> "%LOGFILE%"
 goto :evd_section
 
 :gp_picks_ok
@@ -117,13 +144,17 @@ for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Gulfstream Park\gp-results-2026\GP
     set "PDF=%%f"
     goto :gp_run
 )
-call :log "  No result PDF found for picks date %PICKSDATE% - skipping GP"
+echo   No result PDF found for picks date %PICKSDATE% - skipping GP
+echo   No result PDF found for picks date %PICKSDATE% - skipping GP >> "%LOGFILE%"
 goto :evd_section
 
 :gp_run
-call :log "  Picks: %GP_PICKS%"
-call :log "  Result: %PDF%"
-call :log ""
+echo   Picks: %GP_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %GP_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%GP_PICKS%" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
@@ -131,15 +162,20 @@ goto :evd_section
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
 :evd_section
-call :log ""
-call :log "========================================================================"
-call :log "  EVANGELINE DOWNS (EVD)"
-call :log "========================================================================"
+echo.
+echo ========================================================================
+echo   EVANGELINE DOWNS (EVD)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   EVANGELINE DOWNS (EVD) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_EVD_*.txt" 2^>nul') do (
     set "EVD_PICKS=%%f"
     goto :evd_picks_ok
 )
-call :log "  No picks_EVD_*.txt found - run parse_evd.bat first"
+echo   No picks_EVD_*.txt found - run parse_evd.bat first
+echo   No picks_EVD_*.txt found - run parse_evd.bat first >> "%LOGFILE%"
 goto :dd_section
 
 :evd_picks_ok
@@ -155,13 +191,17 @@ for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Evangeline Downs\evd-results-2026\
     set "PDF=%%f"
     goto :evd_run
 )
-call :log "  No result PDF found for picks date %PICKSDATE% - skipping EVD"
+echo   No result PDF found for picks date %PICKSDATE% - skipping EVD
+echo   No result PDF found for picks date %PICKSDATE% - skipping EVD >> "%LOGFILE%"
 goto :dd_section
 
 :evd_run
-call :log "  Picks: %EVD_PICKS%"
-call :log "  Result: %PDF%"
-call :log ""
+echo   Picks: %EVD_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %EVD_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%EVD_PICKS%" "%BASE%\Evangeline Downs\evd-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
@@ -169,15 +209,20 @@ goto :dd_section
 
 :: ── DELTA DOWNS (DD) ──────────────────────────────────────────────────────
 :dd_section
-call :log ""
-call :log "========================================================================"
-call :log "  DELTA DOWNS (DD)"
-call :log "========================================================================"
+echo.
+echo ========================================================================
+echo   DELTA DOWNS (DD)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   DELTA DOWNS (DD) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_DD_*.txt" 2^>nul') do (
     set "DD_PICKS=%%f"
     goto :dd_picks_ok
 )
-call :log "  No picks_DD_*.txt found - run parse_dd.bat first"
+echo   No picks_DD_*.txt found - run parse_dd.bat first
+echo   No picks_DD_*.txt found - run parse_dd.bat first >> "%LOGFILE%"
 goto :fg_section
 
 :dd_picks_ok
@@ -192,13 +237,17 @@ for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Delta Downs\dd-results-2025\%PICKS
     set "PDF=%%f"
     goto :dd_run
 )
-call :log "  No result PDF found for picks date %PICKSDATE% - skipping DD"
+echo   No result PDF found for picks date %PICKSDATE% - skipping DD
+echo   No result PDF found for picks date %PICKSDATE% - skipping DD >> "%LOGFILE%"
 goto :fg_section
 
 :dd_run
-call :log "  Picks: %DD_PICKS%"
-call :log "  Result: %PDF%"
-call :log ""
+echo   Picks: %DD_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %DD_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%DD_PICKS%" "%BASE%\Delta Downs\dd-results-2025\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
@@ -206,15 +255,20 @@ goto :fg_section
 
 :: ── FAIR GROUNDS (FG) ─────────────────────────────────────────────────────
 :fg_section
-call :log ""
-call :log "========================================================================"
-call :log "  FAIR GROUNDS (FG)"
-call :log "========================================================================"
+echo.
+echo ========================================================================
+echo   FAIR GROUNDS (FG)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   FAIR GROUNDS (FG) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_FG_*.txt" 2^>nul') do (
     set "FG_PICKS=%%f"
     goto :fg_picks_ok
 )
-call :log "  No picks_FG_*.txt found - run parse_fg.bat first"
+echo   No picks_FG_*.txt found - run parse_fg.bat first
+echo   No picks_FG_*.txt found - run parse_fg.bat first >> "%LOGFILE%"
 goto :mvr_section
 
 :fg_picks_ok
@@ -229,13 +283,17 @@ for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Fair Grounds\fg-results-2026\%PICK
     set "PDF=%%f"
     goto :fg_run
 )
-call :log "  No result PDF found for picks date %PICKSDATE% - skipping FG"
+echo   No result PDF found for picks date %PICKSDATE% - skipping FG
+echo   No result PDF found for picks date %PICKSDATE% - skipping FG >> "%LOGFILE%"
 goto :mvr_section
 
 :fg_run
-call :log "  Picks: %FG_PICKS%"
-call :log "  Result: %PDF%"
-call :log ""
+echo   Picks: %FG_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %FG_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%FG_PICKS%" "%BASE%\Fair Grounds\fg-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
@@ -243,15 +301,20 @@ goto :mvr_section
 
 :: ── MAHONING VALLEY (MVR) ─────────────────────────────────────────────────
 :mvr_section
-call :log ""
-call :log "========================================================================"
-call :log "  MAHONING VALLEY (MVR)"
-call :log "========================================================================"
+echo.
+echo ========================================================================
+echo   MAHONING VALLEY (MVR)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   MAHONING VALLEY (MVR) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_MVR_*.txt" 2^>nul') do (
     set "MVR_PICKS=%%f"
     goto :mvr_picks_ok
 )
-call :log "  No picks_MVR_*.txt found - run parse_mvr.bat first"
+echo   No picks_MVR_*.txt found - run parse_mvr.bat first
+echo   No picks_MVR_*.txt found - run parse_mvr.bat first >> "%LOGFILE%"
 goto :lrl_section
 
 :mvr_picks_ok
@@ -266,13 +329,17 @@ for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Mahoning Valley\mvr-2026-results\%
     set "PDF=%%f"
     goto :mvr_run
 )
-call :log "  No result PDF found for picks date %PICKSDATE% - skipping MVR"
+echo   No result PDF found for picks date %PICKSDATE% - skipping MVR
+echo   No result PDF found for picks date %PICKSDATE% - skipping MVR >> "%LOGFILE%"
 goto :lrl_section
 
 :mvr_run
-call :log "  Picks: %MVR_PICKS%"
-call :log "  Result: %PDF%"
-call :log ""
+echo   Picks: %MVR_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %MVR_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%MVR_PICKS%" "%BASE%\Mahoning Valley\mvr-2026-results\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
@@ -280,15 +347,20 @@ goto :lrl_section
 
 :: ── LAUREL PARK (LRL) ────────────────────────────────────────────────────
 :lrl_section
-call :log ""
-call :log "========================================================================"
-call :log "  LAUREL PARK (LRL)"
-call :log "========================================================================"
+echo.
+echo ========================================================================
+echo   LAUREL PARK (LRL)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   LAUREL PARK (LRL) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_LRL_*.txt" 2^>nul') do (
     set "LRL_PICKS=%%f"
     goto :lrl_picks_ok
 )
-call :log "  No picks_LRL_*.txt found - run parse_lrl.bat first"
+echo   No picks_LRL_*.txt found - run parse_lrl.bat first
+echo   No picks_LRL_*.txt found - run parse_lrl.bat first >> "%LOGFILE%"
 goto :done
 
 :lrl_picks_ok
@@ -303,32 +375,34 @@ for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Laurel Park\lrl-results-2026\%PICK
     set "PDF=%%f"
     goto :lrl_run
 )
-call :log "  No result PDF found for picks date %PICKSDATE% - skipping LRL"
+echo   No result PDF found for picks date %PICKSDATE% - skipping LRL
+echo   No result PDF found for picks date %PICKSDATE% - skipping LRL >> "%LOGFILE%"
 goto :done
 
 :lrl_run
-call :log "  Picks: %LRL_PICKS%"
-call :log "  Result: %PDF%"
-call :log ""
+echo   Picks: %LRL_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %LRL_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%LRL_PICKS%" "%BASE%\Laurel Park\lrl-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 goto :done
 
 :done
-call :log ""
-call :log "########################################################################"
-call :log "  ALL TRACKS COMPLETE"
-call :log "########################################################################"
-call :log ""
+echo.
+echo ########################################################################
+echo   ALL TRACKS COMPLETE
+echo ########################################################################
+echo.
+echo. >> "%LOGFILE%"
+echo ######################################################################## >> "%LOGFILE%"
+echo   ALL TRACKS COMPLETE >> "%LOGFILE%"
+echo ######################################################################## >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
 echo Log saved: %LOGFILE%
 echo Log saved: %LOGFILE% >> "%LOGFILE%"
 echo.
 pause
-exit /b 0
-
-exit /b 0
-:log
-echo(%~1
-echo(%~1 >> "%LOGFILE%"
-exit /b 0
