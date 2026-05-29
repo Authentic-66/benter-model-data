@@ -79,6 +79,8 @@ def all_files_for_prefix(folder, prefix):
             track, date = m.group(1), m.group(2)
             if track == "ALL":
                 continue
+            if date < "20260101":
+                continue
             found.append((track, f, date))
     return sorted(found)
 
