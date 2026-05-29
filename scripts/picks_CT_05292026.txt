@@ -1,0 +1,26 @@
+# Benter Model Picks - CT 05292026
+# Format: TRACK RACE HORSE SIGNAL BETS
+CT 2 Wildhunch TRAINER WPS
+CT 2 FiberStrong TRAINER WPS
+CT 3 CampDavid TRAINER WPS
+CT 3 Noballstwostrikes TRAINER WPS
+CT 4 Rick'swarmheart TRAINER WPS
+CT 4 GranAndrews TRAINER WPS
+CT 4 CoronationTime TRAINER WPS
+CT 5 BeautifulNoise TRAINER WPS
+CT 5 MalibuMiss TRAINER WPS
+CT 5 EkatiIndian TRAINER WPS
+CT 5 UnusualBay TRAINER WPS
+CT 6 PeacefulUnion TRAINER WPS
+CT 6 Mamawasagogogirl TRAINER WPS
+CT 7 Charlienite TRAINER WPS
+CT 7 DirecttoHeaven TRAINER WPS
+CT 7 WalkOnBroadway TRAINER WPS
+CT 7 TornadoWarning TRAINER WPS
+CT 7 KnightSage TRAINER WPS
+CT 7 Rockwell TRAINER WPS
+CT 8 LonaLee TRAINER WPS
+CT 8 Maskedandmummed TRAINER WPS
+CT 8 PoppyMac TRAINER WPS
+CT 9 RagtapGirl TRAINER WPS
+CT 9 Slanderous TRAINER WPS
