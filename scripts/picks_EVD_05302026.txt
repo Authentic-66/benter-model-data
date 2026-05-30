@@ -1,0 +1,25 @@
+# Benter Model Picks - EVD 05302026
+# Format: TRACK RACE HORSE SIGNAL BETS
+EVD 1 Taurean TRAINER WPS
+EVD 2 LostintheSauce TRAINER WPS
+EVD 2 AmericanVision TRAINER WPS
+EVD 2 Consecrated TRAINER WPS
+EVD 3 SweetTalkinSlick TRAINER WPS
+EVD 3 Masteroffoxhounds TRAINER WPS
+EVD 3 SonyaKnowsBetter TRAINER WPS
+EVD 3 Publius TRAINER WPS
+EVD 4 HighClassTrip TRAINER WPS
+EVD 5 AllerVite TRAINER WPS
+EVD 5 FeathersRoad TRAINER WPS
+EVD 5 Grunt TRAINER WPS
+EVD 5 CypressGold TRAINER WPS
+EVD 6 Rosie'sAngus TRAINER WPS
+EVD 6 HonestAngus TRAINER WPS
+EVD 6 ChasingGlory TRAINER WPS
+EVD 7 Sonofaship TRAINER WPS
+EVD 7 McLarenVale TRAINER WPS
+EVD 8 Dolly'sGuitar TRAINER WPS
+EVD 8 SavedbyGrace TRAINER WPS
+EVD 9 KaraFlash TRAINER WPS
+EVD 9 ObstacleGal TRAINER WPS
+EVD 9 ChargetheDeal TRAINER WPS
