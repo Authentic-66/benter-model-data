@@ -233,6 +233,22 @@ def extract_text(filepath):
             pages.append(full + '\n' + left)
     return '\f'.join(pages)
 
+def extract_speed_figures(block_lines):
+    """Extract Brisnet speed figures from PP lines (DDMMMYY TRACK ... SPD ...).
+    Returns list in source order (most recent first in Brisnet layout)."""
+    PP_DATE = re.compile(r'^\s*\d{1,2}[A-Za-z]{3}\d{2}\s+\S')
+    # Brisnet speed ratings typically fall in 45-130; single/double-digit finish
+    # positions and small field sizes stay below this window.
+    SPD_RANGE = re.compile(r'\b([4-9]\d|1[0-2]\d)\b')
+    figures = []
+    for line in block_lines:
+        if PP_DATE.match(line):
+            nums = [int(n) for n in SPD_RANGE.findall(line)]
+            if nums:
+                figures.append(nums[0])
+    return figures
+
+
 def parse_brisnet(text, track_code='GP'):
     pages = text.split('\f')
     races = defaultdict(lambda: {'conditions': '', 'purse': '', 'surface': '', 'horses': []})
@@ -401,6 +417,11 @@ def parse_brisnet(text, track_code='GP'):
                         if len(a) > 4:
                             neg_angles.append(a[:65])
 
+            # ── Speed figures from PP lines in block ──────────────────────────
+            spd_figs = extract_speed_figures(block)
+            recent_spd = spd_figs[:5]
+            best_spd = max(spd_figs) if spd_figs else None
+
             if horse == '?' or pp_num == 0:
                 continue
 
@@ -438,6 +459,7 @@ def parse_brisnet(text, track_code='GP'):
                 'days_off': days_off, 'claim': claim_price,
                 'pos_angles': pos_angles[:4], 'neg_angles': neg_angles[:3],
                 'signals': signals, 'special_rule': special_rule,
+                'recent_spd': recent_spd, 'best_spd': best_spd,
             }
 
             if not any(h['name'] == horse for h in races[current_race]['horses']):
@@ -507,6 +529,10 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
 
             print(f"\n  {flag} {h['pp']:>2}: {h['name']:<27} {h['ml']:>5}  {pp_str:>10}  {h['trainer'][:28]}")
             print(f"        Sire: {h['sire']:<30}  J: {h['jockey'][:20]}")
+            if h.get('recent_spd'):
+                recent_str = ', '.join(str(s) for s in h['recent_spd'])
+                best_str = str(h['best_spd']) if h['best_spd'] else '—'
+                print(f"        Recent SPD: {recent_str}   Best: {best_str}")
             if h['trainer_stats']:
                 print(f"        Stats: {h['trainer_stats']}")
             if h['days_off'] >= 60:
