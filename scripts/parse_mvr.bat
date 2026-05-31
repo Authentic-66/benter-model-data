@@ -21,19 +21,11 @@ if not "%FILEDATE%"=="%TODAY%" (
 )
 echo Parsing MVR: %PDF%
 echo.
-py "%SCRIPTS%brisnet_parser_v2.py" "%PPDIR%\%PDF%" MVR
-echo.
-
-:: Save picks to handicap-logs
 if not exist "%SCRIPTS%handicap-logs\" mkdir "%SCRIPTS%handicap-logs"
-for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_MVR_*.txt" 2^>nul') do (
-    set "PICKS=%%f"
-    goto :log_picks
-)
-goto :done
-:log_picks
-copy /y "%SCRIPTS%%PICKS%" "%SCRIPTS%handicap-logs\HANDICAP_MVR_%TODAY%.txt" > nul
-echo Picks logged: handicap-logs\HANDICAP_MVR_%TODAY%.txt
-:done
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_MVR_%TODAY%.txt"
+py "%SCRIPTS%brisnet_parser_v2.py" "%PPDIR%\%PDF%" MVR > "%LOGFILE%"
+type "%LOGFILE%"
+echo.
+echo Full card logged: handicap-logs\HANDICAP_MVR_%TODAY%.txt
 echo.
 pause

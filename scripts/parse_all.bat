@@ -31,8 +31,10 @@ if not "%FILEDATE%"=="%TODAY%" (
 )
 echo   File: %PDF%
 echo.
-py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\CharlesTown\ct-pps-files\%PDF%" CT
-call :log_picks CT
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_CT_%TODAY%.txt"
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\CharlesTown\ct-pps-files\%PDF%" CT > "%LOGFILE%"
+type "%LOGFILE%"
+echo   Full card logged: handicap-logs\HANDICAP_CT_%TODAY%.txt
 
 :: ── FAIRMOUNT PARK (FP) ──────────────────────────────────────────────────
 :fp_section
@@ -55,8 +57,10 @@ if not "%FILEDATE%"=="%TODAY%" (
 )
 echo   File: %PDF%
 echo.
-py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Fairmount Park\fp-pps-files\%PDF%" FP
-call :log_picks FP
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_FP_%TODAY%.txt"
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Fairmount Park\fp-pps-files\%PDF%" FP > "%LOGFILE%"
+type "%LOGFILE%"
+echo   Full card logged: handicap-logs\HANDICAP_FP_%TODAY%.txt
 
 :: ── GULFSTREAM PARK (GP) ─────────────────────────────────────────────────
 :gp_section
@@ -79,8 +83,10 @@ if not "%FILEDATE%"=="%TODAY%" (
 )
 echo   File: %PDF%
 echo.
-py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Gulfstream Park\gp-pps-files\%PDF%" GP
-call :log_picks GP
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_GP_%TODAY%.txt"
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Gulfstream Park\gp-pps-files\%PDF%" GP > "%LOGFILE%"
+type "%LOGFILE%"
+echo   Full card logged: handicap-logs\HANDICAP_GP_%TODAY%.txt
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
 :evd_section
@@ -103,8 +109,10 @@ if not "%FILEDATE%"=="%TODAY%" (
 )
 echo   File: %PDF%
 echo.
-py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Evangeline Downs\evd-pps-files\%PDF%" EVD
-call :log_picks EVD
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_EVD_%TODAY%.txt"
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Evangeline Downs\evd-pps-files\%PDF%" EVD > "%LOGFILE%"
+type "%LOGFILE%"
+echo   Full card logged: handicap-logs\HANDICAP_EVD_%TODAY%.txt
 
 :: ── DELTA DOWNS (DD) ──────────────────────────────────────────────────────
 :dd_section
@@ -127,8 +135,10 @@ if not "%FILEDATE%"=="%TODAY%" (
 )
 echo   File: %PDF%
 echo.
-py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Delta Downs\dd-pps-files\%PDF%" DD
-call :log_picks DD
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_DD_%TODAY%.txt"
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Delta Downs\dd-pps-files\%PDF%" DD > "%LOGFILE%"
+type "%LOGFILE%"
+echo   Full card logged: handicap-logs\HANDICAP_DD_%TODAY%.txt
 
 :: ── FAIR GROUNDS (FG) ─────────────────────────────────────────────────────
 :fg_section
@@ -151,8 +161,10 @@ if not "%FILEDATE%"=="%TODAY%" (
 )
 echo   File: %PDF%
 echo.
-py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Fair Grounds\fg-pps-files\%PDF%" FG
-call :log_picks FG
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_FG_%TODAY%.txt"
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Fair Grounds\fg-pps-files\%PDF%" FG > "%LOGFILE%"
+type "%LOGFILE%"
+echo   Full card logged: handicap-logs\HANDICAP_FG_%TODAY%.txt
 
 :: ── MAHONING VALLEY (MVR) ─────────────────────────────────────────────────
 :mvr_section
@@ -175,8 +187,10 @@ if not "%FILEDATE%"=="%TODAY%" (
 )
 echo   File: %PDF%
 echo.
-py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Mahoning Valley\mvr-pps-files\%PDF%" MVR
-call :log_picks MVR
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_MVR_%TODAY%.txt"
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Mahoning Valley\mvr-pps-files\%PDF%" MVR > "%LOGFILE%"
+type "%LOGFILE%"
+echo   Full card logged: handicap-logs\HANDICAP_MVR_%TODAY%.txt
 
 :: ── LAUREL PARK (LRL) ────────────────────────────────────────────────────
 :lrl_section
@@ -199,8 +213,10 @@ if not "%FILEDATE%"=="%TODAY%" (
 )
 echo   File: %PDF%
 echo.
-py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Laurel Park\laurel-pp-files\%PDF%" LRL
-call :log_picks LRL
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_LRL_%TODAY%.txt"
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Laurel Park\laurel-pp-files\%PDF%" LRL > "%LOGFILE%"
+type "%LOGFILE%"
+echo   Full card logged: handicap-logs\HANDICAP_LRL_%TODAY%.txt
 
 :done
 echo.
@@ -209,13 +225,3 @@ echo   ALL TRACKS PARSED
 echo ########################################################################
 echo.
 pause
-goto :eof
-
-:log_picks
-for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_%1_*.txt" 2^>nul') do (
-    copy /y "%SCRIPTS%%%f" "%SCRIPTS%handicap-logs\HANDICAP_%1_%TODAY%.txt" > nul
-    echo   Picks logged: handicap-logs\HANDICAP_%1_%TODAY%.txt
-    exit /b
-)
-echo   No picks file found for %1
-exit /b
