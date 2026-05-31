@@ -13,6 +13,8 @@ if "%~1"=="" (
 )
 
 set "TRACK=%~1"
+set "PPDIR="
+
 for /f %%d in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMdd"') do set "TODAY=%%d"
 if not exist "%SCRIPTS%handicap-logs\" mkdir "%SCRIPTS%handicap-logs"
 
@@ -25,42 +27,63 @@ if /i "%TRACK%"=="FG"  ( set "PPDIR=%BASE%\Fair Grounds\fg-pps-files"           
 if /i "%TRACK%"=="MVR" ( set "PPDIR=%BASE%\Mahoning Valley\mvr-pps-files"        & set "TRACK=MVR" )
 if /i "%TRACK%"=="LRL" ( set "PPDIR=%BASE%\Laurel Park\laurel-pp-files"          & set "TRACK=LRL" )
 
+echo.
+echo ########################################################################
+echo   BENTER MODEL -- FORCE REPARSE: %TRACK%
+echo ########################################################################
+echo.
+echo   Base dir : %BASE%
+echo   PP dir   : %PPDIR%
+echo.
+
 if not defined PPDIR (
-    echo.
-    echo   Unknown track code: %TRACK%
+    echo   [ERROR] Unknown track code: %TRACK%
     echo   Valid codes: CT, FP, GP, EVD, DD, FG, MVR, LRL
     echo.
     pause
     goto :eof
 )
 
+if not exist "%PPDIR%" (
+    echo   [ERROR] PP folder not found on disk:
+    echo   %PPDIR%
+    echo.
+    pause
+    goto :eof
+)
+
+echo   Scanning: %PPDIR%
 echo.
-echo ########################################################################
-echo   BENTER MODEL -- FORCE REPARSE: %TRACK%
-echo ########################################################################
 
 for /f "delims=" %%f in ('dir /b /o-d /a-d "%PPDIR%\*.pdf" 2^>nul') do (
     set "PDF=%%f"
     goto :run
 )
-echo.
-echo   No PP file found in: %PPDIR%
+echo   [ERROR] No PDF files found in that folder.
 echo.
 pause
 goto :eof
 
 :run
-echo.
 set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_%TRACK%_%TODAY%.txt"
-echo   Track : %TRACK%
-echo   File  : %PDF%
-echo   Log   : handicap-logs\HANDICAP_%TRACK%_%TODAY%.txt
-if exist "%LOGFILE%" echo   [OVERWRITE] Existing log will be replaced.
+echo   PP file  : %PDF%
+echo   Full path: %PPDIR%\%PDF%
+echo   Log file : %LOGFILE%
+if exist "%LOGFILE%" echo   [NOTE] Overwriting existing log.
 echo.
+echo   Running parser...
 py "%SCRIPTS%brisnet_parser_v2.py" "%PPDIR%\%PDF%" %TRACK% > "%LOGFILE%"
-type "%LOGFILE%"
 echo.
-echo   Full card logged: handicap-logs\HANDICAP_%TRACK%_%TODAY%.txt
+if exist "%LOGFILE%" (
+    echo   [OK] Log written -- %LOGFILE%
+) else (
+    echo   [ERROR] Log file was not created. Parser may have failed.
+    goto :done
+)
+echo.
+type "%LOGFILE%"
+
+:done
 echo.
 echo ########################################################################
 echo   REPARSE COMPLETE

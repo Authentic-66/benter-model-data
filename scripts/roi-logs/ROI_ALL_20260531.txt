@@ -113,7 +113,49 @@ Loading result PDFs...
 ======================================================================== 
   GULFSTREAM PARK (GP) 
 ======================================================================== 
-  No result PDF found for picks date 20260531 - skipping GP 
+  Picks: picks_GP_05312026.txt 
+  Result: GP053126USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_GP_05312026.txt...
+  18 pick(s) loaded
+
+Loading result PDFs...
+  Parsing GP053126USA.pdf [GP]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ GULFSTREAM PARK (GP) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    Sophistry                TRAINER   WPS     2  $6.00  $ 5.90     -$0.10
+  R1    Misprint                 TRAINER   WPS     1  $6.00  $12.50     +$6.50
+  R1    BreezeyBella             TRAINER   WPS     3  $6.00  $ 2.10     -$3.90
+  R1    AnyMoment                TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R2    BadGalParty              TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R3    GrimReaper               TRAINER   WPS     3  $6.00  $ 0.00     -$6.00
+  R3    BizBizBuzz               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    Gabaldon                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    BandedRocket             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    GiantTeddy               TRAINER   WPS     1  $6.00  $ 3.00     -$3.00
+  R4    CapturetheTime           TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R5    DancingMiracle           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    Sonnynpeaches            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    AwesomeTrain             TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R7    DrumRoll                 TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R7    HappyRide                TRAINER   WPS     1  $6.00  $ 9.00     +$3.00
+  R7    Lucy'sCookie             TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R8    WinBetOnly               TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $108.00  $ 32.50    -$75.50  ROI: -69.9%
+
+============================================================================
+  OVERALL TOTAL                                    $108.00  $ 32.50    -$75.50  ROI: -69.9%
+============================================================================
+
  
 ======================================================================== 
   EVANGELINE DOWNS (EVD) 
