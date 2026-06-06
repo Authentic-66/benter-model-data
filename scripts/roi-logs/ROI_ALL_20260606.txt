@@ -1,0 +1,230 @@
+ROI All Tracks  [20260606] 
+ 
+######################################################################## 
+  BENTER MODEL -- ROI ALL TRACKS 
+######################################################################## 
+ 
+======================================================================== 
+  CHARLES TOWN (CT) 
+======================================================================== 
+  Picks: picks_CT_05302026.txt 
+  Result: CT053026USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_CT_05302026.txt...
+  30 pick(s) loaded
+
+Loading result PDFs...
+  Parsing CT053026USA.pdf [CT]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ CHARLES TOWN (CT) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    StolenSecrets            TRAINER   WPS     3  $6.00  $ 3.20     -$2.80
+  R2    ClassyBay                TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R2    OurMemories              TRAINER   WPS     2  $6.00  $23.60    +$17.60
+  R3    Sylvette                 TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R3    WhinnyMissLynny          TRAINER   WPS     2  $6.00  $ 4.40     -$1.60
+  R4    Gimmethatsugar           TRAINER   WPS     1  $6.00  $19.00    +$13.00
+  R4    MalibuSon                TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R4    CoachSiggy               TRAINER   WPS     2  $6.00  $ 7.80     +$1.80
+  R4    HolidayCash              TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R4    Mitote                   TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R5    HurricaneAlert           TRAINER   WPS     1  $6.00  $20.80    +$14.80
+  R6    StoneColdJones           TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R6    Mayorofgreencounty       TRAINER   WPS     1  $6.00  $30.40    +$24.40
+  R6    GurneyHalleck            TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R6    Blameitonmyroots         TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R7    GreatFiber               TRAINER   WPS     1  $6.00  $ 7.40     +$1.40
+  R7    PrincessIrulan           TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R7    SilverSonde              TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R8    OvernightPowWow          TRAINER   WPS     1  $6.00  $ 8.60     +$2.60
+  R8    Shewonttalktome          TRAINER   WPS     3  $6.00  $ 2.40     -$3.60
+  R8    ZipStart                 TRAINER   WPS     9  $6.00  $ 0.00     -$6.00
+  R8    Jubaslilballerina        TRAINER   WPS    10  $6.00  $ 0.00     -$6.00
+  R8    PettyPerfect             TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R8    TheSkyIsFalling          TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R8    Thelastsay               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    IrishJubalee             TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R9    SoulCatcher              TRAINER   WPS     9  $6.00  $ 0.00     -$6.00
+  R9    Dorado                   TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R9    CatchtheHumor            TRAINER   WPS     1  $6.00  $11.00     +$5.00
+  R9    Katmandu                 TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $180.00  $138.60    -$41.40  ROI: -23.0%
+
+============================================================================
+  OVERALL TOTAL                                    $180.00  $138.60    -$41.40  ROI: -23.0%
+============================================================================
+
+ 
+======================================================================== 
+  FAIRMOUNT PARK (FP) 
+======================================================================== 
+  Picks: picks_FP_06022026.txt 
+  Result: FP060226USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_FP_06022026.txt...
+  12 pick(s) loaded
+
+Loading result PDFs...
+  Parsing FP060226USA.pdf [FP]...
+    8 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ FAIRMOUNT PARK (FP) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    WildwoodBell             TRAINER   WPS     1  $6.00  $13.60     +$7.60
+  R1    SummerCyclone            TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R2    PlayTwenty               TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R3    YoungMischief            TRAINER   WPS     2  $6.00  $11.60     +$5.60
+  R4    TigersaurusRex           TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R6    Granddaddylonglegs       TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R6    CallMeDrossel            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    SpanishDoubloon          TRAINER   WPS     3  $6.00  $ 2.60     -$3.40
+  R7    QualityStorm             TRAINER   WPS     3  $6.00  $ 4.00     -$2.00
+  R7    WarriorofGold            TRAINER   WPS     1  $6.00  $17.80    +$11.80
+  R8    PassingPassion           TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R8    Richiesgoldengirl        TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $72.00  $ 49.60    -$22.40  ROI: -31.1%
+
+============================================================================
+  OVERALL TOTAL                                    $72.00  $ 49.60    -$22.40  ROI: -31.1%
+============================================================================
+
+ 
+======================================================================== 
+  GULFSTREAM PARK (GP) 
+======================================================================== 
+  Picks: picks_GP_05312026.txt 
+  Result: GP053126USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_GP_05312026.txt...
+  18 pick(s) loaded
+
+Loading result PDFs...
+  Parsing GP053126USA.pdf [GP]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ GULFSTREAM PARK (GP) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    Sophistry                TRAINER   WPS     2  $6.00  $ 5.90     -$0.10
+  R1    Misprint                 TRAINER   WPS     1  $6.00  $12.50     +$6.50
+  R1    BreezeyBella             TRAINER   WPS     3  $6.00  $ 2.10     -$3.90
+  R1    AnyMoment                TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R2    BadGalParty              TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R3    GrimReaper               TRAINER   WPS     3  $6.00  $ 0.00     -$6.00
+  R3    BizBizBuzz               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    Gabaldon                 TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    BandedRocket             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    GiantTeddy               TRAINER   WPS     1  $6.00  $ 3.00     -$3.00
+  R4    CapturetheTime           TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R5    DancingMiracle           TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R5    Sonnynpeaches            TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    AwesomeTrain             TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R7    DrumRoll                 TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R7    HappyRide                TRAINER   WPS     1  $6.00  $ 9.00     +$3.00
+  R7    Lucy'sCookie             TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R8    WinBetOnly               TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $108.00  $ 32.50    -$75.50  ROI: -69.9%
+
+============================================================================
+  OVERALL TOTAL                                    $108.00  $ 32.50    -$75.50  ROI: -69.9%
+============================================================================
+
+ 
+======================================================================== 
+  EVANGELINE DOWNS (EVD) 
+======================================================================== 
+  Picks: picks_EVD_05302026.txt 
+  Result: EVD053026USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_EVD_05302026.txt...
+  23 pick(s) loaded
+
+Loading result PDFs...
+  Parsing EVD053026USA.pdf [EVD]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ EVANGELINE DOWNS (EVD) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    Taurean                  TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R2    LostintheSauce           TRAINER   WPS     9  $6.00  $ 0.00     -$6.00
+  R2    AmericanVision           TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R2    Consecrated              TRAINER   WPS     2  $6.00  $13.80     +$7.80
+  R3    SweetTalkinSlick         TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    Masteroffoxhounds        TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R3    SonyaKnowsBetter         TRAINER   WPS     3  $6.00  $ 2.10     -$3.90
+  R3    Publius                  TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R4    HighClassTrip            TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R5    AllerVite                TRAINER   WPS     8  $6.00  $ 0.00     -$6.00
+  R5    FeathersRoad             TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R5    Grunt                    TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R5    CypressGold              TRAINER   WPS     3  $6.00  $ 7.40     +$1.40
+  R6    Rosie'sAngus             TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R6    HonestAngus              TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R6    ChasingGlory             TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R7    Sonofaship               TRAINER   WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R7    McLarenVale              TRAINER   WPS     2  $6.00  $ 8.20     +$2.20
+  R8    Dolly'sGuitar            TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R8    SavedbyGrace             TRAINER   WPS     1  $6.00  $ 9.50     +$3.50
+  R9    KaraFlash                TRAINER   WPS     3  $6.00  $ 2.20     -$3.80
+  R9    ObstacleGal              TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R9    ChargetheDeal            TRAINER   WPS     1  $6.00  $ 9.40     +$3.40
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $138.00  $ 52.60    -$85.40  ROI: -61.9%
+
+============================================================================
+  OVERALL TOTAL                                    $138.00  $ 52.60    -$85.40  ROI: -61.9%
+============================================================================
+
+ 
+======================================================================== 
+  DELTA DOWNS (DD) 
+======================================================================== 
+  No picks_DD_*.txt found - run parse_dd.bat first 
+ 
+======================================================================== 
+  FAIR GROUNDS (FG) 
+======================================================================== 
+  No picks_FG_*.txt found - run parse_fg.bat first 
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260606.txt 
