@@ -95,11 +95,15 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Gulfstream Park\gp-results-20
         :: Format: YYYYMMDD-usa-gp-a-d.standard.pdf
         set "FILEDATE=!STEM:~0,8!"
     )
-    echo   [GP] %%f  ^|  date: !FILEDATE!
+    echo   [GP] File    : %%f
+    echo   [GP] FILEDATE: !FILEDATE!
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_GP_!FILEDATE!.txt"
+    echo   [GP] LOGFILE : !LOGFILE!
     if exist "!LOGFILE!" (
+        echo   [GP] STATUS  : LOG EXISTS -- skipping
         echo   Already processed: %%f - skipping
     ) else (
+        echo   [GP] STATUS  : LOG NOT FOUND -- processing
         powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results GP [!FILEDATE!]' -Encoding UTF8"
         echo   File: %%f
         echo   File: %%f >> "!LOGFILE!"
@@ -125,10 +129,17 @@ for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Evangeline Downs\evd-results-
     set "DIGITS=!STEM:~3,6!"
     set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
     set "FILEDATE=20!YY!!MM!!DD!"
+    echo   [EVD] File    : %%f
+    echo   [EVD] STEM    : !STEM!
+    echo   [EVD] DIGITS  : !DIGITS!  ^(MM=!MM! DD=!DD! YY=!YY!^)
+    echo   [EVD] FILEDATE: !FILEDATE!
     set "LOGFILE=%SCRIPTS%results-logs\RESULTS_EVD_!FILEDATE!.txt"
+    echo   [EVD] LOGFILE : !LOGFILE!
     if exist "!LOGFILE!" (
+        echo   [EVD] STATUS  : LOG EXISTS -- skipping
         echo   Already processed: %%f - skipping
     ) else (
+        echo   [EVD] STATUS  : LOG NOT FOUND -- processing
         powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results EVD [!FILEDATE!]' -Encoding UTF8"
         echo   File: %%f
         echo   File: %%f >> "!LOGFILE!"
