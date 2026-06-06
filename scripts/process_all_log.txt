@@ -1,0 +1,104 @@
+Process All Log -- Sat 06/06/2026 11:00:22.66 
+ 
+######################################################################## 
+  BENTER MODEL -- PROCESS ALL RESULTS 
+######################################################################## 
+ 
+======================================================================== 
+  CHARLES TOWN (CT) 
+======================================================================== 
+  Already processed: CT060526USA.pdf - skipping 
+  Already processed: CT060426USA.pdf - skipping 
+  Already processed: CT053026USA.pdf - skipping 
+  Already processed: CT052926USA.pdf - skipping 
+  Already processed: CT052826USA.pdf - skipping 
+  Already processed: CT051626USA.pdf - skipping 
+  Already processed: CT051526USA.pdf - skipping 
+  Already processed: CT050926USA.pdf - skipping 
+  Already processed: CT050826USA.pdf - skipping 
+  Already processed: CT050226USA.pdf - skipping 
+  Already processed: CT050126USA.pdf - skipping 
+  Already processed: CT043026USA.pdf - skipping 
+  Already processed: CT042526USA.pdf - skipping 
+  Already processed: CT042426USA.pdf - skipping 
+  Already processed: CT042326USA.pdf - skipping 
+  Already processed: CT041826USA.pdf - skipping 
+  Already processed: CT041726USA.pdf - skipping 
+  Already processed: CT041626USA.pdf - skipping 
+  Already processed: CT041126USA.pdf - skipping 
+  Already processed: CT041026USA.pdf - skipping 
+  Already processed: CT040926USA.pdf - skipping 
+  Already processed: CT040426USA.pdf - skipping 
+  Already processed: CT040326USA.pdf - skipping 
+  Already processed: CT040226USA.pdf - skipping 
+  Already processed: CT032826USA.pdf - skipping 
+  Already processed: CT032726USA.pdf - skipping 
+  Already processed: CT032626USA.pdf - skipping 
+  Already processed: CT032526USA.pdf - skipping 
+  Already processed: CT032126USA.pdf - skipping 
+  Already processed: CT032026USA.pdf - skipping 
+  Already processed: CT031926USA.pdf - skipping 
+  Already processed: CT031826USA.pdf - skipping 
+  Already processed: CT031426USA.pdf - skipping 
+  Already processed: CT031326USA.pdf - skipping 
+  Already processed: CT031226USA.pdf - skipping 
+  Already processed: CT031126USA.pdf - skipping 
+  Already processed: CT030726USA.pdf - skipping 
+  Already processed: CT030626USA.pdf - skipping 
+  Already processed: CT030526USA.pdf - skipping 
+  Already processed: CT030426USA.pdf - skipping 
+  Already processed: CT022826USA.pdf - skipping 
+  Already processed: CT022726USA.pdf - skipping 
+  Already processed: CT022626USA.pdf - skipping 
+  Already processed: CT022526USA.pdf - skipping 
+  Already processed: CT022126USA.pdf - skipping 
+  Already processed: CT022026USA.pdf - skipping 
+  Already processed: CT021926USA.pdf - skipping 
+  Already processed: CT021826USA.pdf - skipping 
+  Already processed: CT021426USA.pdf - skipping 
+  Already processed: CT021326USA.pdf - skipping 
+  Already processed: CT021226USA.pdf - skipping 
+  Already processed: CT021126USA.pdf - skipping 
+  Already processed: CT020726USA.pdf - skipping 
+  Already processed: CT020626USA.pdf - skipping 
+  Already processed: CT020526USA.pdf - skipping 
+  Already processed: CT020426USA.pdf - skipping 
+  Already processed: CT013126USA.pdf - skipping 
+  Already processed: CT013026USA.pdf - skipping 
+  Already processed: CT012926USA.pdf - skipping 
+  Already processed: CT012826USA.pdf - skipping 
+  Already processed: CT012426USA.pdf - skipping 
+  Already processed: CT012326USA.pdf - skipping 
+  Already processed: CT012226USA.pdf - skipping 
+  Already processed: CT012126USA.pdf - skipping 
+  Already processed: CT011726USA.pdf - skipping 
+  Already processed: CT011626USA.pdf - skipping 
+  Already processed: CT011526USA.pdf - skipping 
+  Already processed: CT011426USA.pdf - skipping 
+  Already processed: CT011026USA.pdf - skipping 
+  Already processed: CT010926USA.pdf - skipping 
+  Already processed: CT010826USA.pdf - skipping 
+  Already processed: CT010726USA.pdf - skipping 
+  Already processed: CT010326USA.pdf - skipping 
+  Already processed: CT010226USA.pdf - skipping 
+ 
+======================================================================== 
+  FAIRMOUNT PARK (FP) 
+======================================================================== 
+  Already processed: FP060226USA.pdf - skipping 
+  Already processed: FP053026USA.pdf - skipping 
+  Already processed: FP052626USA.pdf - skipping 
+  Already processed: FP052326USA.pdf - skipping 
+  Already processed: FP051926USA.pdf - skipping 
+  Already processed: FP051626USA.pdf - skipping 
+  Already processed: FP051226USA.pdf - skipping 
+  Already processed: FP050926USA.pdf - skipping 
+  Already processed: FP042826USA.pdf - skipping 
+  Already processed: FP042526USA.pdf - skipping 
+  Already processed: FP042126USA.pdf - skipping 
+  Already processed: FP041826USA.pdf - skipping 
+  Already processed: FP041426USA.pdf - skipping 
+ 
+======================================================================== 
+  GULFSTREAM PARK (GP) 
+======================================================================== 
