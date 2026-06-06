@@ -1,4 +1,4 @@
-Process All Log -- Sat 06/06/2026 11:00:22.66 
+Process All Log -- Sat 06/06/2026 11:24:00.11 
  
 ######################################################################## 
   BENTER MODEL -- PROCESS ALL RESULTS 
@@ -102,3 +102,2500 @@ Process All Log -- Sat 06/06/2026 11:00:22.66
 ======================================================================== 
   GULFSTREAM PARK (GP) 
 ======================================================================== 
+  [GP] File    : GP060526USA.pdf 
+  [GP] FILEDATE: 20260605 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260605.txt 
+  [GP] STATUS  : LOG NOT FOUND -- processing 
+  File: GP060526USA.pdf 
+ 
+Processing GP060526USA.pdf [GP]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : GULFSTREAM PARK
+  Source  : GP060526USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  CLM  |  5.5F  |  AW  |  $33,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    8  Unshakable                           11.40
+    2    7  Amande                                1.40
+    3    2  MyPerfectLady                         2.30
+    4    3  LookstoKill                          18.10
+    5    6  SocialTriumph                        21.00
+    6    5  InTiming                             13.80
+    7    4  LadyChance                            4.30
+    8    1  BiankaHeart                          53.50
+
+  Time    : 1:04.88
+  Trainer : Schuh, Tim
+  Sire    : Improbable
+
+  WIN   $24.80   PLC    $9.00   SHW    $4.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  MSW  |  5F  |  Dirt  |  $65,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  HotRodHoney                           1.40
+    2    1  Privateinformation                   47.60
+    3    3  LauraL                                3.10
+    4    4  JostaChanceYadi                       3.70
+    5    5  MagicCoin                            14.10
+    6    7  DoubleMagic                           3.30
+    7    2  Arkstorm                             31.60
+
+  Time    : 59.34
+  Trainer : David, Carlos
+  Sire    : Roadster
+
+  WIN    $4.80   PLC    $3.00   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  MCL  |  5F  |  AW  |  $37,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  WesternLilly                          8.60
+    2    5  TheCoromoto                           2.40
+    3    3  ScentofGarlic                         7.00
+    4    7  WinningDefense                        3.70
+    5    1  RelentlessLady                        2.50
+    6    4  BlumoonFire                           5.40
+    7    6  FarewellCharlotte                    21.30
+
+  Time    : 57.92
+  Trainer : Regalbuto, Frank
+  Sire    : EnHanse
+
+  WIN   $19.20   PLC    $7.20   SHW    $5.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  CLM  |  1 1/16M  |  AW  |  $30,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  AlwaysTrue                            1.40
+    2    6  FrostedPunk                           5.80
+    3    1  Tapstick                              2.70
+    4    2  Surfer'sJoy                          14.40
+    5    4  Infinityandbeyond                    35.30
+    6    5  CandyAddiction                        2.60
+    7    3  VinNumber                            38.50
+
+  Time    : 1:44.19
+  Trainer : Zanelli, Dante
+  Sire    : InstilledRegard
+
+  WIN    $4.80   PLC    $2.80   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  MCL  |  1M  |  Dirt  |  $28,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  Cadenced                              5.20
+    2    6  Awegod                                5.20
+    3    4  Sarkis                                2.00
+    4    7  GoldRules                             3.80
+
+  Time    : 1:40.37
+  Trainer : O'Connell, Kathleen
+  Sire    : Mushroom
+
+  WIN    $5.60   PLC    $3.00   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  AOC  |  5.5F  |  AW  |  $72,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  Rezasrolex                            0.20
+    2    6  Coppola                               4.20
+    3    3  Eamonn                                9.80
+    4    2  Takecareofbusiness                   14.40
+    5    4  Neshume                              35.20
+    6    5  Neostar                              21.60
+
+  Time    : 1:02.95
+  Trainer : Orseno, Joseph
+  Sire    : Bucchero
+
+  WIN    $2.40   PLC    $2.10   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  CLM  |  1 1/16M  |  AW  |  $26,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  Bettera                               2.40
+    2    6  TheHoneyman                          17.60
+    3    7  Anamnestic                            1.00
+    4    5  SouperLegacy                         36.40
+    5    8  MagicHeart                           15.10
+    6    4  FlagOfficer                          24.70
+    7    1  Fredericksburg                       63.30
+    8    3  DixiePreach                          15.30
+
+  Time    : 1:44.43
+  Trainer : Sweezey, J.
+  Sire    : Blame
+
+  WIN    $6.80   PLC    $5.20   SHW    $2.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  SOC  |  5.5F  |  AW  |  $37,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  VikingQuest                           4.90
+    2    4  Chispuda                              3.10
+    3    6  Artiste                              33.40
+    4    1  MoJava                                9.80
+    5    7  Rockyta                               1.50
+    6    5  StreetSue                             3.20
+    7    2  LadyQuestion                         20.50
+
+  Time    : 1:04.69
+  Trainer : Robson, Lauren
+  Sire    : MajesticWarrior
+
+  WIN   $11.80   PLC    $5.00   SHW    $3.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  MSW  |  5.5F  |  AW  |  $68,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  TheKidIsBack                          2.10
+    2    3  Luvucharlie                           2.70
+    3    7  CandiedUp                             2.00
+    4    5  DocHolliday                           7.00
+    5    6  CaseLaw                               7.40
+    6    2  AtomicDon                            19.90
+
+  Time    : 1:04.71
+  Trainer : Palmer, Nicholas
+  Sire    : Neolithic
+
+  WIN    $6.20   PLC    $3.20   SHW    $2.20
+
+========================================================================
+  9 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_GP_20260605.txt 
+  [GP] File    : GP053126USA.pdf 
+  [GP] FILEDATE: 20260531 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260531.txt 
+  [GP] STATUS  : LOG NOT FOUND -- processing 
+  File: GP053126USA.pdf 
+ 
+Processing GP053126USA.pdf [GP]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : GULFSTREAM PARK
+  Source  : GP053126USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  CLM  |  5F  |  AW  |  $29,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  Misprint                              2.30
+    2    1  Sophistry                             3.90
+    3    6  BreezeyBella                          1.20
+    4    7  AnyMoment                             3.40
+    5    2  TatorMade                            36.00
+
+  Time    : 56.98
+  Trainer : Fawkes, David
+  Sire    : TakeChargeIndy
+
+  WIN    $6.60   PLC    $3.80   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  SOC  |  5.5F  |  AW  |  $41,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  GettheWin                             2.30
+    2    1  TheDoveRules                          2.60
+    3    6  FreetoRoam                            9.70
+    4    3  MoLightNow                            6.90
+    5    7  BadGalParty                           1.90
+    6    5  LaTomasita                           11.70
+
+  Time    : 1:03.98
+  Trainer : Wilensky, Sam
+  Sire    : WinWinWin
+
+  WIN    $6.60   PLC    $3.80   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  AOC  |  5.5F  |  AW  |  $70,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  GiantTeddy                            0.50
+    2    6  Trelawny                              3.60
+    3    1  GrimReaper                            1.90
+
+  Time    : 1:03.09
+  Trainer : Fawkes, David
+  Sire    : GiantGizmo
+
+  WIN    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  CLM  |  6.5F  |  Dirt  |  $31,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  Tshiebwe                              5.40
+    2    2  Backonthechaingang                    4.00
+    3    4  Troops                               10.10
+    4    6  HolyStick                             6.20
+    5    1  CapturetheTime                        5.60
+
+  Time    : 1:16.99
+  Trainer : Castro, Jose
+  Sire    : RaceDay
+
+  WIN   $12.80   PLC    $5.40   SHW    $3.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  MCL  |  5.5F  |  AW  |  $36,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  BallUpTop                             1.20
+    2   10  WouldILietoYou                        4.10
+    3    6  StreetBelle                           3.40
+    4    9  CousinPammie                         16.50
+    5    4  LadyLullaby                          14.90
+    6    8  OurPerfectAmanda                      6.00
+    7    3  Gelinotte                            27.60
+
+  Time    : 1:04.65
+  Trainer : Sweezey, J.
+  Sire    : SeekingtheSoul
+
+  WIN    $4.40   PLC    $2.80   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  AOC  |  1 1/16M  |  Dirt  |  $71,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  CapitanDanny                          6.20
+    2    6  StealSunshine                         2.30
+    3    3  RacingDriver                          5.80
+    4    1  AlexanderHelios                       0.90
+    5    2  AwesomeTrain                          7.80
+
+  Time    : 1:43.19
+  Trainer : Barboza, Jr.,Victor
+  Sire    : Mendelssohn
+
+  WIN   $14.40   PLC    $5.00   SHW    $3.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  SOC  |  5F  |  AW  |  $35,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  HappyRide                             1.10
+    2    6  JokesUp                               4.50
+    3    7  MusicalDesign                        12.70
+    4    5  Roxy                                  4.10
+    5    8  Lucy'sCookie                          9.90
+    6    4  Aerialist                            55.70
+    7    2  Vayesta                              38.00
+    8    1  DrumRoll                              5.50
+
+  Time    : 56.78
+  Trainer : Orseno, Joseph
+  Sire    : RideOnCurlin
+
+  WIN    $4.20   PLC    $2.60   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  ALW  |  6.5F  |  Dirt  |  $65,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  Flowko                                0.50
+    2    3  GirvinStar                            8.70
+    3    5  FrostyBelle                           5.70
+    4    2  ViviGetYourGuns                      13.70
+    5    1  WinBetOnly                           12.60
+    6    4  It'sOnlyWords                         6.00
+    7    7  CallingtheShots                      29.90
+
+  Time    : 1:17.71
+  Trainer : Miller, Rory
+  Sire    : Brethren
+
+  WIN    $3.00   PLC    $2.10   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  MCL  |  5.5F  |  AW  |  $28,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  Ghostlight                            1.00
+    2   10  ILoveInes                             4.50
+    3    8  Vanessa'sWish                         4.50
+    4    1  Chefeta                              12.50
+    5    4  MarzEatoats                          14.70
+    6    2  CopperCreole                          8.50
+    7    9  Miskita                              11.60
+    8    6  Ilithyia                             55.90
+
+  Time    : 1:05.24
+  Trainer : Joseph, Jr.,Saffie
+  Sire    : Ghostzapper
+
+  WIN    $4.00   PLC    $2.40   SHW    $2.10
+
+========================================================================
+  9 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_GP_20260531.txt 
+  [GP] File    : GP053026USA.pdf 
+  [GP] FILEDATE: 20260530 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260530.txt 
+  [GP] STATUS  : LOG NOT FOUND -- processing 
+  File: GP053026USA.pdf 
+ 
+Processing GP053026USA.pdf [GP]...
+Found 11 race(s)
+
+========================================================================
+  RESULTS : GULFSTREAM PARK
+  Source  : GP053026USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  MCL  |  1 1/16M  |  AW  |  $28,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  OneMoreDuke                           2.50
+    2    8  SecretPower                           7.20
+    3    2  JackpotCree                           1.40
+    4    9  LightingArrow                        15.20
+    5    5  Numinous                             15.20
+    6    6  Whiskytangodisco                     44.80
+    7    3  Rodhan                               12.60
+    8    4  Rudi                                  4.80
+
+  Time    : 1:44.96
+  Trainer : Yates, Michael
+  Sire    : Solomini
+
+  WIN    $7.00   PLC    $4.80   SHW    $3.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  CLM  |  1M  |  Dirt  |  $26,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  CuddletheKitten                       2.70
+    2    1  PrettyGeisha                          3.50
+    3    5  LaDinamita                           10.90
+    4    4  AwesomelyWild                         7.90
+    5    6  LookintoRock                          8.70
+    6    7  BoomboxBetty                          3.20
+    7    8  SweetAgenda                           6.50
+    8    2  O'Hearn                              16.30
+
+  Time    : 1:39.81
+  Trainer : Jones, Jeffery
+  Sire    : CatholicBoy
+
+  WIN    $7.40   PLC    $4.40   SHW    $3.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  MSW  |  5.5F  |  AW  |  $68,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  HorsingAround                         1.30
+    2    5  SorellaBella                          1.60
+    3    7  BodaciousQueen                       12.50
+    4    6  WarriorSophie                         4.80
+    5    1  GottaBeMadison                        5.70
+    6    3  PerfectTwirl                         40.80
+
+  Time    : 1:04.51
+  Trainer : Joseph, Jr.,Saffie
+  Sire    : PracticalJoke
+
+  WIN    $4.60   PLC    $2.40   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  MCL  |  7F  |  Dirt  |  $37,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  Commendatore                          1.70
+    2    3  EzOrbNot                              0.90
+    3    2  NoblePride                            4.10
+    4    6  GiveItTime                           10.70
+
+  Time    : 1:23.95
+  Trainer : Delgado, Gustavo
+  Sire    : TwirlingCandy
+
+  WIN    $5.40   PLC    $2.40   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  CLM  |  1 1/16M  |  AW  |  $26,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    8  GameEnergy                            2.40
+    2    6  TonaLaughs                            1.80
+    3    1  DelRosario                           26.00
+    4    4  DixieEscape                          23.60
+    5    5  DivineBlue                            2.40
+    6    7  ForeverAgain                          4.80
+    7    2  BellaJak                             43.80
+
+  Time    : 1:44.40
+  Trainer : Crichton, Rohan
+  Sire    : Tunwoo
+
+  WIN    $6.80   PLC    $3.20   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  SOC  |  5.5F  |  AW  |  $35,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  IfNotforLuck                          2.30
+    2    1  Banneker                              7.10
+    3    4  Nic'sBro                              5.60
+    4    3  ThreeZero                             3.50
+    5    2  Rachel'sCoach                         3.30
+    6    5  MaitreD                               4.40
+
+  Time    : 1:03.17
+  Trainer : Chapman, Beau
+  Sire    : Neolithic
+
+  WIN    $6.60   PLC    $3.80   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  CLM  |  1M  |  Dirt  |  $25,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  BrotherBrad                           3.10
+    2    2  OCaptain                              3.80
+    3    1  BayofBengal                           2.70
+    4    3  AlAmeeq                              42.30
+    5    8  SpeedControl                         23.90
+    6    5  OutlawCountry                         7.20
+    7    4  Simo                                  2.40
+    8    7  PoliticalRiot                        53.00
+
+  Time    : 1:38.97
+  Trainer : Pulgarin, Sebastian
+  Sire    : Commissioner
+
+  WIN    $8.20   PLC    $4.00   SHW    $2.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  ALW  |  5F  |  AW  |  $65,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  RaydarControl                         0.70
+    2    1  StickyMcShnickens                     3.10
+    3    6  Neonate                              14.30
+    4    8  Fear                                  6.50
+    5    4  AegonTargaryen                       12.40
+    6    3  Zevi'sZone                           19.90
+    7    5  Jamalamadingdong                     12.30
+
+  Time    : 56.71
+  Trainer : Klesaris, Steve
+  Sire    : BahamianSquall
+
+  WIN    $3.40   PLC    $2.40   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  CLM  |  6F  |  Dirt  |  $33,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    8  SweetDreamLady                        1.70
+    2    7  SkyOverKingston                       6.10
+    3   11  Frida                                 3.40
+    4    6  RTunWho                               7.50
+    5    3  MissMagical                           8.40
+    6    4  Chapita                              64.90
+    7    1  PrismPoolPat                         10.60
+    8    2  DuchessEleanor                       12.30
+
+  Time    : 1:11.23
+  Trainer : Yates, Michael
+  Sire    : CajunBreeze
+
+  WIN    $5.40   PLC    $3.00   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 10  —  AOC  |  5F  |  AW  |  $71,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  VictoryAchieved                       6.80
+    2    2  Esperon                              11.40
+    3    6  AndUwish                              1.70
+    4    3  LouietheSunKing                       3.00
+    5    1  Extendo                               2.20
+    6    5  Rouki                                30.00
+    7    4  SosuaSummer                          16.90
+
+  Time    : 55.94
+  Trainer : Casse, Mark
+  Sire    : StreetSense
+
+  WIN   $15.60   PLC    $8.40   SHW    $5.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 11  —  CLM  |  1M  |  AW  |  $29,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1   11  FlyErikFly                            1.30
+    2    7  SpaceLaunch                           4.40
+    3    1  Maktub                               19.50
+    4   10  RocktheStars                         18.20
+    5    3  LightFury                             3.70
+    6    5  Hottakejake                          13.80
+    7    8  CortaFuego                            5.60
+    8    6  ToroForward                          16.00
+
+  Time    : 1:41.48
+  Trainer : Chapman, Beau
+  Sire    : CloudComputing
+
+  WIN    $4.60   PLC    $3.20   SHW    $2.40
+
+========================================================================
+  11 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_GP_20260530.txt 
+  [GP] File    : GP052926USA.pdf 
+  [GP] FILEDATE: 20260529 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260529.txt 
+  [GP] STATUS  : LOG NOT FOUND -- processing 
+  File: GP052926USA.pdf 
+ 
+Processing GP052926USA.pdf [GP]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : GULFSTREAM PARK
+  Source  : GP052926USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  MCL  |  5.5F  |  Dirt  |  $28,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  Blag'sMom                             6.10
+    2    3  SerenityPath                          1.50
+    3    5  MyGirlNina                            3.10
+    4    4  ILoveStone                            3.50
+    5    1  Harpy                                 4.70
+    6    6  LoveofJ                              74.50
+    7    7  HolySpicy                            41.30
+
+  Time    : 1:04.59
+  Trainer : Sanchez, Amador
+  Sire    : ElDeal
+
+  WIN   $14.20   PLC    $6.20   SHW    $4.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  MSW  |  4.5F  |  Dirt  |  $70,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  PrimeAurora                           5.70
+    2    7  MelodyQueen                           2.30
+    3    3  Lamdara                               2.00
+    4    4  Roadsterella                         20.70
+    5    6  Clare'sShines                        32.30
+    6    8  StraighttoJail                        6.70
+    7    1  Saiyaara                             23.30
+    8    5  RoccarossoRocket                      4.40
+
+  Time    : 51.37
+  Trainer : Gardea, Abraham
+  Sire    : MindControl
+
+  WIN   $13.40   PLC    $6.20   SHW    $3.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  CLM  |  5F  |  AW  |  $26,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  Zolene                                3.10
+    2    3  FireOntheWire                         1.60
+    3    4  MimiWilly                             3.50
+    4    7  VanishingWish                         6.20
+    5    2  StarshipVengeance                    21.80
+    6    1  CheriCheriLady                       22.30
+    7    5  MustBetheShoes                        6.60
+
+  Time    : 57.49
+  Trainer : D'Angelo, Jose
+  Sire    : Brethren
+
+  WIN    $8.20   PLC    $3.60   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  MCL  |  1 1/16M  |  AW  |  $44,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  JusticePrevails                       3.00
+    2    1  JustBrilliant                         4.90
+    3    7  Whirlawar                            13.70
+    4    5  Zarafa                                5.80
+    5    4  SisterSlew                            5.60
+    6    3  Clocklike                             2.80
+    7    2  SilverJuani                           5.10
+
+  Time    : 1:45.74
+  Trainer : Sweezey, J.
+  Sire    : TiztheLaw
+
+  WIN    $8.00   PLC    $3.80   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  CLM  |  1M  |  Dirt  |  $30,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  WillingOne                            3.90
+    2    2  JuanCamaney                          15.90
+    3    6  Mully'sMoon                           4.40
+    4    3  Antonino                              1.30
+    5    7  I'mTuffEnough                         7.60
+    6    9  Coercive                              4.40
+    7    1  FireBaron                            29.20
+
+  Time    : 1:39.07
+  Trainer : O'Connell, Kathleen
+  Sire    : Khozan
+
+  WIN    $9.80   PLC    $5.40   SHW    $4.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  MCL  |  1M  |  AW  |  $36,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  Operatnthunderbolt                    2.50
+    2    5  CoachKain                             1.00
+    3    1  Mosai                                11.00
+    4    8  Zenick                                7.20
+    5    4  DrDaniel                             43.80
+    6    2  ToJoey                                4.50
+    7    6  LeChasseur                           29.40
+
+  Time    : 1:43.64
+  Trainer : Tessore, Bruno
+  Sire    : QualityRoad
+
+  WIN    $7.00   PLC    $2.80   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  AOC  |  1M  |  Dirt  |  $70,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  Mogul                                 3.30
+    2    1  Nothingsubtle                         4.30
+    3    3  TheThor                              17.70
+    4    7  SkelligMichael                        1.60
+    5    5  HopSing                               1.70
+
+  Time    : 1:37.35
+  Trainer : Sanchez, Amador
+  Sire    : ClassicEmpire
+
+  WIN    $8.60   PLC    $5.00   SHW    $3.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  MSW  |  6F  |  Dirt  |  $68,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  Vanderbilt                            0.40
+    2    1  StateConceal                         27.10
+    3    6  NeoZapper                             4.90
+    4    2  PicThree                              2.90
+    5    4  Solemne                              16.90
+
+  Time    : 1:10.42
+  Trainer : Cox, Brad
+  Sire    : IntoMischief
+
+  WIN    $2.80   PLC    $2.20   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  SOC  |  5.5F  |  AW  |  $37,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  WinNJuice                             4.90
+    2    8  Losmastix                             1.90
+    3    1  GoldenAmbition                        8.80
+    4    3  ValueIntheClouds                     41.50
+    5    4  FuocoVivo                             2.20
+    6    5  BestMinetYet                          4.30
+    7    6  ScottieTooHottie                     11.40
+
+  Time    : 1:04.22
+  Trainer : Tomlinson, Nicholas
+  Sire    : WinWinWin
+
+  WIN   $11.80   PLC    $4.60   SHW    $3.20
+
+========================================================================
+  9 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_GP_20260529.txt 
+  [GP] File    : GP052426USA.pdf 
+  [GP] FILEDATE: 20260524 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260524.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP052426USA.pdf - skipping 
+  [GP] File    : GP052326USA.pdf 
+  [GP] FILEDATE: 20260523 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260523.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP052326USA.pdf - skipping 
+  [GP] File    : GP052226USA.pdf 
+  [GP] FILEDATE: 20260522 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260522.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP052226USA.pdf - skipping 
+  [GP] File    : GP051726USA.pdf 
+  [GP] FILEDATE: 20260517 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260517.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP051726USA.pdf - skipping 
+  [GP] File    : GP051626USA.pdf 
+  [GP] FILEDATE: 20260516 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260516.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP051626USA.pdf - skipping 
+  [GP] File    : GP051526USA.pdf 
+  [GP] FILEDATE: 20260515 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260515.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP051526USA.pdf - skipping 
+  [GP] File    : GP050926USA.pdf 
+  [GP] FILEDATE: 20260509 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260509.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP050926USA.pdf - skipping 
+  [GP] File    : GP050826USA.pdf 
+  [GP] FILEDATE: 20260508 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260508.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP050826USA.pdf - skipping 
+  [GP] File    : GP050326USA.pdf 
+  [GP] FILEDATE: 20260503 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260503.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP050326USA.pdf - skipping 
+  [GP] File    : GP050226USA.pdf 
+  [GP] FILEDATE: 20260502 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260502.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP050226USA.pdf - skipping 
+  [GP] File    : GP050126USA.pdf 
+  [GP] FILEDATE: 20260501 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260501.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP050126USA.pdf - skipping 
+  [GP] File    : GP043026USA.pdf 
+  [GP] FILEDATE: 20260430 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260430.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP043026USA.pdf - skipping 
+  [GP] File    : GP042626USA.pdf 
+  [GP] FILEDATE: 20260426 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260426.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP042626USA.pdf - skipping 
+  [GP] File    : GP042526USA.pdf 
+  [GP] FILEDATE: 20260425 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260425.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP042526USA.pdf - skipping 
+  [GP] File    : GP042426USA.pdf 
+  [GP] FILEDATE: 20260424 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260424.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP042426USA.pdf - skipping 
+  [GP] File    : GP042326USA.pdf 
+  [GP] FILEDATE: 20260423 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260423.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP042326USA.pdf - skipping 
+  [GP] File    : GP041926USA.pdf 
+  [GP] FILEDATE: 20260419 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260419.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP041926USA.pdf - skipping 
+  [GP] File    : GP041826USA.pdf 
+  [GP] FILEDATE: 20260418 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260418.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP041826USA.pdf - skipping 
+  [GP] File    : GP041726USA.pdf 
+  [GP] FILEDATE: 20260417 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260417.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP041726USA.pdf - skipping 
+  [GP] File    : GP041626USA.pdf 
+  [GP] FILEDATE: 20260416 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260416.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP041626USA.pdf - skipping 
+  [GP] File    : GP041226USA.pdf 
+  [GP] FILEDATE: 20260412 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260412.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP041226USA.pdf - skipping 
+  [GP] File    : GP041126USA.pdf 
+  [GP] FILEDATE: 20260411 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260411.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP041126USA.pdf - skipping 
+  [GP] File    : GP041026USA.pdf 
+  [GP] FILEDATE: 20260410 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260410.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP041026USA.pdf - skipping 
+  [GP] File    : GP040926USA.pdf 
+  [GP] FILEDATE: 20260409 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260409.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP040926USA.pdf - skipping 
+  [GP] File    : GP040526USA.pdf 
+  [GP] FILEDATE: 20260405 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260405.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP040526USA.pdf - skipping 
+  [GP] File    : GP040426USA.pdf 
+  [GP] FILEDATE: 20260404 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260404.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP040426USA.pdf - skipping 
+  [GP] File    : GP040226USA.pdf 
+  [GP] FILEDATE: 20260402 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260402.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP040226USA.pdf - skipping 
+  [GP] File    : GP032926USA.pdf 
+  [GP] FILEDATE: 20260329 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260329.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP032926USA.pdf - skipping 
+  [GP] File    : GP032826USA.pdf 
+  [GP] FILEDATE: 20260328 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260328.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP032826USA.pdf - skipping 
+  [GP] File    : GP032226.pdf 
+  [GP] FILEDATE: 20260322 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260322.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP032226.pdf - skipping 
+  [GP] File    : GP032126.pdf 
+  [GP] FILEDATE: 20260321 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260321.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP032126.pdf - skipping 
+  [GP] File    : GP032026.pdf 
+  [GP] FILEDATE: 20260320 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260320.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP032026.pdf - skipping 
+  [GP] File    : GP031926.pdf 
+  [GP] FILEDATE: 20260319 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260319.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP031926.pdf - skipping 
+  [GP] File    : GP031526.pdf 
+  [GP] FILEDATE: 20260315 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260315.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP031526.pdf - skipping 
+  [GP] File    : GP031426.pdf 
+  [GP] FILEDATE: 20260314 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260314.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP031426.pdf - skipping 
+  [GP] File    : GP031326.pdf 
+  [GP] FILEDATE: 20260313 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260313.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP031326.pdf - skipping 
+  [GP] File    : GP031226.pdf 
+  [GP] FILEDATE: 20260312 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260312.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP031226.pdf - skipping 
+  [GP] File    : GP030826.pdf 
+  [GP] FILEDATE: 20260308 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260308.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP030826.pdf - skipping 
+  [GP] File    : GP030726.pdf 
+  [GP] FILEDATE: 20260307 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260307.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP030726.pdf - skipping 
+  [GP] File    : GP030626.pdf 
+  [GP] FILEDATE: 20260306 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260306.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP030626.pdf - skipping 
+  [GP] File    : GP030526.pdf 
+  [GP] FILEDATE: 20260305 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260305.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP030526.pdf - skipping 
+  [GP] File    : GP030126.pdf 
+  [GP] FILEDATE: 20260301 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260301.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP030126.pdf - skipping 
+  [GP] File    : GP022826USA.pdf 
+  [GP] FILEDATE: 20260228 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260228.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP022826USA.pdf - skipping 
+  [GP] File    : GP022726.pdf 
+  [GP] FILEDATE: 20260227 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260227.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP022726.pdf - skipping 
+  [GP] File    : GP022626.pdf 
+  [GP] FILEDATE: 20260226 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260226.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP022626.pdf - skipping 
+  [GP] File    : GP022226.pdf 
+  [GP] FILEDATE: 20260222 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260222.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP022226.pdf - skipping 
+  [GP] File    : GP022126.pdf 
+  [GP] FILEDATE: 20260221 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260221.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP022126.pdf - skipping 
+  [GP] File    : GP022026.pdf 
+  [GP] FILEDATE: 20260220 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260220.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP022026.pdf - skipping 
+  [GP] File    : GP021926.pdf 
+  [GP] FILEDATE: 20260219 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260219.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP021926.pdf - skipping 
+  [GP] File    : GP021526.pdf 
+  [GP] FILEDATE: 20260215 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260215.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP021526.pdf - skipping 
+  [GP] File    : GP021426.pdf 
+  [GP] FILEDATE: 20260214 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260214.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP021426.pdf - skipping 
+  [GP] File    : GP021326.pdf 
+  [GP] FILEDATE: 20260213 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260213.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP021326.pdf - skipping 
+  [GP] File    : GP021226.pdf 
+  [GP] FILEDATE: 20260212 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260212.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP021226.pdf - skipping 
+  [GP] File    : GP020826.pdf 
+  [GP] FILEDATE: 20260208 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260208.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP020826.pdf - skipping 
+  [GP] File    : GP020726.pdf 
+  [GP] FILEDATE: 20260207 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260207.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP020726.pdf - skipping 
+  [GP] File    : GP020626.pdf 
+  [GP] FILEDATE: 20260206 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260206.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP020626.pdf - skipping 
+  [GP] File    : GP020526.pdf 
+  [GP] FILEDATE: 20260205 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260205.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP020526.pdf - skipping 
+  [GP] File    : GP020126.pdf 
+  [GP] FILEDATE: 20260201 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260201.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP020126.pdf - skipping 
+  [GP] File    : 20260327-usa-gp-a-d.standard.pdf 
+  [GP] FILEDATE: 20260327 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260327.txt 
+  [GP] STATUS  : LOG NOT FOUND -- processing 
+  File: 20260327-usa-gp-a-d.standard.pdf 
+ 
+Processing 20260327-usa-gp-a-d.standard.pdf [GP]...
+Found 10 race(s)
+
+========================================================================
+  RESULTS : GULFSTREAM PARK
+  Source  : 20260327-usa-gp-a-d.standard.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  MCL  |  1M  |  Turf  |  $34,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  Epico                                10.20
+    2    5  Rawayana                              4.20
+    3   10  Zenick                                3.20
+    4    8  AuNaturel                             2.20
+    5    7  ThreeCheers                          23.00
+    6   13  GeneralZapper                        11.10
+    7    2  It'stheStones                        21.80
+    8    3  LeChasseur                            4.00
+
+  Time    : 1:36.74
+  Trainer : Sano, Antonio
+  Sire    : Violence
+
+  WIN   $22.40   PLC   $10.40   SHW    $7.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  MCL  |  6F  |  Dirt  |  $34,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  StepSlow                              7.30
+    2    7  PrivateFlight                         2.00
+    3    4  TwinLights                            1.30
+    4    5  FindingCandy                          4.30
+    5    1  EminentPower                         12.50
+    6    3  ValuedEffort                         11.60
+
+  Time    : 1:11.39
+  Trainer : Abreu, Fernando
+  Sire    : Mr.Money
+
+  WIN   $16.60   PLC    $6.80   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  SOC  |  5F  |  Turf  |  $42,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  RogueRunner                           9.00
+    2    4  Rockyta                               3.10
+    3    3  GigiCake's                           17.10
+    4    2  Fermi                                 6.00
+    5    1  LadyChance                           42.60
+    6    5  KatetheSmate                          4.60
+    7    7  Chucky'sRide                          1.10
+
+  Time    : 55.83
+  Trainer : Jackson, Gary
+  Sire    : Rogueish
+
+  WIN   $20.00   PLC    $7.80   SHW    $5.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  MAIDENOPTION  |  5F  |  AW  |  $50,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  Corbet'sCrush                         3.40
+    2    5  Veola                                 0.90
+    3    7  SilverJuani                          21.00
+    4    3  DowntownRo                            5.30
+    5    2  EnglishHarbour                        2.90
+
+  Time    : 57.37
+  Trainer : Mott, Riley
+  Sire    : Volatile
+
+  WIN    $8.80   PLC    $3.60   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  CLM  |  6F  |  Dirt  |  $23,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  Chaina                                1.20
+    2    4  GoldenValley                          3.00
+    3    2  MyLadyJames                          10.80
+    4    1  RFirebird                             6.70
+    5    6  Don'tTellTammo                        3.60
+    6    3  AltaCalibre                           9.50
+
+  Time    : 1:11.99
+  Trainer : Garcia, Jr.,Pedro
+  Sire    : Girvin
+
+  WIN    $4.40   PLC    $2.60   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  MAIDENOPTION  |  7.5F  |  Turf  |  $50,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  Dafina                                4.30
+    2   10  StrikingFinale                        2.80
+    3    4  Zarafa                                6.70
+    4    5  Sonnynpeaches                         2.20
+    5    9  MustBetheShoes                        9.50
+    6    6  SisterSlew                            5.80
+    7    8  LookingAtUnicity                     18.80
+    8    2  RockinLady                           29.70
+
+  Time    : 1:29.41
+  Trainer : Attard, Kevin
+  Sire    : Mendelssohn
+
+  WIN   $10.60   PLC    $5.80   SHW    $4.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  AOC  |  1M  |  Dirt  |  $86,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  Cannoneer                             0.60
+    2    6  Lincoln'sLaw                          1.80
+    3    3  NeverCountMeOut                      33.20
+    4    5  ThunderChuck                         17.50
+    5    1  NoBees                                4.50
+
+  Time    : 1:36.23
+  Trainer : Cox, Brad
+  Sire    : IntoMischief
+
+  WIN    $3.20   PLC    $2.10   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  MAIDENOPTION  |  7F  |  Dirt  |  $50,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  Wearebackyoungman                     3.80
+    2    8  ProjectPat                            2.20
+    3    1  LuzdeGuia                             5.20
+    4    5  HolyDancer                           74.70
+    5    6  Wheelhouse                            7.80
+    6    4  Tellnotales                           6.90
+    7    2  NobleSky                              3.40
+    8    7  BigBeautifulBill                     17.60
+
+  Time    : 1:24.92
+  Trainer : Maker, Michael
+  Sire    : WinWinWin
+
+  WIN    $9.60   PLC    $4.60   SHW    $3.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  AOC  |  7.5F  |  Turf  |  $54,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  Quizler                               2.90
+    2    7  Caracas                               3.60
+    3    3  LandmanFriday                         4.60
+    4    6  Anamnestic                           20.80
+    5    4  Bluff                                10.60
+    6    8  Printer'sAlley                        6.60
+    7    9  MyVoodooDoll                          4.90
+    8    2  JavaBuzz                              6.70
+
+  Time    : 1:27.69
+  Trainer : Chapman, Beau
+  Sire    : Imperialism
+
+  WIN    $7.80   PLC    $4.00   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 10  —  CLM  |  1M  |  AW  |  $24,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1   10  BunnyHoney                            2.60
+    2    6  GameEnergy                            3.90
+    3    3  PocketPair                            4.80
+    4    4  VinofortheQueen                       3.60
+    5   11  FlatterFanatic                        8.70
+    6    2  LookintoRock                          7.00
+    7    9  ThreedotsAndadash                    33.20
+    8    1  ShedooKitten                         46.80
+
+  Time    : 1:43.02
+  Trainer : Sisterson, Jack
+  Sire    : AnyGivenSaturday
+
+  WIN    $7.20   PLC    $4.60   SHW    $3.40
+
+========================================================================
+  10 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_GP_20260327.txt 
+  [GP] File    : 20260326-usa-gp-a-d.standard.pdf 
+  [GP] FILEDATE: 20260326 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260326.txt 
+  [GP] STATUS  : LOG NOT FOUND -- processing 
+  File: 20260326-usa-gp-a-d.standard.pdf 
+ 
+Processing 20260326-usa-gp-a-d.standard.pdf [GP]...
+Found 10 race(s)
+
+========================================================================
+  RESULTS : GULFSTREAM PARK
+  Source  : 20260326-usa-gp-a-d.standard.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  MCL  |  1M  |  Turf  |  $34,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  RoyalRetinue                          3.10
+    2    5  DecisiveMaiara                        7.50
+    3    1  RolePlay                              0.30
+    4    6  LadyLullaby                          34.80
+    5    7  MissJenna                             9.90
+
+  Time    : 1:35.78
+  Trainer : Casse, Mark
+  Sire    : ScatDaddy
+
+  WIN    $8.20   PLC    $4.20   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  CLM  |  6F  |  Dirt  |  $24,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    8  Marty'sGal                            2.00
+    2    2  Horseplay                            13.00
+    3    7  Jayana                                3.80
+    4    9  LaDinamita                            2.00
+    5    1  Sobiech                               8.20
+    6    5  Shiloh                               36.60
+    7    4  BellaJak                             19.70
+    8    3  TripleThreat                         49.80
+
+  Time    : 1:12.73
+  Trainer : D'Angelo, Jose
+  Sire    : Khozan
+
+  WIN    $6.00   PLC    $3.40   SHW    $3.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  MCL  |  6F  |  Dirt  |  $26,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  Cassadaga                             2.70
+    2    2  MissMagical                           2.30
+    3    6  Flowerbomb                           24.60
+    4    7  FantasyWorld                          3.10
+    5    4  Loyalist                             25.80
+    6    3  ValleyofDawn                         29.70
+    7    5  UniMerla                              2.30
+
+  Time    : 1:13.44
+  Trainer : Biancone, Patrick
+  Sire    : Neolithic
+
+  WIN    $7.40   PLC    $3.40   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  SOC  |  5.5F  |  AW  |  $33,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  Rachel'sCoach                         1.70
+    2    2  ThreeZero                             2.80
+    3    3  Nic'sBro                              2.30
+    4    6  SplitStrike                           2.60
+
+  Time    : 1:03.47
+  Trainer : Crichton, Rohan
+  Sire    : CoachBob
+
+  WIN    $5.40   PLC    $2.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  CLM  |  6F  |  Dirt  |  $24,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  FinalPayment                          2.00
+    2    2  StopBeingGreedy                       1.80
+    3    1  GSpeedy                              13.70
+    4    5  WesternShaft                         19.20
+    5    4  SpongeTime                           58.10
+    6    6  CrazyRed                             12.60
+    7    7  SweetLazarus                         16.60
+    8    8  McMullen                              2.80
+
+  Time    : 1:10.50
+  Trainer : Chapman, Beau
+  Sire    : Girvin
+
+  WIN    $6.00   PLC    $3.00   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  CLM  |  1M  |  Turf  |  $31,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  ClassyLass                            1.80
+    2    5  ReadingTime                           2.10
+    3    1  LadyRiverLily                         4.40
+    4    7  WhataKnockout                        13.90
+    5    4  Seekingbythestorm                    54.70
+    6    3  GimmeSomeLuck                         2.70
+
+  Time    : 1:35.41
+  Trainer : Vitali, Marcus
+  Sire    : ClassicEmpire
+
+  WIN    $5.60   PLC    $2.80   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  MAIDENOPTION  |  6F  |  Dirt  |  $50,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  Don'tDoItLucy                         5.10
+    2    3  Sweetcity                             0.90
+    3    4  StormthePointe                        5.00
+    4    5  Tanya'sMomentum                      22.30
+    5    2  SoftlyDreaming                       19.40
+    6    8  RockMyStyle                          18.40
+    7    6  StreetSue                             3.50
+
+  Time    : 1:11.85
+  Trainer : D'Angelo, Jose
+  Sire    : Girvin
+
+  WIN   $12.20   PLC    $5.00   SHW    $3.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  AOC  |  6F  |  Dirt  |  $87,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  AmericanWomen                         8.30
+    2    3  Anna'sPromise                         2.30
+    3    2  MissEnchanted                         6.10
+    4    4  LuzdeLaLuna                           6.70
+    5    5  Stunner                               0.90
+    6    6  SecretRevenge                        44.10
+
+  Time    : 1:10.26
+  Trainer : Attard, Kevin
+  Sire    : Constitution
+
+  WIN   $18.60   PLC    $7.20   SHW    $4.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  CLM  |  7F  |  Dirt  |  $40,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  LatchtheHatch                         1.90
+    2    4  JoeyMuscles                           7.80
+    3    5  ArabianPrince                         5.00
+    4    3  KeepOnMoving                          6.70
+    5    7  DuneRoad                              8.80
+    6    6  SlimSlowSlider                        6.60
+    7    1  Rocketeer                             3.40
+
+  Time    : 1:23.85
+  Trainer : Orseno, Joseph
+  Sire    : MalibuMoon
+
+  WIN    $5.80   PLC    $3.40   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 10  —  STA  |  1M  |  Turf  |  $40,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  Ditched                               3.00
+    2    3  MaryMarguerite                        2.60
+    3    7  Acheron                              12.10
+    4    1  NoOtherLikeYou                        1.70
+    5    5  MayMischief                           7.60
+    6    6  AmericanPopstar                      12.20
+    7    9  UKnowWhenUKnow                       40.80
+    8    8  CircuitCourt                         31.70
+
+  Time    : 1:34.52
+  Trainer : Joseph, Jr.,Saffie
+  Sire    : BrokenVow
+
+  WIN    $8.00   PLC    $3.20   SHW    $2.40
+
+========================================================================
+  10 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_GP_20260326.txt 
+  [GP] File    : 01.31.26 GP Results.pdf 
+  [GP] FILEDATE: 20260131 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260131.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.31.26 GP Results.pdf - skipping 
+  [GP] File    : 01.30.26 GP Results.pdf 
+  [GP] FILEDATE: 20260130 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260130.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.30.26 GP Results.pdf - skipping 
+  [GP] File    : 01.29.26 GP Results.pdf 
+  [GP] FILEDATE: 20260129 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260129.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.29.26 GP Results.pdf - skipping 
+  [GP] File    : 01.25.26 GP Results.pdf 
+  [GP] FILEDATE: 20260125 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260125.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.25.26 GP Results.pdf - skipping 
+  [GP] File    : 01.24.26 GP Results.pdf 
+  [GP] FILEDATE: 20260124 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260124.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.24.26 GP Results.pdf - skipping 
+  [GP] File    : 01.23.26 GP Results.pdf 
+  [GP] FILEDATE: 20260123 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260123.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.23.26 GP Results.pdf - skipping 
+  [GP] File    : 01.22.26 GP Results.pdf 
+  [GP] FILEDATE: 20260122 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260122.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.22.26 GP Results.pdf - skipping 
+  [GP] File    : 01.18.26 GP Results.pdf 
+  [GP] FILEDATE: 20260118 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260118.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.18.26 GP Results.pdf - skipping 
+  [GP] File    : 01.17.26 GP Results.pdf 
+  [GP] FILEDATE: 20260117 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260117.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.17.26 GP Results.pdf - skipping 
+  [GP] File    : 01.16.26 GP Results.pdf 
+  [GP] FILEDATE: 20260116 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260116.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.16.26 GP Results.pdf - skipping 
+  [GP] File    : 01.15.26 GP Results.pdf 
+  [GP] FILEDATE: 20260115 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260115.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.15.26 GP Results.pdf - skipping 
+  [GP] File    : 01.11.26 GP Results.pdf 
+  [GP] FILEDATE: 20260111 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260111.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.11.26 GP Results.pdf - skipping 
+  [GP] File    : 01.10.26 GP Results.pdf 
+  [GP] FILEDATE: 20260110 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260110.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.10.26 GP Results.pdf - skipping 
+  [GP] File    : 01.09.26 GP Results.pdf 
+  [GP] FILEDATE: 20260109 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260109.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.09.26 GP Results.pdf - skipping 
+  [GP] File    : 01.08.26 GP Results.pdf 
+  [GP] FILEDATE: 20260108 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260108.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.08.26 GP Results.pdf - skipping 
+  [GP] File    : 01.04.26 GP Results.pdf 
+  [GP] FILEDATE: 20260104 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260104.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.04.26 GP Results.pdf - skipping 
+  [GP] File    : 01.03.26 GP Results.pdf 
+  [GP] FILEDATE: 20260103 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260103.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.03.26 GP Results.pdf - skipping 
+  [GP] File    : 01.02.26 GP Results.pdf 
+  [GP] FILEDATE: 20260102 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260102.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.02.26 GP Results.pdf - skipping 
+  [GP] File    : 01.01.26 GP Results.pdf 
+  [GP] FILEDATE: 20260101 
+  [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260101.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: 01.01.26 GP Results.pdf - skipping 
+ 
+======================================================================== 
+  EVANGELINE DOWNS (EVD) 
+======================================================================== 
+  [EVD] File    : EVD060526USA.pdf 
+  [EVD] STEM    : EVD060526USA 
+  [EVD] DIGITS  : 060526  (MM=06 DD=05 YY=26) 
+  [EVD] FILEDATE: 20260605 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260605.txt 
+  [EVD] STATUS  : LOG NOT FOUND -- processing 
+  File: EVD060526USA.pdf 
+ 
+Processing EVD060526USA.pdf [EVD]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : EVANGELINE DOWNS
+  Source  : EVD060526USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  CLM  |  7F  |  Dirt  |  $15,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  Seizethedaydude                       0.80
+    2    1  NativeRequite                        18.90
+    3    8  WickedPunches                        22.00
+    4   10  TincanCat                            11.70
+    5    2  ParoleDrama                           3.70
+    6    3  AwesomeWilliam                       20.70
+    7    5  AbouttheBusiness                     24.80
+    8    4  Jayjayjay                             5.10
+
+  Time    : 1:25.87
+  Trainer : Terre, David
+  Sire    : CarpeDiem
+
+  WIN    $3.60   PLC    $2.60   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  CLM  |  6F  |  Dirt  |  $11,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    8  LouisianaWildlife                     4.30
+    2    2  Jamesy'sEmpire                        0.80
+    3    9  GypsySquall                           7.10
+    4    4  JamaicanMe                           86.60
+    5    6  DonegalDreamer                       13.00
+    6    5  URascalU                             18.00
+    7    1  StableAgent                          94.60
+    8    3  Rancho                                4.10
+
+  Time    : 1:11.60
+  Trainer : Alberto, Antonio
+  Sire    : StarGuitar
+
+  WIN   $10.60   PLC    $3.80   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  CLM  |  6F  |  Dirt  |  $11,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  Goldzone                             21.20
+    2    2  Yuma'sShadow                          2.50
+    3    1  ToughLoveTorres                       0.40
+    4    3  Takeittothehouse                      6.10
+    5    7  TakenIt                              82.60
+    6    6  LilTemptation                        22.20
+
+  Time    : 1:12.46
+  Trainer : Gonzalez, Isai
+  Sire    : Goldencents
+
+  WIN   $44.40   PLC   $17.20   SHW    $3.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  CLM  |  1M  |  Dirt  |  $10,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  Seehoss                              51.60
+    2    4  CrimsonStorm                         64.50
+    3    2  Uxmal                                 3.80
+    4    9  TappinForaDance                      26.00
+    5    8  BirthdayParty                        35.70
+    6    1  BMinor                               10.30
+    7   11  Samurai'sGrandson                   115.00
+    8    3  GoldenGlider                          0.70
+
+  Time    : 1:40.19
+  Trainer : Larrosa, Juan
+  Sire    : AwesomeBet
+
+  WIN  $105.20   PLC   $28.40   SHW   $18.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  CLM  |  1M  |  Dirt  |  $19,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  Traitour                              3.00
+    2    8  PrimoCanary                           3.60
+    3    4  DixieDoctor                           4.00
+    4    2  Interlude                             7.00
+    5    3  BonsTempsRoule                        3.70
+    6    5  ReadyShoes                            5.50
+    7    9  TangoMikeMike                        24.90
+    8    6  Chenti                               52.80
+
+  Time    : 1:39.87
+  Trainer : LeonardIII, George
+  Sire    : MalibuMoon
+
+  WIN    $8.00   PLC    $4.20   SHW    $3.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  AOC  |  7F  |  Dirt  |  $34,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  Payne                                 3.10
+    2    7  Lambo                                 0.40
+    3    6  MazingMark                           23.20
+    4    5  PineappleWilly                       16.50
+    5    2  SweetFantasy                          7.00
+    6    1  TwoDollars                           32.80
+
+  Time    : 1:22.93
+  Trainer : Landry, Allen
+  Sire    : Paynter
+
+  WIN    $8.20   PLC    $2.80   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  MSW  |  1M  |  Dirt  |  $40,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  AllStarTout                           3.20
+    2    8  EskenforaveandAk                      4.20
+    3    7  Mae'sMajesty                          6.30
+    4    5  RestlessMind                          3.80
+    5    1  GemSauce                              3.20
+    6    2  MetallicMaid                         39.90
+    7    3  MojaneMetal                           4.60
+
+  Time    : 1:41.83
+  Trainer : Calhoun, W.
+  Sire    : Ghostzapper
+
+  WIN    $8.40   PLC    $4.20   SHW    $3.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  ALW  |  1M  |  Dirt  |  $41,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  EveofEve                              5.50
+    2    5  FactorofTime                          2.10
+    3    2  RileysEmpire                          2.70
+    4    4  SweetIron                            20.50
+    5    7  PlumWine                             16.00
+    6    1  TreasureMe                            1.80
+    7    3  MarlinDarlin                         64.20
+
+  Time    : 1:42.28
+  Trainer : Arey, Anthony
+  Sire    : SpuntoRun
+
+  WIN   $13.00   PLC    $4.60   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  MCL  |  6F  |  Dirt  |  $10,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1   12  Arnie                                 0.20
+    2    7  Youcandoitboy                        36.10
+    3    9  Sherkhan                             10.20
+    4    6  GlorylandBand                       111.00
+    5    4  RomanHonor                           19.40
+    6    5  Campanario                           24.60
+    7    3  Howiewin                             41.80
+    8    1  LaBoucane                            93.50
+
+  Time    : 1:12.55
+  Trainer : Jeansonne, Justin
+  Sire    : CityofLight
+
+  WIN    $2.40   PLC    $2.10   SHW    $2.10
+
+========================================================================
+  9 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_EVD_20260605.txt 
+  [EVD] File    : EVD060426USA.pdf 
+  [EVD] STEM    : EVD060426USA 
+  [EVD] DIGITS  : 060426  (MM=06 DD=04 YY=26) 
+  [EVD] FILEDATE: 20260604 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260604.txt 
+  [EVD] STATUS  : LOG NOT FOUND -- processing 
+  File: EVD060426USA.pdf 
+ 
+Processing EVD060426USA.pdf [EVD]...
+Found 8 race(s)
+
+========================================================================
+  RESULTS : EVANGELINE DOWNS
+  Source  : EVD060426USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  MSW  |  1M  |  Dirt  |  $40,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  MusicalBand                           2.50
+    2    5  CajunCupid                            5.30
+    3   11  LilCentral                            2.90
+    4    2  Uninspired                           14.40
+    5    9  Tommie'sTrue                        106.40
+    6    8  SoftHands                             1.60
+    7    7  Shalom                               47.10
+    8   10  Perennialspromise                    44.20
+
+  Time    : 1:40.30
+  Trainer : Wilson, Shane
+  Sire    : StarGuitar
+
+  WIN    $7.00   PLC    $4.60   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  CLM  |  5F  |  Dirt  |  $15,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  Pasketee                              2.20
+    2    5  MyChulupa                            12.40
+    3    7  JosephH                              46.10
+    4    2  BillyBowlegs                         42.60
+    5    1  RunningRagged                         2.60
+    6    8  Shawn'sSolving                       45.90
+    7    6  MaybeEye'llCall                       4.40
+    8    9  FinalHalf                             2.90
+
+  Time    : 58.92
+  Trainer : Chatters, Benard
+  Sire    : Goldencents
+
+  WIN    $6.40   PLC    $4.40   SHW    $3.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  CLM  |  6F  |  Dirt  |  $11,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  BlueCheese                            1.80
+    2   10  GamePort                              6.90
+    3    7  Scallywag                            13.50
+    4    4  BigNickel                             8.90
+    5    3  RhumSaintEsprit                       4.60
+    6    8  CrimeSpree                            5.40
+    7    5  MudOnMyBoots                          5.10
+    8    9  RebelEmpire                          15.40
+
+  Time    : 1:11.97
+  Trainer : Breaux, Samuel
+  Sire    : Midshipman
+
+  WIN    $5.60   PLC    $3.20   SHW    $2.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  MCL  |  6F  |  Dirt  |  $10,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1   10  GinandTonic                           0.70
+    2    2  CandyGirlMiss                         7.40
+    3    1  SecurityQueen                        24.30
+    4    5  JailhouseReligion                     5.00
+    5    9  LittleMillie                         22.10
+    6    8  CocoBellaBlue                         8.00
+    7    4  SwingBy                              59.40
+    8    6  EmmyLou'sSong                         7.30
+
+  Time    : 1:12.81
+  Trainer : Degeyter, Jr.,Randy
+  Sire    : AureliusMaximus
+
+  WIN    $3.40   PLC    $2.40   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  AOC  |  1M  |  Dirt  |  $43,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  KenmoreWest                           0.70
+    2    3  TakeChargeJJ                         39.00
+    3    1  CajunMitole                           2.00
+    4    9  BigChopper                            6.20
+    5    5  Jeffrow                              36.40
+    6    2  Calicoco                              8.50
+    7    8  GamerNate                            38.80
+
+  Time    : 1:38.99
+  Trainer : Calhoun, W.
+  Sire    : WestCoast
+
+  WIN    $3.40   PLC    $2.60   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  STA  |  1M  |  Dirt  |  $18,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  Nopenottonight                        0.90
+    2    2  CriticalThreat                        2.90
+    3    6  LikeThis                              5.90
+    4    1  ButlerCabin                           6.70
+    5    3  TheBossSoss                           7.20
+    6    4  IronintheFire                        21.00
+
+  Time    : 1:38.55
+  Trainer : Bourgeois, Keith
+  Sire    : Unified
+
+  WIN    $3.80   PLC    $2.40   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  ALW  |  1M  |  Dirt  |  $41,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    3  Metairie                             14.80
+    2    1  Inchhighatahundred                    1.60
+    3    9  CajunMoviestar                       55.60
+    4    4  Cunimbus                              2.00
+    5    6  Seitan                               10.90
+    6    7  WhoIsChief                           13.20
+    7    8  BeachBlanket                          5.20
+    8   10  ElDan                                20.70
+
+  Time    : 1:40.42
+  Trainer : Cuccia, L.
+  Sire    : HardSpun
+
+  WIN   $31.60   PLC   $10.40   SHW    $6.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  MCL  |  5F  |  Dirt  |  $14,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  CharlieGamer                          2.80
+    2    3  TheBoyzRealDeal                      72.00
+    3    5  Samuel                                3.40
+    4    7  ChiefDustMaker                        4.30
+    5    9  SeverusSquall                         5.70
+    6    8  Truvy'sHit                           56.80
+    7    4  CadillacBo                           18.90
+    8    2  He'sReadytoWin                        2.50
+
+  Time    : 59.83
+  Trainer : Thomas, Lee
+  Sire    : MyPalCharlie
+
+  WIN    $7.60   PLC    $4.80   SHW    $3.80
+
+========================================================================
+  8 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_EVD_20260604.txt 
+  [EVD] File    : EVD053026USA.pdf 
+  [EVD] STEM    : EVD053026USA 
+  [EVD] DIGITS  : 053026  (MM=05 DD=30 YY=26) 
+  [EVD] FILEDATE: 20260530 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260530.txt 
+  [EVD] STATUS  : LOG NOT FOUND -- processing 
+  File: EVD053026USA.pdf 
+ 
+Processing EVD053026USA.pdf [EVD]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : EVANGELINE DOWNS
+  Source  : EVD053026USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  MCL  |  7F  |  Dirt  |  $14,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  BeachTrippin                          0.90
+    2    9  LouisianaBargain                      8.90
+    3    8  OakHillBoy                           20.50
+    4    6  StanleyLittleBoy                      8.60
+    5    3  IronFortune                           5.50
+    6    2  Taurean                              18.00
+    7    1  Onemotime                             3.70
+    8    5  AustonGotEven                        74.70
+
+  Time    : 1:25.73
+  Trainer : Fuselier, Jonah
+  Sire    : CountryDay
+
+  WIN    $3.80   PLC    $2.40   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  CLM  |  1M  |  Dirt  |  $11,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    8  Asaasy                               19.30
+    2    9  Consecrated                           0.60
+    3    2  NoRematch                             2.70
+    4    1  Prinsipito                           24.20
+    5    7  AmericanVision                       52.60
+    6    3  MyUncleBilly                         56.50
+    7   10  Peyton'sDay                          16.30
+    8    6  MyHighmoon                           15.50
+
+  Time    : 1:40.66
+  Trainer : Eschete, Nason
+  Sire    : HardSpun
+
+  WIN   $40.60   PLC    $9.60   SHW    $4.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  CLM  |  1M  |  Dirt  |  $17,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  CausewayBenny                         1.40
+    2    4  Sendero                               6.60
+    3    8  SonyaKnowsBetter                      2.90
+    4   10  Wilton                               48.10
+    5    6  SpecialStormy                        16.90
+
+  Time    : 1:38.44
+  Trainer : Jeansonne, Justin
+  Sire    : Changeintheweather
+
+  WIN    $4.80   PLC    $2.60   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  CLM  |  5F  |  Dirt  |  $15,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  CallMeSusan                          11.50
+    2    2  SecretWine                            8.60
+    3    3  TarkingtonSunrise                     9.30
+    4   11  HighClassTrip                         3.70
+    5    5  DoseofReality                         0.90
+    6    9  LaPalabra                            33.70
+    7   12  TarkingtonGirl                       89.20
+    8   10  OurGalLayla                           8.20
+
+  Time    : 59.38
+  Trainer : Alberto, Antonio
+  Sire    : AureliusMaximus
+
+  WIN   $25.00   PLC   $13.00   SHW    $8.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  CLM  |  1M  |  Dirt  |  $11,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    9  Throwin'Shade                        12.70
+    2    6  EmeraldExpress                        6.60
+    3   10  CypressGold                           2.10
+    4    8  Grunt                                13.90
+    5    1  GrazenBoy                             3.70
+    6    4  FeathersRoad                          4.10
+    7    5  Insignis                             30.20
+    8    3  AllerVite                             5.70
+
+  Time    : 1:39.89
+  Trainer : Zeno, Benjamin
+  Sire    : OneLiner
+
+  WIN   $27.40   PLC   $14.40   SHW    $7.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  AOC  |  1M  |  Dirt  |  $34,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  Leslie'sMojeaux                       0.30
+    2    8  PrimaBella                           17.50
+    3   11  Rosieontheriver                      22.10
+    4    2  ForgottenFortune                     26.10
+    5   10  ChasingGlory                          4.00
+    6    6  HonestAngus                           6.70
+    7    9  BlueRidgeQueen                       38.60
+
+  Time    : 1:39.34
+  Trainer : Calhoun, W.
+  Sire    : Violence
+
+  WIN    $2.60   PLC    $2.20   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  CLM  |  5F  |  Dirt  |  $10,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  Drewmazing                            9.10
+    2    8  McLarenVale                           0.30
+    3    5  WildBert                             16.10
+    4    7  Loudermilk                           17.90
+    5    1  StompingHotrod                        7.10
+    6    6  CatalinaDay                          15.60
+    7    9  Courtman                             55.70
+    8    3  WesternAvenue                        17.00
+
+  Time    : 58.73
+  Trainer : Schwandt, Emile
+  Sire    : Bayern
+
+  WIN   $20.20   PLC    $5.20   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  ALW  |  1M  |  Dirt  |  $41,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  SavedbyGrace                          1.50
+    2    3  Viv'sWildAces                         3.00
+    3    5  ClearlyaTest                          3.00
+    4    7  Hopeitsmyluckyday                     5.00
+    5    1  Dolly'sGuitar                        12.90
+    6    6  LolaandRose                          16.10
+    7    4  Varinisi                             55.10
+
+  Time    : 1:39.50
+  Trainer : Larrosa, Juan
+  Sire    : StarGuitar
+
+  WIN    $5.00   PLC    $2.40   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  CLM  |  6F  |  Dirt  |  $15,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1   11  ChargetheDeal                         1.20
+    2    1  EducatedWish                          6.20
+    3    8  KaraFlash                             4.80
+    4   12  Insipid                               6.90
+    5    6  WickeyBibby                          52.80
+    6    7  Moneyforwednesday                     9.40
+    7   10  ObstacleGal                          19.50
+    8    3  Talkabout                            20.40
+
+  Time    : 1:13.32
+  Trainer : Larrosa, Juan
+  Sire    : ElDeal
+
+  WIN    $4.40   PLC    $2.80   SHW    $2.20
+
+========================================================================
+  9 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_EVD_20260530.txt 
+  [EVD] File    : EVD052926USA.pdf 
+  [EVD] STEM    : EVD052926USA 
+  [EVD] DIGITS  : 052926  (MM=05 DD=29 YY=26) 
+  [EVD] FILEDATE: 20260529 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260529.txt 
+  [EVD] STATUS  : LOG NOT FOUND -- processing 
+  File: EVD052926USA.pdf 
+ 
+Processing EVD052926USA.pdf [EVD]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : EVANGELINE DOWNS
+  Source  : EVD052926USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  MCL  |  7F  |  Dirt  |  $14,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  MoPumpkin                             1.20
+    2    6  Onedayatatime                        16.40
+    3    5  WickedCustoms                         2.30
+    4    3  StormSurge                           10.80
+    5    4  DazeDay                              43.30
+    6    1  Francesnfriends                      11.80
+    7    2  MrLee'sPrincess                      70.00
+
+  Time    : 1:26.65
+  Trainer : Devereux, Jr.,Patrick
+  Sire    : MoTom
+
+  WIN    $4.40   PLC    $2.60   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  CLM  |  1M  |  Dirt  |  $11,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  ThatsUnbelievable                     3.90
+    2    5  MoDiva                                1.30
+    3    2  SmoochieBoo                           4.60
+    4    3  Acadiana                             40.50
+    5    8  Awree                                 2.80
+    6    6  Ifuaintfirsturlast                   17.40
+    7    4  SlimCauseway                         44.20
+    8    1  She'saTarget                         20.90
+
+  Time    : 1:42.78
+  Trainer : Landry, Allen
+  Sire    : Gormley
+
+  WIN    $9.80   PLC    $4.00   SHW    $3.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  MSW  |  6F  |  Dirt  |  $32,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  BuntusFoclora                         0.40
+    2    1  SocialClimber                         4.20
+    3    2  PolarWolf                            17.80
+    4    5  OutforVengance                       26.00
+    5    6  KamaCan                               6.60
+    6    4  PrintMoreMoney                       61.00
+    7    3  SimplicityCall                       13.50
+
+  Time    : 1:11.27
+  Trainer : Noel, Dane
+  Sire    : ThousandWords
+
+  WIN    $2.80   PLC    $2.10   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  CLM  |  6F  |  Dirt  |  $15,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  VCut                                  2.50
+    2    9  AllCountry                           10.70
+    3   12  GoldThief                             4.40
+    4   11  Quikonthetrigger                     13.30
+    5    8  RighteousFreedom                      9.10
+    6   10  Analitico                             8.80
+    7    3  OurBodie                              2.10
+    8    6  YaketyYak                            87.30
+
+  Time    : 1:12.15
+  Trainer : Breaux, Samuel
+  Sire    : Volatile
+
+  WIN    $7.00   PLC    $4.20   SHW    $3.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  MSW  |  5F  |  Dirt  |  $32,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    4  Napping                               1.90
+    2    8  BlueMist                             11.50
+    3    3  PreachItSister                       53.90
+    4    5  StellarKnickie                        6.80
+    5    1  CCFantaC                             14.50
+    6    7  Dreamrosa                             2.20
+    7    6  Constructively                       12.80
+    8    2  ScarletHeart                          4.50
+
+  Time    : 57.87
+  Trainer : Wilson, Shane
+  Sire    : MuchoMachoMan
+
+  WIN    $5.80   PLC    $3.20   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  Dirt
+────────────────────────────────────────────────────────────────────────
+  (no finisher data parsed)
+
+  Payouts: (not found)
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  Dirt
+────────────────────────────────────────────────────────────────────────
+  (no finisher data parsed)
+
+  Payouts: (not found)
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  Dirt
+────────────────────────────────────────────────────────────────────────
+  (no finisher data parsed)
+
+  Payouts: (not found)
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  Dirt
+────────────────────────────────────────────────────────────────────────
+  (no finisher data parsed)
+
+  Payouts: (not found)
+
+========================================================================
+  9 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_EVD_20260529.txt 
+  [EVD] File    : EVD052826USA.pdf 
+  [EVD] STEM    : EVD052826USA 
+  [EVD] DIGITS  : 052826  (MM=05 DD=28 YY=26) 
+  [EVD] FILEDATE: 20260528 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260528.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD052826USA.pdf - skipping 
+  [EVD] File    : EVD052326USA.pdf 
+  [EVD] STEM    : EVD052326USA 
+  [EVD] DIGITS  : 052326  (MM=05 DD=23 YY=26) 
+  [EVD] FILEDATE: 20260523 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260523.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD052326USA.pdf - skipping 
+  [EVD] File    : EVD052226USA.pdf 
+  [EVD] STEM    : EVD052226USA 
+  [EVD] DIGITS  : 052226  (MM=05 DD=22 YY=26) 
+  [EVD] FILEDATE: 20260522 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260522.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD052226USA.pdf - skipping 
+  [EVD] File    : EVD052126USA.pdf 
+  [EVD] STEM    : EVD052126USA 
+  [EVD] DIGITS  : 052126  (MM=05 DD=21 YY=26) 
+  [EVD] FILEDATE: 20260521 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260521.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD052126USA.pdf - skipping 
+  [EVD] File    : EVD051626USA.pdf 
+  [EVD] STEM    : EVD051626USA 
+  [EVD] DIGITS  : 051626  (MM=05 DD=16 YY=26) 
+  [EVD] FILEDATE: 20260516 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260516.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD051626USA.pdf - skipping 
+  [EVD] File    : EVD051526USA.pdf 
+  [EVD] STEM    : EVD051526USA 
+  [EVD] DIGITS  : 051526  (MM=05 DD=15 YY=26) 
+  [EVD] FILEDATE: 20260515 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260515.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD051526USA.pdf - skipping 
+  [EVD] File    : EVD051426USA.pdf 
+  [EVD] STEM    : EVD051426USA 
+  [EVD] DIGITS  : 051426  (MM=05 DD=14 YY=26) 
+  [EVD] FILEDATE: 20260514 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260514.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD051426USA.pdf - skipping 
+  [EVD] File    : EVD050926USA.pdf 
+  [EVD] STEM    : EVD050926USA 
+  [EVD] DIGITS  : 050926  (MM=05 DD=09 YY=26) 
+  [EVD] FILEDATE: 20260509 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260509.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD050926USA.pdf - skipping 
+  [EVD] File    : EVD050826USA.pdf 
+  [EVD] STEM    : EVD050826USA 
+  [EVD] DIGITS  : 050826  (MM=05 DD=08 YY=26) 
+  [EVD] FILEDATE: 20260508 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260508.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD050826USA.pdf - skipping 
+  [EVD] File    : EVD050226USA.pdf 
+  [EVD] STEM    : EVD050226USA 
+  [EVD] DIGITS  : 050226  (MM=05 DD=02 YY=26) 
+  [EVD] FILEDATE: 20260502 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260502.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD050226USA.pdf - skipping 
+  [EVD] File    : EVD050226USA (1).pdf 
+  [EVD] STEM    : EVD050226USA (1) 
+  [EVD] DIGITS  : 050226  (MM=05 DD=02 YY=26) 
+  [EVD] FILEDATE: 20260502 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260502.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD050226USA (1).pdf - skipping 
+  [EVD] File    : EVD050126USA.pdf 
+  [EVD] STEM    : EVD050126USA 
+  [EVD] DIGITS  : 050126  (MM=05 DD=01 YY=26) 
+  [EVD] FILEDATE: 20260501 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260501.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD050126USA.pdf - skipping 
+  [EVD] File    : EVD043026USA.pdf 
+  [EVD] STEM    : EVD043026USA 
+  [EVD] DIGITS  : 043026  (MM=04 DD=30 YY=26) 
+  [EVD] FILEDATE: 20260430 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260430.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD043026USA.pdf - skipping 
+  [EVD] File    : EVD042926USA.pdf 
+  [EVD] STEM    : EVD042926USA 
+  [EVD] DIGITS  : 042926  (MM=04 DD=29 YY=26) 
+  [EVD] FILEDATE: 20260429 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260429.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD042926USA.pdf - skipping 
+  [EVD] File    : EVD042526USA.pdf 
+  [EVD] STEM    : EVD042526USA 
+  [EVD] DIGITS  : 042526  (MM=04 DD=25 YY=26) 
+  [EVD] FILEDATE: 20260425 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260425.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD042526USA.pdf - skipping 
+  [EVD] File    : EVD042326USA.pdf 
+  [EVD] STEM    : EVD042326USA 
+  [EVD] DIGITS  : 042326  (MM=04 DD=23 YY=26) 
+  [EVD] FILEDATE: 20260423 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260423.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD042326USA.pdf - skipping 
+  [EVD] File    : EVD042226USA.pdf 
+  [EVD] STEM    : EVD042226USA 
+  [EVD] DIGITS  : 042226  (MM=04 DD=22 YY=26) 
+  [EVD] FILEDATE: 20260422 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260422.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD042226USA.pdf - skipping 
+  [EVD] File    : EVD041826USA.pdf 
+  [EVD] STEM    : EVD041826USA 
+  [EVD] DIGITS  : 041826  (MM=04 DD=18 YY=26) 
+  [EVD] FILEDATE: 20260418 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260418.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD041826USA.pdf - skipping 
+  [EVD] File    : EVD041726USA.pdf 
+  [EVD] STEM    : EVD041726USA 
+  [EVD] DIGITS  : 041726  (MM=04 DD=17 YY=26) 
+  [EVD] FILEDATE: 20260417 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260417.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD041726USA.pdf - skipping 
+  [EVD] File    : EVD041626USA.pdf 
+  [EVD] STEM    : EVD041626USA 
+  [EVD] DIGITS  : 041626  (MM=04 DD=16 YY=26) 
+  [EVD] FILEDATE: 20260416 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260416.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD041626USA.pdf - skipping 
+  [EVD] File    : EVD041526USA.pdf 
+  [EVD] STEM    : EVD041526USA 
+  [EVD] DIGITS  : 041526  (MM=04 DD=15 YY=26) 
+  [EVD] FILEDATE: 20260415 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260415.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD041526USA.pdf - skipping 
+  [EVD] File    : EVD041126USA.pdf 
+  [EVD] STEM    : EVD041126USA 
+  [EVD] DIGITS  : 041126  (MM=04 DD=11 YY=26) 
+  [EVD] FILEDATE: 20260411 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260411.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD041126USA.pdf - skipping 
+  [EVD] File    : EVD041026USA.pdf 
+  [EVD] STEM    : EVD041026USA 
+  [EVD] DIGITS  : 041026  (MM=04 DD=10 YY=26) 
+  [EVD] FILEDATE: 20260410 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260410.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD041026USA.pdf - skipping 
+  [EVD] File    : EVD040926USA.pdf 
+  [EVD] STEM    : EVD040926USA 
+  [EVD] DIGITS  : 040926  (MM=04 DD=09 YY=26) 
+  [EVD] FILEDATE: 20260409 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260409.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD040926USA.pdf - skipping 
+  [EVD] File    : EVD040826USA.pdf 
+  [EVD] STEM    : EVD040826USA 
+  [EVD] DIGITS  : 040826  (MM=04 DD=08 YY=26) 
+  [EVD] FILEDATE: 20260408 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260408.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD040826USA.pdf - skipping 
+  [EVD] File    : EVD040426USA.pdf 
+  [EVD] STEM    : EVD040426USA 
+  [EVD] DIGITS  : 040426  (MM=04 DD=04 YY=26) 
+  [EVD] FILEDATE: 20260404 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260404.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD040426USA.pdf - skipping 
+  [EVD] File    : EVD040326USA.pdf 
+  [EVD] STEM    : EVD040326USA 
+  [EVD] DIGITS  : 040326  (MM=04 DD=03 YY=26) 
+  [EVD] FILEDATE: 20260403 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260403.txt 
+  [EVD] STATUS  : LOG EXISTS -- skipping 
+  Already processed: EVD040326USA.pdf - skipping 
+ 
+======================================================================== 
+  DELTA DOWNS (DD) 
+======================================================================== 
+  Already processed: 20250222-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250221-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250220-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250219-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250215-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250214-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250213-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250212-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250208-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250207-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250206-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250205-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250201-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250131-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250130-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250129-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250128-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250125-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250124-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250118-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250117-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250116-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250115-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250111-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250110-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250109-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250108-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250104-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250103-usa-ded-a-d.standard.pdf - skipping 
+  Already processed: 20250102-usa-ded-a-d.standard.pdf - skipping 
+ 
+======================================================================== 
+  FAIR GROUNDS (FG) 
+======================================================================== 
+  Already processed: 20260322-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260321-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260320-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260319-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260316-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260315-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260314-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260313-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260312-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260309-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260308-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260307-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260306-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260305-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260301-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260228-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260227-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260226-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260222-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260221-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260220-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260219-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260217-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260216-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260214-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260213-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260212-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260207-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260206-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260205-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260201-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260131-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260130-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260129-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260125-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260124-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260123-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260122-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260119-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260118-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260117-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260116-usa-fg-a-d.standard.pdf - skipping 
+  Already processed: 20260115-usa-fg-a-d.standard.pdf - skipping 
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No recent results found for MVR - skipping 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No result PDF found - skipping 
+ 
+######################################################################## 
+  ALL TRACKS PROCESSED 
+######################################################################## 
+ 

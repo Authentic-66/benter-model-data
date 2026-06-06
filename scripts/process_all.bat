@@ -109,24 +109,22 @@ echo   GULFSTREAM PARK (GP) >> "!ALLLOG!"
 echo ========================================================================
 echo ======================================================================== >> "!ALLLOG!"
 set "GP_FOUND=0"
-for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Gulfstream Park\gp-results-2026\*.pdf" 2^>nul') do (
+dir /b /o-n /a-d "%BASE%\Gulfstream Park\gp-results-2026\*.pdf" > "%TEMP%\gp_pdfs.txt" 2>nul
+for /f "usebackq delims=" %%f in ("%TEMP%\gp_pdfs.txt") do (
     set "GP_FOUND=1"
     set "STEM=%%~nf"
-    :: Detect filename format.
-    :: Check GP prefix first, then MM.DD.YY (dot at position 2), then YYYYMMDD.
-    :: The old NODT trick was wrong: YYYYMMDD-...-d.standard has a dot in .standard
-    :: and was being misclassified into the MM.DD.YY branch.
+    rem Detect filename format: GP prefix, then MM.DD.YY (dot at position 2), then YYYYMMDD.
     if "!STEM:~0,2!"=="GP" (
-        :: Format: GP[MM][DD][YY]USA.pdf  e.g. GP050826USA.pdf
+        rem Format: GP[MM][DD][YY]USA.pdf  e.g. GP050826USA.pdf
         set "DIGITS=!STEM:~2,6!"
         set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
         set "FILEDATE=20!YY!!MM!!DD!"
     ) else if "!STEM:~2,1!"=="." (
-        :: Format: MM.DD.YY GP Results.pdf  e.g. 01.08.26 GP Results.pdf
+        rem Format: MM.DD.YY GP Results.pdf  e.g. 01.08.26 GP Results.pdf
         set "MM=!STEM:~0,2!" & set "DD=!STEM:~3,2!" & set "YY=!STEM:~6,2!"
         set "FILEDATE=20!YY!!MM!!DD!"
     ) else (
-        :: Format: YYYYMMDD-usa-gp-a-d.standard.pdf
+        rem Format: YYYYMMDD-usa-gp-a-d.standard.pdf
         set "FILEDATE=!STEM:~0,8!"
     )
     echo   [GP] File    : %%f
@@ -174,7 +172,8 @@ echo   EVANGELINE DOWNS (EVD) >> "!ALLLOG!"
 echo ========================================================================
 echo ======================================================================== >> "!ALLLOG!"
 set "EVD_FOUND=0"
-for /f "delims=" %%f in ('dir /b /o-n /a-d "%BASE%\Evangeline Downs\evd-results-2026\*.pdf" 2^>nul') do (
+dir /b /o-n /a-d "%BASE%\Evangeline Downs\evd-results-2026\*.pdf" > "%TEMP%\evd_pdfs.txt" 2>nul
+for /f "usebackq delims=" %%f in ("%TEMP%\evd_pdfs.txt") do (
     set "EVD_FOUND=1"
     set "STEM=%%~nf"
     set "DIGITS=!STEM:~3,6!"
