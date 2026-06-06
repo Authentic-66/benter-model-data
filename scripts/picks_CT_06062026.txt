@@ -1,0 +1,23 @@
+# Benter Model Picks - CT 06062026
+# Format: TRACK RACE HORSE SIGNAL BETS
+CT 1 MacDaddyness TRAINER WPS
+CT 1 PolicyChange TRAINER WPS
+CT 2 DirecttoHeaven TRAINER WPS
+CT 2 ProfitablePrince TRAINER WPS
+CT 2 Rockn'Opportunity TRAINER WPS
+CT 3 RedDawnComing TRAINER WPS
+CT 3 LegendarySky TRAINER WPS
+CT 3 Roark TRAINER WPS
+CT 4 StarshipPolaris TRAINER WPS
+CT 4 BowlingBlue TRAINER WPS
+CT 5 MalibuKnight TRAINER WPS
+CT 6 GoforBourbon TRAINER WPS
+CT 6 Paramount'sPick TRAINER WPS
+CT 7 NobleRuling TRAINER WPS
+CT 7 TricksRforJuba TRAINER WPS
+CT 7 Mr.Dumbledore TRAINER WPS
+CT 8 EkatiIndian TRAINER WPS
+CT 8 BeautifulNoise TRAINER WPS
+CT 8 Pettyisaspettydoes TRAINER WPS
+CT 8 UnusualBay TRAINER WPS
+CT 8 MistyIsle TRAINER WPS

@@ -1,0 +1,16 @@
+# Benter Model Picks - FP 06062026
+# Format: TRACK RACE HORSE SIGNAL BETS
+FP 2 LastGasp TRAINER WPS
+FP 3 GonnaPickDomenic TRAINER WPS
+FP 3 SplendorGlow TRAINER WPS
+FP 4 Nandina TRAINER WPS
+FP 4 LookNMightyFine TRAINER WPS
+FP 5 GhalyPosse TRAINER WPS
+FP 5 Racetothefinish TRAINER WPS
+FP 6 BrownReserve TRAINER WPS
+FP 6 CoolMemory TRAINER WPS
+FP 6 Redfield TRAINER WPS
+FP 6 SwissGuard TRAINER WPS
+FP 7 TowerGrovePark TRAINER WPS
+FP 7 IlliniRed TRAINER WPS
+FP 7 SenorRuben TRAINER WPS

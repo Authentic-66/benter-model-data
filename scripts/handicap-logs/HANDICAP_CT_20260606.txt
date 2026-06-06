@@ -1,0 +1,545 @@
+Parsing C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\CharlesTown\ct-pps-files\ctx0606y.pdf for CT...
+Found 8 races, 60 horses
+
+
+============================================================================
+🏇 CHARLES TOWN — Today
+   Fast
+============================================================================
+
+────────────────────────────────────────────────────────────────────────────
+RACE 1    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Call Sign                       1    106.2(3)  Shuler John R
+        Sire: Gormley                         J: Whitacre Grant
+        Stats: 15 sts 0-2-3 0%
+        ✅ Rail post is winning at 19% clip
+        ✅ May improve at the shorter distance
+        ❌ 14Mar Aik 4f ft :48 Bg1/6 20Feb Ell 4f ft :50ª Bg4/10
+
+  ⭐  2: Mac Daddyness                   2     92.5(7)  Joy Kevin J
+        Sire: Goldencents                     J: Arroyo Bueno Nomar
+        Stats: 189 sts 35-32-31 19%
+        🎯 [TRAINER] 🔥 IRON CT — 95W/growing
+        🎯 [SIRE] 🔥 4-TRACK — FP+EVD+MVR+DD
+        ✅ High % trainer
+        ✅ Hot Trainer in last 14 days (6 3-2-0)
+        ❌ 14Mar Aik 4f ft :48 Bg1/6 20Feb Ell 4f ft :50ª Bg4/10
+
+      4: Joel's Boy                      4    103.8(4)  Ovando Melvin M
+        Sire: Greenpointcrusader              J: Araujo Denis V
+        Stats: 2 sts 0-1-0 0%
+        ✅ Eligible to improve in 3rd start since layoff
+        ✅ Ran 2nd vs similar in last race
+        ❌ 04May Fai 4f ft :49¨ B1/6 12Apr Fai 3f ft :37 B1/2 04Mar Fai tr.t
+
+  ⭐  5: Policy Change                   5    118.6(1)  Joy Kevin J
+        Sire: Munnings                        J: Rodriguez Victor
+        Stats: 189 sts 35-32-31 19%
+        🎯 [TRAINER] 🔥 IRON CT — 95W/growing
+        ✅ High % trainer
+        ✅ Highest last race speed rating
+        ❌ 04May Fai 4f ft :49¨ B1/6 12Apr Fai 3f ft :37 B1/2 04Mar Fai tr.t
+
+      6: Skip Forward                    6    106.8(2)  Keller Christopher M
+        Sire: Drefong                         J: ?
+        Stats: 41 sts 6-6-2 15%
+        ✅ Best Dirt speed is faster than the Avg Winning Speed
+        ❌ 28Nov'25 Pbd 4f ft :48ª B1/17 20Nov'25 Pbd 4f ft :50« B1/2 12Nov'
+
+      7: Honor the Bull                  7     95.8(5)  Siculietano Daniel W
+        Sire: Flatter                         J: Espinoza Alexis
+        Stats: 38 sts 2-5-4 5%
+        ✅ Eligible to improve in 3rd start since layoff
+
+  ★ MODEL PICKS R1:
+    PP 2: Mac Daddyness               (    2)  🔥 IRON CT + 🔥 4-TRACK
+    PP 5: Policy Change               (    5)  🔥 IRON CT
+
+────────────────────────────────────────────────────────────────────────────
+RACE 2    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ·  1: Miracle Lad                     1     95.1(2)  Walters David
+        Sire: Golden Lad                      J: Ebow Iii Warren
+        Stats: 39 sts 8-6-7 21%
+        Claim: $12,500
+        🎯 [TRAINER] ✅ OVR CT — 48W/$10.19avg
+        ✅ High % trainer
+        ✅ Highest last race speed rating
+
+  ·  2: Lukito                          2     82.2(6)  Shanley Timothy
+        Sire: Aldrin                          J: Lewis Justin M
+        Stats: 150 sts 15-20-31 10%
+        Claim: $12,500
+        🎯 [TRAINER] ✅ POS CT — 60W/$16avg overlay
+
+  ⭐  3: Direct to Heaven                3     94.8(3)  McKee Cynthia E
+        Sire: Redirect                        J: Raspaldo Jahnxander
+        Stats: 87 sts 15-13-7 17%
+        Claim: $12,500
+        🎯 [TRAINER] 🔥 IRON CT — 68W/iron horses
+        ✅ High % trainer
+        ✅ May improve with Blinkers added today
+
+  ⭐  4: Profitable Prince               4     86.2(5)  Grams Timothy C
+        Sire: Lord of Greatness               J: Reynolds Larry C
+        Stats: 105 sts 18-27-13 17%
+        Claim: $12,500
+        🎯 [TRAINER] 🔥 IRON CT — 110W/Fiber Sonde spe
+        ✅ High % trainer
+
+  ·  5: They Not Like Us                5     92.4(4)  ?
+        Sire: Temple City                     J: ?
+        Claim: $12,500
+        🎯 [SIRE] ✅ TURF — Positive turf signal
+        ✅ Drops in class today
+
+  ⭐  6: Rock n'Opportunity              6     97.2(1)  Grams Timothy C
+        Sire: Hoppertunity                    J: Montano Jose
+        Stats: 105 sts 18-27-13 17%
+        Claim: $12,500
+        🎯 [TRAINER] 🔥 IRON CT — 110W/Fiber Sonde spe
+        ✅ High % trainer
+        ✅ Drops in class today
+
+  ★ MODEL PICKS R2:
+    PP 3: Direct to Heaven            (    3)  🔥 IRON CT
+    PP 4: Profitable Prince           (    4)  🔥 IRON CT
+    PP 6: Rock n'Opportunity          (    6)  🔥 IRON CT
+
+────────────────────────────────────────────────────────────────────────────
+RACE 3    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Kvellion                        1     93.1(6)  Gazzier Kristy
+        Sire: Swiss Yodeler                   J: Jorge Julio
+        Stats: 44 sts 7-5-6 16%
+        Claim: $15,000
+        ✅ 25% trainer: Up 2+ classes
+        ✅ Early speed running style helps chances
+
+  ⭐  2: Red Dawn Coming                 2    103.5(2)  Farrior Anthony
+        Sire: Vino Rosso                      J: ?
+        Stats: 232 sts 49-50-38 21%
+        Claim: $15,000
+        🎯 [TRAINER] 🔥 IRON CT #1 — 287W/3yr/31%
+        ✅ High % trainer
+        ✅ May improve while returning to Dirt
+
+      3: Paint the Alley                 3    104.1(1)  Gomez Analia R
+        Sire: Lukes Alley                     J: Araujo Denis V
+        Stats: 6 sts 1-0-2 17%
+        Claim: $15,000
+        ✅ Won last race (CT 05/02 6.5f Dirt ft sMd7500)
+        ✅ Hot Jockey in last 7 days (12 4-0-3)
+
+      4: Town Hot                        4     92.8(7)  Pyke Joseph
+        Sire: Capo Bastone                    J: Diaz Jose Y
+        Stats: 38 sts 2-6-4 5%
+        Claim: $15,000
+        ✅ Drops in class today
+
+  ⭐  5: Legendary Sky                   5    102.7(3)  Brown Ronney W
+        Sire: Bullsbay                        J: Santaella Moises
+        Stats: 248 sts 60-48-35 24%
+        Claim: $15,000
+        🎯 [TRAINER] 🔥 IRON CT #2 — 272W/3yr/31%
+        ✅ High % trainer
+        ✅ High % Jockey
+
+  ·  6: Tap the Arches                  6     92.6(8)  Gur Battulga
+        Sire: Juba                            J: Hiraldo Christian
+        Stats: 6 sts 0-0-2 0%
+        Claim: $15,000
+        🎯 [SIRE] 🔥 CT SIRE #1 — 160W/3yr — WV home-track
+        ❌ 15Apr CT 3f ft :36¨ B1/5 26Dec'25 CT 3f ft :38© B10/11 30Aug'25 C
+
+      7: Trust the Climb                 7     94.2(5)  ?
+        Sire: Limehouse                       J: Barbosa Jeiron
+        Claim: $15,000
+        ✅ Eligible to improve in 3rd start since layoff
+
+  ⭐  8: Roark                           8    100.6(4)  Brown Ronney W
+        Sire: Limehouse                       J: Arroyo Bueno Nomar
+        Stats: 248 sts 60-48-35 24%
+        Claim: $15,000
+        🎯 [TRAINER] 🔥 IRON CT #2 — 272W/3yr/31%
+        ✅ High % trainer
+        ✅ Highest last race speed rating
+        ❌ 04May CT 3f ft :35« B1/5 17Jan CT 4f ft :50« B19/32 27Dec'25 CT 4
+
+  ★ MODEL PICKS R3:
+    PP 2: Red Dawn Coming             (    2)  🔥 IRON CT #1
+    PP 5: Legendary Sky               (    5)  🔥 IRON CT #2
+    PP 8: Roark                       (    8)  🔥 IRON CT #2
+
+────────────────────────────────────────────────────────────────────────────
+RACE 4    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Starship Polaris                1    104.5(1)  Joy Kevin J
+        Sire: Girvin                          J: Rodriguez Victor
+        Stats: 189 sts 35-32-31 19%
+        Claim: $12,500
+        🎯 [TRAINER] 🔥 IRON CT — 95W/growing
+        🎯 [SIRE] 🔥 3-TRACK — GP(80)+CT+EVD wins
+        ✅ High % trainer
+        ✅ Rail post is winning at 19% clip
+
+  ⭐  2: Bowling Blue                    2     94.3(4)  Joy Kevin J
+        Sire: Independence Hall               J: Arroyo Bueno Nomar
+        Stats: 189 sts 35-32-31 19%
+        Claim: $12,500
+        🎯 [TRAINER] 🔥 IRON CT — 95W/growing
+        ✅ High % trainer
+        ✅ Drops in class today
+
+      3: Near Dark                       3     95.0(3)  Payne, Jr. Claude G
+        Sire: Tonalist                        J: Araujo Denis V
+        Stats: 12 sts 1-2-1 8%
+        Claim: $12,500
+        ✅ Ran 2nd vs similar in last race
+        ✅ Hot Jockey in last 7 days (12 4-0-3)
+
+      4: Justice You Say                 4     85.4(6)  Siculietano Daniel W
+        Sire: Peace and Justice               J: Espinoza Alexis
+        Stats: 38 sts 2-5-4 5%
+        Claim: $12,500
+
+      5: Radiant Tones                   5    102.7(2)  Lane Scott J
+        Sire: Tonalist                        J: Lewis Justin M
+        Stats: 21 sts 1-0-3 5%
+        Claim: $12,500
+        ✅ Highest last race speed rating
+        ✅ May improve while returning to Dirt
+        ❌ 07Mar CT 4f my :47ª B1/7 25Feb CT 3f ft :36¨
+
+  ·  6: Person of Interest              6     82.7(7)  Shanley Timothy
+        Sire: No Parole                       J: Stokes Joe
+        Stats: 150 sts 15-20-31 10%
+        Claim: $12,500
+        🎯 [TRAINER] ✅ POS CT — 60W/$16avg overlay
+        ❌ 07Mar CT 4f my :47ª B1/7 25Feb CT 3f ft :36¨
+
+      7: Tangaray Cruiser                7     89.3(5)  Keller Christopher M
+        Sire: Catalina Cruiser                J: ?
+        Stats: 41 sts 6-6-2 15%
+        Claim: $12,500
+        ✅ Drops in class today
+        ✅ 21% trainer: 90+ days away
+
+  ★ MODEL PICKS R4:
+    PP 1: Starship Polaris            (    1)  🔥 IRON CT + 🔥 3-TRACK
+    PP 2: Bowling Blue                (    2)  🔥 IRON CT
+
+────────────────────────────────────────────────────────────────────────────
+RACE 5    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Rainy Skies                     1    111.1(3)  Gazzier Kristy
+        Sire: Arrogate                        J: Nunez Juan M
+        Stats: 44 sts 7-5-6 16%
+        Claim: $5,000
+        ✅ Rail post is winning at 19% clip
+
+  ·  2: Case Ace                        2    107.7(6)  Jackson Sherry L
+        Sire: Midshipman                      J: Cullum Walter
+        Stats: 32 sts 5-4-3 16%
+        Claim: $5,000
+        🎯 [SIRE] 🔥 5-TRACK — CT+FP+EVD+MVR+DD
+        ✅ High % Jockey
+        ✅ Highest last race speed rating
+
+      3: Kaz Creed                       3    104.6(8)  Spangler Jill
+        Sire: Jimmy Creed                     J: ?
+        Stats: 10 sts 2-3-2 20%
+        Claim: $5,000
+        ✅ 29% trainer: Sprints
+
+  ·  4: Manolito                        4    99.8(10)  Contreras Javier
+        Sire: Broken Vow                      J: ?
+        Stats: 94 sts 14-16-14 15%
+        Claim: $5,000
+        🎯 [TRAINER] ✅ POS CT — 104W/Musical Entourage
+        ✅ 20% trainer: 2nd strt w/trn
+        ✅ Eligible to improve in 2nd start since layoff
+
+  ⭐  5: Malibu Knight                   5    110.4(5)  Brown Ronney W
+        Sire: Hoppertunity                    J: Santaella Moises
+        Stats: 248 sts 60-48-35 24%
+        Claim: $5,000
+        🎯 [TRAINER] 🔥 IRON CT #2 — 272W/3yr/31%
+        ✅ High % trainer
+        ✅ High % Jockey
+        ❌ 03Nov'25 Pen 4f ft :47« B1/4 16Oct'25 Pen 4f ft
+
+      6: Nola Boss                       6    111.0(4)  Peltroche Vanessa
+        Sire: Holy Boss                       J: Chilo Maximo
+        Stats: 69 sts 11-6-8 16%
+        Claim: $5,000
+        ✅ May improve while returning to Dirt
+        ✅ Highest speed figure at today's distance
+
+  ·  7: Happy Jaunt                     7    104.2(9)  Shanley Timothy
+        Sire: Candy Ride                      J: Diaz Jose Y
+        Stats: 150 sts 15-20-31 10%
+        Claim: $5,000
+        🎯 [TRAINER] ✅ POS CT — 60W/$16avg overlay
+        ❌ 06Feb Lrl 3f ft :38 B1/
+
+      8: Shea D World                    8    113.4(1)  Adorno Jean L
+        Sire: World of Trouble                J: Lewis Justin M
+        Stats: 49 sts 6-10-7 12%
+        Claim: $5,000
+        ✅ 25% trainer: 1st after clm
+        ✅ Best Dirt Speed is fastest among today's starters
+        ❌ 06Feb Lrl 3f ft :38 B1/
+
+      9: Max Forward Speed               9    105.2(7)  Gur Battulga
+        Sire: Keen Ice                        J: Hiraldo Christian
+        Stats: 6 sts 0-0-2 0%
+        Claim: $5,000
+        ✅ Highest speed figure at today's distance
+
+     10: Gabriel Seven                  10    111.3(2)  Obed-Letts Keturah E
+        Sire: Street Magician                 J: Reynolds Larry C
+        Stats: 18 sts 1-0-3 6%
+        Claim: $5,000
+        ✅ Highest speed figure at today's distance
+
+  ★ MODEL PICKS R5:
+    PP 5: Malibu Knight               (    5)  🔥 IRON CT #2
+
+────────────────────────────────────────────────────────────────────────────
+RACE 6    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Go for Bourbon                  1    109.6(3)  Joy Kevin J
+        Sire: Knicks Go                       J: Arroyo Bueno Nomar
+        Stats: 189 sts 35-32-31 19%
+        🎯 [TRAINER] 🔥 IRON CT — 95W/growing
+        ✅ High % trainer
+        ✅ Finished 3rd in last race
+        ❌ 06Jan Kee 3f ft :37© B1/5 27Dec'25 Kee tr.t 3f ft :39¨ B5/5 01Nov
+
+  ·  3: York Tavern                     3    108.1(5)  Contreras Javier
+        Sire: Runhappy                        J: Bocachica Arnaldo
+        Stats: 94 sts 14-16-14 15%
+        🎯 [TRAINER] ✅ POS CT — 104W/Musical Entourage
+        ✅ Switches to a high % jockey
+        ✅ Best Dirt Speed is fastest among today's starters
+        ❌ 28Mar CT 3f ft :35« B1/9
+
+  ⭐  4: Paramount's Pick                4    107.6(6)  Joy Kevin J
+        Sire: Vino Rosso                      J: ?
+        Stats: 189 sts 35-32-31 19%
+        🎯 [TRAINER] 🔥 IRON CT — 95W/growing
+        ✅ High % trainer
+        ✅ Hot Trainer in last 14 days (6 3-2-0)
+        ❌ 28Feb Tdd 4f gd :47« B1/5 27Dec'25 Tdd 3f gd :36 Bg1/3
+
+      5: Randy Said So                   5     96.7(7)  Williams, Jr. Gary L
+        Sire: Paynter                         J: Stokes Joe
+        Stats: 9 sts 2-2-2 22%
+        ❌ 28Feb Tdd 4f gd :47« B1/5 27Dec'25 Tdd 3f gd :36 Bg1/3
+
+      6: No Brake Needed                 6    108.8(4)  Keller Christopher M
+        Sire: Accelerate                      J: Araujo Denis V
+        Stats: 41 sts 6-6-2 15%
+        ✅ Hot Jockey in last 7 days (12 4-0-3)
+        ❌ 12May'24 Cdt 5f ft 1:00© B1/7 26Apr'24 Cdt 4f ft :48© B2/6 01Apr'
+
+      7: Mo Money Mo Money               7    110.3(2)  Caiazzo Corby
+        Sire: Mo Town                         J: Davis Jacqueline A
+        Stats: 1 sts 0-0-1 0%
+        ✅ Finished 3rd vs similar in last race
+
+  ★ MODEL PICKS R6:
+    PP 1: Go for Bourbon              (    1)  🔥 IRON CT
+    PP 4: Paramount's Pick            (    4)  🔥 IRON CT
+
+────────────────────────────────────────────────────────────────────────────
+RACE 7    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Renegade Rabbit                 1    103.3(8)  O'Neill Tonya M
+        Sire: Spiritus Invictus               J: Rodriguez Victor
+        Stats: 27 sts 1-5-7 4%
+        ✅ Rail post is winning at 19% clip
+        ✅ 17% trainer: Allowance
+
+  ⭐  2: Noble Ruling                    2    117.4(2)  Grams Timothy C
+        Sire: Code of Honor                   J: Reynolds Larry C
+        Stats: 105 sts 18-27-13 17%
+        🎯 [TRAINER] 🔥 IRON CT — 110W/Fiber Sonde spe
+        ✅ High % trainer
+        ✅ Highest last race speed rating
+        ❌ 14Jan CT 3f ft :36¨ B1/16 08Nov'25 CT 3f my :39
+
+  ·  3: Life Is Daily                   3    123.5(1)  Walters David
+        Sire: Irish War Cry                   J: Barbosa Jeiron
+        Stats: 39 sts 8-6-7 21%
+        🎯 [TRAINER] ✅ OVR CT — 48W/$10.19avg
+        ✅ High % trainer
+        ✅ 25% trainer: Wnr last race
+        ❌ 14Jan CT 3f ft :36¨ B1/16 08Nov'25 CT 3f my :39
+
+  ⭐  4: Tricks R for Juba               4    115.7(3)  Sigler Ronald G
+        Sire: Juba                            J: Araujo Denis V
+        Stats: 32 sts 5-4-5 16%
+        🎯 [TRAINER] 🔥 IRON CT — 66W/Candygram spe
+        🎯 [SIRE] 🔥 CT SIRE #1 — 160W/3yr — WV home-track
+        ✅ Drops in class today
+        ✅ 18% trainer: Allowance
+
+      5: Youthful Energy                 5    115.5(4)  Lucas Anthony
+        Sire: Unbridled Energy                J: Chilo Maximo
+        Stats: 45 sts 4-5-10 9%
+        ✅ 22% trainer: Rte to Sprint
+        ✅ Ran 2nd in last race
+
+  ⭐  6: Mr. Dumbledore                  6    110.8(6)  Grams Timothy C
+        Sire: Mr Speaker                      J: Bocachica Arnaldo
+        Stats: 105 sts 18-27-13 17%
+        🎯 [TRAINER] 🔥 IRON CT — 110W/Fiber Sonde spe
+        ✅ High % trainer
+        ✅ Switches to a high % jockey
+
+  ·  7: This Juice B Loose              7    108.2(7)  Lucas Anthony
+        Sire: Candygram                       J: Nunez Juan M
+        Stats: 45 sts 4-5-10 9%
+        🎯 [SIRE] ✅ CT SIRE — 46W/Sigler spe
+        ❌ 01Apr CT 3f ft :35ª B1/9 19Mar CT 3f ft :37¨ B9/13 23Dec'25 CT 4f
+
+      8: Rum N Coke                      8    115.3(5)  Meehan Elizabeth E
+        Sire: Enticed                         J: Whitacre Grant
+        Stats: 42 sts 5-7-8 12%
+        ✅ 21% trainer: Btn favorite
+        ✅ Ran 2nd in last race
+        ❌ 01Apr CT 3f ft :35ª B1/9 19Mar CT 3f ft :37¨ B9/13 23Dec'25 CT 4f
+
+  ★ MODEL PICKS R7:
+    PP 4: Tricks R for Juba           (    4)  🔥 IRON CT + 🔥 CT SIRE #1
+    PP 2: Noble Ruling                (    2)  🔥 IRON CT
+    PP 6: Mr. Dumbledore              (    6)  🔥 IRON CT
+
+────────────────────────────────────────────────────────────────────────────
+RACE 8    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Ekati Indian                    1     81.9(9)  McKee Cynthia E
+        Sire: Tale of Ekati                   J: Raspaldo Jahnxander
+        Stats: 87 sts 15-13-7 17%
+        Claim: $7,500
+        🎯 [TRAINER] 🔥 IRON CT — 68W/iron horses
+        🎯 [SIRE] 🔥 MVR SIRE — 11W Ohio home-track
+        ✅ High % trainer
+        ✅ Rail post is winning at 19% clip
+
+      2: Saichi's Girl                   2     99.9(1)  Viands Stacey R
+        Sire: Thousand Words                  J: ?
+        Stats: 67 sts 5-11-8 7%
+        Claim: $7,500
+        ✅ Drops in class today
+        ✅ 18% trainer: Btn favorite
+
+  ⭐  3: Beautiful Noise                 3     82.4(8)  Brown Ronney W
+        Sire: Talent Search                   J: Arroyo Bueno Nomar
+        Stats: 248 sts 60-48-35 24%
+        Claim: $7,000
+        🎯 [TRAINER] 🔥 IRON CT #2 — 272W/3yr/31%
+        ✅ High % trainer
+        ✅ Drops in class today
+
+  ⭐  4: Pettyisaspettydoes              4     90.1(7)  Shanley Timothy
+        Sire: Candygram                       J: Santaella Moises
+        Stats: 150 sts 15-20-31 10%
+        Claim: $7,500
+        🎯 [TRAINER] ✅ POS CT — 60W/$16avg overlay
+        🎯 [SIRE] ✅ CT SIRE — 46W/Sigler spe
+        ✅ Switches to a high % jockey
+        ✅ Drops in class today
+        ❌ 19Jan CT 4f ft :49ª B1/6
+
+  ⭐  5: Unusual Bay                     5     92.4(5)  Brown Ronney W
+        Sire: Bullsbay                        J: Stokes Joe
+        Stats: 248 sts 60-48-35 24%
+        Claim: $7,000
+        🎯 [TRAINER] 🔥 IRON CT #2 — 272W/3yr/31%
+        ✅ High % trainer
+        ✅ Drops in class today
+        ❌ 19Jan CT 4f ft :49ª B1/6
+
+      6: Lunar Glory                     6     91.9(6)  Gazzier Kristy
+        Sire: Aldrin                          J: Hiraldo Christian
+        Stats: 44 sts 7-5-6 16%
+        Claim: $7,000
+        ✅ Drops in class today
+
+      7: Hellenic Spirit                 7     98.1(2)  Schottroffe Edward T
+        Sire: Catholic Boy                    J: Maldonado Christian
+        Stats: 10 sts 3-0-1 30%
+        Claim: $7,500
+        ✅ Highest last race speed rating
+        ✅ Drops in class today
+        ❌ 28Oct'25 CT 3f ft :37« B1/4 18Oct'25 CT 3f ft :38¨ B9/19 29Sep'25
+
+      8: Amama                           8     94.8(3)  Adorno Jean L
+        Sire: Enticed                         J: ?
+        Stats: 49 sts 6-10-7 12%
+        Claim: $7,500
+        ✅ Drops in class today
+        ✅ 36% trainer: Maiden Clming
+
+  ⭐  9: Misty Isle                      9     94.5(4)  Runco Jeff C
+        Sire: Creative Cause                  J: Ebow Iii Warren
+        Stats: 131 sts 39-17-18 30%
+        Claim: $7,500
+        🎯 [TRAINER] 🔥 IRON CT #3 — 209W/3yr/32%
+        ✅ High % trainer
+        ✅ Drops in class today
+
+  ★ MODEL PICKS R8:
+    PP 1: Ekati Indian                (    1)  🔥 IRON CT + 🔥 MVR SIRE
+    PP 4: Pettyisaspettydoes          (    4)  ✅ POS CT + ✅ CT SIRE
+    PP 3: Beautiful Noise             (    3)  🔥 IRON CT #2
+    PP 5: Unusual Bay                 (    5)  🔥 IRON CT #2
+    PP 9: Misty Isle                  (    9)  🔥 IRON CT #3
+
+============================================================================
+📊 MODEL SUMMARY — 21 ITM picks across 8 races
+============================================================================
+  R1 PP 2: Mac Daddyness               (    2)  🔥 IRON CT | 🔥 4-TRACK
+  R1 PP 5: Policy Change               (    5)  🔥 IRON CT
+  R2 PP 3: Direct to Heaven            (    3)  🔥 IRON CT
+  R2 PP 4: Profitable Prince           (    4)  🔥 IRON CT
+  R2 PP 6: Rock n'Opportunity          (    6)  🔥 IRON CT
+  R3 PP 2: Red Dawn Coming             (    2)  🔥 IRON CT #1
+  R3 PP 5: Legendary Sky               (    5)  🔥 IRON CT #2
+  R3 PP 8: Roark                       (    8)  🔥 IRON CT #2
+  R4 PP 1: Starship Polaris            (    1)  🔥 IRON CT | 🔥 3-TRACK
+  R4 PP 2: Bowling Blue                (    2)  🔥 IRON CT
+  R5 PP 5: Malibu Knight               (    5)  🔥 IRON CT #2
+  R6 PP 1: Go for Bourbon              (    1)  🔥 IRON CT
+  R6 PP 4: Paramount's Pick            (    4)  🔥 IRON CT
+  R7 PP 2: Noble Ruling                (    2)  🔥 IRON CT
+  R7 PP 4: Tricks R for Juba           (    4)  🔥 IRON CT | 🔥 CT SIRE #1
+  R7 PP 6: Mr. Dumbledore              (    6)  🔥 IRON CT
+  R8 PP 1: Ekati Indian                (    1)  🔥 IRON CT | 🔥 MVR SIRE
+  R8 PP 3: Beautiful Noise             (    3)  🔥 IRON CT #2
+  R8 PP 4: Pettyisaspettydoes          (    4)  ✅ POS CT | ✅ CT SIRE
+  R8 PP 5: Unusual Bay                 (    5)  🔥 IRON CT #2
+  R8 PP 9: Misty Isle                  (    9)  🔥 IRON CT #3
+============================================================================
+
+picks file → picks_CT_06062026.txt
