@@ -49,7 +49,7 @@ IRON_TRAINERS = {
     },
     'GP': {
         'Joseph':    ('🔥 IRON GP #1','405W/3yr/30%'),
-        "D'Angelo":  ('🔥 IRON GP #2','237W/3yr/22%'),
+        'Angelo':    ('🔥 IRON GP #2','237W/3yr/22%'),
         'David':     ('🔥 IRON GP',   '175W/3yr/24%'),
         'Barboza':   ('🔥 IRON GP',   '150W/3yr'),
         'Casse':     ('🔥 IRON GP',   '138W/3yr/19%'),
@@ -59,9 +59,9 @@ IRON_TRAINERS = {
         'Cox':       ('🔥 IRON GP',   '34% — best rate at GP'),
         'Mott':      ('✅ POS GP',    '98W/29%'),
         'Pletcher':  ('✅ POS GP',    '98W/21%'),
-        'Fawkes':    ('✅ POS GP',    '102W/3yr'),
+        'Fawkes':    ('🔥 IRON GP',   '102W/3yr'),
         'Sano':      ('✅ OVR GP',    '99W/$12avg — bet 5/1+'),
-        'Orseno':    ('✅ OVR GP',    '90W/$14avg overlay'),
+        'Orseno':    ('🔥 IRON GP',   '90W/$14avg overlay'),
         'Abreu':     ('🔥 TURF GP',   'Turf specialist/Neolithic spe'),
         'Spatz':     ('✅ POS GP',    'Winter specialist'),
         'Sweezey':   ('✅ POS GP',    'Overlay/Girvin spe'),
@@ -367,7 +367,7 @@ def parse_brisnet(text, track_code='GP'):
                         if '/' in val or (val.isdigit() and 1 <= int(val) <= 99):
                             ml = val
 
-                # Trainer: handles "(N sts N%)" and "(N N-N-N N%)" formats
+                # Trainer: "(N/N N%)", "(N N-N-N N%)", or name-only fallback
                 if trainer == '?':
                     tm = re.search(r'Trnr:\s*([^\n(]+?)\s*\((\d+)\s*/\s*(\d+)\s+(\d+)%\)', line)
                     if tm:
@@ -378,6 +378,12 @@ def parse_brisnet(text, track_code='GP'):
                         if tm2:
                             trainer = tm2.group(1).strip()
                             trainer_stats = f"{tm2.group(2)} sts {tm2.group(3)}-{tm2.group(4)}-{tm2.group(5)} {tm2.group(6)}%"
+                        else:
+                            # Fallback: grab name before stats even if stat format is unrecognized.
+                            # Ensures signal matching fires even when the stats parens use a novel layout.
+                            tm3 = re.search(r'Trnr:\s*([A-Za-z][^\n(]+?)\s*\(', line)
+                            if tm3:
+                                trainer = tm3.group(1).strip()
 
                 # Jockey: "LASTNAME FIRSTNAME (N N-N-N N%)" or "(N/ N N%)"
                 if jockey == '?':
@@ -624,17 +630,23 @@ def extract_file_date(filepath, track_code, text=''):
 
 
 def ml_to_float(ml_str):
-    """Convert morning-line odds string ('7/2', '5', '9/5') to decimal float, or None."""
+    """Convert morning-line odds string to decimal odds (fractional + 1).
+
+    US ML odds are expressed as 'to-1' fractions: '8/5' means 8-to-5, which
+    pays 8/5 + 1 = 2.6 per unit stake. Plain integers ('5') mean 5-to-1 = 6.0.
+
+    Examples: '15/1' → 16.0, '8/5' → 2.6, '7/2' → 4.5, '1/1' → 2.0, '5' → 6.0
+    """
     if not ml_str or ml_str == '?':
         return None
     if '/' in ml_str:
         try:
             num, den = ml_str.split('/')
-            return round(int(num) / int(den), 2)
+            return round(int(num) / int(den) + 1, 2)
         except (ValueError, ZeroDivisionError):
             return None
     try:
-        return float(ml_str)
+        return float(ml_str) + 1
     except ValueError:
         return None
 

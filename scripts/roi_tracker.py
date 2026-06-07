@@ -40,7 +40,7 @@ from process_results import extract_text, parse_results, TRACK_NAMES
 
 # ── Configuration ─────────────────────────────────────────────────────────────
 
-MIN_ODDS = 2.0          # minimum morning-line odds (2.0 = 2/1); set to 0 to disable
+MIN_ODDS = 3.0          # minimum decimal ML odds (3.0 = 2/1, 2.0 = evens/1/1); set to 0 to disable
 MAX_PICKS_PER_RACE = 2  # max picks scored per race (ranked by PP Power); set to 0 to disable
 
 # ── picks.txt loading ─────────────────────────────────────────────────────────
@@ -292,7 +292,7 @@ def run(picks_file, pdf_files):
     if n_odds or n_race:
         print(f"  Filter summary:")
         if n_odds:
-            print(f"    Below odds threshold (ML < {MIN_ODDS}):  {n_odds} pick(s) not scored")
+            print(f"    Below odds threshold (decimal ML < {MIN_ODDS}):  {n_odds} pick(s) not scored")
         if n_race:
             print(f"    Race pick limit (> {MAX_PICKS_PER_RACE}/race):         {n_race} pick(s) not scored")
         print()
