@@ -50,7 +50,7 @@ IRON_TRAINERS = {
     'GP': {
         'Joseph':    ('🔥 IRON GP #1','405W/3yr/30%'),
         'Angelo':    ('🔥 IRON GP #2','237W/3yr/22%'),
-        'David':     ('🔥 IRON GP',   '175W/3yr/24%'),
+        'Carlos':    ('🔥 IRON GP',   '175W/3yr/24%'),  # Carlos A. David
         'Barboza':   ('🔥 IRON GP',   '150W/3yr'),
         'Casse':     ('🔥 IRON GP',   '138W/3yr/19%'),
         'Lynch':     ('🔥 IRON GP',   '64W/26%/chalk'),
