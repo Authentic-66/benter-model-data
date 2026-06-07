@@ -3,10 +3,15 @@ ROI Tracker (file-based) — matches model picks against Equibase result PDFs
 Imports parse_results / extract_text from process_results.py in the same folder.
 
 picks.txt format  (one pick per line, # lines are comments):
-    TRACK  RACE  HORSE  SIGNAL  [BETS]
-    CT     3     BigJoeB        TRAINER   WPS
-    CT     4     HeyBoots       HORSE     WP
-    GP     2     SomHorse       TRAINER
+    TRACK  RACE  HORSE  SIGNAL  [BETS]  [ML_ODDS]  [PP_POWER]
+    CT     3     BigJoeB        TRAINER   WPS        3.0        92.5
+    CT     4     HeyBoots       HORSE     WP         5.0        88.0
+    GP     2     SomHorse       TRAINER                          75.0
+
+  ML_ODDS  — morning-line odds as a decimal (2.0 = 2/1, 2.5 = 5/2).
+             Omit to bypass the MIN_ODDS filter for that pick.
+  PP_POWER — PP Power rating (numeric). Used to rank picks when a race
+             exceeds MAX_PICKS_PER_RACE. Omit to default to 0.
 
   TRACK  — track code matching a result PDF (CT, GP, FP, EVD, MVR, DD, FG)
   RACE   — race number, or R3-style prefix
@@ -33,6 +38,11 @@ except AttributeError:
 sys.path.insert(0, str(Path(__file__).parent))
 from process_results import extract_text, parse_results, TRACK_NAMES
 
+# ── Configuration ─────────────────────────────────────────────────────────────
+
+MIN_ODDS = 2.0          # minimum morning-line odds (2.0 = 2/1); set to 0 to disable
+MAX_PICKS_PER_RACE = 2  # max picks scored per race (ranked by PP Power); set to 0 to disable
+
 # ── picks.txt loading ─────────────────────────────────────────────────────────
 
 def load_picks(filepath):
@@ -54,11 +64,60 @@ def load_picks(filepath):
             bets = list(dict.fromkeys(b for b in bets_raw if b in ('W', 'P', 'S')))
             if not bets:
                 bets = ['W', 'P', 'S']
+            try:
+                ml_odds = float(parts[5]) if len(parts) >= 6 else None
+            except ValueError:
+                ml_odds = None
+            try:
+                pp_power = float(parts[6]) if len(parts) >= 7 else 0.0
+            except ValueError:
+                pp_power = 0.0
             picks.append({
                 'track': track, 'race': race, 'horse': horse,
                 'signal': signal, 'bets': bets,
+                'ml_odds': ml_odds, 'pp_power': pp_power,
             })
     return picks
+
+# ── Filters ───────────────────────────────────────────────────────────────────
+
+def apply_filters(picks):
+    """Apply MIN_ODDS and MAX_PICKS_PER_RACE filters.
+
+    Returns (active_picks, skipped_rows, n_odds_filtered, n_race_filtered).
+    skipped_rows are pre-built row dicts ready for print_summary.
+    """
+    skipped = []
+    active  = []
+    n_odds = 0
+
+    for p in picks:
+        ml = p.get('ml_odds')
+        if MIN_ODDS > 0 and ml is not None and ml < MIN_ODDS:
+            skipped.append({**p, 'status': 'BELOW ODDS THRESHOLD', 'filtered': True,
+                            'fin': '—', 'invested': 0.0, 'returned': 0.0})
+            n_odds += 1
+        else:
+            active.append(p)
+
+    n_race = 0
+    if MAX_PICKS_PER_RACE > 0:
+        by_race = defaultdict(list)
+        for p in active:
+            by_race[(p['track'], p['race'])].append(p)
+        active = []
+        for race_picks in by_race.values():
+            if len(race_picks) > MAX_PICKS_PER_RACE:
+                ranked = sorted(race_picks, key=lambda x: x.get('pp_power', 0.0), reverse=True)
+                active.extend(ranked[:MAX_PICKS_PER_RACE])
+                for p in ranked[MAX_PICKS_PER_RACE:]:
+                    skipped.append({**p, 'status': 'RACE PICK LIMIT', 'filtered': True,
+                                    'fin': '—', 'invested': 0.0, 'returned': 0.0})
+                    n_race += 1
+            else:
+                active.extend(race_picks)
+
+    return active, skipped, n_odds, n_race
 
 # ── PDF loading ───────────────────────────────────────────────────────────────
 
@@ -155,6 +214,12 @@ def print_summary(rows):
 
         t_inv = t_ret = 0.0
         for r in sorted(track_rows, key=lambda x: x['race']):
+            if r.get('filtered'):
+                print(
+                    f"  R{r['race']:<4} {r['horse'][:24]:<24} {r['signal'][:9]:<9} "
+                    f"{'':5} {'—':>3}  {'':>6}  {'':>7}  {'':>9}  [{r['status']}]"
+                )
+                continue
             fin_str  = str(r['fin']) if r.get('fin') not in (None, '-', '?') else '?'
             bets_str = ''.join(r['bets'])
             pl       = r['returned'] - r['invested']
@@ -189,14 +254,20 @@ def run(picks_file, pdf_files):
     picks = load_picks(picks_file)
     print(f"  {len(picks)} pick(s) loaded")
 
+    active_picks, skipped_rows, n_odds, n_race = apply_filters(picks)
+    total_filtered = n_odds + n_race
+    if total_filtered:
+        print(f"  {total_filtered} pick(s) filtered before scoring "
+              f"({n_odds} odds threshold, {n_race} race pick limit)")
+
     print(f"\nLoading result PDFs...")
     results = load_results(pdf_files)
 
     rows = []
-    for pick in picks:
-        track   = pick['track']
+    for pick in active_picks:
+        track    = pick['track']
         race_num = pick['race']
-        race    = results.get(track, {}).get(race_num)
+        race     = results.get(track, {}).get(race_num)
 
         if race is None:
             rows.append({**pick, 'status': 'NO RESULT', 'fin': '?',
@@ -216,7 +287,15 @@ def run(picks_file, pdf_files):
             'invested': invested, 'returned': returned,
         })
 
-    print_summary(rows)
+    print_summary(rows + skipped_rows)
+
+    if n_odds or n_race:
+        print(f"  Filter summary:")
+        if n_odds:
+            print(f"    Below odds threshold (ML < {MIN_ODDS}):  {n_odds} pick(s) not scored")
+        if n_race:
+            print(f"    Race pick limit (> {MAX_PICKS_PER_RACE}/race):         {n_race} pick(s) not scored")
+        print()
 
 
 if __name__ == '__main__':
@@ -224,9 +303,9 @@ if __name__ == '__main__':
         print("Usage: python roi_tracker.py <picks.txt> <result.pdf> [result.pdf ...]")
         print()
         print("picks.txt format (one pick per line):")
-        print("  TRACK  RACE  HORSE  SIGNAL  [BETS]")
-        print("  CT     3     BigJoeB        TRAINER   WPS")
-        print("  CT     4     HeyBoots       HORSE")
+        print("  TRACK  RACE  HORSE  SIGNAL  [BETS]  [ML_ODDS]  [PP_POWER]")
+        print("  CT     3     BigJoeB        TRAINER   WPS        3.0        92.5")
+        print("  CT     4     HeyBoots       HORSE     WP         5.0        88.0")
         print("  GP     2     SomHorse       TRAINER   W")
         sys.exit(1)
 

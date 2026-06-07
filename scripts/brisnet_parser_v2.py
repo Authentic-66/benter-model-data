@@ -623,6 +623,22 @@ def extract_file_date(filepath, track_code, text=''):
     return None
 
 
+def ml_to_float(ml_str):
+    """Convert morning-line odds string ('7/2', '5', '9/5') to decimal float, or None."""
+    if not ml_str or ml_str == '?':
+        return None
+    if '/' in ml_str:
+        try:
+            num, den = ml_str.split('/')
+            return round(int(num) / int(den), 2)
+        except (ValueError, ZeroDivisionError):
+            return None
+    try:
+        return float(ml_str)
+    except ValueError:
+        return None
+
+
 def write_picks_file(all_picks, track_code, filepath):
     """Write picks_TRACK_DATE.txt next to this script for roi_tracker.py."""
     tc = track_code.upper()
@@ -630,12 +646,15 @@ def write_picks_file(all_picks, track_code, filepath):
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",
-        "# Format: TRACK RACE HORSE SIGNAL BETS",
+        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER",
     ]
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
         sig_type = h['signals'][0][0]
         horse_name = h['name'].replace(' ', '')
-        lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS")
+        ml_f = ml_to_float(h['ml'])
+        ml_col = str(ml_f) if ml_f is not None else '?'
+        pp_col = h['prime_power'] if h['prime_power'] != '?' else '?'
+        lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col}")
 
     out_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return out_path
