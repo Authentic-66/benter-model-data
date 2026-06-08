@@ -1,6 +1,3 @@
-﻿Results FG [20260122]
-  File: 20260122-usa-fg-a-d.standard.pdf 
- 
 Processing 20260122-usa-fg-a-d.standard.pdf [FG]...
 Found 9 race(s)
 
@@ -14,11 +11,12 @@ Found 9 race(s)
 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   Pos   PP  Horse                                 Odds
     1    3  HalfWayThere                          0.80
-    2    2  TaptheTequila                         6.80
-    3    1  Josan                                14.10
-    4    7  Crigler                              13.30
-    5    6  Gatsby'sFortune                      30.60
-    6    5  Shawn'sSolving                       14.30
+    2    4  Mr.Ronnie                             2.20
+    3    2  TaptheTequila                         6.80
+    4    1  Josan                                14.10
+    5    7  Crigler                              13.30
+    6    6  Gatsby'sFortune                      30.60
+    7    5  Shawn'sSolving                       14.30
 
   Time    : 1:11.77
   Trainer : Ducoing, Sturges
@@ -117,13 +115,14 @@ Found 9 race(s)
   RACE 7  â€”  MSW  |  1 1/16M  |  Dirt  |  $54,000
 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   Pos   PP  Horse                                 Odds
-    1    4  LadyLaw                               6.00
-    2    3  PureJoy                               1.30
-    3    2  Twinklee                             12.70
-    4    8  Outro                                14.60
-    5    7  EyeCatcher                            2.50
-    6    1  Macy'sMischief                        8.10
-    7    6  Londinium                            66.10
+    1    5  A.P.'sGirl                            9.30
+    2    4  LadyLaw                               6.00
+    3    3  PureJoy                               1.30
+    4    2  Twinklee                             12.70
+    5    8  Outro                                14.60
+    6    7  EyeCatcher                            2.50
+    7    1  Macy'sMischief                        8.10
+    8    6  Londinium                            66.10
 
   Time    : 1:45.37
   Trainer : Eurton, Peter

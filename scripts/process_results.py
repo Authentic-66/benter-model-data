@@ -51,6 +51,19 @@ def extract_text(filepath):
     path = Path(filepath)
     if path.suffix.lower() != '.pdf':
         return path.read_text(errors='replace')
+    # pdfplumber with layout=True produces concatenated tokens (e.g. "TaptoConnect(Jockey)")
+    # that all downstream regexes are calibrated for. pdftotext -layout preserves spaces
+    # and breaks those regexes, so pdfplumber is always the primary extractor.
+    import pdfplumber
+    try:
+        with pdfplumber.open(path) as pdf:
+            pages = [page.extract_text(layout=True) or '' for page in pdf.pages]
+        text = '\f'.join(pages)
+        if text.strip():
+            return text
+    except Exception:
+        pass
+    # Fallback to pdftotext only if pdfplumber fails entirely
     try:
         result = subprocess.run(
             ['pdftotext', '-layout', str(path), '-'],
@@ -60,10 +73,7 @@ def extract_text(filepath):
             return result.stdout
     except FileNotFoundError:
         pass
-    import pdfplumber
-    with pdfplumber.open(path) as pdf:
-        pages = [page.extract_text(layout=True) or '' for page in pdf.pages]
-    return '\f'.join(pages)
+    return ''
 
 def fmt_dist(raw):
     clean = re.sub(r'(?i)OnThe(Dirt|Turf|AllWeatherTrack)', '', raw)

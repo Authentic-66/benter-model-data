@@ -1,6 +1,3 @@
-﻿Results DD [20250130]
-  File: 20250130-usa-ded-a-d.standard.pdf 
- 
 Processing 20250130-usa-ded-a-d.standard.pdf [DD]...
 Found 10 race(s)
 
@@ -120,12 +117,13 @@ Found 10 race(s)
   RACE 7  â€”  CLM  |  5F  |  Dirt  |  $17,000
 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   Pos   PP  Horse                                 Odds
-    1    5  Skippa                                2.10
-    2    2  EmpireKid                             5.50
-    3    6  Samurai'sGrandson                    15.10
-    4    1  AdiosCarlos                           4.30
-    5    8  BackBayou                            10.10
-    6    3  SunsetWar                            36.00
+    1    7  SammyDanseurJr.                       1.60
+    2    5  Skippa                                2.10
+    3    2  EmpireKid                             5.50
+    4    6  Samurai'sGrandson                    15.10
+    5    1  AdiosCarlos                           4.30
+    6    8  BackBayou                            10.10
+    7    3  SunsetWar                            36.00
 
   Time    : 59.88
   Trainer : Ramirez-Rodriguez, Abel
@@ -161,7 +159,8 @@ Found 10 race(s)
     3    3  Fahan                                10.90
     4    2  Hyperbolist                          10.30
     5    6  Northernreflection                    6.00
-    6    8  CalculatedLuv                        17.70
+    6    5  Mr.BCause                            59.40
+    7    8  CalculatedLuv                        17.70
 
   Time    : 1:27.82
   Trainer : Mojica, Edith

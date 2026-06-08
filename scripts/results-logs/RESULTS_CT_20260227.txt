@@ -1,6 +1,3 @@
-﻿Results CT [20260227]
-  File: CT022726USA.pdf 
- 
 Processing CT022726USA.pdf [CT]...
 Found 8 race(s)
 
@@ -13,11 +10,12 @@ Found 8 race(s)
   RACE 1  â€”  MCL  |  6.5F  |  Dirt  |  $13,300
 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   Pos   PP  Horse                                 Odds
-    1    4  CocoSun                               2.80
-    2    6  TreeofDem                             5.50
-    3    5  ClassicMartini                        6.30
-    4    3  SeaShepherd                           2.40
-    5    7  Monochrome                           38.50
+    1    2  J.Belkin                              1.80
+    2    4  CocoSun                               2.80
+    3    6  TreeofDem                             5.50
+    4    5  ClassicMartini                        6.30
+    5    3  SeaShepherd                           2.40
+    6    7  Monochrome                           38.50
 
   Time    : 1:22.55
   Trainer : Shanley, Tyler

@@ -1,6 +1,3 @@
-﻿Results FG [20260316]
-  File: 20260316-usa-fg-a-d.standard.pdf 
- 
 Processing 20260316-usa-fg-a-d.standard.pdf [FG]...
 Found 9 race(s)
 
@@ -67,9 +64,10 @@ Found 9 race(s)
   RACE 4  â€”  ALW  |  1 1/16M  |  Dirt  |  $55,000
 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   Pos   PP  Horse                                 Odds
-    1    4  Zaffa                                 3.70
-    2    2  Huck'sAgenda                          2.70
-    3    3  StickerShocked                        3.10
+    1    5  A.P.'sGirl                            1.00
+    2    4  Zaffa                                 3.70
+    3    2  Huck'sAgenda                          2.70
+    4    3  StickerShocked                        3.10
 
   Time    : 1:44.92
   Trainer : Eurton, Peter

@@ -1,6 +1,3 @@
-﻿Results GP [20260228]
-  File: GP022826USA.pdf 
- 
 Processing GP022826USA.pdf [GP]...
 Found 14 race(s)
 

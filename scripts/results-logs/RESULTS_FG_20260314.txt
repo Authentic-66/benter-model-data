@@ -1,6 +1,3 @@
-﻿Results FG [20260314]
-  File: 20260314-usa-fg-a-d.standard.pdf 
- 
 Processing 20260314-usa-fg-a-d.standard.pdf [FG]...
 Found 10 race(s)
 

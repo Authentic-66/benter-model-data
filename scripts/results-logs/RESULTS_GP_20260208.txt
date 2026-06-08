@@ -1,6 +1,3 @@
-﻿Results GP [20260208]
-  File: GP020826.pdf 
- 
 Processing GP020826.pdf [GP]...
 Found 10 race(s)
 
@@ -74,10 +71,10 @@ Found 10 race(s)
     2    1  StarActress                           7.70
     3    2  JoyfulJustice                         4.20
     4    8  Wiretapped                            5.10
-    5    4  PointofReference                      7.60
-    6    3  EastBay                               6.00
-    7    6  OffthePayroll                        42.40
-    8    9  CleanWinner                          10.60
+    5    5  LexiV.                               56.60
+    6    4  PointofReference                      7.60
+    7    3  EastBay                               6.00
+    8    6  OffthePayroll                        42.40
 
   Time    : 1:25.04
   Trainer : Lynch, Brian
@@ -106,12 +103,13 @@ Found 10 race(s)
 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   Pos   PP  Horse                                 Odds
     1    4  NantasketBeach                        5.30
-    2    9  Harrow                                3.80
-    3   10  IceChocolat                           2.70
-    4    5  QueremePass                           4.10
-    5    7  MisterAbarrio                        17.70
-    6    1  ArabianPrince                        17.10
-    7    3  NoMoreOptions                        13.30
+    2    6  St.ArmandsKey                         3.80
+    3    9  Harrow                                3.80
+    4   10  IceChocolat                           2.70
+    5    5  QueremePass                           4.10
+    6    7  MisterAbarrio                        17.70
+    7    1  ArabianPrince                        17.10
+    8    3  NoMoreOptions                        13.30
 
   Time    : 1:33.18
   Trainer : Robson, Lauren
@@ -159,8 +157,9 @@ Found 10 race(s)
 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   Pos   PP  Horse                                 Odds
     1    7  PopRox                                1.80
-    2    1  NeomCity                              5.20
-    3    2  Maerdama                              9.90
+    2    3  St.OlafRose                           0.60
+    3    1  NeomCity                              5.20
+    4    2  Maerdama                              9.90
 
   Time    : 1:11.25
   Trainer : D'Angelo, Jose
