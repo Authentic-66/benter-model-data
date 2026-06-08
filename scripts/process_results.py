@@ -198,6 +198,11 @@ def parse_results(text):
                 cut = re.split(r'\$\d+\.\d+[A-Z]', row)[0]
                 return re.findall(r'\d+\.\d+', cut)
 
+            # Equibase sometimes orders the WPS table by program number rather than
+            # finish position. Sort descending by value count so the winner row
+            # (Win+Place+Show = 3 values) is always first regardless of table order.
+            payout_rows.sort(key=lambda r: len(wps(r)), reverse=True)
+
             if payout_rows:
                 a = wps(payout_rows[0])
                 if len(a) >= 1: race['win']   = f"${a[0]}"

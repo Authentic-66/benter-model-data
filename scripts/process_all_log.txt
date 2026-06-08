@@ -1,4 +1,4 @@
-Process All Log -- Mon 06/08/2026  9:37:50.11 
+Process All Log -- Mon 06/08/2026 10:06:10.49 
  
 ######################################################################## 
   BENTER MODEL -- PROCESS ALL RESULTS 
@@ -14,7 +14,183 @@ Process All Log -- Mon 06/08/2026  9:37:50.11
   Already processed: CT052926USA.pdf - skipping 
   Already processed: CT052826USA.pdf - skipping 
   Already processed: CT051626USA.pdf - skipping 
-  Already processed: CT051526USA.pdf - skipping 
+  File: CT051526USA.pdf 
+ 
+Processing CT051526USA.pdf [CT]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : CHARLES TOWN
+  Source  : CT051526USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  SOC  |  6.5F  |  Dirt  |  $24,400
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    1  Masterwork                            1.20
+    2    3  ThankYaPete                           1.10
+    3    4  McHale                               20.80
+    4    2  MoJoke                               18.60
+    5    5  BrotherConway                         4.00
+
+  Time    : 1:18.38
+  Trainer : Brown, Ronney
+  Sire    : Mastery
+
+  WIN    $4.40   PLC    $2.20   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  CLM  |  4.5F  |  Dirt  |  $21,900
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    7  FortunateSon                          3.50
+    2    2  I'mNotCatty                           1.30
+    3    1  HardlyEverBetter                      9.90
+    4    3  Titanio                              27.90
+    5    5  Dadsnumbronehelpr                     2.40
+    6    6  CedarRunsFiber                       15.70
+    7    4  ThisIstheLife                        11.70
+
+  Time    : 52.92
+  Trainer : Farrior, Anthony
+  Sire    : GoldenLad
+
+  WIN    $9.00   PLC    $3.60   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  MCL  |  7F  |  Dirt  |  $20,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  OutofMind                            17.70
+    2    1  NearDark                              4.80
+    3    7  StarshipPolaris                       0.90
+    4    5  SperryChalet                          4.00
+    5    2  JudyG                                 4.20
+    6    8  TurkishTea                           12.50
+    7    4  JusticeYouSay                        54.00
+
+  Time    : 1:30.07
+  Trainer : Jones, Jr.,Michael
+  Sire    : Improbable
+
+  WIN   $37.40   PLC   $11.40   SHW    $5.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  CLM  |  7F  |  Dirt  |  $15,700
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    8  Larz                                 11.50
+    2    1  Ridiculous                           28.10
+    3    2  AbsoluteGrit                          3.10
+    4    6  Motskari                              0.80
+    5    4  Macron                                3.00
+    6    5  MaxForwardSpeed                      23.30
+    7    7  Manolito                             45.90
+
+  Time    : 1:27.95
+  Trainer : Brown, Ronney
+  Sire    : FastAnna
+
+  WIN   $25.00   PLC   $16.60   SHW   $13.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  CLM  |  4.5F  |  Dirt  |  $9,700
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  SuttonValley                         12.10
+    2    1  LimitUp                               1.10
+    3    8  TakeYourTime                         21.70
+    4    6  SheaDWorld                            1.00
+    5    9  JamesGang                            18.20
+    6    3  Heaven'sGotFire                      22.10
+    7    7  CowboyAtHeart                        32.00
+
+  Time    : 52.49
+  Trainer : Venham, Lyn
+  Sire    : WillTakeCharge
+
+  WIN   $26.20   PLC    $7.00   SHW    $5.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  ALW  |  6.5F  |  Dirt  |  $34,100
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    2  Spotafreeone                          1.20
+    2    5  RayofSunshine                         1.70
+    3    7  Caffeinennicotine                    29.60
+    4    8  Zachamundo                            4.70
+    5    9  MannyToo                              5.50
+    6    4  WVLad                                56.50
+
+  Time    : 1:17.90
+  Trainer : Murdock, Stephen
+  Sire    : GoldenYears
+
+  WIN    $2.20   PLC    $2.40   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  ALW  |  1 1/16M  |  Dirt  |  $35,100
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    6  IndyMagic                             1.50
+    2    3  YouthfulEnergy                       11.20
+    3    4  DirectAppeal                          5.10
+    4    8  Shallus                               5.40
+    5    7  ItalianSymphony                       4.60
+    6    2  Kaylee'sSpitfire                     62.80
+    7    9  FlyinMayan                            3.80
+    8    5  EmiratesHonor                        42.20
+
+  Time    : 1:45.49
+  Trainer : Farrior, Anthony
+  Sire    : GoodMagic
+
+  WIN    $5.00   PLC    $3.00   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  ALW  |  7F  |  Dirt  |  $34,100
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1    5  BellaItalia                           1.30
+    2    8  Langleyswaterfall                    18.10
+    3    3  MagicMoonSpell                        2.90
+    4    4  ForeverHustlin                       22.20
+    5    6  Gogo'sMojo                           16.40
+    6    9  MissQueue                             2.10
+    7   11  GoldDart                             51.90
+    8    7  ElusiveSionna                        54.90
+
+  Time    : 1:27.90
+  Trainer : Russell, Brittany
+  Sire    : Authentic
+
+  WIN    $4.60   PLC    $3.40   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  CLM  |  7F  |  Dirt  |  $14,600
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                                 Odds
+    1   10  Tina'sBack                           10.10
+    2    9  SaronicBay                            5.20
+    3    5  MoonRox                               2.50
+    4    1  GhostofAlcina                         9.50
+    5    4  MoonlightMistress                     2.10
+    6    2  AddyMae                              24.50
+    7    8  Sparkleinyoureye                      5.70
+    8    6  ButterflyEffect                      26.40
+
+  Time    : 1:28.30
+  Trainer : Lucas, Anthony
+  Sire    : SpiritusInvictus
+
+  WIN   $22.20   PLC   $11.40   SHW    $5.00
+
+========================================================================
+  9 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_CT_20260515.txt 
   Already processed: CT050926USA.pdf - skipping 
   Already processed: CT050826USA.pdf - skipping 
   Already processed: CT050226USA.pdf - skipping 
@@ -107,196 +283,8 @@ Process All Log -- Mon 06/08/2026  9:37:50.11
   [GP] File    : GP060726USA.pdf 
   [GP] FILEDATE: 20260607 
   [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260607.txt 
-  [GP] STATUS  : LOG NOT FOUND -- processing 
-  File: GP060726USA.pdf 
- 
-Processing GP060726USA.pdf [GP]...
-Found 10 race(s)
-
-========================================================================
-  RESULTS : GULFSTREAM PARK
-  Source  : GP060726USA.pdf
-========================================================================
-
-────────────────────────────────────────────────────────────────────────
-  RACE 1  —  MCL  |  1M  |  AW  |  $28,500
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    5  LookingAtUnicity                      4.60
-    2    8  CodedElegance                         4.30
-    3    4  MischievousScout                      2.70
-    4    9  BabyGun                              72.40
-    5    6  FloGo                                83.00
-    6    3  She'sWickedHot                        6.50
-    7   14  Pichirre                             82.10
-    8   10  StillSurprising                      26.30
-
-  Time    : 1:43.18
-  Trainer : D'Angelo, Jose
-  Sire    : LookinAtLucky
-
-  WIN   $11.20   PLC    $7.80   SHW    $5.00
-
-────────────────────────────────────────────────────────────────────────
-  RACE 2  —  SOC  |  1M  |  Dirt  |  $35,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    7  JustaPhilly                           0.70
-    2    5  GoldenValley                          4.70
-    3    3  Calathea                              2.00
-    4    4  Gullfaxi                             14.70
-    5    6  Puckered                             16.60
-    6    1  JudgeJudith                          42.90
-
-  Time    : 1:37.26
-  Trainer : Miller, Herbert
-  Sire    : Girvin
-
-  WIN    $3.40   PLC    $2.10   SHW    $2.10
-
-────────────────────────────────────────────────────────────────────────
-  RACE 3  —  CLM  |  1M  |  AW  |  $30,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    1  AnnieGoodbody                         1.60
-    2    6  ReadingTime                           1.70
-    3    3  EarlyDelivery                        12.50
-    4    4  PocketPair                            2.50
-    5    5  GameChangerJolie                     11.00
-    6    2  Seekingbythestorm                    46.20
-
-  Time    : 1:42.93
-  Trainer : DeLaCerda, Armando
-  Sire    : WarFront
-
-  WIN    $5.20   PLC    $2.80   SHW    $2.20
-
-────────────────────────────────────────────────────────────────────────
-  RACE 4  —  MCL  |  1 1/16M  |  AW  |  $37,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    6  BigDividend                          14.10
-    2    2  RuleSeventySix                        0.80
-    3    5  Shinyhappygroovy                      4.00
-    4    4  StaroftheGun                         12.40
-    5    3  ThreeCheers                          28.90
-    6    7  Risk                                  4.00
-    7    1  Workinclasskid                       10.00
-
-  Time    : 1:44.16
-  Trainer : Lerman, Michael
-  Sire    : Tonalist
-
-  WIN   $30.20   PLC    $7.40   SHW    $4.00
-
-────────────────────────────────────────────────────────────────────────
-  RACE 5  —  CLM  |  6F  |  Dirt  |  $26,500
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    3  GigiCake's                            3.20
-    2    5  SweetAgenda                          12.10
-    3    7  TheBeasterBunny                      17.90
-    4   10  Mithril                              19.90
-    5    6  Jayana                                8.00
-    6    8  Horseplay                             4.10
-    7    9  AlluringSerenity                      2.20
-    8    2  ViscountessRed                        6.20
-
-  Time    : 1:11.73
-  Trainer : Dobles, Elizabeth
-  Sire    : TiztheLaw
-
-  WIN    $8.40   PLC    $5.40   SHW    $4.40
-
-────────────────────────────────────────────────────────────────────────
-  RACE 6  —  MSW  |  1 1/8M  |  AW  |  $68,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    1  SenorRoberto                          2.00
-    2    4  Municipal                             1.20
-    3    3  SirGuinness                           6.10
-    4    5  Maxxander                            17.50
-
-  Time    : 1:51.69
-  Trainer : Smullen, Heather
-  Sire    : Volatile
-
-  WIN    $8.20   PLC    $3.00   SHW    $2.10
-
-────────────────────────────────────────────────────────────────────────
-  RACE 7  —  CLM  |  5.5F  |  AW  |  $30,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    5  SelfLoader                            0.70
-    2    6  Ky'sLaw                               5.20
-    3    4  CandyRoad                            32.70
-    4    3  GSpeedy                              10.60
-    5    1  WartoRemember                         2.60
-    6    7  SweetInterlude                        9.20
-
-  Time    : 1:03.83
-  Trainer : Joseph, Jr.,Saffie
-  Sire    : MaximusMischief
-
-  WIN    $3.40   PLC    $2.40   SHW    $2.20
-
-────────────────────────────────────────────────────────────────────────
-  RACE 8  —  AOC  |  5.5F  |  AW  |  $70,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    3  Spinelli                              3.60
-    2    8  SuWin                                 5.80
-    3    4  RoyallyBlue                           2.10
-    4    9  Denver'sAlley                        12.30
-    5   10  Cooey                                 3.60
-    6    6  Mywifeknowsitall                      7.40
-    7    5  HeartBeatsTrue                        7.40
-
-  Time    : 1:02.54
-  Trainer : Orseno, Joseph
-  Sire    : Upstart
-
-  WIN    $9.20   PLC    $4.20   SHW    $2.80
-
-────────────────────────────────────────────────────────────────────────
-  RACE 9  —  CLM  |  7F  |  Dirt  |  $40,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    7  Fiveeyesonskystars                    1.40
-    2    6  RoarReady                             2.90
-    3    1  PeppermintMan                         8.20
-    4    3  JoeyMuscles                           2.30
-    5    4  Swashbuckle                          22.60
-    6    2  VirginiaCity                          8.50
-
-  Time    : 1:22.83
-  Trainer : Rodriguez, Roderick
-  Sire    : Outwork
-
-  WIN    $4.80   PLC    $2.60   SHW    $2.10
-
-────────────────────────────────────────────────────────────────────────
-  RACE 10  —  MCL  |  1M  |  AW  |  $31,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                                 Odds
-    1    8  NobleSky                              0.40
-    2    2  Tonytone                              2.70
-    3    5  IWishYouLove                         10.60
-    4    6  GrandLiam                            11.50
-    5    3  DRembrandt                           19.80
-    6    7  Asymbolus                            58.00
-
-  Time    : 1:42.04
-  Trainer : Spatz, Ronald
-  Sire    : NobleBird
-
-  WIN    $2.80   PLC    $2.10   SHW    $2.10
-
-========================================================================
-  10 race(s) processed
-========================================================================
-
-  Results logged: results-logs\RESULTS_GP_20260607.txt 
+  [GP] STATUS  : LOG EXISTS -- skipping 
+  Already processed: GP060726USA.pdf - skipping 
   [GP] File    : GP060626USA.pdf 
   [GP] FILEDATE: 20260606 
   [GP] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_GP_20260606.txt 

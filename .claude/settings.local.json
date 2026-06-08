@@ -3,7 +3,8 @@
     "allow": [
       "PowerShell(py *)",
       "Bash(py update_workbook.py)",
-      "Bash(dir *)"
+      "Bash(dir *)",
+      "Bash(python3 -c ' *)"
     ]
   }
 }
