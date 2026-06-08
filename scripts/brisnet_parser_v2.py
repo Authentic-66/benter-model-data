@@ -337,7 +337,10 @@ def parse_brisnet(text, track_code='GP'):
             # ── Horse name: search backward from Own: ─────────────────────────
             for k in range(own_idx - 1, max(0, own_idx - 6), -1):
                 prev = lines[k]
-                hm = re.search(r'([A-Z][A-Za-z\'"\-\. ]+?)\s+\([A-Z/EP]+\s+\d+\)', prev)
+                # Country-of-origin suffix like "(Ire)" or "(GB)" may appear between
+                # the horse name and the class condition "(CLM 5000)".  The optional
+                # non-capturing group consumes it so group 1 holds only the bare name.
+                hm = re.search(r'([A-Z][A-Za-z\'"\-\. ]+?)(?:\s*\([A-Z][A-Za-z]{0,3}\))?\s+\([A-Z/EP]+\s+\d+\)', prev)
                 if hm:
                     horse = hm.group(1).strip()
                     claim_m = re.search(r'\$(\d{1,3},?\d{3})', prev)

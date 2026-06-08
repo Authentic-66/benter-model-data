@@ -146,11 +146,19 @@ def parse_results(text):
                     continue
                 # Pattern: [optional_last_race] pgm HorseName(Jockey)
                 # pgm is 1-2 digits; HorseName starts uppercase, min 4 chars, ends at "("
-                # Allow periods in names (e.g. "Dr.Jekyll")
-                fm = re.search(r'\b(\d{1,2})\s+([A-Z][A-Za-z\'.]{3,})\(', line)
+                # Jockey Club name chars: letters, apostrophe, period, hyphen (spaces
+                # are removed by pdfplumber's layout extraction so not needed here).
+                # Country-of-origin suffix like (Ire) or (Fr) appears as (Suffix)(Jockey)
+                # in concatenated output — the first "(" already delimits the name.
+                # DQ-prefixed horses (disqualified) are skipped so official finish order
+                # is preserved; the DQ'd horse appears first in the physical table but
+                # last officially, and we never want it counted as the winner.
+                fm = re.search(r'\b(\d{1,2})\s+([A-Z][A-Za-z\'\.\-]{3,})\(', line)
                 if fm:
-                    finish_pos += 1
                     pgm, horse = fm.group(1), fm.group(2)
+                    if horse.startswith('DQ-'):
+                        continue
+                    finish_pos += 1
                     # Odds: last decimal on the line (running positions use fractions, not decimals)
                     decimals = re.findall(r'\d+\.\d+', line)
                     odds = decimals[-1] if decimals else '?'
@@ -169,7 +177,7 @@ def parse_results(text):
         # Format: "Winner: HorseName,...byKEENICEoutof..." (spaces removed by PDF)
         for line in lines:
             if 'Winner:' in line:
-                sm = re.search(r'by([A-Z][A-Za-z\. ]+?)(?:outof|Foaled)', line)
+                sm = re.search(r'by([A-Z][A-Za-z\'\.\- ]+?)(?:outof|Foaled)', line)
                 if sm:
                     race['winner_sire'] = sm.group(1).strip().rstrip('.')
                 break
