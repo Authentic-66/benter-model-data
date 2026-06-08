@@ -5,7 +5,24 @@
       "Bash(py update_workbook.py)",
       "Bash(dir *)",
       "Bash(python3 -c ' *)",
-      "Bash(git check-ignore *)"
+      "Bash(git check-ignore *)",
+      "Bash(py -u scripts\\\\audit_win_payouts.py)",
+      "Bash(py -u \"scripts\\\\audit_win_payouts.py\")",
+      "Bash(py -c ' *)",
+      "Bash(python -c \"import sys; print\\(sys.executable, sys.version\\)\")",
+      "Bash(py -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(py scripts\\\\process_results.py \"CharlesTown/ct-results-2026/CT010326USA.pdf\" CT)",
+      "Bash(py \"scripts\\\\process_results.py\" \"CharlesTown/ct-results-2026/CT010326USA.pdf\" CT)",
+      "Bash(py \"scripts\\\\process_results.py\" \"Delta Downs/dd-results-2025/20250117-usa-ded-a-d.standard.pdf\" DD)",
+      "Bash(py -u \"scripts\\\\audit_win_payouts.py\" --fix)",
+      "Bash(py -u \"scripts\\\\db_migrate.py\" --force)",
+      "Bash(py \"scripts\\\\db_query.py\" roi_summary)",
+      "Bash(py \"scripts\\\\db_query.py\" roi)",
+      "Bash(py \"scripts\\\\db_query.py\")",
+      "Bash(py \"scripts\\\\db_query.py\" summary)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(py -c \"from pathlib import Path; print\\(Path\\('scripts/brisnet_parser_v2.py'\\).exists\\(\\)\\)\")"
     ]
   }
 }
