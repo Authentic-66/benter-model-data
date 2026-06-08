@@ -40,7 +40,7 @@ Found 14 race(s)
 
   Time    : 1:10.44
   Trainer : Bauer, Philip
-  Sire    : Bernardini
+  Sire    : Liam'sMap
 
   WIN   $15.60   PLC    $7.20   SHW    $4.60
 
@@ -240,7 +240,7 @@ Found 14 race(s)
 
   Time    : 2:11.26
   Trainer : Pletcher, Todd
-  Sire    : A.P.Indy
+  Sire    : Medagliad'Oro
 
   WIN   $14.20   PLC    $7.20   SHW    $4.40
 

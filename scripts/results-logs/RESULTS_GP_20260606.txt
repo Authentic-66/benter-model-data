@@ -109,7 +109,7 @@ Found 11 race(s)
 
   Time    : 1:40.93
   Trainer : Smullen, Heather
-  Sire    : Bernardini
+  Sire    : Liam'sMap
 
   WIN    $4.80   PLC    $3.00   SHW    $2.20
 
