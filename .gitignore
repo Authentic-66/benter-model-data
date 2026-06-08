@@ -1,0 +1,11 @@
+# Generated database — rebuild locally with db_migrate.py
+scripts/benter_model.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
