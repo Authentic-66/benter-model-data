@@ -4,7 +4,8 @@
       "PowerShell(py *)",
       "Bash(py update_workbook.py)",
       "Bash(dir *)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(git check-ignore *)"
     ]
   }
 }
