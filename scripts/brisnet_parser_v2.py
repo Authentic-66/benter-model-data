@@ -235,17 +235,23 @@ def extract_text(filepath):
 
 def extract_speed_figures(block_lines):
     """Extract Brisnet speed figures from PP lines (DDMMMYY TRACK ... SPD ...).
-    Returns list in source order (most recent first in Brisnet layout)."""
-    PP_DATE = re.compile(r'^\s*\d{1,2}[A-Za-z]{3}\d{2}\s+\S')
-    # Brisnet speed ratings typically fall in 45-130; single/double-digit finish
-    # positions and small field sizes stay below this window.
+    Returns list of (figure, surface) tuples in source order (most recent first).
+    surface is 'T' (Turf), 'AW' (All Weather), or 'D' (Dirt).
+    """
+    PP_DATE  = re.compile(r'^\s*\d{1,2}[A-Za-z]{3}\d{2}\s+\S')
     SPD_RANGE = re.compile(r'\b([4-9]\d|1[0-2]\d)\b')
     figures = []
     for line in block_lines:
         if PP_DATE.match(line):
             nums = [int(n) for n in SPD_RANGE.findall(line)]
             if nums:
-                figures.append(nums[0])
+                if '(T)' in line or re.search(r'\bTurf\b', line, re.IGNORECASE):
+                    surf = 'T'
+                elif re.search(r'\bAW\b|Tapeta|Polytrack|All.?Weather', line):
+                    surf = 'AW'
+                else:
+                    surf = 'D'
+                figures.append((nums[0], surf))
     return figures
 
 
@@ -314,6 +320,7 @@ def parse_brisnet(text, track_code='GP'):
             horse = '?'; pp_num = 0; ml = '?'; trainer = '?'; trainer_stats = ''
             jockey = '?'; sire = '?'; prime_power = '?'; pp_rank = '?'
             days_off = 0; pos_angles = []; neg_angles = []; claim_price = None
+            jt_winpct = None
 
             # ── PP# from Own: line or backward search ─────────────────────────
             own_line = lines[own_idx]
@@ -391,6 +398,12 @@ def parse_brisnet(text, track_code='GP'):
                     if jm:
                         jockey = jm.group(1).title()
 
+                # J/T combo win rate (Brisnet "Jky/Trn" or "J/T" stats line)
+                if jt_winpct is None and re.search(r'\bJ/?T\b|Jky/Trn', line, re.IGNORECASE):
+                    pct_m = re.search(r'(\d+)%', line)
+                    if pct_m:
+                        jt_winpct = int(pct_m.group(1))
+
                 # Sire
                 if sire == '?':
                     sm = re.search(r'Sire\s*:\s*=?([A-Z][A-Za-z\'"\-\. \(\)]+?)\s*\(', line)
@@ -424,9 +437,25 @@ def parse_brisnet(text, track_code='GP'):
                             neg_angles.append(a[:65])
 
             # ── Speed figures from PP lines in block ──────────────────────────
-            spd_figs = extract_speed_figures(block)
-            recent_spd = spd_figs[:5]
-            best_spd = max(spd_figs) if spd_figs else None
+            spd_figs   = extract_speed_figures(block)  # [(figure, surface), ...]
+            recent_spd = [f for f, _ in spd_figs[:5]]
+            best_spd   = max((f for f, _ in spd_figs), default=None)
+            best_spd_turf = max((f for f, s in spd_figs if s == 'T'),  default=None)
+            best_spd_aw   = max((f for f, s in spd_figs if s == 'AW'), default=None)
+            improving = (len(recent_spd) >= 3 and
+                         recent_spd[0] > recent_spd[1] > recent_spd[2])
+
+            # ── Hot J/T and 0% J/T from angles ────────────────────────────────
+            _HOT_JT_RE = re.compile(r'hot.*?(?:trainer|jockey|j/?t|combo)', re.IGNORECASE)
+            hot_jt = any(_HOT_JT_RE.search(a) for a in pos_angles)
+            # Angle fallback for 0% when no dedicated J/T stats line was found
+            if jt_winpct is None:
+                for _a in neg_angles:
+                    if re.search(r'j/?t\b|trainer.*jockey|jockey.*trainer', _a, re.IGNORECASE) \
+                            and '0%' in _a:
+                        jt_winpct = 0
+                        break
+            jt_zero = (jt_winpct == 0)
 
             if horse == '?' or pp_num == 0:
                 continue
@@ -450,6 +479,16 @@ def parse_brisnet(text, track_code='GP'):
                     signals.append(('HORSE', sig, desc))
                     break
 
+            # Hot J/T combo — extract record from angle text when available
+            if hot_jt:
+                _record = ''
+                for _a in pos_angles:
+                    _m = re.search(r'(?:14\s*days?|combo)\s*\(([^)]+)\)', _a, re.IGNORECASE)
+                    if _m:
+                        _record = f' ({_m.group(1)})'
+                        break
+                signals.append(('HOT_JT', '🔥 HOT J/T', f'Hot combo 14d{_record}'))
+
             trainer_rules = TRAINER_RULES.get(track_code, {})
             special_rule = ''
             for key, rule in trainer_rules.items():
@@ -466,6 +505,8 @@ def parse_brisnet(text, track_code='GP'):
                 'pos_angles': pos_angles[:4], 'neg_angles': neg_angles[:3],
                 'signals': signals, 'special_rule': special_rule,
                 'recent_spd': recent_spd, 'best_spd': best_spd,
+                'best_spd_turf': best_spd_turf, 'best_spd_aw': best_spd_aw,
+                'improving': improving, 'jt_zero': jt_zero,
             }
 
             if not any(h['name'] == horse for h in races[current_race]['horses']):
@@ -475,7 +516,7 @@ def parse_brisnet(text, track_code='GP'):
 
 
 def is_strong_pick(h):
-    """True only for iron trainer (🔥), trainer+sire double, or iron horse (🔥). Excludes ✅-only."""
+    """True for 🔥 trainer, trainer+sire double, 🔥 horse, or hot J/T combo. Excludes ✅-only."""
     signals = h['signals']
     if not signals:
         return False
@@ -488,6 +529,8 @@ def is_strong_pick(h):
     for sig_type, sig, desc in signals:
         if sig_type == 'HORSE' and '🔥' in sig:
             return True
+    if 'HOT_JT' in sig_types:
+        return True
     return False
 
 
@@ -537,8 +580,14 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
             print(f"        Sire: {h['sire']:<30}  J: {h['jockey'][:20]}")
             if h.get('recent_spd'):
                 recent_str = ', '.join(str(s) for s in h['recent_spd'])
-                best_str = str(h['best_spd']) if h['best_spd'] else '—'
-                print(f"        Recent SPD: {recent_str}   Best: {best_str}")
+                if surf == 'Turf' and h.get('best_spd_turf') is not None:
+                    best_str = f"{h['best_spd_turf']} (Turf)"
+                elif surf == 'AW' and h.get('best_spd_aw') is not None:
+                    best_str = f"{h['best_spd_aw']} (AW)"
+                else:
+                    best_str = str(h['best_spd']) if h['best_spd'] else '—'
+                trend = '  ✅ IMPROVING FORM' if h.get('improving') else ''
+                print(f"        Recent SPD: {recent_str}   Best: {best_str}{trend}")
             if h['trainer_stats']:
                 print(f"        Stats: {h['trainer_stats']}")
             if h['days_off'] >= 60:
@@ -561,8 +610,10 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
         if race_picks:
             print(f"\n  ★ MODEL PICKS R{rn}:")
             for h in sorted(race_picks, key=lambda x: len(x['signals']), reverse=True):
-                sigs = ' + '.join([s[1] for s in h['signals']])
-                print(f"    PP{h['pp']:>2}: {h['name']:<27} ({h['ml']:>5})  {sigs[:50]}")
+                base_sigs = ' + '.join(s[1] for s in h['signals'] if s[0] != 'HOT_JT')
+                hot_tag  = '  🔥 HOT J/T' if any(s[0] == 'HOT_JT' for s in h['signals']) else ''
+                warn_tag = '  ⚠️ 0% J/T'  if h.get('jt_zero') else ''
+                print(f"    PP{h['pp']:>2}: {h['name']:<27} ({h['ml']:>5})  {base_sigs[:45]}{hot_tag}{warn_tag}")
         else:
             print(f"\n  ⚪ No primary model signals")
 
@@ -571,8 +622,10 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
     print(f"📊 MODEL SUMMARY — {len(all_picks)} ITM picks across {len(races)} races")
     print(f"{'='*76}")
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
-        sigs = ' | '.join([s[1] for s in h['signals']])
-        print(f"  R{rn} PP{h['pp']:>2}: {h['name']:<27} ({h['ml']:>5})  {sigs[:45]}")
+        sigs     = ' | '.join(s[1] for s in h['signals'] if s[0] != 'HOT_JT')
+        hot_tag  = ' 🔥 HOT J/T' if any(s[0] == 'HOT_JT' for s in h['signals']) else ''
+        warn_tag = ' ⚠️ 0% J/T'  if h.get('jt_zero') else ''
+        print(f"  R{rn} PP{h['pp']:>2}: {h['name']:<27} ({h['ml']:>5})  {sigs[:40]}{hot_tag}{warn_tag}")
     print(f"{'='*76}\n")
     return all_picks
 
@@ -658,15 +711,16 @@ def write_picks_file(all_picks, track_code, filepath):
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",
-        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER",
+        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER",
     ]
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
-        sig_type = h['signals'][0][0]
+        sig_type   = h['signals'][0][0]
         horse_name = h['name'].replace(' ', '')
-        ml_f = ml_to_float(h['ml'])
-        ml_col = str(ml_f) if ml_f is not None else '?'
-        pp_col = h['prime_power'] if h['prime_power'] != '?' else '?'
-        lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col}")
+        ml_f       = ml_to_float(h['ml'])
+        ml_col     = str(ml_f) if ml_f is not None else '?'
+        pp_col     = h['prime_power'] if h['prime_power'] != '?' else '?'
+        trainer_col = h['trainer'].replace(' ', '_') if h['trainer'] != '?' else '?'
+        lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col} {trainer_col}")
 
     out_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return out_path

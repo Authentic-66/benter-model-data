@@ -226,9 +226,11 @@ RACE 4    Dirt
         ✅ 100% trainer: Mdn to MdnClm
         ✅ Best AW speed is close to the Avg Winning Speed
 
-      2: Rule Seventy Six                2    119.7(1)  ?
+  ⭐  2: Rule Seventy Six                2    119.7(1)  Joseph, Jr. Saffie A
         Sire: Nyquist                         J: Husbands Micah J
         Claim: $35,000
+        🎯 [TRAINER] 🔥 IRON GP #1 — 405W/3yr/30%
+        ⚠️  RULE: DUAL ENTRY = board both.
         ✅ Switches to a high % jockey
         ✅ Drops in class today
 
@@ -275,6 +277,7 @@ RACE 4    Dirt
   ★ MODEL PICKS R4:
     PP 3: Three Cheers                (    3)  🔥 IRON GP #1 + 🔥 GP SIRE #1
     PP 5: Shinyhappygroovy            (    5)  ✅ POS GP + 🔥 GP FL SIRE
+    PP 2: Rule Seventy Six            (    2)  🔥 IRON GP #1
     PP 7: Risk                        (    7)  🔥 IRON GP
 
 ────────────────────────────────────────────────────────────────────────────
@@ -341,9 +344,11 @@ RACE 5    Dirt
         ✅ Early speed running style helps chances
         ❌ 27Feb GP 3f ft :35ª B1/7 18Jan GP 4f ft :48« B37/86 16Nov'25 GP 4
 
-      8: Horseplay                       8    108.6(3)  ?
+  ⭐  8: Horseplay                       8    108.6(3)  Barboza, Jr. Victor
         Sire: Honest Mischief                 J: Torres Yolber
         Claim: $8,000
+        🎯 [TRAINER] 🔥 IRON GP — 150W/3yr
+        ⚠️  RULE: DUAL ENTRY = board both.
         ✅ Switches to a high% trainer
         ✅ Drops in class today
         ❌ 08Feb GP 3f ft :35ª
@@ -367,6 +372,7 @@ RACE 5    Dirt
 
   ★ MODEL PICKS R5:
     PP 6: Jayana                      (    6)  🔥 IRON GP #1 + 🔥 GP SIRE #1
+    PP 8: Horseplay                   (    8)  🔥 IRON GP
 
 ────────────────────────────────────────────────────────────────────────────
 RACE 6    Dirt  
@@ -392,8 +398,10 @@ RACE 6    Dirt
         ✅ High % Jockey
         ✅ Highest last race speed rating (tie)
 
-      4: Municipal                       4    120.1(1)  ?
+  ⭐  4: Municipal                       4    120.1(1)  Joseph, Jr. Saffie A
         Sire: Nyquist                         J: Husbands Micah J
+        🎯 [TRAINER] 🔥 IRON GP #1 — 405W/3yr/30%
+        ⚠️  RULE: DUAL ENTRY = board both.
         ✅ High % trainer
         ✅ Hot Tnr/Jky combo in last 14 days (9 3-1-1)
         ❌ 29May Pmm 3f ft :36¨ B1/23 08May Pmm ˜ (d) 4f fm :51¨ B33/37 11Ap
@@ -414,6 +422,7 @@ RACE 6    Dirt
         ❌ 16Jan P
 
   ★ MODEL PICKS R6:
+    PP 4: Municipal                   (    4)  🔥 IRON GP #1
     PP 5: Maxxander                   (    5)  🔥 IRON GP #2
     PP 6: Rum Room                    (    6)  🔥 IRON GP #2
 
@@ -442,9 +451,11 @@ RACE 7    Dirt
         Claim: $12,500
         ❌ 15May GP 4f gd :46ª B1/9 19Apr Tam 4f ft :50¨ B41/66 25Feb Tam 3f
 
-      5: Self Loader                     5    112.8(1)  ?
+  ⭐  5: Self Loader                     5    112.8(1)  Joseph, Jr. Saffie A
         Sire: Maximus Mischief                J: Hughes Rasheed
         Claim: $12,500
+        🎯 [TRAINER] 🔥 IRON GP #1 — 405W/3yr/30%
+        ⚠️  RULE: DUAL ENTRY = board both.
         ✅ High % trainer
         ✅ High % Jockey
         ❌ 15May GP 4f gd :46ª B1/9 19Apr Tam 4f ft :50¨ B41/66 25Feb Tam 3f
@@ -462,7 +473,8 @@ RACE 7    Dirt
         Claim: $12,500
         ✅ Drops in class today
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R7:
+    PP 5: Self Loader                 (    5)  🔥 IRON GP #1
 
 ────────────────────────────────────────────────────────────────────────────
 RACE 8    Dirt  
@@ -513,8 +525,10 @@ RACE 8    Dirt
         ✅ Best AW speed is close to the Avg Winning Speed
         ❌ 04Feb Pmm 3f ft :35« B1/9 12Sep'25 Pmm 4f wf
 
-      7: Vuela Paloma                    7    126.1(3)  ?
+  ⭐  7: Vuela Paloma                    7    126.1(3)  Barboza, Jr. Victor
         Sire: Valiant Minister                J: Torres Yolber
+        🎯 [TRAINER] 🔥 IRON GP — 150W/3yr
+        ⚠️  RULE: DUAL ENTRY = board both.
         ✅ High % trainer
         ✅ 24% trainer: Allowance
         ❌ 06Feb GP 4f ft :47ª B1/27 08Jan GP 3f ft :35ª B2/7 07Nov'25 Pmm 4
@@ -532,17 +546,21 @@ RACE 8    Dirt
         ✅ Switches to a high % jockey
         ✅ 17% trainer: All Weather
 
-  · 10: Cooey                          10    128.1(2)  ?
+  ⭐ 10: Cooey                          10    128.1(2)  Joseph, Jr. Saffie A
         Sire: Girvin                          J: Hughes Rasheed
+        🎯 [TRAINER] 🔥 IRON GP #1 — 405W/3yr/30%
         🎯 [SIRE] 🔥 3-TRACK — GP(80)+CT+EVD wins
+        ⚠️  RULE: DUAL ENTRY = board both.
         ✅ High % trainer
         ✅ 29% trainer: Btn favorite
         ❌ 10May GP 3f ft :34© B1/5
 
   ★ MODEL PICKS R8:
+    PP10: Cooey                       (   10)  🔥 IRON GP #1 + 🔥 3-TRACK
     PP 1: She Inspires                (    1)  🔥 IRON GP
     PP 2: Ocala Gala                  (    2)  🔥 IRON GP
     PP 3: Spinelli                    (    3)  🔥 IRON GP #1
+    PP 7: Vuela Paloma                (    7)  🔥 IRON GP
 
 ────────────────────────────────────────────────────────────────────────────
 RACE 9    Dirt  
@@ -587,9 +605,11 @@ RACE 9    Dirt
         Claim: $30,000
         ✅ Hot Jockey in last 7 days (11 4-1-1)
 
-      6: Roar Ready                      6    123.2(2)  ?
+  ⭐  6: Roar Ready                      6    123.2(2)  Barboza, Jr. Victor
         Sire: Do the Roar                     J: Reyes Leonel
         Claim: $30,000
+        🎯 [TRAINER] 🔥 IRON GP — 150W/3yr
+        ⚠️  RULE: DUAL ENTRY = board both.
         ✅ High % trainer
         ✅ 23% trainer: Claiming
 
@@ -601,7 +621,8 @@ RACE 9    Dirt
         ✅ Eligible to improve in 2nd start since layoff
         ❌ 01May GP 3f ft :36¨ B1/7 18Apr GP 4f ft :47¨ B2/47 04Apr GP 4f ft
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R9:
+    PP 6: Roar Ready                  (    6)  🔥 IRON GP
 
 ────────────────────────────────────────────────────────────────────────────
 RACE 10    Dirt  
@@ -616,15 +637,19 @@ RACE 10    Dirt
         ✅ High % Jockey
         ✅ Finished 3rd vs similar (on Turf) in last race
 
-      2: Tonytone                        2    108.6(5)  ?
+  ⭐  2: Tonytone                        2    108.6(5)  Joseph, Jr. Saffie A
         Sire: Ghostzapper                     J: Husbands Micah J
         Claim: $17,500
+        🎯 [TRAINER] 🔥 IRON GP #1 — 405W/3yr/30%
+        ⚠️  RULE: DUAL ENTRY = board both.
         ✅ High % trainer
         ✅ High % Jockey
 
-      4: Mosai                           4    111.4(2)  ?
+  ⭐  4: Mosai                           4    111.4(2)  Barboza, Jr. Victor
         Sire: Cupid                           J: Torres Yolber
         Claim: $17,500
+        🎯 [TRAINER] 🔥 IRON GP — 150W/3yr
+        ⚠️  RULE: DUAL ENTRY = board both.
         ✅ High % trainer
         ✅ Highest last race speed rating (tie)
 
@@ -650,23 +675,34 @@ RACE 10    Dirt
         ✅ Highest last race speed rating (tie)
         ✅ Best AW speed is fastest among today's starters (tie)
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R10:
+    PP 2: Tonytone                    (    2)  🔥 IRON GP #1
+    PP 4: Mosai                       (    4)  🔥 IRON GP
 
 ============================================================================
-📊 MODEL SUMMARY — 12 ITM picks across 10 races
+📊 MODEL SUMMARY — 21 ITM picks across 10 races
 ============================================================================
   R1 PP 5: Looking At Unicity          (    5)  🔥 IRON GP #2
   R3 PP 4: Pocket Pair                 (    4)  🔥 IRON GP
   R3 PP 6: Reading Time                (    6)  🔥 IRON GP #1
+  R4 PP 2: Rule Seventy Six            (    2)  🔥 IRON GP #1
   R4 PP 3: Three Cheers                (    3)  🔥 IRON GP #1 | 🔥 GP SIRE #1
   R4 PP 5: Shinyhappygroovy            (    5)  ✅ POS GP | 🔥 GP FL SIRE
   R4 PP 7: Risk                        (    7)  🔥 IRON GP
   R5 PP 6: Jayana                      (    6)  🔥 IRON GP #1 | 🔥 GP SIRE #1
+  R5 PP 8: Horseplay                   (    8)  🔥 IRON GP
+  R6 PP 4: Municipal                   (    4)  🔥 IRON GP #1
   R6 PP 5: Maxxander                   (    5)  🔥 IRON GP #2
   R6 PP 6: Rum Room                    (    6)  🔥 IRON GP #2
+  R7 PP 5: Self Loader                 (    5)  🔥 IRON GP #1
   R8 PP 1: She Inspires                (    1)  🔥 IRON GP
   R8 PP 2: Ocala Gala                  (    2)  🔥 IRON GP
   R8 PP 3: Spinelli                    (    3)  🔥 IRON GP #1
+  R8 PP 7: Vuela Paloma                (    7)  🔥 IRON GP
+  R8 PP10: Cooey                       (   10)  🔥 IRON GP #1 | 🔥 3-TRACK
+  R9 PP 6: Roar Ready                  (    6)  🔥 IRON GP
+  R10 PP 2: Tonytone                    (    2)  🔥 IRON GP #1
+  R10 PP 4: Mosai                       (    4)  🔥 IRON GP
 ============================================================================
 
 picks file → picks_GP_06072026.txt

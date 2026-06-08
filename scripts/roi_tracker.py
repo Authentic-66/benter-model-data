@@ -3,15 +3,17 @@ ROI Tracker (file-based) — matches model picks against Equibase result PDFs
 Imports parse_results / extract_text from process_results.py in the same folder.
 
 picks.txt format  (one pick per line, # lines are comments):
-    TRACK  RACE  HORSE  SIGNAL  [BETS]  [ML_ODDS]  [PP_POWER]
-    CT     3     BigJoeB        TRAINER   WPS        3.0        92.5
-    CT     4     HeyBoots       HORSE     WP         5.0        88.0
+    TRACK  RACE  HORSE  SIGNAL  [BETS]  [ML_ODDS]  [PP_POWER]  [TRAINER]
+    CT     3     BigJoeB        TRAINER   WPS        3.0        92.5       Farrior_R
+    CT     4     HeyBoots       HORSE     WP         5.0        88.0       Jones_Jr
     GP     2     SomHorse       TRAINER                          75.0
 
-  ML_ODDS  — morning-line odds as a decimal (2.0 = 2/1, 2.5 = 5/2).
+  ML_ODDS  — morning-line odds as a decimal (3.0 = 2/1, 2.0 = evens).
              Omit to bypass the MIN_ODDS filter for that pick.
   PP_POWER — PP Power rating (numeric). Used to rank picks when a race
              exceeds MAX_PICKS_PER_RACE. Omit to default to 0.
+  TRAINER  — trainer name with spaces replaced by underscores (e.g. Joseph_Saffie_A_Jr).
+             Used for TRAINER_EXEMPT bypass. Omit or use ? if unknown.
 
   TRACK  — track code matching a result PDF (CT, GP, FP, EVD, MVR, DD, FG)
   RACE   — race number, or R3-style prefix
@@ -43,6 +45,13 @@ from process_results import extract_text, parse_results, TRACK_NAMES
 MIN_ODDS = 3.0          # minimum decimal ML odds (3.0 = 2/1, 2.0 = evens/1/1); set to 0 to disable
 MAX_PICKS_PER_RACE = 2  # max picks scored per race (ranked by PP Power); set to 0 to disable
 
+# Trainers whose horses are always scored regardless of MIN_ODDS.
+# Uses substring matching against the TRAINER field in picks.txt (same logic as IRON_TRAINERS keys).
+# These horses show [TRAINER EXEMPT] in the ROI log instead of [BELOW ODDS THRESHOLD].
+TRAINER_EXEMPT = [
+    'Joseph',   # Saffie A. Joseph Jr. — SJJ, IRON GP #1, 405W/30%; public hammers below 2/1
+]
+
 # ── picks.txt loading ─────────────────────────────────────────────────────────
 
 def load_picks(filepath):
@@ -72,31 +81,43 @@ def load_picks(filepath):
                 pp_power = float(parts[6]) if len(parts) >= 7 else 0.0
             except ValueError:
                 pp_power = 0.0
+            trainer = parts[7].replace('_', ' ') if len(parts) >= 8 else ''
             picks.append({
                 'track': track, 'race': race, 'horse': horse,
                 'signal': signal, 'bets': bets,
                 'ml_odds': ml_odds, 'pp_power': pp_power,
+                'trainer': trainer,
             })
     return picks
 
 # ── Filters ───────────────────────────────────────────────────────────────────
 
-def apply_filters(picks):
-    """Apply MIN_ODDS and MAX_PICKS_PER_RACE filters.
+def _is_trainer_exempt(pick):
+    trainer = pick.get('trainer', '')
+    return any(ex.lower() in trainer.lower() for ex in TRAINER_EXEMPT)
 
-    Returns (active_picks, skipped_rows, n_odds_filtered, n_race_filtered).
+
+def apply_filters(picks):
+    """Apply MIN_ODDS and MAX_PICKS_PER_RACE filters, respecting TRAINER_EXEMPT.
+
+    Returns (active_picks, skipped_rows, n_odds_filtered, n_race_filtered, n_exempt).
     skipped_rows are pre-built row dicts ready for print_summary.
+    Exempt picks below MIN_ODDS are included in active with trainer_exempt=True.
     """
     skipped = []
     active  = []
-    n_odds = 0
+    n_odds = n_exempt = 0
 
     for p in picks:
         ml = p.get('ml_odds')
         if MIN_ODDS > 0 and ml is not None and ml < MIN_ODDS:
-            skipped.append({**p, 'status': 'BELOW ODDS THRESHOLD', 'filtered': True,
-                            'fin': '—', 'invested': 0.0, 'returned': 0.0})
-            n_odds += 1
+            if _is_trainer_exempt(p):
+                active.append({**p, 'trainer_exempt': True})
+                n_exempt += 1
+            else:
+                skipped.append({**p, 'status': 'BELOW ODDS THRESHOLD', 'filtered': True,
+                                'fin': '—', 'invested': 0.0, 'returned': 0.0})
+                n_odds += 1
         else:
             active.append(p)
 
@@ -117,7 +138,7 @@ def apply_filters(picks):
             else:
                 active.extend(race_picks)
 
-    return active, skipped, n_odds, n_race
+    return active, skipped, n_odds, n_race, n_exempt
 
 # ── PDF loading ───────────────────────────────────────────────────────────────
 
@@ -223,7 +244,12 @@ def print_summary(rows):
             fin_str  = str(r['fin']) if r.get('fin') not in (None, '-', '?') else '?'
             bets_str = ''.join(r['bets'])
             pl       = r['returned'] - r['invested']
-            note     = f"  [{r['status']}]" if r.get('status') not in ('OK', None) else ''
+            if r.get('trainer_exempt'):
+                note = '  [TRAINER EXEMPT]'
+            elif r.get('status') not in ('OK', None):
+                note = f"  [{r['status']}]"
+            else:
+                note = ''
             print(
                 f"  R{r['race']:<4} {r['horse'][:24]:<24} {r['signal'][:9]:<9} "
                 f"{bets_str:<5} {fin_str:>3}  ${r['invested']:>4.2f}  "
@@ -254,11 +280,13 @@ def run(picks_file, pdf_files):
     picks = load_picks(picks_file)
     print(f"  {len(picks)} pick(s) loaded")
 
-    active_picks, skipped_rows, n_odds, n_race = apply_filters(picks)
+    active_picks, skipped_rows, n_odds, n_race, n_exempt = apply_filters(picks)
     total_filtered = n_odds + n_race
     if total_filtered:
         print(f"  {total_filtered} pick(s) filtered before scoring "
               f"({n_odds} odds threshold, {n_race} race pick limit)")
+    if n_exempt:
+        print(f"  {n_exempt} pick(s) below ML threshold but scored via TRAINER_EXEMPT")
 
     print(f"\nLoading result PDFs...")
     results = load_results(pdf_files)
@@ -289,12 +317,14 @@ def run(picks_file, pdf_files):
 
     print_summary(rows + skipped_rows)
 
-    if n_odds or n_race:
+    if n_odds or n_race or n_exempt:
         print(f"  Filter summary:")
         if n_odds:
             print(f"    Below odds threshold (decimal ML < {MIN_ODDS}):  {n_odds} pick(s) not scored")
+        if n_exempt:
+            print(f"    Trainer exempt (scored below threshold):          {n_exempt} pick(s) [TRAINER EXEMPT]")
         if n_race:
-            print(f"    Race pick limit (> {MAX_PICKS_PER_RACE}/race):         {n_race} pick(s) not scored")
+            print(f"    Race pick limit (> {MAX_PICKS_PER_RACE}/race):              {n_race} pick(s) not scored")
         print()
 
 
