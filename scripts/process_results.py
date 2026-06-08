@@ -136,7 +136,8 @@ def parse_results(text):
                     continue
                 # Pattern: [optional_last_race] pgm HorseName(Jockey)
                 # pgm is 1-2 digits; HorseName starts uppercase, min 4 chars, ends at "("
-                fm = re.search(r'\b(\d{1,2})\s+([A-Z][A-Za-z\']{3,})\(', line)
+                # Allow periods in names (e.g. "Dr.Jekyll")
+                fm = re.search(r'\b(\d{1,2})\s+([A-Z][A-Za-z\'.]{3,})\(', line)
                 if fm:
                     finish_pos += 1
                     pgm, horse = fm.group(1), fm.group(2)
