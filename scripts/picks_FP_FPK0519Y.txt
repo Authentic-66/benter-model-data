@@ -1,0 +1,14 @@
+# Benter Model Picks - FP FPK0519Y
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
+FP 1 Somnus TRAINER WPS ? ?
+FP 1 CallMeDrossel TRAINER WPS ? ?
+FP 3 EpicPrankster TRAINER WPS ? ?
+FP 3 BeeBluff TRAINER WPS ? ?
+FP 3 LookNMightyFine TRAINER WPS ? ?
+FP 4 SaintGhaaleb TRAINER WPS ? ?
+FP 4 WildwoodTriple TRAINER WPS ? ?
+FP 5 PrinceDay TRAINER WPS ? ?
+FP 5 BrownReserve TRAINER WPS ? ?
+FP 6 Realta TRAINER WPS ? ?
+FP 7 SpanishCara TRAINER WPS ? ?
+FP 8 HialeahHottie TRAINER WPS ? ?

@@ -1,0 +1,23 @@
+# Benter Model Picks - FP 05262026
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
+FP 1 LuckyMonica TRAINER WPS ? ?
+FP 2 DillonRocks TRAINER WPS ? ?
+FP 2 SwaggyGeorge TRAINER WPS ? ?
+FP 2 RiskyBoy TRAINER WPS ? ?
+FP 3 GoodandNaughty TRAINER WPS ? ?
+FP 3 JustSqueezingBy TRAINER WPS ? ?
+FP 3 QueenGita TRAINER WPS ? ?
+FP 4 Karazest TRAINER WPS ? ?
+FP 4 EnchantedMoment TRAINER WPS ? ?
+FP 4 KyOSister TRAINER WPS ? ?
+FP 4 TurtlePace TRAINER WPS ? ?
+FP 5 WildwoodAttack TRAINER WPS ? ?
+FP 5 SocoKid TRAINER WPS ? ?
+FP 6 Natalia'sRap TRAINER WPS ? ?
+FP 6 JetPack TRAINER WPS ? ?
+FP 7 Smoked TRAINER WPS ? ?
+FP 7 ChanceTaker TRAINER WPS ? ?
+FP 7 SaintGhaaleb TRAINER WPS ? ?
+FP 8 ReyannoRoyal TRAINER WPS ? ?
+FP 8 Fasttimesatmidnite TRAINER WPS ? ?
+FP 8 WinWithColor TRAINER WPS ? ?

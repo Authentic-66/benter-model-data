@@ -1,0 +1,14 @@
+# Benter Model Picks - FP 06022026
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
+FP 1 WildwoodBell TRAINER WPS 6.0 ?
+FP 1 SummerCyclone TRAINER WPS 9.0 ?
+FP 2 PlayTwenty TRAINER WPS 5.0 105.6
+FP 3 YoungMischief TRAINER WPS 2.0 93.7
+FP 4 TigersaurusRex TRAINER WPS 5.0 100.4
+FP 6 Granddaddylonglegs TRAINER WPS 2.0 110.6
+FP 6 CallMeDrossel TRAINER WPS 3.0 99.7
+FP 6 SpanishDoubloon TRAINER WPS 8.0 109.3
+FP 7 QualityStorm TRAINER WPS 5.0 99.9
+FP 7 WarriorofGold TRAINER WPS 7.0 104.5
+FP 8 PassingPassion TRAINER WPS 3.0 103.4
+FP 8 Richiesgoldengirl TRAINER WPS 12.0 105.5
