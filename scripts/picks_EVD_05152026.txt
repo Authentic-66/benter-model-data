@@ -1,25 +1,25 @@
 # Benter Model Picks - EVD 05152026
-# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
-EVD 1 Lolo'sGirl TRAINER WPS ? ?
-EVD 1 ChargingOvatime TRAINER WPS ? ?
-EVD 2 AmericanVision TRAINER WPS ? ?
-EVD 2 Consecrated TRAINER WPS ? ?
-EVD 2 FieldStudy TRAINER WPS ? ?
-EVD 3 Uninspired TRAINER WPS ? ?
-EVD 3 Ken'sLegacy TRAINER WPS ? ?
-EVD 3 CajunCoaster TRAINER WPS ? ?
-EVD 4 FeathersRoad TRAINER WPS ? ?
-EVD 4 Julia'sWarrior TRAINER WPS ? ?
-EVD 4 Pinedale TRAINER WPS ? ?
-EVD 4 CrimsonStorm TRAINER WPS ? ?
-EVD 5 MySpecialStar TRAINER WPS ? ?
-EVD 5 KohentheMan TRAINER WPS ? ?
-EVD 6 ClearlyCredo TRAINER WPS ? ?
-EVD 7 Begforforgiveness TRAINER WPS ? ?
-EVD 7 JohnnyPodres TRAINER WPS ? ?
-EVD 7 Clarestown TRAINER WPS ? ?
-EVD 7 Atmosphere TRAINER WPS ? ?
-EVD 8 FreddiebyaNose TRAINER WPS ? ?
-EVD 8 AllerVite TRAINER WPS ? ?
-EVD 8 Seehoss TRAINER WPS ? ?
-EVD 9 YourLadyship TRAINER WPS ? ?
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER
+EVD 1 Lolo'sGirl TRAINER WPS ? ? ?
+EVD 1 ChargingOvatime TRAINER WPS ? ? ?
+EVD 2 AmericanVision TRAINER WPS ? ? ?
+EVD 2 Consecrated TRAINER WPS ? ? ?
+EVD 2 FieldStudy TRAINER WPS ? ? ?
+EVD 3 Uninspired TRAINER WPS ? ? ?
+EVD 3 Ken'sLegacy TRAINER WPS ? ? ?
+EVD 3 CajunCoaster TRAINER WPS ? ? ?
+EVD 4 FeathersRoad TRAINER WPS ? ? ?
+EVD 4 Julia'sWarrior TRAINER WPS ? ? ?
+EVD 4 Pinedale TRAINER WPS ? ? ?
+EVD 4 CrimsonStorm TRAINER WPS ? ? ?
+EVD 5 MySpecialStar TRAINER WPS ? ? ?
+EVD 5 KohentheMan TRAINER WPS ? ? ?
+EVD 6 ClearlyCredo TRAINER WPS ? ? ?
+EVD 7 Begforforgiveness TRAINER WPS ? ? ?
+EVD 7 JohnnyPodres TRAINER WPS ? ? ?
+EVD 7 Clarestown TRAINER WPS ? ? ?
+EVD 7 Atmosphere TRAINER WPS ? ? ?
+EVD 8 FreddiebyaNose TRAINER WPS ? ? ?
+EVD 8 AllerVite TRAINER WPS ? ? ?
+EVD 8 Seehoss TRAINER WPS ? ? ?
+EVD 9 YourLadyship TRAINER WPS ? ? ?

@@ -1,20 +1,20 @@
 # Benter Model Picks - GP 05312026
-# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
-GP 1 Sophistry TRAINER WPS 2.0 120.1
-GP 1 Misprint TRAINER WPS 6.0 121.1
-GP 1 BreezeyBella TRAINER WPS 7.0 124.9
-GP 1 AnyMoment TRAINER WPS 8.0 118.7
-GP 2 BadGalParty TRAINER WPS 8.0 122.0
-GP 3 GrimReaper TRAINER WPS 2.0 126.3
-GP 3 BizBizBuzz TRAINER WPS 3.0 123.6
-GP 3 Gabaldon TRAINER WPS 4.0 125.5
-GP 3 BandedRocket TRAINER WPS 5.0 126.0
-GP 3 GiantTeddy TRAINER WPS 6.0 129.2
-GP 4 CapturetheTime TRAINER WPS 2.0 112.5
-GP 5 DancingMiracle TRAINER WPS 2.0 96.8
-GP 5 Sonnynpeaches TRAINER WPS 3.0 115.3
-GP 6 AwesomeTrain TRAINER WPS 3.0 127.7
-GP 7 DrumRoll TRAINER WPS 2.0 122.6
-GP 7 HappyRide TRAINER WPS 4.0 128.4
-GP 7 Lucy'sCookie TRAINER WPS 9.0 120.4
-GP 8 WinBetOnly TRAINER WPS 2.0 117.0
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER
+GP 1 Sophistry TRAINER WPS 2.0 120.1 D'Angelo_Jose_F
+GP 1 Misprint TRAINER WPS 6.0 121.1 Fawkes_David
+GP 1 BreezeyBella TRAINER WPS 7.0 124.9 David_Carlos_A
+GP 1 AnyMoment TRAINER WPS 8.0 118.7 David_Carlos_A
+GP 2 BadGalParty TRAINER WPS 8.0 122.0 Fawkes_David
+GP 3 GrimReaper TRAINER WPS 2.0 126.3 Orseno_Joseph_F
+GP 3 BizBizBuzz TRAINER WPS 3.0 123.6 D'Angelo_Jose_F
+GP 3 Gabaldon TRAINER WPS 4.0 125.5 D'Angelo_Jose_F
+GP 3 BandedRocket TRAINER WPS 5.0 126.0 David_Carlos_A
+GP 3 GiantTeddy TRAINER WPS 6.0 129.2 Fawkes_David
+GP 4 CapturetheTime TRAINER WPS 2.0 112.5 VanWinkle_David
+GP 5 DancingMiracle TRAINER WPS 2.0 96.8 Abreu_Fernando
+GP 5 Sonnynpeaches TRAINER WPS 3.0 115.3 D'Angelo_Jose_F
+GP 6 AwesomeTrain TRAINER WPS 3.0 127.7 Sano_Antonio
+GP 7 DrumRoll TRAINER WPS 2.0 122.6 David_Carlos_A
+GP 7 HappyRide TRAINER WPS 4.0 128.4 Orseno_Joseph_F
+GP 7 Lucy'sCookie TRAINER WPS 9.0 120.4 Abreu_Fernando
+GP 8 WinBetOnly TRAINER WPS 2.0 117.0 Orseno_Joseph_F

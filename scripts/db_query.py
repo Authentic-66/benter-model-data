@@ -37,56 +37,127 @@ def roi_by_track(track, start_date=None, end_date=None):
     """
     ROI summary for a track, optionally filtered by date range (YYYY-MM-DD).
 
+    Prints two panels side-by-side (All Picks vs ML >= 3.0) then a per-trainer
+    breakdown sorted by P/L descending.
+
     Returns dict: {track, start, end, n_picks, n_wins, invested, returned, pl, roi_pct}
-    Also prints a formatted summary.
     """
-    sql = """
-        SELECT
-            COUNT(*)                              AS n_picks,
-            SUM(CASE WHEN finish_pos=1 THEN 1 ELSE 0 END) AS n_wins,
-            SUM(invested)                         AS invested,
-            SUM(returned)                         AS returned,
-            SUM(pl)                               AS pl,
-            MIN(race_date)                        AS start_date,
-            MAX(race_date)                        AS end_date
-        FROM roi_entries
-        WHERE track = ?
-          AND invested > 0
-          {date_filter}
-    """
-    params = [track.upper()]
+    tc = track.upper()
     date_filter = ''
+    params_all = [tc]
     if start_date:
         date_filter += ' AND race_date >= ?'
-        params.append(start_date)
+        params_all.append(start_date)
     if end_date:
         date_filter += ' AND race_date <= ?'
-        params.append(end_date)
+        params_all.append(end_date)
+
+    sql_all = f"""
+        SELECT COUNT(*) AS n, SUM(CASE WHEN finish_pos=1 THEN 1 ELSE 0 END) AS w,
+               SUM(invested) AS inv, SUM(returned) AS ret, SUM(pl) AS pl,
+               MIN(race_date) AS d0, MAX(race_date) AS d1
+        FROM roi_entries
+        WHERE track=? AND invested>0 {date_filter}
+    """
+    sql_ml = f"""
+        SELECT COUNT(*) AS n, SUM(CASE WHEN e.finish_pos=1 THEN 1 ELSE 0 END) AS w,
+               SUM(e.invested) AS inv, SUM(e.returned) AS ret, SUM(e.pl) AS pl
+        FROM roi_entries e
+        JOIN picks p ON p.pick_id = e.pick_id
+        WHERE e.track=? AND e.invested>0 AND p.ml_odds >= 3.0 {date_filter.replace('race_date','e.race_date')}
+    """
+    sql_trainers = f"""
+        SELECT p.trainer_name,
+               COUNT(*)                                            AS n,
+               SUM(CASE WHEN e.finish_pos=1 THEN 1 ELSE 0 END)   AS w,
+               SUM(e.invested)                                     AS inv,
+               SUM(e.returned)                                     AS ret,
+               SUM(e.pl)                                           AS pl
+        FROM roi_entries e
+        JOIN picks p ON p.pick_id = e.pick_id
+        WHERE e.track=? AND e.invested>0
+          AND p.trainer_name IS NOT NULL AND p.trainer_name != '?'
+              {date_filter.replace('race_date','e.race_date')}
+        GROUP BY p.trainer_name
+        ORDER BY SUM(e.pl) DESC
+    """
 
     with _conn() as c:
-        row = c.execute(sql.format(date_filter=date_filter), params).fetchone()
+        a   = c.execute(sql_all,      params_all).fetchone()
+        m   = c.execute(sql_ml,       params_all).fetchone()
+        trs = c.execute(sql_trainers, params_all).fetchall()
 
-    if not row or not row['invested']:
-        print(f"No ROI data found for {track.upper()}")
+    if not a or not a['inv']:
+        print(f"No ROI data found for {tc}")
         return None
 
     result = {
-        'track':    track.upper(),
-        'start':    row['start_date'],
-        'end':      row['end_date'],
-        'n_picks':  row['n_picks'],
-        'n_wins':   row['n_wins'],
-        'invested': row['invested'],
-        'returned': row['returned'],
-        'pl':       row['pl'],
-        'roi_pct':  (row['returned'] - row['invested']) / row['invested'] * 100,
+        'track':    tc,
+        'start':    a['d0'],
+        'end':      a['d1'],
+        'n_picks':  a['n'],
+        'n_wins':   a['w'],
+        'invested': a['inv'],
+        'returned': a['ret'],
+        'pl':       a['pl'],
+        'roi_pct':  (a['ret'] - a['inv']) / a['inv'] * 100,
     }
 
-    pl_str = f"+${result['pl']:.2f}" if result['pl'] >= 0 else f"-${abs(result['pl']):.2f}"
-    print(f"\n  ROI: {result['track']}  ({result['start']} to {result['end']})")
-    print(f"  Picks: {result['n_picks']}  Wins: {result['n_wins']}")
-    print(f"  Invested: ${result['invested']:.2f}  Returned: ${result['returned']:.2f}")
-    print(f"  P/L: {pl_str}  ROI: {_fmt_roi(result['invested'], result['returned'])}\n")
+    def _pl(v):
+        return f"+${v:.2f}" if v >= 0 else f"-${abs(v):.2f}"
+
+    # ── side-by-side comparison table ────────────────────────────────────────
+    ma = dict(a)
+    mm = dict(m) if m and m['inv'] else {'n': 0, 'w': 0, 'inv': 0, 'ret': 0, 'pl': 0}
+
+    W = 58
+    print(f"\n  ROI: {tc}  ({a['d0']} to {a['d1']})")
+    print(f"  {'-'*W}")
+    print(f"  {'':22}  {'All Picks':>14}  {'ML >= 3.0 (2/1+)':>16}")
+    print(f"  {'-'*W}")
+
+    def _row(label, a_val, m_val):
+        print(f"  {label:<22}  {a_val:>14}  {m_val:>16}")
+
+    _row('Picks',    str(ma['n']),                      str(mm['n']))
+    _row('Wins',     str(ma['w']),                      str(mm['w']))
+    wp_a = f"{ma['w']/ma['n']*100:.1f}%" if ma['n'] else 'n/a'
+    wp_m = f"{mm['w']/mm['n']*100:.1f}%" if mm['n'] else 'n/a'
+    _row('Win%',     wp_a,                              wp_m)
+    _row('Invested', f"${ma['inv']:,.2f}",              f"${mm['inv']:,.2f}" if mm['inv'] else 'n/a')
+    _row('Returned', f"${ma['ret']:,.2f}",              f"${mm['ret']:,.2f}" if mm['ret'] else 'n/a')
+    _row('P/L',      _pl(ma['pl']),                     _pl(mm['pl']) if mm['inv'] else 'n/a')
+    _row('ROI',      _fmt_roi(ma['inv'], ma['ret']),    _fmt_roi(mm['inv'], mm['ret']) if mm['inv'] else 'n/a')
+    print(f"  {'-'*W}")
+
+    # ── trainer breakdown ─────────────────────────────────────────────────────
+    if trs:
+        print(f"\n  TRAINER BREAKDOWN -- {tc}")
+        print(f"  {'-'*72}")
+        print(f"  {'Trainer':<28}  {'Picks':>5}  {'Wins':>4}  {'Win%':>6}  "
+              f"{'Invested':>9}  {'Returned':>9}  {'ROI':>8}")
+        print(f"  {'-'*72}")
+        for t in trs:
+            wp  = f"{t['w']/t['n']*100:.1f}%" if t['n'] else '0.0%'
+            roi = _fmt_roi(t['inv'], t['ret'])
+            print(f"  {(t['trainer_name'] or '?')[:28]:<28}  {t['n']:>5}  {t['w']:>4}  "
+                  f"{wp:>6}  ${t['inv']:>8,.2f}  ${t['ret']:>8,.2f}  {roi:>8}")
+        # totals row for the matched subset
+        t_inv = sum(t['inv'] for t in trs)
+        t_ret = sum(t['ret'] for t in trs)
+        t_n   = sum(t['n']   for t in trs)
+        t_w   = sum(t['w']   for t in trs)
+        wp_t  = f"{t_w/t_n*100:.1f}%" if t_n else '0.0%'
+        print(f"  {'-'*72}")
+        print(f"  {'TOTAL (matched picks)':<28}  {t_n:>5}  {t_w:>4}  "
+              f"{wp_t:>6}  ${t_inv:>8,.2f}  ${t_ret:>8,.2f}  {_fmt_roi(t_inv, t_ret):>8}")
+        unmatched = ma['n'] - t_n
+        if unmatched:
+            print(f"  ({unmatched} pick(s) have no trainer data -- no matching picks file entry)")
+    else:
+        print(f"\n  (No trainer data -- picks files may not have trainer field populated)")
+
+    print()
     return result
 
 

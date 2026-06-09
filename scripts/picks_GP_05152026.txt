@@ -1,18 +1,18 @@
 # Benter Model Picks - GP 05152026
-# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
-GP 1 VanCleef TRAINER WPS ? ?
-GP 2 TouchofHonor TRAINER WPS ? ?
-GP 2 SheilaMagic TRAINER WPS ? ?
-GP 3 Chucky'sRide TRAINER WPS ? ?
-GP 3 GlancingMyWay TRAINER WPS ? ?
-GP 4 Kraken TRAINER WPS ? ?
-GP 5 NoOtherLikeYou TRAINER WPS ? ?
-GP 5 InTiming TRAINER WPS ? ?
-GP 5 MotownDiva TRAINER WPS ? ?
-GP 7 LindsaySmiles TRAINER WPS ? ?
-GP 7 SouperLandslide TRAINER WPS ? ?
-GP 8 SendCash TRAINER WPS ? ?
-GP 8 Camigol TRAINER WPS ? ?
-GP 8 StepSlow TRAINER WPS ? ?
-GP 9 Palazzi TRAINER WPS ? ?
-GP 9 WalkinginMemphis TRAINER WPS ? ?
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER
+GP 1 VanCleef TRAINER WPS ? ? ?
+GP 2 TouchofHonor TRAINER WPS ? ? ?
+GP 2 SheilaMagic TRAINER WPS ? ? ?
+GP 3 Chucky'sRide TRAINER WPS ? ? ?
+GP 3 GlancingMyWay TRAINER WPS ? ? ?
+GP 4 Kraken TRAINER WPS ? ? ?
+GP 5 NoOtherLikeYou TRAINER WPS ? ? ?
+GP 5 InTiming TRAINER WPS ? ? ?
+GP 5 MotownDiva TRAINER WPS ? ? ?
+GP 7 LindsaySmiles TRAINER WPS ? ? ?
+GP 7 SouperLandslide TRAINER WPS ? ? ?
+GP 8 SendCash TRAINER WPS ? ? ?
+GP 8 Camigol TRAINER WPS ? ? ?
+GP 8 StepSlow TRAINER WPS ? ? ?
+GP 9 Palazzi TRAINER WPS ? ? ?
+GP 9 WalkinginMemphis TRAINER WPS ? ? ?

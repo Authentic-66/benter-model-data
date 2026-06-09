@@ -1,21 +1,21 @@
 # Benter Model Picks - CT 05152026
-# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
-CT 1 Masterwork TRAINER WPS ? ?
-CT 1 McHale TRAINER WPS ? ?
-CT 1 WileyWillard TRAINER WPS ? ?
-CT 2 FortunateSon TRAINER WPS ? ?
-CT 3 StarshipPolaris TRAINER WPS ? ?
-CT 3 TurkishTea TRAINER WPS ? ?
-CT 4 AbsoluteGrit TRAINER WPS ? ?
-CT 4 Motskari TRAINER WPS ? ?
-CT 4 Larz TRAINER WPS ? ?
-CT 6 Mr.Dumbledore TRAINER WPS ? ?
-CT 6 Spotafreeone TRAINER WPS ? ?
-CT 6 RayofSunshine TRAINER WPS ? ?
-CT 6 Zachamundo TRAINER WPS ? ?
-CT 7 Talklessworkmore TRAINER WPS ? ?
-CT 7 IndyMagic TRAINER WPS ? ?
-CT 7 FlyinMayan TRAINER WPS ? ?
-CT 8 MissQueue TRAINER WPS ? ?
-CT 9 AddyMae TRAINER WPS ? ?
-CT 9 MoonlightMistress TRAINER WPS ? ?
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER
+CT 1 Masterwork TRAINER WPS ? ? ?
+CT 1 McHale TRAINER WPS ? ? ?
+CT 1 WileyWillard TRAINER WPS ? ? ?
+CT 2 FortunateSon TRAINER WPS ? ? ?
+CT 3 StarshipPolaris TRAINER WPS ? ? ?
+CT 3 TurkishTea TRAINER WPS ? ? ?
+CT 4 AbsoluteGrit TRAINER WPS ? ? ?
+CT 4 Motskari TRAINER WPS ? ? ?
+CT 4 Larz TRAINER WPS ? ? ?
+CT 6 Mr.Dumbledore TRAINER WPS ? ? ?
+CT 6 Spotafreeone TRAINER WPS ? ? ?
+CT 6 RayofSunshine TRAINER WPS ? ? ?
+CT 6 Zachamundo TRAINER WPS ? ? ?
+CT 7 Talklessworkmore TRAINER WPS ? ? ?
+CT 7 IndyMagic TRAINER WPS ? ? ?
+CT 7 FlyinMayan TRAINER WPS ? ? ?
+CT 8 MissQueue TRAINER WPS ? ? ?
+CT 9 AddyMae TRAINER WPS ? ? ?
+CT 9 MoonlightMistress TRAINER WPS ? ? ?

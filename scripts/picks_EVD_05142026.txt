@@ -1,26 +1,26 @@
 # Benter Model Picks - EVD 05142026
-# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
-EVD 1 PlayMo TRAINER WPS ? ?
-EVD 1 WoodsNWater TRAINER WPS ? ?
-EVD 1 Flamingproposition TRAINER WPS ? ?
-EVD 1 Masteroffoxhounds TRAINER WPS ? ?
-EVD 1 Mr.Faversham TRAINER WPS ? ?
-EVD 2 BootsanDiamonds TRAINER WPS ? ?
-EVD 2 Jade'sWickedDoll TRAINER WPS ? ?
-EVD 2 QuietMelody TRAINER WPS ? ?
-EVD 3 AllLake TRAINER WPS ? ?
-EVD 4 ButlerCabin TRAINER WPS ? ?
-EVD 4 Sono TRAINER WPS ? ?
-EVD 4 Smoothdini TRAINER WPS ? ?
-EVD 4 Uxmal TRAINER WPS ? ?
-EVD 5 McLarenVale TRAINER WPS ? ?
-EVD 5 OrderUp TRAINER WPS ? ?
-EVD 5 RhumSaintEsprit TRAINER WPS ? ?
-EVD 5 LikeThis TRAINER WPS ? ?
-EVD 6 CreoleLady TRAINER WPS ? ?
-EVD 6 Bandit'sEscape TRAINER WPS ? ?
-EVD 6 LadyElla TRAINER WPS ? ?
-EVD 7 Lafitte'sLegacy TRAINER WPS ? ?
-EVD 8 Samuel TRAINER WPS ? ?
-EVD 8 ClosingWithHonor TRAINER WPS ? ?
-EVD 8 Everlovingmo TRAINER WPS ? ?
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER
+EVD 1 PlayMo TRAINER WPS ? ? ?
+EVD 1 WoodsNWater TRAINER WPS ? ? ?
+EVD 1 Flamingproposition TRAINER WPS ? ? ?
+EVD 1 Masteroffoxhounds TRAINER WPS ? ? ?
+EVD 1 Mr.Faversham TRAINER WPS ? ? ?
+EVD 2 BootsanDiamonds TRAINER WPS ? ? ?
+EVD 2 Jade'sWickedDoll TRAINER WPS ? ? ?
+EVD 2 QuietMelody TRAINER WPS ? ? ?
+EVD 3 AllLake TRAINER WPS ? ? ?
+EVD 4 ButlerCabin TRAINER WPS ? ? ?
+EVD 4 Sono TRAINER WPS ? ? ?
+EVD 4 Smoothdini TRAINER WPS ? ? ?
+EVD 4 Uxmal TRAINER WPS ? ? ?
+EVD 5 McLarenVale TRAINER WPS ? ? ?
+EVD 5 OrderUp TRAINER WPS ? ? ?
+EVD 5 RhumSaintEsprit TRAINER WPS ? ? ?
+EVD 5 LikeThis TRAINER WPS ? ? ?
+EVD 6 CreoleLady TRAINER WPS ? ? ?
+EVD 6 Bandit'sEscape TRAINER WPS ? ? ?
+EVD 6 LadyElla TRAINER WPS ? ? ?
+EVD 7 Lafitte'sLegacy TRAINER WPS ? ? ?
+EVD 8 Samuel TRAINER WPS ? ? ?
+EVD 8 ClosingWithHonor TRAINER WPS ? ? ?
+EVD 8 Everlovingmo TRAINER WPS ? ? ?

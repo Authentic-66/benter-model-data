@@ -1,32 +1,32 @@
 # Benter Model Picks - CT 05302026
-# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
-CT 1 StolenSecrets TRAINER WPS ? ?
-CT 2 ClassyBay TRAINER WPS ? ?
-CT 2 OurMemories TRAINER WPS ? ?
-CT 3 Sylvette TRAINER WPS ? ?
-CT 3 WhinnyMissLynny TRAINER WPS ? ?
-CT 4 Gimmethatsugar TRAINER WPS ? ?
-CT 4 MalibuSon TRAINER WPS ? ?
-CT 4 CoachSiggy TRAINER WPS ? ?
-CT 4 HolidayCash TRAINER WPS ? ?
-CT 4 Mitote TRAINER WPS ? ?
-CT 5 HurricaneAlert TRAINER WPS ? ?
-CT 6 StoneColdJones TRAINER WPS ? ?
-CT 6 Mayorofgreencounty TRAINER WPS ? ?
-CT 6 GurneyHalleck TRAINER WPS ? ?
-CT 6 Blameitonmyroots TRAINER WPS ? ?
-CT 7 GreatFiber TRAINER WPS ? ?
-CT 7 PrincessIrulan TRAINER WPS ? ?
-CT 7 SilverSonde TRAINER WPS ? ?
-CT 8 OvernightPowWow TRAINER WPS ? ?
-CT 8 Shewonttalktome TRAINER WPS ? ?
-CT 8 ZipStart TRAINER WPS ? ?
-CT 8 Jubaslilballerina TRAINER WPS ? ?
-CT 8 PettyPerfect TRAINER WPS ? ?
-CT 8 TheSkyIsFalling TRAINER WPS ? ?
-CT 8 Thelastsay TRAINER WPS ? ?
-CT 9 IrishJubalee TRAINER WPS ? ?
-CT 9 SoulCatcher TRAINER WPS ? ?
-CT 9 Dorado TRAINER WPS ? ?
-CT 9 CatchtheHumor TRAINER WPS ? ?
-CT 9 Katmandu TRAINER WPS ? ?
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER
+CT 1 StolenSecrets TRAINER WPS ? ? ?
+CT 2 ClassyBay TRAINER WPS ? ? ?
+CT 2 OurMemories TRAINER WPS ? ? ?
+CT 3 Sylvette TRAINER WPS ? ? ?
+CT 3 WhinnyMissLynny TRAINER WPS ? ? ?
+CT 4 Gimmethatsugar TRAINER WPS ? ? ?
+CT 4 MalibuSon TRAINER WPS ? ? ?
+CT 4 CoachSiggy TRAINER WPS ? ? ?
+CT 4 HolidayCash TRAINER WPS ? ? ?
+CT 4 Mitote TRAINER WPS ? ? ?
+CT 5 HurricaneAlert TRAINER WPS ? ? ?
+CT 6 StoneColdJones TRAINER WPS ? ? ?
+CT 6 Mayorofgreencounty TRAINER WPS ? ? ?
+CT 6 GurneyHalleck TRAINER WPS ? ? ?
+CT 6 Blameitonmyroots TRAINER WPS ? ? ?
+CT 7 GreatFiber TRAINER WPS ? ? ?
+CT 7 PrincessIrulan TRAINER WPS ? ? ?
+CT 7 SilverSonde TRAINER WPS ? ? ?
+CT 8 OvernightPowWow TRAINER WPS ? ? ?
+CT 8 Shewonttalktome TRAINER WPS ? ? ?
+CT 8 ZipStart TRAINER WPS ? ? ?
+CT 8 Jubaslilballerina TRAINER WPS ? ? ?
+CT 8 PettyPerfect TRAINER WPS ? ? ?
+CT 8 TheSkyIsFalling TRAINER WPS ? ? ?
+CT 8 Thelastsay TRAINER WPS ? ? ?
+CT 9 IrishJubalee TRAINER WPS ? ? ?
+CT 9 SoulCatcher TRAINER WPS ? ? ?
+CT 9 Dorado TRAINER WPS ? ? ?
+CT 9 CatchtheHumor TRAINER WPS ? ? ?
+CT 9 Katmandu TRAINER WPS ? ? ?

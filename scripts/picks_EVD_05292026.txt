@@ -1,19 +1,19 @@
 # Benter Model Picks - EVD 05292026
-# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
-EVD 1 WickedCustoms TRAINER WPS ? ?
-EVD 1 FayeL. TRAINER WPS ? ?
-EVD 2 SmoochieBoo TRAINER WPS ? ?
-EVD 2 ThatsUnbelievable TRAINER WPS ? ?
-EVD 3 KamaCan TRAINER WPS ? ?
-EVD 4 GoldThief TRAINER WPS ? ?
-EVD 5 ScarletHeart TRAINER WPS ? ?
-EVD 5 Constructively TRAINER WPS ? ?
-EVD 6 NativeStar TRAINER WPS ? ?
-EVD 7 PrettyFast TRAINER WPS ? ?
-EVD 7 Guanare TRAINER WPS ? ?
-EVD 7 BaronoftheNile TRAINER WPS ? ?
-EVD 8 UpNGone TRAINER WPS ? ?
-EVD 8 MachoBeanie TRAINER WPS ? ?
-EVD 8 HighlandCreek TRAINER WPS ? ?
-EVD 8 FreddiebyaNose TRAINER WPS ? ?
-EVD 9 ClosingWithHonor TRAINER WPS ? ?
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER
+EVD 1 WickedCustoms TRAINER WPS ? ? ?
+EVD 1 FayeL. TRAINER WPS ? ? ?
+EVD 2 SmoochieBoo TRAINER WPS ? ? ?
+EVD 2 ThatsUnbelievable TRAINER WPS ? ? ?
+EVD 3 KamaCan TRAINER WPS ? ? ?
+EVD 4 GoldThief TRAINER WPS ? ? ?
+EVD 5 ScarletHeart TRAINER WPS ? ? ?
+EVD 5 Constructively TRAINER WPS ? ? ?
+EVD 6 NativeStar TRAINER WPS ? ? ?
+EVD 7 PrettyFast TRAINER WPS ? ? ?
+EVD 7 Guanare TRAINER WPS ? ? ?
+EVD 7 BaronoftheNile TRAINER WPS ? ? ?
+EVD 8 UpNGone TRAINER WPS ? ? ?
+EVD 8 MachoBeanie TRAINER WPS ? ? ?
+EVD 8 HighlandCreek TRAINER WPS ? ? ?
+EVD 8 FreddiebyaNose TRAINER WPS ? ? ?
+EVD 9 ClosingWithHonor TRAINER WPS ? ? ?

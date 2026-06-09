@@ -1,11 +1,13 @@
 """
-Backfill ML_ODDS and PP_POWER into picks files that only have the old format.
+Backfill ML_ODDS, PP_POWER, and TRAINER into picks files that only have the
+old format (fewer than 8 fields).
 
 Old format (4-5 fields): TRACK RACE HORSE SIGNAL [BETS]
-New format (7 fields):   TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
+New format (8 fields):   TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER
 
 For each picks file, finds the corresponding handicap card log in
-scripts/handicap-logs/ and extracts ML and PP Power for each pick.
+scripts/handicap-logs/ and extracts ML, PP Power, and trainer name for
+each pick.
 
 Usage: python backfill_picks.py [--dry-run]
 """
@@ -31,6 +33,7 @@ _HORSE_ROW_RE = re.compile(
     r'(.+?)\s{2,}'                  # horse name, lazy stop at 2+ spaces
     r'([0-9]+(?:/[0-9]+)?|\?)\s+'  # ML odds (integer, fraction, or ?)
     r'([0-9]+\.[0-9]+\(\d+\)|\?)'  # PP power "NNN.N(rank)" or ?
+    r'\s{2,}(.+?)\s*$'             # trainer name
 )
 
 _RACE_HDR_RE = re.compile(r'^RACE\s+(\d+)\b')
@@ -75,7 +78,7 @@ def _load_card(hcap_path):
         if not hm:
             continue
 
-        _, horse_raw, ml_raw, pp_raw = hm.groups()
+        _, horse_raw, ml_raw, pp_raw, trainer_raw = hm.groups()
         norm = horse_raw.strip().replace(' ', '').lower()
 
         ml_val = _ml_to_float(ml_raw)
@@ -85,8 +88,9 @@ def _load_card(hcap_path):
                 pp_val = float(pp_raw.split('(')[0])
             except ValueError:
                 pass
+        trainer_val = trainer_raw.strip().replace(' ', '_') if trainer_raw.strip() not in ('', '?') else '?'
 
-        data[cur_race][norm] = {'ml': ml_val, 'pp': pp_val}
+        data[cur_race][norm] = {'ml': ml_val, 'pp': pp_val, 'trainer': trainer_val}
 
     return data
 
@@ -150,8 +154,8 @@ def _process(picks_path):
             out.append(line)
             continue
         if stripped.startswith('#'):
-            if stripped.startswith('# Format:') and 'ML_ODDS' not in stripped:
-                out.append('# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER')
+            if stripped.startswith('# Format:') and 'TRAINER' not in stripped:
+                out.append('# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER')
                 changed = True
             else:
                 out.append(line)
@@ -162,8 +166,8 @@ def _process(picks_path):
             out.append(line)
             continue
 
-        # Already has ML and PP — leave it alone
-        if len(parts) >= 7:
+        # Already fully backfilled (8 fields) — leave it alone
+        if len(parts) >= 8:
             out.append(line)
             continue
 
@@ -174,21 +178,28 @@ def _process(picks_path):
         bets     = parts[4].upper() if len(parts) >= 5 else 'WPS'
         if not all(b in 'WPS' for b in bets):
             bets = 'WPS'
+        # Preserve existing ML/PP if present (7-field lines only need trainer added)
+        ml_col = parts[5] if len(parts) >= 6 else None
+        pp_col = parts[6] if len(parts) >= 7 else None
 
         norm = p_horse.lower()
         horse_data = card.get(p_race, {}).get(norm, {})
-        ml_val = horse_data.get('ml')
-        pp_val = horse_data.get('pp')
 
-        ml_col = str(ml_val) if ml_val is not None else '?'
-        pp_col = str(pp_val) if pp_val is not None else '?'
+        if ml_col is None:
+            ml_val = horse_data.get('ml')
+            ml_col = str(ml_val) if ml_val is not None else '?'
+        if pp_col is None:
+            pp_val = horse_data.get('pp')
+            pp_col = str(pp_val) if pp_val is not None else '?'
+        trainer_val = horse_data.get('trainer')
+        trainer_col = trainer_val if trainer_val else '?'
 
-        if ml_val is not None or pp_val is not None:
+        if ml_col != '?' or pp_col != '?':
             n_backfilled += 1
         else:
             n_question += 1
 
-        out.append(f"{p_track} {p_race} {p_horse} {p_signal} {bets} {ml_col} {pp_col}")
+        out.append(f"{p_track} {p_race} {p_horse} {p_signal} {bets} {ml_col} {pp_col} {trainer_col}")
         changed = True
 
     return (out if changed else None), n_backfilled, n_question
