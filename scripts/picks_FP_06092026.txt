@@ -1,0 +1,26 @@
+# Benter Model Picks - FP 06092026
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER
+FP 1 ArmyMedic TRAINER WPS 2.0 106.5 Irion_Heather
+FP 1 SweetSkylar TRAINER WPS 3.0 102.1 Becker_Scott
+FP 1 OurJuju HOT_JT WPS 6.0 ? Hornsby_Tammy
+FP 1 DominantCaitlin TRAINER WPS 7.0 95.7 Becker_Scott
+FP 1 TinyTotQueen TRAINER WPS 8.0 91.8 Manley_Steve
+FP 2 Mr.Chivas TRAINER WPS 2.0 110.4 Manley_Steve
+FP 2 Sonnyisnotsofunny HOT_JT WPS 3.0 106.4 Davis,_Jr._Charles
+FP 3 Manny'sKat HOT_JT WPS 2.0 105.6 Anderson_Mark_W
+FP 3 SmileLikeKyle HOT_JT WPS 3.0 94.9 Pompell_Robert
+FP 3 Somnus TRAINER WPS 5.0 98.1 Rodriguez_Jose_G
+FP 4 ArmyHero TRAINER WPS 3.0 107.5 Manley_Steve
+FP 4 Bandolero TRAINER WPS 5.0 103.8 Manley_Steve
+FP 4 RagTree TRAINER WPS 6.0 97.4 Irion_Heather
+FP 4 BestDressedMan HOT_JT WPS 7.0 89.2 Childers_Shane
+FP 5 BigWalt TRAINER WPS 4.0 111.4 Rodriguez_Jose_G
+FP 5 PlaygroundWarrior SIRE WPS 7.0 99.6 Hornbostel_Dennis
+FP 6 WildwoodTriple TRAINER WPS 2.0 104.3 Becker_Scott
+FP 6 TaxdayPeyton TRAINER WPS 4.0 107.9 Becker_Scott
+FP 6 ThenNow'nAlways HOT_JT WPS 5.0 121.3 Reavis_Michael_L
+FP 6 MissKittyPie HOT_JT WPS 7.0 95.0 Randazzo,_Jr._Frank_C
+FP 7 JustSqueezingBy TRAINER WPS 2.0 89.9 Watkins_James_M
+FP 7 WildwoodOvertime TRAINER WPS 3.0 97.8 Becker_Scott
+FP 7 WhitelickRoad HOT_JT WPS 4.0 97.3 Delong_Ben
+FP 7 Belleinthetemple TRAINER WPS 9.0 91.7 Martinez_Ralph

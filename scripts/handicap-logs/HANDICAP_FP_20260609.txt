@@ -1,0 +1,480 @@
+Parsing C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\Fairmount Park\fp-pps-files\fpk0609y.pdf for FP...
+Found 7 races, 47 horses
+
+
+============================================================================
+🏇 FAIRMOUNT PARK — Today
+   Fast
+============================================================================
+
+────────────────────────────────────────────────────────────────────────────
+RACE 1    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Army Medic                      1    106.5(1)  Irion Heather
+        Sire: Army Mule                       J: Santos Ademar
+        Stats: 11 sts 3-1-3 27%
+        🎯 [TRAINER] ✅ POS FP — 25% rate
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ 23% trainer: Blinkers off
+        ✅ Finished 3rd in last race
+
+  ⭐  2: Sweet Skylar                    2    102.1(2)  Becker Scott
+        Sire: Cloud Computing                 J: Santiago Victor
+        Stats: 73 sts 20-13-13 27%
+        🎯 [TRAINER] 🔥 IRON FP — 31% — FADE sealed fast!
+        ⚠️  RULE: SEALED FAST = FADE. Dual entry = use IGNORED (longer) horse.
+        ✅ High % trainer
+        ✅ Highest last race speed rating
+
+      3: Carolines Hart                  3     78.5(6)  Bahena Fernando
+        Sire: Ordained                        J: Tavares Javier
+        Stats: 14 sts 3-2-1 21%
+        ✅ May improve while returning to a sprint
+        ❌ 22May FP 3f ft :36© B1/16 14Mar OP 3f ft :37 B9/27 06Mar OP 5f ft
+
+      4: Dancewithmefiona                4     92.7(4)  Fridley Steve
+        Sire: Flatter                         J: Aranguren Johanis
+        Stats: 13 sts 1-0-4 8%
+
+  ⭐  5: Our Juju                        5           ?  Hornsby Tammy
+        Sire: Gormley                         J: Orm Cory
+        Stats: 10 sts 3-0-2 30%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (6 2-0-1)
+        ✅ Dam has 2 winners from 2 starters
+        ✅ Breeding suits today's sprint distance
+
+  ⭐  6: Dominant Caitlin                6     95.7(3)  Becker Scott
+        Sire: Mohaymen                        J: Bendezu Alexander
+        Stats: 73 sts 20-13-13 27%
+        🎯 [TRAINER] 🔥 IRON FP — 31% — FADE sealed fast!
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (8 2-2-1)
+        ⚠️  RULE: SEALED FAST = FADE. Dual entry = use IGNORED (longer) horse.
+        ✅ High % trainer
+        ✅ High % Jockey
+
+  ⭐  7: Tiny Tot Queen                  7     91.8(5)  Manley Steve
+        Sire: Hit It a Bomb                   J: Wales Travis
+        Stats: 27 sts 5-4-2 19%
+        🎯 [TRAINER] 🔥 IRON FP — 35W iron
+
+  ★ MODEL PICKS R1:
+    PP 1: Army Medic                  (    1)  ✅ POS FP  🔥 HOT J/T
+    PP 6: Dominant Caitlin            (    6)  🔥 IRON FP  🔥 HOT J/T
+    PP 2: Sweet Skylar                (    2)  🔥 IRON FP
+    PP 5: Our Juju                    (    5)    🔥 HOT J/T
+    PP 7: Tiny Tot Queen              (    7)  🔥 IRON FP
+
+────────────────────────────────────────────────────────────────────────────
+RACE 2    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Mr. Chivas                      1    110.4(2)  Manley Steve
+        Sire: Stay Thirsty                    J: Wales Travis
+        Stats: 27 sts 5-4-2 19%
+        Claim: $4,000
+        🎯 [TRAINER] 🔥 IRON FP — 35W iron
+        ✅ Drops in class today
+
+  ⭐  2: Sonnyisnotsofunny               2    106.4(4)  Davis, Jr. Charles
+        Sire: American Freedom                J: Stanley Angel O
+        Stats: 6 sts 1-2-0 17%
+        Claim: $4,000
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Drops in class today
+        ✅ 33% trainer: Claiming
+
+      3: Good Scout                      3    111.3(1)  Bahena Fernando
+        Sire: Oxbow                           J: Tavares Javier
+        Stats: 14 sts 3-2-1 21%
+        Claim: $4,000
+        ✅ Highest last race speed rating
+        ✅ Drops in class today
+        ❌ 02Dec'25 Lad 4f my :49
+
+      4: Orbital Starr                   4     95.2(6)  Wiese John
+        Sire: Orb                             J: Lara Victor
+        Stats: 1 sts 0-0-0 0%
+        Claim: $4,000
+        ✅ Ran 2nd vs similar in last race
+        ❌ 02Dec'25 Lad 4f my :49
+
+      5: Scotch No Rocks                 5    106.0(5)  Delong Ben
+        Sire: Stay Thirsty                    J: Diego Javier
+        Stats: 24 sts 2-3-1 8%
+        Claim: $4,000
+        ✅ Drops in class today
+        ✅ 17% trainer: Claiming
+        ❌ 04May FP 4f ft :50 B1/6 23Apr FP 3f ft :38 B7/10
+
+      6: Verrazano First                 6    109.9(3)  Clay Pat
+        Sire: Verrazano                       J: Aranguren Johanis
+        Stats: 13 sts 2-1-1 15%
+        Claim: $4,000
+        ✅ Finished 3rd in last race
+        ✅ May improve at the shorter distance
+        ❌ 12May FP 3f ft :35ª B1/9 08Apr FP 4f ft :49¨ B4/29 31Mar FP 3f ft
+
+  ★ MODEL PICKS R2:
+    PP 1: Mr. Chivas                  (    1)  🔥 IRON FP
+    PP 2: Sonnyisnotsofunny           (    2)    🔥 HOT J/T
+
+────────────────────────────────────────────────────────────────────────────
+RACE 3    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Manny's Kat                     1    105.6(1)  Anderson Mark W
+        Sire: Leofric                         J: Stanley Angel O
+        Stats: 1 sts 0-0-0 0%
+        Claim: $5,000
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Highest last race speed rating
+        ✅ Highest speed figure at today's distance
+        ❌ 09Jan Wrd 4f ft :47¨ H1/13
+
+  ⭐  2: Smile Like Kyle                 2     94.9(6)  Pompell Robert
+        Sire: Elnaawi                         J: Santos Ademar
+        Stats: 28 sts 4-0-4 14%
+        Claim: $5,000
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Eligible to improve in 3rd start since layoff
+        ✅ Hot Jockey in last 7 days (13 4-2-0)
+        ❌ 09Jan Wrd 4f ft :47¨ H1/13
+
+      3: Gabagool                        3     94.5(7)  Hornbostel Dennis
+        Sire: Ransom the Moon                 J: Jaime Ricardo
+        Stats: 3 sts 0-1-0 0%
+        Claim: $5,000
+        ❌ 08Jan'25 GP 3
+
+  ⭐  4: Somnus                          4     98.1(3)  Rodriguez Jose G
+        Sire: Always Dreaming                 J: Tavares Javier
+        Stats: 15 sts 0-3-3 0%
+        Claim: $5,000
+        🎯 [TRAINER] 🔥 IRON FP — 42% rate
+        ✅ 23% trainer: 3rd off layoff
+        ✅ Eligible to improve in 3rd start since layoff
+        ❌ 08Jan'25 GP 3
+
+      5: Cog                             5     99.9(2)  Blea III Anthony
+        Sire: Cupid                           J: Giles Emmanuel
+        Stats: 22 sts 3-2-2 14%
+        Claim: $5,000
+        ✅ Drops in class today
+        ❌ 08Apr'24 Ind 4f
+
+      6: Joyful Ghost                    6     96.0(5)  Wiese John
+        Sire: Shaman Ghost                    J: Lara Victor
+        Stats: 1 sts 0-0-0 0%
+        Claim: $5,000
+        ✅ Best Dirt Speed is fastest among today's starters
+
+      7: Severance                       7     97.0(4)  Thurman Rhonda
+        Sire: Ami's Flatter                   J: Diego Javier
+        Stats: 4 sts 0-1-2 0%
+        ✅ Eligible to improve in 2nd start since layoff
+        ✅ Finished 3rd vs similar in last race
+        ❌ 11Nov'25 FP 4f sl :48ª
+
+  ★ MODEL PICKS R3:
+    PP 1: Manny's Kat                 (    1)    🔥 HOT J/T
+    PP 2: Smile Like Kyle             (    2)    🔥 HOT J/T
+    PP 4: Somnus                      (    4)  🔥 IRON FP
+
+────────────────────────────────────────────────────────────────────────────
+RACE 4    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  2: Army Hero                       2    107.5(2)  Manley Steve
+        Sire: Union Rags                      J: Bendezu Alexander
+        Stats: 27 sts 5-4-2 19%
+        Claim: $15,000
+        🎯 [TRAINER] 🔥 IRON FP — 35W iron
+        🎯 [SIRE] 🔥 7-TRACK — Universal iron sire
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Switches to a high % jockey
+        ✅ Eligible to improve in 2nd start since layoff
+        ❌ 19Sep'25 FP 4f ft :48« B1/9
+
+      3: Naughton                        3    106.7(3)  Lynch Harry E
+        Sire: Nyquist                         J: Lara Victor
+        Stats: 51 sts 6-9-7 12%
+        Claim: $15,000
+        ✅ Drops in class today
+        ✅ 21% trainer: 1st at route
+        ❌ 06Apr FP 4f ft :48¨ B1/7
+
+  ⭐  4: Bandolero                       4    103.8(4)  Manley Steve
+        Sire: Stay Thirsty                    J: Wales Travis
+        Stats: 27 sts 5-4-2 19%
+        Claim: $15,000
+        🎯 [TRAINER] 🔥 IRON FP — 35W iron
+        ✅ 37% trainer: 1st start w/trn
+        ❌ 06Apr FP 4f ft :48¨ B1/7
+
+  ⭐  5: Rag Tree                        5     97.4(5)  Irion Heather
+        Sire: Union Rags                      J: Arrieta Reynier
+        Stats: 11 sts 3-1-3 27%
+        Claim: $15,000
+        🎯 [TRAINER] ✅ POS FP — 25% rate
+        🎯 [SIRE] 🔥 7-TRACK — Universal iron sire
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (4 2-0-2)
+        ✅ May improve while returning to Dirt
+        ✅ 19% trainer: Sprint to Rte
+        ❌ 10May SA 4f ft :46ª Hg1/83 03May SA 4f ft :48 H15/78 10Apr SA 4f 
+
+  ⭐  6: Best Dressed Man                6     89.2(6)  Childers Shane
+        Sire: Good Samaritan                  J: Stanley Angel O
+        Stats: 12 sts 4-0-0 33%
+        Claim: $15,000
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (3 2-0-0)
+        ✅ High % trainer
+        ✅ Eligible to improve in 3rd start since layoff
+        ❌ 17Apr FP 4f ft :48 B1/32 08Apr FP 5f ft 1:04 B12/
+
+  ★ MODEL PICKS R4:
+    PP 2: Army Hero                   (    2)  🔥 IRON FP + 🔥 7-TRACK  🔥 HOT J/T
+    PP 5: Rag Tree                    (    5)  ✅ POS FP + 🔥 7-TRACK  🔥 HOT J/T
+    PP 4: Bandolero                   (    4)  🔥 IRON FP
+    PP 6: Best Dressed Man            (    6)    🔥 HOT J/T
+
+────────────────────────────────────────────────────────────────────────────
+RACE 5    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Time to Toast                   1     99.3(6)  Jelinski Jessica
+        Sire: American Pastime                J: Aranguren Johanis
+        Stats: 13 sts 1-1-1 8%
+        Claim: $15,000
+        ✅ Best Dirt Speed is fastest among today's starters
+
+  ⭐  3: Big Walt                        3    111.4(1)  Rodriguez Jose G
+        Sire: Tapiture                        J: Giles Emmanuel
+        Stats: 15 sts 0-3-3 0%
+        Claim: $15,000
+        🎯 [TRAINER] 🔥 IRON FP — 42% rate
+        ✅ Drops in class today
+        ✅ 25% trainer: 1st start w/trn
+        ❌ 09Apr FP 3f ft :35ª B1/15 26Feb Ind 4f ft :48« B2/5 11Dec'25 Ind 
+
+      4: Man of Quality                  4     99.7(4)  Martin Dawn
+        Sire: Laoban                          J: Arrieta Reynier
+        Stats: 4 sts 0-2-0 0%
+        Claim: $15,000
+        ✅ Early speed running style helps chances
+        ❌ 04Jun FP 4f ft :49¨ B1/4 14Apr FP 5f ft 1:03© B2/3 07Apr FP 5f ft
+
+      5: Zenergy Unbridled               5     88.6(7)  Delong Ben
+        Sire: Unbridled Energy                J: Orm Cory
+        Stats: 24 sts 2-3-1 8%
+        Claim: $15,000
+        ✅ 17% trainer: Claiming
+        ❌ 04Jun FP 4f ft :49¨ B1/4 14Apr FP 5f ft 1:03© B2/3 07Apr FP 5f ft
+
+  ⭐  6: Playground Warrior              6     99.6(5)  Hornbostel Dennis
+        Sire: Drill Sergeant                  J: Santos Ademar
+        Stats: 3 sts 0-1-0 0%
+        Claim: $15,000
+        🎯 [SIRE] 🔥 MVR #1 — 16W full meet
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Eligible to improve in 3rd start since layoff
+        ✅ Early speed running style helps chances
+        ❌ 21Apr FP 5f ft 1:01« B1/4
+
+      7: South of Birminham              7    104.0(3)  Delong Ben
+        Sire: Tale of Verve                   J: Tavares Javier
+        Stats: 24 sts 2-3-1 8%
+        Claim: $15,000
+        ✅ 26% trainer: Btn favorite
+        ✅ Eligible to improve in 3rd start since layoff
+        ❌ 14Feb'25 TP 5f ft 1:00« B1/14 26Nov'24 TP 4f ft :51¨ B56/58 06Sep
+
+  ★ MODEL PICKS R5:
+    PP 6: Playground Warrior          (    6)  🔥 MVR #1  🔥 HOT J/T
+    PP 3: Big Walt                    (    3)  🔥 IRON FP
+
+────────────────────────────────────────────────────────────────────────────
+RACE 6    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Wildwood Triple                 1    104.3(4)  Becker Scott
+        Sire: Ghaaleb                         J: Wales Travis
+        Stats: 73 sts 20-13-13 27%
+        🎯 [TRAINER] 🔥 IRON FP — 31% — FADE sealed fast!
+        🎯 [SIRE] 🔥 FP SIRE #1 — 29W — Becker spe
+        ⚠️  RULE: SEALED FAST = FADE. Dual entry = use IGNORED (longer) horse.
+        ✅ High % trainer
+        ✅ Eligible to improve in 2nd start since layoff
+        ❌ 31Jly'24 Fan 4
+
+  ·  2: Halo Honey                      2    100.1(6)  Essenpreis Eddie M
+        Sire: Jack Milton                     J: Arrieta Reynier
+        Stats: 42 sts 2-11-3 5%
+        🎯 [TRAINER] ✅ POS FP — R3 winner
+        ✅ Eligible to improve in 3rd start since layoff
+        ✅ Ran 2nd in last race
+        ❌ 31Jly'24 Fan 4
+
+  ⭐  3: Taxday Peyton                   3    107.9(3)  Becker Scott
+        Sire: Tapwrit                         J: Bendezu Alexander
+        Stats: 73 sts 20-13-13 27%
+        🎯 [TRAINER] 🔥 IRON FP — 31% — FADE sealed fast!
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (8 2-2-1)
+        ⚠️  RULE: SEALED FAST = FADE. Dual entry = use IGNORED (longer) horse.
+        ✅ High % trainer
+        ✅ High % Jockey
+        ❌ 04Jly'25 FP 3f ft
+
+  ⭐  4: Then Now 'n Always              4    121.3(2)  Reavis Michael L
+        Sire: Jimmy Creed                     J: Santos Ademar
+        Stats: 4 sts 2-2-0 50%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Won last race (FP 05/12 5.5f Dirt ft fsOC20000n2l)
+        ✅ Hot Jockey in last 7 days (13 4-2-0)
+        ❌ 04Jly'25 FP 3f ft
+
+      5: Disguised Devil                 5    123.2(1)  Reavis Michael L
+        Sire: Jimmy Creed                     J: Felix Julio E
+        Stats: 4 sts 2-2-0 50%
+        ✅ Highest last race speed rating
+        ✅ Won last race (FP 05/12 5.5f Dirt ft fsOC20000n2l)
+        ❌ 31Aug'25 Haw 5f ft 1:00 B1/11 10Aug'25 H
+
+  ⭐  6: Miss Kitty Pie                  6     95.0(7)  Randazzo, Jr. Frank C
+        Sire: Ameriheart                      J: Tavares Javier
+        Stats: 18 sts 3-2-4 17%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (6 2-1-1)
+        ✅ Eligible to improve in 2nd start since layoff
+        ✅ Hot Trainer in last 14 days (6 2-1-1)
+        ❌ 12Oct'25 Haw 5f ft :59« B1/16 05Oct'25 Haw
+
+      7: Coaly                           7    104.3(5)  Wainwright John C
+        Sire: Coal Front                      J: Diego Javier
+        Stats: 34 sts 2-5-12 6%
+        ✅ Eligible to improve in 3rd start since layoff
+        ✅ Finished 3rd in last race
+
+  ★ MODEL PICKS R6:
+    PP 1: Wildwood Triple             (    1)  🔥 IRON FP + 🔥 FP SIRE #1
+    PP 3: Taxday Peyton               (    3)  🔥 IRON FP  🔥 HOT J/T
+    PP 4: Then Now 'n Always          (    4)    🔥 HOT J/T
+    PP 6: Miss Kitty Pie              (    6)    🔥 HOT J/T
+
+────────────────────────────────────────────────────────────────────────────
+RACE 7    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Just Squeezing By               1     89.9(5)  Watkins James M
+        Sire: Mo Town                         J: Wales Travis
+        Stats: 47 sts 11-12-4 23%
+        Claim: $6,250
+        🎯 [TRAINER] 🔥 IRON FP — 35W iron
+        ✅ High % trainer
+        ✅ 30% trainer: Up one class
+        ❌ 30Apr FP 3f ft :35© Bg1/6 17Apr FP 3f ft :38ª B16
+
+  ⭐  2: Wildwood Overtime               2     97.8(1)  Becker Scott
+        Sire: Mastery                         J: Santiago Victor
+        Stats: 73 sts 20-13-13 27%
+        Claim: $6,250
+        🎯 [TRAINER] 🔥 IRON FP — 31% — FADE sealed fast!
+        ⚠️  RULE: SEALED FAST = FADE. Dual entry = use IGNORED (longer) horse.
+        ✅ High % trainer
+        ✅ Highest last race speed rating
+        ❌ 30Apr FP 3f ft :35© Bg1/6 17Apr FP 3f ft :38ª B16
+
+  ⭐  3: Whitelick Road                  3     97.3(2)  Delong Ben
+        Sire: Instagrand                      J: Stanley Angel O
+        Stats: 24 sts 2-3-1 8%
+        Claim: $6,250
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ 22% trainer: 1st after clm
+        ✅ Best Dirt Speed is fastest among today's starters
+        ❌ 24Dec'24 Fan 4f ft :4
+
+      4: Rather Late                     4     96.3(3)  Wells Duane
+        Sire: Volatile                        J: Diego Javier
+        Stats: 11 sts 0-1-0 0%
+        Claim: $6,250
+        ✅ Drops in class today
+        ✅ Best Dirt speed is close to the Avg Winning Speed
+
+      5: Jack's Yellow Rose              5     84.9(7)  Burdess Terry
+        Sire: Sleepy Eyes Todd                J: Lara Victor
+        Stats: 11 sts 1-0-0 9%
+        Claim: $6,250
+        ✅ 23% trainer: Maiden Clming
+
+      6: La Rose Blanche                 6     80.2(9)  Wells Duane
+        Sire: Mo Town                         J: Ortega Harold J
+        Stats: 11 sts 0-1-0 0%
+        Claim: $6,250
+        ✅ May improve with Lasix added
+
+      7: Holly Springs                   7     84.7(8)  Anderson Mark W
+        Sire: Street Strategy                 J: Tavares Javier
+        Stats: 1 sts 0-0-0 0%
+        Claim: $6,250
+        ✅ Drops in class today
+        ❌ 08Mar'25 Lad 3f ft :36© B1/7
+
+  ⭐  8: Belleinthetemple                8     91.7(4)  Martinez Ralph
+        Sire: Temple City                     J: Santos Ademar
+        Stats: 56 sts 8-9-16 14%
+        Claim: $6,250
+        🎯 [TRAINER] ✅ POS FP — Positive
+        🎯 [SIRE] ✅ TURF — Positive turf signal
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Drops in class today
+        ✅ 33% trainer: Maiden Clming
+        ❌ 14Feb Cdt 3f ft :37¨ B1/4 21Jan Cdt 4f ft :51« B16/18 09Jan Cdt 4
+
+      9: Dark Diamond                    9     85.1(6)  Nesbitt Amy
+        Sire: Flameaway                       J: Aranguren Johanis
+        Stats: 16 sts 1-0-2 6%
+        Claim: $6,250
+        ❌ 14Feb Cdt 3f ft :37¨ B1/4 21Jan Cdt 4f ft :51« B16/18 09Jan Cdt 4
+
+  ★ MODEL PICKS R7:
+    PP 8: Belleinthetemple            (    8)  ✅ POS FP + ✅ TURF  🔥 HOT J/T
+    PP 1: Just Squeezing By           (    1)  🔥 IRON FP
+    PP 2: Wildwood Overtime           (    2)  🔥 IRON FP
+    PP 3: Whitelick Road              (    3)    🔥 HOT J/T
+
+============================================================================
+📊 MODEL SUMMARY — 24 ITM picks across 7 races
+============================================================================
+  R1 PP 1: Army Medic                  (    1)  ✅ POS FP 🔥 HOT J/T
+  R1 PP 2: Sweet Skylar                (    2)  🔥 IRON FP
+  R1 PP 5: Our Juju                    (    5)   🔥 HOT J/T
+  R1 PP 6: Dominant Caitlin            (    6)  🔥 IRON FP 🔥 HOT J/T
+  R1 PP 7: Tiny Tot Queen              (    7)  🔥 IRON FP
+  R2 PP 1: Mr. Chivas                  (    1)  🔥 IRON FP
+  R2 PP 2: Sonnyisnotsofunny           (    2)   🔥 HOT J/T
+  R3 PP 1: Manny's Kat                 (    1)   🔥 HOT J/T
+  R3 PP 2: Smile Like Kyle             (    2)   🔥 HOT J/T
+  R3 PP 4: Somnus                      (    4)  🔥 IRON FP
+  R4 PP 2: Army Hero                   (    2)  🔥 IRON FP | 🔥 7-TRACK 🔥 HOT J/T
+  R4 PP 4: Bandolero                   (    4)  🔥 IRON FP
+  R4 PP 5: Rag Tree                    (    5)  ✅ POS FP | 🔥 7-TRACK 🔥 HOT J/T
+  R4 PP 6: Best Dressed Man            (    6)   🔥 HOT J/T
+  R5 PP 3: Big Walt                    (    3)  🔥 IRON FP
+  R5 PP 6: Playground Warrior          (    6)  🔥 MVR #1 🔥 HOT J/T
+  R6 PP 1: Wildwood Triple             (    1)  🔥 IRON FP | 🔥 FP SIRE #1
+  R6 PP 3: Taxday Peyton               (    3)  🔥 IRON FP 🔥 HOT J/T
+  R6 PP 4: Then Now 'n Always          (    4)   🔥 HOT J/T
+  R6 PP 6: Miss Kitty Pie              (    6)   🔥 HOT J/T
+  R7 PP 1: Just Squeezing By           (    1)  🔥 IRON FP
+  R7 PP 2: Wildwood Overtime           (    2)  🔥 IRON FP
+  R7 PP 3: Whitelick Road              (    3)   🔥 HOT J/T
+  R7 PP 8: Belleinthetemple            (    8)  ✅ POS FP | ✅ TURF 🔥 HOT J/T
+============================================================================
+
+picks file → picks_FP_06092026.txt
