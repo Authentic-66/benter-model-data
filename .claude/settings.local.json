@@ -22,7 +22,11 @@
       "Bash(py \"scripts\\\\db_query.py\" summary)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(py -c \"from pathlib import Path; print\\(Path\\('scripts/brisnet_parser_v2.py'\\).exists\\(\\)\\)\")"
+      "Bash(py -c \"from pathlib import Path; print\\(Path\\('scripts/brisnet_parser_v2.py'\\).exists\\(\\)\\)\")",
+      "Bash(git checkout *)",
+      "Bash(git ls-tree *)",
+      "Bash(py -u scripts/backfill_picks.py --dry-run)",
+      "Bash(py -u scripts/backfill_picks.py)"
     ]
   }
 }
