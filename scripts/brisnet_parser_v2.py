@@ -50,9 +50,10 @@ IRON_TRAINERS = {
     'GP': {
         'Joseph':    ('🔥 IRON GP #1','405W/3yr/30%'),
         'Angelo':    ('🔥 IRON GP #2','237W/3yr/22%'),
-        'Carlos':    ('🔥 IRON GP',   '175W/3yr/24%'),  # Carlos A. David
+        'Carlos':    ('⚠️ MONITOR GP', '0W/11picks -- fade'),  # Carlos A. David
         'Barboza':   ('🔥 IRON GP',   '150W/3yr'),
-        'Casse':     ('🔥 IRON GP',   '138W/3yr/19%'),
+        'Casse':     ('🔥 IRON GP',   '138W/3yr/19% — public overplays, wait 5/1+'),
+        'Catanese':  ('🔥 IRON GP',   'new signal — 3picks insufficient sample'),
         'Lynch':     ('🔥 IRON GP',   '64W/26%/chalk'),
         'Crichton':  ('🔥 IRON GP',   '110W/Jan-Apr best'),
         'Walsh':     ('🔥 IRON GP',   '31%/$13avg overlay'),
