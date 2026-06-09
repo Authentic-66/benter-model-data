@@ -364,6 +364,67 @@ def roi_summary_all():
     return results
 
 
+# ── roi_filtered ─────────────────────────────────────────────────────────────
+
+def roi_filtered():
+    """
+    ROI summary across all tracks, restricted to picks where ml_odds is known
+    (IS NOT NULL and != 0).  Excludes picks from sessions before ML data was
+    captured so the baseline reflects only well-characterised overlays.
+    """
+    sql = """
+        SELECT
+            e.track,
+            COUNT(*)                                          AS n_picks,
+            SUM(CASE WHEN e.finish_pos = 1 THEN 1 ELSE 0 END) AS n_wins,
+            SUM(e.invested)                                   AS invested,
+            SUM(e.returned)                                   AS returned,
+            SUM(e.pl)                                         AS pl,
+            MIN(e.race_date)                                  AS first_date,
+            MAX(e.race_date)                                  AS last_date
+        FROM roi_entries e
+        JOIN picks p ON p.pick_id = e.pick_id
+        WHERE e.invested > 0
+          AND p.ml_odds IS NOT NULL
+          AND p.ml_odds != 0
+        GROUP BY e.track
+        ORDER BY e.track
+    """
+    with _conn() as c:
+        rows = c.execute(sql).fetchall()
+
+    if not rows:
+        print("No ROI data found for picks with known ML odds.")
+        return []
+
+    total_inv = total_ret = 0.0
+
+    print(f"\n  {'='*72}")
+    print(f"  BENTER MODEL  --  ROI FILTERED (ml_odds known, non-zero)")
+    print(f"  {'='*72}")
+    print(f"  {'Track':<6}  {'Picks':>5}  {'Wins':>4}  {'Win%':>6}  {'Invested':>9}  {'Returned':>9}  {'ROI':>8}  Date range")
+    print(f"  {'-'*72}")
+
+    results = []
+    for r in rows:
+        pct    = r['n_wins'] / r['n_picks'] * 100 if r['n_picks'] else 0
+        roi    = _fmt_roi(r['invested'], r['returned'])
+        total_inv += r['invested']
+        total_ret += r['returned']
+        print(f"  {r['track']:<6}  {r['n_picks']:>5}  {r['n_wins']:>4}  {pct:>5.1f}%  "
+              f"${r['invested']:>8.2f}  ${r['returned']:>8.2f}  {roi:>8}  "
+              f"{r['first_date']} - {r['last_date']}")
+        results.append(dict(r))
+
+    print(f"  {'-'*72}")
+    pl = total_ret - total_inv
+    pl_str = f"+${pl:.2f}" if pl >= 0 else f"-${abs(pl):.2f}"
+    print(f"  {'OVERALL':<6}  {'':>5}  {'':>4}  {'':>6}  ${total_inv:>8.2f}  ${total_ret:>8.2f}  "
+          f"{_fmt_roi(total_inv, total_ret):>8}  P/L: {pl_str}")
+    print(f"  {'='*72}\n")
+    return results
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
@@ -371,6 +432,7 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage:")
         print("  py scripts/db_query.py summary")
+        print("  py scripts/db_query.py filtered")
         print("  py scripts/db_query.py track GP [start_date] [end_date]")
         print("  py scripts/db_query.py trainer Joseph [track]")
         print("  py scripts/db_query.py top CT [min_wins]")
@@ -381,6 +443,8 @@ if __name__ == '__main__':
     cmd = sys.argv[1].lower()
     if cmd == 'summary':
         roi_summary_all()
+    elif cmd == 'filtered':
+        roi_filtered()
     elif cmd == 'track' and len(sys.argv) >= 3:
         roi_by_track(sys.argv[2],
                      sys.argv[3] if len(sys.argv) > 3 else None,
