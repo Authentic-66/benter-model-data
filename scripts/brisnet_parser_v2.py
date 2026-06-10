@@ -109,50 +109,71 @@ IRON_TRAINERS = {
     }
 }
 
-IRON_SIRES = {
-    # GP FL home-track sires
-    'Khozan':         ('🔥 GP SIRE #1','106W/3yr — any price/surface GP'),
-    'Bucchero':       ('🔥 GP FL SIRE','104W/3yr'),
-    'Neolithic':      ('🔥 GP FL SIRE','99W/3yr — Abreu spe'),
-    'Adios Charlie':  ('🔥 GP FL SIRE','81W/3yr'),
-    'The Big Beast':  ('🔥 GP FL SIRE','73W/3yr'),
-    'Awesome Slew':   ('🔥 GP FL SIRE','61W/3yr'),
-    'Cajun Breeze':   ('✅ GP FL SIRE','49W/3yr'),
-    # CT WV home-track sires
-    'Juba':           ('🔥 CT SIRE #1','160W/3yr — WV home-track'),
-    'Fiber Sonde':    ('🔥 CT SIRE #2','137W/3yr'),
-    'Golden Years':   ('🔥 CT SIRE #3','94W/3yr'),
-    'Windsor Castle': ('🔥 CT SIRE #4','90W/3yr'),
-    'Uncle Lino':     ('✅ CT SIRE',   '69W/3yr'),
-    'Great Notion':   ('✅ CT SIRE',   '62W/Jones Jr spe'),
-    'Candygram':      ('✅ CT SIRE',   '46W/Sigler spe'),
-    # FP IL home-track sires
-    'Ghaaleb':        ('🔥 FP SIRE #1','29W — Becker spe'),
-    'Cinco Charlie':  ('✅ FP+MVR',   'Cross-circuit positive'),
-    # EVD/DD Louisiana sires
-    'Star Guitar':    ('🔥 EVD SIRE #1','42W/3yr — any trainer'),
-    'El Deal':        ('🔥 EVD+DD',   '28 EVD + 21 DD wins'),
-    'Custom for Carlos':('🔥 EVD+DD', '25 EVD + 26 DD wins'),
-    'Half Ours':      ('🔥 EVD SIRE', '27W/3yr'),
-    'Astrology':      ('✅ EVD+DD',   '25W EVD'),
-    # Cross-circuit sires
-    'Curlin':         ('🔥 6-TRACK',  'Curlin+Casse GP = iron combo'),
-    'Girvin':         ('🔥 3-TRACK',  'GP(80)+CT+EVD wins'),
-    'Midshipman':     ('🔥 5-TRACK',  'CT+FP+EVD+MVR+DD'),
-    'Goldencents':    ('🔥 4-TRACK',  'FP+EVD+MVR+DD'),
-    'Union Rags':     ('🔥 7-TRACK',  'Universal iron sire'),
-    'Mor Spirit':     ('✅ 3-TRACK',  'FP+MVR+DD'),
-    'Into Mischief':  ('✅ GP SIRE',  '64W/3yr GP'),
-    'Constitution':   ('✅ GP SIRE',  '66W/3yr GP'),
-    'Temple City':    ('✅ TURF',     'Positive turf signal'),
-    'Justify':        ('✅ GP SIRE',  'National positive'),
-    'Not This Time':  ('✅ GP SIRE',  '17W GP'),
-    # MVR Ohio sires
-    'Drill':          ('🔥 MVR #1',   '16W full meet'),
-    'Tale of Ekati':  ('🔥 MVR SIRE', '11W Ohio home-track'),
-    'Kantharos':      ('🔥 MVR SIRE', '12W full meet'),
-    'Rivers Run Deep':('✅ MVR SIRE', '12W full meet'),
-    'Saturnalia':     ('✅ POS SIRE', 'International positive at GP'),
+SIRE_SIGNALS = {
+    # Universal cross-circuit positives — applied at every track
+    'ALL': {
+        'Curlin':         ('🔥 6-TRACK',  'Curlin+Casse GP = iron combo'),
+        'Girvin':         ('🔥 3-TRACK',  'GP(80)+CT+EVD wins'),
+        'Midshipman':     ('🔥 5-TRACK',  'CT+FP+EVD+MVR+DD'),
+        'Goldencents':    ('🔥 4-TRACK',  'FP+EVD+MVR+DD'),
+        'Union Rags':     ('🔥 7-TRACK',  'Universal iron sire'),
+        'Mor Spirit':     ('✅ 3-TRACK',  'FP+MVR+DD'),
+        'Khozan':         ('🔥 MULTI',    '106W/3yr — fires multiple circuits'),
+        'Into Mischief':  ('✅ MULTI',    '64W/3yr GP + national'),
+        'Constitution':   ('✅ MULTI',    '66W/3yr GP + national'),
+        'Temple City':    ('✅ TURF',     'Positive turf signal'),
+        'Justify':        ('✅ MULTI',    'National positive'),
+        'Not This Time':  ('✅ MULTI',    '17W GP + growing'),
+    },
+    # GP Florida track-specific sires
+    'GP': {
+        'Bucchero':       ('🔥 GP FL SIRE','104W/3yr'),
+        'Neolithic':      ('🔥 GP FL SIRE','99W/3yr — Abreu spe'),
+        'Adios Charlie':  ('🔥 GP FL SIRE','81W/3yr'),
+        'The Big Beast':  ('🔥 GP FL SIRE','73W/3yr'),
+        'Awesome Slew':   ('🔥 GP FL SIRE','61W/3yr'),
+        'Cajun Breeze':   ('✅ GP FL SIRE','49W/3yr'),
+        'Saturnalia':     ('✅ POS SIRE', 'International positive at GP'),
+        'Maxfield':       ('⚠️ FADE GP',  '-100% impact at GP — skip'),
+    },
+    # CT Charles Town WV home-track sires
+    'CT': {
+        'Juba':           ('🔥 CT SIRE #1','160W/3yr — WV home-track'),
+        'Fiber Sonde':    ('🔥 CT SIRE #2','137W/3yr'),
+        'Golden Years':   ('🔥 CT SIRE #3','94W/3yr'),
+        'Windsor Castle': ('🔥 CT SIRE #4','90W/3yr'),
+        'Uncle Lino':     ('✅ CT SIRE',   '69W/3yr'),
+        'Great Notion':   ('✅ CT SIRE',   '62W/Jones Jr spe'),
+        'Candygram':      ('✅ CT SIRE',   '46W/Sigler spe'),
+    },
+    # FP Fairmount Park IL home-track sires
+    'FP': {
+        'Ghaaleb':        ('🔥 FP SIRE #1','29W — Becker spe'),
+        'Cinco Charlie':  ('✅ FP+MVR',   'Cross-circuit positive'),
+        'Shaman Ghost':   ('🔥 FP SIRE',  'Joyful Ghost W 6/9/26'),
+    },
+    # EVD Evangeline Downs LA sires
+    'EVD': {
+        'Star Guitar':    ('🔥 EVD SIRE #1','42W/3yr — any trainer'),
+        'El Deal':        ('🔥 EVD+DD',   '28 EVD + 21 DD wins'),
+        'Custom for Carlos':('🔥 EVD+DD', '25 EVD + 26 DD wins'),
+        'Half Ours':      ('🔥 EVD SIRE', '27W/3yr'),
+        'Astrology':      ('✅ EVD+DD',   '25W EVD'),
+    },
+    # DD Delta Downs LA sires
+    'DD': {
+        'El Deal':        ('🔥 EVD+DD',   '28 EVD + 21 DD wins'),
+        'Custom for Carlos':('🔥 EVD+DD', '25 EVD + 26 DD wins'),
+        'Astrology':      ('✅ EVD+DD',   '25W EVD'),
+    },
+    # MVR Mahoning Valley OH sires
+    'MVR': {
+        'Drill':          ('🔥 MVR #1',   '16W full meet'),
+        'Tale of Ekati':  ('🔥 MVR SIRE', '11W Ohio home-track'),
+        'Kantharos':      ('🔥 MVR SIRE', '12W full meet'),
+        'Rivers Run Deep':('✅ MVR SIRE', '12W full meet'),
+        'Cinco Charlie':  ('✅ FP+MVR',   'Cross-circuit positive'),
+    },
 }
 
 IRON_HORSES = {
@@ -213,6 +234,16 @@ TRAINER_RULES = {
         'Barboza': 'DUAL ENTRY = board both.',
     }
 }
+
+def get_sire_signal(sire, track_code):
+    """Return (sig, desc) for a sire at the given track, or None.
+    Track-specific entries take priority over ALL."""
+    for source in [SIRE_SIGNALS.get(track_code, {}), SIRE_SIGNALS.get('ALL', {})]:
+        for key, (sig, desc) in source.items():
+            if key.lower() in sire.lower():
+                return sig, desc
+    return None
+
 
 def extract_text(filepath):
     path = Path(filepath)
@@ -473,10 +504,9 @@ def parse_brisnet(text, track_code='GP'):
                     signals.append(('TRAINER', sig, desc))
                     break
 
-            for key, (sig, desc) in IRON_SIRES.items():
-                if key.lower() in sire.lower():
-                    signals.append(('SIRE', sig, desc))
-                    break
+            sire_match = get_sire_signal(sire, track_code)
+            if sire_match:
+                signals.append(('SIRE', sire_match[0], sire_match[1]))
 
             for key, (sig, desc) in IRON_HORSES.items():
                 if key.lower() in horse.lower():
@@ -520,16 +550,22 @@ def parse_brisnet(text, track_code='GP'):
 
 
 def is_strong_pick(h):
-    """True for 🔥 trainer, trainer+sire double, 🔥 horse, or hot J/T combo. Excludes ✅-only."""
+    """True for 🔥 trainer (always), positive trainer+sire double, 🔥 horse, or hot J/T.
+    Iron trainer signals are never suppressed by negative/FADE sire flags.
+    FADE sires (⚠️) do not qualify for the trainer+sire double pick."""
     signals = h['signals']
     if not signals:
         return False
     sig_types = {s[0] for s in signals}
+    # 🔥 trainer always generates a pick regardless of sire
     for sig_type, sig, desc in signals:
         if sig_type == 'TRAINER' and '🔥' in sig:
             return True
-    if 'TRAINER' in sig_types and 'SIRE' in sig_types:
-        return True
+    # trainer + positive sire double — ⚠️ FADE sires excluded
+    if 'TRAINER' in sig_types:
+        for sig_type, sig, desc in signals:
+            if sig_type == 'SIRE' and ('🔥' in sig or '✅' in sig):
+                return True
     for sig_type, sig, desc in signals:
         if sig_type == 'HORSE' and '🔥' in sig:
             return True
