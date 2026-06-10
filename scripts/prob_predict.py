@@ -4,10 +4,17 @@ Usage:
     py prob_predict.py picks_FP_06092026.txt [-o output.txt]
 
 Reads an 8-column picks file (TRACK RACE HORSE SIGNAL BETS ML_ODDS
-PP_POWER TRAINER), appends WIN_PROB as a 9th column and an EV flag as a
-10th, and writes <input>_prob.txt unless -o is given. A pick is flagged
-+EV when the model probability exceeds the probability implied by its
-morning-line odds.
+PP_POWER TRAINER) and appends WIN_PROB, EV_RATIO, an EV flag, and RANK,
+writing <input>_prob.txt unless -o is given.
+
+With --in-place, the picks file itself is rewritten with only WIN_PROB
+and EV_RATIO appended as optional columns 9 and 10 (the format the ROI
+tracker and database ingest). Re-running is safe: existing probability
+columns are replaced, not duplicated.
+
+EV_RATIO = model_prob / ML-implied prob (1.0 = model agrees with public).
+Flags: "+EV" when EV_RATIO > 1.0, "~EV" (soft) when EV_RATIO >= 0.75.
+RANK = model-probability rank within the race (1 = model's top pick).
 """
 
 import argparse
@@ -36,7 +43,7 @@ def parse_picks_file(path):
             if len(parts) < 8:
                 raw_lines.append((line, None))
                 continue
-            raw_lines.append((line, len(rows)))
+            raw_lines.append((" ".join(parts[:8]), len(rows)))
             rows.append(dict(zip(COLUMNS, parts[:8])))
     df = pd.DataFrame(rows)
     for col in ("ml_odds", "pp_power"):
@@ -48,6 +55,11 @@ def main():
     ap = argparse.ArgumentParser(description="Score a picks file with the Phase 6 model")
     ap.add_argument("picks_file")
     ap.add_argument("-o", "--output", help="output path (default: <input>_prob.txt)")
+    ap.add_argument(
+        "--in-place",
+        action="store_true",
+        help="rewrite the picks file itself with WIN_PROB and EV_RATIO as cols 9-10",
+    )
     args = ap.parse_args()
 
     if not os.path.exists(MODEL_PATH):
@@ -65,35 +77,63 @@ def main():
     X = df[bundle["numeric_features"] + bundle["categorical_features"]]
     df["win_prob"] = pipe.predict_proba(X)[:, 1]
     df["implied"] = 1.0 / (df["ml_odds"] + 1.0)
-    df["ev_flag"] = np.where(
-        df["ml_odds"].notna() & (df["win_prob"] > df["implied"]), "+EV", "-"
+    df["ev_ratio"] = df["win_prob"] / df["implied"]
+    df["ev_flag"] = np.select(
+        [df["ev_ratio"] > 1.0, df["ev_ratio"] >= 0.75],
+        ["+EV", "~EV"],
+        default="-",
+    )
+    df.loc[df["ml_odds"].isna(), "ev_flag"] = "-"
+    df["rank"] = (
+        df.groupby(["track", "race"])["win_prob"]
+        .rank(ascending=False, method="min")
+        .astype(int)
     )
 
-    out_path = args.output or os.path.splitext(args.picks_file)[0] + "_prob.txt"
+    if args.in_place:
+        out_path = args.picks_file
+    else:
+        out_path = args.output or os.path.splitext(args.picks_file)[0] + "_prob.txt"
+    fmt_base = "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER"
     with open(out_path, "w", encoding="utf-8") as f:
         for line, idx in raw_lines:
             if idx is None:
                 if line.lstrip().startswith("# Format:"):
-                    line += " WIN_PROB EV"
+                    line = fmt_base + (
+                        " WIN_PROB EV_RATIO" if args.in_place
+                        else " WIN_PROB EV_RATIO EV RANK"
+                    )
                 f.write(line + "\n")
             else:
                 r = df.iloc[idx]
-                f.write(f"{line} {r['win_prob']:.3f} {r['ev_flag']}\n")
+                ratio = f"{r['ev_ratio']:.2f}" if pd.notna(r["ev_ratio"]) else "?"
+                if args.in_place:
+                    f.write(f"{line} {r['win_prob']:.3f} {ratio}\n")
+                else:
+                    f.write(
+                        f"{line} {r['win_prob']:.3f} {ratio} {r['ev_flag']} {r['rank']}\n"
+                    )
 
     n_ev = int((df["ev_flag"] == "+EV").sum())
+    n_soft = int((df["ev_flag"] == "~EV").sum())
     print(f"Scored {len(df)} picks from {args.picks_file}")
     print(f"Output -> {out_path}\n")
-    hdr = f"{'TRACK':<6}{'RACE':<5}{'HORSE':<22}{'SIGNAL':<9}{'ML':>5}{'IMPLIED':>9}{'MODEL':>8}  EV"
+    hdr = (
+        f"{'TRACK':<6}{'RACE':<5}{'HORSE':<22}{'SIGNAL':<9}"
+        f"{'ML':>5}{'IMPLIED':>9}{'MODEL':>8}{'EVRATIO':>9}{'RANK':>6}  EV"
+    )
     print(hdr)
     print("-" * len(hdr))
     for _, r in df.iterrows():
         ml = f"{r['ml_odds']:.1f}" if pd.notna(r["ml_odds"]) else "?"
         imp = f"{r['implied']:.3f}" if pd.notna(r["implied"]) else "?"
+        ratio = f"{r['ev_ratio']:.2f}" if pd.notna(r["ev_ratio"]) else "?"
         print(
             f"{r['track']:<6}{r['race']:<5}{r['horse']:<22}{r['signal_type']:<9}"
-            f"{ml:>5}{imp:>9}{r['win_prob']:>8.3f}  {r['ev_flag']}"
+            f"{ml:>5}{imp:>9}{r['win_prob']:>8.3f}{ratio:>9}{r['rank']:>6}  {r['ev_flag']}"
         )
-    print(f"\nPositive-EV spots (model prob > ML-implied prob): {n_ev}")
+    print(f"\nPositive-EV spots (EV_RATIO > 1.00):       {n_ev}")
+    print(f"Soft value spots (EV_RATIO 0.75 - 1.00):   {n_soft}")
 
 
 if __name__ == "__main__":

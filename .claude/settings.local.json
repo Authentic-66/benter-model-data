@@ -44,7 +44,9 @@
       "Bash(cmd *)",
       "Bash(git *)",
       "Bash(python -c ' *)",
-      "PowerShell(Remove-Item *)"
+      "PowerShell(Remove-Item *)",
+      "PowerShell(\\(Get-Content \"scripts\\\\brisnet_parser_v2.py\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(Copy-Item *)"
     ]
   }
 }

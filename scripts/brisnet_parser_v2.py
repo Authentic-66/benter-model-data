@@ -549,8 +549,18 @@ def parse_brisnet(text, track_code='GP'):
     return dict(races)
 
 
+def is_trainer_hotjt(h):
+    """True when the horse has both a TRAINER signal and a HOT_JT angle.
+    Phase 6 finding: HOT_JT alone is heavily overpriced (EV_RATIO 0.06-0.20),
+    but it upgrades an existing TRAINER signal to TRAINER+HOT_JT."""
+    sig_types = {s[0] for s in h['signals']}
+    return 'TRAINER' in sig_types and 'HOT_JT' in sig_types
+
+
 def is_strong_pick(h):
-    """True for 🔥 trainer (always), positive trainer+sire double, 🔥 horse, or hot J/T.
+    """True for 🔥 trainer (always), positive trainer+sire double, 🔥 horse,
+    or TRAINER+HOT_JT upgrade. HOT_JT alone is display-only, NOT a pick
+    (Phase 6: standalone HOT_JT EV_RATIO 0.06-0.20 = public overbets it).
     Iron trainer signals are never suppressed by negative/FADE sire flags.
     FADE sires (⚠️) do not qualify for the trainer+sire double pick."""
     signals = h['signals']
@@ -569,7 +579,8 @@ def is_strong_pick(h):
     for sig_type, sig, desc in signals:
         if sig_type == 'HORSE' and '🔥' in sig:
             return True
-    if 'HOT_JT' in sig_types:
+    # HOT_JT upgrades any TRAINER signal to a pick; alone it is display-only
+    if is_trainer_hotjt(h):
         return True
     return False
 
@@ -649,9 +660,12 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
 
         if race_picks:
             print(f"\n  ★ MODEL PICKS R{rn}:")
-            for h in sorted(race_picks, key=lambda x: len(x['signals']), reverse=True):
+            # TRAINER+HOT_JT upgrades sort first, then by signal count
+            for h in sorted(race_picks,
+                            key=lambda x: (is_trainer_hotjt(x), len(x['signals'])),
+                            reverse=True):
                 base_sigs = ' + '.join(s[1] for s in h['signals'] if s[0] != 'HOT_JT')
-                hot_tag  = '  🔥 HOT J/T' if any(s[0] == 'HOT_JT' for s in h['signals']) else ''
+                hot_tag  = '  🔥 TRAINER+HOT_JT' if is_trainer_hotjt(h) else ''
                 warn_tag = '  ⚠️ 0% J/T'  if h.get('jt_zero') else ''
                 print(f"    PP{h['pp']:>2}: {h['name']:<27} ({h['ml']:>5})  {base_sigs[:45]}{hot_tag}{warn_tag}")
         else:
@@ -663,7 +677,7 @@ def print_card(races, track_name, date_str, track_conditions, scratches=None, tr
     print(f"{'='*76}")
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
         sigs     = ' | '.join(s[1] for s in h['signals'] if s[0] != 'HOT_JT')
-        hot_tag  = ' 🔥 HOT J/T' if any(s[0] == 'HOT_JT' for s in h['signals']) else ''
+        hot_tag  = ' 🔥 TRAINER+HOT_JT' if is_trainer_hotjt(h) else ''
         warn_tag = ' ⚠️ 0% J/T'  if h.get('jt_zero') else ''
         print(f"  R{rn} PP{h['pp']:>2}: {h['name']:<27} ({h['ml']:>5})  {sigs[:40]}{hot_tag}{warn_tag}")
     print(f"{'='*76}\n")
@@ -751,10 +765,13 @@ def write_picks_file(all_picks, track_code, filepath):
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",
-        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER",
+        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER [WIN_PROB EV_RATIO]",
     ]
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
-        sig_type   = h['signals'][0][0]
+        if is_trainer_hotjt(h):
+            sig_type = 'TRAINER+HOT_JT'
+        else:
+            sig_type = h['signals'][0][0]
         horse_name = h['name'].replace(' ', '')
         ml_f       = ml_to_float(h['ml'])
         ml_col     = str(ml_f) if ml_f is not None else '?'
@@ -797,3 +814,18 @@ if __name__ == '__main__':
     if all_picks:
         out = write_picks_file(all_picks, track, filepath)
         print(f"picks file → {out.name}")
+
+        # Phase 6: annotate picks with WIN_PROB / EV_RATIO (cols 9-10) if the
+        # trained probability model is available. Failure is non-fatal.
+        model_pkl = Path(__file__).parent / 'benter_model_prob.pkl'
+        if model_pkl.exists():
+            predict_script = Path(__file__).parent / 'prob_predict.py'
+            r = subprocess.run([sys.executable, str(predict_script),
+                                str(out), '--in-place'],
+                               capture_output=True, text=True)
+            if r.returncode == 0:
+                print(f"win probabilities added → {out.name} (cols 9-10)")
+            else:
+                print(f"WARNING: prob_predict.py failed — picks file left without probabilities")
+                if r.stderr.strip():
+                    print(f"  {r.stderr.strip().splitlines()[-1]}")

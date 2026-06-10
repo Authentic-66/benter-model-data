@@ -58,6 +58,8 @@ CREATE TABLE IF NOT EXISTS picks (
     bets            TEXT,
     ml_odds         REAL,
     pp_power        REAL,
+    win_prob        REAL,
+    ev_ratio        REAL,
     trainer_name    TEXT,
     trainer_exempt  INTEGER DEFAULT 0,
     filtered_reason TEXT,
@@ -94,6 +96,49 @@ CREATE INDEX IF NOT EXISTS idx_results_race_id  ON results(race_id);
 CREATE INDEX IF NOT EXISTS idx_picks_race_id    ON picks(race_id);
 CREATE INDEX IF NOT EXISTS idx_roi_race_id      ON roi_entries(race_id);
 """
+
+
+def ensure_prob_columns(conn):
+    """Add Phase 6 probability columns to an existing picks table."""
+    existing = {row[1] for row in conn.execute("PRAGMA table_info(picks)")}
+    for col in ('win_prob', 'ev_ratio'):
+        if col not in existing:
+            conn.execute(f"ALTER TABLE picks ADD COLUMN {col} REAL")
+            print(f"  schema: added picks.{col}")
+    conn.commit()
+
+
+def ensure_results_unique(conn):
+    """Remove duplicate results (keep lowest result_id), then enforce
+    uniqueness — one row per horse per race."""
+    cur = conn.execute(
+        "DELETE FROM results WHERE result_id NOT IN ("
+        " SELECT MIN(result_id) FROM results GROUP BY race_id, horse_name)"
+    )
+    if cur.rowcount:
+        print(f"  schema: removed {cur.rowcount} duplicate results")
+    conn.execute(
+        "CREATE UNIQUE INDEX IF NOT EXISTS idx_results_unique"
+        " ON results(race_id, horse_name)"
+    )
+    conn.commit()
+
+
+def ensure_roi_unique(conn):
+    """Remove duplicate roi_entries (keep lowest roi_id), then enforce
+    uniqueness so re-running the migration can never duplicate ROI rows."""
+    cur = conn.execute(
+        "DELETE FROM roi_entries WHERE roi_id NOT IN ("
+        " SELECT MIN(roi_id) FROM roi_entries"
+        " GROUP BY track, race_date, race_num, horse_name)"
+    )
+    if cur.rowcount:
+        print(f"  schema: removed {cur.rowcount} duplicate roi_entries")
+    conn.execute(
+        "CREATE UNIQUE INDEX IF NOT EXISTS idx_roi_unique"
+        " ON roi_entries(track, race_date, race_num, horse_name)"
+    )
+    conn.commit()
 
 # ── Results log parsing ───────────────────────────────────────────────────────
 
@@ -192,7 +237,9 @@ def import_results(conn):
                 " VALUES(?,?,?,?,?,?)",
                 (track, date_str, r['race_num'], r['surface'], r['conditions'], r['purse'])
             )
-            if cur.rowcount:
+            # Capture before the SELECT below resets rowcount to -1 (truthy!)
+            race_inserted = bool(cur.rowcount)
+            if race_inserted:
                 n_races += 1
             cur.execute(
                 "SELECT race_id FROM races WHERE track=? AND race_date=? AND race_num=?",
@@ -201,11 +248,11 @@ def import_results(conn):
             race_id = cur.fetchone()[0]
 
             # Only insert finishers for newly added races
-            if cur.rowcount or not list(cur.execute("SELECT 1 FROM results WHERE race_id=? LIMIT 1", (race_id,))):
+            if race_inserted or not list(cur.execute("SELECT 1 FROM results WHERE race_id=? LIMIT 1", (race_id,))):
                 for f in r['finishers']:
                     is_win = f['pos'] == 1
                     cur.execute(
-                        "INSERT INTO results"
+                        "INSERT OR IGNORE INTO results"
                         "(race_id,finish_pos,horse_name,trainer,sire,odds,win_pay,place_pay,show_pay)"
                         " VALUES(?,?,?,?,?,?,?,?,?)",
                         (race_id, f['pos'], f['horse'],
@@ -216,7 +263,8 @@ def import_results(conn):
                          r['place'] if f['pos'] <= 2 else None,
                          r['show']  if f['pos'] <= 3 else None)
                     )
-                    n_results += 1
+                    if cur.rowcount:
+                        n_results += 1
 
     conn.commit()
     return n_races, n_results
@@ -269,6 +317,11 @@ def import_picks(conn):
             try:    pp_power = float(parts[6]) if len(parts) >= 7 else None
             except: pp_power = None
             trainer_name = parts[7].replace('_', ' ') if len(parts) >= 8 else None
+            # Phase 6 optional probability columns (added by prob_predict.py --in-place)
+            try:    win_prob = float(parts[8]) if len(parts) >= 9 else None
+            except: win_prob = None
+            try:    ev_ratio = float(parts[9]) if len(parts) >= 10 else None
+            except: ev_ratio = None
 
             cur.execute(
                 "SELECT race_id FROM races WHERE track=? AND race_date=? AND race_num=?",
@@ -279,13 +332,22 @@ def import_picks(conn):
 
             cur.execute(
                 "INSERT OR IGNORE INTO picks"
-                "(track,race_date,race_num,race_id,horse_name,signal_type,bets,ml_odds,pp_power,trainer_name)"
-                " VALUES(?,?,?,?,?,?,?,?,?,?)",
+                "(track,race_date,race_num,race_id,horse_name,signal_type,bets,"
+                "ml_odds,pp_power,win_prob,ev_ratio,trainer_name)"
+                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
                 (p_track, date_str, p_race, race_id, p_horse, p_signal, bets,
-                 ml_odds, pp_power, trainer_name)
+                 ml_odds, pp_power, win_prob, ev_ratio, trainer_name)
             )
             if cur.rowcount:
                 n_picks += 1
+            elif win_prob is not None:
+                # Pick already imported before its file was annotated — backfill probs
+                cur.execute(
+                    "UPDATE picks SET win_prob=?, ev_ratio=?"
+                    " WHERE track=? AND race_date=? AND race_num=? AND horse_name=?"
+                    " AND win_prob IS NULL",
+                    (win_prob, ev_ratio, p_track, date_str, p_race, p_horse)
+                )
 
     conn.commit()
     return n_picks
@@ -405,15 +467,17 @@ def import_roi(conn):
                 row     = cur.fetchone()
                 pick_id = row[0] if row else None
 
+                # idx_roi_unique makes re-runs and repeated log sections no-ops
                 cur.execute(
-                    "INSERT INTO roi_entries"
+                    "INSERT OR IGNORE INTO roi_entries"
                     "(pick_id,race_id,track,race_date,race_num,horse_name,"
                     "finish_pos,invested,returned,pl,note)"
                     " VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                     (pick_id, race_id, track, date_str, e['race_num'], e['horse'],
                      e['fin'], e['invested'], e['returned'], e['pl'], e['note'])
                 )
-                n_roi += 1
+                if cur.rowcount:
+                    n_roi += 1
 
     conn.commit()
     return n_roi
@@ -429,6 +493,9 @@ def main():
     conn = sqlite3.connect(DB_PATH)
     conn.executescript(DDL)
     conn.commit()
+    ensure_prob_columns(conn)
+    ensure_results_unique(conn)
+    ensure_roi_unique(conn)
     print(f"Database: {DB_PATH}\n")
 
     print("Importing results logs...")
