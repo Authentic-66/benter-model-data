@@ -42,7 +42,9 @@
       "Bash(cmd /c \"\\\\\"C:\\\\Users\\\\bornr\\\\OneDrive\\\\Documents\\\\GitHub Files\\\\benter-model-data\\\\scripts\\\\reparse.bat\\\\\" FP\")",
       "Bash(powershell *)",
       "Bash(cmd *)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(python -c ' *)",
+      "PowerShell(Remove-Item *)"
     ]
   }
 }
