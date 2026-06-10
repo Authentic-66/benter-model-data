@@ -34,7 +34,15 @@
       "Bash(py scripts/db_query.py track EVD)",
       "Bash(py scripts/db_query.py track FP)",
       "Bash(py scripts/db_query.py track GP)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(cmd /c reparse.bat FP)",
+      "Bash(cmd /c \"reparse.bat FP < nul\")",
+      "Bash(powershell -NoProfile -Command \"& cmd.exe /c 'reparse.bat FP' 2>&1\")",
+      "Bash(powershell -NoProfile -Command \"& cmd.exe /c '\\\\\"reparse.bat\\\\\" FP' 2>&1\")",
+      "Bash(cmd /c \"\\\\\"C:\\\\Users\\\\bornr\\\\OneDrive\\\\Documents\\\\GitHub Files\\\\benter-model-data\\\\scripts\\\\reparse.bat\\\\\" FP\")",
+      "Bash(powershell *)",
+      "Bash(cmd *)",
+      "Bash(git *)"
     ]
   }
 }
