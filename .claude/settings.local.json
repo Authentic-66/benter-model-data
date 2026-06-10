@@ -33,7 +33,8 @@
       "Bash(py scripts/db_query.py track CT)",
       "Bash(py scripts/db_query.py track EVD)",
       "Bash(py scripts/db_query.py track FP)",
-      "Bash(py scripts/db_query.py track GP)"
+      "Bash(py scripts/db_query.py track GP)",
+      "Bash(git push *)"
     ]
   }
 }
