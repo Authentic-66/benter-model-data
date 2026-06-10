@@ -76,7 +76,8 @@ def main():
     df["surface"] = "Dirt"
     X = df[bundle["numeric_features"] + bundle["categorical_features"]]
     df["win_prob"] = pipe.predict_proba(X)[:, 1]
-    df["implied"] = 1.0 / (df["ml_odds"] + 1.0)
+    # ml_odds are decimal odds (ml_to_float: '2/1' -> 3.0), so implied = 1/odds
+    df["implied"] = 1.0 / df["ml_odds"]
     df["ev_ratio"] = df["win_prob"] / df["implied"]
     df["ev_flag"] = np.select(
         [df["ev_ratio"] > 1.0, df["ev_ratio"] >= 0.75],

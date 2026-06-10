@@ -88,8 +88,9 @@ def build_pipeline():
 
 
 def implied_prob(ml_odds):
-    """Win probability implied by X-1 morning-line odds (no takeout adjustment)."""
-    return 1.0 / (ml_odds + 1.0)
+    """Win probability implied by decimal ML odds (no takeout adjustment).
+    ml_odds in the DB/picks files are decimal: '2/1' is stored as 3.0."""
+    return 1.0 / ml_odds
 
 
 def favorite_baseline(df):

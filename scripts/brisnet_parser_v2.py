@@ -15,6 +15,11 @@ try:
 except AttributeError:
     pass
 
+# ── CONFIG ────────────────────────────────────────────────────────────────────
+# Phase 5: bankroll for Kelly bet sizing. When > 0, kelly_sizing.py auto-runs
+# after prob_predict.py annotates the picks file. 0 = disabled.
+BANKROLL = 0
+
 # ── MODEL SIGNAL DATABASES ────────────────────────────────────────────────────
 IRON_TRAINERS = {
     'CT': {
@@ -825,6 +830,17 @@ if __name__ == '__main__':
                                capture_output=True, text=True)
             if r.returncode == 0:
                 print(f"win probabilities added → {out.name} (cols 9-10)")
+                if BANKROLL > 0:
+                    kelly_script = Path(__file__).parent / 'kelly_sizing.py'
+                    k = subprocess.run([sys.executable, str(kelly_script),
+                                        str(out), str(BANKROLL)],
+                                       capture_output=True, text=True)
+                    if k.returncode == 0:
+                        print(k.stdout)
+                    else:
+                        print(f"WARNING: kelly_sizing.py failed")
+                        if k.stderr.strip():
+                            print(f"  {k.stderr.strip().splitlines()[-1]}")
             else:
                 print(f"WARNING: prob_predict.py failed — picks file left without probabilities")
                 if r.stderr.strip():

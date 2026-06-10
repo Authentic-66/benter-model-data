@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS picks (
     pp_power        REAL,
     win_prob        REAL,
     ev_ratio        REAL,
+    kelly_bet       REAL,
     trainer_name    TEXT,
     trainer_exempt  INTEGER DEFAULT 0,
     filtered_reason TEXT,
@@ -101,7 +102,7 @@ CREATE INDEX IF NOT EXISTS idx_roi_race_id      ON roi_entries(race_id);
 def ensure_prob_columns(conn):
     """Add Phase 6 probability columns to an existing picks table."""
     existing = {row[1] for row in conn.execute("PRAGMA table_info(picks)")}
-    for col in ('win_prob', 'ev_ratio'):
+    for col in ('win_prob', 'ev_ratio', 'kelly_bet'):
         if col not in existing:
             conn.execute(f"ALTER TABLE picks ADD COLUMN {col} REAL")
             print(f"  schema: added picks.{col}")
@@ -341,11 +342,11 @@ def import_picks(conn):
             if cur.rowcount:
                 n_picks += 1
             elif win_prob is not None:
-                # Pick already imported before its file was annotated — backfill probs
+                # Pick imported before its file was annotated (or re-annotated
+                # after a model fix) — sync probs from the file
                 cur.execute(
                     "UPDATE picks SET win_prob=?, ev_ratio=?"
-                    " WHERE track=? AND race_date=? AND race_num=? AND horse_name=?"
-                    " AND win_prob IS NULL",
+                    " WHERE track=? AND race_date=? AND race_num=? AND horse_name=?",
                     (win_prob, ev_ratio, p_track, date_str, p_race, p_horse)
                 )
 
