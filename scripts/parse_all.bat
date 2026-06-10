@@ -73,13 +73,13 @@ for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Gulfstream Park\gp-pps-files\
     goto :gp_run
 )
 echo   No PP file found - skipping
-goto :evd_section
+goto :sar_section
 
 :gp_run
 for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Gulfstream Park\gp-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
 if not "%FILEDATE%"=="%TODAY%" (
     echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping GP
-    goto :evd_section
+    goto :sar_section
 )
 echo   File: %PDF%
 echo.
@@ -87,6 +87,36 @@ set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_GP_%TODAY%.txt"
 py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Gulfstream Park\gp-pps-files\%PDF%" GP > "%LOGFILE%"
 type "%LOGFILE%"
 echo   Full card logged: handicap-logs\HANDICAP_GP_%TODAY%.txt
+
+:: ── SARATOGA (SAR) ───────────────────────────────────────────────────────
+:sar_section
+echo.
+echo ========================================================================
+echo   SARATOGA (SAR)
+echo ========================================================================
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%BASE%\Saratoga\sar-pps-files\sar*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :sar_run
+)
+echo   No PP file found - skipping
+goto :evd_section
+
+:sar_run
+for /f %%d in ('powershell -NoProfile -Command "(Get-Item '%BASE%\Saratoga\sar-pps-files\%PDF%').LastWriteTime.ToString('yyyyMMdd')"') do set "FILEDATE=%%d"
+if not "%FILEDATE%"=="%TODAY%" (
+    echo   File date [%FILEDATE%] does not match today [%TODAY%] - skipping SAR
+    goto :evd_section
+)
+echo   File: %PDF%
+echo.
+set "LOGFILE=%SCRIPTS%handicap-logs\HANDICAP_SAR_%TODAY%.txt"
+if exist "%LOGFILE%" (
+    echo   Handicap log already exists - skipping
+    goto :evd_section
+)
+py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Saratoga\sar-pps-files\%PDF%" SAR > "%LOGFILE%"
+type "%LOGFILE%"
+echo   Full card logged: handicap-logs\HANDICAP_SAR_%TODAY%.txt
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
 :evd_section

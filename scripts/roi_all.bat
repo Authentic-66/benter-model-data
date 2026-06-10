@@ -129,7 +129,7 @@ for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_GP_*.txt" 2^>nul') do
 )
 echo   No picks_GP_*.txt found - run parse_gp.bat first
 echo   No picks_GP_*.txt found - run parse_gp.bat first >> "%LOGFILE%"
-goto :evd_section
+goto :sar_section
 
 :gp_picks_ok
 :: picks_GP_MMDDYYYY.txt — "picks_GP_" prefix is 9 chars
@@ -146,7 +146,7 @@ for /f "delims=" %%f in ('dir /b /a-d "%BASE%\Gulfstream Park\gp-results-2026\GP
 )
 echo   No result PDF found for picks date %PICKSDATE% - skipping GP
 echo   No result PDF found for picks date %PICKSDATE% - skipping GP >> "%LOGFILE%"
-goto :evd_section
+goto :sar_section
 
 :gp_run
 echo   Picks: %GP_PICKS%
@@ -156,6 +156,56 @@ echo   Picks: %GP_PICKS% >> "%LOGFILE%"
 echo   Result: %PDF% >> "%LOGFILE%"
 echo. >> "%LOGFILE%"
 py -u "%SCRIPTS%roi_tracker.py" "%SCRIPTS%%GP_PICKS%" "%BASE%\Gulfstream Park\gp-results-2026\%PDF%" > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :sar_section
+
+:: ── SARATOGA (SAR) ───────────────────────────────────────────────────────
+:sar_section
+echo.
+echo ========================================================================
+echo   SARATOGA (SAR)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   SARATOGA (SAR) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_SAR_*.txt" 2^>nul') do (
+    set "SAR_PICKS=%%f"
+    goto :sar_picks_ok
+)
+echo   No picks_SAR_*.txt found - run parse_sar.bat first
+echo   No picks_SAR_*.txt found - run parse_sar.bat first >> "%LOGFILE%"
+goto :evd_section
+
+:sar_picks_ok
+:: picks_SAR_MMDDYYYY.txt -- "picks_SAR_" prefix is 10 chars
+set "DATERAW=%SAR_PICKS:~10,8%"
+set "MM=%DATERAW:~0,2%"
+set "DD=%DATERAW:~2,2%"
+set "YY=%DATERAW:~6,2%"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
+:: SAR result PDF: SAR[MM][DD][YY]USA.pdf
+set "SAR_DIR=%BASE%\Saratoga\sar-results-2026"
+for /f "delims=" %%f in ('dir /b /a-d "%SAR_DIR%\SAR%MM%%DD%%YY%USA.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :sar_run
+)
+echo   No result PDF found for picks date %PICKSDATE% - skipping SAR
+echo   No result PDF found for picks date %PICKSDATE% - skipping SAR >> "%LOGFILE%"
+goto :evd_section
+
+:sar_run
+echo   Picks: %SAR_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %SAR_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
+set "SAR_PICKS_PATH=%SCRIPTS%%SAR_PICKS%"
+set "SAR_PDF_PATH=%SAR_DIR%\%PDF%"
+py -u "%SCRIPTS%roi_tracker.py" "%SAR_PICKS_PATH%" "%SAR_PDF_PATH%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 goto :evd_section

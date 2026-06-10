@@ -162,6 +162,57 @@ if "!GP_FOUND!"=="0" (
     echo   No result PDF found - skipping >> "!ALLLOG!"
 )
 
+:: ── SARATOGA (SAR) ───────────────────────────────────────────────────────
+echo.
+echo. >> "!ALLLOG!"
+echo ========================================================================
+echo ======================================================================== >> "!ALLLOG!"
+echo   SARATOGA (SAR)
+echo   SARATOGA (SAR) >> "!ALLLOG!"
+echo ========================================================================
+echo ======================================================================== >> "!ALLLOG!"
+set "SAR_FOUND=0"
+dir /b /o-n /a-d "%BASE%\Saratoga\sar-results-2026\*.pdf" > "%TEMP%\sar_pdfs.txt" 2>nul
+for /f "usebackq delims=" %%f in ("%TEMP%\sar_pdfs.txt") do (
+    set "SAR_FOUND=1"
+    set "STEM=%%~nf"
+    rem Format: SAR[MM][DD][YY]USA.pdf  e.g. SAR060626USA.pdf
+    set "DIGITS=!STEM:~3,6!"
+    set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
+    set "FILEDATE=20!YY!!MM!!DD!"
+    echo   [SAR] File    : %%f
+    echo   [SAR] File    : %%f >> "!ALLLOG!"
+    echo   [SAR] FILEDATE: !FILEDATE!
+    echo   [SAR] FILEDATE: !FILEDATE! >> "!ALLLOG!"
+    set "LOGFILE=%SCRIPTS%results-logs\RESULTS_SAR_!FILEDATE!.txt"
+    if exist "!LOGFILE!" (
+        echo   [SAR] STATUS  : LOG EXISTS -- skipping
+        echo   [SAR] STATUS  : LOG EXISTS -- skipping >> "!ALLLOG!"
+        echo   Already processed: %%f - skipping
+        echo   Already processed: %%f - skipping >> "!ALLLOG!"
+    ) else (
+        echo   [SAR] STATUS  : LOG NOT FOUND -- processing
+        echo   [SAR] STATUS  : LOG NOT FOUND -- processing >> "!ALLLOG!"
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results SAR [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!ALLLOG!"
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!ALLLOG!"
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "%BASE%\Saratoga\sar-results-2026\%%f" SAR > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        type "%TEMP%\results_tmp.txt" >> "!ALLLOG!"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_SAR_!FILEDATE!.txt
+        echo   Results logged: results-logs\RESULTS_SAR_!FILEDATE!.txt >> "!ALLLOG!"
+    )
+)
+if "!SAR_FOUND!"=="0" (
+    echo   No result PDF found - skipping
+    echo   No result PDF found - skipping >> "!ALLLOG!"
+)
+
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
 echo.
 echo. >> "!ALLLOG!"
