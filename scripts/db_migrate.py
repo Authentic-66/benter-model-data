@@ -80,6 +80,32 @@ CREATE TABLE IF NOT EXISTS roi_entries (
     pl         REAL,
     note       TEXT
 );
+CREATE TABLE IF NOT EXISTS entries (
+    entry_id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    race_id       INTEGER REFERENCES races(race_id),
+    track         TEXT NOT NULL,
+    race_date     TEXT NOT NULL,
+    race_num      INTEGER NOT NULL,
+    post_pos      INTEGER,
+    horse_name    TEXT NOT NULL,
+    ml_odds       REAL,
+    prime_power   REAL,
+    pp_rank       INTEGER,
+    trainer       TEXT,
+    jockey        TEXT,
+    sire          TEXT,
+    days_off      INTEGER,
+    claim_price   REAL,
+    best_spd      INTEGER,
+    best_spd_turf INTEGER,
+    best_spd_aw   INTEGER,
+    recent_spd    TEXT,
+    improving     INTEGER,
+    jt_zero       INTEGER,
+    signal_types  TEXT,
+    is_pick       INTEGER DEFAULT 0,
+    UNIQUE(track, race_date, race_num, horse_name)
+);
 CREATE TABLE IF NOT EXISTS signals (
     signal_id    INTEGER PRIMARY KEY AUTOINCREMENT,
     track        TEXT NOT NULL,
@@ -96,6 +122,7 @@ CREATE INDEX IF NOT EXISTS idx_races_track_date ON races(track, race_date);
 CREATE INDEX IF NOT EXISTS idx_results_race_id  ON results(race_id);
 CREATE INDEX IF NOT EXISTS idx_picks_race_id    ON picks(race_id);
 CREATE INDEX IF NOT EXISTS idx_roi_race_id      ON roi_entries(race_id);
+CREATE INDEX IF NOT EXISTS idx_entries_race_id  ON entries(race_id);
 """
 
 

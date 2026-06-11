@@ -406,10 +406,16 @@ def parse_brisnet(text, track_code='GP'):
                         prime_power = ppm.group(1)
                         pp_rank = ppm.group(2)
 
-                # ML odds: silks line starts with fraction/integer then color word
+                # ML odds: silks line starts with fraction/integer then color word.
+                # Horse header lines ("1 Army Medic (E 7) ...") also start with an
+                # integer + capitalized word — the running-style parens "(E 7)"
+                # distinguish them, so exclude any line containing that pattern.
                 if ml == '?':
-                    ml_m = re.match(r'^(\d+/\d+|\d+)\s+[A-Z][a-z]', line.strip())
-                    if ml_m and 'Own:' not in line and 'Trnr:' not in line and 'Sire' not in line:
+                    stripped = line.strip()
+                    ml_m = re.match(r'^(\d+/\d+|\d+)\s+[A-Z][a-z]', stripped)
+                    if (ml_m and 'Own:' not in line and 'Trnr:' not in line
+                            and 'Sire' not in line
+                            and not re.search(r'\([A-Z/EP]+\s+\d+\)', stripped)):
                         val = ml_m.group(1)
                         if '/' in val or (val.isdigit() and 1 <= int(val) <= 99):
                             ml = val
@@ -763,6 +769,73 @@ def ml_to_float(ml_str):
         return None
 
 
+def write_entries_db(races, track_code, race_date):
+    """Persist every parsed starter (full field, not just picks) to the
+    entries table in benter_model.db. This is the training data for the
+    conditional-logit model — every card parsed without it is lost data.
+    Returns rows written, or None if the DB write failed (non-fatal)."""
+    try:
+        import sqlite3
+        import db_migrate
+
+        conn = sqlite3.connect(Path(__file__).parent / 'benter_model.db')
+        conn.executescript(db_migrate.DDL)
+        tc = track_code.upper()
+        date_str = race_date.isoformat()
+        cur = conn.cursor()
+        n = 0
+        for rn, race in sorted(races.items()):
+            cur.execute(
+                "INSERT OR IGNORE INTO races(track,race_date,race_num,surface,conditions,purse)"
+                " VALUES(?,?,?,?,?,?)",
+                (tc, date_str, rn, race.get('surface') or None,
+                 race.get('conditions') or '', db_migrate._purse(race.get('purse')))
+            )
+            race_id = cur.execute(
+                "SELECT race_id FROM races WHERE track=? AND race_date=? AND race_num=?",
+                (tc, date_str, rn)
+            ).fetchone()[0]
+
+            for h in race['horses']:
+                try:
+                    claim = float(h['claim'].replace(',', '')) if h['claim'] else None
+                except (ValueError, AttributeError):
+                    claim = None
+                cur.execute(
+                    "INSERT OR REPLACE INTO entries"
+                    "(race_id,track,race_date,race_num,post_pos,horse_name,"
+                    "ml_odds,prime_power,pp_rank,trainer,jockey,sire,"
+                    "days_off,claim_price,best_spd,best_spd_turf,best_spd_aw,"
+                    "recent_spd,improving,jt_zero,signal_types,is_pick)"
+                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (race_id, tc, date_str, rn, h['pp'],
+                     h['name'].replace(' ', ''),
+                     ml_to_float(h['ml']),
+                     float(h['prime_power']) if h['prime_power'] != '?' else None,
+                     int(h['pp_rank']) if h['pp_rank'] != '?' else None,
+                     h['trainer'] if h['trainer'] != '?' else None,
+                     h['jockey'] if h['jockey'] != '?' else None,
+                     h['sire'] if h['sire'] != '?' else None,
+                     h['days_off'] or None,
+                     claim,
+                     h.get('best_spd'),
+                     h.get('best_spd_turf'),
+                     h.get('best_spd_aw'),
+                     ','.join(str(s) for s in h.get('recent_spd', [])) or None,
+                     int(bool(h.get('improving'))),
+                     int(bool(h.get('jt_zero'))),
+                     ','.join(s[0] for s in h['signals']) or None,
+                     int(is_strong_pick(h)))
+                )
+                n += 1
+        conn.commit()
+        conn.close()
+        return n
+    except Exception as e:
+        print(f"WARNING: entries DB write failed — {e}")
+        return None
+
+
 def write_picks_file(all_picks, track_code, filepath):
     """Write picks_TRACK_DATE.txt next to this script for roi_tracker.py."""
     tc = track_code.upper()
@@ -816,6 +889,11 @@ if __name__ == '__main__':
     total = sum(len(r['horses']) for r in races.values())
     print(f"Found {len(races)} races, {total} horses\n")
     all_picks = print_card(races, track_names.get(track, track), 'Today', 'Fast', track_code=track)
+
+    n_entries = write_entries_db(races, track, race_date or today)
+    if n_entries:
+        print(f"full-field entries → DB ({n_entries} horses)")
+
     if all_picks:
         out = write_picks_file(all_picks, track, filepath)
         print(f"picks file → {out.name}")

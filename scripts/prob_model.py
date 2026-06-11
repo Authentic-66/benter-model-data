@@ -1,8 +1,14 @@
-"""Phase 6: logistic regression win-probability model.
+"""Phase 6: win-probability models.
 
-Trains on historical picks joined to results in benter_model.db,
-evaluates with cross-validation, and saves the fitted pipeline to
-benter_model_prob.pkl for use by prob_predict.py.
+Part 1 — picks-level logistic regression: trains on historical picks
+joined to results, evaluates with cross-validation, and saves the fitted
+pipeline to benter_model_prob.pkl for use by prob_predict.py.
+
+Part 2 — conditional logit (Benter-style): trains on FULL FIELDS from the
+entries table joined to results. Win probability for horse i in race r is
+softmax(beta . x_i) over every starter in r, fitted by maximum likelihood
+with within-race centering of numeric features. Saved to
+benter_model_cl.pkl.
 """
 
 import os
@@ -15,6 +21,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from scipy.optimize import minimize
 from sklearn.calibration import calibration_curve
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
@@ -27,7 +34,9 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(SCRIPT_DIR, "benter_model.db")
 MODEL_PATH = os.path.join(SCRIPT_DIR, "benter_model_prob.pkl")
+CL_MODEL_PATH = os.path.join(SCRIPT_DIR, "benter_model_cl.pkl")
 CALIBRATION_PLOT_PATH = os.path.join(SCRIPT_DIR, "calibration_plot.png")
+CL_CALIBRATION_PLOT_PATH = os.path.join(SCRIPT_DIR, "calibration_plot_cl.png")
 
 NUMERIC_FEATURES = ["ml_odds", "pp_power"]
 CATEGORICAL_FEATURES = ["signal_type", "track", "surface"]
@@ -103,14 +112,16 @@ def favorite_baseline(df):
     return accuracy_score(sub["win"], pred), len(sub)
 
 
-def save_calibration_plot(y_true, y_prob, path):
+def save_calibration_plot(y_true, y_prob, path,
+                          label="Logistic model (CV)",
+                          title="Calibration: Phase 6 win-probability model"):
     frac_pos, mean_pred = calibration_curve(y_true, y_prob, n_bins=8, strategy="quantile")
     fig, ax = plt.subplots(figsize=(6, 6))
     ax.plot([0, 1], [0, 1], "k--", label="Perfectly calibrated")
-    ax.plot(mean_pred, frac_pos, "o-", label="Logistic model (CV)")
+    ax.plot(mean_pred, frac_pos, "o-", label=label)
     ax.set_xlabel("Mean predicted win probability")
     ax.set_ylabel("Observed win fraction")
-    ax.set_title("Calibration: Phase 6 win-probability model")
+    ax.set_title(title)
     ax.legend()
     ax.grid(alpha=0.3)
     fig.tight_layout()
@@ -118,7 +129,7 @@ def save_calibration_plot(y_true, y_prob, path):
     plt.close(fig)
 
 
-def main():
+def train_picks_model():
     df = load_training_data()
     X = df[NUMERIC_FEATURES + CATEGORICAL_FEATURES]
     y = df["win"]
@@ -208,6 +219,212 @@ def main():
     print("* No days_off, beaten lengths, speed figures, class, distance, jockey/")
     print("  trainer stats - these are in the Brisnet PPs and worth parsing next.")
     print("* All races are Dirt; surface adds nothing until turf tracks are added.")
+
+
+# ════════════════════════════════════════════════════════════════════════
+# Part 2 — conditional logit on full fields (entries ⋈ results)
+# ════════════════════════════════════════════════════════════════════════
+
+CL_FEATURES = ["log_ml", "prime_power_c", "pp_missing", "improving",
+               "jt_zero", "sig_trainer", "sig_sire", "sig_horse", "sig_hotjt"]
+CL_L2 = 1.0
+
+CL_SQL = """
+SELECT
+    e.race_id,
+    e.track,
+    e.race_date,
+    e.race_num,
+    e.horse_name,
+    e.ml_odds,
+    e.prime_power,
+    e.improving,
+    e.jt_zero,
+    e.signal_types,
+    r.finish_pos
+FROM entries e
+JOIN results r ON r.race_id = e.race_id AND r.horse_name = e.horse_name
+WHERE r.finish_pos IS NOT NULL AND e.ml_odds IS NOT NULL AND e.ml_odds > 1.0
+"""
+
+
+def load_cl_data():
+    con = sqlite3.connect(DB_PATH)
+    df = pd.read_sql_query(CL_SQL, con)
+    con.close()
+    df["win"] = (df["finish_pos"] == 1).astype(int)
+    grp = df.groupby("race_id")["win"]
+    keep = grp.transform("sum").eq(1) & grp.transform("size").ge(2)
+    return df[keep].copy()
+
+
+def build_cl_features(df, stds=None):
+    """Adds CL_FEATURES columns in place. Numeric features are centered
+    within each race (a conditional logit is invariant to race-constant
+    shifts, so only relative values carry signal) and scaled by the global
+    std. Pass the training stds when transforming new data at predict
+    time; returns the stds used."""
+    sig = df["signal_types"].fillna("")
+    df["sig_trainer"] = sig.str.contains("TRAINER").astype(float)
+    df["sig_sire"] = sig.str.contains("SIRE").astype(float)
+    df["sig_horse"] = sig.str.contains("HORSE").astype(float)
+    df["sig_hotjt"] = sig.str.contains("HOT_JT").astype(float)
+    df["improving"] = df["improving"].fillna(0).astype(float)
+    df["jt_zero"] = df["jt_zero"].fillna(0).astype(float)
+
+    df["log_ml"] = np.log(1.0 / df["ml_odds"])
+    pp = pd.to_numeric(df["prime_power"], errors="coerce")
+    df["pp_missing"] = pp.isna().astype(float)
+    race_mean = pp.groupby(df["race_id"]).transform("mean")
+    pp_filled = pp.fillna(race_mean).fillna(pp.median())
+
+    df["log_ml"] = df["log_ml"] - df.groupby("race_id")["log_ml"].transform("mean")
+    df["prime_power_c"] = pp_filled - pp_filled.groupby(df["race_id"]).transform("mean")
+
+    if stds is None:
+        stds = {c: float(df[c].std()) or 1.0 for c in ("log_ml", "prime_power_c")}
+    for c, sd in stds.items():
+        df[c] = df[c] / sd
+    return stds
+
+
+def cl_race_arrays(df):
+    """Returns a list of (X, winner_idx, ml_implied_norm) per race."""
+    races = []
+    for _, g in df.groupby("race_id", sort=False):
+        X = g[CL_FEATURES].to_numpy(float)
+        w = int(np.flatnonzero(g["win"].to_numpy())[0])
+        implied = (1.0 / g["ml_odds"]).to_numpy(float)
+        races.append((X, w, implied / implied.sum()))
+    return races
+
+
+def fit_conditional_logit(races, lam=CL_L2):
+    d = races[0][0].shape[1]
+
+    def nll_grad(beta):
+        nll = 0.5 * lam * float(beta @ beta)
+        g = lam * beta.copy()
+        for X, w, _ in races:
+            s = X @ beta
+            s -= s.max()
+            e = np.exp(s)
+            p = e / e.sum()
+            nll -= np.log(max(p[w], 1e-12))
+            g += X.T @ p - X[w]
+        return nll, g
+
+    res = minimize(nll_grad, np.zeros(d), jac=True, method="L-BFGS-B")
+    return res.x
+
+
+def cl_predict(X, beta):
+    s = X @ beta
+    s -= s.max()
+    e = np.exp(s)
+    return e / e.sum()
+
+
+def cl_cross_validate(races, n_folds=5, seed=42):
+    """Race-grouped CV. Returns out-of-fold per-race records and flat
+    (y, p) arrays over all starters for calibration."""
+    rng = np.random.default_rng(seed)
+    order = rng.permutation(len(races))
+    folds = np.array_split(order, n_folds)
+    recs, ys, ps = [], [], []
+    for k in range(n_folds):
+        test_idx = set(folds[k].tolist())
+        train = [races[i] for i in range(len(races)) if i not in test_idx]
+        beta = fit_conditional_logit(train)
+        for i in sorted(test_idx):
+            X, w, ml = races[i]
+            p = cl_predict(X, beta)
+            recs.append({
+                "n": len(p),
+                "p_win_model": p[w],
+                "p_win_ml": ml[w],
+                "hit_model": int(np.argmax(p) == w),
+                "hit_ml": int(np.argmax(ml) == w),
+            })
+            y = np.zeros(len(p))
+            y[w] = 1.0
+            ys.append(y)
+            ps.append(p)
+    return pd.DataFrame(recs), np.concatenate(ys), np.concatenate(ps)
+
+
+def train_conditional_logit():
+    print("\n" + "=" * 64)
+    print("PHASE 6b - CONDITIONAL LOGIT ON FULL FIELDS (entries x results)")
+    print("=" * 64)
+
+    df = load_cl_data()
+    if df.empty or df["race_id"].nunique() < 30:
+        print(f"Not enough full-field races ({df['race_id'].nunique() if not df.empty else 0}) "
+              "- run backfill_entries.py / keep parsing cards.")
+        return
+
+    stds = build_cl_features(df)
+    races = cl_race_arrays(df)
+    n_races, n_starters = len(races), len(df)
+    avg_field = n_starters / n_races
+    print(f"Races: {n_races}   Starters: {n_starters}   Avg field: {avg_field:.1f}")
+    print(f"Tracks: {', '.join(f'{t} {n}' for t, n in df.groupby('track')['race_id'].nunique().items())}")
+    print(f"prime_power present: {(df['pp_missing'] == 0).sum()}/{n_starters}")
+
+    recs, y_flat, p_flat = cl_cross_validate(races)
+    ll_model = -np.log(np.maximum(recs["p_win_model"], 1e-12)).mean()
+    ll_ml = -np.log(np.maximum(recs["p_win_ml"], 1e-12)).mean()
+    ll_uniform = np.log(recs["n"]).mean()
+
+    print("\n--- Cross-validated performance (5-fold, grouped by race) ---")
+    print("Race-level log loss (-ln P(winner), lower is better):")
+    print(f"  Conditional logit:     {ll_model:.4f}")
+    print(f"  ML-implied (public):   {ll_ml:.4f}")
+    print(f"  Uniform (1/n):         {ll_uniform:.4f}")
+    print(f"Top-pick hit rate:       model {recs['hit_model'].mean():.1%}  "
+          f"vs ML favorite {recs['hit_ml'].mean():.1%}  (n={n_races})")
+
+    save_calibration_plot(
+        y_flat, p_flat, CL_CALIBRATION_PLOT_PATH,
+        label="Conditional logit (CV)",
+        title="Calibration: conditional logit, full fields",
+    )
+    print(f"Calibration plot saved -> {CL_CALIBRATION_PLOT_PATH}")
+
+    beta = fit_conditional_logit(races)
+    order = np.argsort(-np.abs(beta))
+    print("\n--- Coefficients (within-race standardized) ---")
+    for i in order:
+        print(f"  {CL_FEATURES[i]:<16s} {beta[i]:+.3f}")
+
+    with open(CL_MODEL_PATH, "wb") as f:
+        pickle.dump(
+            {
+                "beta": beta,
+                "features": CL_FEATURES,
+                "stds": stds,
+                "l2": CL_L2,
+                "n_races": n_races,
+                "cv_race_log_loss": float(ll_model),
+                "cv_race_log_loss_ml": float(ll_ml),
+            },
+            f,
+        )
+    print(f"\nModel saved -> {CL_MODEL_PATH}")
+
+    print("\n--- Notes ---")
+    print("* Probabilities sum to 1 within each race by construction - this is")
+    print("  the Benter formulation (relative strength, not pick-vs-not-pick).")
+    print(f"* log_ml (public ML odds) anchors the model; beating ll_ml={ll_ml:.4f}")
+    print("  means the other factors add information beyond the morning line.")
+    print("* days_off / speed figures are absent from condensed y-format PPs -")
+    print("  full-format PPs would unlock the strongest Benter factors.")
+
+
+def main():
+    train_picks_model()
+    train_conditional_logit()
 
 
 if __name__ == "__main__":
