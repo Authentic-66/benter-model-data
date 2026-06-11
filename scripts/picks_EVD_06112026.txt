@@ -1,0 +1,16 @@
+# Benter Model Picks - EVD 06112026
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO
+EVD 1 Nothin TRAINER WPS 21.0 81.9 David,_Jr._Sam_B 0.006 0.12
+EVD 1 SeraphinaSea TRAINER WPS 7.0 76.4 Gonzalez_Isai_V 0.047 0.33
+EVD 2 HeartPrints TRAINER WPS 11.0 97.1 Breaux_Samuel 0.053 0.58
+EVD 2 ImperialDynasty TRAINER WPS 13.0 91.1 Mojica_Edith_A 0.031 0.40
+EVD 3 Wildcats'sMeow TRAINER WPS 21.0 83.4 Mojica_Edith_A 0.006 0.13
+EVD 4 WarMule TRAINER+HOT_JT WPS 3.5 112.1 Calhoun_W._Bret 0.178 0.62
+EVD 4 MotelPatel TRAINER WPS 13.0 110.8 Cano_Juan_M 0.063 0.81
+EVD 5 GorillaTrek TRAINER+HOT_JT WPS 5.5 114.0 Degeyter,_Jr._Randy 0.142 0.78
+EVD 5 CastleIsland TRAINER WPS 2.8 123.0 Cano_Juan_M 0.371 1.04
+EVD 5 CallMyBanker TRAINER WPS 2.8 131.2 Landry_Allen 0.446 1.25
+EVD 6 Astrologysprotege TRAINER WPS 3.0 123.5 Larrosa_Juan_A 0.368 1.10
+EVD 6 RanchWater TRAINER WPS 11.0 119.0 Cano_Juan_M 0.113 1.24
+EVD 6 PlayMo TRAINER+HOT_JT WPS 3.5 116.1 Landry_Allen 0.201 0.70
+EVD 7 ImmaDeal TRAINER WPS 21.0 111.4 Ward_Ronnie_P 0.017 0.37

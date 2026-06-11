@@ -1,0 +1,24 @@
+# Benter Model Picks - CT 06112026
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO
+CT 1 HolidayCash TRAINER+HOT_JT WPS 1.6 113.3 Brown_Ronney_W 0.253 0.41
+CT 2 Iceteca TRAINER+HOT_JT WPS 4.5 119.4 Shanley_Timothy 0.208 0.93
+CT 2 GranAndrews TRAINER+HOT_JT WPS 7.0 116.8 Shanley_Tyler_S 0.135 0.94
+CT 2 Tetched TRAINER WPS 4.0 114.9 Farrior_Anthony 0.279 1.11
+CT 3 Yolo TRAINER WPS 3.5 112.1 Joy_Kevin_J 0.274 0.96
+CT 3 Lookinforjoybaloo TRAINER WPS 21.0 89.0 Brown_Kelton 0.008 0.17
+CT 4 FiberStrong TRAINER WPS 5.0 104.0 Runco_Jeff_C 0.178 0.89
+CT 5 Lookingforahandout TRAINER WPS 9.0 97.5 Jones,_Jr._Michael_E 0.079 0.71
+CT 6 Sokota TRAINER+HOT_JT WPS 1.6 113.0 Brown_Ronney_W 0.251 0.40
+CT 6 SailorSam TRAINER WPS 4.5 102.8 Joy_Kevin_J 0.183 0.83
+CT 6 HiddenFavor TRAINER+HOT_JT WPS 9.0 102.2 Grams_Timothy_C 0.060 0.54
+CT 6 Apolaustic TRAINER WPS 13.0 94.0 Brown_Kelton 0.037 0.48
+CT 7 MrMahomes TRAINER+HOT_JT WPS 7.0 96.6 McKee_Cynthia_E 0.068 0.47
+CT 7 Blameitonmyroots TRAINER WPS 6.0 97.7 Contreras_Javier 0.126 0.75
+CT 8 Ivyleaguedropout TRAINER+HOT_JT WPS 21.0 107.6 Sigler_Ronald_G 0.010 0.22
+CT 8 KarinaAnna TRAINER WPS 3.0 122.2 Murdock_Stephen 0.376 1.13
+CT 8 Johanna TRAINER WPS 5.5 116.3 Runco_Jeff_C 0.240 1.32
+CT 8 OrangeCanyon TRAINER WPS 2.8 124.7 Runco_Jeff_C 0.407 1.14
+CT 8 PoppyMac TRAINER WPS 13.0 113.8 Sigler_Ronald_G 0.075 0.98
+CT 8 Edy'sFlame TRAINER WPS 11.0 118.3 Farrior_Anthony 0.119 1.31
+CT 9 TheHound TRAINER+HOT_JT WPS 31.0 95.4 Shanley_Mark_A 0.001 0.04
+CT 9 BidOnBlue TRAINER WPS 7.0 106.9 Brown_Keith_A 0.147 1.03
