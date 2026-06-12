@@ -230,7 +230,9 @@ def train_picks_model():
 # Part 2 — conditional logit on full fields (entries ⋈ results)
 # ════════════════════════════════════════════════════════════════════════
 
-CL_FEATURES = ["log_ml", "prime_power_c", "pp_missing", "improving",
+CL_FEATURES = ["log_ml", "prime_power_c", "pp_missing",
+               "days_off_c", "best_spd_c", "spd_missing",
+               "jt_winpct_c", "jt_missing", "improving",
                "jt_zero", "sig_trainer", "sig_sire", "sig_horse", "sig_hotjt"]
 CL_L2 = 1.0
 
@@ -243,6 +245,9 @@ SELECT
     e.horse_name,
     e.ml_odds,
     e.prime_power,
+    e.days_off,
+    e.best_spd,
+    e.jt_winpct,
     e.improving,
     e.jt_zero,
     e.signal_types,
@@ -278,16 +283,27 @@ def build_cl_features(df, stds=None):
     df["jt_zero"] = df["jt_zero"].fillna(0).astype(float)
 
     df["log_ml"] = np.log(1.0 / df["ml_odds"])
-    pp = pd.to_numeric(df["prime_power"], errors="coerce")
-    df["pp_missing"] = pp.isna().astype(float)
-    race_mean = pp.groupby(df["race_id"]).transform("mean")
-    pp_filled = pp.fillna(race_mean).fillna(pp.median())
-
     df["log_ml"] = df["log_ml"] - df.groupby("race_id")["log_ml"].transform("mean")
-    df["prime_power_c"] = pp_filled - pp_filled.groupby(df["race_id"]).transform("mean")
+
+    def center(col, name, missing_name=None):
+        v = pd.to_numeric(df[col], errors="coerce")
+        if missing_name is not None:
+            df[missing_name] = v.isna().astype(float)
+        race_mean = v.groupby(df["race_id"]).transform("mean")
+        filled = v.fillna(race_mean).fillna(v.median())
+        df[name] = (filled - filled.groupby(df["race_id"]).transform("mean")).fillna(0.0)
+
+    center("prime_power", "prime_power_c", "pp_missing")
+    # no separate days_off missing flag: it coincides with spd_missing
+    # (both come from PP race lines, absent only for first-time starters)
+    center("days_off", "days_off_c")
+    center("best_spd", "best_spd_c", "spd_missing")
+    center("jt_winpct", "jt_winpct_c", "jt_missing")
 
     if stds is None:
-        stds = {c: float(df[c].std()) or 1.0 for c in ("log_ml", "prime_power_c")}
+        stds = {c: float(df[c].std()) or 1.0
+                for c in ("log_ml", "prime_power_c", "days_off_c",
+                          "best_spd_c", "jt_winpct_c")}
     for c, sd in stds.items():
         df[c] = df[c] / sd
     return stds
@@ -376,6 +392,8 @@ def train_conditional_logit():
     print(f"Races: {n_races}   Starters: {n_starters}   Avg field: {avg_field:.1f}")
     print(f"Tracks: {', '.join(f'{t} {n}' for t, n in df.groupby('track')['race_id'].nunique().items())}")
     print(f"prime_power present: {(df['pp_missing'] == 0).sum()}/{n_starters}")
+    print(f"best_spd present:    {(df['spd_missing'] == 0).sum()}/{n_starters}")
+    print(f"jt_winpct present:   {(df['jt_missing'] == 0).sum()}/{n_starters}")
 
     recs, y_flat, p_flat = cl_cross_validate(races)
     ll_model = -np.log(np.maximum(recs["p_win_model"], 1e-12)).mean()

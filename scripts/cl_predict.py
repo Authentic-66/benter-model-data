@@ -54,6 +54,9 @@ def rows_from_pp(pp_file, track):
                 "signal_types": ",".join(s[0] for s in h["signals"]) or None,
                 "improving": int(bool(h.get("improving"))),
                 "jt_zero": int(bool(h.get("jt_zero"))),
+                "days_off": h.get("days_off") or None,
+                "best_spd": h.get("best_spd"),
+                "jt_winpct": h.get("jt_winpct"),
             })
     return pd.DataFrame(rows)
 
@@ -64,7 +67,8 @@ def rows_from_db(track, race_date):
     con = sqlite3.connect(DB_PATH)
     df = pd.read_sql_query(
         """SELECT race_num AS race_id, race_num, post_pos AS pp, horse_name,
-                  ml_odds, prime_power, signal_types, improving, jt_zero
+                  ml_odds, prime_power, days_off, best_spd, jt_winpct,
+                  signal_types, improving, jt_zero
            FROM entries WHERE track = ? AND race_date = ?
            ORDER BY race_num, post_pos""",
         con, params=(track.upper(), race_date),
