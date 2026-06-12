@@ -1,0 +1,619 @@
+Parsing C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\Gulfstream Park\gp-pps-files\gpx0612y.pdf for GP...
+Found 9 races, 69 horses
+
+
+============================================================================
+🏇 GULFSTREAM PARK — Today
+   Fast
+============================================================================
+
+────────────────────────────────────────────────────────────────────────────
+RACE 1    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ·  1: Cossatot                      8/1     97.3(4)  Jackson Gary G
+        Sire: Justify                         J: Morelos Jose E
+        Stats: 32 sts 3-5-2 9%
+        Claim: $12,500
+        🎯 [SIRE] ✅ MULTI — National positive
+        ✅ Rail post is winning at 24% clip
+
+      2: Don't Go Astray              10/1     97.4(3)  Collazo Henry
+        Sire: Bullet Gone Astray              J: Pena Pedro
+        Stats: 14 sts 2-3-1 14%
+        Claim: $12,500
+        ✅ Best Dirt Speed is fastest among today's starters
+
+  ·  3: Shoo In                      30/1     84.6(8)  Lawrence Dalton
+        Sire: Cajun Breeze                    J: Figueroa Heriberto
+        Stats: 10 sts 0-2-4 0%
+        Claim: $12,500
+        🎯 [SIRE] ✅ GP FL SIRE — 49W/3yr
+
+  ⭐  4: Baby Bandito                  3/1     96.5(5)  D'Angelo Jose F
+        Sire: Mitole                          J: Reyes Leonel
+        Stats: 273 sts 37-42-28 14%
+        Claim: $12,500
+        🎯 [TRAINER] 🔥 IRON GP #2 — 237W/3yr/22%
+        ✅ Chance to improve while trying Dirt
+        ✅ Drops in class today
+
+  ⭐  5: St Joe Kmac                   4/1           ?  David Carlos A
+        Sire: Neolithic                       J: ?
+        Stats: 190 sts 43-28-20 23%
+        Claim: $12,500
+        🎯 [TRAINER] ⚠️ MONITOR GP — 0W/11picks -- fade
+        🎯 [SIRE] 🔥 GP FL SIRE — 99W/3yr — Abreu spe
+        ⚠️  RULE: DUAL ENTRY = back the LONGER price horse.
+        ✅ 17% Sire wins with 1st time Starters
+
+      6: Cousin Vinny                 20/1     87.0(7)  Morzan Javier E
+        Sire: Winchill                        J: Rodriguez Ronaldo
+        Stats: 12 sts 0-0-3 0%
+        Claim: $12,500
+        ✅ Shorter distance offers hope for improvement
+        ✅ Sharp 3F workout (Jun-07)
+        ❌ 07Jun GP 3f ft :34ª B1/33
+
+  ⭐  7: Mannerism                     6/1     97.6(2)  Perez Carlos L
+        Sire: Bucchero                        J: Perez Edgar
+        Stats: 36 sts 1-2-8 3%
+        Claim: $12,500
+        🎯 [TRAINER] ⚠️ MONITOR GP — 0W/11picks -- fade
+        🎯 [SIRE] 🔥 GP FL SIRE — 104W/3yr
+        ✅ 21% trainer: Blinkers off
+        ✅ May improve at the shorter distance
+        ❌ 07Jun GP 3f ft :34ª B1/33
+
+  ⭐  8: Baby Rasta                    9/5    110.9(1)  D'Angelo Jose F
+        Sire: Flameaway                       J: ?
+        Stats: 273 sts 37-42-28 14%
+        Claim: $12,500
+        🎯 [TRAINER] 🔥 IRON GP #2 — 237W/3yr/22%
+        ✅ Highest last race speed rating
+        ✅ 17% trainer: 2nd off layoff
+
+      9: Mr Weston                    15/1     90.5(6)  Sierra Ruben
+        Sire: Bellavia                        J: Rengifo Wladimir
+        Stats: 69 sts 6-7-11 9%
+        Claim: $12,500
+        ✅ Chance to improve while trying Dirt
+        ✅ May improve with Blinkers added today
+
+  ★ MODEL PICKS R1:
+    PP 5: St Joe Kmac                 (  4/1)  ⚠️ MONITOR GP + 🔥 GP FL SIRE
+    PP 7: Mannerism                   (  6/1)  ⚠️ MONITOR GP + 🔥 GP FL SIRE
+    PP 4: Baby Bandito                (  3/1)  🔥 IRON GP #2
+    PP 8: Baby Rasta                  (  9/5)  🔥 IRON GP #2
+
+────────────────────────────────────────────────────────────────────────────
+RACE 2    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Pretty Geisha                 9/2    109.3(4)  Arscott Garrett W
+        Sire: First Samurai                   J: Perez Luis D
+        Stats: 35 sts 4-3-5 11%
+        Claim: $10,000
+        ✅ Best AW speed is close to the Avg Winning Speed
+        ❌ 24May Pmm 4f ft :48© B1/19 17May Pmm 5f ft 1:00 B1/1 10May Pmm 4f
+
+      2: Duchess Eleanor              10/1    108.6(5)  Bennett Gerald S
+        Sire: Kantharos                       J: Gonzalez Edwin
+        Stats: 10 sts 0-0-1 0%
+        Claim: $12,500
+        ✅ Drops in class today
+        ❌ 24May Pmm 4f ft :48© B1/19 17May Pmm 5f ft 1:00 B1/1 10May Pmm 4f
+
+  ·  3: Imperia Blue                  5/2    113.8(2)  Sano Antonio
+        Sire: Audible                         J: Rios Jesus M
+        Stats: 202 sts 22-24-30 11%
+        Claim: $12,500
+        🎯 [TRAINER] ✅ OVR GP — 99W/$12avg — bet 5/1+
+        ✅ Drops in class today
+        ✅ Best AW speed is close to the Avg Winning Speed
+        ❌ 02May GP 5f ft 1:01¨ B1/14
+
+  ·  4: Starship Vengeance           10/1    111.1(3)  Hurtak Daniel C
+        Sire: The Big Beast                   J: Morelos Jose E
+        Stats: 104 sts 10-16-13 10%
+        Claim: $12,500
+        🎯 [SIRE] 🔥 GP FL SIRE — 73W/3yr
+        ❌ 02May GP 5f ft 1:01¨ B1/14
+
+      5: Aerialist                     3/1    116.2(1)  Reynolds Patrick L
+        Sire: Daredevil                       J: Husbands Micah J
+        Stats: 12 sts 1-1-2 8%
+        Claim: $12,500
+        ✅ High % Jockey
+        ✅ Highest last race speed rating
+        ❌ 05Apr Pmm ˜ (d) 3f fm :37 B1/6 08Mar Pmm ˜ (d) 4f fm :49ª B20/54 
+
+      6: American Popstar              8/5    108.5(6)  Baxter Georgina
+        Sire: American Pharoah                J: Ferrer Jose C
+        Stats: 20 sts 3-0-3 15%
+        Claim: $12,500
+        ✅ Drops in class today
+        ✅ Best AW speed is fastest among today's starters
+
+  ⚪ No primary model signals
+
+────────────────────────────────────────────────────────────────────────────
+RACE 3    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Bernie Rules                 20/1     96.7(7)  Smith Robert G
+        Sire: Three Rules                     J: Leon Jose A
+        Stats: 2 sts 0-0-0 0%
+        Claim: $12,500
+        ✅ Chance to improve while trying Dirt
+        ✅ 21% trainer: 46-90daysAway
+
+  ·  2: Soda                          7/2    105.8(3)  Moubarak Tareq
+        Sire: Rushie                          J: Herrera Diego A
+        Stats: 90 sts 9-12-17 10%
+        Claim: $12,500
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Switches to a high % jockey
+        ✅ 43% trainer: Btn favorite
+
+      3: Lioness Lillian              10/1    102.8(4)  Ubide Max
+        Sire: Dak Attack                      J: Torres Raymond
+        Stats: 4 sts 1-1-0 25%
+        Claim: $12,500
+        ✅ Ran 2nd in last race
+
+  ·  4: Nipsey                        4/1     99.6(6)  Negrete Javier
+        Sire: Khozan                          J: Fuenmayor Luis
+        Stats: 41 sts 1-3-4 2%
+        ⏰ 224 days off
+        Claim: $12,500
+        🎯 [SIRE] 🔥 MULTI — 106W/3yr — fires multiple circuits
+        ✅ Figures to improve while returning to Dirt
+        ✅ Best Dirt speed is close to the Avg Winning Speed
+
+      5: Trill                         3/1    108.5(2)  Smullen Heather
+        Sire: Audible                         J: Perez Edgar
+        Stats: 140 sts 12-17-30 9%
+        Claim: $12,500
+        ✅ Highest last race speed rating
+        ✅ Finished 3rd vs similar in last race
+
+      6: Jessica's Dream              12/1    101.7(5)  Davey Kathryn
+        Sire: Jess's Dream                    J: Rodriguez Ronaldo
+        Stats: 17 sts 0-1-4 0%
+        Claim: $12,500
+
+  ·  7: Sister Slew                   8/5    115.8(1)  Biancone Patrick L
+        Sire: Awesome Slew                    J: Ocasio Jonathan
+        Stats: 72 sts 14-14-11 19%
+        Claim: $12,500
+        🎯 [SIRE] 🔥 GP FL SIRE — 61W/3yr
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (5 2-0-0)
+        ✅ High % trainer
+        ✅ Drops in class today
+
+  ⚪ No primary model signals
+
+────────────────────────────────────────────────────────────────────────────
+RACE 4    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Korrongo                      6/1    115.7(3)  Reynolds Patrick L
+        Sire: Lord Nelson                     J: Henry Wesley
+        Stats: 12 sts 1-1-2 8%
+        ⏰ 61 days off
+        Claim: $17,500
+        ✅ Drops in class today
+        ✅ 28% trainer: Btn favorite
+        ❌ 03Apr Pmm 4f ft :47ª B1/61 15Mar Pmm ˜ (d) 4f fm :49 B19/46 01Ma
+
+  ⭐  2: War Warrior                   2/1    119.1(2)  Casse Mark E
+        Sire: War of Will                     J: Gonzalez Edwin
+        Stats: 281 sts 44-38-30 16%
+        ⏰ 99 days off
+        Claim: $17,500
+        🎯 [TRAINER] 🔥 IRON GP — 138W/3yr/19% — public overplays, wait 5/1+
+        ✅ Highest last race speed rating
+        ✅ 22% trainer: Mdn win L/R
+        ❌ 03Apr Pmm 4f ft :47ª B1/61 15Mar Pmm ˜ (d) 4f fm :49 B19/46 01Ma
+
+      3: Noahs Pride                  10/1    108.8(6)  Arias Juan D
+        Sire: Knicks Go                       J: Boraco David
+        Stats: 14 sts 1-2-1 7%
+        Claim: $17,500
+        ✅ Early speed running style helps chances
+        ❌ 24May GP 3f ft :34« B1/5
+
+  ·  4: Rockingham Joe                5/2    114.9(4)  Antonucci Jena M
+        Sire: Adios Charlie                   J: Morelos Jose E
+        Stats: 49 sts 5-8-9 10%
+        ⏰ 61 days off
+        Claim: $17,500
+        🎯 [SIRE] 🔥 GP FL SIRE — 81W/3yr
+        ✅ Drops in class today
+        ✅ Finished 3rd vs tougher in last race
+        ❌ 24May GP 3f ft :34« B1/5
+
+      5: Value Inthe Clouds           12/1    111.6(5)  Collazo Henry
+        Sire: Long On Value                   J: Reyes Leonel
+        Stats: 14 sts 2-3-1 14%
+        Claim: $17,500
+        ❌ 24Aug'25 D
+
+  ⭐  6: Velociraptor                  9/5    120.3(1)  Casse Mark E
+        Sire: Accelerate                      J: Herrera Diego A
+        Stats: 281 sts 44-38-30 16%
+        ⏰ 61 days off
+        Claim: $17,500
+        🎯 [TRAINER] 🔥 IRON GP — 138W/3yr/19% — public overplays, wait 5/1+
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ High % Jockey
+        ✅ Drops in class today
+
+  ★ MODEL PICKS R4:
+    PP 6: Velociraptor                (  9/5)  🔥 IRON GP  🔥 TRAINER+HOT_JT
+    PP 2: War Warrior                 (  2/1)  🔥 IRON GP
+
+────────────────────────────────────────────────────────────────────────────
+RACE 5    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Nina's Last Gift              4/1    120.8(3)  Ubide Max
+        Sire: First Dude                      J: Reyes Leonel
+        Stats: 4 sts 1-1-0 25%
+        ✅ 50% trainer: Turf to AW
+        ✅ Best AW speed is faster than the Avg Winning Speed
+
+  ·  2: Brat Girl                    10/1    114.6(7)  Smullen Heather
+        Sire: Neolithic                       J: Figueroa Heriberto
+        Stats: 140 sts 12-17-30 9%
+        🎯 [SIRE] 🔥 GP FL SIRE — 99W/3yr — Abreu spe
+
+      3: Halfin                       30/1   110.0(10)  Smullen Heather
+        Sire: Flatter                         J: Fuenmayor Luis
+        Stats: 140 sts 12-17-30 9%
+
+      4: Starship Elation             20/1    111.3(9)  Mongeon Kathy P
+        Sire: Lookin At Lucky                 J: Juarez Nik
+        Stats: 26 sts 1-2-2 4%
+
+      5: Logistics                     7/2    121.7(2)  Puckett Andrea L
+        Sire: Liam's Map                      J: Husbands Micah J
+        Stats: 31 sts 5-2-7 16%
+        ✅ Switches to a high % jockey
+        ✅ Highest last race speed rating (tie)
+
+  ·  6: Role Play                     5/1    115.6(5)  Chapman Beau J
+        Sire: Uncle Chuck                     J: Vasquez Miguel A
+        Stats: 64 sts 13-7-14 20%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (5 2-0-1)
+        ✅ High % trainer
+        ✅ 28% trainer: Turf to AW
+        ❌ 17Apr Pm
+
+  ·  7: Shes Blue N Orange           15/1    114.4(8)  Biancone Patrick L
+        Sire: Win Win Win                     J: Ocasio Jonathan
+        Stats: 72 sts 14-14-11 19%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (5 2-0-0)
+        ✅ High % trainer
+        ✅ Won last race (GP 05/03 8.32f All Weather ft fMd25000)
+        ❌ 17Apr Pm
+
+  ⭐  8: Iliana                        8/1    117.8(4)  Abreu Fernando
+        Sire: Tiz the Law                     J: Perez Edgar
+        Stats: 81 sts 11-15-11 14%
+        Claim: $35,000
+        🎯 [TRAINER] 🔥 TURF GP — Turf specialist/Neolithic spe
+        ✅ Ran 2nd vs similar (on Turf) in last race
+        ✅ May improve with Blinkers added today
+
+  ⭐  9: No Other Like You             5/2    122.7(1)  Fawkes David
+        Sire: Tiz the Law                     J: Herrera Diego A
+        Stats: 114 sts 26-13-11 23%
+        🎯 [TRAINER] 🔥 IRON GP — 102W/3yr
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ⚠️  RULE: DUAL ENTRY = back the LONGER price horse.
+        ✅ High % trainer
+        ✅ Highest last race speed rating (tie)
+
+     10: Chilling Factor              12/1    115.6(6)  Ramos Ben
+        Sire: The Factor                      J: Morelos Jose E
+        Stats: 3 sts 0-0-0 0%
+        ✅ Highest last race speed rating (tie)
+
+  ★ MODEL PICKS R5:
+    PP 9: No Other Like You           (  5/2)  🔥 IRON GP  🔥 TRAINER+HOT_JT
+    PP 8: Iliana                      (  8/1)  🔥 TURF GP
+
+────────────────────────────────────────────────────────────────────────────
+RACE 6    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ·  1: Hello Poochy Lou              3/1    120.1(1)  Miller Herbert
+        Sire: Mo Town                         J: Herrera Diego A
+        Stats: 54 sts 3-11-12 6%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Switches to a high % jockey
+        ✅ Eligible to improve in 2nd start since layoff
+        ❌ 16May GP 3f ft :35« Bg1/28 09May GP 3f ft :36¨ B9/32
+
+  ⭐  2: Street Play                   6/1     92.0(5)  Sweezey J. Kent
+        Sire: Into Mischief                   J: Morelos Jose E
+        Stats: 147 sts 19-25-15 13%
+        🎯 [TRAINER] ✅ POS GP — Overlay/Girvin spe
+        🎯 [SIRE] ✅ MULTI — 64W/3yr GP + national
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (7 3-2-0)
+        ✅ 37% trainer: Dirt to AW
+        ✅ Hot Trainer in last 14 days (7 3-2-0)
+        ❌ 16May GP 3f ft :35« Bg1/28 09May GP 3f ft :36¨ B9/32
+
+      3: Bodacious Queen               5/2    116.5(2)  Moubarak Tareq
+        Sire: Munnings                        J: Rojas Renzo
+        Stats: 90 sts 9-12-17 10%
+        ✅ Finished 3rd vs similar in last race
+        ✅ Early speed running style helps chances
+        ❌ 03May Pmm 4f ft
+
+  ·  4: Lady Summer                  15/1           ?  Lawrence Dalton
+        Sire: Curlin's Honor                  J: Figueroa Heriberto
+        Stats: 10 sts 0-2-4 0%
+        🎯 [SIRE] 🔥 6-TRACK — Curlin+Casse GP = iron combo
+        ✅ Dam has 1 winner from 1 starter
+        ✅ Breeding suits today's sprint distance
+
+  ·  5: Softly Dreaming               6/1    110.4(4)  McKathan Kevin
+        Sire: Girvin                          J: Rios Jesus M
+        Stats: 8 sts 0-1-2 0%
+        🎯 [SIRE] 🔥 3-TRACK — GP(80)+CT+EVD wins
+        ✅ Highest last race speed rating
+        ✅ 25% trainer: Turf to AW
+
+  ⭐  6: Modern Beauty                 2/1    115.6(3)  Barboza, Jr. Victor
+        Sire: Modernist                       J: Perez Edgar
+        🎯 [TRAINER] 🔥 IRON GP — 150W/3yr
+        ⚠️  RULE: DUAL ENTRY = board both.
+        ✅ High % trainer
+        ✅ Ran 2nd vs similar (on Dirt) in only start
+
+      7: Nova's Time                  15/1           ?  Ramos Ben
+        Sire: Funtastic                       J: Reyes Leonel
+        Stats: 3 sts 0-0-0 0%
+        ❌ 25Jun'25 Oec 4f ft :49¨ B1/7 10May'25 Oec 3f ft :39 B3/3 03May'25
+
+  ★ MODEL PICKS R6:
+    PP 2: Street Play                 (  6/1)  ✅ POS GP + ✅ MULTI  🔥 TRAINER+HOT_JT
+    PP 6: Modern Beauty               (  2/1)  🔥 IRON GP
+
+────────────────────────────────────────────────────────────────────────────
+RACE 7    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Dime Papi                    15/1    113.2(3)  Garcia, Jr. Pedro
+        Sire: The Factor                      J: Mejias Kleiner A
+        Stats: 23 sts 3-4-2 13%
+        Claim: $8,000
+        ✅ May improve while returning to a route
+
+      2: Manhattan Boy                20/1    112.0(5)  Mongeon Kathy P
+        Sire: Jess's Dream                    J: Boraco David
+        Stats: 26 sts 1-2-2 4%
+        Claim: $8,000
+        ✅ Early speed running style helps chances
+        ❌ 28Jan GP 5f ft 1:02«
+
+      4: Bold N Breezy                30/1    103.1(7)  Passley Mark
+        Sire: Gunnevera                       J: Perez Edgar
+        Stats: 22 sts 1-1-3 5%
+        Claim: $8,000
+        ❌ 11May GP 4f ft :47ª B1/5 25Apr Pmm 4f ft :49« B24/50 28Mar Pmm 4f
+
+  ·  5: Song So Sweet                 5/2    112.2(4)  McKanas Leon J
+        Sire: Sweetontheladies                J: Herrera Diego A
+        Stats: 41 sts 2-5-4 5%
+        Claim: $8,000
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Switches to a high % jockey
+        ✅ Highest last race speed rating
+
+      6: Blue Slide Park               6/1    114.1(2)  Garcia, Jr. Pedro
+        Sire: Blame                           J: Pena Pedro
+        Stats: 23 sts 3-4-2 13%
+        Claim: $8,000
+        ✅ May improve while returning to a route
+
+      7: Other Level                   4/1    111.1(6)  Cornejo Marcial
+        Sire: Gunnevera                       J: Vasquez Miguel A
+        Stats: 23 sts 2-7-1 9%
+        Claim: $8,000
+        ✅ Won last race (GP 05/17 8f Dirt gd Clm8000n2lc)
+
+  ⭐  8: Bird Wildcat                 10/1     98.3(9)  Crichton Rohan G
+        Sire: Noble Bird                      J: Thomas Anthony
+        Stats: 103 sts 28-10-11 27%
+        ⏰ 258 days off
+        Claim: $8,000
+        🎯 [TRAINER] 🔥 IRON GP — 110W/Jan-Apr best
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (2 2-0-0)
+        ✅ High % trainer
+        ✅ Best Dirt Speed is fastest among today's starters
+
+      9: Orb Alpha                    20/1    102.4(8)  Lizardi Amparo E
+        Sire: Orb                             J: Rojas Renzo
+        Stats: 17 sts 1-0-0 6%
+        ⏰ 140 days off
+        Claim: $8,000
+        ✅ 25% trainer: 90+ days away
+
+  ★ MODEL PICKS R7:
+    PP 8: Bird Wildcat                ( 10/1)  🔥 IRON GP  🔥 TRAINER+HOT_JT
+
+────────────────────────────────────────────────────────────────────────────
+RACE 8    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  2: Private Thoughts              2/1    132.8(1)  Spatz Ronald B
+        Sire: Neolithic                       J: Reyes Leonel
+        Stats: 80 sts 7-18-14 9%
+        🎯 [TRAINER] ✅ POS GP — Winter specialist
+        🎯 [SIRE] 🔥 GP FL SIRE — 99W/3yr — Abreu spe
+        🎯 [HORSE] 🔥 GP IRON — 7W Spatz
+        ✅ 20% trainer: Btn favorite
+
+      3: Indecisiveness                9/2    127.2(3)  Sierra Ruben
+        Sire: Decisive Moment                 J: Rios Jesus M
+        Stats: 69 sts 6-7-11 9%
+        ✅ Highest last race speed rating
+        ✅ Drops in class today
+        ❌ 23Jan GP 5f ft 1:00© B1/10 27Dec'25 GP 4f ft :48© B17/82 20Dec'25
+
+  ·  4: Brawn                        10/1    123.1(6)  Sierra Ruben
+        Sire: Neolithic                       J: Rengifo Wladimir
+        Stats: 69 sts 6-7-11 9%
+        🎯 [SIRE] 🔥 GP FL SIRE — 99W/3yr — Abreu spe
+        ✅ 20% trainer: Turf to AW
+        ❌ 23Jan GP 5f ft 1:00© B1/10 27Dec'25 GP 4f ft :48© B17/82 20Dec'25
+
+  ·  5: Bail Us Out                   3/1    130.4(2)  Dibona Bobby S
+        Sire: Lookin At Lucky                 J: Herrera Diego A
+        Stats: 84 sts 13-20-9 15%
+        ⏰ 167 days off
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Switches to a high % jockey
+        ✅ Drops in class today
+
+  ⭐  6: Papa Golf                     5/1    125.8(4)  D'Angelo Jose F
+        Sire: Hard Spun                       J: ?
+        Stats: 273 sts 37-42-28 14%
+        🎯 [TRAINER] 🔥 IRON GP #2 — 237W/3yr/22%
+        ✅ 19% trainer: 46-90daysAway
+        ✅ Won last race (GP 04/25 8.5f Turf fm OC25000n1x)
+
+  ⭐  7: Street Earnings               8/1    124.1(5)  Casse Mark E
+        Sire: Street Boss                     J: Gonzalez Edwin
+        Stats: 281 sts 44-38-30 16%
+        Claim: $62,500
+        🎯 [TRAINER] 🔥 IRON GP — 138W/3yr/19% — public overplays, wait 5/1+
+        ❌ 04Jan Pmm 4f ft :48« B1/57 19Dec'25 Pmm 4f ft :48« B16/57 27Nov'2
+
+  ★ MODEL PICKS R8:
+    PP 2: Private Thoughts            (  2/1)  ✅ POS GP + 🔥 GP FL SIRE + 🔥 GP IRON
+    PP 6: Papa Golf                   (  5/1)  🔥 IRON GP #2
+    PP 7: Street Earnings             (  8/1)  🔥 IRON GP
+
+────────────────────────────────────────────────────────────────────────────
+RACE 9    Dirt  
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Turkish Flame                 8/1    114.8(6)  Hurtak Daniel C
+        Sire: Tathqeef                        J: Husbands Micah J
+        Stats: 104 sts 10-16-13 10%
+        ✅ Switches to a high % jockey
+        ✅ Ran 2nd in last race
+
+  ⭐  2: Little Torch                  8/1    108.0(9)  Catanese III Joseph C
+        Sire: Neolithic                       J: Maragh Rajiv
+        Stats: 74 sts 1-7-17 1%
+        🎯 [TRAINER] 🔥 IRON GP #1 — 405W/3yr/30%
+        🎯 [SIRE] 🔥 GP FL SIRE — 99W/3yr — Abreu spe
+        ⚠️  RULE: DUAL ENTRY = board both.
+        ✅ Finished 3rd (on Turf) in last race
+        ❌ 21May GP 4f ft :47ª B1/4 09May GP 4f ft :47ª B7/73 30Apr GP 4f ft
+
+  ⭐  3: More Applause                20/1    109.7(8)  Catanese III Joseph C
+        Sire: Classic Empire                  J: Vasquez Miguel A
+        Stats: 74 sts 1-7-17 1%
+        ⏰ 68 days off
+        🎯 [TRAINER] 🔥 IRON GP #1 — 405W/3yr/30%
+        ⚠️  RULE: DUAL ENTRY = board both.
+        ✅ Won last race (GP 04/05 8f Turf fm fMd25000)
+        ❌ 21May GP 4f ft :47ª B1/4 09May GP 4f ft :47ª B7/73 30Apr GP 4f ft
+
+  ⭐  4: Lindsay Smiles                5/2    123.1(2)  Orseno Joseph F
+        Sire: Khozan                          J: Bravo Joe
+        Stats: 146 sts 21-27-25 14%
+        🎯 [TRAINER] 🔥 IRON GP #1 — 405W/3yr/30%
+        🎯 [SIRE] 🔥 MULTI — 106W/3yr — fires multiple circuits
+        ⚠️  RULE: DUAL ENTRY = board both.
+        ✅ Highest last race speed rating
+        ✅ 21% trainer: 3rd off layoff
+        ❌ 11May'25 GP 4f ft :46ª B1/17 23Mar'25 GP 4f ft :48« B15/27 17Jan'
+
+  ·  5: My Denysse                    3/1    126.5(1)  Sierra Ruben
+        Sire: Neolithic                       J: Rios Jesus M
+        Stats: 69 sts 6-7-11 9%
+        🎯 [SIRE] 🔥 GP FL SIRE — 99W/3yr — Abreu spe
+        ✅ 20% trainer: Turf to AW
+        ✅ Finished 3rd vs similar (on Turf) in last race
+        ❌ 11May'25 GP 4f ft :46ª B1/17 23Mar'25 GP 4f ft :48« B15/27 17Jan'
+
+  ·  6: Slewty Princess               7/2    122.5(3)  Ramirez Luis M
+        Sire: Awesome Slew                    J: Herrera Diego A
+        Stats: 36 sts 9-2-8 25%
+        🎯 [SIRE] 🔥 GP FL SIRE — 61W/3yr
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Switches to a high% trainer
+        ✅ Switches to a high % jockey
+        ❌ 03Apr GP 4f ft :45« B1/22 07Mar GP 4f ft :46« B3/23 06Feb GP 4f f
+
+      7: Take Dat                     15/1    113.7(7)  Bennett Gerald S
+        Sire: Bal a Bali                      J: Ferrer Jose C
+        Stats: 10 sts 0-0-1 0%
+        ✅ 18% trainer: Allowance
+        ✅ Won last race (TAM 04/26 8f Turf fm fMd25000)
+
+      8: Rogue Runner                 15/1    118.5(5)  Jackson Gary G
+        Sire: Rogueish                        J: Morelos Jose E
+        Stats: 32 sts 3-5-2 9%
+        ❌ 31Dec
+
+      9: Windrush                     30/1   106.1(10)  Ramirez Luis M
+        Sire: Coal Front                      J: Fuenmayor Luis
+        Stats: 36 sts 9-2-8 25%
+        ✅ High % trainer
+        ✅ Best AW speed is fastest among today's starters
+        ❌ 31Dec
+
+     10: La Rodada                     8/1    120.8(4)  Dominguez Huber
+        Sire: Battalion Runner                J: Reyes Leonel
+        Stats: 3 sts 0-1-0 0%
+        ✅ May improve at the shorter distance
+
+  ★ MODEL PICKS R9:
+    PP 2: Little Torch                (  8/1)  🔥 IRON GP #1 + 🔥 GP FL SIRE
+    PP 4: Lindsay Smiles              (  5/2)  🔥 IRON GP #1 + 🔥 MULTI
+    PP 3: More Applause               ( 20/1)  🔥 IRON GP #1
+
+============================================================================
+📊 MODEL SUMMARY — 17 ITM picks across 9 races
+============================================================================
+  R1 PP 4: Baby Bandito                (  3/1)  🔥 IRON GP #2
+  R1 PP 5: St Joe Kmac                 (  4/1)  ⚠️ MONITOR GP | 🔥 GP FL SIRE
+  R1 PP 7: Mannerism                   (  6/1)  ⚠️ MONITOR GP | 🔥 GP FL SIRE
+  R1 PP 8: Baby Rasta                  (  9/5)  🔥 IRON GP #2
+  R4 PP 2: War Warrior                 (  2/1)  🔥 IRON GP
+  R4 PP 6: Velociraptor                (  9/5)  🔥 IRON GP 🔥 TRAINER+HOT_JT
+  R5 PP 8: Iliana                      (  8/1)  🔥 TURF GP
+  R5 PP 9: No Other Like You           (  5/2)  🔥 IRON GP 🔥 TRAINER+HOT_JT
+  R6 PP 2: Street Play                 (  6/1)  ✅ POS GP | ✅ MULTI 🔥 TRAINER+HOT_JT
+  R6 PP 6: Modern Beauty               (  2/1)  🔥 IRON GP
+  R7 PP 8: Bird Wildcat                ( 10/1)  🔥 IRON GP 🔥 TRAINER+HOT_JT
+  R8 PP 2: Private Thoughts            (  2/1)  ✅ POS GP | 🔥 GP FL SIRE | 🔥 GP IRON
+  R8 PP 6: Papa Golf                   (  5/1)  🔥 IRON GP #2
+  R8 PP 7: Street Earnings             (  8/1)  🔥 IRON GP
+  R9 PP 2: Little Torch                (  8/1)  🔥 IRON GP #1 | 🔥 GP FL SIRE
+  R9 PP 3: More Applause               ( 20/1)  🔥 IRON GP #1
+  R9 PP 4: Lindsay Smiles              (  5/2)  🔥 IRON GP #1 | 🔥 MULTI
+============================================================================
+
+full-field entries → DB (69 horses)
+picks file → picks_GP_06122026.txt
+win probabilities added → picks_GP_06122026.txt (cols 9-10)

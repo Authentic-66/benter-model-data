@@ -49,7 +49,8 @@
       "PowerShell(Copy-Item *)",
       "PowerShell(Get-ChildItem -Directory | Select-Object Name; Get-ChildItem \"CharlesTown\\\\ct-pps-files\", \"Evangeline Downs\\\\evd-pps-files\", \"Fairmount Park\\\\fp-pps-files\", \"Gulfstream Park\\\\gp-pps-files\" -File | Group-Object { $_.Directory.Name } | Select-Object Name, Count)",
       "PowerShell(Get-ChildItem -Directory | ForEach-Object Name)",
-      "PowerShell($q = \"SELECT horse_name, ml_odds, win_prob, ev_ratio, kelly_bet FROM picks WHERE track='FP' AND race_date='2026-06-09' AND race_num=1;\"; py -c \"import sqlite3;con=sqlite3.connect\\(r'C:\\\\Users\\\\bornr\\\\OneDrive\\\\Documents\\\\GitHub Files\\\\benter-model-data\\\\scripts\\\\benter_model.db'\\);[print\\(r\\) for r in con.execute\\(\\\\\"$q\\\\\"\\)]\")"
+      "PowerShell($q = \"SELECT horse_name, ml_odds, win_prob, ev_ratio, kelly_bet FROM picks WHERE track='FP' AND race_date='2026-06-09' AND race_num=1;\"; py -c \"import sqlite3;con=sqlite3.connect\\(r'C:\\\\Users\\\\bornr\\\\OneDrive\\\\Documents\\\\GitHub Files\\\\benter-model-data\\\\scripts\\\\benter_model.db'\\);[print\\(r\\) for r in con.execute\\(\\\\\"$q\\\\\"\\)]\")",
+      "PowerShell(h[name]:<22 *)"
     ]
   }
 }

@@ -292,7 +292,34 @@ def extract_speed_figures(block_lines):
     return figures
 
 
-def parse_brisnet(text, track_code='GP'):
+# PP race lines start "DDMonYYTRK" (e.g. '18Apr26CT'); Brisnet spells July 'Jly'
+_PP_LINE_DATE_RE = re.compile(r'^\s*(\d{1,2})([A-Za-z]{3})(\d{2})[A-Za-z]')
+_PP_MONTHS = {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5,
+              'jun': 6, 'jne': 6, 'jul': 7, 'jly': 7, 'aug': 8,
+              'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12}
+
+
+def last_race_date_from_block(block):
+    """Most recent past-race date in a horse's PP block, or None
+    (first-time starters have no PP lines)."""
+    last = None
+    for line in block:
+        m = _PP_LINE_DATE_RE.match(line)
+        if not m:
+            continue
+        mon = _PP_MONTHS.get(m.group(2).lower())
+        if not mon:
+            continue
+        try:
+            d = date(2000 + int(m.group(3)), mon, int(m.group(1)))
+        except ValueError:
+            continue
+        if last is None or d > last:
+            last = d
+    return last
+
+
+def parse_brisnet(text, track_code='GP', race_date=None):
     pages = text.split('\f')
     races = defaultdict(lambda: {'conditions': '', 'purse': '', 'surface': '', 'horses': []})
     current_race = 1
@@ -481,6 +508,13 @@ def parse_brisnet(text, track_code='GP'):
                         a = ang.strip()
                         if len(a) > 4:
                             neg_angles.append(a[:65])
+
+            # ── Days off from the most recent PP race-line date ──────────────
+            # ('N days away' text above is absent from condensed PPs, so this
+            # computed value is the real source)
+            last_race = last_race_date_from_block(block)
+            if race_date and last_race and last_race < race_date:
+                days_off = (race_date - last_race).days
 
             # ── Speed figures from PP lines in block ──────────────────────────
             spd_figs   = extract_speed_figures(block)  # [(figure, surface), ...]
@@ -887,7 +921,7 @@ if __name__ == '__main__':
         print(f"SKIP: {Path(filepath).name} is dated {race_date.strftime('%m/%d/%Y')} — not today ({today.strftime('%m/%d/%Y')}). Skipping.")
         sys.exit(0)
 
-    races = parse_brisnet(text, track)
+    races = parse_brisnet(text, track, race_date or today)
     total = sum(len(r['horses']) for r in races.values())
     print(f"Found {len(races)} races, {total} horses\n")
     all_picks = print_card(races, track_names.get(track, track), 'Today', 'Fast', track_code=track)

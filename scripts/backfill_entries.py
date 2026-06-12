@@ -54,7 +54,7 @@ def main():
                     print(f"  {pdf.name:<18} SKIP - no race date found")
                     n_failed += 1
                     continue
-                races = bp.parse_brisnet(text, tc)
+                races = bp.parse_brisnet(text, tc, race_date)
                 n_horses = sum(len(r["horses"]) for r in races.values())
                 if not n_horses:
                     print(f"  {pdf.name:<18} {race_date}  SKIP - no horses parsed")

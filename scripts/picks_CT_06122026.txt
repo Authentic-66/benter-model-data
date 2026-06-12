@@ -1,0 +1,28 @@
+# Benter Model Picks - CT 06122026
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF
+CT 1 KingUni TRAINER+HOT_JT WPS 5.0 96.3 Brown_Ronney_W 0.127 0.64 43
+CT 1 WalkOnBroadway TRAINER+HOT_JT WPS 13.0 94.1 Brown_Ronney_W 0.034 0.44 14
+CT 2 CreedCalling TRAINER+HOT_JT WPS 5.0 101.1 Grams_Timothy_C 0.149 0.74 343
+CT 3 SmokedPeach TRAINER+HOT_JT WPS 4.0 107.6 Brown_Ronney_W 0.209 0.84 15
+CT 3 Mariette TRAINER WPS 3.5 107.8 Farrior_Anthony 0.244 0.85 15
+CT 3 PeacefulUnion TRAINER+HOT_JT WPS 7.0 104.7 McKee_Cynthia_E 0.125 0.88 14
+CT 4 Paynoworpaylater TRAINER WPS 3.5 ? Brown_Ronney_W 0.140 0.49 ?
+CT 4 GramKline TRAINER WPS 3.0 ? Farrior_Anthony 0.151 0.45 ?
+CT 4 SilverSonde TRAINER+HOT_JT WPS 5.0 ? Grams_Timothy_C 0.102 0.51 ?
+CT 5 RagtimeScribble TRAINER WPS 7.0 110.8 Runco_Jeff_C 0.167 1.17 34
+CT 5 SoulCatcher TRAINER WPS 13.0 111.0 Runco_Jeff_C 0.068 0.89 13
+CT 5 ProspectiveLove TRAINER+HOT_JT WPS 4.5 109.5 Grams_Timothy_C 0.207 0.93 55
+CT 5 Vex TRAINER WPS 3.5 123.1 Joy_Kevin_J 0.366 1.28 19
+CT 6 BeauDutton TRAINER+HOT_JT WPS 4.5 ? McKee_Cynthia_E 0.110 0.50 ?
+CT 6 AudibleStorm TRAINER+HOT_JT WPS 5.5 ? Runco_Jeff_C 0.095 0.52 ?
+CT 6 MoonlightCandy TRAINER WPS 6.0 ? Farrior_Anthony 0.097 0.58 ?
+CT 6 KnightSage TRAINER WPS 13.0 102.3 Grams_Timothy_C 0.050 0.65 14
+CT 7 BigDilemma TRAINER+HOT_JT WPS 16.0 112.4 Shanley_Timothy 0.040 0.64 8
+CT 7 Talklessworkmore TRAINER WPS 2.4 122.4 Farrior_Anthony 0.404 0.97 15
+CT 7 SummerVibes TRAINER WPS 6.0 118.4 Farrior_Anthony 0.241 1.44 41
+CT 8 Honeyquist TRAINER WPS 5.5 124.7 Farrior_Anthony 0.305 1.68 55
+CT 8 MoonlitNotion TRAINER WPS 7.0 120.4 Grams_Timothy_C 0.224 1.57 34
+CT 8 PorkChopPete TRAINER WPS 6.0 121.4 Contreras_Javier 0.262 1.57 34
+CT 8 DuncanIdaho TRAINER WPS 1.6 133.3 Runco_Jeff_C 0.540 0.86 55
+CT 9 CollegevilleQueen TRAINER WPS 11.0 107.6 Joy_Kevin_J 0.083 0.91 29
+CT 9 FlightControl TRAINER+HOT_JT WPS 2.8 115.9 Joy_Kevin_J 0.308 0.86 29
