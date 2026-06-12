@@ -57,6 +57,7 @@ SELECT
     e.days_off,
     e.best_spd,
     e.jt_winpct,
+    e.beaten_lengths,
     e.signal_types,
     e.improving,
     e.jt_zero,

@@ -336,6 +336,57 @@ def extract_speed_figures(block_lines):
     return [races[d] for d in sorted(races, reverse=True)]
 
 
+# Brisnet PP font: superscript digits map to §¨©ª«¬\xad®¯° (verified against
+# jockey weights, e.g. OcasioJ¨©§ = 120) and margin fractions to
+# \x81=½ ‚=¼ ƒ=¾ (verified: winner-margin chain sums match the FIN call).
+_SUP_DIGITS = {'§': 0, '¨': 1, '©': 2, 'ª': 3, '«': 4,
+               '¬': 5, '\xad': 6, '®': 7, '¯': 8, '°': 9}
+_SUP_FRACTIONS = {'\x81': 0.5, '‚': 0.25, 'ƒ': 0.75,   # ½ ¼ ¾
+                  '\xb2': 0.05, '„': 0.1, '\xb3': 0.3}      # nose head neck
+_SUP_CHARS = re.escape(''.join(list(_SUP_DIGITS) + list(_SUP_FRACTIONS)))
+# The FIN call (position + superscript beaten lengths) is the token right
+# before the jockey, who renders as Name + 3 superscript weight digits
+_PP_FIN_RE = re.compile(
+    r'(\d{1,2})([' + _SUP_CHARS + r']*)\s*'
+    r"(?=[A-Z][A-Za-z'.]{2,}[" + re.escape(''.join(_SUP_DIGITS)) + r']{3})'
+)
+
+
+def _sup_to_lengths(sup):
+    digits = ''.join(str(_SUP_DIGITS[c]) for c in sup if c in _SUP_DIGITS)
+    frac = sum(_SUP_FRACTIONS[c] for c in sup if c in _SUP_FRACTIONS)
+    return (int(digits) if digits else 0) + frac
+
+
+def extract_beaten_lengths(block_lines, page_lines=None):
+    """Beaten lengths in the horse's most recent race (0.0 = won, positive
+    = lengths behind the winner), or None when unparseable / first-time
+    starter. Horse blocks come from the page's left-crop text, where PP
+    lines are truncated before the FIN call; pass page_lines so the
+    full-layout copy (same line, longer) can be located by prefix."""
+    races = {}
+    for line in block_lines:
+        d = _pp_line_date(line)
+        if d is None or races.get(d) is not None:
+            continue
+        m = _PP_FIN_RE.search(line)
+        if m is None and page_lines:
+            key = line.strip()
+            if len(key) >= 40:
+                for fl in page_lines:
+                    fls = fl.strip()
+                    if len(fls) > len(key) and fls.startswith(key):
+                        m = _PP_FIN_RE.search(fls)
+                        if m:
+                            break
+        if m is None:
+            races.setdefault(d, None)
+            continue
+        pos = int(m.group(1))
+        races[d] = 0.0 if pos == 1 else _sup_to_lengths(m.group(2))
+    return races[max(races)] if races else None
+
+
 def last_race_date_from_block(block):
     """Most recent past-race date in a horse's PP block, or None
     (first-time starters have no PP lines)."""
@@ -546,6 +597,8 @@ def parse_brisnet(text, track_code='GP', race_date=None):
             if race_date and last_race and last_race < race_date:
                 days_off = (race_date - last_race).days
 
+            beaten_len = extract_beaten_lengths(block, lines)
+
             # ── Speed figures from PP lines in block ──────────────────────────
             spd_figs   = extract_speed_figures(block)  # [(figure, surface), ...]
             recent_spd = [f for f, _ in spd_figs[:5]]
@@ -616,7 +669,7 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'recent_spd': recent_spd, 'best_spd': best_spd,
                 'best_spd_turf': best_spd_turf, 'best_spd_aw': best_spd_aw,
                 'improving': improving, 'jt_zero': jt_zero,
-                'jt_winpct': jt_winpct,
+                'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
             }
 
             if not any(h['name'] == horse for h in races[current_race]['horses']):
@@ -871,8 +924,9 @@ def write_entries_db(races, track_code, race_date):
                     "(race_id,track,race_date,race_num,post_pos,horse_name,"
                     "ml_odds,prime_power,pp_rank,trainer,jockey,sire,"
                     "days_off,claim_price,best_spd,best_spd_turf,best_spd_aw,"
-                    "recent_spd,improving,jt_zero,jt_winpct,signal_types,is_pick)"
-                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
+                    "signal_types,is_pick)"
+                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -890,6 +944,7 @@ def write_entries_db(races, track_code, race_date):
                      int(bool(h.get('improving'))),
                      int(bool(h.get('jt_zero'))),
                      h.get('jt_winpct'),
+                     h.get('beaten_len'),
                      ','.join(s[0] for s in h['signals']) or None,
                      int(is_strong_pick(h)))
                 )
@@ -909,7 +964,7 @@ def write_picks_file(all_picks, track_code, filepath):
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",
-        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT",
+        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT BEATEN_LEN",
     ]
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
         if is_trainer_hotjt(h):
@@ -926,9 +981,10 @@ def write_picks_file(all_picks, track_code, filepath):
         recent     = h.get('recent_spd') or []
         spd_cols   = ' '.join(str(recent[i]) if i < len(recent) else '?' for i in range(3))
         jt_col     = str(h['jt_winpct']) if h.get('jt_winpct') is not None else '?'
+        bl_col     = f"{h['beaten_len']:.2f}" if h.get('beaten_len') is not None else '?'
         # WIN_PROB/EV_RATIO (cols 9-10) are '?' until prob_predict.py --in-place fills them
         lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col} {trainer_col}"
-                     f" ? ? {do_col} {best_col} {spd_cols} {jt_col}")
+                     f" ? ? {do_col} {best_col} {spd_cols} {jt_col} {bl_col}")
 
     out_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return out_path

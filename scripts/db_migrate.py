@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS picks (
     recent_spd_2    INTEGER,
     recent_spd_3    INTEGER,
     jt_winpct       REAL,
+    beaten_lengths  REAL,
     trainer_name    TEXT,
     trainer_exempt  INTEGER DEFAULT 0,
     filtered_reason TEXT,
@@ -110,6 +111,7 @@ CREATE TABLE IF NOT EXISTS entries (
     improving     INTEGER,
     jt_zero       INTEGER,
     jt_winpct     REAL,
+    beaten_lengths REAL,
     signal_types  TEXT,
     is_pick       INTEGER DEFAULT 0,
     UNIQUE(track, race_date, race_num, horse_name)
@@ -141,14 +143,16 @@ def ensure_prob_columns(conn):
                           ('kelly_bet', 'REAL'), ('days_off', 'INTEGER'),
                           ('last_race_date', 'TEXT'), ('best_speed', 'INTEGER'),
                           ('recent_spd_1', 'INTEGER'), ('recent_spd_2', 'INTEGER'),
-                          ('recent_spd_3', 'INTEGER'), ('jt_winpct', 'REAL')):
+                          ('recent_spd_3', 'INTEGER'), ('jt_winpct', 'REAL'),
+                          ('beaten_lengths', 'REAL')):
         if col not in existing:
             conn.execute(f"ALTER TABLE picks ADD COLUMN {col} {col_type}")
             print(f"  schema: added picks.{col}")
     existing_e = {row[1] for row in conn.execute("PRAGMA table_info(entries)")}
-    if 'jt_winpct' not in existing_e:
-        conn.execute("ALTER TABLE entries ADD COLUMN jt_winpct REAL")
-        print("  schema: added entries.jt_winpct")
+    for col in ('jt_winpct', 'beaten_lengths'):
+        if col not in existing_e:
+            conn.execute(f"ALTER TABLE entries ADD COLUMN {col} REAL")
+            print(f"  schema: added entries.{col}")
     conn.commit()
 
 
@@ -209,21 +213,24 @@ def backfill_speed(conn):
     conn.commit()
 
 
-def backfill_jt_winpct(conn):
-    """Fill picks.jt_winpct from entries for the same horse on the same card."""
-    cur = conn.execute(
-        "UPDATE picks SET jt_winpct = ("
-        " SELECT e.jt_winpct FROM entries e"
-        " WHERE e.track=picks.track AND e.race_date=picks.race_date"
-        "   AND e.race_num=picks.race_num AND e.horse_name=picks.horse_name)"
-        " WHERE jt_winpct IS NULL AND EXISTS ("
-        " SELECT 1 FROM entries e"
-        " WHERE e.track=picks.track AND e.race_date=picks.race_date"
-        "   AND e.race_num=picks.race_num AND e.horse_name=picks.horse_name"
-        "   AND e.jt_winpct IS NOT NULL)"
-    )
-    if cur.rowcount:
-        print(f"  backfill: jt_winpct from entries for {cur.rowcount} picks")
+def backfill_entry_columns(conn):
+    """Fill simple picks columns from the matching entries row (same horse,
+    same card). Add (picks_col, entries_col) pairs here as features grow."""
+    for picks_col, entries_col in (('jt_winpct', 'jt_winpct'),
+                                   ('beaten_lengths', 'beaten_lengths')):
+        cur = conn.execute(
+            f"UPDATE picks SET {picks_col} = ("
+            f" SELECT e.{entries_col} FROM entries e"
+            " WHERE e.track=picks.track AND e.race_date=picks.race_date"
+            "   AND e.race_num=picks.race_num AND e.horse_name=picks.horse_name)"
+            f" WHERE {picks_col} IS NULL AND EXISTS ("
+            " SELECT 1 FROM entries e"
+            " WHERE e.track=picks.track AND e.race_date=picks.race_date"
+            "   AND e.race_num=picks.race_num AND e.horse_name=picks.horse_name"
+            f"   AND e.{entries_col} IS NOT NULL)"
+        )
+        if cur.rowcount:
+            print(f"  backfill: {picks_col} from entries for {cur.rowcount} picks")
     conn.commit()
 
 
@@ -452,6 +459,9 @@ def import_picks(conn):
             # Column 16: J/T combo win%
             try:    jt_winpct = float(parts[15]) if len(parts) >= 16 else None
             except: jt_winpct = None
+            # Column 17: beaten lengths in most recent race
+            try:    beaten_len = float(parts[16]) if len(parts) >= 17 else None
+            except: beaten_len = None
 
             cur.execute(
                 "SELECT race_id FROM races WHERE track=? AND race_date=? AND race_num=?",
@@ -464,15 +474,17 @@ def import_picks(conn):
                 "INSERT OR IGNORE INTO picks"
                 "(track,race_date,race_num,race_id,horse_name,signal_type,bets,"
                 "ml_odds,pp_power,win_prob,ev_ratio,days_off,"
-                "best_speed,recent_spd_1,recent_spd_2,recent_spd_3,jt_winpct,trainer_name)"
-                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "best_speed,recent_spd_1,recent_spd_2,recent_spd_3,jt_winpct,"
+                "beaten_lengths,trainer_name)"
+                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (p_track, date_str, p_race, race_id, p_horse, p_signal, bets,
                  ml_odds, pp_power, win_prob, ev_ratio, days_off,
-                 best_speed, rs1, rs2, rs3, jt_winpct, trainer_name)
+                 best_speed, rs1, rs2, rs3, jt_winpct, beaten_len, trainer_name)
             )
             if cur.rowcount:
                 n_picks += 1
-            elif any(v is not None for v in (win_prob, days_off, best_speed, jt_winpct)):
+            elif any(v is not None for v in (win_prob, days_off, best_speed, jt_winpct,
+                                             beaten_len)):
                 # Pick imported before its file was annotated (or re-annotated
                 # after a model fix) — sync optional columns from the file
                 cur.execute(
@@ -482,10 +494,11 @@ def import_picks(conn):
                     " recent_spd_1=COALESCE(?,recent_spd_1),"
                     " recent_spd_2=COALESCE(?,recent_spd_2),"
                     " recent_spd_3=COALESCE(?,recent_spd_3),"
-                    " jt_winpct=COALESCE(?,jt_winpct)"
+                    " jt_winpct=COALESCE(?,jt_winpct),"
+                    " beaten_lengths=COALESCE(?,beaten_lengths)"
                     " WHERE track=? AND race_date=? AND race_num=? AND horse_name=?",
                     (win_prob, ev_ratio, days_off, best_speed, rs1, rs2, rs3, jt_winpct,
-                     p_track, date_str, p_race, p_horse)
+                     beaten_len, p_track, date_str, p_race, p_horse)
                 )
 
     conn.commit()
@@ -655,8 +668,8 @@ def main():
     print("Backfilling speed figures...")
     backfill_speed(conn)
 
-    print("Backfilling jt_winpct...")
-    backfill_jt_winpct(conn)
+    print("Backfilling columns from entries...")
+    backfill_entry_columns(conn)
 
     # Summary
     cur = conn.cursor()

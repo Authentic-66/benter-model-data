@@ -38,7 +38,8 @@ CL_MODEL_PATH = os.path.join(SCRIPT_DIR, "benter_model_cl.pkl")
 CALIBRATION_PLOT_PATH = os.path.join(SCRIPT_DIR, "calibration_plot.png")
 CL_CALIBRATION_PLOT_PATH = os.path.join(SCRIPT_DIR, "calibration_plot_cl.png")
 
-NUMERIC_FEATURES = ["ml_odds", "pp_power", "days_off", "best_speed", "jt_winpct"]
+NUMERIC_FEATURES = ["ml_odds", "pp_power", "days_off", "best_speed", "jt_winpct",
+                    "beaten_lengths"]
 CATEGORICAL_FEATURES = ["signal_type", "track", "surface"]
 
 TRAINING_SQL = """
@@ -51,6 +52,7 @@ SELECT
     p.days_off,
     p.best_speed,
     p.jt_winpct,
+    p.beaten_lengths,
     COALESCE(rc.surface, 'Dirt')             AS surface,
     COALESCE(e.finish_pos, r.finish_pos)     AS finish_pos,
     r.odds                                   AS final_odds,
@@ -147,6 +149,7 @@ def train_picks_model():
     print(f"  days_off present: {df['days_off'].notna().sum()}/{n}")
     print(f"  best_speed present: {df['best_speed'].notna().sum()}/{n}")
     print(f"  jt_winpct present: {df['jt_winpct'].notna().sum()}/{n}")
+    print(f"  beaten_lengths present: {df['beaten_lengths'].notna().sum()}/{n}")
     print("  surface: constant ('Dirt' for every race in DB) - no signal")
 
     pipe = build_pipeline()
@@ -232,7 +235,7 @@ def train_picks_model():
 
 CL_FEATURES = ["log_ml", "prime_power_c", "pp_missing",
                "days_off_c", "best_spd_c", "spd_missing",
-               "jt_winpct_c", "jt_missing", "improving",
+               "jt_winpct_c", "jt_missing", "beaten_c", "improving",
                "jt_zero", "sig_trainer", "sig_sire", "sig_horse", "sig_hotjt"]
 CL_L2 = 1.0
 
@@ -248,6 +251,7 @@ SELECT
     e.days_off,
     e.best_spd,
     e.jt_winpct,
+    e.beaten_lengths,
     e.improving,
     e.jt_zero,
     e.signal_types,
@@ -299,11 +303,17 @@ def build_cl_features(df, stds=None):
     center("days_off", "days_off_c")
     center("best_spd", "best_spd_c", "spd_missing")
     center("jt_winpct", "jt_winpct_c", "jt_missing")
+    # beaten lengths capped at 5: CV ablation showed the close-loss signal
+    # lives under ~5 lengths (the public prices big losses correctly, and
+    # raw values reach 87 for eased horses, swamping the linear term).
+    # No separate missing flag: coincides with spd_missing.
+    df["beaten_capped"] = pd.to_numeric(df["beaten_lengths"], errors="coerce").clip(upper=5)
+    center("beaten_capped", "beaten_c")
 
     if stds is None:
         stds = {c: float(df[c].std()) or 1.0
                 for c in ("log_ml", "prime_power_c", "days_off_c",
-                          "best_spd_c", "jt_winpct_c")}
+                          "best_spd_c", "jt_winpct_c", "beaten_c")}
     for c, sd in stds.items():
         df[c] = df[c] / sd
     return stds
@@ -394,6 +404,7 @@ def train_conditional_logit():
     print(f"prime_power present: {(df['pp_missing'] == 0).sum()}/{n_starters}")
     print(f"best_spd present:    {(df['spd_missing'] == 0).sum()}/{n_starters}")
     print(f"jt_winpct present:   {(df['jt_missing'] == 0).sum()}/{n_starters}")
+    print(f"beaten_len present:  {df['beaten_lengths'].notna().sum()}/{n_starters}")
 
     recs, y_flat, p_flat = cl_cross_validate(races)
     ll_model = -np.log(np.maximum(recs["p_win_model"], 1e-12)).mean()
