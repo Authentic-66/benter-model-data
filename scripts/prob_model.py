@@ -419,7 +419,7 @@ def train_conditional_logit():
     print("  the Benter formulation (relative strength, not pick-vs-not-pick).")
     print(f"* log_ml (public ML odds) anchors the model; beating ll_ml={ll_ml:.4f}")
     print("  means the other factors add information beyond the morning line.")
-    print("* days_off / speed figures are absent from condensed y-format PPs -")
+    print("* speed figures are noisy in condensed y-format PPs -")
     print("  full-format PPs would unlock the strongest Benter factors.")
 
 
