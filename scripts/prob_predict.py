@@ -4,14 +4,15 @@ Usage:
     py prob_predict.py picks_FP_06092026.txt [-o output.txt]
 
 Reads a picks file (TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
-TRAINER [WIN_PROB EV_RATIO DAYS_OFF]) and appends WIN_PROB, EV_RATIO,
-DAYS_OFF, an EV flag, and RANK, writing <input>_prob.txt unless -o is
-given.
+TRAINER [WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3]) and
+appends WIN_PROB, EV_RATIO, an EV flag, and RANK, writing
+<input>_prob.txt unless -o is given.
 
-With --in-place, the picks file itself is rewritten in the 11-column
-format (WIN_PROB EV_RATIO DAYS_OFF as cols 9-11, the format the ROI
-tracker and database ingest). Re-running is safe: existing probability
-columns are replaced, not duplicated, and DAYS_OFF is preserved.
+With --in-place, the picks file itself is rewritten with WIN_PROB and
+EV_RATIO filled in as cols 9-10 (the format the ROI tracker and
+database ingest). Re-running is safe: existing probability columns are
+replaced, not duplicated, and all columns from DAYS_OFF (col 11)
+onward are preserved verbatim.
 
 EV_RATIO = model_prob / ML-implied prob (1.0 = model agrees with public).
 Flags: "+EV" when EV_RATIO > 1.0, "~EV" (soft) when EV_RATIO >= 0.75.
@@ -42,14 +43,16 @@ def parse_picks_file(path):
                 continue
             parts = line.split()
             if len(parts) < 8:
-                raw_lines.append((line, None))
+                raw_lines.append((line, "", None))
                 continue
-            raw_lines.append((" ".join(parts[:8]), len(rows)))
+            # cols 11+ (DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 ...) pass through verbatim
+            raw_lines.append((" ".join(parts[:8]), " ".join(parts[10:]), len(rows)))
             row = dict(zip(COLUMNS, parts[:8]))
             row["days_off"] = parts[10] if len(parts) >= 11 else "?"
+            row["best_speed"] = parts[11] if len(parts) >= 12 else "?"
             rows.append(row)
     df = pd.DataFrame(rows)
-    for col in ("ml_odds", "pp_power", "days_off"):
+    for col in ("ml_odds", "pp_power", "days_off", "best_speed"):
         df[col] = pd.to_numeric(df[col].replace("?", np.nan), errors="coerce")
     return df, raw_lines
 
@@ -98,26 +101,23 @@ def main():
         out_path = args.picks_file
     else:
         out_path = args.output or os.path.splitext(args.picks_file)[0] + "_prob.txt"
-    fmt_base = "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER"
+    fmt_base = ("# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER"
+                " WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3")
     with open(out_path, "w", encoding="utf-8") as f:
-        for line, idx in raw_lines:
+        for line, tail, idx in raw_lines:
             if idx is None:
                 if line.lstrip().startswith("# Format:"):
-                    line = fmt_base + (
-                        " WIN_PROB EV_RATIO DAYS_OFF" if args.in_place
-                        else " WIN_PROB EV_RATIO DAYS_OFF EV RANK"
-                    )
+                    line = fmt_base if args.in_place else fmt_base + " EV RANK"
                 f.write(line + "\n")
             else:
                 r = df.iloc[idx]
                 ratio = f"{r['ev_ratio']:.2f}" if pd.notna(r["ev_ratio"]) else "?"
-                days = f"{int(r['days_off'])}" if pd.notna(r["days_off"]) else "?"
-                if args.in_place:
-                    f.write(f"{line} {r['win_prob']:.3f} {ratio} {days}\n")
-                else:
-                    f.write(
-                        f"{line} {r['win_prob']:.3f} {ratio} {days} {r['ev_flag']} {r['rank']}\n"
-                    )
+                out = f"{line} {r['win_prob']:.3f} {ratio}"
+                if tail:
+                    out += f" {tail}"
+                if not args.in_place:
+                    out += f" {r['ev_flag']} {r['rank']}"
+                f.write(out + "\n")
 
     n_ev = int((df["ev_flag"] == "+EV").sum())
     n_soft = int((df["ev_flag"] == "~EV").sum())

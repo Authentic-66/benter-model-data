@@ -63,6 +63,10 @@ CREATE TABLE IF NOT EXISTS picks (
     kelly_bet       REAL,
     days_off        INTEGER,
     last_race_date  TEXT,
+    best_speed      INTEGER,
+    recent_spd_1    INTEGER,
+    recent_spd_2    INTEGER,
+    recent_spd_3    INTEGER,
     trainer_name    TEXT,
     trainer_exempt  INTEGER DEFAULT 0,
     filtered_reason TEXT,
@@ -133,7 +137,9 @@ def ensure_prob_columns(conn):
     existing = {row[1] for row in conn.execute("PRAGMA table_info(picks)")}
     for col, col_type in (('win_prob', 'REAL'), ('ev_ratio', 'REAL'),
                           ('kelly_bet', 'REAL'), ('days_off', 'INTEGER'),
-                          ('last_race_date', 'TEXT')):
+                          ('last_race_date', 'TEXT'), ('best_speed', 'INTEGER'),
+                          ('recent_spd_1', 'INTEGER'), ('recent_spd_2', 'INTEGER'),
+                          ('recent_spd_3', 'INTEGER')):
         if col not in existing:
             conn.execute(f"ALTER TABLE picks ADD COLUMN {col} {col_type}")
             print(f"  schema: added picks.{col}")
@@ -162,6 +168,38 @@ def backfill_days_off(conn):
     )
     if cur.rowcount:
         print(f"  backfill: last_race_date for {cur.rowcount} picks")
+    conn.commit()
+
+
+def backfill_speed(conn):
+    """Fill picks speed columns from entries (best_spd + comma-separated
+    recent_spd) for the same horse on the same card."""
+    rows = conn.execute(
+        "SELECT p.pick_id, e.best_spd, e.recent_spd FROM picks p"
+        " JOIN entries e ON e.track=p.track AND e.race_date=p.race_date"
+        "  AND e.race_num=p.race_num AND e.horse_name=p.horse_name"
+        " WHERE (p.best_speed IS NULL AND e.best_spd IS NOT NULL)"
+        "    OR (p.recent_spd_1 IS NULL AND e.recent_spd IS NOT NULL)"
+    ).fetchall()
+    n = 0
+    for pick_id, best_spd, recent_spd in rows:
+        recent = []
+        for tok in (recent_spd or '').split(','):
+            try:
+                recent.append(int(tok))
+            except ValueError:
+                pass
+        recent += [None, None, None]
+        conn.execute(
+            "UPDATE picks SET best_speed=COALESCE(best_speed,?),"
+            " recent_spd_1=COALESCE(recent_spd_1,?),"
+            " recent_spd_2=COALESCE(recent_spd_2,?),"
+            " recent_spd_3=COALESCE(recent_spd_3,?) WHERE pick_id=?",
+            (best_spd, recent[0], recent[1], recent[2], pick_id)
+        )
+        n += 1
+    if n:
+        print(f"  backfill: speed figures from entries for {n} picks")
     conn.commit()
 
 
@@ -381,6 +419,12 @@ def import_picks(conn):
             except: ev_ratio = None
             try:    days_off = int(parts[10]) if len(parts) >= 11 else None
             except: days_off = None
+            # Speed figure columns 12-15: BEST_SPD SPD1 SPD2 SPD3
+            spd = []
+            for idx in (11, 12, 13, 14):
+                try:    spd.append(int(parts[idx]) if len(parts) > idx else None)
+                except: spd.append(None)
+            best_speed, rs1, rs2, rs3 = spd
 
             cur.execute(
                 "SELECT race_id FROM races WHERE track=? AND race_date=? AND race_num=?",
@@ -392,21 +436,28 @@ def import_picks(conn):
             cur.execute(
                 "INSERT OR IGNORE INTO picks"
                 "(track,race_date,race_num,race_id,horse_name,signal_type,bets,"
-                "ml_odds,pp_power,win_prob,ev_ratio,days_off,trainer_name)"
-                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "ml_odds,pp_power,win_prob,ev_ratio,days_off,"
+                "best_speed,recent_spd_1,recent_spd_2,recent_spd_3,trainer_name)"
+                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (p_track, date_str, p_race, race_id, p_horse, p_signal, bets,
-                 ml_odds, pp_power, win_prob, ev_ratio, days_off, trainer_name)
+                 ml_odds, pp_power, win_prob, ev_ratio, days_off,
+                 best_speed, rs1, rs2, rs3, trainer_name)
             )
             if cur.rowcount:
                 n_picks += 1
-            elif win_prob is not None or days_off is not None:
+            elif any(v is not None for v in (win_prob, days_off, best_speed)):
                 # Pick imported before its file was annotated (or re-annotated
-                # after a model fix) — sync probs/days_off from the file
+                # after a model fix) — sync optional columns from the file
                 cur.execute(
                     "UPDATE picks SET win_prob=COALESCE(?,win_prob),"
-                    " ev_ratio=COALESCE(?,ev_ratio), days_off=COALESCE(?,days_off)"
+                    " ev_ratio=COALESCE(?,ev_ratio), days_off=COALESCE(?,days_off),"
+                    " best_speed=COALESCE(?,best_speed),"
+                    " recent_spd_1=COALESCE(?,recent_spd_1),"
+                    " recent_spd_2=COALESCE(?,recent_spd_2),"
+                    " recent_spd_3=COALESCE(?,recent_spd_3)"
                     " WHERE track=? AND race_date=? AND race_num=? AND horse_name=?",
-                    (win_prob, ev_ratio, days_off, p_track, date_str, p_race, p_horse)
+                    (win_prob, ev_ratio, days_off, best_speed, rs1, rs2, rs3,
+                     p_track, date_str, p_race, p_horse)
                 )
 
     conn.commit()
@@ -572,6 +623,9 @@ def main():
 
     print("Backfilling days_off / last_race_date...")
     backfill_days_off(conn)
+
+    print("Backfilling speed figures...")
+    backfill_speed(conn)
 
     # Summary
     cur = conn.cursor()

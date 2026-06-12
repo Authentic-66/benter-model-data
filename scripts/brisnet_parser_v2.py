@@ -270,53 +270,77 @@ def extract_text(filepath):
             pages.append(full + '\n' + left)
     return '\f'.join(pages)
 
-def extract_speed_figures(block_lines):
-    """Extract Brisnet speed figures from PP lines (DDMMMYY TRACK ... SPD ...).
-    Returns list of (figure, surface) tuples in source order (most recent first).
-    surface is 'T' (Turf), 'AW' (All Weather), or 'D' (Dirt).
-    """
-    PP_DATE  = re.compile(r'^\s*\d{1,2}[A-Za-z]{3}\d{2}\s+\S')
-    SPD_RANGE = re.compile(r'\b([4-9]\d|1[0-2]\d)\b')
-    figures = []
-    for line in block_lines:
-        if PP_DATE.match(line):
-            nums = [int(n) for n in SPD_RANGE.findall(line)]
-            if nums:
-                if '(T)' in line or re.search(r'\bTurf\b', line, re.IGNORECASE):
-                    surf = 'T'
-                elif re.search(r'\bAW\b|Tapeta|Polytrack|All.?Weather', line):
-                    surf = 'AW'
-                else:
-                    surf = 'D'
-                figures.append((nums[0], surf))
-    return figures
-
-
 # PP race lines start "DDMonYYTRK" (e.g. '18Apr26CT'); Brisnet spells July 'Jly'
 _PP_LINE_DATE_RE = re.compile(r'^\s*(\d{1,2})([A-Za-z]{3})(\d{2})[A-Za-z]')
 _PP_MONTHS = {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5,
               'jun': 6, 'jne': 6, 'jul': 7, 'jly': 7, 'aug': 8,
               'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12}
+_PP_PACE_TOKEN_RE = re.compile(r'\d{2,3}/$')
+_PP_VARIANT_RE = re.compile(r'^[+-]\d+$')
+_TURF_GOING_RE = re.compile(r'\b(fm|yl|sf)\b')
+
+
+def _pp_line_date(line):
+    """Race date of a condensed PP race line, or None."""
+    m = _PP_LINE_DATE_RE.match(line)
+    if not m:
+        return None
+    mon = _PP_MONTHS.get(m.group(2).lower())
+    if not mon:
+        return None
+    try:
+        return date(2000 + int(m.group(3)), mon, int(m.group(1)))
+    except ValueError:
+        return None
+
+
+def extract_speed_figures(block_lines):
+    """Extract Brisnet speed figures from condensed PP race lines.
+
+    Figure block reads "E1 E2/ LP [±var ±var] SPD" before the post/start
+    positions, so SPD is the LAST 25-130 number in the run that follows
+    the "NN/" pace token (e.g. '88 82/ 61 -1 -4 59 6 5 ...' -> 59).
+    Returns [(figure, surface), ...] most recent first, deduped by race
+    date (extracted text repeats some lines). surface is 'T', 'AW', 'D'.
+    """
+    races = {}
+    for line in block_lines:
+        d = _pp_line_date(line)
+        if d is None or d in races:
+            continue
+        toks = line.split()
+        slash_i = next((i for i, t in enumerate(toks)
+                        if _PP_PACE_TOKEN_RE.fullmatch(t)), None)
+        if slash_i is None:
+            continue
+        fig = None
+        for t in toks[slash_i + 1:]:
+            if _PP_VARIANT_RE.fullmatch(t):
+                continue
+            if not t.isdigit():
+                break
+            v = int(t)
+            if 25 <= v <= 130:
+                fig = v
+            else:
+                break
+        if fig is None:
+            continue
+        if '(T)' in line or _TURF_GOING_RE.search(line):
+            surf = 'T'
+        elif re.search(r'\bAW\b|Tapeta|Polytrack|All.?Weather', line):
+            surf = 'AW'
+        else:
+            surf = 'D'
+        races[d] = (fig, surf)
+    return [races[d] for d in sorted(races, reverse=True)]
 
 
 def last_race_date_from_block(block):
     """Most recent past-race date in a horse's PP block, or None
     (first-time starters have no PP lines)."""
-    last = None
-    for line in block:
-        m = _PP_LINE_DATE_RE.match(line)
-        if not m:
-            continue
-        mon = _PP_MONTHS.get(m.group(2).lower())
-        if not mon:
-            continue
-        try:
-            d = date(2000 + int(m.group(3)), mon, int(m.group(1)))
-        except ValueError:
-            continue
-        if last is None or d > last:
-            last = d
-    return last
+    dates = [d for d in (_pp_line_date(line) for line in block) if d]
+    return max(dates, default=None)
 
 
 def parse_brisnet(text, track_code='GP', race_date=None):
@@ -877,7 +901,7 @@ def write_picks_file(all_picks, track_code, filepath):
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",
-        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF",
+        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3",
     ]
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
         if is_trainer_hotjt(h):
@@ -890,8 +914,12 @@ def write_picks_file(all_picks, track_code, filepath):
         pp_col     = h['prime_power'] if h['prime_power'] != '?' else '?'
         trainer_col = h['trainer'].replace(' ', '_') if h['trainer'] != '?' else '?'
         do_col     = str(h['days_off']) if h['days_off'] else '?'
+        best_col   = str(h['best_spd']) if h.get('best_spd') else '?'
+        recent     = h.get('recent_spd') or []
+        spd_cols   = ' '.join(str(recent[i]) if i < len(recent) else '?' for i in range(3))
         # WIN_PROB/EV_RATIO (cols 9-10) are '?' until prob_predict.py --in-place fills them
-        lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col} {trainer_col} ? ? {do_col}")
+        lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col} {trainer_col}"
+                     f" ? ? {do_col} {best_col} {spd_cols}")
 
     out_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return out_path

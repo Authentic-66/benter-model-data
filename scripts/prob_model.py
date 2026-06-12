@@ -38,7 +38,7 @@ CL_MODEL_PATH = os.path.join(SCRIPT_DIR, "benter_model_cl.pkl")
 CALIBRATION_PLOT_PATH = os.path.join(SCRIPT_DIR, "calibration_plot.png")
 CL_CALIBRATION_PLOT_PATH = os.path.join(SCRIPT_DIR, "calibration_plot_cl.png")
 
-NUMERIC_FEATURES = ["ml_odds", "pp_power", "days_off"]
+NUMERIC_FEATURES = ["ml_odds", "pp_power", "days_off", "best_speed"]
 CATEGORICAL_FEATURES = ["signal_type", "track", "surface"]
 
 TRAINING_SQL = """
@@ -49,6 +49,7 @@ SELECT
     p.ml_odds,
     p.pp_power,
     p.days_off,
+    p.best_speed,
     COALESCE(rc.surface, 'Dirt')             AS surface,
     COALESCE(e.finish_pos, r.finish_pos)     AS finish_pos,
     r.odds                                   AS final_odds,
@@ -143,6 +144,7 @@ def train_picks_model():
     print(f"  ml_odds present:  {df['ml_odds'].notna().sum()}/{n}")
     print(f"  pp_power present: {df['pp_power'].notna().sum()}/{n}")
     print(f"  days_off present: {df['days_off'].notna().sum()}/{n}")
+    print(f"  best_speed present: {df['best_speed'].notna().sum()}/{n}")
     print("  surface: constant ('Dirt' for every race in DB) - no signal")
 
     pipe = build_pipeline()
@@ -217,7 +219,7 @@ def train_picks_model():
     print("  model is conditional-logit over every starter in a race; ingesting")
     print("  full-field PP data (all ~21k results rows have finish/odds but no")
     print("  pp_power/signals) would let the model learn relative strength.")
-    print("* No beaten lengths, speed figures, class, distance, jockey/")
+    print("* No beaten lengths, class, distance, jockey/")
     print("  trainer stats - these are in the Brisnet PPs and worth parsing next.")
     print("* All races are Dirt; surface adds nothing until turf tracks are added.")
 
