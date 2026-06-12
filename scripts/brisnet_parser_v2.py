@@ -495,11 +495,17 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                     if jm:
                         jockey = jm.group(1).title()
 
-                # J/T combo win rate (Brisnet "Jky/Trn" or "J/T" stats line)
-                if jt_winpct is None and re.search(r'\bJ/?T\b|Jky/Trn', line, re.IGNORECASE):
-                    pct_m = re.search(r'(\d+)%', line)
-                    if pct_m:
-                        jt_winpct = int(pct_m.group(1))
+                # J/T combo win rate. Condensed PPs carry it as
+                # "JKYw/ Trn L60 <starts> <win%> <itm%> <roi>"; full PPs may
+                # use a "J/T" or "Jky/Trn" stats line instead.
+                if jt_winpct is None:
+                    jt_m = re.search(r'JKYw/\s*Trn\s+L60\s+\d+\s+(\d+)%', line, re.IGNORECASE)
+                    if jt_m:
+                        jt_winpct = int(jt_m.group(1))
+                    elif re.search(r'\bJ/?T\b|Jky/Trn', line, re.IGNORECASE):
+                        pct_m = re.search(r'(\d+)%', line)
+                        if pct_m:
+                            jt_winpct = int(pct_m.group(1))
 
                 # Sire
                 if sire == '?':
@@ -610,6 +616,7 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'recent_spd': recent_spd, 'best_spd': best_spd,
                 'best_spd_turf': best_spd_turf, 'best_spd_aw': best_spd_aw,
                 'improving': improving, 'jt_zero': jt_zero,
+                'jt_winpct': jt_winpct,
             }
 
             if not any(h['name'] == horse for h in races[current_race]['horses']):
@@ -864,8 +871,8 @@ def write_entries_db(races, track_code, race_date):
                     "(race_id,track,race_date,race_num,post_pos,horse_name,"
                     "ml_odds,prime_power,pp_rank,trainer,jockey,sire,"
                     "days_off,claim_price,best_spd,best_spd_turf,best_spd_aw,"
-                    "recent_spd,improving,jt_zero,signal_types,is_pick)"
-                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "recent_spd,improving,jt_zero,jt_winpct,signal_types,is_pick)"
+                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -882,6 +889,7 @@ def write_entries_db(races, track_code, race_date):
                      ','.join(str(s) for s in h.get('recent_spd', [])) or None,
                      int(bool(h.get('improving'))),
                      int(bool(h.get('jt_zero'))),
+                     h.get('jt_winpct'),
                      ','.join(s[0] for s in h['signals']) or None,
                      int(is_strong_pick(h)))
                 )
@@ -901,7 +909,7 @@ def write_picks_file(all_picks, track_code, filepath):
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",
-        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3",
+        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT",
     ]
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
         if is_trainer_hotjt(h):
@@ -917,9 +925,10 @@ def write_picks_file(all_picks, track_code, filepath):
         best_col   = str(h['best_spd']) if h.get('best_spd') else '?'
         recent     = h.get('recent_spd') or []
         spd_cols   = ' '.join(str(recent[i]) if i < len(recent) else '?' for i in range(3))
+        jt_col     = str(h['jt_winpct']) if h.get('jt_winpct') is not None else '?'
         # WIN_PROB/EV_RATIO (cols 9-10) are '?' until prob_predict.py --in-place fills them
         lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col} {trainer_col}"
-                     f" ? ? {do_col} {best_col} {spd_cols}")
+                     f" ? ? {do_col} {best_col} {spd_cols} {jt_col}")
 
     out_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return out_path
