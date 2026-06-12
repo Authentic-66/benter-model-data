@@ -843,7 +843,7 @@ def write_picks_file(all_picks, track_code, filepath):
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",
-        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER [WIN_PROB EV_RATIO]",
+        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF",
     ]
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
         if is_trainer_hotjt(h):
@@ -855,7 +855,9 @@ def write_picks_file(all_picks, track_code, filepath):
         ml_col     = str(ml_f) if ml_f is not None else '?'
         pp_col     = h['prime_power'] if h['prime_power'] != '?' else '?'
         trainer_col = h['trainer'].replace(' ', '_') if h['trainer'] != '?' else '?'
-        lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col} {trainer_col}")
+        do_col     = str(h['days_off']) if h['days_off'] else '?'
+        # WIN_PROB/EV_RATIO (cols 9-10) are '?' until prob_predict.py --in-place fills them
+        lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col} {trainer_col} ? ? {do_col}")
 
     out_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return out_path

@@ -3,14 +3,15 @@
 Usage:
     py prob_predict.py picks_FP_06092026.txt [-o output.txt]
 
-Reads an 8-column picks file (TRACK RACE HORSE SIGNAL BETS ML_ODDS
-PP_POWER TRAINER) and appends WIN_PROB, EV_RATIO, an EV flag, and RANK,
-writing <input>_prob.txt unless -o is given.
+Reads a picks file (TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
+TRAINER [WIN_PROB EV_RATIO DAYS_OFF]) and appends WIN_PROB, EV_RATIO,
+DAYS_OFF, an EV flag, and RANK, writing <input>_prob.txt unless -o is
+given.
 
-With --in-place, the picks file itself is rewritten with only WIN_PROB
-and EV_RATIO appended as optional columns 9 and 10 (the format the ROI
+With --in-place, the picks file itself is rewritten in the 11-column
+format (WIN_PROB EV_RATIO DAYS_OFF as cols 9-11, the format the ROI
 tracker and database ingest). Re-running is safe: existing probability
-columns are replaced, not duplicated.
+columns are replaced, not duplicated, and DAYS_OFF is preserved.
 
 EV_RATIO = model_prob / ML-implied prob (1.0 = model agrees with public).
 Flags: "+EV" when EV_RATIO > 1.0, "~EV" (soft) when EV_RATIO >= 0.75.
@@ -44,9 +45,11 @@ def parse_picks_file(path):
                 raw_lines.append((line, None))
                 continue
             raw_lines.append((" ".join(parts[:8]), len(rows)))
-            rows.append(dict(zip(COLUMNS, parts[:8])))
+            row = dict(zip(COLUMNS, parts[:8]))
+            row["days_off"] = parts[10] if len(parts) >= 11 else "?"
+            rows.append(row)
     df = pd.DataFrame(rows)
-    for col in ("ml_odds", "pp_power"):
+    for col in ("ml_odds", "pp_power", "days_off"):
         df[col] = pd.to_numeric(df[col].replace("?", np.nan), errors="coerce")
     return df, raw_lines
 
@@ -101,18 +104,19 @@ def main():
             if idx is None:
                 if line.lstrip().startswith("# Format:"):
                     line = fmt_base + (
-                        " WIN_PROB EV_RATIO" if args.in_place
-                        else " WIN_PROB EV_RATIO EV RANK"
+                        " WIN_PROB EV_RATIO DAYS_OFF" if args.in_place
+                        else " WIN_PROB EV_RATIO DAYS_OFF EV RANK"
                     )
                 f.write(line + "\n")
             else:
                 r = df.iloc[idx]
                 ratio = f"{r['ev_ratio']:.2f}" if pd.notna(r["ev_ratio"]) else "?"
+                days = f"{int(r['days_off'])}" if pd.notna(r["days_off"]) else "?"
                 if args.in_place:
-                    f.write(f"{line} {r['win_prob']:.3f} {ratio}\n")
+                    f.write(f"{line} {r['win_prob']:.3f} {ratio} {days}\n")
                 else:
                     f.write(
-                        f"{line} {r['win_prob']:.3f} {ratio} {r['ev_flag']} {r['rank']}\n"
+                        f"{line} {r['win_prob']:.3f} {ratio} {days} {r['ev_flag']} {r['rank']}\n"
                     )
 
     n_ev = int((df["ev_flag"] == "+EV").sum())

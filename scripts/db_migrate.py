@@ -61,6 +61,8 @@ CREATE TABLE IF NOT EXISTS picks (
     win_prob        REAL,
     ev_ratio        REAL,
     kelly_bet       REAL,
+    days_off        INTEGER,
+    last_race_date  TEXT,
     trainer_name    TEXT,
     trainer_exempt  INTEGER DEFAULT 0,
     filtered_reason TEXT,
@@ -129,10 +131,37 @@ CREATE INDEX IF NOT EXISTS idx_entries_race_id  ON entries(race_id);
 def ensure_prob_columns(conn):
     """Add Phase 6 probability columns to an existing picks table."""
     existing = {row[1] for row in conn.execute("PRAGMA table_info(picks)")}
-    for col in ('win_prob', 'ev_ratio', 'kelly_bet'):
+    for col, col_type in (('win_prob', 'REAL'), ('ev_ratio', 'REAL'),
+                          ('kelly_bet', 'REAL'), ('days_off', 'INTEGER'),
+                          ('last_race_date', 'TEXT')):
         if col not in existing:
-            conn.execute(f"ALTER TABLE picks ADD COLUMN {col} REAL")
+            conn.execute(f"ALTER TABLE picks ADD COLUMN {col} {col_type}")
             print(f"  schema: added picks.{col}")
+    conn.commit()
+
+
+def backfill_days_off(conn):
+    """Fill picks.days_off from the entries table (same horse, same card),
+    then derive picks.last_race_date = race_date - days_off."""
+    cur = conn.execute(
+        "UPDATE picks SET days_off = ("
+        " SELECT e.days_off FROM entries e"
+        " WHERE e.track=picks.track AND e.race_date=picks.race_date"
+        "   AND e.race_num=picks.race_num AND e.horse_name=picks.horse_name)"
+        " WHERE days_off IS NULL AND EXISTS ("
+        " SELECT 1 FROM entries e"
+        " WHERE e.track=picks.track AND e.race_date=picks.race_date"
+        "   AND e.race_num=picks.race_num AND e.horse_name=picks.horse_name"
+        "   AND e.days_off IS NOT NULL)"
+    )
+    if cur.rowcount:
+        print(f"  backfill: days_off from entries for {cur.rowcount} picks")
+    cur = conn.execute(
+        "UPDATE picks SET last_race_date = date(race_date, '-' || days_off || ' days')"
+        " WHERE days_off IS NOT NULL AND last_race_date IS NULL"
+    )
+    if cur.rowcount:
+        print(f"  backfill: last_race_date for {cur.rowcount} picks")
     conn.commit()
 
 
@@ -350,6 +379,8 @@ def import_picks(conn):
             except: win_prob = None
             try:    ev_ratio = float(parts[9]) if len(parts) >= 10 else None
             except: ev_ratio = None
+            try:    days_off = int(parts[10]) if len(parts) >= 11 else None
+            except: days_off = None
 
             cur.execute(
                 "SELECT race_id FROM races WHERE track=? AND race_date=? AND race_num=?",
@@ -361,20 +392,21 @@ def import_picks(conn):
             cur.execute(
                 "INSERT OR IGNORE INTO picks"
                 "(track,race_date,race_num,race_id,horse_name,signal_type,bets,"
-                "ml_odds,pp_power,win_prob,ev_ratio,trainer_name)"
-                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+                "ml_odds,pp_power,win_prob,ev_ratio,days_off,trainer_name)"
+                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (p_track, date_str, p_race, race_id, p_horse, p_signal, bets,
-                 ml_odds, pp_power, win_prob, ev_ratio, trainer_name)
+                 ml_odds, pp_power, win_prob, ev_ratio, days_off, trainer_name)
             )
             if cur.rowcount:
                 n_picks += 1
-            elif win_prob is not None:
+            elif win_prob is not None or days_off is not None:
                 # Pick imported before its file was annotated (or re-annotated
-                # after a model fix) — sync probs from the file
+                # after a model fix) — sync probs/days_off from the file
                 cur.execute(
-                    "UPDATE picks SET win_prob=?, ev_ratio=?"
+                    "UPDATE picks SET win_prob=COALESCE(?,win_prob),"
+                    " ev_ratio=COALESCE(?,ev_ratio), days_off=COALESCE(?,days_off)"
                     " WHERE track=? AND race_date=? AND race_num=? AND horse_name=?",
-                    (win_prob, ev_ratio, p_track, date_str, p_race, p_horse)
+                    (win_prob, ev_ratio, days_off, p_track, date_str, p_race, p_horse)
                 )
 
     conn.commit()
@@ -537,6 +569,9 @@ def main():
     print("Importing ROI logs...")
     n_roi = import_roi(conn)
     print(f"  {n_roi} ROI entries")
+
+    print("Backfilling days_off / last_race_date...")
+    backfill_days_off(conn)
 
     # Summary
     cur = conn.cursor()
