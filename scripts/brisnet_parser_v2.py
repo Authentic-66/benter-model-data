@@ -387,6 +387,36 @@ def extract_beaten_lengths(block_lines, page_lines=None):
     return races[max(races)] if races else None
 
 
+# Class-money token: claiming price for claiming races (MC12500, Clm 5000n4L),
+# purse for maiden/allowance (Mdn 70k, Alw 34000). Same token format appears in
+# PP race lines and in today's race header right before "Purse $...", so deltas
+# compare like with like.
+_CLASS_MONEY_RE = re.compile(
+    r'\b(SOC|MOC|MC|Mdn|Clm|OC|Alw|Str|Hcp)\s?(\d[\d,]*)\s?(k?)')
+_STAKES_PURSE_RE = re.compile(r'(\d{2,4})k\b')
+
+
+def _class_money(s):
+    m = _CLASS_MONEY_RE.search(s)
+    if m:
+        v = int(m.group(2).replace(',', ''))
+        return v * 1000 if m.group(3) else v
+    m = _STAKES_PURSE_RE.search(s)   # stakes: "RaceNameS 75k"
+    return int(m.group(1)) * 1000 if m else None
+
+
+def extract_last_class(block_lines):
+    """Class money of the horse's most recent race, or None. Only the first
+    60 chars are searched so Top Finishers / comment text can't match."""
+    races = {}
+    for line in block_lines:
+        d = _pp_line_date(line)
+        if d is None or races.get(d) is not None:
+            continue
+        races[d] = _class_money(line[:60])
+    return races[max(races)] if races else None
+
+
 def last_race_date_from_block(block):
     """Most recent past-race date in a horse's PP block, or None
     (first-time starters have no PP lines)."""
@@ -430,11 +460,21 @@ def parse_brisnet(text, track_code='GP', race_date=None):
             else:
                 races[current_race]['surface'] = 'Dirt'
 
+        # ── Purse / class money: the race header may share a page with horse
+        # blocks (condensed y-format), so check every page ────────────────────
+        purse_m = re.search(r'Purse\s+\$([\d,]+)', page)
+        if purse_m and current_race and not races[current_race]['purse']:
+            races[current_race]['purse'] = f"${purse_m.group(1)}"
+            # class token renders right before "Purse" with no space between
+            tok = re.search(_CLASS_MONEY_RE.pattern + r'\S*Purse', page)
+            if tok:
+                v = int(tok.group(2).replace(',', ''))
+                races[current_race]['class_money'] = v * 1000 if tok.group(3) else v
+            else:  # stakes etc: the purse is the class
+                races[current_race]['class_money'] = int(purse_m.group(1).replace(',', ''))
+
         # ── Is this a horse page? (has 'Own:') ────────────────────────────────
         if 'Own:' not in page:
-            purse_m = re.search(r'Purse\s+\$([\d,]+)', page)
-            if purse_m and current_race:
-                races[current_race]['purse'] = f"${purse_m.group(1)}"
             continue
 
         # ── Prime Power map: keyed by PP# from full-page horse-name lines ─────
@@ -598,6 +638,7 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 days_off = (race_date - last_race).days
 
             beaten_len = extract_beaten_lengths(block, lines)
+            last_class = extract_last_class(block)
 
             # ── Speed figures from PP lines in block ──────────────────────────
             spd_figs   = extract_speed_figures(block)  # [(figure, surface), ...]
@@ -670,10 +711,20 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'best_spd_turf': best_spd_turf, 'best_spd_aw': best_spd_aw,
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
+                'last_class': last_class,
             }
 
             if not any(h['name'] == horse for h in races[current_race]['horses']):
                 races[current_race]['horses'].append(horse_data)
+
+    # class_delta needs today's class money (parsed from the race header
+    # page) and the horse's last-race class, so compute it after both passes
+    for race in races.values():
+        today_class = race.get('class_money')
+        for h in race['horses']:
+            lc = h.get('last_class')
+            h['class_delta'] = (today_class - lc) \
+                if today_class is not None and lc is not None else None
 
     return dict(races)
 
@@ -925,8 +976,8 @@ def write_entries_db(races, track_code, race_date):
                     "ml_odds,prime_power,pp_rank,trainer,jockey,sire,"
                     "days_off,claim_price,best_spd,best_spd_turf,best_spd_aw,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
-                    "signal_types,is_pick)"
-                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "class_delta,signal_types,is_pick)"
+                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -945,6 +996,7 @@ def write_entries_db(races, track_code, race_date):
                      int(bool(h.get('jt_zero'))),
                      h.get('jt_winpct'),
                      h.get('beaten_len'),
+                     h.get('class_delta'),
                      ','.join(s[0] for s in h['signals']) or None,
                      int(is_strong_pick(h)))
                 )
@@ -964,7 +1016,7 @@ def write_picks_file(all_picks, track_code, filepath):
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",
-        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT BEATEN_LEN",
+        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT BEATEN_LEN CLASS_DELTA",
     ]
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
         if is_trainer_hotjt(h):
@@ -982,9 +1034,10 @@ def write_picks_file(all_picks, track_code, filepath):
         spd_cols   = ' '.join(str(recent[i]) if i < len(recent) else '?' for i in range(3))
         jt_col     = str(h['jt_winpct']) if h.get('jt_winpct') is not None else '?'
         bl_col     = f"{h['beaten_len']:.2f}" if h.get('beaten_len') is not None else '?'
+        cd_col     = str(h['class_delta']) if h.get('class_delta') is not None else '?'
         # WIN_PROB/EV_RATIO (cols 9-10) are '?' until prob_predict.py --in-place fills them
         lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col} {trainer_col}"
-                     f" ? ? {do_col} {best_col} {spd_cols} {jt_col} {bl_col}")
+                     f" ? ? {do_col} {best_col} {spd_cols} {jt_col} {bl_col} {cd_col}")
 
     out_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return out_path

@@ -58,6 +58,7 @@ SELECT
     e.best_spd,
     e.jt_winpct,
     e.beaten_lengths,
+    e.class_delta,
     e.signal_types,
     e.improving,
     e.jt_zero,

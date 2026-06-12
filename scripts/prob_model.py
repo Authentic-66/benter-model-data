@@ -39,7 +39,7 @@ CALIBRATION_PLOT_PATH = os.path.join(SCRIPT_DIR, "calibration_plot.png")
 CL_CALIBRATION_PLOT_PATH = os.path.join(SCRIPT_DIR, "calibration_plot_cl.png")
 
 NUMERIC_FEATURES = ["ml_odds", "pp_power", "days_off", "best_speed", "jt_winpct",
-                    "beaten_lengths"]
+                    "beaten_lengths", "class_delta"]
 CATEGORICAL_FEATURES = ["signal_type", "track", "surface"]
 
 TRAINING_SQL = """
@@ -53,6 +53,7 @@ SELECT
     p.best_speed,
     p.jt_winpct,
     p.beaten_lengths,
+    p.class_delta,
     COALESCE(rc.surface, 'Dirt')             AS surface,
     COALESCE(e.finish_pos, r.finish_pos)     AS finish_pos,
     r.odds                                   AS final_odds,
@@ -150,6 +151,7 @@ def train_picks_model():
     print(f"  best_speed present: {df['best_speed'].notna().sum()}/{n}")
     print(f"  jt_winpct present: {df['jt_winpct'].notna().sum()}/{n}")
     print(f"  beaten_lengths present: {df['beaten_lengths'].notna().sum()}/{n}")
+    print(f"  class_delta present: {df['class_delta'].notna().sum()}/{n}")
     print("  surface: constant ('Dirt' for every race in DB) - no signal")
 
     pipe = build_pipeline()
@@ -235,7 +237,8 @@ def train_picks_model():
 
 CL_FEATURES = ["log_ml", "prime_power_c", "pp_missing",
                "days_off_c", "best_spd_c", "spd_missing",
-               "jt_winpct_c", "jt_missing", "beaten_c", "improving",
+               "jt_winpct_c", "jt_missing", "beaten_c", "class_delta_c",
+               "improving",
                "jt_zero", "sig_trainer", "sig_sire", "sig_horse", "sig_hotjt"]
 CL_L2 = 1.0
 
@@ -252,6 +255,7 @@ SELECT
     e.best_spd,
     e.jt_winpct,
     e.beaten_lengths,
+    e.class_delta,
     e.improving,
     e.jt_zero,
     e.signal_types,
@@ -309,11 +313,15 @@ def build_cl_features(df, stds=None):
     # No separate missing flag: coincides with spd_missing.
     df["beaten_capped"] = pd.to_numeric(df["beaten_lengths"], errors="coerce").clip(upper=5)
     center("beaten_capped", "beaten_c")
+    # class_delta = today_class - last_class; today_class is race-constant,
+    # so within-race centering leaves the relative class-drop signal
+    center("class_delta", "class_delta_c")
 
     if stds is None:
         stds = {c: float(df[c].std()) or 1.0
                 for c in ("log_ml", "prime_power_c", "days_off_c",
-                          "best_spd_c", "jt_winpct_c", "beaten_c")}
+                          "best_spd_c", "jt_winpct_c", "beaten_c",
+                          "class_delta_c")}
     for c, sd in stds.items():
         df[c] = df[c] / sd
     return stds
@@ -405,6 +413,7 @@ def train_conditional_logit():
     print(f"best_spd present:    {(df['spd_missing'] == 0).sum()}/{n_starters}")
     print(f"jt_winpct present:   {(df['jt_missing'] == 0).sum()}/{n_starters}")
     print(f"beaten_len present:  {df['beaten_lengths'].notna().sum()}/{n_starters}")
+    print(f"class_delta present: {df['class_delta'].notna().sum()}/{n_starters}")
 
     recs, y_flat, p_flat = cl_cross_validate(races)
     ll_model = -np.log(np.maximum(recs["p_win_model"], 1e-12)).mean()

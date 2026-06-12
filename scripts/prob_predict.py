@@ -5,7 +5,7 @@ Usage:
 
 Reads a picks file (TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER
 TRAINER [WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT
-BEATEN_LEN]) and
+BEATEN_LEN CLASS_DELTA]) and
 appends WIN_PROB, EV_RATIO, an EV flag, and RANK, writing
 <input>_prob.txt unless -o is given.
 
@@ -53,10 +53,11 @@ def parse_picks_file(path):
             row["best_speed"] = parts[11] if len(parts) >= 12 else "?"
             row["jt_winpct"] = parts[15] if len(parts) >= 16 else "?"
             row["beaten_lengths"] = parts[16] if len(parts) >= 17 else "?"
+            row["class_delta"] = parts[17] if len(parts) >= 18 else "?"
             rows.append(row)
     df = pd.DataFrame(rows)
     for col in ("ml_odds", "pp_power", "days_off", "best_speed", "jt_winpct",
-                "beaten_lengths"):
+                "beaten_lengths", "class_delta"):
         df[col] = pd.to_numeric(df[col].replace("?", np.nan), errors="coerce")
     return df, raw_lines
 
@@ -107,7 +108,7 @@ def main():
         out_path = args.output or os.path.splitext(args.picks_file)[0] + "_prob.txt"
     fmt_base = ("# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER"
                 " WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT"
-                " BEATEN_LEN")
+                " BEATEN_LEN CLASS_DELTA")
     with open(out_path, "w", encoding="utf-8") as f:
         for line, tail, idx in raw_lines:
             if idx is None:
