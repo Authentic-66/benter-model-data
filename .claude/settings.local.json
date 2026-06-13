@@ -51,7 +51,12 @@
       "PowerShell(Get-ChildItem -Directory | ForEach-Object Name)",
       "PowerShell($q = \"SELECT horse_name, ml_odds, win_prob, ev_ratio, kelly_bet FROM picks WHERE track='FP' AND race_date='2026-06-09' AND race_num=1;\"; py -c \"import sqlite3;con=sqlite3.connect\\(r'C:\\\\Users\\\\bornr\\\\OneDrive\\\\Documents\\\\GitHub Files\\\\benter-model-data\\\\scripts\\\\benter_model.db'\\);[print\\(r\\) for r in con.execute\\(\\\\\"$q\\\\\"\\)]\")",
       "PowerShell(h[name]:<22 *)",
-      "PowerShell(git *)"
+      "PowerShell(git *)",
+      "Bash(py scripts/backfill_entries.py)",
+      "Bash(py scripts/db_migrate.py)",
+      "Bash(py _ablate_dd.py)",
+      "Bash(py _ablate_dd_picks.py)",
+      "Bash(py prob_model.py)"
     ]
   }
 }
