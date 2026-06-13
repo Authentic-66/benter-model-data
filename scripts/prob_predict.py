@@ -40,7 +40,7 @@ def parse_picks_file(path):
         for line in f:
             line = line.rstrip("\n")
             if not line.strip() or line.lstrip().startswith("#"):
-                raw_lines.append((line, None))
+                raw_lines.append((line, None, None))
                 continue
             parts = line.split()
             if len(parts) < 8:
