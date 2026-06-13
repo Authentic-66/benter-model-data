@@ -57,7 +57,8 @@
       "Bash(py _ablate_dd.py)",
       "Bash(py _ablate_dd_picks.py)",
       "Bash(py prob_model.py)",
-      "Bash(py *)"
+      "Bash(py *)",
+      "Bash(not exist *)"
     ]
   }
 }
