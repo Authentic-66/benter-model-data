@@ -99,6 +99,7 @@ CREATE TABLE IF NOT EXISTS entries (
     post_pos      INTEGER,
     horse_name    TEXT NOT NULL,
     ml_odds       REAL,
+    final_odds    REAL,
     prime_power   REAL,
     pp_rank       INTEGER,
     trainer       TEXT,
@@ -154,7 +155,8 @@ def ensure_prob_columns(conn):
             conn.execute(f"ALTER TABLE picks ADD COLUMN {col} {col_type}")
             print(f"  schema: added picks.{col}")
     existing_e = {row[1] for row in conn.execute("PRAGMA table_info(entries)")}
-    for col in ('jt_winpct', 'beaten_lengths', 'class_delta', 'distance_delta'):
+    for col in ('jt_winpct', 'beaten_lengths', 'class_delta', 'distance_delta',
+                'final_odds'):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} REAL")
             print(f"  schema: added entries.{col}")
@@ -215,6 +217,29 @@ def backfill_speed(conn):
         n += 1
     if n:
         print(f"  backfill: speed figures from entries for {n} picks")
+    conn.commit()
+
+
+def backfill_final_odds(conn):
+    """Copy results.odds -> entries.final_odds for every entry with a
+    matching result. Idempotent (only fills NULLs)."""
+    cur = conn.execute("""
+        UPDATE entries
+        SET final_odds = (
+            SELECT r.odds FROM results r
+            WHERE r.race_id = entries.race_id
+              AND r.horse_name = entries.horse_name
+              AND r.odds IS NOT NULL AND r.odds > 1.0
+        )
+        WHERE final_odds IS NULL AND EXISTS (
+            SELECT 1 FROM results r
+            WHERE r.race_id = entries.race_id
+              AND r.horse_name = entries.horse_name
+              AND r.odds IS NOT NULL AND r.odds > 1.0
+        )
+    """)
+    if cur.rowcount:
+        print(f"  backfill: final_odds from results for {cur.rowcount} entries")
     conn.commit()
 
 
@@ -686,6 +711,9 @@ def main():
 
     print("Backfilling columns from entries...")
     backfill_entry_columns(conn)
+
+    print("Backfilling final_odds from results...")
+    backfill_final_odds(conn)
 
     # Summary
     cur = conn.cursor()
