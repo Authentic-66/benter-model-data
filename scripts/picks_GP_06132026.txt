@@ -1,0 +1,15 @@
+# Benter Model Picks - GP 06132026
+# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT BEATEN_LEN CLASS_DELTA DIST_DELTA
+GP 1 GiveItTime TRAINER+HOT_JT WPS ? 91.3 David_Carlos_A 0.007 ? 14 ? ? ? ? 0 ? ? ?
+GP 1 Numinous TRAINER WPS 16.0 102.8 Catanese_III_Joseph_C 0.009 0.14 14 76 66 70 67 0 ? 0 ?
+GP 3 NobleTiger TRAINER WPS 11.0 112.2 Catanese_III_Joseph_C 0.026 0.29 27 85 77 76 75 ? ? 20500 ?
+GP 3 Complexed TRAINER WPS ? 117.4 Casse_Mark_E 0.003 ? 27 81 81 ? ? 17 0.00 20500 ?
+GP 4 DasIstAllesAlly TRAINER+HOT_JT WPS 2.8 114.0 Crichton_Rohan_G 0.346 0.97 36 79 75 75 72 ? ? ? ?
+GP 5 MaryMarguerite TRAINER WPS ? 123.5 Fawkes_David 0.006 ? 57 85 81 85 81 ? ? ? ?
+GP 5 TapeRunner TRAINER+HOT_JT WPS 9.0 119.9 Barboza,_Jr._Victor 0.152 1.37 29 89 76 83 84 0 ? 3000 ?
+GP 6 ValenTime TRAINER WPS ? 103.5 Catanese_III_Joseph_C 0.002 ? 56 64 57 56 64 0 ? 33000 ?
+GP 6 Jalapeno TRAINER WPS ? ? David_Carlos_A 0.001 ? ? ? ? ? ? 23 ? ? ?
+GP 9 Antonino TRAINER+HOT_JT WPS 11.0 107.9 Sano_Antonio 0.065 0.72 15 86 67 66 40 10 ? 14000 ?
+GP 10 LoutheBody TRAINER WPS 3.5 120.0 Barboza,_Jr._Victor 0.174 0.61 64 94 84 67 80 25 0.00 28750 1.00
+GP 11 LeMidi'sTreasure TRAINER WPS ? ? Joseph,_Jr._Saffie_A 0.001 ? ? ? ? ? ? 31 ? ? ?
+GP 11 Image TRAINER+HOT_JT WPS ? 110.5 Orseno_Joseph_F 0.009 ? ? ? ? ? ? 9 ? ? ?

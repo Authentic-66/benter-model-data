@@ -1,0 +1,19 @@
+# LIVE_ODDS_GP_06132026.txt
+# Fill the LIVE column with current decimal odds at 5 MTP.
+# Lines starting with # are ignored. Blank LIVE -> skipped.
+# Run: py scripts/live_odds_flag.py LIVE_ODDS_GP_06132026.txt
+#
+#  RACE  PP   HORSE                            ML       LIVE
+  R1    6    GiveItTime                       ?       
+  R1    7    Numinous                         16.0    
+  R3    7    Complexed                        ?       
+  R3    5    NobleTiger                       11.0    
+  R4    4    DasIstAllesAlly                  2.8     
+  R5    1    MaryMarguerite                   ?       
+  R5    3    TapeRunner                       9.0     
+  R6    5    Jalapeno                         ?       
+  R6    4    ValenTime                        ?       
+  R9    9    Antonino                         11.0    
+  R10   6    LoutheBody                       3.5     
+  R11   6    Image                            ?       
+  R11   2    LeMidi'sTreasure                 ?       
