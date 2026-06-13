@@ -248,6 +248,15 @@ py "%SCRIPTS%brisnet_parser_v2.py" "%BASE%\Laurel Park\laurel-pp-files\%PDF%" LR
 type "%LOGFILE%"
 echo   Full card logged: handicap-logs\HANDICAP_LRL_%TODAY%.txt
 
+:: ── Generate empty live-odds templates from today's picks ───────────────
+echo.
+echo ========================================================================
+echo   LIVE-ODDS TEMPLATES (5 MTP drift inputs)
+echo ========================================================================
+py "%SCRIPTS%gen_live_odds_template.py"
+echo   Templates ready in: scripts\live-odds\
+echo   At 5 MTP: fill LIVE column, then run live_odds_flag.py
+
 :done
 echo.
 echo ########################################################################
