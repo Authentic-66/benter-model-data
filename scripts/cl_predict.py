@@ -59,6 +59,7 @@ def rows_from_pp(pp_file, track):
                 "jt_winpct": h.get("jt_winpct"),
                 "beaten_lengths": h.get("beaten_len"),
                 "class_delta": h.get("class_delta"),
+                "distance_delta": h.get("distance_delta"),
             })
     return pd.DataFrame(rows)
 
@@ -70,7 +71,8 @@ def rows_from_db(track, race_date):
     df = pd.read_sql_query(
         """SELECT race_num AS race_id, race_num, post_pos AS pp, horse_name,
                   ml_odds, prime_power, days_off, best_spd, jt_winpct,
-                  beaten_lengths, class_delta, signal_types, improving, jt_zero
+                  beaten_lengths, class_delta, distance_delta,
+                  signal_types, improving, jt_zero
            FROM entries WHERE track = ? AND race_date = ?
            ORDER BY race_num, post_pos""",
         con, params=(track.upper(), race_date),

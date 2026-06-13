@@ -40,6 +40,10 @@ CL_CALIBRATION_PLOT_PATH = os.path.join(SCRIPT_DIR, "calibration_plot_cl.png")
 
 NUMERIC_FEATURES = ["ml_odds", "pp_power", "days_off", "best_speed", "jt_winpct",
                     "beaten_lengths", "class_delta"]
+# distance_delta is captured in entries/picks but held out of the active model:
+# ablation showed it hurts CV log loss in both the picks logistic (0.4123 -> 0.4195)
+# and the conditional logit (1.4540 -> 1.4574). Distance changes are already
+# efficiently priced by the public ML.
 CATEGORICAL_FEATURES = ["signal_type", "track", "surface"]
 
 TRAINING_SQL = """
@@ -54,6 +58,7 @@ SELECT
     p.jt_winpct,
     p.beaten_lengths,
     p.class_delta,
+    p.distance_delta,
     COALESCE(rc.surface, 'Dirt')             AS surface,
     COALESCE(e.finish_pos, r.finish_pos)     AS finish_pos,
     r.odds                                   AS final_odds,
@@ -152,6 +157,7 @@ def train_picks_model():
     print(f"  jt_winpct present: {df['jt_winpct'].notna().sum()}/{n}")
     print(f"  beaten_lengths present: {df['beaten_lengths'].notna().sum()}/{n}")
     print(f"  class_delta present: {df['class_delta'].notna().sum()}/{n}")
+    print(f"  distance_delta present: {df['distance_delta'].notna().sum()}/{n}")
     print("  surface: constant ('Dirt' for every race in DB) - no signal")
 
     pipe = build_pipeline()
@@ -240,6 +246,9 @@ CL_FEATURES = ["log_ml", "prime_power_c", "pp_missing",
                "jt_winpct_c", "jt_missing", "beaten_c", "class_delta_c",
                "improving",
                "jt_zero", "sig_trainer", "sig_sire", "sig_horse", "sig_hotjt"]
+# dist_delta_c held out: CV ablation showed every transform of distance_delta
+# (raw, abs, clip[-2,+2], clip[-1,+1]) hurt log loss vs dropping it. The bucket
+# data confirms distance changes are efficiently priced by the public ML.
 CL_L2 = 1.0
 
 CL_SQL = """
@@ -256,6 +265,7 @@ SELECT
     e.jt_winpct,
     e.beaten_lengths,
     e.class_delta,
+    e.distance_delta,
     e.improving,
     e.jt_zero,
     e.signal_types,
@@ -414,6 +424,7 @@ def train_conditional_logit():
     print(f"jt_winpct present:   {(df['jt_missing'] == 0).sum()}/{n_starters}")
     print(f"beaten_len present:  {df['beaten_lengths'].notna().sum()}/{n_starters}")
     print(f"class_delta present: {df['class_delta'].notna().sum()}/{n_starters}")
+    print(f"dist_delta present:  {df['distance_delta'].notna().sum()}/{n_starters}")
 
     recs, y_flat, p_flat = cl_cross_validate(races)
     ll_model = -np.log(np.maximum(recs["p_win_model"], 1e-12)).mean()

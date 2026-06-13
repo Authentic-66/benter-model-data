@@ -417,6 +417,68 @@ def extract_last_class(block_lines):
     return races[max(races)] if races else None
 
 
+# PP-line distance tokens: 6f, 5½ (going fused: "5½ft"), 1m, and route
+# glyphs verified by final times on FP cards (1m ~1:41 < 1Ñ ~1:45 < 1ˆ ~1:47):
+# ˆ = 1/16 mile, Ñ = 70 yards. Optional junk char before the number is a
+# surface/inner-track marker (Ì à š æ).
+_DIST_FRACTIONS = {'½': 0.5, '¼': 0.25, '¾': 0.75}
+_MILE_GLYPHS = {'ˆ': 0.5, 'Ñ': 0.32}   # in furlongs past the whole miles
+_PP_DIST_RE = re.compile(
+    r'^\s*\d{1,2}[A-Za-z]{3}\d{2}\S*\s+[^\s\d]{0,2}(\d{1,2})([½¼¾ˆÑ]?)([mf]?)')
+
+
+def _ppline_furlongs(line):
+    m = _PP_DIST_RE.match(line)
+    if not m:
+        return None
+    n, glyph, unit = int(m.group(1)), m.group(2), m.group(3)
+    if glyph in _DIST_FRACTIONS:
+        return n + _DIST_FRACTIONS[glyph]
+    if glyph in _MILE_GLYPHS:
+        return n * 8 + _MILE_GLYPHS[glyph]
+    if unit == 'm':
+        return n * 8.0
+    if unit == 'f':
+        return float(n)
+    return None
+
+
+def _header_furlongs(s):
+    """Today's distance in furlongs from a plain-text race header line
+    ('6 Furlongs', '1Mile.', '1 1/16 Miles', '1 Mile 70 Yards')."""
+    m = re.search(r'(\d{1,2})\s*(½|\d\s*/\s*\d+)?\s*Furlongs?', s)
+    if m:
+        f = float(m.group(1))
+        if m.group(2) == '½':
+            f += 0.5
+        elif m.group(2):
+            num, den = re.split(r'\s*/\s*', m.group(2))
+            f += float(num) / float(den)
+        return f
+    m = re.search(r'(\d)\s*(\d+\s*/\s*\d+)?\s*Miles?(?:\s*(?:and\s*)?(\d+)\s*Yards?)?', s)
+    if m:
+        miles = float(m.group(1))
+        if m.group(2):
+            num, den = re.split(r'\s*/\s*', m.group(2))
+            miles += float(num) / float(den)
+        f = miles * 8
+        if m.group(3):
+            f += float(m.group(3)) / 220.0
+        return f
+    return None
+
+
+def extract_last_distance(block_lines):
+    """Distance (furlongs) of the horse's most recent race, or None."""
+    races = {}
+    for line in block_lines:
+        d = _pp_line_date(line)
+        if d is None or races.get(d) is not None:
+            continue
+        races[d] = _ppline_furlongs(line)
+    return races[max(races)] if races else None
+
+
 def last_race_date_from_block(block):
     """Most recent past-race date in a horse's PP block, or None
     (first-time starters have no PP lines)."""
@@ -459,6 +521,14 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 races[current_race]['surface'] = 'AW'
             else:
                 races[current_race]['surface'] = 'Dirt'
+
+        # ── Today's distance from the plain-text header lines ────────────────
+        if current_race and races[current_race].get('dist_furlongs') is None:
+            for hline in lines[:10]:
+                f = _header_furlongs(hline)
+                if f:
+                    races[current_race]['dist_furlongs'] = f
+                    break
 
         # ── Purse / class money: the race header may share a page with horse
         # blocks (condensed y-format), so check every page ────────────────────
@@ -639,6 +709,7 @@ def parse_brisnet(text, track_code='GP', race_date=None):
 
             beaten_len = extract_beaten_lengths(block, lines)
             last_class = extract_last_class(block)
+            last_dist  = extract_last_distance(block)
 
             # ── Speed figures from PP lines in block ──────────────────────────
             spd_figs   = extract_speed_figures(block)  # [(figure, surface), ...]
@@ -711,20 +782,24 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'best_spd_turf': best_spd_turf, 'best_spd_aw': best_spd_aw,
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
-                'last_class': last_class,
+                'last_class': last_class, 'last_dist': last_dist,
             }
 
             if not any(h['name'] == horse for h in races[current_race]['horses']):
                 races[current_race]['horses'].append(horse_data)
 
-    # class_delta needs today's class money (parsed from the race header
-    # page) and the horse's last-race class, so compute it after both passes
+    # class/distance deltas need today's values (parsed from the race header)
+    # and the horse's last-race values, so compute them after both passes
     for race in races.values():
         today_class = race.get('class_money')
+        today_dist = race.get('dist_furlongs')
         for h in race['horses']:
             lc = h.get('last_class')
             h['class_delta'] = (today_class - lc) \
                 if today_class is not None and lc is not None else None
+            ld = h.get('last_dist')
+            h['distance_delta'] = round(today_dist - ld, 2) \
+                if today_dist is not None and ld is not None else None
 
     return dict(races)
 
@@ -976,8 +1051,8 @@ def write_entries_db(races, track_code, race_date):
                     "ml_odds,prime_power,pp_rank,trainer,jockey,sire,"
                     "days_off,claim_price,best_spd,best_spd_turf,best_spd_aw,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
-                    "class_delta,signal_types,is_pick)"
-                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "class_delta,distance_delta,signal_types,is_pick)"
+                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -997,6 +1072,7 @@ def write_entries_db(races, track_code, race_date):
                      h.get('jt_winpct'),
                      h.get('beaten_len'),
                      h.get('class_delta'),
+                     h.get('distance_delta'),
                      ','.join(s[0] for s in h['signals']) or None,
                      int(is_strong_pick(h)))
                 )
@@ -1016,7 +1092,7 @@ def write_picks_file(all_picks, track_code, filepath):
     out_path = Path(__file__).parent / f"picks_{tc}_{date_str}.txt"
     lines = [
         f"# Benter Model Picks - {tc} {date_str}",
-        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT BEATEN_LEN CLASS_DELTA",
+        "# Format: TRACK RACE HORSE SIGNAL BETS ML_ODDS PP_POWER TRAINER WIN_PROB EV_RATIO DAYS_OFF BEST_SPD SPD1 SPD2 SPD3 JT_WINPCT BEATEN_LEN CLASS_DELTA DIST_DELTA",
     ]
     for rn, h in sorted(all_picks, key=lambda x: x[0]):
         if is_trainer_hotjt(h):
@@ -1035,9 +1111,10 @@ def write_picks_file(all_picks, track_code, filepath):
         jt_col     = str(h['jt_winpct']) if h.get('jt_winpct') is not None else '?'
         bl_col     = f"{h['beaten_len']:.2f}" if h.get('beaten_len') is not None else '?'
         cd_col     = str(h['class_delta']) if h.get('class_delta') is not None else '?'
+        dd_col     = f"{h['distance_delta']:.2f}" if h.get('distance_delta') is not None else '?'
         # WIN_PROB/EV_RATIO (cols 9-10) are '?' until prob_predict.py --in-place fills them
         lines.append(f"{tc} {rn} {horse_name} {sig_type} WPS {ml_col} {pp_col} {trainer_col}"
-                     f" ? ? {do_col} {best_col} {spd_cols} {jt_col} {bl_col} {cd_col}")
+                     f" ? ? {do_col} {best_col} {spd_cols} {jt_col} {bl_col} {cd_col} {dd_col}")
 
     out_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return out_path

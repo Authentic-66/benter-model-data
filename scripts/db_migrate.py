@@ -70,6 +70,7 @@ CREATE TABLE IF NOT EXISTS picks (
     jt_winpct       REAL,
     beaten_lengths  REAL,
     class_delta     REAL,
+    distance_delta  REAL,
     trainer_name    TEXT,
     trainer_exempt  INTEGER DEFAULT 0,
     filtered_reason TEXT,
@@ -114,6 +115,7 @@ CREATE TABLE IF NOT EXISTS entries (
     jt_winpct     REAL,
     beaten_lengths REAL,
     class_delta   REAL,
+    distance_delta REAL,
     signal_types  TEXT,
     is_pick       INTEGER DEFAULT 0,
     UNIQUE(track, race_date, race_num, horse_name)
@@ -146,12 +148,13 @@ def ensure_prob_columns(conn):
                           ('last_race_date', 'TEXT'), ('best_speed', 'INTEGER'),
                           ('recent_spd_1', 'INTEGER'), ('recent_spd_2', 'INTEGER'),
                           ('recent_spd_3', 'INTEGER'), ('jt_winpct', 'REAL'),
-                          ('beaten_lengths', 'REAL'), ('class_delta', 'REAL')):
+                          ('beaten_lengths', 'REAL'), ('class_delta', 'REAL'),
+                          ('distance_delta', 'REAL')):
         if col not in existing:
             conn.execute(f"ALTER TABLE picks ADD COLUMN {col} {col_type}")
             print(f"  schema: added picks.{col}")
     existing_e = {row[1] for row in conn.execute("PRAGMA table_info(entries)")}
-    for col in ('jt_winpct', 'beaten_lengths', 'class_delta'):
+    for col in ('jt_winpct', 'beaten_lengths', 'class_delta', 'distance_delta'):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} REAL")
             print(f"  schema: added entries.{col}")
@@ -220,7 +223,8 @@ def backfill_entry_columns(conn):
     same card). Add (picks_col, entries_col) pairs here as features grow."""
     for picks_col, entries_col in (('jt_winpct', 'jt_winpct'),
                                    ('beaten_lengths', 'beaten_lengths'),
-                                   ('class_delta', 'class_delta')):
+                                   ('class_delta', 'class_delta'),
+                                   ('distance_delta', 'distance_delta')):
         cur = conn.execute(
             f"UPDATE picks SET {picks_col} = ("
             f" SELECT e.{entries_col} FROM entries e"
@@ -468,6 +472,9 @@ def import_picks(conn):
             # Column 18: class delta (today's class money - last race's)
             try:    class_delta = float(parts[17]) if len(parts) >= 18 else None
             except: class_delta = None
+            # Column 19: distance delta in furlongs (today - last race)
+            try:    dist_delta = float(parts[18]) if len(parts) >= 19 else None
+            except: dist_delta = None
 
             cur.execute(
                 "SELECT race_id FROM races WHERE track=? AND race_date=? AND race_num=?",
@@ -481,17 +488,17 @@ def import_picks(conn):
                 "(track,race_date,race_num,race_id,horse_name,signal_type,bets,"
                 "ml_odds,pp_power,win_prob,ev_ratio,days_off,"
                 "best_speed,recent_spd_1,recent_spd_2,recent_spd_3,jt_winpct,"
-                "beaten_lengths,class_delta,trainer_name)"
-                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "beaten_lengths,class_delta,distance_delta,trainer_name)"
+                " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (p_track, date_str, p_race, race_id, p_horse, p_signal, bets,
                  ml_odds, pp_power, win_prob, ev_ratio, days_off,
                  best_speed, rs1, rs2, rs3, jt_winpct, beaten_len, class_delta,
-                 trainer_name)
+                 dist_delta, trainer_name)
             )
             if cur.rowcount:
                 n_picks += 1
             elif any(v is not None for v in (win_prob, days_off, best_speed, jt_winpct,
-                                             beaten_len, class_delta)):
+                                             beaten_len, class_delta, dist_delta)):
                 # Pick imported before its file was annotated (or re-annotated
                 # after a model fix) — sync optional columns from the file
                 cur.execute(
@@ -503,10 +510,11 @@ def import_picks(conn):
                     " recent_spd_3=COALESCE(?,recent_spd_3),"
                     " jt_winpct=COALESCE(?,jt_winpct),"
                     " beaten_lengths=COALESCE(?,beaten_lengths),"
-                    " class_delta=COALESCE(?,class_delta)"
+                    " class_delta=COALESCE(?,class_delta),"
+                    " distance_delta=COALESCE(?,distance_delta)"
                     " WHERE track=? AND race_date=? AND race_num=? AND horse_name=?",
                     (win_prob, ev_ratio, days_off, best_speed, rs1, rs2, rs3, jt_winpct,
-                     beaten_len, class_delta, p_track, date_str, p_race, p_horse)
+                     beaten_len, class_delta, dist_delta, p_track, date_str, p_race, p_horse)
                 )
 
     conn.commit()
