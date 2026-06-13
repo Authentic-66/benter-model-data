@@ -1,0 +1,32 @@
+# LIVE_ODDS_CT_06122026.txt
+# Fill the LIVE column with current decimal odds at 5 MTP.
+# Lines starting with # are ignored. Blank LIVE -> skipped.
+# Run: py scripts/live_odds_flag.py LIVE_ODDS_CT_06122026.txt
+#
+#  RACE  PP   HORSE                            ML       LIVE
+  R1    4    KingUni                          5.0     
+  R1    5    WalkOnBroadway                   13.0    
+  R2    6    CreedCalling                     5.0     
+  R3    7    Mariette                         3.5     
+  R3    8    PeacefulUnion                    7.0     
+  R3    3    SmokedPeach                      4.0     
+  R4    3    GramKline                        3.0     
+  R4    1    Paynoworpaylater                 3.5     
+  R4    4    SilverSonde                      5.0     
+  R5    5    ProspectiveLove                  4.5     
+  R5    3    RagtimeScribble                  7.0     
+  R5    4    SoulCatcher                      13.0    
+  R5    6    Vex                              3.5     
+  R6    4    AudibleStorm                     5.5     
+  R6    3    BeauDutton                       4.5     
+  R6    9    KnightSage                       13.0    
+  R6    6    MoonlightCandy                   6.0     
+  R7    2    BigDilemma                       16.0    
+  R7    4    SummerVibes                      6.0     
+  R7    3    Talklessworkmore                 2.4     
+  R8    7    DuncanIdaho                      1.6     
+  R8    1    Honeyquist                       5.5     
+  R8    2    MoonlitNotion                    7.0     
+  R8    6    PorkChopPete                     6.0     
+  R9    3    CollegevilleQueen                11.0    
+  R9    8    FlightControl                    2.8     

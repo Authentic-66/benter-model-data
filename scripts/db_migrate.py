@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS entries (
     horse_name    TEXT NOT NULL,
     ml_odds       REAL,
     final_odds    REAL,
+    live_odds     REAL,
     prime_power   REAL,
     pp_rank       INTEGER,
     trainer       TEXT,
@@ -156,7 +157,7 @@ def ensure_prob_columns(conn):
             print(f"  schema: added picks.{col}")
     existing_e = {row[1] for row in conn.execute("PRAGMA table_info(entries)")}
     for col in ('jt_winpct', 'beaten_lengths', 'class_delta', 'distance_delta',
-                'final_odds'):
+                'final_odds', 'live_odds'):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} REAL")
             print(f"  schema: added entries.{col}")
