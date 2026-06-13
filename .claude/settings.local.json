@@ -56,7 +56,8 @@
       "Bash(py scripts/db_migrate.py)",
       "Bash(py _ablate_dd.py)",
       "Bash(py _ablate_dd_picks.py)",
-      "Bash(py prob_model.py)"
+      "Bash(py prob_model.py)",
+      "Bash(py *)"
     ]
   }
 }
