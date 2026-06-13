@@ -50,6 +50,7 @@ def rows_from_pp(pp_file, track):
                 "race_id": rn, "race_num": rn, "pp": h["pp"],
                 "horse_name": h["name"].replace(" ", ""),
                 "ml_odds": bp.ml_to_float(h["ml"]),
+                "final_odds": None,  # unknown until post time
                 "prime_power": pp_power,
                 "signal_types": ",".join(s[0] for s in h["signals"]) or None,
                 "improving": int(bool(h.get("improving"))),
@@ -70,8 +71,8 @@ def rows_from_db(track, race_date):
     con = sqlite3.connect(DB_PATH)
     df = pd.read_sql_query(
         """SELECT race_num AS race_id, race_num, post_pos AS pp, horse_name,
-                  ml_odds, prime_power, days_off, best_spd, jt_winpct,
-                  beaten_lengths, class_delta, distance_delta,
+                  ml_odds, final_odds, prime_power, days_off, best_spd,
+                  jt_winpct, beaten_lengths, class_delta, distance_delta,
                   signal_types, improving, jt_zero
            FROM entries WHERE track = ? AND race_date = ?
            ORDER BY race_num, post_pos""",

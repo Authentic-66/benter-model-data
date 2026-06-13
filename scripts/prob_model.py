@@ -249,6 +249,11 @@ CL_FEATURES = ["log_ml", "prime_power_c", "pp_missing",
 # dist_delta_c held out: CV ablation showed every transform of distance_delta
 # (raw, abs, clip[-2,+2], clip[-1,+1]) hurt log loss vs dropping it. The bucket
 # data confirms distance changes are efficiently priced by the public ML.
+# log_final / odds_drift held out: scripts/cl_odds_experiment.py shows both
+# would lower CV log loss by ~0.05 nats vs log_ml alone (n=175 races), but
+# entries.final_odds is the post-time tote price - unknown at live predict
+# time. build_cl_features still computes them so the experiment can be re-run
+# and cl_evaluate can score historical cards with the final odds baseline.
 CL_L2 = 1.0
 
 CL_SQL = """
@@ -259,6 +264,7 @@ SELECT
     e.race_num,
     e.horse_name,
     e.ml_odds,
+    e.final_odds,
     e.prime_power,
     e.days_off,
     e.best_spd,
@@ -303,6 +309,16 @@ def build_cl_features(df, stds=None):
     df["log_ml"] = np.log(1.0 / df["ml_odds"])
     df["log_ml"] = df["log_ml"] - df.groupby("race_id")["log_ml"].transform("mean")
 
+    # log_final and odds_drift use the final tote price. At predict time
+    # this column is NULL (race hasn't run yet); fall back to ml_odds so
+    # log_final degrades to log_ml and odds_drift to zero.
+    final_filled = df["final_odds"].where(df["final_odds"].notna(), df["ml_odds"])
+    df["log_final"] = np.log(1.0 / final_filled)
+    df["log_final"] = df["log_final"] - df.groupby("race_id")["log_final"].transform("mean")
+
+    drift = np.log(final_filled / df["ml_odds"])
+    df["odds_drift"] = drift - drift.groupby(df["race_id"]).transform("mean")
+
     def center(col, name, missing_name=None):
         v = pd.to_numeric(df[col], errors="coerce")
         if missing_name is not None:
@@ -329,7 +345,8 @@ def build_cl_features(df, stds=None):
 
     if stds is None:
         stds = {c: float(df[c].std()) or 1.0
-                for c in ("log_ml", "prime_power_c", "days_off_c",
+                for c in ("log_ml", "log_final", "odds_drift",
+                          "prime_power_c", "days_off_c",
                           "best_spd_c", "jt_winpct_c", "beaten_c",
                           "class_delta_c")}
     for c, sd in stds.items():
@@ -337,11 +354,15 @@ def build_cl_features(df, stds=None):
     return stds
 
 
-def cl_race_arrays(df):
-    """Returns a list of (X, winner_idx, ml_implied_norm) per race."""
+def cl_race_arrays(df, features=None):
+    """Returns a list of (X, winner_idx, ml_implied_norm) per race.
+    `features` defaults to the module-level CL_FEATURES; pass a different
+    list to score the same data with a different feature subset (used by
+    cl_odds_experiment.py)."""
+    cols = features if features is not None else CL_FEATURES
     races = []
     for _, g in df.groupby("race_id", sort=False):
-        X = g[CL_FEATURES].to_numpy(float)
+        X = g[cols].to_numpy(float)
         w = int(np.flatnonzero(g["win"].to_numpy())[0])
         implied = (1.0 / g["ml_odds"]).to_numpy(float)
         races.append((X, w, implied / implied.sum()))
