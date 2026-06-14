@@ -23,6 +23,7 @@ SCRIPT_DIR = Path(__file__).parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
 CL_MODEL_PATH = SCRIPT_DIR / "benter_model_cl.pkl"
+HARVILLE_PATH = SCRIPT_DIR / "benter_model_harville.pkl"
 DB_PATH = SCRIPT_DIR / "benter_model.db"
 
 KELLY_MULTIPLIER = 0.5
@@ -91,6 +92,9 @@ def main():
     ap.add_argument("--db", action="store_true", help="read the card from the entries table")
     ap.add_argument("--bankroll", type=float, default=0,
                     help="if > 0, print half-Kelly stakes for +EV overlays")
+    ap.add_argument("--exotics", action="store_true",
+                    help="print per-race place/show + top exacta/trifecta prices "
+                         "(uses benter_model_harville.pkl for the γ/δ correction)")
     args = ap.parse_args()
 
     if not CL_MODEL_PATH.exists():
@@ -159,6 +163,69 @@ def main():
 
     print(f"\nPositive-EV overlays at ML (overlay > 1.00): {n_ev}")
     print("NOTE: morning lines, not live odds - re-check overlays against the tote.")
+
+    if args.exotics:
+        if not HARVILLE_PATH.exists():
+            print(f"\nWARNING: {HARVILLE_PATH.name} not found - run fit_harville.py first.")
+        else:
+            import harville
+            with open(HARVILLE_PATH, "rb") as f:
+                hv = pickle.load(f)
+            gamma, delta = hv["gamma"], hv["delta"]
+            print("\n" + "=" * 78)
+            print(f"EXOTIC PRICES   (Henery γ={gamma:.3f}  δ={delta:.3f}; "
+                  f"fitted on {hv['n_races']} races)")
+            print("=" * 78)
+            for rn, g in df.groupby("race_id"):
+                g = g.reset_index(drop=True)
+                p = g["win_prob"].to_numpy(float)
+                p = p / p.sum()
+                ex = harville.race_exotics(p, gamma, delta)
+                horses = g["horse_name"].tolist()
+                # When entries have no post_pos (SA from results), fall
+                # back to a 1-indexed row label so the combo printout is
+                # still readable.
+                pps = [int(x) if pd.notna(x) else f"#{i+1}"
+                       for i, x in enumerate(g["pp"])]
+
+                print(f"\nRACE {rn}  ({len(p)} starters)")
+                print(f"  {'PP':<4}{'HORSE':<24}{'WIN':>7}{'PLACE':>8}{'SHOW':>8}"
+                      f"{'FAIR W':>9}{'FAIR P':>9}{'FAIR S':>9}")
+                order = np.argsort(-p)
+                for k in order:
+                    fw = 1 / ex.win[k]   if ex.win[k]   > 0 else float("inf")
+                    fp = 1 / ex.place[k] if ex.place[k] > 0 else float("inf")
+                    fs = 1 / ex.show[k]  if ex.show[k]  > 0 else float("inf")
+                    print(f"  {pps[k]:<4}{horses[k]:<24}"
+                          f"{ex.win[k]:>7.3f}{ex.place[k]:>8.3f}{ex.show[k]:>8.3f}"
+                          f"{fw:>9.2f}{fp:>9.2f}{fs:>9.2f}")
+
+                # Top-5 exactas by probability
+                pairs = [(i, j, ex.exacta[i, j])
+                         for i in range(len(p)) for j in range(len(p)) if i != j]
+                pairs.sort(key=lambda x: -x[2])
+                print(f"  TOP EXACTAS (probability  fair $1 payoff)")
+                for i, j, prob in pairs[:5]:
+                    fair = 1.0 / prob if prob > 0 else float("inf")
+                    print(f"    {pps[i]}-{pps[j]}  {horses[i][:14]:<14} / "
+                          f"{horses[j][:14]:<14}  {prob:.4f}   ${fair:7.2f}")
+
+                # Top-5 trifectas (if computed)
+                if ex.trifecta is not None:
+                    trif = []
+                    n = len(p)
+                    for i in range(n):
+                        for j in range(n):
+                            if j == i: continue
+                            for k in range(n):
+                                if k in (i, j): continue
+                                trif.append((i, j, k, ex.trifecta[i, j, k]))
+                    trif.sort(key=lambda x: -x[3])
+                    print(f"  TOP TRIFECTAS")
+                    for i, j, k, prob in trif[:5]:
+                        fair = 1.0 / prob if prob > 0 else float("inf")
+                        print(f"    {pps[i]}-{pps[j]}-{pps[k]}  {prob:.5f}   "
+                              f"${fair:7.2f}")
 
     if args.bankroll > 0:
         bets = df[(df["edge"] > 0) & df["ml_display"].notna() & (df["ml_display"] > 1.0)].copy()
