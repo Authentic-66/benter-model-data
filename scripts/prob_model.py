@@ -14,6 +14,12 @@ benter_model_cl.pkl.
 import os
 import pickle
 import sqlite3
+import sys
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except AttributeError:
+    pass
 
 import matplotlib
 
@@ -172,12 +178,21 @@ def train_picks_model():
     brier = brier_score_loss(y, y_prob_cv)
     majority_acc = max(y.mean(), 1 - y.mean())
 
+    # McFadden's pseudo-R²: 1 - LL_model / LL_null. The null model here
+    # predicts the constant base rate (win_rate); LL_null is the entropy
+    # of a Bernoulli at that base rate.
+    win_rate = float(y.mean())
+    ll_null = -(win_rate * np.log(max(win_rate, 1e-12)) +
+                (1 - win_rate) * np.log(max(1 - win_rate, 1e-12)))
+    r2_picks = 1.0 - ll / ll_null
+
     print("\n--- Cross-validated performance (5-fold) ---")
     print(f"Accuracy @0.5:        {acc:.3f}")
     print(f"  (majority baseline 'never wins': {majority_acc:.3f} - with a")
     print(f"   {n_wins / n:.0%} win rate, accuracy is a weak metric; log loss matters more)")
     print(f"Log loss:             {ll:.4f}")
     print(f"Brier score:          {brier:.4f}")
+    print(f"McFadden's pseudo-R²: {r2_picks:.4f}  (vs Bernoulli base-rate null)")
 
     # Log-loss baseline from ML-implied probabilities where available
     has_ml = df["ml_odds"].notna()
@@ -508,11 +523,25 @@ def train_conditional_logit():
     ll_ml = -np.log(np.maximum(recs["p_win_ml"], 1e-12)).mean()
     ll_uniform = np.log(recs["n"]).mean()
 
+    # McFadden's pseudo-R²: 1 - LL_model / LL_null. The "null" is the
+    # uniform 1/n model over each race's field. Benter quoted ~0.07-0.10
+    # on Hong Kong cards; anything beating zero means the model adds info
+    # over a coin-flip-by-field-size baseline. ΔR² over the public ML is
+    # the cleaner read for a Benter-style overlay program — it shows how
+    # much the model improves on the market itself.
+    r2_model = 1.0 - ll_model / ll_uniform
+    r2_ml    = 1.0 - ll_ml    / ll_uniform
+    delta_r2 = r2_model - r2_ml
+
     print("\n--- Cross-validated performance (5-fold, grouped by race) ---")
     print("Race-level log loss (-ln P(winner), lower is better):")
     print(f"  Conditional logit:     {ll_model:.4f}")
     print(f"  ML-implied (public):   {ll_ml:.4f}")
     print(f"  Uniform (1/n):         {ll_uniform:.4f}")
+    print("McFadden's pseudo-R² (vs uniform 1/n null; higher = more info):")
+    print(f"  Model R² : {r2_model:.4f}")
+    print(f"  ML R²    : {r2_ml:.4f}")
+    print(f"  ΔR²      : {delta_r2:+.4f}   (model vs public ML)")
     print(f"Top-pick hit rate:       model {recs['hit_model'].mean():.1%}  "
           f"vs ML favorite {recs['hit_ml'].mean():.1%}  (n={n_races})")
 
@@ -539,6 +568,9 @@ def train_conditional_logit():
                 "n_races": n_races,
                 "cv_race_log_loss": float(ll_model),
                 "cv_race_log_loss_ml": float(ll_ml),
+                "mcfadden_r2": float(r2_model),
+                "mcfadden_r2_ml": float(r2_ml),
+                "delta_r2": float(delta_r2),
             },
             f,
         )
