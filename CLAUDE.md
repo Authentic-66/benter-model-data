@@ -67,6 +67,16 @@ Official Equibase result charts for completed race cards.
 - `CT052826USA.pdf` — alternate format: `[TRACK][month][day][year]USA.pdf`
 - `ST0506.pdf` — Hong Kong Sha Tin format: `[TRACK][month][day].pdf`
 
+**Columns to know:**
+- `M/E` in the finisher table header is **Medication/Equipment** (L=Lasix,
+  b=blinkers, B=front bandages, etc.), **not** Morning-line Equivalent.
+  Equibase result charts have no morning-line column anywhere — the only
+  odds column is the post-race tote `Odds`. When a track has results but
+  no PP file (e.g. Santa Anita), we substitute post-race odds for ml_odds
+  in the entries table and bucket those rows separately in the CL model
+  (see `prob_model.py` — `log_ml_sa` / `log_ml_nonsa`) so the stronger
+  post-race-odds signal doesn't bleed into the morning-line weight.
+
 ## Data Coverage
 
 | Track | Results From | PPS Files |
@@ -79,6 +89,7 @@ Official Equibase result charts for completed race cards.
 | Gulfstream Park | Jan 2024 | Yes |
 | Hong Kong (HV + ST) | 2026 | No |
 | Mahoning Valley | 2025–present | No |
+| Santa Anita | 2025–present | No (results only) |
 
 ## Model Workbooks
 

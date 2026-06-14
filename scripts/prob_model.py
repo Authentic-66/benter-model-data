@@ -361,19 +361,35 @@ def build_cl_features(df, stds=None):
 
     if stds is None:
         stds = {}
+        sa_mask = df["track"] == "SA"
+
         # log_ml_sa / log_ml_nonsa are z-scored against the std of their
         # OWN bucket — otherwise the zero rows from the other bucket would
         # deflate the scale and the fitted coefficients would no longer be
         # comparable across the two groups.
-        sa_mask = df["track"] == "SA"
         sa_std    = float(df.loc[sa_mask,  "log_ml"].std()) if sa_mask.any()  else 0.0
         nonsa_std = float(df.loc[~sa_mask, "log_ml"].std()) if (~sa_mask).any() else 0.0
         stds["log_ml_sa"]    = sa_std    or 1.0
         stds["log_ml_nonsa"] = nonsa_std or 1.0
-        for c in ("log_final", "odds_drift",
-                  "prime_power_c", "days_off_c",
+
+        # Every PP-derived numeric feature is 0 on SA rows after within-race
+        # centering (all SA horses share the same NULL → race mean), so SA
+        # carries no information for them but its many zero rows still
+        # deflate the global std and shrink the fitted non-SA coefficient.
+        # Bucket the std to non-SA only. At predict time the same stds are
+        # applied — SA's centered-to-0 stays zero either way.
+        # spd_missing / jt_missing / pp_missing aren't naturally on the
+        # same scale as the *_c features, so add them here too so the
+        # printed coefficients are directly comparable.
+        for c in ("prime_power_c", "days_off_c",
                   "best_spd_c", "jt_winpct_c", "beaten_c",
-                  "class_delta_c"):
+                  "class_delta_c",
+                  "pp_missing", "spd_missing", "jt_missing"):
+            v = df.loc[~sa_mask, c] if (~sa_mask).any() else df[c]
+            stds[c] = float(v.std()) or 1.0
+
+        # log_final / odds_drift are well-defined on every row; full std.
+        for c in ("log_final", "odds_drift"):
             stds[c] = float(df[c].std()) or 1.0
     for c, sd in stds.items():
         df[c] = df[c] / sd
