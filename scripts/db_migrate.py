@@ -98,6 +98,7 @@ CREATE TABLE IF NOT EXISTS entries (
     race_num      INTEGER NOT NULL,
     post_pos      INTEGER,
     horse_name    TEXT NOT NULL,
+    source        TEXT DEFAULT 'PP',  -- 'PP' (real morning line) or 'RESULTS' (post-race tote substitute)
     ml_odds       REAL,
     final_odds    REAL,
     live_odds     REAL,
@@ -161,6 +162,9 @@ def ensure_prob_columns(conn):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} REAL")
             print(f"  schema: added entries.{col}")
+    if 'source' not in existing_e:
+        conn.execute("ALTER TABLE entries ADD COLUMN source TEXT DEFAULT 'PP'")
+        print("  schema: added entries.source")
     conn.commit()
 
 

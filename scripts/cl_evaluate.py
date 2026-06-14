@@ -52,6 +52,7 @@ SELECT
     e.race_date,
     e.race_num,
     e.horse_name,
+    COALESCE(e.source, 'PP') AS source,
     e.ml_odds,
     e.prime_power,
     e.days_off,

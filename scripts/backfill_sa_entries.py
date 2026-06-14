@@ -37,11 +37,11 @@ WHERE ra.track = 'SA'
 
 INSERT_ENTRY = """
 INSERT OR IGNORE INTO entries
-(race_id, track, race_date, race_num, post_pos, horse_name,
+(race_id, track, race_date, race_num, post_pos, horse_name, source,
  ml_odds, final_odds, prime_power, pp_rank,
  trainer, jockey, sire,
  signal_types, is_pick, improving, jt_zero)
-VALUES (?, 'SA', ?, ?, ?, ?, ?, ?, NULL, NULL, ?, ?, ?, '', 0, 0, 0)
+VALUES (?, 'SA', ?, ?, ?, ?, 'RESULTS', ?, ?, NULL, NULL, ?, ?, ?, '', 0, 0, 0)
 """
 
 

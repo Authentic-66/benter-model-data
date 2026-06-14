@@ -241,20 +241,22 @@ def train_picks_model():
 # Part 2 — conditional logit on full fields (entries ⋈ results)
 # ════════════════════════════════════════════════════════════════════════
 
-CL_FEATURES = ["log_ml_nonsa", "log_ml_sa",
+CL_FEATURES = ["log_ml_pp", "log_ml_results",
                "prime_power_c", "pp_missing",
                "days_off_c", "best_spd_c", "spd_missing",
                "jt_winpct_c", "jt_missing", "beaten_c", "class_delta_c",
                "improving",
                "jt_zero", "sig_trainer", "sig_sire", "sig_horse", "sig_hotjt"]
-# log_ml is split into two track-grouped columns because Santa Anita's
-# ml_odds is the post-race tote price (no morning line in Equibase result
-# charts), while every other track's ml_odds is the actual morning line.
-# Fitting a single log_ml weight mixes signals of very different strength
-# and drags the global coefficient toward SA's stronger post-race signal,
-# polluting non-SA predictions. Each split column is centered within race
-# (as before) and z-scored against the std of its own bucket so the two
-# coefficients are directly comparable.
+# log_ml is split by entries.source — 'PP' rows came from Brisnet past-
+# performance PDFs and carry the real morning line; 'RESULTS' rows are
+# synthetic entries built from Equibase result charts where post-race
+# tote stands in for ml_odds (no morning line is available in the chart).
+# Fitting one log_ml mixes signals of very different predictive strength
+# and pulls the coefficient toward the stronger post-race signal,
+# polluting live (PP-driven) predictions. Each split column is centered
+# within race and z-scored against the std of its own bucket so the two
+# coefficients are directly comparable. Live prediction always uses PP,
+# so at score time log_ml_pp is the only one that matters.
 # dist_delta_c held out: CV ablation showed every transform of distance_delta
 # (raw, abs, clip[-2,+2], clip[-1,+1]) hurt log loss vs dropping it. The bucket
 # data confirms distance changes are efficiently priced by the public ML.
@@ -272,6 +274,7 @@ SELECT
     e.race_date,
     e.race_num,
     e.horse_name,
+    COALESCE(e.source, 'PP') AS source,
     e.ml_odds,
     e.final_odds,
     e.prime_power,
@@ -318,12 +321,16 @@ def build_cl_features(df, stds=None):
     df["log_ml"] = np.log(1.0 / df["ml_odds"])
     df["log_ml"] = df["log_ml"] - df.groupby("race_id")["log_ml"].transform("mean")
 
-    # Track-aware split: SA's ml_odds is post-race tote, others' is the
-    # morning line. Zero outside the bucket so each coefficient is fit
-    # independently. See CL_FEATURES comment for the full rationale.
-    is_sa = (df["track"] == "SA").astype(float)
-    df["log_ml_sa"]    = df["log_ml"] * is_sa
-    df["log_ml_nonsa"] = df["log_ml"] * (1.0 - is_sa)
+    # Source-aware split: 'RESULTS' rows are synthetic entries (post-race
+    # tote standing in for ml_odds); 'PP' rows have the real morning line.
+    # Zero outside the bucket so each coefficient is fit independently.
+    # At predict time the source column may be absent — default to 'PP'.
+    if "source" not in df.columns:
+        df["source"] = "PP"
+    df["source"] = df["source"].fillna("PP")
+    is_results = (df["source"] == "RESULTS").astype(float)
+    df["log_ml_results"] = df["log_ml"] * is_results
+    df["log_ml_pp"]      = df["log_ml"] * (1.0 - is_results)
 
     # log_final and odds_drift use the final tote price. At predict time
     # this column is NULL (race hasn't run yet); fall back to ml_odds so
@@ -361,23 +368,24 @@ def build_cl_features(df, stds=None):
 
     if stds is None:
         stds = {}
-        sa_mask = df["track"] == "SA"
+        pp_mask = df["source"] == "PP"
 
-        # log_ml_sa / log_ml_nonsa are z-scored against the std of their
+        # log_ml_pp / log_ml_results are z-scored against the std of their
         # OWN bucket — otherwise the zero rows from the other bucket would
         # deflate the scale and the fitted coefficients would no longer be
         # comparable across the two groups.
-        sa_std    = float(df.loc[sa_mask,  "log_ml"].std()) if sa_mask.any()  else 0.0
-        nonsa_std = float(df.loc[~sa_mask, "log_ml"].std()) if (~sa_mask).any() else 0.0
-        stds["log_ml_sa"]    = sa_std    or 1.0
-        stds["log_ml_nonsa"] = nonsa_std or 1.0
+        pp_std  = float(df.loc[ pp_mask, "log_ml"].std()) if  pp_mask.any() else 0.0
+        res_std = float(df.loc[~pp_mask, "log_ml"].std()) if (~pp_mask).any() else 0.0
+        stds["log_ml_pp"]      = pp_std  or 1.0
+        stds["log_ml_results"] = res_std or 1.0
 
-        # Every PP-derived numeric feature is 0 on SA rows after within-race
-        # centering (all SA horses share the same NULL → race mean), so SA
-        # carries no information for them but its many zero rows still
-        # deflate the global std and shrink the fitted non-SA coefficient.
-        # Bucket the std to non-SA only. At predict time the same stds are
-        # applied — SA's centered-to-0 stays zero either way.
+        # Every PP-derived numeric feature is 0 on RESULTS-sourced rows
+        # after within-race centering (synthetic rows share the same NULL
+        # → race mean), so RESULTS carries no information for them but its
+        # many zero rows still deflate the global std and shrink the
+        # fitted PP coefficient. Bucket the std to PP-only. At predict
+        # time the same stds are applied — RESULTS-centered-to-0 stays
+        # zero either way.
         # spd_missing / jt_missing / pp_missing aren't naturally on the
         # same scale as the *_c features, so add them here too so the
         # printed coefficients are directly comparable.
@@ -385,7 +393,7 @@ def build_cl_features(df, stds=None):
                   "best_spd_c", "jt_winpct_c", "beaten_c",
                   "class_delta_c",
                   "pp_missing", "spd_missing", "jt_missing"):
-            v = df.loc[~sa_mask, c] if (~sa_mask).any() else df[c]
+            v = df.loc[pp_mask, c] if pp_mask.any() else df[c]
             stds[c] = float(v.std()) or 1.0
 
         # log_final / odds_drift are well-defined on every row; full std.

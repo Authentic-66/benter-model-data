@@ -1047,12 +1047,12 @@ def write_entries_db(races, track_code, race_date):
                     claim = None
                 cur.execute(
                     "INSERT OR REPLACE INTO entries"
-                    "(race_id,track,race_date,race_num,post_pos,horse_name,"
+                    "(race_id,track,race_date,race_num,post_pos,horse_name,source,"
                     "ml_odds,prime_power,pp_rank,trainer,jockey,sire,"
                     "days_off,claim_price,best_spd,best_spd_turf,best_spd_aw,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
                     "class_delta,distance_delta,signal_types,is_pick)"
-                    " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
