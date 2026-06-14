@@ -2,7 +2,7 @@
 
 Some entries rows were parsed from Brisnet PPs without a usable ML odds
 value. Those races are excluded from the conditional-logit training set
-(prob_model.py requires ml_odds IS NOT NULL AND > 1.0), even though the
+(prob_model.py requires ml_odds IS NOT NULL AND > 0.05), even though the
 final post-time odds for the same horse are already in the results table.
 
 This script joins entries to results on (race_id, horse_name) and copies
@@ -44,19 +44,19 @@ def main():
     fillable = cur.execute("""
         SELECT COUNT(*) FROM entries e
         JOIN results r ON r.race_id = e.race_id AND r.horse_name = e.horse_name
-        WHERE e.ml_odds IS NULL AND r.odds IS NOT NULL AND r.odds > 1.0
+        WHERE e.ml_odds IS NULL AND r.odds IS NOT NULL AND r.odds > 0.05
     """).fetchone()[0]
 
     by_track = cur.execute("""
         SELECT e.track, COUNT(*)
         FROM entries e
         JOIN results r ON r.race_id = e.race_id AND r.horse_name = e.horse_name
-        WHERE e.ml_odds IS NULL AND r.odds IS NOT NULL AND r.odds > 1.0
+        WHERE e.ml_odds IS NULL AND r.odds IS NOT NULL AND r.odds > 0.05
         GROUP BY e.track ORDER BY 2 DESC
     """).fetchall()
 
     print(f"entries.ml_odds NULL before:      {before_null}")
-    print(f"fillable from results.odds > 1.0: {fillable}")
+    print(f"fillable from results.odds > 0.05: {fillable}")
     print(f"remaining NULL after backfill:    {before_null - fillable}")
     print("\nFillable by track:")
     for t, n in by_track:
@@ -73,14 +73,14 @@ def main():
             SELECT r.odds FROM results r
             WHERE r.race_id = entries.race_id
               AND r.horse_name = entries.horse_name
-              AND r.odds IS NOT NULL AND r.odds > 1.0
+              AND r.odds IS NOT NULL AND r.odds > 0.05
         )
         WHERE ml_odds IS NULL
           AND EXISTS (
             SELECT 1 FROM results r
             WHERE r.race_id = entries.race_id
               AND r.horse_name = entries.horse_name
-              AND r.odds IS NOT NULL AND r.odds > 1.0
+              AND r.odds IS NOT NULL AND r.odds > 0.05
           )
     """)
     filled = cur.rowcount
@@ -99,7 +99,7 @@ def main():
             SELECT e.race_id FROM entries e
             JOIN results r ON r.race_id = e.race_id AND r.horse_name = e.horse_name
             WHERE r.finish_pos IS NOT NULL
-              AND e.ml_odds IS NOT NULL AND e.ml_odds > 1.0
+              AND e.ml_odds IS NOT NULL AND e.ml_odds > 0.05
             GROUP BY e.race_id
             HAVING SUM(CASE WHEN r.finish_pos = 1 THEN 1 ELSE 0 END) = 1
                AND COUNT(*) >= 2

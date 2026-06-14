@@ -234,13 +234,13 @@ def backfill_final_odds(conn):
             SELECT r.odds FROM results r
             WHERE r.race_id = entries.race_id
               AND r.horse_name = entries.horse_name
-              AND r.odds IS NOT NULL AND r.odds > 1.0
+              AND r.odds IS NOT NULL AND r.odds > 0.05
         )
         WHERE final_odds IS NULL AND EXISTS (
             SELECT 1 FROM results r
             WHERE r.race_id = entries.race_id
               AND r.horse_name = entries.horse_name
-              AND r.odds IS NOT NULL AND r.odds > 1.0
+              AND r.odds IS NOT NULL AND r.odds > 0.05
         )
     """)
     if cur.rowcount:

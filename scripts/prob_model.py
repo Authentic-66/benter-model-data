@@ -290,8 +290,14 @@ SELECT
     r.finish_pos
 FROM entries e
 JOIN results r ON r.race_id = e.race_id AND r.horse_name = e.horse_name
-WHERE r.finish_pos IS NOT NULL AND e.ml_odds IS NOT NULL AND e.ml_odds > 1.0
+WHERE r.finish_pos IS NOT NULL AND e.ml_odds IS NOT NULL AND e.ml_odds > 0.05
 """
+# 0.05 (was 1.0): allows legitimate odds-on chalk into training. The
+# old > 1.0 filter dropped any horse priced below even-money — including
+# the actual winners of races where the favorite went off odds-on. With
+# `RESULTS`-sourced entries using post-race tote as ml_odds, those
+# sub-evens prices are real, not parser noise, and we shouldn't filter
+# winners out of training data.
 
 
 def load_cl_data():

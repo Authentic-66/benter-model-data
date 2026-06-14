@@ -32,8 +32,13 @@ SELECT ra.race_id, ra.race_date, ra.race_num,
 FROM races ra
 JOIN results res ON res.race_id = ra.race_id
 WHERE ra.track = 'SA'
-  AND res.odds IS NOT NULL AND res.odds > 1.0
+  AND res.odds IS NOT NULL AND res.odds > 0.05
 """
+# Threshold lowered from 1.0 to 0.05: anything > 1.0 excludes odds-on
+# favorites (e.g. 0.9 = 9/10), and Equibase's `Odds` column is the post-
+# race tote so legitimate sub-evens chalk gets parsed correctly. The
+# 0.05 floor still guards against parser zeros / NULL fragments without
+# discarding heavy-chalk winners that the model needs in training.
 
 INSERT_ENTRY = """
 INSERT OR IGNORE INTO entries
@@ -73,7 +78,7 @@ def main():
     cl = cur.execute("""
         SELECT COUNT(DISTINCT e.race_id) FROM entries e
         JOIN results r ON r.race_id = e.race_id AND r.horse_name = e.horse_name
-        WHERE r.finish_pos IS NOT NULL AND e.ml_odds IS NOT NULL AND e.ml_odds > 1.0
+        WHERE r.finish_pos IS NOT NULL AND e.ml_odds IS NOT NULL AND e.ml_odds > 0.05
           AND e.track = 'SA'
     """).fetchone()[0]
     print(f"SA races eligible for CL training: {cl}")

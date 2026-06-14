@@ -38,8 +38,10 @@ SELECT ra.track, ra.race_id, ra.race_date, ra.race_num,
 FROM races ra
 JOIN results res ON res.race_id = ra.race_id
 WHERE ra.track != 'SA'
-  AND res.odds IS NOT NULL AND res.odds > 1.0
+  AND res.odds IS NOT NULL AND res.odds > 0.05
 """
+# Threshold lowered from 1.0 to 0.05 -- see backfill_sa_entries.py for
+# rationale; same fix, every track.
 
 INSERT_ENTRY = """
 INSERT OR IGNORE INTO entries
@@ -84,9 +86,9 @@ def main():
     cl_races = con.execute("""
         SELECT COUNT(DISTINCT e.race_id) FROM entries e
         JOIN results r ON r.race_id = e.race_id AND r.horse_name = e.horse_name
-        WHERE r.finish_pos IS NOT NULL AND e.ml_odds IS NOT NULL AND e.ml_odds > 1.0
+        WHERE r.finish_pos IS NOT NULL AND e.ml_odds IS NOT NULL AND e.ml_odds > 0.05
     """).fetchone()[0]
-    print(f"\nCL training races eligible (entries x results, ml_odds>1.0): {cl_races}")
+    print(f"\nCL training races eligible (entries x results, ml_odds>0.05): {cl_races}")
     con.close()
 
 
