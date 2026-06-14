@@ -58,7 +58,9 @@
       "Bash(py _ablate_dd_picks.py)",
       "Bash(py prob_model.py)",
       "Bash(py *)",
-      "Bash(not exist *)"
+      "Bash(not exist *)",
+      "Bash(cmd.exe /c \"scripts\\\\process_all.bat < nul\")",
+      "Bash(tasklist)"
     ]
   }
 }
