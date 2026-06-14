@@ -1,0 +1,134 @@
+﻿Results FP [20260613]
+  File: FP061326USA.pdf 
+ 
+Processing FP061326USA.pdf [FP]...
+Found 7 race(s)
+
+========================================================================
+  RESULTS : FAIRMOUNT PARK
+  Source  : FP061326USA.pdf
+========================================================================
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 1  â€”  MCL  |  6F  |  Dirt  |  $12,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  WildwoodOvertime                  1.00  Santiago,Victor           Becker,Scott            
+    2    2  JulietteP.                        2.60  Giles,Emmanuel            BleaIII,Anthony         
+    3    3  Elsie'sLegacy                     5.50  Aranguren,Johanis         Essenpreis,Eddie        
+    4    6  CupieCutie                       15.90  Tavares,Javier            Bahena,Fernando         
+    5    5  MyMamaSez                         5.30  Diego,Javier              Thurman,Rhonda          
+    6    1  SurprisingLove                   12.60  Orm,Cory                  Hornsby,Tammy           
+
+  Time    : 1:14.92
+  Trainer : Becker, Scott
+  Sire    : Mastery
+
+  WIN    $4.00   PLC    $2.40   SHW    $2.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 2  â€”  CLM  |  6F  |  Dirt  |  $10,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  GallantBuck                       3.90  Aranguren,Johanis         Pompell,Robert          
+    2    4  SwaggyGeorge                      1.20  Stanley,Angel             Durham,Mike             
+    3    6  ScrappyPatch                     10.10  Tavares,Javier            Durham,Mike             
+    4    7  WarningLabel                     16.10  Lara,Victor               Wiese,John              
+    5    1  CharliMichael                    29.20  Diego,Javier              Delong,Ben              
+    6    5  FaithfulRuler                     1.60  Orm,Cory                  Watkins,James           
+
+  Time    : 1:13.34
+  Trainer : Pompell, Robert
+  Sire    : FastAnna
+
+  WIN    $9.80   PLC    $3.40   SHW    $2.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 3  â€”  STA  |  6F  |  Dirt  |  $15,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  Zoombie                           2.00  Bendezu,Alexander         Martinez,Ralph          
+    2    7  SmartJoker                        2.10  Orm,Cory                  Watkins,James           
+    3    5  Shadowless                        8.80  Stanley,Angel             Anderson,Mark           
+    4    6  GetThrough                       16.10  Santos,Ademar             Plasters,Lori           
+    5    2  Maqamat                           6.60  Felix,Julio               Plasters,Lori           
+    6    1  Khozan'sValentine                 7.90  Arrieta,Reynier           Laux,Clay               
+    7    3  Partyinthestreets                 5.70  Tavares,Javier            Bahena,Fernando         
+
+  Time    : 1:12.55
+  Trainer : Martinez, Ralph
+  Sire    : CrossTraffic
+
+  WIN    $6.00   PLC    $3.20   SHW    $3.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 4  â€”  AOC  |  6F  |  Dirt  |  $18,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  SocoKid                           2.10  Wales,Travis              Watkins,James           
+    2    1  Galantini                         2.20  Felix,Julio               Watkins,James           
+    3    3  GunItandRunIt                     9.60  Aranguren,Johanis         Pompell,Robert          
+    4    5  GoverningParty                    4.70  Santos,Ademar             Higgins,Dennis          
+    5    6  Don'tTellKim                      6.20  Orm,Cory                  Delong,Ben              
+    6    2  GoJackGo                          4.80  Reyes,Frank               Lopez,Elias             
+
+  Time    : 1:11.86
+  Trainer : Watkins, James
+  Sire    : Improbable
+
+  WIN    $6.20   PLC    $3.80   SHW    $3.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 5  â€”  AOC  |  6F  |  Dirt  |  $18,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  StealPoetic                       5.30  Orm,Cory                  Retana,Gabe             
+    2    2  EpicPrankster                     1.60  Santos,Ademar             Watkins,James           
+    3    4  Traject                           7.20  Aranguren,Johanis         Irion,Heather           
+    4    6  ChasingNumbers                    1.30  Jaime,Ricardo             BleaIII,Anthony         
+    5    3  ClassyEmily                       8.00  Bendezu,Alexander         Pompell,Robert          
+
+  Time    : 1:13.10
+  Trainer : Retana, Gabe
+  Sire    : Stealcase
+
+  WIN   $12.60   PLC    $4.80
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 6  â€”  AOC  |  1M  |  Dirt  |  $24,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  SassyKatie                        1.00  Tavares,Javier            Pompell,Robert          
+    2    3  CommissionerGulch                 2.10  Bendezu,Alexander         Becker,Scott            
+    3    2  Savannamarie                      3.70  Diaz,Cesar                Leitch,Daniel           
+    4    5  GoMadiGo                         14.20  Santiago,Victor           Plasters,Lori           
+    5    4  IrishKitten                       7.70  Wales,Travis              Cook,Wesley             
+
+  Time    : 1:44.95
+  Trainer : Pompell, Robert
+  Sire    : TempleCity
+
+  WIN    $4.00   PLC    $2.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 7  â€”  AOC  |  6F  |  Dirt  |  $39,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  Takeitaway                        0.60  Colon,Luis                Boyce,Michele           
+    2    6  Fiveo'clockcharlie                7.10  Santos,Ademar             Watkins,James           
+    3    7  Coolthing                        12.10  Felix,Julio               Lynch,Harry             
+    4    4  Span                             16.00  Bendezu,Alexander         BleaIII,Anthony         
+    5    8  WayllenRichard                    9.90  Reyes,Frank               Rodriguez,Hugo          
+    6    2  Onthewayjimmy                     4.10  Ortega,Harold             Becker,Scott            
+    7    3  Don'ttapthetill                  16.00  Santiago,Victor           Becker,Scott            
+
+  Time    : 1:13.06
+  Trainer : Boyce, Michele
+  Sire    : TakeChargeIndy
+
+  WIN    $3.20   PLC    $2.20   SHW    $2.10
+
+========================================================================
+  7 race(s) processed
+========================================================================
+

@@ -1,0 +1,183 @@
+﻿Results EVD [20260613]
+  File: EVD061326USA.pdf 
+ 
+Processing EVD061326USA.pdf [EVD]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : EVANGELINE DOWNS
+  Source  : EVD061326USA.pdf
+========================================================================
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 1  â€”  CLM  |  6F  |  Dirt  |  $10,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  Julia'sWarrior                    3.40  Hernandez,Harry           Larrosa,Juan            
+    2    3  Twofexusnexus                    14.80  Pompell,Thomas            Bourgeois,Keith         
+    3    2  SaintPeter'sBay                   1.80  Rodriguez,Jose            Gonzalez,Isai           
+    4   10  BindFaith                         4.00  Fusilier,Casey            Landry,Allen            
+    5    5  Grunt                            13.50  Vargas,Juan               Brinkman,Brett          
+    6   11  FeathersRoad                     11.40  Hernandez,Javier          Cano,Juan               
+    7    4  Backfire                         16.40  Perez,Carlos              Klanfer,Alan            
+    8    9  DriedPepper                      99.90  Roman,Kevin               Gonzalez,Isai           
+
+  Time    : 1:10.88
+  Trainer : Larrosa, Juan
+  Sire    : Outwork
+
+  WIN    $8.80   PLC    $6.00   SHW    $3.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 2  â€”  CLM  |  7F  |  Dirt  |  $15,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  Guns                              2.50  Fusilier,Casey            Landry,Allen            
+    2    6  Sarah'sRunner                     1.20  McMahon,C.J.              Klanfer,Alan            
+    3    1  Blondate                          6.10  Pompell,Thomas            Richard,Russell         
+    4    4  BeachTrippin                     49.20  Magnon,Devin              Fuselier,Jonah          
+    5    3  MidnightMischief                  4.80  Hernandez,Harry           Duhon,Joe               
+    6    2  TopNotchProtocol                  6.50  Hernandez,Colby           Devereux,Jr.,Patrick    
+    7    7  Nate'sFocus                      39.70  Ramirez,Jr.,Julio         Briley,Lonnie           
+
+  Time    : 1:24.93
+  Trainer : Landry, Allen
+  Sire    : GunRunner
+
+  WIN    $7.00   PLC    $3.00   SHW    $2.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 3  â€”  7.5F  |  Turf  |  $50,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  Unaffiliated                      6.00  Vargas,Juan               Suarez,Aubrie           
+    2    4  Channelfortynine                  0.60  Perez,Carlos              Ward,Ronnie             
+    3    8  CanSeeDaFeet                     13.00  Mudd,Jamison              Savoie,Sherman          
+    4    7  Wabash                            4.00  Magnon,Devin              Magnon,Rylee            
+    5    1  Simplicated                      88.40  Santiago,Edward           Suarez,Aubrie           
+    6    6  MrRager                          29.00  Castillo,Isaac            Wong,Jonathan           
+    7    5  Aoide                             8.10  Rosier,Chris              Magnon,Rylee            
+    8    3  MoortoConquer                    51.50  Lozada,Carlos             Savoie,Sherman          
+
+  Time    : 1:33.12
+  Trainer : Suarez, Aubrie
+  Sire    : Americain
+
+  WIN   $14.00   PLC    $4.20   SHW    $2.60
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 4  â€”  CLM  |  7F  |  Dirt  |  $15,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  RobertsRevenge                    4.40  Pompell,Thomas            Prejean,Raymond         
+    2   11  D'busker                         99.40  Arana,Kelvin              Averett,Ronnie          
+    3    8  LaPalabra                         3.80  Rodriguez,Jose            Gonzalez,Isai           
+    4    5  Appeal                            3.20  Mudd,Jamison              Duhon,Joe               
+    5    1  SweetThirteen                    15.80  Vargas,Juan               Woodley,Carl            
+    6    6  ChargetheDeal                     3.40  Castillo,Isaac            Larrosa,Juan            
+    7   10  WonBrightLight                    5.80  Barrera,Elio              Gonzalez,Isai           
+    8    9  SaucyGem                         22.20  Nava-Marin,Jose           Zenon,Sr.,Shelton       
+
+  Time    : 1:25.89
+  Trainer : Prejean, Raymond
+  Sire    : OceanKnight
+
+  WIN   $10.80   PLC    $6.60   SHW    $4.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 5  â€”  CLM  |  1M  |  Turf  |  $24,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  SingleShot                        2.90  Vargas,Juan               Terre,David             
+    2    8  VictoryPrince                     2.70  Castillo,Isaac            Gelner,Scott            
+    3    5  CaptivatingStar                   2.40  Hernandez,Harry           Wilson,Shane            
+    4    6  Bob'sChannel                      6.10  Hernandez,Colby           David,Jr.,Sam           
+    5    9  MySpecialStar                    33.20  Barrera,Elio              Breaux,Samuel           
+    6    4  Iwannabeamachoman                49.10  Hernandez,Javier          David,Jr.,Sam           
+    7    1  SuchaPickle                      15.00  Nieves,Emanuel            Gelner,Scott            
+    8   11  Unlawful                         60.40  Perez,Carlos              Latour,Nicholas         
+
+  Time    : 1:37.52
+  Trainer : Terre, David
+  Sire    : D'wildcat
+
+  WIN    $7.80   PLC    $3.60   SHW    $2.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 6  â€”  CLM  |  5.5F  |  Dirt  |  $24,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  DoubleSalty                       1.50  Melancon,Jansen           Landry,Allen            
+    2    6  ALottaShance                      4.60  Castillo,Isaac            David,Jr.,Sam           
+    3    4  RunningBayou                      3.80  Rodriguez,Jose            Gonzalez,Isai           
+    4    2  Wholelottadeal                    5.00  Hernandez,Harry           Delhomme,Jerry          
+    5    1  ImperialBandit                   11.00  Barrera,Elio              Pomier,Chasey           
+    6    3  He'sExaggerating                  9.10  Fusilier,Casey            Landry,Allen            
+    7    5  Slowdownanmoveover               45.80  McMahon,C.J.              Gelner,Scott            
+    8    8  ShotGunShack                     17.60  Roman,Kevin               Segura,Kearney          
+
+  Time    : 1:04.85
+  Trainer : Landry, Allen
+  Sire    : Unified
+
+  WIN    $5.00   PLC    $2.80   SHW    $2.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 7  â€”  AOC  |  1M  |  Turf  |  $34,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  ELion                             9.40  Hernandez,Harry           Wilson,Shane            
+    2    3  Funnyflame                        1.60  McMahon,C.J.              Calhoun,W.              
+    3    2  MrMcGregor                        6.20  Rodriguez,Jose            Cano,Juan               
+    4    5  Sabi                              2.80  Mudd,Jamison              Schwandt,Emile          
+    5    4  Thunderhawk                      18.60  Barrera,Elio              Cano,Juan               
+    6    8  Ambridge                          2.80  Castillo,Isaac            Wong,Jonathan           
+    7    7  IslandCruiser                    34.60  Lozada,Carlos             Toups,Brent             
+
+  Time    : 1:36.15
+  Trainer : Wilson, Shane
+  Sire    : ClearlyNow
+
+  WIN   $20.80   PLC    $7.40   SHW    $4.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 8  â€”  AOC  |  6.5F  |  Dirt  |  $43,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  Mangum                            1.10  Hernandez,Harry           Delhomme,Jeff           
+    2    4  SoundsLikePower                   5.60  Melancon,Jansen           Bourgeois,Keith         
+    3    5  Carpis                           10.90  Barrera,Elio              David,Jr.,Sam           
+    4    8  SaintGabriel                      1.90  Pompell,Thomas            Brinkman,Brett          
+    5    3  Chad'sFlashyWays                 20.70  Perez,Carlos              Ward,Ronnie             
+    6    1  ConejoChapin                     17.70  Nieves,Emanuel            Savoie,Sherman          
+    7    2  FTWSlam                          18.10  Magnon,Devin              Magnon,Rylee            
+
+  Time    : 1:16.58
+  Trainer : Delhomme, Jeff
+  Sire    : MoTom
+
+  WIN    $4.20   PLC    $2.60   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 9  â€”  MCL  |  5F  |  Dirt  |  $14,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  ClosingWithHonor                  2.10  Melancon,Jansen           Landry,Allen            
+    2    1  BellastoneCountry                 7.80  Barrera,Elio              Cano,Juan               
+    3    8  ThePetitioner                     3.10  McMahon,C.J.              West,Jr.,Henry          
+    4    7  AztecaStorm                      23.40  Roman,Kevin               Schwandt,Emile          
+    5    6  SlyJack                           4.30  Pompell,Thomas            Thomas,Lee              
+    6    5  Samuel                            2.70  Ramirez,Jr.,Julio         Degeyter,Jr.,Randy      
+    7    3  He'saRealOutfit                  84.90  Vargas,Juan               LeBlanc,Richard         
+    8    4  RocktheShip                      48.90  Arana,Kelvin              Averett,Ronnie          
+
+  Time    : 59.94
+  Trainer : Landry, Allen
+  Sire    : ClosingArgument
+
+  WIN    $6.20   PLC    $3.60   SHW    $2.60
+
+========================================================================
+  9 race(s) processed
+========================================================================
+

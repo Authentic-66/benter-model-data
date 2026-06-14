@@ -1,0 +1,227 @@
+﻿Results SA [20260613]
+  File: SA061326USA.pdf 
+ 
+Processing SA061326USA.pdf [SA]...
+Found 12 race(s)
+
+========================================================================
+  RESULTS : SANTA ANITA
+  Source  : SA061326USA.pdf
+========================================================================
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 1  â€”  CLM  |  1M  |  Turf  |  $27,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  HowAboutPavel                    20.20  Ayuso,Armando             Vallejo,Genaro          
+    2    2  MyPerfectWave                     0.90  Kimura,Kazushi            Yakteen,Tim             
+    3    3  SakuraFlavor                      1.80  Fresu,Antonio             Gallagher,Patrick       
+    4    4  Aleramo                           6.90  Rosario,Joel              Hess,Jr.,Robert         
+    5    5  LovelyMedaglia                   23.50  Laprida,Jeremy            Baker,D.                
+    6    1  GiggleGiggle                      9.90  Garcia,Epifanio           Baker,D.                
+
+  Time    : 1:37.12
+  Trainer : Vallejo, Genaro
+  Sire    : Pavel
+
+  WIN   $42.40   PLC   $10.60   SHW    $3.80
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 2  â€”  CLM  |  6F  |  Dirt  |  $21,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  HarneyLane                        6.90  Gonzalez,Ricardo          Garcia,Antonio          
+    2    3  Eltonsingsanother                 4.20  Payeras,Edgar             Alvarez,Edwin           
+    3    1  MizClubcali                       0.90  Pereira,Tiago             Stute,Gary              
+    4    5  BudsNSuds                        10.10  Ayuso,Armando             Knapp,Steve             
+    5    6  PerfectLife                       4.80  Aguilar,Armando           Valdez,Jose             
+    6    2  Daddygaveittome                  29.80  Orantes,Welfin            Alvarez,Edwin           
+    7    7  OuterSunset                      13.80  Fresu,Antonio             McLean,Bill             
+
+  Time    : 1:10.44
+  Trainer : Garcia, Antonio
+  Sire    : AwesomeAgain
+
+  WIN   $15.80   PLC    $5.80   SHW    $3.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 3  â€”  MSW  |  1M  |  Turf  |  $65,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  HaveStyle                         5.00  Ayuso,Armando             Garcia,Antonio          
+    2    3  HotDayGirl                        1.10  Berrios,Hector            Gaines,Carla            
+    3    7  Impressionistic                   7.20  Rosario,Joel              Powell,Leonard          
+    4    5  FirstLight                        2.40  Hernandez,Juan            Gaines,Carla            
+    5    6  Snapshot                          8.60  Gonzalez,Ricardo          Baltas,Richard          
+    6    1  FancyDanzing                     35.40  Garcia,Epifanio           Baker,D.                
+
+  Time    : 1:35.97
+  Trainer : Garcia, Antonio
+  Sire    : I'llHaveAnother
+
+  WIN   $12.00   PLC    $4.00   SHW    $2.80
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 4  â€”  AOC  |  1M  |  Dirt  |  $67,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  ClubhouseCutie                    2.00  Hernandez,Juan            Kruljac,Ian             
+    2    6  Pavel'sEtoile                     5.40  Ayuso,Armando             Garcia,Antonio          
+    3    1  DorieMiller                       0.70  Fresu,Antonio             Powell,Leonard          
+    4    2  Mperfection                       6.60  Berrios,Hector            Ivory,John              
+
+  Time    : 1:36.93
+  Trainer : Kruljac, Ian
+  Sire    : ClubhouseRide
+
+  WIN    $6.00   PLC    $3.60
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 5  â€”  CLM  |  1M  |  Dirt  |  $20,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  Mici'sExpress                     1.90  Rosario,Joel              Tamayo,Isidro           
+    2    3  Grandisimo                        2.40  Gonzalez,Ricardo          Mathis,Andy             
+    3    7  SpiritualAdvisor                  3.80  Pereira,Tiago             Bonde,Jeff              
+    4    6  Ballyhooligan                     5.00  Husain,Ali                Papaprodromou,George    
+    5    5  TeeNOff                          13.40  Kimura,Kazushi            Knapp,Steve             
+    6    4  TiggrrrWhitworth                  7.50  Espinoza,Victor           Knapp,Steve             
+
+  Time    : 1:37.86
+  Trainer : Tamayo, Isidro
+  Sire    : Slew'sTiznow
+
+  WIN    $5.80   PLC    $2.80   SHW    $2.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 6  â€”  MCL  |  1 1/8M  |  Turf  |  $35,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  DivisibleBy                       0.90  Rosario,Joel              Drysdale,Neil           
+    2    3  Fausto                            4.00  Ayuso,Armando             Hess,Jr.,Robert         
+    3    5  LorenzoBernini                    4.20  Fresu,Antonio             Papaprodromou,George    
+    4    1  RagingInferno                     3.90  Frey,Kyle                 Blacker,Dan             
+    5    2  HeavenlyMatch                    42.00  Orduna-Rojas,Francisco    ValenzuelaIII,Martin    
+    6    6  DesertHawk                       37.00  Monroy,Francisco          Hernandez,Jr.,Jose      
+    7    8  MrAkin                           31.90  Laprida,Jeremy            Sherman,Steve           
+
+  Time    : 1:48.46
+  Trainer : Drysdale, Neil
+  Sire    : Divisidero
+
+  WIN    $3.80   PLC    $2.20   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 7  â€”  MSW  |  5F  |  Dirt  |  $65,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  StayBossy                         5.40  Fresu,Antonio             Miyadi,Steven           
+    2    2  SaucedUp                          4.10  Bautista,Alfredo          Rondan,Felix            
+    3    4  ThirstyCaitlin                    1.90  Aguilar,Armando           Alvarez,Edwin           
+    4    9  I'mSmokenHot                      1.70  Maldonado,Edwin           Brinkerhoff,Val         
+    5    7  IcecreamOntheside                17.40  Belmont,Cesar             Miyadi,Steven           
+    6    8  Shemakesmemad                    19.00  Baze,Tyler                Miyadi,Steven           
+    7    6  KoolIt                           32.60  Gonzalez,Ricardo          Kruljac,Ian             
+
+  Time    : 59.72
+  Trainer : Miyadi, Steven
+  Sire    : StayThirsty
+
+  WIN   $12.80   PLC    $5.60   SHW    $4.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 8  â€”  AboutSixAndOneH  |  Dirt  |  $100,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1   11  Freedom'sNotFree                  5.10  Hernandez,Juan            Glatt,Mark              
+    2   12  Sumter                            2.10  Smith,Mike                Mandella,Richard        
+    3    4  FirstPeace                        5.10  Kimura,Kazushi            Glatt,Mark              
+    4    8  AnmerHall                         8.10  Fresu,Antonio             Eurton,Peter            
+    5    5  IrishRoyalty                     16.80  Frey,Kyle                 O'Neill,Doug            
+    6    2  LaterThanPlanned                  4.60  Berrios,Hector            D'Amato,Philip          
+    7    9  Incanto                          40.00  Pereira,Tiago             Eurton,Peter            
+    8    1  FriendlyConfines                 25.90  Ayuso,Armando             Baltas,Richard          
+
+  Time    : 1:12.49
+  Trainer : Glatt, Mark
+  Sire    : OmahaBeach
+
+  WIN   $12.20   PLC    $5.80   SHW    $4.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 9  â€”  SOC  |  6F  |  Dirt  |  $35,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  LadyGambita                       5.50  Rosario,Joel              Jauregui,O.             
+    2    8  Tulavia'sWorld                   10.10  Pereira,Tiago             Palma,Hector            
+    3    4  CrazyCami                         0.60  Jaramillo,Emisael         McCarthy,Michael        
+    4    6  SurfintheCoast                    5.00  Frey,Kyle                 Mullins,Jeff            
+    5    7  EmmaG                            27.10  Belmont,Cesar             Freeman,Edward          
+    6    2  CosmoFriday                      19.80  Aguilar,Armando           Rodriguez,Francisco     
+    7    3  SexyBlue                         16.60  Maldonado,Edwin           Vega,Angel              
+    8    1  TinyPrancer                      31.80  Ayuso,Armando             Jauregui,O.             
+
+  Time    : 1:10.50
+  Trainer : Jauregui, O.
+  Sire    : BronzeStar
+
+  WIN   $13.00   PLC    $5.80   SHW    $2.60
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 10  â€”  AOC  |  1 1/8M  |  Turf  |  $67,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  NoneAbovetheLaw                   5.40  Hernandez,Juan            Miller,Peter            
+    2    4  MidnightStrike                    2.50  Ayuso,Armando             Drysdale,Neil           
+    3    2  Sabertooth                        4.50  Fresu,Antonio             Yakteen,Tim             
+    4    5  LahainaFlavor                    35.00  Gonzalez,Ricardo          Gallagher,Patrick       
+    5    6  AtomicAge                         2.40  Rosario,Joel              D'Amato,Philip          
+    6    8  Zalamo                            3.50  Berrios,Hector            Papaprodromou,George    
+    7    1  KingofClubs                      31.70  Kimura,Kazushi            Glatt,Mark              
+
+  Time    : 1:48.24
+  Trainer : Miller, Peter
+  Sire    : NorthernAfleet
+
+  WIN   $12.80   PLC    $5.60   SHW    $3.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 11  â€”  1 1/16M  |  Dirt  |  $100,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  Mizumi                            0.60  Hernandez,Juan            Baffert,Bob             
+    2    5  WolfHill                         10.20  Fresu,Antonio             Powell,Leonard          
+    3    6  BankShot                          7.50  Escobedo,Adrian           Hanson,Ryan             
+    4    3  DaringPursuit                    21.40  Berrios,Hector            Blacker,Dan             
+    5    7  Marjoram                          2.10  Jaramillo,Emisael         McCarthy,Michael        
+    6    2  Sugaree                          58.80  Frey,Kyle                 Barocio,Librado         
+
+  Time    : 1:43.41
+  Trainer : Baffert, Bob
+  Sire    : Justify
+
+  WIN    $3.20   PLC    $2.20   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 12  â€”  MCL  |  6F  |  Turf  |  $35,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    9  ButterflyBeach                    2.60  Rosario,Joel              Drysdale,Neil           
+    2    4  SissyGirl                         8.50  Aguilar,Armando           Aguirre,Paul            
+    3    8  VegasNightclub                    3.70  Ayuso,Armando             Baltas,Richard          
+    4    5  AntiSlapp                         3.50  Fresu,Antonio             Bonde,Jeff              
+    5    6  LowLaBunny                       47.30  Bautista,Alfredo          Thomas,Jamey            
+    6    1  KissDon'tTell                    29.80  Baze,Tyler                McCarthy,Sean           
+    7   12  NicoDijo                         75.20  Laprida,Jeremy            Tamayo,Isidro           
+    8   11  ForzaPalermo                      4.50  Kimura,Kazushi            Miller,Peter            
+
+  Time    : 1:09.52
+  Trainer : Drysdale, Neil
+  Sire    : DadsCaps
+
+  WIN    $7.20   PLC    $3.60   SHW    $2.80
+
+========================================================================
+  12 race(s) processed
+========================================================================
+
