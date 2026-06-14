@@ -17,7 +17,8 @@ TRACK_NAMES = {
     'FP':  'Fairmount Park',    'EVD': 'Evangeline Downs',
     'MVR': 'Mahoning Valley',   'DD':  'Delta Downs',
     'FG':  'Fair Grounds',      'ST':  'Sha Tin',
-    'HV':  'Happy Valley',
+    'HV':  'Happy Valley',      'SAR': 'Saratoga',
+    'SA':  'Santa Anita',       'LRL': 'Laurel Park',
 }
 
 COND_MAP = {
@@ -162,8 +163,18 @@ def parse_results(text):
                     # Odds: last decimal on the line (running positions use fractions, not decimals)
                     decimals = re.findall(r'\d+\.\d+', line)
                     odds = decimals[-1] if decimals else '?'
+                    # Jockey: first parenthesised group after the horse name that
+                    # contains a comma (LastName,FirstName). Foreign-bred horses
+                    # produce a country tag first — e.g. ToppersAtSeaside(Ire)(Rispoli,Umberto)
+                    # — so the comma filter skips the country.
+                    jockey = ''
+                    for pg in re.finditer(r'\(([^)]+)\)', line[fm.end()-1:]):
+                        if ',' in pg.group(1):
+                            jockey = pg.group(1).strip()
+                            break
                     race['finishers'].append({
-                        'pos': finish_pos, 'pp': pgm, 'horse': horse, 'odds': odds
+                        'pos': finish_pos, 'pp': pgm, 'horse': horse,
+                        'jockey': jockey, 'trainer': '', 'odds': odds
                     })
 
         # ── Final time ────────────────────────────────────────────────────────
@@ -191,6 +202,35 @@ def parse_results(text):
                     raw = trm.group(1).strip()
                     race['winner_trainer'] = raw.replace(',', ', ', 1)
                 break
+
+        # ── Per-position trainers from the plural "Trainers:" line ────────────
+        # Format: "Trainers: 4-Sise,Jr.,Clifford;7-O'Neill,Doug;..." — one entry
+        # per starter. Wraps across continuation lines for full fields. Read
+        # until the next keyword starts the next section.
+        buf, in_trainers = '', False
+        for line in lines:
+            s = line.strip()
+            if not in_trainers:
+                if s.startswith('Trainers:'):
+                    in_trainers = True
+                    buf = s[len('Trainers:'):].strip()
+            else:
+                if not s or re.match(
+                    r'^(Owners?:|Footnotes|Winner:|Trainer:|Pgm |Total|Claiming|'
+                    r'Fractional|Run-Up|Copyright|SplitTimes|Weather|LastRaced)',
+                    s, re.I
+                ):
+                    break
+                buf += s
+        if buf:
+            trainers_by_pgm = {}
+            for entry in buf.split(';'):
+                em = re.match(r'\s*(\d+)-(.+?)\s*$', entry)
+                if em:
+                    trainers_by_pgm[em.group(1)] = em.group(2).strip()
+            for f in race['finishers']:
+                if f['pp'] in trainers_by_pgm:
+                    f['trainer'] = trainers_by_pgm[f['pp']]
 
         # ── W/P/S payouts ─────────────────────────────────────────────────────
         # Table: "Pgm Horse  Win Place Show WagerType WinningNumbers Payoff Pool"
@@ -254,9 +294,12 @@ def print_results(races, track_name, filename):
         print(f"{'─'*72}")
 
         if r['finishers']:
-            print(f"  {'Pos':>3}  {'PP':>3}  {'Horse':<34}  {'Odds':>6}")
+            print(f"  {'Pos':>3}  {'PP':>3}  {'Horse':<30}  {'Odds':>6}  {'Jockey':<24}  {'Trainer':<24}")
             for f in sorted(r['finishers'], key=lambda x: x['pos'])[:8]:
-                print(f"  {f['pos']:>3}  {f['pp']:>3}  {f['horse']:<34}  {f['odds']:>6}")
+                print(
+                    f"  {f['pos']:>3}  {f['pp']:>3}  {f['horse']:<30}  {f['odds']:>6}"
+                    f"  {f.get('jockey',''):<24}  {f.get('trainer',''):<24}"
+                )
         else:
             print("  (no finisher data parsed)")
 

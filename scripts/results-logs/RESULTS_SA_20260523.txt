@@ -1,0 +1,198 @@
+Results SA [20260523]
+File: 20260523-usa-sa-a-d.standard.pdf
+
+Processing 20260523-usa-sa-a-d.standard.pdf [SA]...
+Found 10 race(s)
+
+========================================================================
+  RESULTS : SANTA ANITA
+  Source  : 20260523-usa-sa-a-d.standard.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  AOC  |  6.5F  |  Turf  |  $67,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    9  Kikuride                          5.70  Hernandez,Juan            Lewis,Craig             
+    2    4  PavelIsAppealing                 31.50  Geroux,Florent            O'Neill,Doug            
+    3    3  America'sMark                     3.60  Berrios,Hector            Puype,Mike              
+    4   10  PureChaos                         2.20  Ayuso,Armando             Baltas,Richard          
+    5    7  Tam'sLittleAngel                 39.30  Pereira,Tiago             Palma,Hector            
+    6    8  ChristelClean                     3.00  Rosario,Joel              Sadler,John             
+    7    1  LongMaysheReign                   8.80  Baze,Tyler                Papaprodromou,George    
+    8    6  Idessia                          19.70  Gonzalez,Ricardo          D'Amato,Philip          
+
+  Time    : 1:15.20
+  Trainer : Lewis, Craig
+  Sire    : ClubhouseRide
+
+  WIN   $13.40   PLC    $7.00   SHW    $4.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  MSW  |  4.5F  |  Dirt  |  $65,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  FreeCloser                        0.70  Geroux,Florent            McCarthy,Michael        
+    2    7  ThirstyCaitlin                    3.40  Aguilar,Armando           Alvarez,Edwin           
+    3    3  SaucedUp                         16.10  Bautista,Alfredo          Rondan,Felix            
+    4    1  I'mSmokenHot                      7.80  Maldonado,Edwin           Brinkerhoff,Val         
+    5   10  Potica                           13.60  Escobedo,Adrian           Hanson,Ryan             
+    6    4  LihuePrincess                     8.60  Fresu,Antonio             Knapp,Steve             
+    7    9  PayOneMoreDream                  54.30  Orantes,Welfin            Alvarez,Edwin           
+    8    8  GlorysMorning                    61.00  Ramirez,Ricardo           Morfin,Sergio           
+
+  Time    : 52.77
+  Trainer : McCarthy, Michael
+  Sire    : Pavel
+
+  WIN    $3.40   PLC    $2.20   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  6F  |  Dirt  |  $100,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  BigCityLights                     0.90  Kimura,Kazushi            Mandella,Richard        
+    2    6  BookSmart                         4.90  Smith,Mike                Hess,Jr.,Robert         
+    3    2  ThirstyRebel                     20.40  Lezcano,Abel              O'Neill,Doug            
+    4    4  DropUm                           25.60  Frey,Kyle                 Rondan,Felix            
+    5    3  UncleChilly                       5.90  Rosario,Joel              Mullins,Jeff            
+    6    7  LonesomeStew                      2.60  Fresu,Antonio             Glatt,Mark              
+
+  Time    : 1:09.32
+  Trainer : Mandella, Richard
+  Sire    : Mr.Big
+
+  WIN    $3.80   PLC    $2.80   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  1M  |  Turf  |  $100,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  GrandSlamSmile                    0.50  AntongeorgiIII,William    McCarthy,Sean           
+    2    1  TakeAnotherCard                   5.50  Fresu,Antonio             Callaghan,Simon         
+    3    6  QuickKate                        43.80  Kimura,Kazushi            Lewis,Craig             
+    4    2  Prancingthruparis                17.60  Ayuso,Armando             Eurton,Peter            
+    5    5  MarsMagic                        62.20  Garcia,Epifanio           Baker,D.                
+    6    7  SunsetGrazen                     11.60  Hernandez,Juan            Wright,Blaine           
+    7    8  OmNJoy                            3.50  Desormeaux,Kent           Ordonez,Aggie           
+
+  Time    : 1:35.94
+  Trainer : McCarthy, Sean
+  Sire    : SmilingTiger
+
+  WIN    $3.00   PLC    $2.10   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  MCL  |  1M  |  Dirt  |  $16,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  TrojanMafia                       1.90  Pereira,Tiago             Mullins,Jeff            
+    2    6  StageRun                          4.90  Frey,Kyle                 McCanna,Tim             
+    3    8  MyManJoeRoldan                    2.70  Rosario,Joel              Marquez,Alfredo         
+    4    3  CarlErskine                       4.80  Fresu,Antonio             Miyadi,Steven           
+    5    1  FireChief                        35.00  Aguilar,Armando           Valdez,Jose             
+    6    4  StarofDelhi                       6.20  Garcia,Epifanio           Baker,D.                
+    7    7  SonofOneeyedmama                 13.80  Jaramillo,Emisael         Palma,Hector            
+
+  Time    : 1:40.31
+  Trainer : Mullins, Jeff
+  Sire    : SmilingTiger
+
+  WIN    $5.80   PLC    $3.40   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  1M  |  Turf  |  $100,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  Flyover                           0.80  Fresu,Antonio             Sadler,John             
+    2    2  OntheWhim                         3.60  Pereira,Tiago             Pederson,Dean           
+    3    4  PrinceDolce                       5.30  Gonzalez,Ricardo          Knapp,Steve             
+    4    1  SantaBarbarian                   15.70  Ayuso,Armando             Hanson,Ryan             
+    5    9  CallMeSir                         5.70  Kimura,Kazushi            Glatt,Mark              
+    6    8  Curlin'sKaos                     46.50  Maldonado,Edwin           Garcia,Antonio          
+    7    5  StampMyPassport                  38.10  Espinoza,Victor           Powell,Leonard          
+
+  Time    : 1:33.50
+  Trainer : Sadler, John
+  Sire    : Om
+
+  WIN    $3.60   PLC    $2.20   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  1 1/16M  |  Dirt  |  $125,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  Mohaven                           0.60  Jaramillo,Emisael         Sadler,John             
+    2    5  CeciliaStreet                    14.60  Fresu,Antonio             Powell,Leonard          
+    3    3  RunWithLiberty                    2.00  Frey,Kyle                 Mullins,Jeff            
+    4    6  Lino'sAngel                      40.50  Baze,Tyler                Alvarez,Edwin           
+    5    7  TroisiemeEtoile                   6.60  Rosario,Joel              O'Neill,Doug            
+    6    2  GoodGollyDolly                   34.80  Lezcano,Abel              O'Neill,Doug            
+
+  Time    : 1:44.89
+  Trainer : Sadler, John
+  Sire    : Yaupon
+
+  WIN    $3.20   PLC    $2.10   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  1 1/8M  |  Turf  |  $125,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  UnrivaledTime                     2.00  Ayuso,Armando             Powell,Leonard          
+    2    4  TrumpEra                         26.50  Maldonado,Edwin           Hanson,Ryan             
+    3    6  VentryStrand                      5.00  Fresu,Antonio             Sadler,John             
+    4    7  ThirdBeer                         8.00  Kimura,Kazushi            Yakteen,Tim             
+    5    3  He'saKnockout                     1.50  Hernandez,Juan            Gaines,Carla            
+    6   10  Scatalotadingdong                16.30  Smith,Mike                Powell,Leonard          
+    7    8  JohnMetcalfe                     40.20  Rosario,Joel              Lewis,Craig             
+    8    9  Fionello                         41.80  Pereira,Tiago             Knapp,Steve             
+
+  Time    : 1:48.04
+  Trainer : Powell, Leonard
+  Sire    : NotThisTime
+
+  WIN    $6.00   PLC    $3.40   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  AOC  |  1M  |  Dirt  |  $67,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  StarttheRide                      1.20  Ayuso,Armando             Blacker,Dan             
+    2    4  King'sRide                        4.70  Hernandez,Juan            Lewis,Craig             
+    3    1  CowboyMike                        5.50  Rosario,Joel              Yakteen,Tim             
+    4    7  TheGypsyCowboy                   15.30  Pereira,Tiago             Knapp,Steve             
+    5    3  MajesticPalisades                 3.70  Aguilar,Armando           Barocio,Librado         
+    6    9  SirPercival                      12.20  Baze,Tyler                Gallagher,Patrick       
+    7    8  SpiritualAdvisor                 32.90  Orantes,Welfin            Bonde,Jeff              
+    8    6  JT'sWatch                        31.70  Kimura,Kazushi            Vallejo,Genaro          
+
+  Time    : 1:37.33
+  Trainer : Blacker, Dan
+  Sire    : Upstart
+
+  WIN    $4.40   PLC    $3.00   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 10  —  MSW  |  1M  |  Turf  |  $65,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  OracleofParadise                  1.60  Rosario,Joel              Koriner,Brian           
+    2   11  FlashofLightning                  2.60  Kimura,Kazushi            Baltas,Richard          
+    3   13  BigVengeance                     65.30  Espinoza,Victor           Garcia,Antonio          
+    4    3  DoingTime                        15.30  Bautista,Alfredo          Rondan,Felix            
+    5    7  Throwthefirstpunch                4.00  Jaramillo,Emisael         O'Neill,Doug            
+    6    4  PracticalBlame                   46.50  Fresu,Antonio             Galvin,Brendan          
+    7    2  TightDally                       19.60  Gonzalez,Ricardo          Eurton,Peter            
+    8   12  Hungover                         13.10  Hernandez,Juan            Hanson,Ryan             
+
+  Time    : 1:36.72
+  Trainer : Koriner, Brian
+  Sire    : Goldencents
+
+  WIN    $5.20   PLC    $2.60   SHW    $2.20
+
+========================================================================
+  10 race(s) processed
+========================================================================
+

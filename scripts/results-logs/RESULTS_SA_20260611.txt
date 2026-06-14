@@ -1,0 +1,126 @@
+Results SA [20260611]
+File: SA061126USA.pdf
+
+Processing SA061126USA.pdf [SA]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : SANTA ANITA
+  Source  : SA061126USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  CLM  |  6.5F  |  Turf  |  $40,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  DakotaCountry                     3.20  Frey,Kyle                 Sherman,Steve           
+    2    5  DoubleJab                        20.10  Ayuso,Armando             Mathis,Andy             
+    3    2  Vancougar                        25.70  Fresu,Antonio             Bonde,Jeff              
+    4    3  ChargeforGold                     3.10  Gonzalez,Ricardo          McCarthy,Michael        
+    5    6  Doncic                            1.80  Hernandez,Juan            Mullins,Jeff            
+    6    1  CodeDuello                        2.70  Berrios,Hector            Dollase,Craig           
+
+  Time    : 1:15.90
+  Trainer : Sherman, Steve
+  Sire    : MuchoMachoMan
+
+  WIN    $8.40   PLC    $5.00   SHW    $4.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  6F  |  Dirt  |  $100,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  Magnificat                        0.40  Fresu,Antonio             Mandella,Richard        
+    2    5  Syntax                           18.60  Frey,Kyle                 Barocio,Librado         
+    3    3  Revera                            2.20  Rosario,Joel              Sadler,John             
+    4    1  Antifona                          7.40  Pereira,Tiago             Cerin,Vladimir          
+
+  Time    : 1:08.95
+  Trainer : Mandella, Richard
+  Sire    : OmahaBeach
+
+  WIN    $2.80   PLC    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  AOC  |  6F  |  Turf  |  $67,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  WillHappen                        0.70  Ayuso,Armando             Baltas,Richard          
+    2    5  FlamingoStar                      2.50  Baze,Tyler                Miller,Peter            
+    3    2  QueenBay                          3.70  Fresu,Antonio             Callaghan,Simon         
+    4    3  ForumConfidential                 7.30  Frey,Kyle                 Uranga,Jesus            
+
+  Time    : 1:09.62
+  Trainer : Baltas, Richard
+  Sire    : Vekoma
+
+  WIN    $3.40   PLC    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  MSW  |  5F  |  Dirt  |  $65,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  Pickitupthatsgood                 0.90  Gonzalez,Ricardo          McCarthy,Michael        
+    2    6  JanieNotJeanie                    3.50  Fresu,Antonio             O'Neill,Doug            
+    3    4  MakeMeMoney                       9.80  Maldonado,Edwin           Mendez,Luis             
+    4    7  Chaseher                         11.80  Ayuso,Armando             Mendez,Luis             
+    5    1  ProPayne                          5.30  Jaramillo,Emisael         Brinkerhoff,Val         
+    6    2  Blockade                         26.20  Escobedo,Adrian           Hanson,Ryan             
+    7    8  AllonsY                          10.60  Bautista,Alfredo          Mendez,Luis             
+
+  Time    : 57.81
+  Trainer : McCarthy, Michael
+  Sire    : Girvin
+
+  WIN    $3.80   PLC    $2.60   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  MSW  |  1M  |  Turf  |  $65,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    8  Cortinad'Amprezzo                 2.30  Rosario,Joel              D'Amato,Philip          
+    2    3  GoldenHope                        9.90  Jaramillo,Emisael         Cerin,Vladimir          
+    3    2  JetBlackJewel                     6.00  Desormeaux,Kent           Hess,Jr.,Robert         
+    4    7  FireBan                           5.30  Ayuso,Armando             Koriner,Brian           
+    5    5  Astronomically                    2.30  Hernandez,Juan            Gallagher,Patrick       
+    6    1  GreyMatter                       11.10  Maldonado,Edwin           Baltas,Richard          
+    7    4  MedinaDelCampo                   40.40  Gonzalez,Ricardo          McCarthy,Michael        
+    8    6  OuLaLa                            9.80  Fresu,Antonio             Mandella,Richard        
+
+  Time    : 1:35.28
+  Trainer : D'Amato, Philip
+
+  WIN    $6.60   PLC    $4.20   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  Dirt
+────────────────────────────────────────────────────────────────────────
+  (no finisher data parsed)
+
+  Payouts: (not found)
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  Dirt
+────────────────────────────────────────────────────────────────────────
+  (no finisher data parsed)
+
+  Payouts: (not found)
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  Dirt
+────────────────────────────────────────────────────────────────────────
+  (no finisher data parsed)
+
+  Payouts: (not found)
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  Dirt
+────────────────────────────────────────────────────────────────────────
+  (no finisher data parsed)
+
+  Payouts: (not found)
+
+========================================================================
+  9 race(s) processed
+========================================================================
+

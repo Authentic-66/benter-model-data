@@ -1,0 +1,185 @@
+Results SA [20250601]
+File: 20250601-usa-sa-a-d.standard.pdf
+
+Processing 20250601-usa-sa-a-d.standard.pdf [SA]...
+Found 10 race(s)
+
+========================================================================
+  RESULTS : SANTA ANITA
+  Source  : 20250601-usa-sa-a-d.standard.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  MSW  |  6F  |  Dirt  |  $60,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  SilverIAm                         3.40  Hernandez,Juan            D'Amato,Philip          
+    2    2  KeithingThunder                  12.20  Baze,Tyler                Galvin,Brendan          
+    3    7  Ya'llCome                         1.90  Aguilar,Armando           Pederson,Dean           
+    4    5  BeerBuzz                          1.10  Frey,Kyle                 Dollase,Craig           
+    5    3  TeeNOff                          21.10  Escobedo,Adrian           Knapp,Steve             
+    6    4  Ragazzone                        34.90  Kimura,Kazushi            McLean,Bill             
+    7    1  StarofDelhi                      51.30  Garcia,Epifanio           Baker,D.                
+
+  Time    : 1:10.71
+  Trainer : D'Amato, Philip
+  Sire    : Kantharos
+
+  WIN    $8.80   PLC    $4.40   SHW    $2.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  SOC  |  6F  |  Turf  |  $34,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  MissMandalay                      1.00  Hernandez,Juan            Hess,Jr.,Robert         
+    2    6  NotASinner                        1.80  Frey,Kyle                 Callaghan,Simon         
+    3    2  CyprusMoon                        5.60  Kimura,Kazushi            Papaprodromou,George    
+    4    4  IrishRose                         6.60  Berrios,Hector            Drysdale,Neil           
+    5    5  BlueFashion                      23.30  Ayuso,Armando             Polanco,Marcelo         
+    6    1  MyKathrynRose                    42.30  Maldonado,Edwin           Marquez,Alfredo         
+
+  Time    : 1:08.90
+  Trainer : Hess, Jr.,Robert
+
+  WIN    $4.00   PLC    $2.20   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  MAIDENOPTION  |  6F  |  Dirt  |  $35,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  ThirtyTwoChunk                    2.40  Kimura,Kazushi            Glatt,Mark              
+    2    5  FriendsWithFidel                  7.20  Desormeaux,Kent           Hess,Jr.,Robert         
+    3    4  KidDynasty                        0.60  Fresu,Antonio             Yakteen,Tim             
+    4    1  ChiefRenegade                     6.90  Maldonado,Edwin           Hess,Jr.,Robert         
+    5    2  WarTheory                        24.80  Frey,Kyle                 Kruljac,Ian             
+
+  Time    : 1:09.71
+  Trainer : Glatt, Mark
+  Sire    : MoreThanReady
+
+  WIN    $6.80   PLC    $4.60   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  CLM  |  6.5F  |  Turf  |  $32,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  CaribbeanKing                     1.90  Fresu,Antonio             Mullins,Jeff            
+    2    6  Invincible                        1.60  Hernandez,Juan            Eurton,Peter            
+    3    2  Barsabas                         28.50  Aguilar,Armando           Farias,Adan             
+    4    5  WesternAvenue                     3.60  Espinoza,Assael           Papaprodromou,George    
+    5    3  KnownIdea                         3.80  Berrios,Hector            Sadler,John             
+    6    1  Meeking                          50.90  Franco,Geovanni           McLean,Bill             
+
+  Time    : 1:15.00
+  Trainer : Mullins, Jeff
+  Sire    : Speightstown
+
+  WIN    $5.80   PLC    $3.20   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  MCL  |  5.5F  |  Dirt  |  $15,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    8  WhatstheBuzz                      0.50  Herrera,Diego             Alvarez,Edwin           
+    2    5  He'squiteMischief                11.60  Aguilar,Armando           Alvarez,Edwin           
+    3    1  Torleif                           7.30  Barandela,Sofia           Headley,Karen           
+    4    6  Roxiiesbadboy                     2.50  Orantes,Welfin            Gutierrez,Jorge         
+    5    2  ColonelHorton                    21.10  Garcia,Epifanio           Ramos,Jesus             
+
+  Time    : 1:05.18
+  Trainer : Alvarez, Edwin
+  Sire    : ConquestFarenheit
+
+  WIN    $3.00   PLC    $2.20   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  MSW  |  5F  |  Turf  |  $60,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  HeyNayNay                         1.90  Berrios,Hector            Sadler,John             
+    2    6  Brigante                          2.10  Fresu,Antonio             O'Neill,Doug            
+    3    1  WonforLou                         5.60  Maldonado,Edwin           O'Neill,Doug            
+    4    7  MoHollandDrive                    8.10  Hernandez,Juan            Miller,Peter            
+    5    3  RookieNumbers                     7.70  AntongeorgiIII,William    Miller,Peter            
+    6    8  DoingTime                        14.10  Ayuso,Armando             Rondan,Felix            
+    7    4  Lee'sBabyBoy                     15.00  Baze,Tyler                O'Neill,Doug            
+    8    2  ElPrecioso                       60.50  Payeras,Edgar             Alvarez,Edwin           
+
+  Time    : 56.68
+  Trainer : Sadler, John
+  Sire    : NoNayNever
+
+  WIN    $5.80   PLC    $3.60   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  6F  |  Dirt  |  $100,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  SuperShine                        2.20  Berrios,Hector            D'Amato,Philip          
+    2    3  Chismosa                          0.80  Frey,Kyle                 DeLeon,Rafael           
+    3    1  FayetteFox                        1.90  Desormeaux,Kent           Cerin,Vladimir          
+
+  Time    : 1:09.46
+  Trainer : D'Amato, Philip
+  Sire    : SuperSaver
+
+  WIN    $6.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  AOC  |  6F  |  Turf  |  $61,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  ItsaCinch                         1.30  Maldonado,Edwin           Mendez,Luis             
+    2    4  TripleDiamonds                    4.60  Kimura,Kazushi            Glatt,Mark              
+    3    5  Binging                           3.60  Gonzalez,Ricardo          Garcia,Antonio          
+    4    2  Pokerknightatvees                 6.00  Lezcano,Abel              O'Neill,Doug            
+    5    1  Mr.Machupicchu                   14.70  Aguilar,Armando           Bonde,Jeff              
+    6    6  LastCallZondlo                   10.40  Fresu,Antonio             Dollase,Craig           
+    7    7  TyphoonTommy                     11.50  Ayuso,Armando             Koriner,Brian           
+
+  Time    : 1:08.83
+  Trainer : Mendez, Luis
+  Sire    : Om
+
+  WIN    $4.60   PLC    $2.80   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  SOC  |  6F  |  Dirt  |  $20,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  Haywood                           1.10  Maldonado,Edwin           O'Neill,Doug            
+    2    5  HaloRando                         2.20  Pereira,Tiago             Pederson,Dean           
+    3    3  JaguarJon                        11.50  AntongeorgiIII,William    Miyadi,Steven           
+    4    1  Wegonahavagoodtime                4.40  Orantes,Welfin            Vallejo,Genaro          
+    5    7  Idiot'sGold                       9.10  Ayuso,Armando             Lopez,George            
+    6    6  Mother'sPrayer                   24.40  Lezcano,Abel              Knapp,Steve             
+
+  Time    : 1:10.27
+  Trainer : O'Neill, Doug
+  Sire    : CurlintoMischief
+
+  WIN    $4.20   PLC    $2.40   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 10  —  ALW  |  AboutSixAndOneH  |  Dirt  |  $61,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  Bit'sTigerMagic                   1.00  Hernandez,Juan            Miller,Peter            
+    2    7  Breve                            13.70  Fresu,Antonio             Badilla,Manuel          
+    3    9  BlueWildcat                       5.10  Pereira,Tiago             Tamayo,Isidro           
+    4    6  TruePatriot                      13.80  Berrios,Hector            Hess,Jr.,Robert         
+    5    4  ElegantSway                       4.40  Frey,Kyle                 Mathis,Andy             
+    6    3  BigCelebration                    7.40  Escobedo,Adrian           Knapp,Steve             
+    7    8  ThirstforPassion                 59.60  Lezcano,Abel              Papaprodromou,George    
+    8    2  QuickOmen                        66.00  Baze,Tyler                Winick,Debbie           
+
+  Time    : 1:12.69
+  Trainer : Miller, Peter
+  Sire    : SmilingTiger
+
+  WIN    $4.00   PLC    $2.80   SHW    $2.40
+
+========================================================================
+  10 race(s) processed
+========================================================================
+

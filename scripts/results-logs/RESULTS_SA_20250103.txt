@@ -1,0 +1,178 @@
+Results SA [20250103]
+File: 20250103-usa-sa-a-d.standard.pdf
+
+Processing 20250103-usa-sa-a-d.standard.pdf [SA]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : SANTA ANITA
+  Source  : 20250103-usa-sa-a-d.standard.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  MCL  |  5.5F  |  Dirt  |  $23,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  Cultural                          2.40  Carmona,Serafin           McCarthy,Michael        
+    2    8  ToppersAtSeaside                  2.30  Rispoli,Umberto           Hess,Jr.,Robert         
+    3    9  EmpireWarrior                     5.40  Gonzalez,Ricardo          Baltas,Richard          
+    4    5  ChasinaDollar                     6.10  Maldonado,Edwin           O'Neill,Doug            
+    5    3  ExaltedRuler                     13.30  Frey,Kyle                 McCarthy,Sean           
+    6    1  KerstingCourt                    32.00  Baze,Tyler                McCarthy,Sean           
+    7    7  Canyahearmeknockin                5.10  Pereira,Tiago             Blacker,Dan             
+    8    6  RunAbboudyRun                    60.20  Rodriguez,Jose            Gonzalez,Felix          
+
+  Time    : 1:05.07
+  Trainer : McCarthy, Michael
+  Sire    : Volatile
+
+  WIN    $6.80   PLC    $3.60   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  MSW  |  1M  |  Dirt  |  $60,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  JustasFancy                       1.60  Prat,Flavien              McCarthy,Michael        
+    2    4  MadameSecretary                   3.90  Hernandez,Juan            Mandella,Richard        
+    3    5  LoloLePlume                       2.70  Rispoli,Umberto           Hess,Jr.,Robert         
+    4    3  Marula                            2.60  Kimura,Kazushi            Mandella,Richard        
+    5    2  GiggleGiggle                     13.70  Maldonado,Edwin           Eurton,Peter            
+
+  Time    : 1:38.59
+  Trainer : McCarthy, Michael
+  Sire    : Volatile
+
+  WIN    $5.20   PLC    $3.20   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  MSW  |  6F  |  Turf  |  $60,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  DanzingwithMaxine                 2.90  Smith,Mike                Sise,Jr.,Clifford       
+    2    7  HavePatience                      5.10  Dettori,Lanfranco         O'Neill,Doug            
+    3    6  PracticalDazzle                   5.80  Hernandez,Juan            Galvin,Brendan          
+    4    3  ThirstforPassion                  2.20  Prat,Flavien              Papaprodromou,George    
+    5    2  Pondicherry                       2.40  Maldonado,Edwin           O'Neill,Doug            
+    6    1  CoconutGirl                      82.80  Franco,Geovanni           Ivory,John              
+    7    5  Coiffeur                         58.50  Couton,Julien             Eaton,Terri             
+
+  Time    : 1:10.57
+  Trainer : Sise, Jr.,Clifford
+  Sire    : DanzingCandy
+
+  WIN    $7.80   PLC    $3.80   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  SOC  |  5.5F  |  Dirt  |  $18,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  HaloRando                         1.00  Prat,Flavien              Pederson,Dean           
+    2    1  HorseDoctor                       2.40  Ayuso,Armando             Perez,Sergio            
+    3   10  ImperialHornet                    6.30  Orozco,Kevin              Calvario,Samuel         
+    4    2  WarrensWorld                      8.70  Hernandez,Juan            Wright,Blaine           
+    5    4  ItAintOver                       30.00  Castellanos,Adrian        Rondan,Felix            
+    6    9  Duplication                      38.90  Couton,Julien             Maravilla,Jorge         
+    7    5  ManOverboard                      8.20  Espinoza,Assael           Greiner,Gary            
+
+  Time    : 1:03.74
+  Trainer : Pederson, Dean
+  Sire    : Tamarando
+
+  WIN    $4.00   PLC    $2.80   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  AOC  |  6F  |  Turf  |  $61,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    8  GoingDeep                         4.30  Maldonado,Edwin           O'Neill,Doug            
+    2    1  Nell'sLegacy                      0.80  Prat,Flavien              D'Amato,Philip          
+    3    2  PressYourLuck                    61.70  Frey,Kyle                 O'Neill,Doug            
+    4    6  HerasHope                         6.40  Berrios,Hector            Jauregui,O.             
+    5    3  PetiteTreat                       3.90  Orantes,Welfin            Puype,Mike              
+    6    4  WetheFree                        24.10  Lezcano,Abel              Papaprodromou,George    
+    7    5  ThirstyMama                      23.90  Carmona,Serafin           Miyadi,Steven           
+    8    7  CioppinaPasadina                 87.00  Payeras,Edgar             Treece,Charles          
+
+  Time    : 1:10.62
+  Trainer : O'Neill, Doug
+  Sire    : Bodexpress
+
+  WIN   $10.60   PLC    $3.40   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  SOC  |  1M  |  Dirt  |  $18,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1   11  Mother'sPrayer                    2.10  Pereira,Tiago             Pederson,Dean           
+    2    1  Nolde                             4.80  Prat,Flavien              Sherman,Steve           
+    3    2  HappyDoes                        13.40  Castellanos,Adrian        Calvario,Samuel         
+    4    8  RichGold                         12.00  Herrera,Hugo              Aguila,Jose             
+    5   10  KobeW                            23.20  Carmona,Serafin           O'Neill,Doug            
+    6    4  BigFlame                         55.10  Herrera,Cristobal         Calvario,Samuel         
+    7    3  Tesoro                            2.10  Espinoza,Assael           Jauregui,O.             
+    8    7  ItsThievery                      28.20  Camacho-Flores,Leonel     Torres,Arnold           
+
+  Time    : 1:38.46
+  Trainer : Pederson, Dean
+  Sire    : RousingSermon
+
+  WIN    $6.20   PLC    $3.80   SHW    $2.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  AOC  |  1M  |  Turf  |  $61,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  LadyMonclaire                     2.10  Prat,Flavien              Baltas,Richard          
+    2    1  SassyPrancelot                    2.50  Frey,Kyle                 D'Amato,Philip          
+    3    5  Shezmisbehaving                   3.10  Baze,Tyler                Gutierrez,Jorge         
+    4    8  MizClubcali                       5.20  Ayuso,Armando             Garcia,Antonio          
+    5    6  AshleysSandcastle                14.10  Pereira,Tiago             D'Amato,Philip          
+    6    9  GlacierRim                       50.50  Gonzalez,Ricardo          Ruis,Sr.,Mick           
+    7    3  DrawMe                           86.30  Herrera,Hugo              Eaton,Terri             
+    8    4  ProofofJazz                      47.20  Castellanos,Adrian        Trujillo,Marcelino      
+
+  Time    : 1:36.08
+  Trainer : Baltas, Richard
+
+  WIN    $6.20   PLC    $3.40   SHW    $2.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  AOC  |  6.5F  |  Dirt  |  $63,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  RollOnBigJoe                      1.90  Rispoli,Umberto           Hess,Jr.,Robert         
+    2    4  ForAllMankind                     6.10  Hernandez,Juan            Sadler,John             
+    3    6  Slider                            2.00  Prat,Flavien              Sadler,John             
+    4    5  Positivity                        7.60  Dettori,Lanfranco         Papaprodromou,George    
+    5    3  MissionBeach                      6.40  Kimura,Kazushi            Knapp,Steve             
+    6    2  Agency                            7.40  Gonzalez,Ricardo          Glatt,Mark              
+
+  Time    : 1:15.24
+  Trainer : Hess, Jr.,Robert
+  Sire    : Prospective
+
+  WIN    $5.80   PLC    $3.40   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  MCL  |  1M  |  Turf  |  $33,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  EarnedNotGiven                    2.80  Espinoza,Victor           Glatt,Mark              
+    2    3  UnrivaledHero                     8.40  Gonzalez,Ricardo          Glatt,Mark              
+    3    9  MissileCruiser                   16.10  Lezcano,Abel              Brinkerhoff,Val         
+    4    2  BurningRubber                     3.10  Frey,Kyle                 McCarthy,Sean           
+    5    8  Hephepcutdownnets                 9.30  Maldonado,Edwin           O'Neill,Doug            
+    6    7  LookinforCurly                    8.00  Franco,Geovanni           Oviedo,Philip           
+    7    1  Maxn'Lou                          3.60  Orantes,Welfin            Puype,Mike              
+    8    5  MuttDillin                       10.60  Valdivia,Jr.,Jose         Capestro,Paula          
+
+  Time    : 1:37.21
+  Trainer : Glatt, Mark
+  Sire    : WarofWill
+
+  WIN    $7.60   PLC    $4.20   SHW    $3.60
+
+========================================================================
+  9 race(s) processed
+========================================================================
+

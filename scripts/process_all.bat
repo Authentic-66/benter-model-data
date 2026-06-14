@@ -213,6 +213,64 @@ if "!SAR_FOUND!"=="0" (
     echo   No result PDF found - skipping >> "!ALLLOG!"
 )
 
+:: ── SANTA ANITA (SA) — both 2025 and 2026 ────────────────────────────────
+echo.
+echo. >> "!ALLLOG!"
+echo ========================================================================
+echo ======================================================================== >> "!ALLLOG!"
+echo   SANTA ANITA (SA)
+echo   SANTA ANITA (SA) >> "!ALLLOG!"
+echo ========================================================================
+echo ======================================================================== >> "!ALLLOG!"
+set "SA_FOUND=0"
+del "%TEMP%\sa_pdfs.txt" 2>nul
+dir /b /o-n /a-d "%BASE%\Santa Anita\sa-results-2025\*.pdf" >> "%TEMP%\sa_pdfs.txt" 2>nul
+dir /b /o-n /a-d "%BASE%\Santa Anita\sa-results-2026\*.pdf" >> "%TEMP%\sa_pdfs.txt" 2>nul
+for /f "usebackq delims=" %%f in ("%TEMP%\sa_pdfs.txt") do (
+    set "SA_FOUND=1"
+    set "STEM=%%~nf"
+    rem Detect filename format. Two formats coexist:
+    rem   Standard:  YYYYMMDD-usa-sa-a-d.standard.pdf  -> first 8 chars are the date
+    rem   Alternate: SA[MM][DD][YY]USA.pdf              -> "SA" prefix + 6 date digits
+    if /i "!STEM:~0,2!"=="SA" (
+        set "DIGITS=!STEM:~2,6!"
+        set "MM=!DIGITS:~0,2!" & set "DD=!DIGITS:~2,2!" & set "YY=!DIGITS:~4,2!"
+        set "FILEDATE=20!YY!!MM!!DD!"
+        set "SRCDIR=%BASE%\Santa Anita\sa-results-2026"
+    ) else (
+        set "FILEDATE=!STEM:~0,8!"
+        set "YR=!STEM:~0,4!"
+        if "!YR!"=="2025" (
+            set "SRCDIR=%BASE%\Santa Anita\sa-results-2025"
+        ) else (
+            set "SRCDIR=%BASE%\Santa Anita\sa-results-2026"
+        )
+    )
+    set "LOGFILE=%SCRIPTS%results-logs\RESULTS_SA_!FILEDATE!.txt"
+    if exist "!LOGFILE!" (
+        echo   Already processed: %%f - skipping
+        echo   Already processed: %%f - skipping >> "!ALLLOG!"
+    ) else (
+        powershell -NoProfile -Command "Set-Content -Path '!LOGFILE!' -Value 'Results SA [!FILEDATE!]' -Encoding UTF8"
+        echo   File: %%f
+        echo   File: %%f >> "!ALLLOG!"
+        echo   File: %%f >> "!LOGFILE!"
+        echo.
+        echo. >> "!ALLLOG!"
+        echo. >> "!LOGFILE!"
+        py -u "%SCRIPTS%process_results.py" "!SRCDIR!\%%f" SA > "%TEMP%\results_tmp.txt" 2>&1
+        type "%TEMP%\results_tmp.txt"
+        type "%TEMP%\results_tmp.txt" >> "!ALLLOG!"
+        powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '!LOGFILE!' -Encoding UTF8"
+        echo   Results logged: results-logs\RESULTS_SA_!FILEDATE!.txt
+        echo   Results logged: results-logs\RESULTS_SA_!FILEDATE!.txt >> "!ALLLOG!"
+    )
+)
+if "!SA_FOUND!"=="0" (
+    echo   No result PDF found - skipping
+    echo   No result PDF found - skipping >> "!ALLLOG!"
+)
+
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
 echo.
 echo. >> "!ALLLOG!"

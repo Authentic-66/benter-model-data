@@ -304,7 +304,11 @@ def ensure_roi_unique(conn):
 _LOG_NAME_RE    = re.compile(r'RESULTS_([A-Z]+)_(\d{8})\.txt', re.IGNORECASE)
 _RACE_HDR_RE    = re.compile(r'\bRACE\s+(\d+)\b.*[|]')
 _RACE_META_RE   = re.compile(r'\bRACE\s+\d+\b[^\|]*[—\-]+\s*(.*)')
-_FINISHER_RE    = re.compile(r'^\s{2,6}(\d+)\s+\d+\s+(\S+)\s+([\d.]+)\s*$')
+_FINISHER_RE    = re.compile(
+    r'^\s{2,6}(\d+)\s+\d+\s+(\S+)\s+([\d.]+)'
+    r'(?:\s+(\S+)\s+(\S+))?'   # optional jockey + trainer (new log format)
+    r'\s*$'
+)
 _TRAINER_RE     = re.compile(r'^\s+Trainer\s*:\s*(.+)')
 _SIRE_RE        = re.compile(r'^\s+Sire\s*:\s*(.+)')
 _WIN_RE         = re.compile(r'\bWIN\s+\$([\d.]+)')
@@ -357,9 +361,11 @@ def _parse_results_log(path):
         fm = _FINISHER_RE.match(line)
         if fm:
             cur['finishers'].append({
-                'pos':   int(fm.group(1)),
-                'horse': fm.group(2),
-                'odds':  float(fm.group(3)),
+                'pos':     int(fm.group(1)),
+                'horse':   fm.group(2),
+                'odds':    float(fm.group(3)),
+                'jockey':  fm.group(4),   # None on old-format logs
+                'trainer': fm.group(5),   # None on old-format logs
             })
             continue
 
@@ -410,13 +416,17 @@ def import_results(conn):
             if race_inserted or not list(cur.execute("SELECT 1 FROM results WHERE race_id=? LIMIT 1", (race_id,))):
                 for f in r['finishers']:
                     is_win = f['pos'] == 1
+                    # Per-finisher trainer/jockey come from the new log format;
+                    # for the winner, fall back to the singular Trainer: line.
+                    trainer = f.get('trainer') or (r['trainer'] if is_win else None)
+                    jockey  = f.get('jockey')
                     cur.execute(
                         "INSERT OR IGNORE INTO results"
-                        "(race_id,finish_pos,horse_name,trainer,sire,odds,win_pay,place_pay,show_pay)"
-                        " VALUES(?,?,?,?,?,?,?,?,?)",
+                        "(race_id,finish_pos,horse_name,trainer,jockey,sire,odds,win_pay,place_pay,show_pay)"
+                        " VALUES(?,?,?,?,?,?,?,?,?,?)",
                         (race_id, f['pos'], f['horse'],
-                         r['trainer'] if is_win else None,
-                         r['sire']    if is_win else None,
+                         trainer, jockey,
+                         r['sire'] if is_win else None,
                          f['odds'],
                          r['win']   if f['pos'] == 1 else None,
                          r['place'] if f['pos'] <= 2 else None,
@@ -549,7 +559,7 @@ def import_picks(conn):
 
 # ── ROI log parsing ───────────────────────────────────────────────────────────
 
-_KNOWN_CODES    = {'CT', 'FP', 'GP', 'EVD', 'DD', 'FG', 'MVR', 'LRL', 'ST', 'HV', 'HK'}
+_KNOWN_CODES    = {'CT', 'FP', 'GP', 'EVD', 'DD', 'FG', 'MVR', 'LRL', 'SAR', 'SA', 'ST', 'HV', 'HK'}
 _SECTION_RE     = re.compile(r'\(([A-Z]{2,4})\)\s*$')
 _PICKS_REF_RE   = re.compile(r'Picks:\s*picks_[A-Z]+_(\d{8})\.txt', re.IGNORECASE)
 _ROI_ACTIVE_RE  = re.compile(

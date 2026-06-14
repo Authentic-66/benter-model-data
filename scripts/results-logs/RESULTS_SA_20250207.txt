@@ -1,0 +1,171 @@
+Results SA [20250207]
+File: 20250207-usa-sa-a-d.standard.pdf
+
+Processing 20250207-usa-sa-a-d.standard.pdf [SA]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : SANTA ANITA
+  Source  : 20250207-usa-sa-a-d.standard.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  CLM  |  1M  |  Dirt  |  $25,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  LoveOurFamily                     0.60  Franco,Geovanni           Stute,Gary              
+    2    5  Tiergarten                        2.30  Hernandez,Juan            Papaprodromou,George    
+    3    2  SmilingLady                      11.00  Ayuso,Armando             Calvario,Samuel         
+    4    1  Professors'Pride                  6.00  Baze,Tyler                Hess,Jr.,Robert         
+    5    4  Highlands                        15.80  Gonzalez,Ricardo          Lopez,George            
+
+  Time    : 1:39.09
+  Trainer : Stute, Gary
+  Sire    : JerseyTown
+
+  WIN    $3.20   PLC    $2.20   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  MSW  |  6F  |  Dirt  |  $60,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  UncleChilly                       0.30  Ayuso,Armando             Puype,Mike              
+    2    1  ProudRacer                        2.60  Gonzalez,Ricardo          Baltas,Richard          
+    3    6  PapaLove'sVegas                   7.20  Maldonado,Edwin           Brinkerhoff,Val         
+    4    4  ExcessiveThievery                25.50  Lezcano,Abel              Brinkerhoff,Val         
+    5    3  BeausBuddy                       43.80  Iniguez,Salvador          Sierra,Javier           
+
+  Time    : 1:10.38
+  Trainer : Puype, Mike
+  Sire    : SmilingTiger
+
+  WIN    $2.60   PLC    $2.10   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  CLM  |  6F  |  Dirt  |  $34,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  Panuco                            4.20  Carmona,Serafin           Periban,Jorge           
+    2    2  FarWestern                        2.90  Gonzalez,Ricardo          Hanson,Ryan             
+    3    3  Whiskeyinateacup                  6.10  Pereira,Tiago             Knapp,Steve             
+    4    4  WindsofFreedom                    0.60  Americano,Manuel          O'Neill,Doug            
+
+  Time    : 1:11.42
+  Trainer : Periban, Jorge
+  Sire    : Stanford
+
+  WIN   $10.40   PLC    $3.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  MSW  |  6F  |  Dirt  |  $60,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  DanzingFlyer                      1.20  Smith,Mike                Sise,Jr.,Clifford       
+    2    8  DellaTerra                        7.30  Americano,Manuel          Glatt,Mark              
+    3    4  HavePatience                      0.90  Dettori,Lanfranco         O'Neill,Doug            
+    4    9  BroketheCode                     10.80  Gonzalez,Ricardo          Mathis,Andy             
+    5    7  Cestrand                         47.70  Herrera,Cristobal         Haley,Gloria            
+
+  Time    : 1:11.56
+  Trainer : Sise, Jr.,Clifford
+  Sire    : DanzingCandy
+
+  WIN    $4.40   PLC    $3.00   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  MCL  |  6F  |  Dirt  |  $13,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    8  Hermelinda'sFancy                 1.30  Espinoza,Assael           Rodriguez,Francisco     
+    2    7  SeaverWay                        16.20  Orantes,Welfin            Baker,D.                
+    3   10  FastService                       2.80  Frey,Kyle                 McCanna,Tim             
+    4    3  Bruiser                           4.80  Americano,Manuel          McLean,Bill             
+    5    6  Cangrejo                          3.80  AntongeorgiIII,William    Sherman,Steve           
+    6    4  CarefulColin                     27.60  RojasFernandez,Eduard     Stortz,Marcia           
+    7    5  ElGoloso                         72.10  Herrera,Cristobal         Bautista,Jose           
+    8    9  BostonBurglar                    71.30  Orozco,Kevin              Trujillo,Victor         
+
+  Time    : 1:12.39
+  Trainer : Rodriguez, Francisco
+  Sire    : Stanford
+
+  WIN    $4.60   PLC    $3.00   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  CLM  |  5.5F  |  Dirt  |  $17,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  MobeTown                          1.30  Pereira,Tiago             Knapp,Steve             
+    2    7  AlmostSnow                        2.50  Espinoza,Assael           McCanna,Tim             
+    3    8  PerfectD                          9.40  Baze,Tyler                Castaneda,Kelly         
+    4    3  SmartyNose                        7.30  Frey,Kyle                 Rivera,Sally            
+    5    5  Rassler                           9.00  Aguilar,Armando           Uranga,Jesus            
+    6    6  Coulthard                         8.30  Escobedo,Adrian           Hanson,Ryan             
+    7    2  SouthernSlang                    20.60  Tomita,Akatsuki           Miller,Peter            
+
+  Time    : 1:03.98
+  Trainer : Knapp, Steve
+  Sire    : MoTown
+
+  WIN    $4.60   PLC    $2.80   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  STA  |  5.5F  |  Dirt  |  $22,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  Nala                              2.90  Espinoza,Assael           Jauregui,O.             
+    2    2  ElMaga                            3.40  Carmona,Serafin           Rondan,Felix            
+    3    7  Tiz'sHarbor                       4.60  Frey,Kyle                 Tamayo,Isidro           
+    4    3  SwiftStephan                      2.80  AntongeorgiIII,William    Wright,Blaine           
+    5    1  DorisAvenue                      17.20  Castellanos,Adrian        Paldanius,Sheldon       
+    6    6  LastCallVron                     19.70  Orantes,Welfin            Jauregui,O.             
+    7    5  EscapePlan                        5.00  Couton,Julien             Lenzini,Michael         
+
+  Time    : 1:06.40
+  Trainer : Jauregui, O.
+  Sire    : AdiosCharlie
+
+  WIN    $7.80   PLC    $4.00   SHW    $2.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  SOC  |  6F  |  Dirt  |  $29,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  Windribbon                        2.90  Hernandez,Juan            Miller,Peter            
+    2    7  CajunBrother                      0.90  Berrios,Hector            Knapp,Steve             
+    3   10  KahunaMagic                       9.30  Alvarado,Frank            Shirreffs,John          
+    4    8  DesDoigts                        28.40  Pereira,Tiago             DeLeon,Rafael           
+    5    2  ComeOutFighting                  18.40  Castellanos,Adrian        McLean,Bill             
+    6    1  OtroMas                          44.60  Payeras,Edgar             Valenzuela,Jr.,Martin   
+    7    9  ChasinMunny                       4.50  Chavez,Deybis             Glatt,Mark              
+    8    5  BearHunt                         39.10  Valdivia,Jr.,Jose         Capestro,Paula          
+
+  Time    : 1:10.81
+  Trainer : Miller, Peter
+  Sire    : SwayAway
+
+  WIN    $7.80   PLC    $3.00   SHW    $2.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 9  —  MAIDENOPTION  |  6.5F  |  Dirt  |  $34,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  NoBadBeats                        0.40  Hernandez,Juan            O'Neill,Doug            
+    2    4  MaximunGold                      53.60  Carmona,Serafin           Gomez,Ruben             
+    3    3  HappySue                         17.50  Espinoza,Assael           Jauregui,O.             
+    4    9  SunsetBeauty                     10.40  Herrera,Diego             Powell,Leonard          
+    5    6  JoyfulMischief                   33.00  Herrera,Hugo              McDonald,Melanie        
+    6    1  ShoreLodge                       13.40  Ayuso,Armando             Koriner,Brian           
+    7    2  Donttellourwives                 19.10  Lezcano,Abel              Powell,Leonard          
+    8    5  GreyMarket                       16.30  Americano,Manuel          Yakteen,Tim             
+
+  Time    : 1:17.85
+  Trainer : O'Neill, Doug
+  Sire    : MidnightStorm
+
+  WIN    $2.80   PLC    $2.40   SHW    $2.10
+
+========================================================================
+  9 race(s) processed
+========================================================================
+

@@ -208,6 +208,67 @@ set "SAR_PDF_PATH=%SAR_DIR%\%PDF%"
 py -u "%SCRIPTS%roi_tracker.py" "%SAR_PICKS_PATH%" "%SAR_PDF_PATH%" > "%TEMP%\results_tmp.txt" 2>&1
 type "%TEMP%\results_tmp.txt"
 powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
+goto :sa_section
+
+:: ── SANTA ANITA (SA) ─────────────────────────────────────────────────────
+:sa_section
+echo.
+echo ========================================================================
+echo   SANTA ANITA (SA)
+echo ========================================================================
+echo. >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+echo   SANTA ANITA (SA) >> "%LOGFILE%"
+echo ======================================================================== >> "%LOGFILE%"
+for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_SA_*.txt" 2^>nul') do (
+    set "SA_PICKS=%%f"
+    goto :sa_picks_ok
+)
+echo   No picks_SA_*.txt found - run parse_sa.bat first
+echo   No picks_SA_*.txt found - run parse_sa.bat first >> "%LOGFILE%"
+goto :evd_section
+
+:sa_picks_ok
+:: picks_SA_MMDDYYYY.txt -- "picks_SA_" prefix is 9 chars
+set "DATERAW=%SA_PICKS:~9,8%"
+set "MM=%DATERAW:~0,2%"
+set "DD=%DATERAW:~2,2%"
+set "YY=%DATERAW:~6,2%"
+set "YYYY=%DATERAW:~4,4%"
+set "PICKSDATE=%YYYY%%MM%%DD%"
+set "SA_DIR=%BASE%\Santa Anita\sa-results-2026"
+:: Try alternate format first: SA[MM][DD][YY]USA.pdf
+for /f "delims=" %%f in ('dir /b /a-d "%SA_DIR%\SA%MM%%DD%%YY%USA.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :sa_run
+)
+:: Fallback to standard format: YYYYMMDD-usa-sa-a-d.standard.pdf
+for /f "delims=" %%f in ('dir /b /a-d "%SA_DIR%\%PICKSDATE%-usa-sa-*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :sa_run
+)
+:: Also check 2025 directory
+set "SA_DIR=%BASE%\Santa Anita\sa-results-2025"
+for /f "delims=" %%f in ('dir /b /a-d "%SA_DIR%\%PICKSDATE%-usa-sa-*.pdf" 2^>nul') do (
+    set "PDF=%%f"
+    goto :sa_run
+)
+echo   No result PDF found for picks date %PICKSDATE% - skipping SA
+echo   No result PDF found for picks date %PICKSDATE% - skipping SA >> "%LOGFILE%"
+goto :evd_section
+
+:sa_run
+echo   Picks: %SA_PICKS%
+echo   Result: %PDF%
+echo.
+echo   Picks: %SA_PICKS% >> "%LOGFILE%"
+echo   Result: %PDF% >> "%LOGFILE%"
+echo. >> "%LOGFILE%"
+set "SA_PICKS_PATH=%SCRIPTS%%SA_PICKS%"
+set "SA_PDF_PATH=%SA_DIR%\%PDF%"
+py -u "%SCRIPTS%roi_tracker.py" "%SA_PICKS_PATH%" "%SA_PDF_PATH%" > "%TEMP%\results_tmp.txt" 2>&1
+type "%TEMP%\results_tmp.txt"
+powershell -NoProfile -Command "Get-Content '%TEMP%\results_tmp.txt' | Add-Content -Path '%LOGFILE%' -Encoding UTF8"
 goto :evd_section
 
 :: ── EVANGELINE DOWNS (EVD) ───────────────────────────────────────────────
