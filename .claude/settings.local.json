@@ -60,7 +60,9 @@
       "Bash(py *)",
       "Bash(not exist *)",
       "Bash(cmd.exe /c \"scripts\\\\process_all.bat < nul\")",
-      "Bash(tasklist)"
+      "Bash(tasklist)",
+      "Bash(py scripts/brisnet_parser_v2.py \"Santa Anita/sa-pps-files/sax0614y.pdf\" SA)",
+      "Bash(echo \"EXIT=$?\")"
     ]
   }
 }
