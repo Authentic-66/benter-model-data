@@ -111,7 +111,19 @@ IRON_TRAINERS = {
         'Mojica':    ('🔥 DD+EVD',    'Cross-circuit'),
         'Brinkman':  ('✅ OVR DD',    'Overlay 5/1+'),
         'Gonzalez':  ('✅ OVR DD',    '$14avg overlay'),
-    }
+    },
+    'SA': {
+        'DAmato':       ('🔥 IRON SA #1', '86W'),  # Brisnet drops the apostrophe
+        'Glatt':        ('🔥 IRON SA #2', '85W'),
+        "O'Neill":      ('🔥 IRON SA #3', '81W'),
+        'Baffert':      ('🔥 IRON SA',    '78W'),
+        'McCarthy':     ('🔥 IRON SA',    '71W'),
+        'Mullins':      ('🔥 IRON SA',    '69W'),
+        'Sadler':       ('🔥 IRON SA',    '63W'),
+        'Knapp':        ('🔥 IRON SA',    '55W'),
+        'Papaprodromou':('🔥 IRON SA',    '49W'),
+        'Baltas':       ('🔥 IRON SA',    '40W'),
+    },
 }
 
 SIRE_SIGNALS = {
@@ -178,6 +190,20 @@ SIRE_SIGNALS = {
         'Kantharos':      ('🔥 MVR SIRE', '12W full meet'),
         'Rivers Run Deep':('✅ MVR SIRE', '12W full meet'),
         'Cinco Charlie':  ('✅ FP+MVR',   'Cross-circuit positive'),
+    },
+    # SA Santa Anita CA home-track sires
+    'SA': {
+        'Grazen':         ('✅ POS SA #1','65W'),
+        'Clubhouse Ride': ('✅ POS SA',   '42W'),
+        'Stay Thirsty':   ('✅ POS SA',   '38W'),
+        'Nyquist':        ('✅ POS SA',   '31W'),
+        'Smiling Tiger':  ('✅ POS SA',   '30W'),
+        'Stanford':       ('✅ POS SA',   '24W'),
+        'City of Light':  ('✅ POS SA',   '23W'),
+        'American Pharoah':('✅ POS SA',  '22W'),
+        'Into Mischief':  ('✅ POS SA',   '21W'),
+        # 'Om' (28W) intentionally omitted — 2-letter key would substring-match
+        # many unrelated sires (Tom, Roman, Wholesome, etc.)
     },
 }
 
