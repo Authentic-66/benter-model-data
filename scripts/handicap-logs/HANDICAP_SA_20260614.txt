@@ -1,5 +1,5 @@
-Parsing C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\Santa Anita\sa-pps-files\sax0614y.pdf for SA...
-Found 12 races, 118 horses
+Parsing Santa Anita/sa-pps-files/sax0614y.pdf for SA...
+Found 12 races, 97 horses
 
 
 ============================================================================
@@ -8,246 +8,241 @@ Found 12 races, 118 horses
 ============================================================================
 
 ────────────────────────────────────────────────────────────────────────────
-RACE 1    Dirt  $65,000
+RACE 1  Mdn 65k 6 Furlongs (T) 3yo Fillies Sunday, June 14  Turf  $65,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-      1: Rousing Rhythm                8/1           ?  Pederson Dean
+      1: Rousing Rhythm                  ?    113.7(7)  Pederson Dean
         Sire: Rousing Sermon                  J: Aguilar Armando
         Stats: 20 sts 2-4-3 10%
         ✅ 19% trainer: 1st time str
         ✅ Sharp 5F workout (Jun-08)
+        ❌ First time starter
 
-  ·  2: Grazeninthegrass              9/2    113.7(7)  Yakteen Tim
+  ·  2: Grazeninthegrass                ?    113.7(7)  Yakteen Tim
         Sire: Grazen                          J: Fresu Antonio
-        Recent SPD: 73   Best: 73
+        Recent SPD: 73   Best: 73 (Turf)
         Stats: 92 sts 14-11-13 15%
         ⏰ 92 days off
+        🎯 [SIRE] ✅ POS SA #1 — 65W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ High % Jockey
         ✅ 17% trainer: 90+ days away
+        ❌ Never close in only career start
 
       3: Sally Says                   15/1     99.2(9)  Haley Gloria
         Sire: Uptown Rythem                   J: Bautista Alfredo L
-        Recent SPD: 50, 58   Best: 58
         Stats: 39 sts 2-0-5 5%
+        Claim: $1,000
         ✅ Chance to improve while trying grass
+        ❌ Finished far behind weaker (on Dirt) in last race
 
-      4: Come On Om                    5/1    127.7(2)  McCarthy Sean
+  ⭐  4: Come On Om                    5/1    127.7(2)  McCarthy Sean
         Sire: Om                              J: Baze Tyler
+        Recent SPD: 83   Best: 83 (Turf)
         Stats: 54 sts 8-10-10 15%
+        Claim: $13,000
+        🎯 [TRAINER] 🔥 IRON SA — 71W
         ✅ Highest last race speed rating
         ✅ Ran 2nd vs similar in only start
+        ❌ Poor '2nd career race' trainer record: 6% wins 32 sts
 
-  ·  5: Volcanologist                 6/1    114.5(6)  Mathis Andy
+  ·  5: Volcanologist                   ?    114.5(6)  Mathis Andy
         Sire: Collected                       J: Gonzalez Ricardo
-        Recent SPD: 74, 55   Best: 74
+        Recent SPD: 74, 55   Best: 74 (Turf)
         Stats: 54 sts 7-10-3 13%
+        Claim: $4,400
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ 18% trainer: Sprints
         ✅ Hot Jockey in last 7 days (17 6-1-0)
-        ❌ 04Mar SA 5f ft 1:00 H1/9 22Feb SA 5f ft 1:01 H47/80 13Feb SA 4f f
+        ❌ 04Mar SA 5f ft 1:00 H 1/9 22Feb SA 5f ft 1:01 H 47/80 13Feb SA 4f
 
-      7: Idiot Straits                15/1           ?  Ruvalcaba Alberto
+      7: Idiot Straits                   ?    118.0(4)  Ruvalcaba Alberto
         Sire: Idiot Proof                     J: Herrera Cristobal
         Stats: 7 sts 0-0-1 0%
         ✅ Breeding suggests she will like the grass
         ✅ 20% trainer: Debut MdnSpWt
-        ❌ 01Jun SA 5f ft :59ª H1/5 25May SA 4f ft :48 H9/49 17May SA 4f ft 
+        ❌ First time starter
 
-      8: Taking a Joy Ride            10/1    118.0(4)  Lewis Craig A
+  ·  8: Taking a Joy Ride            10/1    118.0(4)  Lewis Craig A
         Sire: Clubhouse Ride                  J: Kimura Kazushi
-        Recent SPD: 66, 80, 82   Best: 82
+        Recent SPD: 66   Best: 66 (Turf)
         Stats: 67 sts 6-16-15 9%
+        Claim: $27,500
+        🎯 [SIRE] ✅ POS SA — 42W
         ✅ Best Turf speed is close to the Avg Winning Speed
+        ❌ Always far back in last start
 
       9: Just Mendelssohn             10/1    105.8(8)  Galvin Brendan W
         Sire: Mendelssohn                     J: Pereira Tiago J
-        Recent SPD: 64   Best: 64
+        Recent SPD: 64   Best: 64 (Turf)
         Stats: 45 sts 5-3-6 11%
-        ❌ 08May SA 3f ft :35ª Hg1/6 01May SA 4f ft :47
+        ❌ Always far back in only start
 
-     10: Marla Hooch                   5/1    133.0(1)  DAmato Philip
-        Sire: Om                              J: Ayuso Armando
-        Recent SPD: 79, 87, 79, 81   Best: 87
-        Stats: 200 sts 37-32-29 19%
-        ✅ High % trainer
-        ✅ Finished 3rd vs similar in last race
-
-     11: Unusualexis                  15/1           ?  Barba Alexis
-        Sire: Unusual Heatwave                J: Frey Kyle
-        Stats: 0 sts 0-0-0 0%
-        ✅ Breeding suggests she will like the grass
-
-  · 12: Promises of Gold             10/1           ?  Baltas Richard
-        Sire: Goldencents                     J: Rosario Joel
-        Stats: 127 sts 17-16-19 13%
-        🎯 [SIRE] 🔥 4-TRACK — FP+EVD+MVR+DD
-        ✅ Breeding suggests she will like the grass
-        ❌ 30May Slr 4f ft :47¨ Hg1/31 23May Slr 5f ft 1:01« H24/44 16May Sl
-
-  · 13: Helping Hand                  6/1    122.0(3)  Puype Mike
-        Sire: Mo Forza                        J: Fresu Antonio
-        Recent SPD: 75   Best: 75
-        Stats: 92 sts 15-11-17 16%
-        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
-        ✅ High % Jockey
-        ✅ Hot Jockey in last 7 days (17 6-4-4)
-        ❌ 30May Slr 4f ft :47¨ Hg1/31 23May Slr 5f ft 1:01« H24/44 16May Sl
-
-     14: Miss Chardonnay              15/1    85.3(10)  Wallace II Jerry
-        Sire: Stay Thirsty                    J: Belmont Cesar
-        Recent SPD: 53   Best: 53
-        Stats: 6 sts 0-0-1 0%
-        ✅ Dam has 1 winner from 3 starters (but 0 Turf winners)
-
-  ⚪ No primary model signals
+  ★ MODEL PICKS R1:
+    PP 4: Come On Om                  (  5/1)  🔥 IRON SA
 
 ────────────────────────────────────────────────────────────────────────────
-RACE 2    Dirt  $35,000
+RACE 2  Clm 50000 6 Furlongs 3&up Sunday, June 14, 2026  Dirt  $35,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-      1: Ima Track Star                4/1    120.2(5)  Koriner Brian J
+      1: Ima Track Star                  ?    120.2(5)  Koriner Brian J
         Sire: Barkley                         J: Ayuso Armando
         Recent SPD: 81, 81   Best: 81
         Stats: 53 sts 8-9-10 15%
+        Claim: $15,500
         ✅ Won last race (SA 05/03 5.5f Dirt ft Md32000)
+        ❌ Moves up in class from last start
 
-      2: Letmein                       4/1    123.4(3)  Glatt Mark
+  ⭐  2: Letmein                       4/1    123.4(3)  Glatt Mark
         Sire: Mr. Big                         J: Lezcano Abel
-        Recent SPD: 76, 89, 88, 91, 88   Best: 91
+        Recent SPD: 76, 82, 88, 91, 88   Best: 91
         Stats: 168 sts 37-26-32 22%
+        Claim: $85,620
+        🎯 [TRAINER] 🔥 IRON SA #2 — 85W
         ✅ High % trainer
         ✅ Highest speed figure at today's distance
+        ❌ Has not raced in 51 days
 
-      3: Bazooka Charlie               6/1    113.0(6)  Hess, Jr. Robert B
+  ·  3: Bazooka Charlie               6/1    113.0(6)  Hess, Jr. Robert B
         Sire: Grazen                          J: Pereira Tiago J
         Recent SPD: 79, 83, 75, 92, 75   Best: 92
         Stats: 71 sts 11-14-11 15%
         ⏰ 133 days off
+        Claim: $53,020
+        🎯 [SIRE] ✅ POS SA #1 — 65W
         ✅ Figures to improve while returning to Dirt
         ✅ Finished 3rd vs similar (on Turf) in last race
+        ❌ Failed as favorite in last race
 
       4: Charlie Foxtrot               9/2    120.3(4)  Hess, Jr. Robert B
         Sire: Army Mule                       J: Rosario Joel
-        Recent SPD: 77, 84, 83, 78, 85   Best: 85
+        Recent SPD: 77, 81, 84, 83, 78   Best: 85
         Stats: 71 sts 11-14-11 15%
         ⏰ 268 days off
+        Claim: $31,220
         ✅ Early speed running style helps chances
         ✅ May improve at the shorter distance
+        ❌ Has not raced for more than 8 months
 
   ·  5: Palmer Beach                  7/2    123.6(2)  Williams Sean
         Sire: Omaha Beach                     J: Gonzalez Ricardo
-        Recent SPD: 84, 71, 67, 69   Best: 84  ✅ IMPROVING FORM
+        Recent SPD: 84, 80, 71, 67, 69   Best: 84  ✅ IMPROVING FORM
         Stats: 0 sts 0-0-0 0%
         ⏰ 66 days off
+        Claim: $40,572
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ Highest last race speed rating (tie)
         ✅ Won last race (OP 04/09 6f Dirt ft Md40000)
+        ❌ Moves up in class from last start
 
-      6: Thirty Two Chunk              2/1    129.6(1)  Glatt Mark
+  ⭐  6: Thirty Two Chunk              2/1    129.6(1)  Glatt Mark
         Sire: More Than Ready                 J: Kimura Kazushi
-        Recent SPD: 83, 75, 91, 74   Best: 91
+        Recent SPD: 83, 88, 77, 79, 75   Best: 91
         Stats: 168 sts 37-26-32 22%
+        Claim: $63,540
+        🎯 [TRAINER] 🔥 IRON SA #2 — 85W
         ✅ High % trainer
         ✅ Highest last race speed rating (tie)
-        ❌ 30Jan SA 5f ft :59
+        ❌ Failed as favorite in last race
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R2:
+    PP 2: Letmein                     (  4/1)  🔥 IRON SA #2
+    PP 6: Thirty Two Chunk            (  2/1)  🔥 IRON SA #2  ⚠️ 0% J/T
 
 ────────────────────────────────────────────────────────────────────────────
-RACE 3    Dirt  $65,000
+RACE 3  Mdn 65k 5 Furlongs (T) 2yo Fillies Sunday, June 14  Turf  $65,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-  ·  1: Nylie                         3/1    114.7(1)  O'Neill Doug F
+  ⭐  1: Nylie                         3/1    114.7(1)  O'Neill Doug F
         Sire: Nyquist                         J: Fresu Antonio
-        Recent SPD: 62   Best: 62
+        Recent SPD: 62   Best: 62 (Turf)
         Stats: 252 sts 44-42-27 17%
+        Claim: $13,000
+        🎯 [TRAINER] 🔥 IRON SA #3 — 81W
+        🎯 [SIRE] ✅ POS SA — 31W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ High % Jockey
         ✅ Ran 2nd vs similar in only start
+        ❌ Poor '2nd grass race' trainer record: 5% wins 40 sts
 
-      2: Lease Instead                 5/1    104.2(2)  O'Neill Doug F
+  ⭐  2: Lease Instead                 5/1    104.2(2)  O'Neill Doug F
         Sire: Pavel                           J: Jaramillo Emisael
-        Recent SPD: 62, 48   Best: 62
+        Recent SPD: 48   Best: 48
         Stats: 252 sts 44-42-27 17%
+        Claim: $3,900
+        🎯 [TRAINER] 🔥 IRON SA #3 — 81W
         ✅ Switches to a high % jockey
         ✅ Well bet in debut
+        ❌ Has never raced on the grass
 
-      3: Eurydice                      8/1           ?  Hanson Ryan
+      3: Eurydice                        ?           ?  Hanson Ryan
         Sire: Cistron                         J: Escobedo Adrian
-        Recent SPD: 48   Best: 48
         Stats: 123 sts 12-26-13 10%
+        ❌ First time starter
 
-      4: Mystic Aurora                 5/1           ?  Garcia Victor L
+      4: Mystic Aurora                   ?           ?  Garcia Victor L
         Sire: Early Voting                    J: Lezcano Abel
         Stats: 39 sts 4-2-10 10%
         ✅ Breeding suggests she will like the grass
         ✅ 25% trainer: Debut Turf
-        ❌ 18Apr SA 2f ft :23ª H1/8
+        ❌ First time starter
 
-      5: Princess Luna                 8/1           ?  Dollase Craig
+      5: Princess Luna                   ?           ?  Dollase Craig
         Sire: Cairo Prince                    J: Ayuso Armando
         Stats: 27 sts 5-2-3 19%
         ✅ Sharp 4F workout (Jun-08)
-        ❌ 18Apr SA 2f ft :23ª H1/8
+        ❌ 18Apr SA 2f ft :23ª H 1/8
 
-      6: Weekend Vibes                 9/2           ?  Miller Peter
+      6: Weekend Vibes                   ?           ?  Miller Peter
         Sire: Highly Motivated                J: Rosario Joel
         Stats: 86 sts 10-17-10 12%
         ✅ Breeding suggests she will like the grass
-        ❌ 16May Slr 3f ft :35©
+        ❌ First time starter
 
-      7: Her Names Charlie             4/1           ?  Hanson Ryan
+      7: Her Names Charlie               ?    100.5(3)  Hanson Ryan
         Sire: Golden Pal                      J: Maldonado Edwin A
         Stats: 123 sts 12-26-13 10%
         ✅ Breeding suggests she will like the grass
-        ✅ Breeding suggests she will like the grass
-        ❌ 16May Slr 3f ft :35©
+        ❌ 16May Slr 3f ft :35© H 1/21 09May Slr 3f ft :37¨ H 12/19 02May Sl
 
       8: Ride Like the Wolf           10/1    100.5(3)  Garcia Antonio C
         Sire: Sir Prancealot                  J: Bautista Alfredo L
         Recent SPD: 58   Best: 58
         Stats: 59 sts 7-7-8 12%
         ✅ Breeding suggests she will like the grass
-        ✅ Breeding suggests she will like the grass
-        ❌ 23May SA 3f ft :37 H1/6 17May SA 4f ft :50« H83/101 09May SA 3f f
+        ❌ Has never raced on the grass
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R3:
+    PP 1: Nylie                       (  3/1)  🔥 IRON SA #3 + ✅ POS SA  🔥 TRAINER+HOT_JT
+    PP 2: Lease Instead               (  5/1)  🔥 IRON SA #3
 
 ────────────────────────────────────────────────────────────────────────────
-RACE 4    Dirt  $21,000
+RACE 4  Clm 10000 6 Furlongs 3&up Sunday, June 14, 2026  Dirt  $21,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-      1: Zombo Bombo                   9/2    117.7(4)  Knapp Steve R
+  ⭐  1: Zombo Bombo                   9/2    117.7(4)  Knapp Steve R
         Sire: Munnings                        J: Ayuso Armando
-        Recent SPD: 87, 88, 89, 58, 79   Best: 90
+        Recent SPD: 85, 81, 86, 87, 88   Best: 96
         Stats: 190 sts 25-24-27 13%
-        ⏰ 182 days off
         Claim: $10,000
+        🎯 [TRAINER] 🔥 IRON SA — 55W
         ✅ Drops in class today
         ✅ Early speed running style helps chances
-        ❌ 30Dec'25 SA 3f ft :34¨ Hg1/20 07Dec'25 SA 4f ft :48 H4/53 28Nov'2
-
-      2: Wizard of Westwood            4/1    128.6(1)  McCarthy Michael W
-        Sire: Tu Brutus                       J: Jaramillo Emisael
-        Recent SPD: 85, 81, 86, 75, 83   Best: 89
-        Claim: $10,000
-        ✅ High % Jockey
-        ✅ Highest last race speed rating
-        ❌ 30Dec'25 SA 3f ft :34¨ Hg1/20 07Dec'25 SA 4f ft :48 H4/53 28Nov'2
+        ❌ Has not raced for more than 6 months
 
   ·  3: Clever Clover                 3/1    119.8(3)  Aguirre Paul G
         Sire: Rumpus Cat                      J: Fresu Antonio
-        Recent SPD: 81, 87, 85, 81, 88   Best: 88
+        Recent SPD: 81, 87, 84, 81, 88   Best: 91
         Stats: 15 sts 3-2-2 20%
         Claim: $10,000
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ Switches to a high% trainer
         ✅ Switches to a high % jockey
+        ❌ Suspicious drop in class today
 
       4: One Smokin Dude               7/2    124.6(2)  Barocio Librado
         Sire: Smokem                          J: Pereira Tiago J
@@ -256,151 +251,171 @@ RACE 4    Dirt  $21,000
         Claim: $10,000
         ✅ High % trainer
         ✅ 30% trainer: Clm repeater
-        ❌ 07Mar SA 4f ft :46© H1/4 06Feb SA 4f ft :53ª
+        ❌ Suspicious drop in class today
 
   ·  5: Kahuna Magic                  9/2    117.4(5)  Hess, Jr. Robert B
         Sire: Into Mischief                   J: Rosario Joel
         Recent SPD: 79, 80, 90, 75, 83   Best: 90
         Stats: 71 sts 11-14-11 15%
         Claim: $10,000
-        🎯 [SIRE] ✅ MULTI — 64W/3yr GP + national
+        🎯 [SIRE] ✅ POS SA — 21W
         ✅ Drops in class today
         ✅ May improve with Blinkers added today
-        ❌ 07Mar SA 4f ft :46© H1/4 06Feb SA 4f ft :53ª
+        ❌ Has not raced in 50 days
 
       6: Des Doigts                    6/1    114.1(6)  Lopez George L
         Sire: Hootenanny                      J: Aguilar Armando
-        Recent SPD: 51, 86, 80   Best: 86
+        Recent SPD: 51, 86, 65, 80   Best: 86
         Stats: 22 sts 1-4-2 5%
         Claim: $10,000
         ✅ 25% trainer: 1st after clm
         ✅ Early speed running style helps chances
-        ❌ 22Mar LA 5f ft 1:00¨
+        ❌ Finished far behind weaker in last race
 
       7: Tiz's Harbor                 10/1    102.5(7)  Tamayo Isidro
         Sire: Majestic Harbor                 J: Frey Kyle
-        Recent SPD: 89, 84, 73, 79, 79   Best: 89  ✅ IMPROVING FORM
+        Recent SPD: 89, 76, 73, 79, 79   Best: 89  ✅ IMPROVING FORM
         Stats: 56 sts 8-6-4 14%
         Claim: $10,000
         ✅ Drops in class today
-        ❌ 22Mar LA 5f ft 1:00¨
+        ❌ Poor Speed Figures
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R4:
+    PP 1: Zombo Bombo                 (  9/2)  🔥 IRON SA
 
 ────────────────────────────────────────────────────────────────────────────
-RACE 5    Dirt  $68,000
+RACE 5    Turf  $68,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-      1: Young Love                    5/1    135.2(2)  Miller Peter
+  ·  1: Young Love                    5/1    135.2(2)  Miller Peter
         Sire: Grazen                          J: Kimura Kazushi
-        Recent SPD: 83, 80, 88, 90, 85   Best: 90
+        Recent SPD: 83, 80, 83, 88, 90   Best: 88 (Turf)
         Stats: 86 sts 10-17-10 12%
+        Claim: $229,966
+        🎯 [SIRE] ✅ POS SA #1 — 65W
         ✅ Highest speed figure at today's distance
-        ❌ 07Mar Slr 4f ft :48¨ H1/25
+        ❌ 07Mar Slr 4f ft :48¨ H 1/25
 
       2: Visually                      4/1    132.3(4)  Miller Peter
         Sire: Enticed                         J: Berrios Hector I
-        Recent SPD: 87, 72, 90, 91, 69   Best: 91
+        Recent SPD: 87, 72, 90, 91, 69   Best: 91 (Turf)
         Stats: 86 sts 10-17-10 12%
+        Claim: $201,283
         ✅ High % Jockey
         ✅ Eligible to improve in 2nd start since layoff
-        ❌ 07Mar Slr 4f ft :48¨ H1/25
+        ❌ 07Mar Slr 4f ft :48¨ H 1/25
 
-      3: Imaboutago                    3/1    134.3(3)  Powell Leonard
+      3: Imaboutago                      ?    134.3(3)  Powell Leonard
         Sire: Calyx                           J: Ayuso Armando
-        Recent SPD: 82, 92, 89, 88, 84   Best: 92
+        Recent SPD: 82, 92, 89, 88, 84   Best: 92 (Turf)
         Stats: 150 sts 16-27-22 11%
         Claim: $80,000
         ✅ 26% trainer: Btn favorite
-        ❌ 08Jun SA 4f ft :48 H1/12
+        ❌ Failed as favorite in last race
 
-  ·  4: Tahini                        6/1    128.7(6)  Papaprodromou George
+  ⭐  4: Tahini                        6/1    128.7(6)  Papaprodromou George
         Sire: American Pharoah                J: Fresu Antonio
-        Recent SPD: 84, 84, 79   Best: 84
+        Recent SPD: 83, 87, 86, 81, 86   Best: 87 (Turf)
+        Stats: 149 sts 27-26-27 18%
+        Claim: $143,520
+        🎯 [TRAINER] 🔥 IRON SA — 49W
+        🎯 [SIRE] ✅ POS SA — 22W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ High % trainer
         ✅ Switches to a high % jockey
-        ❌ 08Jun SA 4f ft :48 H1/12
+        ❌ 08Mar SA 4f ft :46© H 1/41 30Jan SA 4f ft :47ª H 2/8 22Jan SA 4f 
 
-      5: Can't Sleep                   5/2    143.1(1)  Gaines Carla
+      5: Can't Sleep                     ?    143.1(1)  Gaines Carla
         Sire: Om                              J: Jaramillo Emisael
-        Recent SPD: 97, 94, 88, 86, 86   Best: 97  ✅ IMPROVING FORM
+        Recent SPD: 97, 94, 88, 86, 86   Best: 97 (Turf)  ✅ IMPROVING FORM
         Stats: 57 sts 4-12-7 7%
         ⏰ 290 days off
+        Claim: $168,656
         ✅ Highest last race speed rating
         ✅ Won last race (DMR 08/28 5f Turf fm fOC50000n1x)
-        ❌ 31May SA 5f ft :59 H1/15 10May SA 5f ft 1:01¨ H30/63 03May SA 5f 
+        ❌ 15Mar SA 5f ft :59 H 1/60 01Mar SA 5f ft 1:02ª H 59/73 22Feb SA 4
 
-      6: Kuwaitya                      9/2    132.2(5)  DAmato Philip
+  ⭐  6: Kuwaitya                      9/2    132.2(5)  DAmato Philip
         Sire: Soldier's Call                  J: Rosario Joel
-        Recent SPD: 81, 87   Best: 87
+        Recent SPD: 81, 87, 95   Best: 95 (Turf)
         Stats: 200 sts 37-32-29 19%
         ⏰ 199 days off
+        Claim: $105,415
+        🎯 [TRAINER] 🔥 IRON SA #1 — 86W
         ✅ Switches to a high% trainer
-        ❌ 24May SA 5f ft 1:00 H1/13 17May SA 5f ft 1:00«
+        ❌ Has not raced for more than 6 months
 
       7: Schilflied                   20/1    119.6(7)  Gallagher Patrick
         Sire: Mendelssohn                     J: Baze Tyler
-        Recent SPD: 81, 73, 79, 86, 88   Best: 88
+        Recent SPD: 81, 80, 84, 73, 79   Best: 88 (Turf)
         Stats: 35 sts 3-5-5 9%
-        ❌ 24May SA 5f ft 1:00 H1/13 17May SA 5f ft 1:00«
+        Claim: $136,100
+        ❌ Speed Figs rank poorly vs others
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R5:
+    PP 4: Tahini                      (  6/1)  🔥 IRON SA + ✅ POS SA  🔥 TRAINER+HOT_JT
+    PP 6: Kuwaitya                    (  9/2)  🔥 IRON SA #1  ⚠️ 0% J/T
 
 ────────────────────────────────────────────────────────────────────────────
-RACE 6    Dirt  $16,000
+RACE 6  MC 12500 5½ Furlongs 3, 4, & 5yo, F & M Sunday, Ju  Dirt  $16,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-      1: Dad's Bad Bunny               5/1    111.2(2)  Thomas Jamey R
+      1: Dad's Bad Bunny                 ?    111.2(2)  Thomas Jamey R
         Sire: Dads Caps                       J: Bautista Alfredo L
-        Recent SPD: 65, 67, 76, 40   Best: 76
+        Recent SPD: 75, 65, 67, 76, 40   Best: 76
         Stats: 14 sts 0-3-2 0%
         Claim: $12,500
         ✅ Rail post is winning at 23% clip
         ✅ Drops in class today
+        ❌ Has not raced in 49 days
 
       2: She's Back                    8/1    101.4(6)  Thomas Jamey R
         Sire: Tap Back                        J: Laprida Jeremy
-        Recent SPD: 58, 50, 68, 61, 59   Best: 113
+        Recent SPD: 58, 50, 61, 61   Best: 61
         Stats: 14 sts 0-3-2 0%
         Claim: $12,500
         ✅ 18% trainer: 2nd off layoff
+        ❌ 16Dec'25 Slr 4f ft :46« H 1/8
 
-      3: Atina Liz                    30/1    93.0(11)  Gomez Ruben
+      3: Atina Liz                       ?    93.0(11)  Gomez Ruben
         Sire: Heaven's Glory                  J: Husain Ali
         Recent SPD: 59, 53, 34, 66, 60   Best: 66  ✅ IMPROVING FORM
         Stats: 51 sts 3-5-8 6%
         Claim: $12,500
         ✅ May improve while returning to Dirt
         ✅ Drops in class today
+        ❌ Never In-the-money in 7 career starts
 
-      4: Nada Pasara                  20/1           ?  Blacker Dan
+  ·  4: Nada Pasara                  20/1    114.3(1)  Blacker Dan
         Sire: Smiling Tiger                   J: Baze Tyler
         Stats: 50 sts 6-5-7 12%
         Claim: $12,500
+        🎯 [SIRE] ✅ POS SA — 30W
         ✅ Dam has 5 winners from 7 starters
         ✅ 21% trainer: Maiden Clming
+        ❌ First time starter
 
-      5: Conquest Sue                  7/2    114.3(1)  Eurton Peter
+      5: Conquest Sue                    ?    114.3(1)  Eurton Peter
         Sire: Conquest Farenheit              J: Jaramillo Emisael
-        Recent SPD: 76, 70, 77, 63   Best: 77
+        Recent SPD: 76, 70   Best: 76
         Stats: 95 sts 14-20-14 15%
         Claim: $12,500
         ✅ High % Jockey
         ✅ Highest last race speed rating
+        ❌ 15Feb SA 2f ft :23« H 1/5
 
-      6: She Spendsalot               10/1     99.6(8)  McLean Bill
+      6: She Spendsalot                  ?     99.6(8)  McLean Bill
         Sire: Sir Prancealot                  J: Ayuso Armando
         Recent SPD: 47   Best: 47
         Stats: 49 sts 4-4-7 8%
         Claim: $12,500
         ✅ Drops in class today
+        ❌ Poor Speed Figure in only start
 
       7: Lively Girl                   9/2    104.9(4)  Cerin Vladimir
         Sire: Originaire                      J: Rosario Joel
-        Recent SPD: 63, 60   Best: 63
         Stats: 44 sts 8-4-9 18%
         Claim: $12,500
         ✅ High % trainer
@@ -410,226 +425,198 @@ RACE 6    Dirt  $16,000
         Stats: 67 sts 6-16-15 9%
         Claim: $12,500
         ✅ Dam has 3 winners from 4 starters
+        ❌ First time starter
 
-      9: Shady Stripes                 8/1    111.0(3)  Bonde Jeff
+  ·  9: Shady Stripes                   ?    111.0(3)  Bonde Jeff
         Sire: Smiling Tiger                   J: Maldonado Edwin A
         Recent SPD: 62, 71, 75, 59, 72   Best: 82
         Stats: 65 sts 4-9-13 6%
-        ⏰ 113 days off
         Claim: $12,500
+        🎯 [SIRE] ✅ POS SA — 30W
         ✅ 22% trainer: Down 2+ classes
         ✅ Best Dirt Speed is fastest among today's starters
+        ❌ Has not raced for more than 3 months
 
-     10: Isle of Angels               30/1    82.2(12)  Knapp Steve R
-        Sire: Breakers Isle                   J: Aguilar Armando
-        Stats: 190 sts 25-24-27 13%
-        Claim: $12,500
-        ✅ Chance to improve while trying Dirt
-        ✅ Drops in class today
-
-     11: Omfortheholidays              6/1     99.1(9)  Garcia Antonio C
+     11: Omfortheholidays                ?     99.1(9)  Garcia Antonio C
         Sire: Om                              J: Belmont Cesar
-        Recent SPD: 61   Best: 61
+        Recent SPD: 68, 59, 61, 53, 35   Best: 68
         Stats: 59 sts 7-7-8 12%
         Claim: $12,500
         ✅ Drops in class today
         ✅ May improve with Blinkers added today
-
-     12: Southern Riff                 8/1    97.0(10)  Meier Monty R
-        Sire: Smiling Tiger                   J: Frey Kyle
-        Recent SPD: 59, 53, 80   Best: 80
-        Stats: 8 sts 0-0-1 0%
-        Claim: $12,500
-        ✅ 17% trainer: Maiden Clming
-
-     13: Susie's Loaded                8/1    100.7(7)  Tamayo Isidro
-        Sire: ?                               J: Lezcano Abel
-        Recent SPD: 68, 35, 80, 47   Best: 80
-        Stats: 56 sts 8-6-4 14%
-        Claim: $12,500
-        ✅ Ran 2nd vs similar in last race
-        ✅ Sharp 5F workout (Jun-08)
-
-     14: Howmanymoretimes             15/1    101.7(5)  Azcarate Daniel
-        Sire: ?                               J: Orantes Welfin R
-        Recent SPD: 54   Best: 54
-        Stats: 16 sts 0-0-4 0%
-        Claim: $12,500
-        ✅ Chance to improve while trying Dirt
-        ✅ Sharp 4F workout (Jun-05)
+        ❌ Has not raced in 49 days
 
   ⚪ No primary model signals
 
 ────────────────────────────────────────────────────────────────────────────
-RACE 7    Dirt  $65,000
+RACE 7  Mdn 65k 6 Furlongs (T) 3, 4, & 5yo Sunday, June 14  Turf  $65,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-  ·  1: Gallatin                     10/1    124.0(5)  Miller Peter
+  ·  1: Gallatin                        ?    124.0(5)  Miller Peter
         Sire: Authentic                       J: Gonzalez Ricardo
-        Recent SPD: 80, 87, 68   Best: 87
+        Recent SPD: 80, 87, 68   Best: 87 (Turf)
         Stats: 86 sts 10-17-10 12%
+        Claim: $14,500
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ 22% trainer: Btn favorite
         ✅ May improve at the shorter distance
-        ❌ 06Jun Slr 5f ft :59© Hg1/27 30May Slr 5f ft 1:01« H23/34 23May Sl
+        ❌ Beaten by weaker in last race
 
-      2: Monumental                    5/1    128.9(3)  Baltas Richard
+  ⭐  2: Monumental                    5/1    128.9(3)  Baltas Richard
         Sire: Tacitus                         J: Maldonado Edwin A
-        Recent SPD: 82   Best: 82
+        Recent SPD: 82, 85   Best: 85 (Turf)
         Stats: 127 sts 17-16-19 13%
+        Claim: $11,700
+        🎯 [TRAINER] 🔥 IRON SA — 40W
         ✅ 23% trainer: Btn favorite
         ✅ Finished 3rd vs similar in last race
-        ❌ 06Jun Slr 5f ft :59© Hg1/27 30May Slr 5f ft 1:01« H23/34 23May Sl
+        ❌ 28Feb SA 4f ft :46« H 1/68 21Feb SA 5f ft 1:00 H 6/45 14Feb SA 5f
 
-  ·  3: Flamboyant                    5/1    128.7(4)  Sadler John W
+  ⭐  3: Flamboyant                      ?    128.7(4)  Sadler John W
         Sire: Liam's Map                      J: Rosario Joel
-        Recent SPD: 81, 83, 81   Best: 83
+        Recent SPD: 83   Best: 83 (Turf)
         Stats: 140 sts 25-25-17 18%
+        Claim: $6,900
+        🎯 [TRAINER] 🔥 IRON SA — 63W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (8 4-1-1)
         ✅ High % trainer
         ✅ Hot Tnr/Jky combo in last 14 days (8 4-1-1)
-        ❌ 28Mar Slr 5f ft 1:00¨ Hg1/15 21Mar Slr 5f ft 1:00© H7/22 14Mar Sl
+        ❌ 28Mar Slr 5f ft 1:00¨ Hg 1/15 21Mar Slr 5f ft 1:00© H 7/22 14Mar 
 
-      4: Bogarts Bucchero             12/1    121.5(6)  O'Neill Doug F
+  ⭐  4: Bogarts Bucchero             12/1    121.5(6)  O'Neill Doug F
         Sire: Bucchero                        J: Jaramillo Emisael
-        Recent SPD: 74, 65, 78, 74   Best: 78
+        Recent SPD: 74, 65, 78, 74   Best: 78 (Turf)
         Stats: 252 sts 44-42-27 17%
+        Claim: $20,700
+        🎯 [TRAINER] 🔥 IRON SA #3 — 81W
         ✅ Switches to a high % jockey
         ✅ Eligible to improve in 2nd start since layoff
+        ❌ Poor Speed Figures
 
       5: Bad Reputation               30/1    116.7(7)  Headley Karen
         Sire: Volatile                        J: Frey Kyle
         Recent SPD: 84   Best: 84
         Stats: 9 sts 1-2-1 11%
+        Claim: $4,320
         ✅ Breeding suggests he will like the grass
         ✅ Dam has 4 winners from 7 starters and 2 Turf winners
-        ❌ 04Jun SA 5f ft :58¨ H1/18 27May SA 6f ft 1:12© H1/2 20May SA 6f f
+        ❌ Beaten by weaker (on Dirt) in only start
 
-      6: Music Scene                   8/1           ?  Glatt Mark
+  ⭐  6: Music Scene                     ?           ?  Glatt Mark
         Sire: Maclean's Music                 J: Lezcano Abel
         Stats: 168 sts 37-26-32 22%
+        🎯 [TRAINER] 🔥 IRON SA #2 — 85W
         ✅ Breeding suits today's sprint distance
-        ❌ 04Jun SA 5f ft :58¨ H1/18 27May SA 6f ft 1:12© H1/2 20May SA 6f f
+        ❌ 04Apr SA 5f ft 1:00« H 1/9 16Mar SA 6f ft 1:14« Hg 2/4 09Mar SA 5
 
-      7: Freddy Five Four             15/1           ?  Papaprodromou George
+  ⭐  7: Freddy Five Four                ?           ?  Papaprodromou George
         Sire: Omaha Beach                     J: Baze Tyler
+        Stats: 149 sts 27-26-27 18%
+        🎯 [TRAINER] 🔥 IRON SA — 49W
         ✅ Breeding suggests he will like the grass
         ✅ Breeding suits today's sprint distance
+        ❌ First time starter
 
-      8: Meta Star                    12/1           ?  Koriner Brian J
+      8: Meta Star                       ?           ?  Koriner Brian J
         Sire: Street Boss                     J: Ayuso Armando
         Stats: 53 sts 8-9-10 15%
         ✅ Sharp 4F workout (Jun-06)
+        ❌ First time starter
 
-  ·  9: Koekkoek                      9/2    137.9(1)  DAmato Philip
+  ⭐  9: Koekkoek                      9/2    137.9(1)  DAmato Philip
         Sire: Pinatubo                        J: Fresu Antonio
-        Recent SPD: 86, 82   Best: 86
+        Recent SPD: 85, 86, 83, 84, 84   Best: 86 (Turf)
         Stats: 200 sts 37-32-29 19%
-        ⏰ 77 days off
+        Claim: $28,831
+        🎯 [TRAINER] 🔥 IRON SA #1 — 86W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (8 3-3-1)
         ✅ High % trainer
         ✅ High % Jockey
-        ❌ 18May SA 3f ft :36
+        ❌ Failed as favorite in last race
 
-     10: Rubicon Gone                 15/1           ?  Marquez Alfredo P
-        Sire: Yaupon                          J: Berrios Hector I
-        Stats: 17 sts 0-0-6 0%
-        ✅ Breeding suggests he will like the grass
-        ✅ Breeding suits today's sprint distance
-        ❌ 18May SA 3f ft :36
-
-     11: Legal Heir                    6/1    129.6(2)  Belvoir Vann
-        Sire: Nyquist                         J: Kimura Kazushi
-        Recent SPD: 84, 74, 70, 81   Best: 84  ✅ IMPROVING FORM
-        Stats: 14 sts 0-3-0 0%
-        ✅ 24% trainer: 2nd off layoff
-        ✅ Eligible to improve in 2nd start since layoff
-        ❌ 29Mar SA 4f ft :46 H1/70 22Mar SA 4f ft :48¨ H16/79 15Mar SA 3f f
-
-     12: Don Rebelde                   8/1    115.0(8)  Palma Hector O
-        Sire: Authentic                       J: Pereira Tiago J
-        Recent SPD: 74   Best: 74
-        Stats: 55 sts 6-6-7 11%
-        ✅ Sharp 4F workout (Jun-05)
-        ❌ 07Jun LA 5f ft :59© H1/7
-
-  ⚪ No primary model signals
+  ★ MODEL PICKS R7:
+    PP 3: Flamboyant                  (    ?)  🔥 IRON SA  🔥 TRAINER+HOT_JT
+    PP 9: Koekkoek                    (  9/2)  🔥 IRON SA #1  🔥 TRAINER+HOT_JT
+    PP 2: Monumental                  (  5/1)  🔥 IRON SA
+    PP 4: Bogarts Bucchero            ( 12/1)  🔥 IRON SA #3
+    PP 6: Music Scene                 (    ?)  🔥 IRON SA #2
+    PP 7: Freddy Five Four            (    ?)  🔥 IRON SA
 
 ────────────────────────────────────────────────────────────────────────────
-RACE 8    Dirt  $65,000
+RACE 8  Mdn 65k 5 Furlongs 2yo Sunday, June 14, 2026  Dirt  $65,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-      1: Olympian Thirst               9/2    109.1(2)  Farias Adan
+  ·  1: Olympian Thirst               9/2    109.1(2)  Farias Adan
         Sire: Stay Thirsty                    J: Monroy Francisco
         Recent SPD: 62   Best: 62
         Stats: 9 sts 0-0-1 0%
+        🎯 [SIRE] ✅ POS SA — 38W
         ✅ May improve with Blinkers added today
+        ❌ Always far back in only start
 
-      2: Extraordinaire                8/1    103.5(5)  Rondan Felix
+      2: Extraordinaire                  ?    103.5(5)  Rondan Felix
         Sire: Jack Milton                     J: Lezcano Abel
         Recent SPD: 45   Best: 45
         Stats: 24 sts 0-2-4 0%
-        ❌ 22Mar SA 1f ft :11« H1/6
+        Claim: $1,300
+        ❌ Finished far back in only start
 
-      3: Baby T                        9/2    108.5(3)  Garcia Antonio C
+      3: Baby T                          ?    108.5(3)  Garcia Antonio C
         Sire: Pavel                           J: Bautista Alfredo L
         Recent SPD: 64   Best: 64
         Stats: 59 sts 7-7-8 12%
-        ❌ 22Mar SA 1f ft :11« H1/6
+        ❌ 22Mar SA 1f ft :11« H 1/6
 
-      4: Simple Majority              12/1    102.3(6)  Bonde Jeff
+      4: Simple Majority                 ?    102.3(6)  Bonde Jeff
         Sire: Midnight Storm                  J: Aguilar Armando
         Recent SPD: 35, 63   Best: 63
         Stats: 65 sts 4-9-13 6%
+        Claim: $1,000
         ✅ Figures to improve while returning to Dirt
-        ❌ 27Mar SA 2f ft :23« H1/7 20Mar SA 1f ft :13 H3/4 13Mar SA 1f ft :
+        ❌ Finished far back (on Turf) in last start
 
-  ·  5: Pocket Listing                5/1           ?  O'Neill Doug F
+  ⭐  5: Pocket Listing                  ?           ?  O'Neill Doug F
         Sire: Listing                         J: Fresu Antonio
         Stats: 252 sts 44-42-27 17%
+        🎯 [TRAINER] 🔥 IRON SA #3 — 81W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ 38% Sire wins with 1st time Starters
         ✅ Dam has 7 winners from 7 starters and 2 stakes winners
-        ❌ 07Jun SA 4f ft :46¨ Hg1/84 30May SA 5f ft 1:00© Hg18/57 16May SA 
+        ❌ First time starter
 
-  ·  6: Dick Ira Bong                20/1           ?  Miyadi Steven
+  ·  6: Dick Ira Bong                   ?           ?  Miyadi Steven
         Sire: Grazen                          J: Frey Kyle
         Stats: 62 sts 7-10-7 11%
-        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
-        ✅ Hot Jockey in last 7 days (17 6-4-4)
-        ✅ Sharp 4F workout (Jun-07)
-        ❌ 07Jun SA 4f ft :46¨ Hg1/84 30May SA 5f ft 1:00© Hg18/57 16May SA 
+        🎯 [SIRE] ✅ POS SA #1 — 65W
+        ✅ Breeding suits today's sprint distance
+        ❌ 07Jun SA 4f ft :46¨ Hg 1/84 30May SA 5f ft 1:00© Hg 18/57      16
 
-      7: Bo Diddley                   20/1           ?  Miyadi Steven
+  ·  7: Bo Diddley                      ?    108.3(4)  Miyadi Steven
         Sire: Grazen                          J: Baze Tyler
         Stats: 62 sts 7-10-7 11%
+        🎯 [SIRE] ✅ POS SA #1 — 65W
         ✅ Breeding suits today's sprint distance
-        ✅ Breeding suits today's sprint distance
-        ❌ 04May SA 1f ft :12¨ H1/5
+        ❌ First time starter
 
       8: Instinctively                 4/1    108.3(4)  Miyadi Steven
         Sire: War of Will                     J: Belmont Cesar
         Recent SPD: 63   Best: 63
         Stats: 62 sts 7-10-7 11%
-        ❌ 04May SA 1f ft :12¨ H1/5
+        Claim: $1,690
+        ❌ 04May SA 1f ft :12¨ H 1/5
 
-      9: Thunder Riding               30/1           ?  Alvarez Edwin G
+  ·  9: Thunder Riding                  ?    116.4(1)  Alvarez Edwin G
         Sire: Stay Thirsty                    J: Ramirez Ricardo S
         Stats: 65 sts 3-8-11 5%
+        🎯 [SIRE] ✅ POS SA — 38W
         ✅ Breeding suits today's sprint distance
-        ❌ 03Apr SA 1f ft :12© H1/4
-
-     10: Jonny's Cap                   7/2    116.4(1)  Periban Jorge
-        Sire: Acclamation                     J: Ayuso Armando
-        Recent SPD: 67, 59   Best: 67
-        Stats: 34 sts 6-6-5 18%
         ✅ High % trainer
-        ✅ Highest last race speed rating
-        ❌ 29Mar SA 1f ft :12¨ H1/5
+        ❌ 03Apr SA 1f ft :12© H 1/4
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R8:
+    PP 5: Pocket Listing              (    ?)  🔥 IRON SA #3  🔥 TRAINER+HOT_JT
 
 ────────────────────────────────────────────────────────────────────────────
 RACE 9    Dirt  $100,000
@@ -640,220 +627,253 @@ RACE 9    Dirt  $100,000
         Sire: Get Stormy                      J: Belmont Cesar
         Recent SPD: 85, 90, 87, 78, 88   Best: 90
         Stats: 150 sts 16-27-22 11%
+        Claim: $109,520
+        ❌ Beaten by weaker in last race
 
       2: Factor Analysis               8/1    131.6(6)  Hess, Jr. Robert B
         Sire: Vino Rosso                      J: Pereira Tiago J
-        Recent SPD: 88, 87, 77, 84, 91   Best: 91  ✅ IMPROVING FORM
+        Recent SPD: 87, 87, 77, 84, 91   Best: 91
         Stats: 71 sts 11-14-11 15%
+        Claim: $132,576
         ✅ May improve in 4th start since layoff
         ✅ Best Turf speed is close to the Avg Winning Speed
+        ❌ Beaten by weaker in last race
 
-  ·  3: Amplitude                    12/1    129.3(7)  Sadler John W
+  ⭐  3: Amplitude                    12/1    129.3(7)  Sadler John W
         Sire: Uncle Mo                        J: Kimura Kazushi
         Recent SPD: 85, 82, 83, 78, 77   Best: 85
         Stats: 140 sts 25-25-17 18%
+        Claim: $111,833
+        🎯 [TRAINER] 🔥 IRON SA — 63W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (11 6-1-1)
         ✅ High % trainer
         ✅ Won last race (SA 05/24 9f Turf fm OC50000)
+        ❌ Moves up in class from last start
 
-      4: American Hope                 4/1    142.1(2)  Koriner Brian J
+  ·  4: American Hope                 4/1    142.1(2)  Koriner Brian J
         Sire: American Pharoah                J: Ayuso Armando
-        Recent SPD: 105, 87, 91, 90, 89   Best: 105
+        Recent SPD: 87, 83, 87, 91, 90   Best: 91
         Stats: 53 sts 8-9-10 15%
+        Claim: $147,800
+        🎯 [SIRE] ✅ POS SA — 22W
         ✅ Won last race (SA 05/01 9f Turf fm OC80000n2x)
-        ❌ 21Mar SA 6f ft 1:13 H1/5 15Mar SA 5f ft 1:00ª
+        ❌ Moves up in class from last start
 
   ·  5: Living Life                   6/1    138.6(3)  Ellis Ronald W
         Sire: Flatter                         J: Rosario Joel
         Recent SPD: 82, 91, 97, 88, 84   Best: 97
         Stats: 34 sts 6-5-5 18%
+        Claim: $156,500
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (3 2-0-0)
         ✅ High % trainer
         ✅ Won last race (SA 05/22 10f Turf fm OC50000n1x)
-        ❌ 21Mar SA 6f ft 1:13 H1/5 15Mar SA 5f ft 1:00ª
+        ❌ 21Mar SA 6f ft 1:13 H 1/5 15Mar SA 5f ft 1:00ª H 12/60 08Mar SA 5
 
-      6: Gold Phoenix                  7/5    163.1(1)  DAmato Philip
+  ⭐  6: Gold Phoenix                  7/5    163.1(1)  DAmato Philip
         Sire: Belardo                         J: Berrios Hector I
-        Recent SPD: 104, 91, 101, 91, 94   Best: 104
+        Recent SPD: 83, 104, 91, 101, 91   Best: 106
         Stats: 200 sts 37-32-29 19%
+        Claim: $2,377
+        🎯 [TRAINER] 🔥 IRON SA #1 — 86W
         ✅ High % trainer
         ✅ High % Jockey
+        ❌ 26Apr SA 5f ft :58ª H 1/29 20Apr SA 5f ft :59ª H 2/13
 
       7: Rimprotector                 12/1    127.2(8)  McCanna Tim
         Sire: Point of Entry                  J: Frey Kyle
-        Recent SPD: 84, 82, 74, 76, 83   Best: 90  ✅ IMPROVING FORM
+        Recent SPD: 84, 82, 74, 84, 83   Best: 90  ✅ IMPROVING FORM
         Stats: 43 sts 2-3-4 5%
+        Claim: $162,400
         ✅ Won last race (TUP 05/02 11f Turf fm RHHstaLVst30k)
+        ❌ 07Feb SA 5f ft :59 H 1/21
 
       8: Smooth Salute                30/1   114.1(10)  Marquez Alfredo P
         Sire: Midnight Lute                   J: Espinoza Victor
-        Recent SPD: 79, 88, 74, 79, 81   Best: 91
+        Recent SPD: 79, 74, 81, 86, 91   Best: 91
         Stats: 17 sts 0-0-6 0%
+        Claim: $103,260
+        ❌ Never a threat vs weaker in last race
 
-      9: Goldeneye                    10/1    134.0(4)  Eurton Peter
+      9: Goldeneye                       ?    134.0(4)  Eurton Peter
         Sire: Hard Spun                       J: Maldonado Edwin A
-        Recent SPD: 73, 73, 91, 90, 92   Best: 92
+        Recent SPD: 74, 73, 89, 87, 73   Best: 99
         Stats: 95 sts 14-20-14 15%
+        Claim: $483,118
         ✅ Best Turf speed is faster than the Avg Winning Speed
-
-     10: Poor Connection              15/1    133.5(5)  McCarthy Michael W
-        Sire: Omaha Beach                     J: Jaramillo Emisael
-        Recent SPD: 74, 89, 87, 75, 80   Best: 89
         ✅ High % Jockey
-        ✅ Sharp 4F workout (Jun-06)
+        ❌ Beaten by weaker in last race
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R9:
+    PP 3: Amplitude                   ( 12/1)  🔥 IRON SA  🔥 TRAINER+HOT_JT  ⚠️ 0% J/T
+    PP 6: Gold Phoenix                (  7/5)  🔥 IRON SA #1
 
 ────────────────────────────────────────────────────────────────────────────
-RACE 10    Dirt  $65,000
+RACE 10  Mdn 65k 5 Furlongs 2yo Sunday, June 14, 2026  Dirt  $65,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-      1: Scam Alert                    9/2    117.2(2)  Rondan Felix
+      1: Scam Alert                      ?    117.2(2)  Rondan Felix
         Sire: Mo Forza                        J: Aguilar Armando
-        Recent SPD: 77   Best: 77
         Stats: 24 sts 0-2-4 0%
+        Claim: $13,000
         ✅ Highest last race speed rating
         ✅ Ran 2nd vs similar in only start
-        ❌ 22Mar SA 1f ft :11« H1/6
+        ❌ Poor trainer win%
 
       2: Fumano's Fire                15/1    105.0(7)  Alvarez Edwin G
         Sire: Straight Fire                   J: Herrera Cristobal
-        Recent SPD: 50, 55   Best: 55
         Stats: 65 sts 3-8-11 5%
+        Claim: $1,800
         ✅ May improve with Blinkers added today
         ✅ Sharp 4F workout (Jun-05)
-        ❌ 22Mar SA 1f ft :11« H1/6
+        ❌ 22Mar SA 1f ft :11« H 1/6
 
-      3: King Kameha                   7/2    117.9(1)  Knapp Steve R
+  ⭐  3: King Kameha                   7/2    117.9(1)  Knapp Steve R
         Sire: McKinzie                        J: Pereira Tiago J
-        Recent SPD: 76, 62   Best: 76
         Stats: 190 sts 25-24-27 13%
+        Claim: $20,800
+        🎯 [TRAINER] 🔥 IRON SA — 55W
         ✅ 17% trainer: Maiden Sp Wt
         ✅ Finished 3rd vs similar in last race
+        ❌ Poor 'Blinkers off ' trainer record: 0% wins 20 sts
 
       4: Poppi's Charlie               9/2    116.8(3)  Badilla Manuel P
         Sire: Sir Prancealot                  J: Frey Kyle
         Recent SPD: 75   Best: 75
         Stats: 19 sts 2-0-2 11%
+        Claim: $3,900
         ✅ 19% trainer: Maiden Sp Wt
-        ❌ 29Mar SA 1f ft :12¨ H1/5
+        ❌ 29Mar SA 1f ft :12¨ H 1/5
 
   ·  5: Tuddy                        20/1    107.8(6)  Miyadi Steven
         Sire: Stay Thirsty                    J: Fresu Antonio
         Recent SPD: 53   Best: 53
         Stats: 62 sts 7-10-7 11%
+        Claim: $5,070
+        🎯 [SIRE] ✅ POS SA — 38W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ Switches to a high % jockey
         ✅ Chance to improve while trying Dirt
+        ❌ Never close in only career start
 
-      6: Calvin Graham                 8/1           ?  Miyadi Steven
+      6: Calvin Graham                   ?           ?  Miyadi Steven
         Sire: Tough Sunday                    J: Baze Tyler
-        Recent SPD: 53   Best: 53
         Stats: 62 sts 7-10-7 11%
         ✅ 27% Sire wins with 1st time Starters
+        ❌ First time starter
 
-      7: Net Par                       8/1           ?  Garcia Antonio C
+      7: Net Par                         ?    110.0(5)  Garcia Antonio C
         Sire: Pavel                           J: Ayuso Armando
         Stats: 59 sts 7-7-8 12%
-        ✅ 27% Sire wins with 1st time Starters
         ✅ 16% Sire wins with 1st time Starters
-        ❌ 14Apr SA 2f ft :24 H1/8 05Apr SA 2f ft :25« H12/16 30Mar SA 2f ft
+        ✅ Dam has 4 winners from 4 starters and 1 stakes winner
+        ❌ First time starter
 
-      8: Cupid Cowboy                  6/1    110.0(5)  Alvarez Edwin G
+  ·  8: Cupid Cowboy                    ?    110.0(5)  Alvarez Edwin G
         Sire: Stay Thirsty                    J: Lezcano Abel
-        Recent SPD: 68, 58   Best: 68
         Stats: 65 sts 3-8-11 5%
+        Claim: $20,800
+        🎯 [SIRE] ✅ POS SA — 38W
         ✅ Ran 2nd vs similar in last race
         ✅ May improve with Blinkers added today
-        ❌ 14Apr SA 2f ft :24 H1/8 05Apr SA 2f ft :25« H12/16 30Mar SA 2f ft
+        ❌ 14Apr SA 2f ft :24 H 1/8 05Apr SA 2f ft :25« H 12/16 30Mar SA 2f 
 
-      9: Smoke Rider                  20/1     99.9(8)  Farias Adan
+  ·  9: Smoke Rider                     ?     99.9(8)  Farias Adan
         Sire: Stay Thirsty                    J: Monroy Francisco
-        Recent SPD: 58   Best: 58
+        Recent SPD: 44   Best: 44
         Stats: 9 sts 0-0-1 0%
-        ❌ 10Mar LA 2f ft :25 H1/6
+        🎯 [SIRE] ✅ POS SA — 38W
+        ❌ 14Mar SA 1f ft :12¨ H 1/7
 
-     10: Winsor George                 5/1    111.5(4)  Periban Jorge
-        Sire: Smiling Tiger                   J: Maldonado Edwin A
-        Recent SPD: 64   Best: 64
-        Stats: 34 sts 6-6-5 18%
-        ✅ High % trainer
-
-     11: Pete Rose                    10/1           ?  Miyadi Steven
-        Sire: Grazen                          J: Baze Tyler
-        Stats: 62 sts 7-10-7 11%
-        ✅ Dam has 3 winners from 3 starters and 2 stakes winners
-        ✅ Breeding suits today's sprint distance
-
-  ⚪ No primary model signals
+  ★ MODEL PICKS R10:
+    PP 3: King Kameha                 (  7/2)  🔥 IRON SA
 
 ────────────────────────────────────────────────────────────────────────────
 RACE 11    Dirt  $67,000
 ────────────────────────────────────────────────────────────────────────────
    PP Horse                          ML    PP Pwr  Trainer
 
-      1: Kikuride                      7/2    140.0(1)  Lewis Craig A
+  ·  1: Kikuride                      7/2    140.0(1)  Lewis Craig A
         Sire: Clubhouse Ride                  J: Kimura Kazushi
-        Recent SPD: 91, 80, 81, 82, 76   Best: 91
+        Recent SPD: 80, 82, 79   Best: 82
         Stats: 67 sts 6-16-15 9%
+        Claim: $162,340
+        🎯 [SIRE] ✅ POS SA — 42W
         ✅ Rail post is winning at 30% clip
         ✅ 21% trainer: Allowance
+        ❌ Poor '3rd off layoff' trainer record: 4% wins 22 sts
 
       2: Elite Heat                   20/1    110.4(9)  Blacker Dan
         Sire: Too Darn Hot                    J: Rosario Joel
-        Recent SPD: 64, 78, 72, 75, 71   Best: 78
+        Recent SPD: 65, 78, 72, 75, 71   Best: 78
         Stats: 50 sts 6-5-7 12%
         ⏰ 271 days off
+        Claim: $38,730
         ✅ 18% trainer: 1st start w/trn
+        ❌ Finished far behind weaker in last race
 
       3: Mars Magic                    8/1    126.9(7)  Baker D. Wayne
         Sire: Danzing Candy                   J: Garcia Epifanio
         Recent SPD: 81, 79, 87, 85, 66   Best: 87
         Stats: 47 sts 4-2-4 9%
+        Claim: $102,388
         ✅ 25% trainer: Sprnt-Rte-Sprnt
+        ❌ Poor jockey win%
 
-  ·  4: Shocking Grey                20/1    117.3(8)  Mullins Jeff
+  ⭐  4: Shocking Grey                20/1    117.3(8)  Mullins Jeff
         Sire: Grazen                          J: Fresu Antonio
-        Recent SPD: 89, 81, 84, 82, 91   Best: 91
+        Recent SPD: 89, 89, 87, 91, 83   Best: 91
         Stats: 118 sts 31-18-17 26%
         ⏰ 329 days off
+        Claim: $274,351
+        🎯 [TRAINER] 🔥 IRON SA — 69W
+        🎯 [SIRE] ✅ POS SA #1 — 65W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ Hot Jockey in last 7 days (17 6-4-4)
+        ❌ 01Dec'25 SA 5f ft 1:00© H 1/12
 
-      6: No Cap                        4/1    131.4(6)  Koriner Brian J
+      6: No Cap                          ?    131.4(6)  Koriner Brian J
         Sire: Dads Caps                       J: Jaramillo Emisael
-        Recent SPD: 87, 84, 89, 89, 85   Best: 89
+        Recent SPD: 84, 87, 84, 64, 89   Best: 89
         Stats: 53 sts 8-9-10 15%
+        Claim: $232,272
         ✅ Switches to a high % jockey
         ✅ Finished 3rd vs similar (on Dirt) in last race
 
-      7: Sweet Gal of Mine             9/2    131.4(5)  Baltas Richard
+  ⭐  7: Sweet Gal of Mine             9/2    131.4(5)  Baltas Richard
         Sire: Dialed In                       J: Maldonado Edwin A
         Recent SPD: 86, 96, 82, 86, 84   Best: 96
         Stats: 127 sts 17-16-19 13%
+        Claim: $144,534
+        🎯 [TRAINER] 🔥 IRON SA — 40W
         ✅ 19% trainer: 2nd off layoff
         ✅ Eligible to improve in 2nd start since layoff
-        ❌ 06Apr SA 5f ft :59© H1/32 30Mar SA 4f ft :48¨ H19/54 23Mar SA 4f 
+        ❌ 06Apr SA 5f ft :59© H 1/32 30Mar SA 4f ft :48¨ H 19/54 23Mar SA 4
 
       8: Yoga Master                   5/1    133.2(4)  Powell Leonard
         Sire: Persian King                    J: Ayuso Armando
         Recent SPD: 87, 86   Best: 87
         Stats: 150 sts 16-27-22 11%
+        Claim: $69,936
         ✅ Ran 2nd vs similar in last race
-        ❌ 06Apr SA 5f ft :59© H1/32 30Mar SA 4f ft :48¨ H19/54 23Mar SA 4f 
+        ❌ 06Apr SA 5f ft :59© H 1/32 30Mar SA 4f ft :48¨ H 19/54 23Mar SA 4
 
-  ·  9: Canto Della Terra             5/1    137.5(3)  DAmato Philip
+  ⭐  9: Canto Della Terra             5/1    137.5(3)  DAmato Philip
         Sire: Kodiac                          J: Gonzalez Ricardo
         Recent SPD: 92   Best: 92
         Stats: 200 sts 37-32-29 19%
         ⏰ 511 days off
+        Claim: $50,425
+        🎯 [TRAINER] 🔥 IRON SA #1 — 86W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ High % trainer
         ✅ Highest last race speed rating
-        ❌ 02Apr LA 4f ft :48¨ H1/10 26Mar LA 3f ft :37 H3/10 19Mar LA 3f ft
+        ❌ Moves up in class from last start
 
-  ⚪ No primary model signals
+  ★ MODEL PICKS R11:
+    PP 4: Shocking Grey               ( 20/1)  🔥 IRON SA + ✅ POS SA #1  🔥 TRAINER+HOT_JT
+    PP 9: Canto Della Terra           (  5/1)  🔥 IRON SA #1  🔥 TRAINER+HOT_JT
+    PP 7: Sweet Gal of Mine           (  9/2)  🔥 IRON SA
 
 ────────────────────────────────────────────────────────────────────────────
 RACE 12    Dirt  $67,000
@@ -862,107 +882,120 @@ RACE 12    Dirt  $67,000
 
   ·  1: Mescalero                     8/1   126.2(10)  Mandella Richard E
         Sire: Into Mischief                   J: Rosario Joel
-        Recent SPD: 83, 82, 86   Best: 86
+        Recent SPD: 83, 82   Best: 83
         Stats: 67 sts 12-8-6 18%
         ⏰ 168 days off
-        🎯 [SIRE] ✅ MULTI — 64W/3yr GP + national
+        Claim: $37,500
+        🎯 [SIRE] ✅ POS SA — 21W
         ✅ Sharp 5F workout (Jun-07)
-        ❌ 07Jun SA 5f ft :59« H1/15
+        ❌ Has not raced for more than 5 months
 
-      2: Tiz All That                 12/1    127.7(8)  Baltas Richard
+  ⭐  2: Tiz All That                 12/1    127.7(8)  Baltas Richard
         Sire: Midnight Lute                   J: Maldonado Edwin A
-        Recent SPD: 79   Best: 79
+        Recent SPD: 87, 79   Best: 87
         Stats: 127 sts 17-16-19 13%
+        Claim: $39,500
+        🎯 [TRAINER] 🔥 IRON SA — 40W
         ✅ Won last race (SA 05/16 6.5f Turf fm MdSpWt)
-        ❌ 07Jun SA 5f ft :59« H1/15
+        ❌ Moves up in class from last start
 
       3: The Old Nine                  9/2    135.2(3)  Periban Jorge
         Sire: No Nay Never                    J: Aguilar Armando
-        Recent SPD: 87, 73, 84, 82, 84   Best: 87
+        Recent SPD: 94, 87, 85, 73, 84   Best: 94  ✅ IMPROVING FORM
         Stats: 34 sts 6-6-5 18%
+        Claim: $134,766
         ✅ High % trainer
         ✅ Highest last race speed rating
-        ❌ 21Mar Slr 5f ft :59© H1/22
+        ❌ 21Mar Slr 5f ft :59© H 1/22
 
       4: General Graham               20/1    128.7(6)  McCanna Tim
         Sire: Omaha Beach                     J: Frey Kyle
         Recent SPD: 89, 91   Best: 91
         Stats: 43 sts 2-3-4 5%
         ⏰ 67 days off
+        Claim: $55,595
         ✅ 18% trainer: Shipper
         ✅ Won last race (KEE 04/08 7f Dirt ft Alw50000s)
+        ❌ Has not raced for more than 2 months
 
-  ·  5: Rogue Legend                 10/1    132.8(5)  DAmato Philip
+  ⭐  5: Rogue Legend                 10/1    132.8(5)  DAmato Philip
         Sire: Havana Grey                     J: Gonzalez Ricardo
-        Recent SPD: 78, 83   Best: 83
+        Recent SPD: 78, 90, 83   Best: 90
         Stats: 200 sts 37-32-29 19%
         ⏰ 224 days off
+        Claim: $90,973
+        🎯 [TRAINER] 🔥 IRON SA #1 — 86W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ Finished 3rd vs similar in last race
         ✅ May improve with Lasix added
-        ❌ 30May Slr 5f ft :59« H1/34 23May Slr 5f ft 1:00ª H3/44 16May Slr 
+        ❌ Never threatened the leaders in last start
 
-  ·  6: Private Gem                  10/1    143.2(1)  Glatt Mark
+  ⭐  6: Private Gem                  10/1    143.2(1)  Glatt Mark
         Sire: Lookin At Lucky                 J: Fresu Antonio
-        Recent SPD: 87, 87, 88, 81   Best: 88
+        Recent SPD: 87, 101, 87, 88, 91   Best: 101
         Stats: 168 sts 37-26-32 22%
+        Claim: $185,542
+        🎯 [TRAINER] 🔥 IRON SA #2 — 85W
         🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
         ✅ High % trainer
         ✅ High % Jockey
-        ❌ 30May Slr 5f ft :59« H1/34 23May Slr 5f ft 1:00ª H3/44 16May Slr 
-
-  ·  7: Golden Ale                    6/1    127.0(9)  Wright Blaine D
-        Sire: Goldencents                     J: Jaramillo Emisael
-        Recent SPD: 93, 76, 86, 89, 90   Best: 93
-        Stats: 29 sts 4-2-8 14%
-        Claim: $50,000
-        🎯 [SIRE] 🔥 4-TRACK — FP+EVD+MVR+DD
-        ✅ Switches to a high % jockey
-        ✅ Sharp 4F workout (Jun-05)
-        ❌ 09Apr Tup 4f ft :45 H1/41 05Mar Tup 5f ft :58 H
+        ❌ Failed as favorite in last race
 
       8: King Stephen                  4/1    138.8(2)  Powell Leonard
         Sire: Instilled Regard                J: Berrios Hector I
         Recent SPD: 87, 86, 87   Best: 87
         Stats: 150 sts 16-27-22 11%
+        Claim: $50,220
         ✅ Switches to a high % jockey
-        ❌ 09Apr Tup 4f ft :45 H1/41 05Mar Tup 5f ft :58 H
+        ❌ Has not raced in 50 days
 
-      9: Broski                       20/1    128.1(7)  DAmato Philip
+  ⭐  9: Broski                       20/1    128.1(7)  DAmato Philip
         Sire: Profitable                      J: Kimura Kazushi
-        Recent SPD: 83, 82, 86, 85, 80   Best: 86
+        Recent SPD: 83, 82, 95, 87, 86   Best: 95
         Stats: 200 sts 37-32-29 19%
         ⏰ 254 days off
+        Claim: $126,272
+        🎯 [TRAINER] 🔥 IRON SA #1 — 86W
         ✅ High % trainer
         ✅ Ran 2nd vs similar in last race
+        ❌ Has not raced for more than 8 months
 
-     10: Shamrock Glitter              5/1    134.1(4)  Drysdale Neil D
-        Sire: Shalaa                          J: Ayuso Armando
-        Recent SPD: 88   Best: 88
-        Stats: 66 sts 6-6-2 9%
-        ✅ Eligible to improve in 2nd start since layoff
-
-     11: Valiant Son                   8/1   124.2(11)  Wright Blaine D
-        Sire: Army Mule                       J: Laprida Jeremy
-        Recent SPD: 86, 82, 88, 79, 78   Best: 88
-        Stats: 29 sts 4-2-8 14%
-        ✅ 21% trainer: 3rd off layoff
-        ✅ Won last race (SA 05/09 6f Turf fm Clm30000n3l)
-
-  · 12: See Through It               30/1   121.4(12)  Barocio Librado
-        Sire: Curlin to Mischief              J: Pereira Tiago J
-        Recent SPD: 79, 82, 86, 83, 89   Best: 96
-        Stats: 42 sts 10-9-5 24%
-        Claim: $50,000
-        🎯 [SIRE] 🔥 6-TRACK — Curlin+Casse GP = iron combo
-        ✅ Switches to a high% trainer
-        ✅ Finished 3rd (on Dirt) in last race
-
-  ⚪ No primary model signals
+  ★ MODEL PICKS R12:
+    PP 5: Rogue Legend                ( 10/1)  🔥 IRON SA #1  🔥 TRAINER+HOT_JT
+    PP 6: Private Gem                 ( 10/1)  🔥 IRON SA #2  🔥 TRAINER+HOT_JT
+    PP 2: Tiz All That                ( 12/1)  🔥 IRON SA
+    PP 9: Broski                      ( 20/1)  🔥 IRON SA #1
 
 ============================================================================
-📊 MODEL SUMMARY — 0 ITM picks across 12 races
+📊 MODEL SUMMARY — 25 ITM picks across 12 races
 ============================================================================
+  R1 PP 4: Come On Om                  (  5/1)  🔥 IRON SA
+  R2 PP 2: Letmein                     (  4/1)  🔥 IRON SA #2
+  R2 PP 6: Thirty Two Chunk            (  2/1)  🔥 IRON SA #2 ⚠️ 0% J/T
+  R3 PP 1: Nylie                       (  3/1)  🔥 IRON SA #3 | ✅ POS SA 🔥 TRAINER+HOT_JT
+  R3 PP 2: Lease Instead               (  5/1)  🔥 IRON SA #3
+  R4 PP 1: Zombo Bombo                 (  9/2)  🔥 IRON SA
+  R5 PP 4: Tahini                      (  6/1)  🔥 IRON SA | ✅ POS SA 🔥 TRAINER+HOT_JT
+  R5 PP 6: Kuwaitya                    (  9/2)  🔥 IRON SA #1 ⚠️ 0% J/T
+  R7 PP 2: Monumental                  (  5/1)  🔥 IRON SA
+  R7 PP 3: Flamboyant                  (    ?)  🔥 IRON SA 🔥 TRAINER+HOT_JT
+  R7 PP 4: Bogarts Bucchero            ( 12/1)  🔥 IRON SA #3
+  R7 PP 6: Music Scene                 (    ?)  🔥 IRON SA #2
+  R7 PP 7: Freddy Five Four            (    ?)  🔥 IRON SA
+  R7 PP 9: Koekkoek                    (  9/2)  🔥 IRON SA #1 🔥 TRAINER+HOT_JT
+  R8 PP 5: Pocket Listing              (    ?)  🔥 IRON SA #3 🔥 TRAINER+HOT_JT
+  R9 PP 3: Amplitude                   ( 12/1)  🔥 IRON SA 🔥 TRAINER+HOT_JT ⚠️ 0% J/T
+  R9 PP 6: Gold Phoenix                (  7/5)  🔥 IRON SA #1
+  R10 PP 3: King Kameha                 (  7/2)  🔥 IRON SA
+  R11 PP 4: Shocking Grey               ( 20/1)  🔥 IRON SA | ✅ POS SA #1 🔥 TRAINER+HOT_JT
+  R11 PP 7: Sweet Gal of Mine           (  9/2)  🔥 IRON SA
+  R11 PP 9: Canto Della Terra           (  5/1)  🔥 IRON SA #1 🔥 TRAINER+HOT_JT
+  R12 PP 2: Tiz All That                ( 12/1)  🔥 IRON SA
+  R12 PP 5: Rogue Legend                ( 10/1)  🔥 IRON SA #1 🔥 TRAINER+HOT_JT
+  R12 PP 6: Private Gem                 ( 10/1)  🔥 IRON SA #2 🔥 TRAINER+HOT_JT
+  R12 PP 9: Broski                      ( 20/1)  🔥 IRON SA #1
 ============================================================================
 
-full-field entries → DB (118 horses)
+full-field entries → DB (97 horses)
+picks file → picks_SA_06142026.txt
+win probabilities added → picks_SA_06142026.txt (cols 9-10)
