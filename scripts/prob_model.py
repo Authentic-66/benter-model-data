@@ -241,11 +241,20 @@ def train_picks_model():
 # Part 2 — conditional logit on full fields (entries ⋈ results)
 # ════════════════════════════════════════════════════════════════════════
 
-CL_FEATURES = ["log_ml", "prime_power_c", "pp_missing",
+CL_FEATURES = ["log_ml_nonsa", "log_ml_sa",
+               "prime_power_c", "pp_missing",
                "days_off_c", "best_spd_c", "spd_missing",
                "jt_winpct_c", "jt_missing", "beaten_c", "class_delta_c",
                "improving",
                "jt_zero", "sig_trainer", "sig_sire", "sig_horse", "sig_hotjt"]
+# log_ml is split into two track-grouped columns because Santa Anita's
+# ml_odds is the post-race tote price (no morning line in Equibase result
+# charts), while every other track's ml_odds is the actual morning line.
+# Fitting a single log_ml weight mixes signals of very different strength
+# and drags the global coefficient toward SA's stronger post-race signal,
+# polluting non-SA predictions. Each split column is centered within race
+# (as before) and z-scored against the std of its own bucket so the two
+# coefficients are directly comparable.
 # dist_delta_c held out: CV ablation showed every transform of distance_delta
 # (raw, abs, clip[-2,+2], clip[-1,+1]) hurt log loss vs dropping it. The bucket
 # data confirms distance changes are efficiently priced by the public ML.
@@ -309,6 +318,13 @@ def build_cl_features(df, stds=None):
     df["log_ml"] = np.log(1.0 / df["ml_odds"])
     df["log_ml"] = df["log_ml"] - df.groupby("race_id")["log_ml"].transform("mean")
 
+    # Track-aware split: SA's ml_odds is post-race tote, others' is the
+    # morning line. Zero outside the bucket so each coefficient is fit
+    # independently. See CL_FEATURES comment for the full rationale.
+    is_sa = (df["track"] == "SA").astype(float)
+    df["log_ml_sa"]    = df["log_ml"] * is_sa
+    df["log_ml_nonsa"] = df["log_ml"] * (1.0 - is_sa)
+
     # log_final and odds_drift use the final tote price. At predict time
     # this column is NULL (race hasn't run yet); fall back to ml_odds so
     # log_final degrades to log_ml and odds_drift to zero.
@@ -344,11 +360,21 @@ def build_cl_features(df, stds=None):
     center("class_delta", "class_delta_c")
 
     if stds is None:
-        stds = {c: float(df[c].std()) or 1.0
-                for c in ("log_ml", "log_final", "odds_drift",
-                          "prime_power_c", "days_off_c",
-                          "best_spd_c", "jt_winpct_c", "beaten_c",
-                          "class_delta_c")}
+        stds = {}
+        # log_ml_sa / log_ml_nonsa are z-scored against the std of their
+        # OWN bucket — otherwise the zero rows from the other bucket would
+        # deflate the scale and the fitted coefficients would no longer be
+        # comparable across the two groups.
+        sa_mask = df["track"] == "SA"
+        sa_std    = float(df.loc[sa_mask,  "log_ml"].std()) if sa_mask.any()  else 0.0
+        nonsa_std = float(df.loc[~sa_mask, "log_ml"].std()) if (~sa_mask).any() else 0.0
+        stds["log_ml_sa"]    = sa_std    or 1.0
+        stds["log_ml_nonsa"] = nonsa_std or 1.0
+        for c in ("log_final", "odds_drift",
+                  "prime_power_c", "days_off_c",
+                  "best_spd_c", "jt_winpct_c", "beaten_c",
+                  "class_delta_c"):
+            stds[c] = float(df[c].std()) or 1.0
     for c, sd in stds.items():
         df[c] = df[c] / sd
     return stds
