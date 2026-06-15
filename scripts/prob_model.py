@@ -355,8 +355,11 @@ def build_cl_features(df, stds=None):
 
     # log_final and odds_drift use the final tote price. At predict time
     # this column is NULL (race hasn't run yet); fall back to ml_odds so
-    # log_final degrades to log_ml and odds_drift to zero.
-    final_filled = df["final_odds"].where(df["final_odds"].notna(), df["ml_odds"])
+    # log_final degrades to log_ml and odds_drift to zero. Coerce to float
+    # because an all-None final_odds column arrives as object dtype and
+    # np.log on an object Series raises AttributeError.
+    final_filled = df["final_odds"].where(
+        df["final_odds"].notna(), df["ml_odds"]).astype(float)
     df["log_final"] = np.log(1.0 / final_filled)
     df["log_final"] = df["log_final"] - df.groupby("race_id")["log_final"].transform("mean")
 
