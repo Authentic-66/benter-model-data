@@ -125,7 +125,54 @@ Loading result PDFs...
 ======================================================================== 
   GULFSTREAM PARK (GP) 
 ======================================================================== 
-  No result PDF found for picks date 20260614 - skipping GP 
+  Picks: picks_GP_06142026.txt 
+  Result: GP061426USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_GP_06142026.txt...
+  18 pick(s) loaded
+  5 pick(s) filtered before scoring (1 odds threshold, 4 race pick limit)
+
+Loading result PDFs...
+  Parsing GP061426USA.pdf [GP]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ GULFSTREAM PARK (GP) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    LittleTownStreet         TRAINER+H WPS     1  $6.00  $19.80    +$13.80
+  R2    OlympicDreamer           TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R3    Chizzy                   TRAINER+H WPS     5  $6.00  $ 0.00     -$6.00
+  R4    Pardo                    TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R5    Wheelhouse               TRAINER   WPS     2  $6.00  $ 4.70     -$1.30
+  R5    Unpredictable            TRAINER+H WPS     3  $6.00  $ 2.10     -$3.90
+  R5    KingPrince               TRAINER           â€”                              [RACE PICK LIMIT]
+  R5    KingMorpheus             TRAINER           â€”                              [RACE PICK LIMIT]
+  R6    LordEddardStark          TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R7    SovereignGold            TRAINER   WPS     2  $6.00  $ 7.00     +$1.00
+  R7    GoodPaynter              TRAINER+H WPS     3  $6.00  $ 2.80     -$3.20
+  R8    TiffanyGold              TRAINER   WPS     7  $6.00  $ 0.00     -$6.00
+  R8    GreenfieldCougar         TRAINER   WPS     2  $6.00  $13.60     +$7.60
+  R8    GreatVenezuela           TRAINER           â€”                              [BELOW ODDS THRESHOLD]
+  R8    MissMaryNell             TRAINER           â€”                              [RACE PICK LIMIT]
+  R9    ClassyBeach              TRAINER   WPS     1  $6.00  $18.80    +$12.80
+  R9    Escargot                 TRAINER+H WPS     3  $6.00  $ 3.40     -$2.60
+  R9    Dancinginmoonlight       TRAINER           â€”                              [RACE PICK LIMIT]
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $78.00  $ 72.20     -$5.80  ROI: -7.4%
+
+============================================================================
+  OVERALL TOTAL                                    $78.00  $ 72.20     -$5.80  ROI: -7.4%
+============================================================================
+
+  Filter summary:
+    Below odds threshold (decimal ML < 3.0):  1 pick(s) not scored
+    Race pick limit (> 2/race):              4 pick(s) not scored
+
  
 ======================================================================== 
   SARATOGA (SAR) 

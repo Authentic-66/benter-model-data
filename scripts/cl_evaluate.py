@@ -64,6 +64,7 @@ SELECT
     e.signal_types,
     e.improving,
     e.jt_zero,
+    e.horse_starts,
     r.finish_pos,
     r.odds      AS final_odds,
     r.win_pay
