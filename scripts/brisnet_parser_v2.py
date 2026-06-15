@@ -532,14 +532,34 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 break
 
         # ── Race conditions from header ───────────────────────────────────────
+        # Brisnet header layout (varies by track): a class code (Mdn / MC /
+        # Clm / Alw / STK / etc.) starts the conditions block, and the day
+        # of week ("Sunday, June 14, 2026 Race 1") closes it. The previous
+        # regex was too restrictive — required digit-suffix-digit pattern —
+        # and failed on "Clm 8000n2L Ì 5½ Furlongs", capturing nothing for
+        # 99% of PP races. Two-pass anchor:
+        #   1. class-code anchor (MSW/Mdn/Clm/Alw/STK/etc.) → day-of-week
+        #   2. track-name anchor fallback for stakes races like
+        #      "SnJnCpo-G3 *1 Mile" where the race name precedes class info
         if current_race and not races[current_race]['conditions']:
-            # Extract class/distance from header
+            day_pat = r'(?=\s+(?:Sun|Mon|Tues|Wednes|Thurs|Fri|Satur)day,)'
             cond_m = re.search(
-                r'((?:MC|OC|ALW|CLM|MDN|STR|MSW|STK)\s+[\d,.k]+[^\d][\d½¾¼]+\s*(?:Furlongs?|Miles?|F\s|M\s)[^R]*)',
-                header, re.IGNORECASE
+                r'(?:MSW|MCL|MOC|MC|MdnCl|Mdn|MDN|MAIDEN|Clm|CLM|AOC|OC|Alw|ALW'
+                r'|Str|STR|SOC|Hcp|HCP|STK|Stk)\b.+?' + day_pat,
+                header
             )
+            if not cond_m:
+                cond_m = re.search(
+                    r'(?:Gulfstream Park|Charles Town|Fairmount Park'
+                    r'|Evangeline Downs|Santa Anita Park|Saratoga'
+                    r'|Mahoning Valley|Delta Downs|Fair Grounds|Laurel Park)\s+'
+                    r'[`TM]*\s*(.+?)' + day_pat,
+                    header
+                )
+                if cond_m:
+                    cond_m = re.match(r'\s*(.+)', cond_m.group(1))
             if cond_m:
-                races[current_race]['conditions'] = cond_m.group(0).strip()[:70]
+                races[current_race]['conditions'] = cond_m.group(0).strip()[:120]
             # Surface
             if '(T)' in header or 'Turf' in header:
                 races[current_race]['surface'] = 'Turf'
@@ -1061,6 +1081,23 @@ def write_entries_db(races, track_code, race_date):
                 (tc, date_str, rn, race.get('surface') or None,
                  race.get('conditions') or '', db_migrate._purse(race.get('purse')))
             )
+            # Non-destructive backfill: when the parser now extracts data
+            # the old code couldn't (e.g. fixed conditions regex), fill the
+            # gap on existing rows. Never overwrite already-populated values.
+            if race.get('conditions'):
+                cur.execute(
+                    "UPDATE races SET conditions = ? "
+                    "WHERE track=? AND race_date=? AND race_num=? "
+                    "AND (conditions IS NULL OR conditions = '')",
+                    (race['conditions'], tc, date_str, rn)
+                )
+            if race.get('surface'):
+                cur.execute(
+                    "UPDATE races SET surface = ? "
+                    "WHERE track=? AND race_date=? AND race_num=? "
+                    "AND (surface IS NULL OR surface = '')",
+                    (race['surface'], tc, date_str, rn)
+                )
             race_id = cur.execute(
                 "SELECT race_id FROM races WHERE track=? AND race_date=? AND race_num=?",
                 (tc, date_str, rn)
