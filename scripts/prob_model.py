@@ -260,8 +260,14 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                "prime_power_c", "pp_missing",
                "days_off_c", "best_spd_c", "spd_missing",
                "jt_winpct_c", "jt_missing", "beaten_c", "class_delta_c",
+               "horse_starts_c", "starts_missing",
                "improving",
                "jt_zero", "sig_trainer", "sig_sire", "sig_horse", "sig_hotjt"]
+# horse_starts: count of PP race lines in the horse's Brisnet block
+# (Brisnet displays up to ~10; zero = FTS). Within-race centering means
+# the coefficient up-weights the experienced horse most in FTS-heavy fields
+# (e.g. 2yo MSW) and barely at all in fields of seasoned horses —
+# automatically capturing the "experience advantage" pattern.
 # log_ml is split by entries.source — 'PP' rows came from Brisnet past-
 # performance PDFs and carry the real morning line; 'RESULTS' rows are
 # synthetic entries built from Equibase result charts where post-race
@@ -302,6 +308,7 @@ SELECT
     e.improving,
     e.jt_zero,
     e.signal_types,
+    e.horse_starts,
     r.finish_pos
 FROM entries e
 JOIN results r ON r.race_id = e.race_id AND r.horse_name = e.horse_name
@@ -389,6 +396,10 @@ def build_cl_features(df, stds=None):
     # class_delta = today_class - last_class; today_class is race-constant,
     # so within-race centering leaves the relative class-drop signal
     center("class_delta", "class_delta_c")
+    # horse_starts: a count, NULL when the entry came from results (no PP),
+    # 0 for first-time starters. Within-race centering brings out the
+    # experience contrast (huge in 2yo MSW fields, small in open allowances).
+    center("horse_starts", "horse_starts_c", "starts_missing")
 
     if stds is None:
         stds = {}
@@ -415,8 +426,8 @@ def build_cl_features(df, stds=None):
         # printed coefficients are directly comparable.
         for c in ("prime_power_c", "days_off_c",
                   "best_spd_c", "jt_winpct_c", "beaten_c",
-                  "class_delta_c",
-                  "pp_missing", "spd_missing", "jt_missing"):
+                  "class_delta_c", "horse_starts_c",
+                  "pp_missing", "spd_missing", "jt_missing", "starts_missing"):
             v = df.loc[pp_mask, c] if pp_mask.any() else df[c]
             stds[c] = float(v.std()) or 1.0
 

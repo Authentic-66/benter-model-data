@@ -162,6 +162,11 @@ def ensure_prob_columns(conn):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} REAL")
             print(f"  schema: added entries.{col}")
+    # horse_starts is an integer count of past races in the Brisnet PP block
+    # (capped at Brisnet's display limit, ~10). Zero = first-time starter.
+    if 'horse_starts' not in existing_e:
+        conn.execute("ALTER TABLE entries ADD COLUMN horse_starts INTEGER")
+        print("  schema: added entries.horse_starts")
     if 'source' not in existing_e:
         conn.execute("ALTER TABLE entries ADD COLUMN source TEXT DEFAULT 'PP'")
         print("  schema: added entries.source")

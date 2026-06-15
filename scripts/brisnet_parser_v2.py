@@ -431,6 +431,15 @@ def _class_money(s):
     return int(m.group(1)) * 1000 if m else None
 
 
+def extract_horse_starts(block_lines):
+    """Count unique past races in the horse's PP block. Brisnet displays
+    up to ~10 PP race lines, so the count is exact for lightly-raced
+    horses (the regime we care about for the FTS-density signal) and a
+    lower bound of 10 for veterans. Zero = first-time starter."""
+    return len({d for line in block_lines
+                if (d := _pp_line_date(line)) is not None})
+
+
 def extract_last_class(block_lines):
     """Class money of the horse's most recent race, or None. Only the first
     60 chars are searched so Top Finishers / comment text can't match."""
@@ -756,6 +765,7 @@ def parse_brisnet(text, track_code='GP', race_date=None):
             beaten_len = extract_beaten_lengths(block, lines)
             last_class = extract_last_class(block)
             last_dist  = extract_last_distance(block)
+            horse_starts = extract_horse_starts(block)
 
             # ── Speed figures from PP lines in block ──────────────────────────
             spd_figs   = extract_speed_figures(block)  # [(figure, surface), ...]
@@ -829,6 +839,7 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
                 'last_class': last_class, 'last_dist': last_dist,
+                'horse_starts': horse_starts,
             }
 
             if not any(h['name'] == horse for h in races[current_race]['horses']):
@@ -1114,8 +1125,8 @@ def write_entries_db(races, track_code, race_date):
                     "ml_odds,prime_power,pp_rank,trainer,jockey,sire,"
                     "days_off,claim_price,best_spd,best_spd_turf,best_spd_aw,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
-                    "class_delta,distance_delta,signal_types,is_pick)"
-                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "class_delta,distance_delta,signal_types,horse_starts,is_pick)"
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -1137,6 +1148,7 @@ def write_entries_db(races, track_code, race_date):
                      h.get('class_delta'),
                      h.get('distance_delta'),
                      ','.join(s[0] for s in h['signals']) or None,
+                     h.get('horse_starts'),
                      int(is_strong_pick(h)))
                 )
                 n += 1

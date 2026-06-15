@@ -124,6 +124,7 @@ def score_card(pp_file: Path, track: str) -> pd.DataFrame:
                 "beaten_lengths": h.get("beaten_len"),
                 "class_delta": h.get("class_delta"),
                 "distance_delta": h.get("distance_delta"),
+                "horse_starts": h.get("horse_starts"),
             })
     df = pd.DataFrame(rows)
     if df.empty:

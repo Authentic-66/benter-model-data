@@ -63,6 +63,7 @@ def rows_from_pp(pp_file, track):
                 "beaten_lengths": h.get("beaten_len"),
                 "class_delta": h.get("class_delta"),
                 "distance_delta": h.get("distance_delta"),
+                "horse_starts": h.get("horse_starts"),
             })
     return pd.DataFrame(rows)
 
@@ -76,7 +77,7 @@ def rows_from_db(track, race_date):
                   COALESCE(source, 'PP') AS source,
                   ml_odds, final_odds, prime_power, days_off, best_spd,
                   jt_winpct, beaten_lengths, class_delta, distance_delta,
-                  signal_types, improving, jt_zero
+                  signal_types, improving, jt_zero, horse_starts
            FROM entries WHERE track = ? AND race_date = ?
            ORDER BY race_num, post_pos""",
         con, params=(track.upper(), race_date),
