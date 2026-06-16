@@ -176,7 +176,7 @@ for /f "delims=" %%f in ('dir /b /o-d /a-d "%SCRIPTS%picks_SAR_*.txt" 2^>nul') d
 )
 echo   No picks_SAR_*.txt found - run parse_sar.bat first
 echo   No picks_SAR_*.txt found - run parse_sar.bat first >> "%LOGFILE%"
-goto :evd_section
+goto :sa_section
 
 :sar_picks_ok
 :: picks_SAR_MMDDYYYY.txt -- "picks_SAR_" prefix is 10 chars
@@ -194,7 +194,7 @@ for /f "delims=" %%f in ('dir /b /a-d "%SAR_DIR%\SAR%MM%%DD%%YY%USA.pdf" 2^>nul'
 )
 echo   No result PDF found for picks date %PICKSDATE% - skipping SAR
 echo   No result PDF found for picks date %PICKSDATE% - skipping SAR >> "%LOGFILE%"
-goto :evd_section
+goto :sa_section
 
 :sar_run
 echo   Picks: %SAR_PICKS%
