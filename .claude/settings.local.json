@@ -62,7 +62,11 @@
       "Bash(cmd.exe /c \"scripts\\\\process_all.bat < nul\")",
       "Bash(tasklist)",
       "Bash(py scripts/brisnet_parser_v2.py \"Santa Anita/sa-pps-files/sax0614y.pdf\" SA)",
-      "Bash(echo \"EXIT=$?\")"
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(git show *)",
+      "Read(//tmp/**)",
+      "Bash(py brisnet_parser_v2.py \"../Gulfstream Park/gp-pps-files/gpx0508y.pdf\" GP)",
+      "Bash(echo \"Exit: $?\")"
     ]
   }
 }
