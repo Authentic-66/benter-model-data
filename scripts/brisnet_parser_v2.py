@@ -677,10 +677,13 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 # Horse header lines ("1 Army Medic (E 7) ...") also start with an
                 # integer + capitalized word — the running-style parens "(E 7)"
                 # distinguish them, so exclude any line containing that pattern.
+                # 'Trnr:' is NOT excluded: PDF column collapse often merges the
+                # silks cell with the trainer cell, putting both on one line —
+                # the ^ anchor still pins ML odds at the line start.
                 if ml == '?':
                     stripped = line.strip()
                     ml_m = re.match(r'^(\d+/\d+|\d+)\s+[A-Z][a-z]', stripped)
-                    if (ml_m and 'Own:' not in line and 'Trnr:' not in line
+                    if (ml_m and 'Own:' not in line
                             and 'Sire' not in line
                             and not re.search(r'\([A-Z/EP]+\s+\d+\)', stripped)):
                         val = ml_m.group(1)
