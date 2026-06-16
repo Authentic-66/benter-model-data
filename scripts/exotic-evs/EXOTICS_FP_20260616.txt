@@ -1,0 +1,125 @@
+==============================================================================
+FIND VALUE EXOTICS  —  FP  2026-06-16
+==============================================================================
+PP file: fpk0616y.pdf
+Model:   4650 races trained  (γ=0.816  δ=0.643  fitted on 4449 races)
+Filters: EV ≥ 1.10, prob ≥ 0.0010, top 5 per race
+
+✅ FP CL model is PP-trained — higher confidence in EVs.
+
+------------------------------------------------------------------------------
+RACE 1  (7 starters)   top 5 +EV opportunities
+------------------------------------------------------------------------------
+  Model favorite: PP 5 RazOnFire  model 42.8%  vs  market 43.6%
+    $.10 SUPER 6-4-7-5       prob:  0.18%  mkt:  0.12%  fair: $   55.42  EV: 1.17  +EV
+    $.50 TRIF  6-4-7         prob:  0.32%  mkt:  0.22%  fair: $  156.59  EV: 1.12  +EV
+    $.10 SUPER 6-7-4-5       prob:  0.21%  mkt:  0.14%  fair: $   48.58  EV: 1.17  +EV
+    $.10 SUPER 6-7-5-4       prob:  0.30%  mkt:  0.20%  fair: $   33.59  EV: 1.16  +EV
+    $.10 SUPER 4-6-7-5       prob:  0.20%  mkt:  0.14%  fair: $   49.44  EV: 1.16  +EV
+
+------------------------------------------------------------------------------
+RACE 2  (6 starters)   top 5 +EV opportunities
+------------------------------------------------------------------------------
+  Model favorite: PP 6 DanzaTaxi  model 45.1%  vs  market 32.6%
+    $.10 SUPER 6-3-5-2       prob:  0.52%  mkt:  0.24%  fair: $   19.29  EV: 1.68  +EV
+    $.50 TRIF  6-2-3         prob:  0.60%  mkt:  0.31%  fair: $   83.73  EV: 1.50  +EV
+    $1 EXACTA  6-2           prob:  2.99%  mkt:  1.75%  fair: $   33.44  EV: 1.33  +EV
+    WIN        6             prob: 45.12%  mkt: 32.60%  fair: $    4.43  EV: 1.16  +EV
+    $.10 SUPER 6-2-5-3       prob:  0.32%  mkt:  0.15%  fair: $   31.02  EV: 1.67  +EV
+
+------------------------------------------------------------------------------
+RACE 3  (8 starters)   top 5 +EV opportunities
+------------------------------------------------------------------------------
+  Model favorite: PP 5 AwesomeSunday  model 25.0%  vs  market 35.6%
+    $.10 SUPER 2-3-6-1       prob:  0.10%  mkt:  0.03%  fair: $   97.62  EV: 2.40  +EV
+    $.50 TRIF  2-1-4         prob:  0.17%  mkt:  0.06%  fair: $  300.27  EV: 2.25  +EV
+    $1 EXACTA  2-1           prob:  1.93%  mkt:  0.77%  fair: $   51.89  EV: 1.96  +EV
+    WIN        2             prob: 18.74%  mkt: 11.19%  fair: $   10.67  EV: 1.41  +EV
+    PLACE      2             prob: 35.81%  mkt: 24.38%  fair: $    5.59  EV: 1.23  +EV
+
+------------------------------------------------------------------------------
+RACE 4  (8 starters)   top 5 +EV opportunities
+------------------------------------------------------------------------------
+  Model favorite: PP 7 WinWithColor  model 47.1%  vs  market 39.3%
+    $.10 SUPER 5-7-6-4       prob:  0.18%  mkt:  0.05%  fair: $   56.82  EV: 2.95  +EV
+    $.50 TRIF  5-7-6         prob:  1.19%  mkt:  0.42%  fair: $   42.17  EV: 2.22  +EV
+    $1 EXACTA  5-7           prob:  3.06%  mkt:  1.34%  fair: $   32.64  EV: 1.78  +EV
+    WIN        5             prob:  6.97%  mkt:  3.75%  fair: $   28.69  EV: 1.56  +EV
+    PLACE      5             prob: 18.30%  mkt: 10.09%  fair: $   10.93  EV: 1.52  +EV
+
+------------------------------------------------------------------------------
+RACE 5  (7 starters)   top 5 +EV opportunities
+------------------------------------------------------------------------------
+  Model favorite: PP 2 GovenorHank  model 32.5%  vs  market 39.5%
+    $.10 SUPER 5-3-7-4       prob:  0.14%  mkt:  0.07%  fair: $   73.22  EV: 1.58  +EV
+    $.50 TRIF  3-5-7         prob:  0.34%  mkt:  0.17%  fair: $  147.76  EV: 1.51  +EV
+    $1 EXACTA  3-5           prob:  1.48%  mkt:  0.86%  fair: $   67.71  EV: 1.33  +EV
+    WIN        3             prob:  5.42%  mkt:  3.76%  fair: $   36.90  EV: 1.21  +EV
+    PLACE      3             prob: 13.68%  mkt: 10.22%  fair: $   14.62  EV: 1.12  +EV
+
+------------------------------------------------------------------------------
+RACE 6  (8 starters)   top 5 +EV opportunities
+------------------------------------------------------------------------------
+  Model favorite: PP 7 GoldSmoke  model 26.4%  vs  market 36.1%
+    $.50 TRIF  5-4-8         prob:  0.44%  mkt:  0.13%  fair: $  113.93  EV: 2.61  +EV
+    $.10 SUPER 5-4-8-6       prob:  0.13%  mkt:  0.04%  fair: $   78.07  EV: 2.58  +EV
+    $1 EXACTA  5-8           prob:  1.55%  mkt:  0.58%  fair: $   64.61  EV: 2.09  +EV
+    WIN        5             prob: 14.30%  mkt:  7.21%  fair: $   13.99  EV: 1.67  +EV
+    PLACE      5             prob: 29.28%  mkt: 17.22%  fair: $    6.83  EV: 1.43  +EV
+
+------------------------------------------------------------------------------
+RACE 7  (7 starters)   top 5 +EV opportunities
+------------------------------------------------------------------------------
+  Model favorite: PP 2 DinnerAtCrumpies  model 30.0%  vs  market 15.8%
+    $.10 SUPER 2-6-4-5       prob:  0.13%  mkt:  0.04%  fair: $   74.66  EV: 2.51  +EV
+    $.50 TRIF  2-6-4         prob:  0.96%  mkt:  0.32%  fair: $   52.26  EV: 2.31  +EV
+    $1 EXACTA  2-6           prob:  7.91%  mkt:  3.32%  fair: $   12.64  EV: 1.86  +EV
+    WIN        2             prob: 30.04%  mkt: 15.80%  fair: $    6.66  EV: 1.60  +EV
+    PLACE      2             prob: 53.72%  mkt: 33.78%  fair: $    3.72  EV: 1.34  +EV
+
+------------------------------------------------------------------------------
+RACE 8  (12 starters)   top 5 +EV opportunities
+------------------------------------------------------------------------------
+  Model favorite: PP 8 Karazest  model 27.1%  vs  market 30.0%
+    $.50 TRIF  11-6-9        prob:  0.15%  mkt:  0.02%  fair: $  334.30  EV: 5.30  +EV
+    $1 EXACTA  11-6          prob:  2.03%  mkt:  0.44%  fair: $   49.16  EV: 3.64  +EV
+    WIN        11            prob: 11.47%  mkt:  3.71%  fair: $   17.43  EV: 2.60  +EV
+    PLACE      11            prob: 23.54%  mkt:  8.98%  fair: $    8.50  EV: 2.20  +EV
+    SHOW       11            prob: 35.23%  mkt: 15.70%  fair: $    5.68  EV: 1.88  +EV
+
+==============================================================================
+MULTI-RACE (Pick N)
+==============================================================================
+
+  LATE PICK 6  (races 3–8)
+  STRAT       COMBOS       COST    HIT %      FAIR PAY    E[RETURN]      EV
+  TOP-1            1      $2.00   0.082%     $1,694.31        $1.40    0.70
+  TOP-2           64    $128.00   2.222%     $3,363.24       $74.72    0.58
+  TOP-3          729  $1,458.00  11.258%     $9,480.69    $1,067.31    0.73
+
+  LATE PICK 5  (races 4–8)
+  STRAT       COMBOS       COST    HIT %      FAIR PAY    E[RETURN]      EV
+  TOP-1            1      $2.00   0.330%       $603.46        $1.99    1.00
+  TOP-2           32     $64.00   5.080%       $787.18       $39.99    0.62
+  TOP-3          243    $486.00  18.388%     $1,974.58      $363.09    0.75
+
+  LATE PICK 4  (races 5–8)
+  STRAT       COMBOS       COST    HIT %      FAIR PAY    E[RETURN]      EV
+  TOP-1            1      $2.00   0.699%       $237.31        $1.66    0.83
+  TOP-2           16     $32.00   7.118%       $243.22       $17.31    0.54
+  TOP-3           81    $162.00  22.880%       $510.27      $116.75    0.72
+
+  LATE PICK 3  (races 6–8)
+  STRAT       COMBOS       COST    HIT %      FAIR PAY    E[RETURN]      EV
+  TOP-1            1      $2.00   2.150%        $93.72        $2.02    1.01
+  TOP-2            8     $16.00  11.866%        $75.47        $8.96    0.56
+  TOP-3           27     $54.00  30.551%       $127.95       $39.09    0.72
+
+==============================================================================
+SUMMARY
+==============================================================================
+Total +EV single-race bets: 40
+Estimated bankroll required for full +EV ticket: $40.10
+Total expected return: $69.28
+Implied edge: +72.8%
+==============================================================================
