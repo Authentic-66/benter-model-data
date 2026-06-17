@@ -1,0 +1,157 @@
+﻿Results FP [20260616]
+  File: FP061626USA.pdf 
+ 
+Processing FP061626USA.pdf [FP]...
+Found 8 race(s)
+
+========================================================================
+  RESULTS : FAIRMOUNT PARK
+  Source  : FP061626USA.pdf
+========================================================================
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 1  â€”  MSW  |  1M  |  Dirt  |  $38,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  RazOnFire                         1.10  Santos,Ademar             Essenpreis,Eddie        
+    2    6  UnionRoar                         4.00  Felix,Julio               Young,R.                
+    3    2  Lauren'sWar                      17.50  Ortega,Javier             Rednour,Jr.,John        
+    4    1  FancyFeet                         2.90  Bendezu,Alexander         Fridley,Steve           
+    5    4  ImaMidnightLady                   4.30  Orm,Cory                  Retana,Gabe             
+    6    3  CollieWraysKitty                 18.70  Ortega,Harold             Rednour,Jr.,John        
+
+  Time    : 1:43.30
+  Trainer : Essenpreis, Eddie
+  Sire    : FiringLine
+
+  WIN    $4.20   PLC    $2.60   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 2  â€”  CLM  |  5.5F  |  Dirt  |  $10,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  DanzaTaxi                         0.90  Wales,Travis              Becker,Scott            
+    2    1  LookinforBala                     2.00  Arrieta,Reynier           Essenpreis,Eddie        
+    3    3  FullMagazine                      6.00  Santos,Ademar             Essenpreis,Eddie        
+    4    5  OnePuttRichie                     6.00  Bendezu,Alexander         Martinez,Ralph          
+    5    4  HoldenMichael                    22.00  Tavares,Javier            Rodriguez,Hugo          
+    6    2  Safe                             37.20  Ortega,Javier             Retana,Gabe             
+
+  Time    : 1:06.59
+  Trainer : Becker, Scott
+  Sire    : Danza
+
+  WIN    $3.80   PLC    $2.20   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 3  â€”  CLM  |  6F  |  Dirt  |  $10,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  AlternativeGrace                  2.10  Lara,Victor               Lynch,Harry             
+    2    3  BlazeBeauty                       1.80  Stanley,Angel             Essenpreis,Eddie        
+    3    2  LifeofSaturdays                   3.20  Felix,Julio               Randazzo,Teddy          
+    4    4  DeltaLady                        21.00  Giles,Emmanuel            Pompell,Robert          
+    5    6  Tina'sTapizar                     2.80  Aranguren,Johanis         Manley,Steve            
+
+  Time    : 1:14.26
+  Trainer : Lynch, Harry
+  Sire    : Alternation
+
+  WIN    $6.20   PLC    $2.60
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 4  â€”  CLM  |  1M  |  Dirt  |  $10,200
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  Lution                           12.70  Stanley,Angel             Lynch,Harry             
+    2    7  WinWithColor                      1.50  Bendezu,Alexander         Becker,Scott            
+    3    3  RiskySpirit                       5.60  Santiago,Victor           Becker,Scott            
+    4    4  ChantNation                      45.40  Ortega,Javier             Clay,Pat                
+    5    6  GirlsKnicksNow                    1.40  Santos,Ademar             Davis,Jr.,Charles       
+    6    5  Redheadedstranger                21.30  Wales,Travis              Nesbitt,Amy             
+    7    8  DivaLasVegas                     15.70  Lara,Victor               Burdess,Terry           
+    8    2  StealProud                       17.70  Orm,Cory                  Retana,Gabe             
+
+  Time    : 1:43.50
+  Trainer : Lynch, Harry
+  Sire    : Revolutionary
+
+  WIN   $27.40   PLC    $9.00   SHW    $6.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 5  â€”  CLM  |  6F  |  Dirt  |  $14,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  GovenorHank                       2.30  Bendezu,Alexander         Manley,Steve            
+    2    5  Shortstop                         1.80  Aranguren,Johanis         Watkins,James           
+    3    3  NationsDream                      5.70  Orm,Cory                  McEwen,Billy            
+    4    4  CutlassKing                       7.80  Lara,Victor               Lynch,Harry             
+    5    1  Steve                            15.90  Santiago,Victor           Straub,Marvel           
+    6    7  RedSpeedo                         5.00  Felix,Julio               Lynch,Harry             
+    7    6  Skylane                          13.70  Tavares,Javier            Randazzo,Jr.,Frank      
+
+  Time    : 1:14.02
+  Trainer : Manley, Steve
+  Sire    : GovenorCharlie
+
+  WIN    $6.60   PLC    $3.60   SHW    $3.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 6  â€”  CLM  |  1M  |  Dirt  |  $10,800
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  GoldSmoke                         0.50  Santos,Ademar             Essenpreis,Eddie        
+    2    4  MidniteAlex                       7.00  Felix,Julio               Burdess,Terry           
+    3    6  Tapinyourbluejeans                4.50  Bendezu,Alexander         Martinez,Ralph          
+    4    8  GoldJerry                        13.10  Stanley,Angel             Delong,Ben              
+    5    5  CrepeYarns                       13.10  Ortega,Harold             Salazar,Adrian          
+    6    3  BestManSpeech                    33.10  Lara,Victor               Lynch,Harry             
+    7    2  Cantstealmythunder               11.10  Santiago,Victor           Plasters,Lori           
+
+  Time    : 1:46.67
+  Trainer : Essenpreis, Eddie
+  Sire    : Mineshaft
+
+  WIN    $3.00   PLC    $2.20   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 7  â€”  CLM  |  1 1/16M  |  Dirt  |  $14,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  BerninTune                        1.30  Lara,Victor               Manley,Steve            
+    2    7  MysticPower                       5.30  Tavares,Javier            Rodriguez,Jose          
+    3    2  DinnerAtCrumpies                  8.70  Santos,Ademar             Hornsby,Tammy           
+    4    3  PatchO'Brien                     10.40  Orm,Cory                  Hornsby,Tammy           
+    5    4  Nightwind                        18.00  Aranguren,Johanis         Durham,Mike             
+    6    6  ArkyRoad                          1.90  Bendezu,Alexander         Becker,Scott            
+    7    5  ShaggyEdge                       23.90  Felix,Julio               Durham,Mike             
+
+  Time    : 1:47.50
+  Trainer : Manley, Steve
+  Sire    : Bernardini
+
+  WIN    $4.60   PLC    $3.20   SHW    $3.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 8  â€”  MSW  |  5.5F  |  Dirt  |  $38,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  AroseforLily                      7.40  Aranguren,Johanis         Essenpreis,Eddie        
+    2   12  MissDuquoin                      21.60  Ortega,Harold             Rednour,Jr.,John        
+    3    6  Milaalah                          3.20  Lara,Victor               Lynch,Harry             
+    4    1  TurtlePace                        1.10  Santiago,Victor           Becker,Scott            
+    5    3  LadiesLegacy                     48.20  Stanley,Angel             Childers,Shane          
+    6    7  EnchantedMoment                   9.60  Orm,Cory                  Watkins,James           
+    7   10  KyOSister                        30.60  Santos,Ademar             Manley,Steve            
+    8    9  RedDover                         38.60  Giles,Emmanuel            Pompell,Robert          
+
+  Time    : 1:07.64
+  Trainer : Essenpreis, Eddie
+  Sire    : Den'sLegacy
+
+  WIN   $16.80   PLC   $10.00   SHW    $5.60
+
+========================================================================
+  8 race(s) processed
+========================================================================
+
