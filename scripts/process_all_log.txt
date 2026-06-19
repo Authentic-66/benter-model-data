@@ -1,4 +1,4 @@
-Process All Log -- Tue 06/16/2026 19:37:37.76 
+Process All Log -- Thu 06/18/2026 21:54:25.79 
  
 ######################################################################## 
   BENTER MODEL -- PROCESS ALL RESULTS 
@@ -7,6 +7,165 @@ Process All Log -- Tue 06/16/2026 19:37:37.76
 ======================================================================== 
   CHARLES TOWN (CT) 
 ======================================================================== 
+  File: CT061826USA.pdf 
+ 
+Processing CT061826USA.pdf [CT]...
+Found 8 race(s)
+
+========================================================================
+  RESULTS : CHARLES TOWN
+  Source  : CT061826USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  CLM  |  4.5F  |  Dirt  |  $13,300
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  Remy'sTopGun                      2.50  Rios-Conde,Jr.,Alexis     Cromer,Leslie           
+    2    6  PreshowHype                       2.00  Santaella,Moises          Brown,Ronney            
+    3    1  CounttheFlowers                   5.90  Maldonado,Christian       Atkins,Michael          
+    4    2  ModestKay                        13.80  Jorge,Julio               Figueroa,Samuel         
+    5    7  StolenSecrets                     1.90  ArroyoBueno,Nomar         Brown,Ronney            
+    6    4  FlammeFatale                     27.40  EbowIII,Warren            Couchenour,Lee          
+    7    5  NinetyProof                      71.70  Espinoza,Alexis           Scott,Jr.,Alfred        
+
+  Time    : 52.90
+  Trainer : Cromer, Leslie
+  Sire    : FiberSonde
+
+  WIN    $7.00   PLC    $4.40   SHW    $3.40
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  SOC  |  6.5F  |  Dirt  |  $24,400
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  Logstradamus                      6.90  Rios-Conde,Jr.,Alexis     Meehan,Elizabeth        
+    2    2  RocketAppeal                      3.00  Araujo,Denis              King,Adam               
+    3    6  CR'sMandate                       9.30  Cullum,Walter             Jackson,Sherry          
+    4    4  HurricaneAlert                    4.40  ArroyoBueno,Nomar         Brown,Ronney            
+    5    7  Juba'sNotion                      1.40  Chilo,Maximo              Peltroche,Vanessa       
+    6    3  NoLoveforJuba                     6.10  Latchman,Reshawn          King,Adam               
+
+  Time    : 1:18.97
+  Trainer : Meehan, Elizabeth
+  Sire    : JumpStart
+
+  WIN   $15.80   PLC    $6.80   SHW    $7.60
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  CLM  |  7F  |  Dirt  |  $15,700
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  CollectingAngels                  2.60  Diaz,Jose                 Rangel,Ricardo          
+    2    3  HolyCoffee                        8.60  Diaz,Jr.,Sunday           Carson,Laura            
+    3    4  RareRuby                          4.80  Stokes,Joe                Shanley,Timothy         
+    4    6  GoldenCharm                       3.30  Raspaldo,Jahnxander       Hanagan,Lela            
+    5    5  EntitledDefense                   2.00  ArroyoBueno,Nomar         Brown,Ronney            
+    6    2  RagtapGirl                       24.00  Maldonado,Christian       Brown,Keith             
+    7    7  TrueBluePearl                    16.40  EbowIII,Warren            Wilson,Michelle         
+
+  Time    : 1:26.77
+  Trainer : Rangel, Ricardo
+  Sire    : Collected
+
+  WIN    $7.20   PLC    $4.00   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  ALW  |  6.5F  |  Dirt  |  $35,300
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  BellaItalia                       0.80  Bocachica,Arnaldo         Russell,Brittany        
+    2    2  LonaLee                           2.20  Acosta,J.                 Petty,Kristy            
+    3    4  MissPierre                       10.90  Barbosa,Jeiron            Perri,Gina              
+    4    3  WynsomeCat                        3.30  Lewis,Justin              Viands,Stacey           
+    5    5  RidetoRemember                   46.80  Raspaldo,Jahnxander       Jackson,Angelo          
+    6    6  SlowNoMo                         25.00  Diaz,Jr.,Sunday           Keller,Christopher      
+
+  Time    : 1:18.63
+  Trainer : Russell, Brittany
+  Sire    : Authentic
+
+  WIN    $3.60   PLC    $2.20   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  ALW  |  7F  |  Dirt  |  $34,100
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  CoronationTime                    3.40  ArroyoBueno,Nomar         Brown,Ronney            
+    2    8  Burlsworth                        3.00  Rodriguez,Victor          Joy,Kevin               
+    3    6  WVLad                            30.30  Nunez,Juan                Gazzier,Kristy          
+    4    2  Espresso                          2.80  Lewis,Justin              Brown,Keith             
+    5    3  WhiteSeries                       4.10  Latchman,Reshawn          Capuano,Phillip         
+    6    9  MoJoke                           30.10  Davis,Jacqueline          Smith,Osborne           
+    7    5  BadLineage                       12.90  Santaella,Moises          Perry,Jr.,Lawrence      
+    8    7  Ravin'sTown                       5.60  Barbosa,Jeiron            Jones,Jr.,Michael       
+
+  Time    : 1:26.18
+  Trainer : Brown, Ronney
+  Sire    : DoneTalking
+
+  WIN    $8.80   PLC    $4.00   SHW    $3.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  AOC  |  4.5F  |  Dirt  |  $29,800
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  CoalCountry                       2.10  Stokes,Joe                Shanley,Tyler           
+    2    8  LastGift                          5.90  Barbosa,Jeiron            Farrior,Anthony         
+    3    7  RantheRed                        10.10  Rodriguez,Victor          Joy,Kevin               
+    4    2  Battleshipper                     3.50  Acosta,J.                 Joy,Kevin               
+    5    4  Julita                            5.20  Almodovar,Gerald          Reyes,Ruben             
+    6    1  Drama                             7.50  Bocachica,Abnel           Shanley,Tyler           
+    7    6  Jlodiamond                        6.10  Santaella,Moises          Brown,Ronney            
+    8    5  TalentedLord                     64.60  Rivera,Javier             RamosAgosto,Miguel      
+
+  Time    : 51.43
+  Trainer : Shanley, Tyler
+  Sire    : Juba
+
+  WIN    $6.20   PLC    $3.40   SHW    $2.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  ALW  |  6.5F  |  Dirt  |  $35,300
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  AtaPremium                        0.10  Barbosa,Jeiron            Walters,David           
+    2    3  God'sPride                        6.30  Stokes,Joe                Collins,Timothy         
+    3    6  OurMemories                      23.70  EbowIII,Warren            Grams,Timothy           
+    4    8  GrandIntentions                   8.00  Reynolds,Larry            Grams,Timothy           
+    5    1  That'sJustPeachy                 22.50  Nunez,Juan                Venham,Lyn              
+    6    5  LilKnockout                      59.80  Araujo,Denis              Dollinger-Stehr,Linda   
+
+  Time    : 1:17.15
+  Trainer : Walters, David
+  Sire    : GreatNotion
+
+  WIN    $2.20   PLC    $2.20   SHW    $2.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  CLM  |  4.5F  |  Dirt  |  $13,300
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  Whatarewedoing                    0.70  Barbosa,Jeiron            Farrior,Anthony         
+    2    8  Remy'sHotshot                     3.20  Chilo,Maximo              Grams,Timothy           
+    3    1  AnotherFineJuba                  25.30  Santiago,Wilfredo         Sanderson,Wade          
+    4    5  GlobalEmpress                    68.90  EbowIII,Warren            Couchenour,Lee          
+    5    7  Arditamente                       8.80  Lewis,Justin              Shanley,Tyler           
+    6    4  Chelsea'sDream                   14.10  Stokes,Joe                Shanley,Timothy         
+    7    6  RubyBay                           5.60  Santaella,Moises          Shanley,Tyler           
+    8    2  TrueBuckpassing                  42.40  Diaz,Jose                 Racanelli,Mark          
+
+  Time    : 52.16
+  Trainer : Farrior, Anthony
+  Sire    : CodeofHonor
+
+  WIN    $3.40   PLC    $2.40   SHW    $2.20
+
+========================================================================
+  8 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_CT_20260618.txt 
   Already processed: CT061326USA.pdf - skipping 
   Already processed: CT061226USA.pdf - skipping 
   Already processed: CT060626USA.pdf - skipping 
@@ -88,163 +247,7 @@ Process All Log -- Tue 06/16/2026 19:37:37.76
 ======================================================================== 
   FAIRMOUNT PARK (FP) 
 ======================================================================== 
-  File: FP061626USA.pdf 
- 
-Processing FP061626USA.pdf [FP]...
-Found 8 race(s)
-
-========================================================================
-  RESULTS : FAIRMOUNT PARK
-  Source  : FP061626USA.pdf
-========================================================================
-
-────────────────────────────────────────────────────────────────────────
-  RACE 1  —  MSW  |  1M  |  Dirt  |  $38,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
-    1    5  RazOnFire                         1.10  Santos,Ademar             Essenpreis,Eddie        
-    2    6  UnionRoar                         4.00  Felix,Julio               Young,R.                
-    3    2  Lauren'sWar                      17.50  Ortega,Javier             Rednour,Jr.,John        
-    4    1  FancyFeet                         2.90  Bendezu,Alexander         Fridley,Steve           
-    5    4  ImaMidnightLady                   4.30  Orm,Cory                  Retana,Gabe             
-    6    3  CollieWraysKitty                 18.70  Ortega,Harold             Rednour,Jr.,John        
-
-  Time    : 1:43.30
-  Trainer : Essenpreis, Eddie
-  Sire    : FiringLine
-
-  WIN    $4.20   PLC    $2.60   SHW    $2.10
-
-────────────────────────────────────────────────────────────────────────
-  RACE 2  —  CLM  |  5.5F  |  Dirt  |  $10,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
-    1    6  DanzaTaxi                         0.90  Wales,Travis              Becker,Scott            
-    2    1  LookinforBala                     2.00  Arrieta,Reynier           Essenpreis,Eddie        
-    3    3  FullMagazine                      6.00  Santos,Ademar             Essenpreis,Eddie        
-    4    5  OnePuttRichie                     6.00  Bendezu,Alexander         Martinez,Ralph          
-    5    4  HoldenMichael                    22.00  Tavares,Javier            Rodriguez,Hugo          
-    6    2  Safe                             37.20  Ortega,Javier             Retana,Gabe             
-
-  Time    : 1:06.59
-  Trainer : Becker, Scott
-  Sire    : Danza
-
-  WIN    $3.80   PLC    $2.20   SHW    $2.10
-
-────────────────────────────────────────────────────────────────────────
-  RACE 3  —  CLM  |  6F  |  Dirt  |  $10,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
-    1    7  AlternativeGrace                  2.10  Lara,Victor               Lynch,Harry             
-    2    3  BlazeBeauty                       1.80  Stanley,Angel             Essenpreis,Eddie        
-    3    2  LifeofSaturdays                   3.20  Felix,Julio               Randazzo,Teddy          
-    4    4  DeltaLady                        21.00  Giles,Emmanuel            Pompell,Robert          
-    5    6  Tina'sTapizar                     2.80  Aranguren,Johanis         Manley,Steve            
-
-  Time    : 1:14.26
-  Trainer : Lynch, Harry
-  Sire    : Alternation
-
-  WIN    $6.20   PLC    $2.60
-
-────────────────────────────────────────────────────────────────────────
-  RACE 4  —  CLM  |  1M  |  Dirt  |  $10,200
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
-    1    1  Lution                           12.70  Stanley,Angel             Lynch,Harry             
-    2    7  WinWithColor                      1.50  Bendezu,Alexander         Becker,Scott            
-    3    3  RiskySpirit                       5.60  Santiago,Victor           Becker,Scott            
-    4    4  ChantNation                      45.40  Ortega,Javier             Clay,Pat                
-    5    6  GirlsKnicksNow                    1.40  Santos,Ademar             Davis,Jr.,Charles       
-    6    5  Redheadedstranger                21.30  Wales,Travis              Nesbitt,Amy             
-    7    8  DivaLasVegas                     15.70  Lara,Victor               Burdess,Terry           
-    8    2  StealProud                       17.70  Orm,Cory                  Retana,Gabe             
-
-  Time    : 1:43.50
-  Trainer : Lynch, Harry
-  Sire    : Revolutionary
-
-  WIN   $27.40   PLC    $9.00   SHW    $6.00
-
-────────────────────────────────────────────────────────────────────────
-  RACE 5  —  CLM  |  6F  |  Dirt  |  $14,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
-    1    2  GovenorHank                       2.30  Bendezu,Alexander         Manley,Steve            
-    2    5  Shortstop                         1.80  Aranguren,Johanis         Watkins,James           
-    3    3  NationsDream                      5.70  Orm,Cory                  McEwen,Billy            
-    4    4  CutlassKing                       7.80  Lara,Victor               Lynch,Harry             
-    5    1  Steve                            15.90  Santiago,Victor           Straub,Marvel           
-    6    7  RedSpeedo                         5.00  Felix,Julio               Lynch,Harry             
-    7    6  Skylane                          13.70  Tavares,Javier            Randazzo,Jr.,Frank      
-
-  Time    : 1:14.02
-  Trainer : Manley, Steve
-  Sire    : GovenorCharlie
-
-  WIN    $6.60   PLC    $3.60   SHW    $3.00
-
-────────────────────────────────────────────────────────────────────────
-  RACE 6  —  CLM  |  1M  |  Dirt  |  $10,800
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
-    1    7  GoldSmoke                         0.50  Santos,Ademar             Essenpreis,Eddie        
-    2    4  MidniteAlex                       7.00  Felix,Julio               Burdess,Terry           
-    3    6  Tapinyourbluejeans                4.50  Bendezu,Alexander         Martinez,Ralph          
-    4    8  GoldJerry                        13.10  Stanley,Angel             Delong,Ben              
-    5    5  CrepeYarns                       13.10  Ortega,Harold             Salazar,Adrian          
-    6    3  BestManSpeech                    33.10  Lara,Victor               Lynch,Harry             
-    7    2  Cantstealmythunder               11.10  Santiago,Victor           Plasters,Lori           
-
-  Time    : 1:46.67
-  Trainer : Essenpreis, Eddie
-  Sire    : Mineshaft
-
-  WIN    $3.00   PLC    $2.20   SHW    $2.10
-
-────────────────────────────────────────────────────────────────────────
-  RACE 7  —  CLM  |  1 1/16M  |  Dirt  |  $14,500
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
-    1    1  BerninTune                        1.30  Lara,Victor               Manley,Steve            
-    2    7  MysticPower                       5.30  Tavares,Javier            Rodriguez,Jose          
-    3    2  DinnerAtCrumpies                  8.70  Santos,Ademar             Hornsby,Tammy           
-    4    3  PatchO'Brien                     10.40  Orm,Cory                  Hornsby,Tammy           
-    5    4  Nightwind                        18.00  Aranguren,Johanis         Durham,Mike             
-    6    6  ArkyRoad                          1.90  Bendezu,Alexander         Becker,Scott            
-    7    5  ShaggyEdge                       23.90  Felix,Julio               Durham,Mike             
-
-  Time    : 1:47.50
-  Trainer : Manley, Steve
-  Sire    : Bernardini
-
-  WIN    $4.60   PLC    $3.20   SHW    $3.00
-
-────────────────────────────────────────────────────────────────────────
-  RACE 8  —  MSW  |  5.5F  |  Dirt  |  $38,000
-────────────────────────────────────────────────────────────────────────
-  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
-    1    2  AroseforLily                      7.40  Aranguren,Johanis         Essenpreis,Eddie        
-    2   12  MissDuquoin                      21.60  Ortega,Harold             Rednour,Jr.,John        
-    3    6  Milaalah                          3.20  Lara,Victor               Lynch,Harry             
-    4    1  TurtlePace                        1.10  Santiago,Victor           Becker,Scott            
-    5    3  LadiesLegacy                     48.20  Stanley,Angel             Childers,Shane          
-    6    7  EnchantedMoment                   9.60  Orm,Cory                  Watkins,James           
-    7   10  KyOSister                        30.60  Santos,Ademar             Manley,Steve            
-    8    9  RedDover                         38.60  Giles,Emmanuel            Pompell,Robert          
-
-  Time    : 1:07.64
-  Trainer : Essenpreis, Eddie
-  Sire    : Den'sLegacy
-
-  WIN   $16.80   PLC   $10.00   SHW    $5.60
-
-========================================================================
-  8 race(s) processed
-========================================================================
-
-  Results logged: results-logs\RESULTS_FP_20260616.txt 
+  Already processed: FP061626USA.pdf - skipping 
   Already processed: FP061326USA.pdf - skipping 
   Already processed: FP060926USA.pdf - skipping 
   Already processed: FP060626USA.pdf - skipping 
@@ -912,6 +915,173 @@ Found 8 race(s)
 ======================================================================== 
   EVANGELINE DOWNS (EVD) 
 ======================================================================== 
+  [EVD] File    : EVD061826USA.pdf 
+  [EVD] STEM    : EVD061826USA 
+  [EVD] DIGITS  : 061826  (MM=06 DD=18 YY=26) 
+  [EVD] FILEDATE: 20260618 
+  [EVD] LOGFILE : C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\results-logs\RESULTS_EVD_20260618.txt 
+  [EVD] STATUS  : LOG NOT FOUND -- processing 
+  File: EVD061826USA.pdf 
+ 
+Processing EVD061826USA.pdf [EVD]...
+Found 8 race(s)
+
+========================================================================
+  RESULTS : EVANGELINE DOWNS
+  Source  : EVD061826USA.pdf
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  RACE 1  —  CLM  |  5F  |  Dirt  |  $11,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1   10  Sayyoulovemebaby                  1.60  Santiago,Edward           Chatters,Benard         
+    2    8  GinandTonic                       0.90  Melancon,Jansen           Degeyter,Jr.,Randy      
+    3    7  RyRy                              8.70  Pompell,Thomas            Brinkman,Brett          
+    4    3  KaraFlash                         8.90  Perez,Carlos              Larrosa,Juan            
+    5    2  RegalTime                        48.00  Arana,Kelvin              Averett,Ronnie          
+    6    5  Talkabout                        90.40  Batista,Alexis            Broussard,Jarmondrick   
+    7    6  Uthinkicare                      37.90  Hernandez,Javier          Demouchet,Ricky         
+    8    4  OneSweetDeal                     15.90  McMahon,C.J.              Arey,Anthony            
+
+  Time    : 59.65
+  Trainer : Chatters, Benard
+  Sire    : CatalinaCruiser
+
+  WIN    $5.20   PLC    $2.60   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 2  —  CLM  |  7F  |  Dirt  |  $19,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  Coattails                         2.90  Fusilier,Casey            Duhon,Paul              
+    2    7  MajesticPalace                   13.50  Rodriguez,Jose            Ward,Ronnie             
+    3    6  HardLine                          2.20  Melancon,Jansen           Bourgeois,Keith         
+    4    2  MetallicMischief                 36.70  Pompell,Thomas            Segura,Kearney          
+    5    1  LouisianaJess                     1.20  McMahon,C.J.              Zeringue,Jr.,Whitney    
+    6    4  DealMeTrips                      10.90  Castillo,Isaac            Shamsie,Sr.,Randy       
+    7    3  ContrabandEarly                  59.10  Rosier,Chris              Patt,Jr.,Roland         
+
+  Time    : 1:23.67
+  Trainer : Duhon, Paul
+  Sire    : OneLiner
+
+  WIN    $7.80   PLC    $5.20   SHW    $3.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 3  —  MSW  |  7F  |  Dirt  |  $32,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1   10  Brodymeister                      1.60  Nieves,Emanuel            Felks,Joseph            
+    2    4  Syntagma                          8.80  Hernandez,Colby           Bourgeois,Keith         
+    3    5  PolarWolf                        12.60  Hernandez,Harry           Litfin,Veronica         
+    4    2  DonPablo                          6.70  Barrera,Elio              Zenon,Sr.,Shelton       
+    5    1  Zampino                           1.70  Fusilier,Casey            Duhon,Paul              
+    6    9  MoreThanCute                     38.00  Batista,Alexis            Tillis,Jr.,Jerry        
+    7    3  CandyDreamin                     84.30  Vargas,Juan               Larrosa,Juan            
+    8    7  SedaliaTrail                     95.40  McMahon,C.J.              Wilson,Melton           
+
+  Time    : 1:24.36
+  Trainer : Felks, Joseph
+  Sire    : Lexitonian
+
+  WIN    $5.20   PLC    $3.60   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 4  —  SOC  |  1M  |  Dirt  |  $21,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  Watering                          0.50  Hernandez,Harry           LeonardIII,George       
+    2    1  BestPerformer                     7.10  Roman,Kevin               Larrosa,Juan            
+    3    9  Rosieontheriver                  13.00  Nieves,Emanuel            Broussard,Jervon        
+    4   10  GirlThirsty                      36.90  Barrera,Elio              Ward,Ronnie             
+    5    8  PharoahsBabyGyal                  3.40  Ramirez,Jr.,Julio         Chatters,Benard         
+    6    5  ForgottenFortune                 44.90  Fusilier,Casey            Segura,Kearney          
+    7    2  RoarofSilence                     8.30  Mudd,Jamison              Broussard,Jervon        
+
+  Time    : 1:39.18
+  Trainer : LeonardIII, George
+  Sire    : DiviningRod
+
+  WIN    $3.00   PLC    $2.10   SHW    $2.10
+
+────────────────────────────────────────────────────────────────────────
+  RACE 5  —  CLM  |  5.5F  |  Dirt  |  $11,500
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  CustomPunch                       6.50  Hernandez,Colby           Bourgeois,Keith         
+    2    2  WellAccustomed                    7.10  Ramirez,Jr.,Julio         Breaux,Samuel           
+    3    4  ToughLoveTorres                   0.80  Hernandez,Harry           Alberto,Antonio         
+    4    7  AztecEmpress                      1.90  Vargas,Juan               Bourgeois,Keith         
+    5    5  LilTemptation                    31.30  Castillo,Isaac            Quinones,Raul           
+    6    1  Destiny'sGrace                   17.60  Perez,Carlos              Larrosa,Juan            
+
+  Time    : 1:05.79
+  Trainer : Bourgeois, Keith
+  Sire    : CustomforCarlos
+
+  WIN   $15.00   PLC    $6.60   SHW    $2.80
+
+────────────────────────────────────────────────────────────────────────
+  RACE 6  —  AOC  |  1M  |  Dirt  |  $33,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  PureBreeze                        3.90  McMahon,C.J.              Calhoun,W.              
+    2    7  BrisaVeloz                        1.50  Melancon,Jansen           Alberto,Antonio         
+    3    2  TortugaCoast                      3.20  Perez,Carlos              Brinkman,Brett          
+    4    6  NoMapNeeded                       6.50  Rodriguez,Jose            Mojica,Edith            
+    5    3  Armaleese                        13.70  Roman,Kevin               Courville,Ricky         
+    6    5  SunnydayLightning                46.80  Hernandez,Javier          Latour,Nicholas         
+    7    8  HurricaneKate                     5.70  Castillo,Isaac            Wong,Jonathan           
+
+  Time    : 1:38.57
+  Trainer : Calhoun, W.
+  Sire    : GlobalCampaign
+
+  WIN    $9.80   PLC    $4.40   SHW    $3.00
+
+────────────────────────────────────────────────────────────────────────
+  RACE 7  —  ALW  |  5.5F  |  Dirt  |  $42,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  MoEchos                           7.50  Castillo,Isaac            Mouton,Chadwick         
+    2    2  SeriousRock                       3.80  McMahon,C.J.              Gustafson,Austin        
+    3    1  IncognitoBurrito                  2.90  Vargas,Juan               Larrosa,Juan            
+    4    8  WalkntoNeworleans                 2.40  Santiago,Edward           Chatters,Benard         
+    5    5  KG'sMagic                         5.80  Hernandez,Harry           Gelner,Jayde            
+    6    7  Giotto                            5.40  Barrera,Elio              Alberto,Antonio         
+    7    4  Fiji'sDeal                       27.50  Rodriguez,Jose            Ward,Ronnie             
+
+  Time    : 1:05.50
+  Trainer : Mouton, Chadwick
+  Sire    : MoTown
+
+  WIN   $17.00   PLC    $7.40   SHW    $4.20
+
+────────────────────────────────────────────────────────────────────────
+  RACE 8  —  MCL  |  6F  |  Dirt  |  $18,000
+────────────────────────────────────────────────────────────────────────
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1   11  EasyLikeBreezy                   20.70  Santiago,Edward           Segura,Kearney          
+    2   12  Ronnie'sAce                      26.60  Perez,Carlos              Averett,Ronnie          
+    3    8  Daat                             36.50  Magnon,Devin              Courville,Ricky         
+    4    6  FruitBasket                       2.50  Vargas,Juan               Thomas,Lee              
+    5    9  GulfDiver                         2.50  Ramirez,Jr.,Julio         Breaux,Samuel           
+    6    7  DirtyDeal                         4.10  Barrera,Elio              Gonzalez,Isai           
+    7   10  BlueKing                         10.00  Hernandez,Javier          Zenon,Sr.,Shelton       
+    8    5  OneGrandSlam                     12.70  Arana,Kelvin              Shamsie,Mike            
+
+  Time    : 1:13.05
+  Trainer : Segura, Kearney
+  Sire    : AwesomeBet
+
+  WIN   $43.40   PLC   $18.80   SHW   $13.80
+
+========================================================================
+  8 race(s) processed
+========================================================================
+
+  Results logged: results-logs\RESULTS_EVD_20260618.txt 
   [EVD] File    : EVD061326USA.pdf 
   [EVD] STEM    : EVD061326USA 
   [EVD] DIGITS  : 061326  (MM=06 DD=13 YY=26) 

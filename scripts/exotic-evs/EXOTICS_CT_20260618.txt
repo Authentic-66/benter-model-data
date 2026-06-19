@@ -5,6 +5,11 @@ PP file: ctx0618y.pdf
 Model:   4658 races trained  (γ=0.816  δ=0.643  fitted on 4449 races)
 Filters: EV ≥ 1.10, prob ≥ 0.0010, top 5 per race
 
+Scratches applied (field reduced before Harville):
+  SCR  Race 5  PP 4  Ed'sProphecy
+  SCR  Race 7  PP 4  RitatheRedhead
+  SCR  Race 7  PP 7  MoonlightMistress
+
 ✅ CT CL model is PP-trained — higher confidence in EVs.
 
 ------------------------------------------------------------------------------
@@ -48,14 +53,14 @@ RACE 4  (7 starters)   top 5 +EV opportunities
     PLACE      1             prob: 68.45%  mkt: 50.01%  fair: $    2.92  EV: 1.15  +EV
 
 ------------------------------------------------------------------------------
-RACE 5  (8 starters)   top 5 +EV opportunities
+RACE 5  (7 starters)   top 5 +EV opportunities
 ------------------------------------------------------------------------------
-  Model favorite: PP 8 Burlsworth  model 27.3%  vs  market 27.2%
-    $.10 SUPER 3-5-8-1       prob:  0.27%  mkt:  0.10%  fair: $   37.65  EV: 2.10  +EV
-    $.50 TRIF  3-5-1         prob:  0.59%  mkt:  0.25%  fair: $   84.60  EV: 1.82  +EV
-    $1 EXACTA  3-5           prob:  2.81%  mkt:  1.41%  fair: $   35.58  EV: 1.55  +EV
-    WIN        5             prob:  8.82%  mkt:  6.27%  fair: $   22.67  EV: 1.18  +EV
-    PLACE      5             prob: 19.64%  mkt: 14.47%  fair: $   10.19  EV: 1.14  +EV
+  Model favorite: PP 8 Burlsworth  model 28.1%  vs  market 29.0%
+    $.10 SUPER 3-5-1-8       prob:  0.30%  mkt:  0.13%  fair: $   33.64  EV: 1.78  +EV
+    $.50 TRIF  3-5-1         prob:  0.69%  mkt:  0.33%  fair: $   72.64  EV: 1.62  +EV
+    $1 EXACTA  3-5           prob:  3.04%  mkt:  1.65%  fair: $   32.91  EV: 1.43  +EV
+    WIN        5             prob:  9.08%  mkt:  6.69%  fair: $   22.04  EV: 1.14  +EV
+    $.10 SUPER 3-5-8-1       prob:  0.35%  mkt:  0.15%  fair: $   28.97  EV: 1.77  +EV
 
 ------------------------------------------------------------------------------
 RACE 6  (8 starters)   top 5 +EV opportunities
@@ -68,14 +73,14 @@ RACE 6  (8 starters)   top 5 +EV opportunities
     $.50 TRIF  2-4-1         prob:  0.22%  mkt:  0.14%  fair: $  222.45  EV: 1.25  +EV
 
 ------------------------------------------------------------------------------
-RACE 7  (8 starters)   top 5 +EV opportunities
+RACE 7  (6 starters)   top 5 +EV opportunities
 ------------------------------------------------------------------------------
-  Model favorite: PP 2 AtaPremium  model 53.9%  vs  market 48.2%
-    $.10 SUPER 2-5-6-8       prob:  0.63%  mkt:  0.32%  fair: $   15.94  EV: 1.52  +EV
-    $.50 TRIF  2-5-6         prob:  1.81%  mkt:  1.07%  fair: $   27.60  EV: 1.33  +EV
-    $1 EXACTA  2-5           prob:  7.17%  mkt:  4.96%  fair: $   13.94  EV: 1.13  +EV
-    $.10 SUPER 2-5-8-6       prob:  0.63%  mkt:  0.33%  fair: $   15.81  EV: 1.49  +EV
-    $.10 SUPER 2-6-5-8       prob:  0.78%  mkt:  0.41%  fair: $   12.86  EV: 1.49  +EV
+  Model favorite: PP 2 AtaPremium  model 55.4%  vs  market 51.4%
+    $.10 SUPER 2-5-6-8       prob:  0.97%  mkt:  0.65%  fair: $   10.26  EV: 1.17  +EV
+    $.50 TRIF  2-5-6         prob:  2.33%  mkt:  1.63%  fair: $   21.45  EV: 1.11  +EV
+    $.10 SUPER 2-5-8-6       prob:  0.99%  mkt:  0.67%  fair: $   10.15  EV: 1.14  +EV
+    $.10 SUPER 2-6-5-8       prob:  1.23%  mkt:  0.84%  fair: $    8.15  EV: 1.14  +EV
+    $.10 SUPER 5-2-6-8       prob:  0.37%  mkt:  0.26%  fair: $   27.07  EV: 1.13  +EV
 
 ------------------------------------------------------------------------------
 RACE 8  (8 starters)   top 5 +EV opportunities
@@ -93,33 +98,33 @@ MULTI-RACE (Pick N)
 
   LATE PICK 6  (races 3–8)
   STRAT       COMBOS       COST    HIT %      FAIR PAY    E[RETURN]      EV
-  TOP-1            1      $2.00   0.120%     $2,738.89        $3.27    1.64
-  TOP-2           64    $128.00   2.510%     $8,131.07      $204.13    1.59
-  TOP-3          729  $1,458.00   9.667%    $18,272.00    $1,766.30    1.21
+  TOP-1            1      $2.00   0.126%     $2,408.93        $3.05    1.52
+  TOP-2           64    $128.00   2.656%     $7,151.50      $189.98    1.48
+  TOP-3          729  $1,458.00  10.229%    $16,070.72    $1,643.83    1.13
 
   LATE PICK 5  (races 4–8)
   STRAT       COMBOS       COST    HIT %      FAIR PAY    E[RETURN]      EV
-  TOP-1            1      $2.00   0.422%       $541.76        $2.28    1.14
-  TOP-2           32     $64.00   4.622%     $1,952.99       $90.27    1.41
-  TOP-3          243    $486.00  14.362%     $3,996.70      $574.02    1.18
+  TOP-1            1      $2.00   0.446%       $476.49        $2.13    1.06
+  TOP-2           32     $64.00   4.891%     $1,717.71       $84.01    1.31
+  TOP-3          243    $486.00  15.197%     $3,515.21      $534.22    1.10
 
   LATE PICK 4  (races 5–8)
   STRAT       COMBOS       COST    HIT %      FAIR PAY    E[RETURN]      EV
-  TOP-1            1      $2.00   0.965%       $153.60        $1.48    0.74
-  TOP-2           16     $32.00   7.422%       $449.11       $33.33    1.04
-  TOP-3           81    $162.00  18.766%       $877.12      $164.60    1.02
+  TOP-1            1      $2.00   1.021%       $135.09        $1.38    0.69
+  TOP-2           16     $32.00   7.854%       $395.01       $31.02    0.97
+  TOP-3           81    $162.00  19.857%       $771.45      $153.19    0.95
 
   LATE PICK 3  (races 6–8)
   STRAT       COMBOS       COST    HIT %      FAIR PAY    E[RETURN]      EV
-  TOP-1            1      $2.00   3.535%        $41.76        $1.48    0.74
-  TOP-2            8     $16.00  14.805%        $97.68       $14.46    0.90
-  TOP-3           27     $54.00  28.840%       $166.92       $48.14    0.89
+  TOP-1            1      $2.00   3.635%        $39.18        $1.42    0.71
+  TOP-2            8     $16.00  15.226%        $91.66       $13.96    0.87
+  TOP-3           27     $54.00  29.661%       $156.63       $46.46    0.86
 
 ==============================================================================
 SUMMARY
 ==============================================================================
 Total +EV single-race bets: 40
-Estimated bankroll required for full +EV ticket: $39.50
-Total expected return: $52.92
-Implied edge: +34.0%
+Estimated bankroll required for full +EV ticket: $36.70
+Total expected return: $49.25
+Implied edge: +34.2%
 ==============================================================================

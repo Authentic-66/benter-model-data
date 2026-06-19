@@ -14,7 +14,7 @@ diverges further from live ML than it does for PP-trained tracks.
 
 Usage:
     py scripts/find_value_exotics.py <TRACK> <YYYY-MM-DD> [--min-ev 1.10]
-       [--min-prob 0.001] [--mandatory]
+       [--min-prob 0.001] [--mandatory] [--scratches "R4:3,R7:7"]
 """
 
 from __future__ import annotations
@@ -66,6 +66,63 @@ BET_SIZE = {
     "EXACTA": 1.0, "TRIFECTA": 0.50, "SUPERFECTA": 0.10,
     "PICK_N": 2.0,
 }
+
+
+# ── scratches ─────────────────────────────────────────────────────────────────
+
+def parse_scratches(s: str) -> dict[int, set[int]]:
+    """Parse 'R4:3,R7:7' → {4: {3}, 7: {7}}. Also accepts 'R4:3+5' for
+    multiple PPs in one race."""
+    result: dict[int, set[int]] = {}
+    if not s:
+        return result
+    for tok in s.split(","):
+        tok = tok.strip()
+        if not tok:
+            continue
+        if ":" not in tok:
+            raise ValueError(
+                f"Bad scratch token '{tok}' — expected R<race>:<pp>"
+            )
+        race_part, pp_part = tok.split(":", 1)
+        race_part = race_part.strip().lstrip("Rr")
+        try:
+            race = int(race_part)
+            for pp_str in pp_part.replace("+", " ").split():
+                result.setdefault(race, set()).add(int(pp_str))
+        except ValueError:
+            raise ValueError(
+                f"Bad scratch token '{tok}' — race and pp must be integers"
+            )
+    return result
+
+
+def apply_scratches(df: pd.DataFrame,
+                    scratches: dict[int, set[int]]) -> tuple[pd.DataFrame, list[str]]:
+    """Drop scratched horses; renormalization happens downstream because
+    evaluate_race re-normalizes model_w and market_w on the surviving field.
+    Returns (filtered_df, info_lines for the report header)."""
+    info: list[str] = []
+    if not scratches:
+        return df, info
+    df_pp = pd.to_numeric(df["pp"], errors="coerce")
+    drop_mask = pd.Series(False, index=df.index)
+    for race, pps in sorted(scratches.items()):
+        race_rows = df[df["race_id"] == race]
+        if race_rows.empty:
+            info.append(f"  ! Race {race}: not on card — scratch ignored")
+            continue
+        for pp in sorted(pps):
+            hit = race_rows[df_pp.loc[race_rows.index] == pp]
+            if hit.empty:
+                info.append(
+                    f"  ! Race {race} PP {pp}: not in field — scratch ignored"
+                )
+                continue
+            name = str(hit["horse_name"].iloc[0])
+            info.append(f"  SCR  Race {race}  PP {pp}  {name}")
+            drop_mask |= (df["race_id"] == race) & (df_pp == pp)
+    return df[~drop_mask].reset_index(drop=True), info
 
 
 # ── data ──────────────────────────────────────────────────────────────────────
@@ -317,7 +374,8 @@ def _fmt_bet_row(b: dict) -> str:
 
 def render(track: str, race_date, pp_file: Path, bundle, races_df,
            min_ev: float, min_prob: float, mandatory: bool,
-           top_per_race: int = 5) -> str:
+           top_per_race: int = 5,
+           scratch_info: list[str] | None = None) -> str:
     with open(HARVILLE_PATH, "rb") as f:
         hv = pickle.load(f)
     gamma, delta = hv["gamma"], hv["delta"]
@@ -334,6 +392,10 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
                f"top {top_per_race} per race")
     if mandatory:
         out.append("MODE:    --mandatory  (exotic & pick-N takeouts set to 0%)")
+    if scratch_info:
+        out.append("")
+        out.append("Scratches applied (field reduced before Harville):")
+        out.extend(scratch_info)
 
     if track in RESULTS_ONLY_TRAINING:
         out.append("")
@@ -432,7 +494,18 @@ def main():
                          "as 0% (carryover redistributes the pool).")
     ap.add_argument("--top", type=int, default=5,
                     help="Top N +EV opportunities per race (default 5)")
+    ap.add_argument("--scratches", default="",
+                    help="Comma-separated scratches as R<race>:<pp> pairs, "
+                         "e.g. 'R4:7,R7:3'. Use '+' for multiple in one race: "
+                         "'R4:3+5'. Removes horses before EV calc; remaining "
+                         "win/exotic/Pick N probs renormalize over the "
+                         "reduced field.")
     args = ap.parse_args()
+
+    try:
+        scratches = parse_scratches(args.scratches)
+    except ValueError as e:
+        sys.exit(str(e))
 
     track = args.track.upper()
     try:
@@ -454,8 +527,16 @@ def main():
     if df.empty:
         sys.exit("No starters parsed from PP — aborting.")
 
+    df, scratch_info = apply_scratches(df, scratches)
+    if df.empty:
+        sys.exit("All horses scratched — nothing left to evaluate.")
+    if scratch_info:
+        for line in scratch_info:
+            print(line.strip())
+
     report = render(track, race_date, pp_file, bundle, df,
-                    args.min_ev, args.min_prob, args.mandatory, args.top)
+                    args.min_ev, args.min_prob, args.mandatory, args.top,
+                    scratch_info=scratch_info)
 
     OUTPUT_DIR.mkdir(exist_ok=True)
     out_path = OUTPUT_DIR / f"EXOTICS_{track}_{race_date.strftime('%Y%m%d')}.txt"
