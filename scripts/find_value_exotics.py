@@ -15,6 +15,8 @@ diverges further from live ML than it does for PP-trained tracks.
 Usage:
     py scripts/find_value_exotics.py <TRACK> <YYYY-MM-DD> [--min-ev 1.10]
        [--min-prob 0.001] [--mandatory] [--scratches "R4:3,R7:7"]
+       [--live-odds "R1:1=2.5,3=4.0;R2:5=3.0"]
+       [--live-odds-file live_odds_GP.txt] [--use-live-odds]
 """
 
 from __future__ import annotations
@@ -123,6 +125,143 @@ def apply_scratches(df: pd.DataFrame,
             info.append(f"  SCR  Race {race}  PP {pp}  {name}")
             drop_mask |= (df["race_id"] == race) & (df_pp == pp)
     return df[~drop_mask].reset_index(drop=True), info
+
+
+# ── live odds drift ───────────────────────────────────────────────────────────
+
+# Drift = live_implied_prob / ml_implied_prob. Both are raw 1/decimal — the
+# overround on tote vs ML is similar enough that the ratio is mostly real
+# movement, not bookkeeping.
+SHARP_THRESHOLD = 1.30
+DRIFT_THRESHOLD = 0.70
+
+
+def parse_live_odds_inline(s: str) -> dict[int, dict[int, float]]:
+    """Parse 'R1:1=2.5,3=4.0;R2:5=3.0' → {1: {1: 2.5, 3: 4.0}, 2: {5: 3.0}}."""
+    result: dict[int, dict[int, float]] = {}
+    if not s:
+        return result
+    for race_block in s.split(";"):
+        race_block = race_block.strip()
+        if not race_block:
+            continue
+        if ":" not in race_block:
+            raise ValueError(
+                f"Bad live-odds block '{race_block}' — "
+                f"expected R<race>:<pp>=<odds>,..."
+            )
+        race_part, entries = race_block.split(":", 1)
+        try:
+            race = int(race_part.strip().lstrip("Rr"))
+        except ValueError:
+            raise ValueError(f"Bad race in '{race_block}' — must be integer")
+        for entry in entries.split(","):
+            entry = entry.strip()
+            if not entry:
+                continue
+            if "=" not in entry:
+                raise ValueError(
+                    f"Bad live-odds entry '{entry}' in R{race} — "
+                    f"expected <pp>=<odds>"
+                )
+            pp_str, odds_str = entry.split("=", 1)
+            try:
+                pp = int(pp_str.strip().lstrip("Pp"))
+                odds = float(odds_str.strip())
+            except ValueError:
+                raise ValueError(
+                    f"Bad live-odds entry '{entry}' in R{race} — "
+                    f"pp must be int, odds decimal"
+                )
+            if odds <= 1.0:
+                raise ValueError(
+                    f"Bad odds {odds} for R{race} PP{pp} — "
+                    f"must be decimal >1.0"
+                )
+            result.setdefault(race, {})[pp] = odds
+    return result
+
+
+def parse_live_odds_file(path: Path) -> dict[int, dict[int, float]]:
+    """Parse a file of 'R1 PP1 2.5' or 'R1 1 2.5' lines. '#' starts a comment."""
+    if not path.exists():
+        raise ValueError(f"Live-odds file not found: {path}")
+    result: dict[int, dict[int, float]] = {}
+    for lineno, raw in enumerate(
+        path.read_text(encoding="utf-8").splitlines(), 1
+    ):
+        line = raw.split("#", 1)[0].strip()
+        if not line:
+            continue
+        parts = line.split()
+        if len(parts) != 3:
+            raise ValueError(
+                f"{path.name}:{lineno}: expected 'R<race> [PP]<pp> <odds>', "
+                f"got '{raw}'"
+            )
+        try:
+            race = int(parts[0].lstrip("Rr"))
+            pp = int(parts[1].lstrip("Pp"))
+            odds = float(parts[2])
+        except ValueError:
+            raise ValueError(
+                f"{path.name}:{lineno}: race/pp must be int, odds decimal — "
+                f"got '{raw}'"
+            )
+        if odds <= 1.0:
+            raise ValueError(
+                f"{path.name}:{lineno}: odds {odds} must be decimal >1.0"
+            )
+        result.setdefault(race, {})[pp] = odds
+    return result
+
+
+def merge_live_odds(*sources: dict[int, dict[int, float]]) -> dict[int, dict[int, float]]:
+    """Merge multiple {race: {pp: odds}} dicts; later sources override earlier."""
+    merged: dict[int, dict[int, float]] = {}
+    for src in sources:
+        for race, pps in src.items():
+            merged.setdefault(race, {}).update(pps)
+    return merged
+
+
+def classify_drift(ml_decimal: float, live_decimal: float) -> tuple[str, str, float]:
+    """Return (icon, label, ratio). ratio = live_implied / ml_implied."""
+    ml_p = 1.0 / ml_decimal
+    live_p = 1.0 / live_decimal
+    ratio = live_p / ml_p
+    if ratio >= SHARP_THRESHOLD:
+        return "📉", "SHARP MONEY", ratio
+    if ratio <= DRIFT_THRESHOLD:
+        return "📈", "DRIFTING", ratio
+    return "➡️", "STABLE", ratio
+
+
+# ── scratch / live-odds collisions ────────────────────────────────────────────
+
+def warn_missing_live_odds(df: pd.DataFrame,
+                           live_odds: dict[int, dict[int, float]]) -> list[str]:
+    """Return warning lines for live-odds entries that reference races or
+    PPs not present in the (post-scratch) field."""
+    if not live_odds:
+        return []
+    warnings: list[str] = []
+    df_pp = pd.to_numeric(df["pp"], errors="coerce")
+    races_in_df = set(df["race_id"].unique().tolist())
+    for race, pps in sorted(live_odds.items()):
+        if race not in races_in_df:
+            warnings.append(
+                f"  ! Live odds for R{race}: race not on card — ignored"
+            )
+            continue
+        race_pps = set(df_pp[df["race_id"] == race].dropna().astype(int).tolist())
+        for pp in sorted(pps):
+            if pp not in race_pps:
+                warnings.append(
+                    f"  ! Live odds for R{race} PP{pp}: not in field "
+                    f"(scratched?) — ignored"
+                )
+    return warnings
 
 
 # ── data ──────────────────────────────────────────────────────────────────────
@@ -375,7 +514,10 @@ def _fmt_bet_row(b: dict) -> str:
 def render(track: str, race_date, pp_file: Path, bundle, races_df,
            min_ev: float, min_prob: float, mandatory: bool,
            top_per_race: int = 5,
-           scratch_info: list[str] | None = None) -> str:
+           scratch_info: list[str] | None = None,
+           live_odds: dict[int, dict[int, float]] | None = None,
+           use_live_odds: bool = False,
+           live_odds_warnings: list[str] | None = None) -> str:
     with open(HARVILLE_PATH, "rb") as f:
         hv = pickle.load(f)
     gamma, delta = hv["gamma"], hv["delta"]
@@ -396,6 +538,16 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
         out.append("")
         out.append("Scratches applied (field reduced before Harville):")
         out.extend(scratch_info)
+    if live_odds:
+        n_entries = sum(len(v) for v in live_odds.values())
+        mode = ("EVs recalculated with live odds where provided"
+                if use_live_odds
+                else "Drift only — EVs still use ML (pass --use-live-odds to swap)")
+        out.append("")
+        out.append(f"Live odds: {n_entries} entries across "
+                   f"{len(live_odds)} race(s) — {mode}")
+        if live_odds_warnings:
+            out.extend(live_odds_warnings)
 
     if track in RESULTS_ONLY_TRAINING:
         out.append("")
@@ -414,6 +566,19 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
 
     for rn, race_df in races_df.groupby("race_id"):
         race_df = race_df.reset_index(drop=True)
+        race_live = (live_odds or {}).get(int(rn), {})
+
+        # Snapshot ML before any swap so the drift block always compares
+        # against the original morning line.
+        ml_snapshot = race_df.set_index(
+            pd.to_numeric(race_df["pp"], errors="coerce").astype("Int64")
+        )["ml_odds"].to_dict()
+
+        if use_live_odds and race_live:
+            df_pp = pd.to_numeric(race_df["pp"], errors="coerce")
+            for pp, live_dec in race_live.items():
+                race_df.loc[df_pp == pp, "ml_odds"] = live_dec
+
         pos, model_w, market_w, horses, pps = evaluate_race(
             race_df, gamma, delta, min_ev, min_prob, mandatory
         )
@@ -429,9 +594,42 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
         # Always show the model's top win contender for orientation
         order = np.argsort(-model_w)
         top1 = order[0]
+        market_label = "live" if (use_live_odds and race_live) else "ML"
         out.append(f"  Model favorite: PP {pps[top1]} {horses[top1]}  "
                    f"model {model_w[top1] * 100:.1f}%  vs  "
-                   f"market {market_w[top1] * 100:.1f}%")
+                   f"market({market_label}) {market_w[top1] * 100:.1f}%")
+
+        if race_live:
+            out.append("  Live drift:")
+            top1_drift = None
+            for i in range(len(race_df)):
+                pp_i = pps[i]
+                if not isinstance(pp_i, int) or pp_i not in race_live:
+                    continue
+                ml_dec = ml_snapshot.get(pp_i)
+                if ml_dec is None or pd.isna(ml_dec):
+                    continue
+                live_dec = race_live[pp_i]
+                icon, label, ratio = classify_drift(float(ml_dec), live_dec)
+                ml_pct = (1.0 / float(ml_dec)) * 100
+                live_pct = (1.0 / live_dec) * 100
+                out.append(
+                    f"    PP {pp_i:<3d}{horses[i]:<20}"
+                    f"ML {float(ml_dec):>5.1f} → live {live_dec:>5.1f}  "
+                    f"({ml_pct:>4.1f}% → {live_pct:>4.1f}%)  "
+                    f"×{ratio:.2f}  {icon} {label}"
+                )
+                if i == top1:
+                    top1_drift = (label, ratio)
+            if top1_drift is not None:
+                label, ratio = top1_drift
+                if label == "SHARP MONEY":
+                    out.append(f"  ⚠️  Top pick PP {pps[top1]} hammered by "
+                               f"public (×{ratio:.2f}) — edge likely captured")
+                elif label == "DRIFTING":
+                    out.append(f"  🔥 Top pick PP {pps[top1]} drifting "
+                               f"(×{ratio:.2f}) — public fading, "
+                               f"value increasing if model right")
 
         if not pos:
             out.append("  (no combinations clear EV threshold)")
@@ -500,12 +698,34 @@ def main():
                          "'R4:3+5'. Removes horses before EV calc; remaining "
                          "win/exotic/Pick N probs renormalize over the "
                          "reduced field.")
+    ap.add_argument("--live-odds", default="",
+                    help="Inline live decimal odds: 'R1:1=2.5,3=4.0;R2:5=3.0'. "
+                         "Drift is flagged vs ML in the PP file.")
+    ap.add_argument("--live-odds-file", default="",
+                    help="Path to live-odds file. One entry per line: "
+                         "'R1 PP1 2.5' (or 'R1 1 2.5'). '#' starts a comment. "
+                         "Merged with --live-odds; inline overrides file.")
+    ap.add_argument("--use-live-odds", action="store_true",
+                    help="Substitute live odds for ML in the EV calc for any "
+                         "horse with a live entry. Horses without live data "
+                         "keep their ML odds.")
     args = ap.parse_args()
 
     try:
         scratches = parse_scratches(args.scratches)
     except ValueError as e:
         sys.exit(str(e))
+
+    try:
+        live_from_file = (parse_live_odds_file(Path(args.live_odds_file))
+                          if args.live_odds_file else {})
+        live_from_inline = parse_live_odds_inline(args.live_odds)
+    except ValueError as e:
+        sys.exit(str(e))
+    live_odds = merge_live_odds(live_from_file, live_from_inline)
+
+    if args.use_live_odds and not live_odds:
+        sys.exit("--use-live-odds requires --live-odds or --live-odds-file.")
 
     track = args.track.upper()
     try:
@@ -534,9 +754,16 @@ def main():
         for line in scratch_info:
             print(line.strip())
 
+    live_odds_warnings = warn_missing_live_odds(df, live_odds)
+    for line in live_odds_warnings:
+        print(line.strip())
+
     report = render(track, race_date, pp_file, bundle, df,
                     args.min_ev, args.min_prob, args.mandatory, args.top,
-                    scratch_info=scratch_info)
+                    scratch_info=scratch_info,
+                    live_odds=live_odds,
+                    use_live_odds=args.use_live_odds,
+                    live_odds_warnings=live_odds_warnings)
 
     OUTPUT_DIR.mkdir(exist_ok=True)
     out_path = OUTPUT_DIR / f"EXOTICS_{track}_{race_date.strftime('%Y%m%d')}.txt"
