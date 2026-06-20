@@ -23,6 +23,12 @@ live entry and falls back to ML for the rest — catches late-money favorites
 that looked OK on the morning line. Trapped bets are attributed in the
 FILTERED block (live_odds vs ml_odds) so the source is visible at a glance.
 
+Three layers of live-odds defense:
+  1. --min-odds          drop our +EV picks on overbet favorites
+  2. existing drift block flag the model's top pick if public hammers it
+  3. --skip-suspicious-races  (optional) suppress ALL +EV picks in a race
+     when a NON-favorite drifts ≥ ×3 (insiders likely know something).
+
 Usage:
     py scripts/find_value_exotics.py <TRACK> <YYYY-MM-DD> [--min-ev 1.10]
        [--min-prob 0.001] [--min-odds 3.0] [--mandatory]
@@ -146,6 +152,12 @@ def apply_scratches(df: pd.DataFrame,
 # movement, not bookkeeping.
 SHARP_THRESHOLD = 1.30
 DRIFT_THRESHOLD = 0.70
+
+# Race-level "insiders know something" threshold: a non-favorite (not the
+# model's top pick) bet down so hard that its implied probability tripled.
+# When this fires, the model's existing picks in the race have their EVs
+# inflated by displaced market share — recommend skipping the whole race.
+RACE_SKIP_DRIFT_THRESHOLD = 3.0
 
 
 def parse_live_odds_inline(s: str) -> dict[int, dict[int, float]]:
@@ -612,7 +624,8 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
            scratch_info: list[str] | None = None,
            live_odds: dict[int, dict[int, float]] | None = None,
            use_live_odds: bool = False,
-           live_odds_warnings: list[str] | None = None) -> str:
+           live_odds_warnings: list[str] | None = None,
+           skip_suspicious_races: bool = False) -> str:
     with open(HARVILLE_PATH, "rb") as f:
         hv = pickle.load(f)
     gamma, delta = hv["gamma"], hv["delta"]
@@ -635,6 +648,10 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
                    f"at {odds_src} < {min_odds:.2f}")
         out.append(f"   (5-day OOS evidence: sub-3.0 +EV picks returned "
                    f"−59.9% ROI vs +3.3% for the rest)")
+    if skip_suspicious_races:
+        out.append(f"🚨 SKIP-SUSPICIOUS-RACES ACTIVE: races with a non-favorite "
+                   f"drifting ×{RACE_SKIP_DRIFT_THRESHOLD:.1f}+ will have all "
+                   f"+EV picks suppressed.")
     if mandatory:
         out.append("MODE:    --mandatory  (exotic & pick-N takeouts set to 0%)")
     if scratch_info:
@@ -667,6 +684,8 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
     per_race_market: dict[int, np.ndarray] = {}
     all_pos_bets: list[dict] = []
     all_trapped: list[dict] = []
+    suspicious_races: list[int] = []   # warning fired
+    suppressed_races: list[int] = []   # warning fired AND --skip-suspicious-races on
 
     for rn, race_df in races_df.groupby("race_id"):
         race_df = race_df.reset_index(drop=True)
@@ -706,6 +725,7 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
                    f"model {model_w[top1] * 100:.1f}%  vs  "
                    f"market({market_label}) {market_w[top1] * 100:.1f}%")
 
+        suspicious_nonfav: list[tuple[int, str, float]] = []
         if race_live:
             out.append("  Live drift:")
             top1_drift = None
@@ -728,6 +748,11 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
                 )
                 if i == top1:
                     top1_drift = (label, ratio)
+                elif use_live_odds and ratio >= RACE_SKIP_DRIFT_THRESHOLD:
+                    # Non-favorite hammered hard — insider activity signal.
+                    # Gated on use_live_odds because we only act on this when
+                    # the live odds are also driving the EV calc.
+                    suspicious_nonfav.append((pp_i, horses[i], ratio))
             if top1_drift is not None:
                 label, ratio = top1_drift
                 if label == "SHARP MONEY":
@@ -738,8 +763,35 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
                                f"(×{ratio:.2f}) — public fading, "
                                f"value increasing if model right")
 
+        # Race-level skip warning: insiders hammered a non-favorite. The
+        # model's existing picks in this race look more +EV than they are
+        # because the displaced market share inflates the model/market ratio.
+        if suspicious_nonfav:
+            suspicious_races.append(int(rn))
+            out.append("")
+            for s_pp, s_name, s_ratio in suspicious_nonfav:
+                out.append(
+                    f"  🚨 RACE-LEVEL WARNING: Non-favorite PP {s_pp} "
+                    f"{s_name} hammered ×{s_ratio:.2f} — insiders likely "
+                    f"know something. Consider SKIPPING this race entirely."
+                )
+            out.append("     (other picks' EVs may be artificially inflated "
+                       "by displaced market share)")
+            if skip_suspicious_races:
+                out.append("     --skip-suspicious-races ACTIVE: all +EV "
+                           "picks in this race SUPPRESSED.")
+                # Suppress both the +EV picks and the FILTERED block so the
+                # race reads as "skip entirely" without tempting suggestions.
+                pos = []
+                trapped = []
+                suppressed_races.append(int(rn))
+
         if not pos:
-            out.append("  (no combinations clear EV threshold)")
+            # Don't print the "no combinations" placeholder when the race
+            # was just suppressed by --skip-suspicious-races — the warning
+            # block already explained why nothing is shown.
+            if int(rn) not in suppressed_races:
+                out.append("  (no combinations clear EV threshold)")
         else:
             for b in pos[:top_per_race]:
                 out.append(_fmt_bet_row(b))
@@ -825,6 +877,19 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
         out.append(f"Favorite-trap filter blocked {len(all_trapped)} bet(s) "
                    f"(~${trap_cost:,.2f} would-have-staked) across "
                    f"{len({b['race'] for b in all_trapped})} race(s).")
+    if suspicious_races:
+        flagged = sorted(suspicious_races)
+        if skip_suspicious_races and suppressed_races:
+            sup = sorted(suppressed_races)
+            out.append(f"Race-level sharp non-favorite drift flagged in "
+                       f"{len(flagged)} race(s): R{', R'.join(map(str, flagged))}. "
+                       f"--skip-suspicious-races SUPPRESSED picks in "
+                       f"{len(sup)} race(s): R{', R'.join(map(str, sup))}.")
+        else:
+            out.append(f"Race-level sharp non-favorite drift flagged in "
+                       f"{len(flagged)} race(s): R{', R'.join(map(str, flagged))}. "
+                       f"Picks still shown — add --skip-suspicious-races "
+                       f"to suppress.")
     out.append(bar)
 
     return "\n".join(out) + "\n"
@@ -868,6 +933,12 @@ def main():
                     help="Substitute live odds for ML in the EV calc for any "
                          "horse with a live entry. Horses without live data "
                          "keep their ML odds.")
+    ap.add_argument("--skip-suspicious-races", action="store_true",
+                    help="When --use-live-odds is on and a non-favorite shows "
+                         f"live/ml drift ≥ {RACE_SKIP_DRIFT_THRESHOLD:.1f}, "
+                         "suppress ALL +EV picks in that race (still display "
+                         "the warning). Insiders likely know something the "
+                         "model doesn't.")
     args = ap.parse_args()
 
     try:
@@ -923,7 +994,8 @@ def main():
                     scratch_info=scratch_info,
                     live_odds=live_odds,
                     use_live_odds=args.use_live_odds,
-                    live_odds_warnings=live_odds_warnings)
+                    live_odds_warnings=live_odds_warnings,
+                    skip_suspicious_races=args.skip_suspicious_races)
 
     OUTPUT_DIR.mkdir(exist_ok=True)
     out_path = OUTPUT_DIR / f"EXOTICS_{track}_{race_date.strftime('%Y%m%d')}.txt"

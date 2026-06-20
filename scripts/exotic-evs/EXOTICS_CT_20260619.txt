@@ -6,6 +6,7 @@ Model:   4692 races trained  (γ=0.816  δ=0.643  fitted on 4449 races)
 Filters: EV ≥ 1.10, prob ≥ 0.0010, top 5 per race
 ⚠️  FAVORITE-TRAP FILTER ACTIVE: skipping +EV picks at LIVE odds where provided, else ML < 3.00
    (5-day OOS evidence: sub-3.0 +EV picks returned −59.9% ROI vs +3.3% for the rest)
+🚨 SKIP-SUSPICIOUS-RACES ACTIVE: races with a non-favorite drifting ×3.0+ will have all +EV picks suppressed.
 
 Live odds: 1 entries across 1 race(s) — EVs recalculated with live odds where provided
 
@@ -28,23 +29,13 @@ RACE 1  (6 starters)   top 5 +EV opportunities
 ------------------------------------------------------------------------------
 RACE 2  (7 starters)   top 5 +EV opportunities
 ------------------------------------------------------------------------------
-  Model favorite: PP 2 HeyNighTeen  model 28.5%  vs  market(live) 29.7%
+  Model favorite: PP 2 HeyNighTeen  model 28.5%  vs  market(live) 15.5%
   Live drift:
-    PP 2  HeyNighTeen         ML   3.5 → live   2.4  (28.6% → 41.7%)  ×1.46  📉 SHARP MONEY
-  ⚠️  Top pick PP 2 hammered by public (×1.46) — edge likely captured
-    $.10 SUPER 5-4-2-1       prob:  0.45%  mkt:  0.19%  fair: $   22.13  EV: 1.86  +EV
-    $.50 TRIF  5-4-2         prob:  1.00%  mkt:  0.47%  fair: $   49.94  EV: 1.68  +EV
-    $1 EXACTA  5-4           prob:  2.89%  mkt:  1.46%  fair: $   34.59  EV: 1.55  +EV
-    WIN        5             prob: 22.79%  mkt: 15.83%  fair: $    8.77  EV: 1.21  +EV
-    PLACE      5             prob: 43.68%  mkt: 32.70%  fair: $    4.58  EV: 1.12  +EV
+    PP 4  RunawayGold         ML  11.0 → live   1.5  ( 9.1% → 66.7%)  ×7.33  📉 SHARP MONEY
 
-  FILTERED (favorite trap, live_odds < 3.00):
-    SKIPPED $.10 SUPER 2-5-4-1       EV: 1.48  (PP 2 live_odds 2.40 < 3.00)
-    SKIPPED $.50 TRIF  2-5-4         EV: 1.33  (PP 2 live_odds 2.40 < 3.00)
-    SKIPPED $.10 SUPER 2-5-1-4       EV: 1.43  (PP 2 live_odds 2.40 < 3.00)
-    SKIPPED $.10 SUPER 2-4-5-1       EV: 1.39  (PP 2 live_odds 2.40 < 3.00)
-    SKIPPED $.10 SUPER 2-5-4-3       EV: 1.38  (PP 2 live_odds 2.40 < 3.00)
-  ⚠️  FAVORITE TRAP — model predicted 28.5% WP on PP 2 but historical +EV picks at sub-3.0 odds returned −59.9% ROI (5-day OOS)
+  🚨 RACE-LEVEL WARNING: Non-favorite PP 4 RunawayGold hammered ×7.33 — insiders likely know something. Consider SKIPPING this race entirely.
+     (other picks' EVs may be artificially inflated by displaced market share)
+     --skip-suspicious-races ACTIVE: all +EV picks in this race SUPPRESSED.
 
 ------------------------------------------------------------------------------
 RACE 3  (6 starters)   top 5 +EV opportunities
@@ -183,9 +174,10 @@ MULTI-RACE (Pick N)
 ==============================================================================
 SUMMARY
 ==============================================================================
-Total +EV single-race bets: 40
-Estimated bankroll required for full +EV ticket: $27.40
-Total expected return: $35.06
-Implied edge: +28.0%
-Favorite-trap filter blocked 31 bet(s) (~$12.90 would-have-staked) across 7 race(s).
+Total +EV single-race bets: 35
+Estimated bankroll required for full +EV ticket: $21.80
+Total expected return: $27.82
+Implied edge: +27.6%
+Favorite-trap filter blocked 26 bet(s) (~$12.00 would-have-staked) across 6 race(s).
+Race-level sharp non-favorite drift flagged in 1 race(s): R2. --skip-suspicious-races SUPPRESSED picks in 1 race(s): R2.
 ==============================================================================
