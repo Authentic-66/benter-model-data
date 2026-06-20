@@ -18,6 +18,11 @@ position (first horse in the combo) is going off below the threshold. The
 −59.9% ROI vs +3.3% for the rest of the cohort; this rule is the single
 biggest edge improvement found to date. Set --min-odds 0 to disable.
 
+When --use-live-odds is on, the filter checks LIVE odds for any PP with a
+live entry and falls back to ML for the rest — catches late-money favorites
+that looked OK on the morning line. Trapped bets are attributed in the
+FILTERED block (live_odds vs ml_odds) so the source is visible at a glance.
+
 Usage:
     py scripts/find_value_exotics.py <TRACK> <YYYY-MM-DD> [--min-ev 1.10]
        [--min-prob 0.001] [--min-odds 3.0] [--mandatory]
@@ -372,7 +377,8 @@ def _ev(model_p: float, market_p: float, takeout: float) -> float:
 
 def evaluate_race(race_df: pd.DataFrame, gamma: float, delta: float,
                   min_ev: float, min_prob: float, mandatory: bool,
-                  min_odds: float = 0.0):
+                  min_odds: float = 0.0,
+                  live_pp_set: set[int] | None = None):
     """Returns (surviving_bets, model_win_probs, market_win_probs,
     horses, pps, trapped_bets). Bets are dicts sorted by EV descending.
 
@@ -380,7 +386,13 @@ def evaluate_race(race_df: pd.DataFrame, gamma: float, delta: float,
     position (first PP in the combo) has ml_odds below min_odds is moved
     from surviving to trapped. For WIN/PLACE/SHOW the single horse is
     that WIN position.
+
+    If render() has swapped live odds into race_df["ml_odds"] for some PPs,
+    pass those PPs in live_pp_set so trapped bets can be attributed
+    ("live_odds" vs "ml_odds") in the FILTERED block. This is purely
+    cosmetic — the underlying numeric comparison is the same either way.
     """
+    live_pp_set = live_pp_set or set()
     import harville
 
     g = race_df.reset_index(drop=True)
@@ -497,6 +509,7 @@ def evaluate_race(race_df: pd.DataFrame, gamma: float, delta: float,
                     "trap_pp": first_pp,
                     "trap_odds": trap_odds,
                     "trap_model_wp": trap_model_wp,
+                    "trap_source": "live" if first_pp in live_pp_set else "ml",
                 })
             else:
                 surviving.append(b)
@@ -579,13 +592,15 @@ def _fmt_trap_row(b: dict, min_odds: float) -> str:
         "SUPERFECTA": "$.10 SUPER",
     }
     label = label_map[b["bet_type"]]
+    odds_field = "live_odds" if b.get("trap_source") == "live" else "ml_odds"
     # WIN/PLACE/SHOW combo is the single PP — display as "WIN PP 1" form.
     if b["bet_type"] in ("WIN", "PLACE", "SHOW"):
         combo_str = f"PP {b['combo']}"
-        why = f"ml_odds {b['trap_odds']:.2f} < {min_odds:.2f}"
+        why = f"{odds_field} {b['trap_odds']:.2f} < {min_odds:.2f}"
     else:
         combo_str = b["combo"]
-        why = f"PP {b['trap_pp']} ml_odds {b['trap_odds']:.2f} < {min_odds:.2f}"
+        why = (f"PP {b['trap_pp']} {odds_field} {b['trap_odds']:.2f} "
+               f"< {min_odds:.2f}")
     return (f"    SKIPPED {label:<11}{combo_str:<14}"
             f"EV: {b['ev']:>4.2f}  ({why})")
 
@@ -613,8 +628,11 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
     out.append(f"Filters: EV ≥ {min_ev:.2f}, prob ≥ {min_prob:.4f}, "
                f"top {top_per_race} per race")
     if min_odds > 0:
+        odds_src = ("LIVE odds where provided, else ML"
+                    if use_live_odds and live_odds
+                    else "ML odds")
         out.append(f"⚠️  FAVORITE-TRAP FILTER ACTIVE: skipping +EV picks "
-                   f"at ML odds < {min_odds:.2f}")
+                   f"at {odds_src} < {min_odds:.2f}")
         out.append(f"   (5-day OOS evidence: sub-3.0 +EV picks returned "
                    f"−59.9% ROI vs +3.3% for the rest)")
     if mandatory:
@@ -660,14 +678,16 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
             pd.to_numeric(race_df["pp"], errors="coerce").astype("Int64")
         )["ml_odds"].to_dict()
 
+        live_pp_set: set[int] = set()
         if use_live_odds and race_live:
             df_pp = pd.to_numeric(race_df["pp"], errors="coerce")
             for pp, live_dec in race_live.items():
                 race_df.loc[df_pp == pp, "ml_odds"] = live_dec
+                live_pp_set.add(int(pp))
 
         pos, model_w, market_w, horses, pps, trapped = evaluate_race(
             race_df, gamma, delta, min_ev, min_prob, mandatory,
-            min_odds=min_odds,
+            min_odds=min_odds, live_pp_set=live_pp_set,
         )
         per_race_model[int(rn)] = model_w
         per_race_market[int(rn)] = market_w
@@ -727,7 +747,17 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
 
         if trapped:
             out.append("")
-            out.append(f"  FILTERED (favorite trap, ml_odds < {min_odds:.2f}):")
+            # Header reflects the dominant trap source so the user sees
+            # at a glance whether the rule fired on morning line or post-time.
+            has_live = any(t.get("trap_source") == "live" for t in trapped)
+            has_ml = any(t.get("trap_source") != "live" for t in trapped)
+            if has_live and has_ml:
+                src_str = "ml/live_odds"
+            elif has_live:
+                src_str = "live_odds"
+            else:
+                src_str = "ml_odds"
+            out.append(f"  FILTERED (favorite trap, {src_str} < {min_odds:.2f}):")
             # Group trapped bets so a SUPER + WIN on the same PP both render.
             # Same diversification rule as +EV display: one per bet type, then
             # any leftover sorted by EV desc.
@@ -811,8 +841,10 @@ def main():
                     help="Minimum model probability to display (default 0.001)")
     ap.add_argument("--min-odds", type=float, default=3.0,
                     help="Favorite-trap filter: drop +EV picks whose WIN "
-                         "position has ml_odds below this threshold "
-                         "(default 3.0 = 2/1). Set to 0 to disable. "
+                         "position is below this threshold "
+                         "(default 3.0 = 2/1). With --use-live-odds, checks "
+                         "live odds where provided and falls back to ML. "
+                         "Set to 0 to disable. "
                          "5-day OOS: sub-3.0 +EV picks returned −59.9% ROI.")
     ap.add_argument("--mandatory", action="store_true",
                     help="Mandatory-payout mode: treat exotic/pick-N takeouts "
