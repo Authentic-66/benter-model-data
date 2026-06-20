@@ -259,10 +259,24 @@ def train_picks_model():
 CL_FEATURES = ["log_ml_pp", "log_ml_results",
                "prime_power_c", "pp_missing",
                "days_off_c", "best_spd_c", "spd_missing",
+               "best_e1_c",
                "jt_winpct_c", "jt_missing", "beaten_c", "class_delta_c",
                "horse_starts_c", "starts_missing",
                "improving",
                "jt_zero", "sig_trainer", "sig_sire", "sig_horse", "sig_hotjt"]
+# Pace figures (E1, E2, LP) extracted by extract_pace_figures in
+# brisnet_parser_v2.py. Only best_e1_c is active in the fitted model:
+# within-race correlations on the PP-row subset (n=2760) show best_e2_c
+# is 0.72 colinear with best_e1_c and best_late_c is 0.66 colinear with
+# best_spd_c, so E2 and LATE add noise without signal at the per-horse
+# level. best_e1_c is the only pace column orthogonal to best_spd_c
+# (within-race ρ=0.23) and carries the independent "early-speed
+# dimension." All three pace columns are still stored in entries so the
+# race-level Phase 3 features (count_high_e1, speed_duel_flag, lone-
+# speed) can be built without re-parsing. No per-pace missing flags —
+# they were ~95% colinear with spd_missing on PP rows and the three
+# flags fought for the same "no PP data" signal that spd_missing
+# already captures.
 # horse_starts: count of PP race lines in the horse's Brisnet block
 # (Brisnet displays up to ~10; zero = FTS). Within-race centering means
 # the coefficient up-weights the experienced horse most in FTS-heavy fields
@@ -301,6 +315,9 @@ SELECT
     e.prime_power,
     e.days_off,
     e.best_spd,
+    e.best_e1,
+    e.best_e2,
+    e.best_late,
     e.jt_winpct,
     e.beaten_lengths,
     e.class_delta,
@@ -386,6 +403,12 @@ def build_cl_features(df, stds=None):
     # (both come from PP race lines, absent only for first-time starters)
     center("days_off", "days_off_c")
     center("best_spd", "best_spd_c", "spd_missing")
+    # No separate pace-missing flags: spd_missing already captures the
+    # "no PP data" indicator at near-perfect colinearity (best_spd absent
+    # ⇒ E1/E2/LP all absent on the same row).
+    center("best_e1",  "best_e1_c")
+    center("best_e2",  "best_e2_c")
+    center("best_late","best_late_c")
     center("jt_winpct", "jt_winpct_c", "jt_missing")
     # beaten lengths capped at 5: CV ablation showed the close-loss signal
     # lives under ~5 lengths (the public prices big losses correctly, and
@@ -425,7 +448,8 @@ def build_cl_features(df, stds=None):
         # same scale as the *_c features, so add them here too so the
         # printed coefficients are directly comparable.
         for c in ("prime_power_c", "days_off_c",
-                  "best_spd_c", "jt_winpct_c", "beaten_c",
+                  "best_spd_c", "best_e1_c", "best_e2_c", "best_late_c",
+                  "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
                   "pp_missing", "spd_missing", "jt_missing", "starts_missing"):
             v = df.loc[pp_mask, c] if pp_mask.any() else df[c]

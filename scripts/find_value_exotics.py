@@ -340,6 +340,9 @@ def score_card(pp_file: Path, track: str) -> pd.DataFrame:
                 "jt_zero": int(bool(h.get("jt_zero"))),
                 "days_off": h.get("days_off") or None,
                 "best_spd": h.get("best_spd"),
+                "best_e1": h.get("best_e1"),
+                "best_e2": h.get("best_e2"),
+                "best_late": h.get("best_late"),
                 "jt_winpct": h.get("jt_winpct"),
                 "beaten_lengths": h.get("beaten_len"),
                 "class_delta": h.get("class_delta"),
@@ -354,7 +357,8 @@ def score_card(pp_file: Path, track: str) -> pd.DataFrame:
     # None (PP rows), build_cl_features feeds an object Series into np.log
     # and crashes. cl_predict has the same latent bug.
     for col in ("ml_odds", "final_odds", "prime_power", "days_off",
-                "best_spd", "jt_winpct", "beaten_lengths",
+                "best_spd", "best_e1", "best_e2", "best_late",
+                "jt_winpct", "beaten_lengths",
                 "class_delta", "distance_delta"):
         df[col] = pd.to_numeric(df[col], errors="coerce")
 

@@ -320,6 +320,9 @@ def _pp_line_date(line):
         return None
 
 
+_PP_E1_TAIL_RE = re.compile(r'(\d{2,3})$')
+
+
 def extract_speed_figures(block_lines):
     """Extract Brisnet speed figures from condensed PP race lines.
 
@@ -343,7 +346,9 @@ def extract_speed_figures(block_lines):
         for t in toks[slash_i + 1:]:
             if _PP_VARIANT_RE.fullmatch(t):
                 continue
-            if not t.isdigit():
+            # t.isdigit() returns True for Unicode digit-like glyphs (e.g. ²)
+            # that int() then chokes on; guard with the str-only ascii check.
+            if not (t.isdigit() and t.isascii()):
                 break
             v = int(t)
             if 25 <= v <= 130:
@@ -359,6 +364,66 @@ def extract_speed_figures(block_lines):
         else:
             surf = 'D'
         races[d] = (fig, surf)
+    return [races[d] for d in sorted(races, reverse=True)]
+
+
+def extract_pace_figures(block_lines):
+    """Extract Brisnet pace figures (E1, E2, LP) from condensed PP race lines.
+
+    Same figure block as extract_speed_figures: "E1 E2/ LP ±var ±var SPD".
+    The CR column renders as a superscript prefix glued to the E1 token by
+    pdfplumber (e.g. '¨§­74' = CR 106, E1 74), so E1 is the regular-digit
+    tail of the token immediately before the "NN/" pace token. E2 is the
+    NN of "NN/". LP is the FIRST 25-130 int that follows the pace token
+    (before the ±variants), which is what the SPD extractor then walks past.
+
+    Returns [(e1, e2, lp), ...] most recent first, deduped by race date.
+    Each component is None when missing or out of the 25-130 range.
+    """
+    races = {}
+    for line in block_lines:
+        d = _pp_line_date(line)
+        if d is None or d in races:
+            continue
+        toks = line.split()
+        slash_i = next((i for i, t in enumerate(toks)
+                        if _PP_PACE_TOKEN_RE.fullmatch(t)), None)
+        if slash_i is None:
+            continue
+
+        # E2: digits of the NN/ token
+        e2_str = toks[slash_i].rstrip('/')
+        try:
+            v = int(e2_str)
+            e2 = v if 25 <= v <= 130 else None
+        except ValueError:
+            e2 = None
+
+        # E1: regular-digit tail of the token before NN/, after stripping
+        # the superscript CR prefix the font produces
+        e1 = None
+        if slash_i > 0:
+            m = _PP_E1_TAIL_RE.search(toks[slash_i - 1])
+            if m:
+                v = int(m.group(1))
+                if 25 <= v <= 130:
+                    e1 = v
+
+        # LP: first 25-130 int after the pace token, before any variants
+        # or non-digit. Matches the layout the SPD extractor walks past.
+        lp = None
+        for t in toks[slash_i + 1:]:
+            if _PP_VARIANT_RE.fullmatch(t):
+                continue
+            if not (t.isdigit() and t.isascii()):
+                break
+            v = int(t)
+            if 25 <= v <= 130:
+                lp = v
+                break
+            break
+
+        races[d] = (e1, e2, lp)
     return [races[d] for d in sorted(races, reverse=True)]
 
 
@@ -779,6 +844,12 @@ def parse_brisnet(text, track_code='GP', race_date=None):
             improving = (len(recent_spd) >= 3 and
                          recent_spd[0] > recent_spd[1] > recent_spd[2])
 
+            # ── Pace figures (E1, E2, LP) — same PP block, max across races ──
+            pace_figs = extract_pace_figures(block)
+            best_e1   = max((e for e, _, _ in pace_figs if e is not None), default=None)
+            best_e2   = max((e for _, e, _ in pace_figs if e is not None), default=None)
+            best_late = max((l for _, _, l in pace_figs if l is not None), default=None)
+
             # ── Hot J/T and 0% J/T from angles ────────────────────────────────
             _HOT_JT_RE = re.compile(r'hot.*?(?:trainer|jockey|j/?t|combo)', re.IGNORECASE)
             hot_jt = any(_HOT_JT_RE.search(a) for a in pos_angles)
@@ -839,6 +910,7 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'signals': signals, 'special_rule': special_rule,
                 'recent_spd': recent_spd, 'best_spd': best_spd,
                 'best_spd_turf': best_spd_turf, 'best_spd_aw': best_spd_aw,
+                'best_e1': best_e1, 'best_e2': best_e2, 'best_late': best_late,
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
                 'last_class': last_class, 'last_dist': last_dist,
@@ -1127,9 +1199,10 @@ def write_entries_db(races, track_code, race_date):
                     "(race_id,track,race_date,race_num,post_pos,horse_name,source,"
                     "ml_odds,prime_power,pp_rank,trainer,jockey,sire,"
                     "days_off,claim_price,best_spd,best_spd_turf,best_spd_aw,"
+                    "best_e1,best_e2,best_late,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
                     "class_delta,distance_delta,signal_types,horse_starts,is_pick)"
-                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -1143,6 +1216,9 @@ def write_entries_db(races, track_code, race_date):
                      h.get('best_spd'),
                      h.get('best_spd_turf'),
                      h.get('best_spd_aw'),
+                     h.get('best_e1'),
+                     h.get('best_e2'),
+                     h.get('best_late'),
                      ','.join(str(s) for s in h.get('recent_spd', [])) or None,
                      int(bool(h.get('improving'))),
                      int(bool(h.get('jt_zero'))),

@@ -112,6 +112,9 @@ CREATE TABLE IF NOT EXISTS entries (
     best_spd      INTEGER,
     best_spd_turf INTEGER,
     best_spd_aw   INTEGER,
+    best_e1       INTEGER,
+    best_e2       INTEGER,
+    best_late     INTEGER,
     recent_spd    TEXT,
     improving     INTEGER,
     jt_zero       INTEGER,
@@ -170,6 +173,12 @@ def ensure_prob_columns(conn):
     if 'source' not in existing_e:
         conn.execute("ALTER TABLE entries ADD COLUMN source TEXT DEFAULT 'PP'")
         print("  schema: added entries.source")
+    # Brisnet pace figures (E1/E2/LP) — early, middle, and closing fraction
+    # speeds extracted from each PP race line, aggregated to the horse's max.
+    for col in ('best_e1', 'best_e2', 'best_late'):
+        if col not in existing_e:
+            conn.execute(f"ALTER TABLE entries ADD COLUMN {col} INTEGER")
+            print(f"  schema: added entries.{col}")
     conn.commit()
 
 
