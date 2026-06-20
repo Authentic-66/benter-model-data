@@ -12,9 +12,16 @@ Caveat: model EVs on Santa Anita can be inflated because the CL model was
 trained on post-race tote (in lieu of ML) for SA — the model's win_prob
 diverges further from live ML than it does for PP-trained tracks.
 
+Favorite-trap filter (--min-odds, default 3.0): drops any +EV bet whose WIN
+position (first horse in the combo) is going off below the threshold. The
+5-day OOS diagnostic (6/14–6/19) showed +EV picks at sub-3.0 odds returned
+−59.9% ROI vs +3.3% for the rest of the cohort; this rule is the single
+biggest edge improvement found to date. Set --min-odds 0 to disable.
+
 Usage:
     py scripts/find_value_exotics.py <TRACK> <YYYY-MM-DD> [--min-ev 1.10]
-       [--min-prob 0.001] [--mandatory] [--scratches "R4:3,R7:7"]
+       [--min-prob 0.001] [--min-odds 3.0] [--mandatory]
+       [--scratches "R4:3,R7:7"]
        [--live-odds "R1:1=2.5,3=4.0;R2:5=3.0"]
        [--live-odds-file live_odds_GP.txt] [--use-live-odds]
 """
@@ -364,9 +371,16 @@ def _ev(model_p: float, market_p: float, takeout: float) -> float:
 
 
 def evaluate_race(race_df: pd.DataFrame, gamma: float, delta: float,
-                  min_ev: float, min_prob: float, mandatory: bool):
-    """Returns (positive_ev_bets, model_win_probs, market_win_probs).
-    bets are dicts sorted by EV descending."""
+                  min_ev: float, min_prob: float, mandatory: bool,
+                  min_odds: float = 0.0):
+    """Returns (surviving_bets, model_win_probs, market_win_probs,
+    horses, pps, trapped_bets). Bets are dicts sorted by EV descending.
+
+    Favorite-trap filter (min_odds > 0): any positive-EV bet whose WIN
+    position (first PP in the combo) has ml_odds below min_odds is moved
+    from surviving to trapped. For WIN/PLACE/SHOW the single horse is
+    that WIN position.
+    """
     import harville
 
     g = race_df.reset_index(drop=True)
@@ -375,6 +389,22 @@ def evaluate_race(race_df: pd.DataFrame, gamma: float, delta: float,
     model_w = g["win_prob"].to_numpy(float)
     model_w = model_w / model_w.sum()
     market_w = _market_win_probs(g["ml_odds"].to_numpy(float))
+
+    # PP → ml_odds map for favorite-trap filter. Uses race_df["ml_odds"]
+    # after any --use-live-odds swap, so the filter respects whatever the
+    # caller treats as the current best price.
+    pp_to_odds: dict[int, float] = {}
+    for pp_val, odds_val in zip(g["pp"], g["ml_odds"]):
+        try:
+            pp_int = int(pp_val)
+        except (ValueError, TypeError):
+            continue
+        try:
+            odds_float = float(odds_val)
+        except (ValueError, TypeError):
+            continue
+        if not np.isnan(odds_float):
+            pp_to_odds[pp_int] = odds_float
 
     model_ex = harville.race_exotics(model_w, gamma, delta)
     market_ex = harville.race_exotics(market_w, gamma, delta)
@@ -442,18 +472,49 @@ def evaluate_race(race_df: pd.DataFrame, gamma: float, delta: float,
 
     bets.sort(key=lambda b: -b["ev"])
     pos = [b for b in bets if b["ev"] >= min_ev]
+
+    # Favorite-trap filter: split off bets whose WIN position is sub-min_odds.
+    surviving: list[dict] = []
+    trapped: list[dict] = []
+    if min_odds > 0:
+        for b in pos:
+            first = b["combo"].split("-", 1)[0]
+            try:
+                first_pp = int(first)
+            except ValueError:
+                surviving.append(b)
+                continue
+            trap_odds = pp_to_odds.get(first_pp)
+            if trap_odds is not None and trap_odds < min_odds:
+                # Model's win prob for the trapped horse (renormalized field)
+                try:
+                    trap_idx = pps.index(first_pp)
+                    trap_model_wp = float(model_w[trap_idx])
+                except (ValueError, IndexError):
+                    trap_model_wp = None
+                trapped.append({
+                    **b,
+                    "trap_pp": first_pp,
+                    "trap_odds": trap_odds,
+                    "trap_model_wp": trap_model_wp,
+                })
+            else:
+                surviving.append(b)
+    else:
+        surviving = pos
+
     # Diversify: best of each bet type, then fill with next-best overall.
     # Without this, 5 near-identical superfecta permutations crowd out the
     # WIN/PLACE/EXACTA picks for the same race.
     by_type: dict[str, dict] = {}
     rest: list[dict] = []
-    for b in pos:
+    for b in surviving:
         if b["bet_type"] not in by_type:
             by_type[b["bet_type"]] = b
         else:
             rest.append(b)
     diversified = sorted(by_type.values(), key=lambda b: -b["ev"]) + rest
-    return diversified, model_w, market_w, horses, pps
+    return diversified, model_w, market_w, horses, pps, trapped
 
 
 # ── pick N ────────────────────────────────────────────────────────────────────
@@ -511,8 +572,27 @@ def _fmt_bet_row(b: dict) -> str:
             f"EV: {b['ev']:>4.2f}  {flag}")
 
 
+def _fmt_trap_row(b: dict, min_odds: float) -> str:
+    label_map = {
+        "WIN": "WIN", "PLACE": "PLACE", "SHOW": "SHOW",
+        "EXACTA": "$1 EXACTA", "TRIFECTA": "$.50 TRIF",
+        "SUPERFECTA": "$.10 SUPER",
+    }
+    label = label_map[b["bet_type"]]
+    # WIN/PLACE/SHOW combo is the single PP — display as "WIN PP 1" form.
+    if b["bet_type"] in ("WIN", "PLACE", "SHOW"):
+        combo_str = f"PP {b['combo']}"
+        why = f"ml_odds {b['trap_odds']:.2f} < {min_odds:.2f}"
+    else:
+        combo_str = b["combo"]
+        why = f"PP {b['trap_pp']} ml_odds {b['trap_odds']:.2f} < {min_odds:.2f}"
+    return (f"    SKIPPED {label:<11}{combo_str:<14}"
+            f"EV: {b['ev']:>4.2f}  ({why})")
+
+
 def render(track: str, race_date, pp_file: Path, bundle, races_df,
            min_ev: float, min_prob: float, mandatory: bool,
+           min_odds: float = 0.0,
            top_per_race: int = 5,
            scratch_info: list[str] | None = None,
            live_odds: dict[int, dict[int, float]] | None = None,
@@ -532,6 +612,11 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
                f"(γ={gamma:.3f}  δ={delta:.3f}  fitted on {hv['n_races']} races)")
     out.append(f"Filters: EV ≥ {min_ev:.2f}, prob ≥ {min_prob:.4f}, "
                f"top {top_per_race} per race")
+    if min_odds > 0:
+        out.append(f"⚠️  FAVORITE-TRAP FILTER ACTIVE: skipping +EV picks "
+                   f"at ML odds < {min_odds:.2f}")
+        out.append(f"   (5-day OOS evidence: sub-3.0 +EV picks returned "
+                   f"−59.9% ROI vs +3.3% for the rest)")
     if mandatory:
         out.append("MODE:    --mandatory  (exotic & pick-N takeouts set to 0%)")
     if scratch_info:
@@ -563,6 +648,7 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
     per_race_model: dict[int, np.ndarray] = {}
     per_race_market: dict[int, np.ndarray] = {}
     all_pos_bets: list[dict] = []
+    all_trapped: list[dict] = []
 
     for rn, race_df in races_df.groupby("race_id"):
         race_df = race_df.reset_index(drop=True)
@@ -579,8 +665,9 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
             for pp, live_dec in race_live.items():
                 race_df.loc[df_pp == pp, "ml_odds"] = live_dec
 
-        pos, model_w, market_w, horses, pps = evaluate_race(
-            race_df, gamma, delta, min_ev, min_prob, mandatory
+        pos, model_w, market_w, horses, pps, trapped = evaluate_race(
+            race_df, gamma, delta, min_ev, min_prob, mandatory,
+            min_odds=min_odds,
         )
         per_race_model[int(rn)] = model_w
         per_race_market[int(rn)] = market_w
@@ -633,10 +720,40 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
 
         if not pos:
             out.append("  (no combinations clear EV threshold)")
-            continue
-        for b in pos[:top_per_race]:
-            out.append(_fmt_bet_row(b))
-            all_pos_bets.append({**b, "race": int(rn)})
+        else:
+            for b in pos[:top_per_race]:
+                out.append(_fmt_bet_row(b))
+                all_pos_bets.append({**b, "race": int(rn)})
+
+        if trapped:
+            out.append("")
+            out.append(f"  FILTERED (favorite trap, ml_odds < {min_odds:.2f}):")
+            # Group trapped bets so a SUPER + WIN on the same PP both render.
+            # Same diversification rule as +EV display: one per bet type, then
+            # any leftover sorted by EV desc.
+            by_type: dict[str, dict] = {}
+            rest: list[dict] = []
+            for b in trapped:
+                if b["bet_type"] not in by_type:
+                    by_type[b["bet_type"]] = b
+                else:
+                    rest.append(b)
+            display_trapped = (sorted(by_type.values(), key=lambda b: -b["ev"])
+                               + rest)
+            for b in display_trapped[:top_per_race]:
+                out.append(_fmt_trap_row(b, min_odds))
+                all_trapped.append({**b, "race": int(rn)})
+            # One warning per race, using the most-trapped PP's model prob.
+            trap_by_pp: dict[int, list[dict]] = {}
+            for b in trapped:
+                trap_by_pp.setdefault(b["trap_pp"], []).append(b)
+            worst_pp = max(trap_by_pp, key=lambda pp: len(trap_by_pp[pp]))
+            sample = trap_by_pp[worst_pp][0]
+            wp = sample.get("trap_model_wp")
+            wp_str = f"{wp * 100:.1f}% WP" if wp is not None else "high WP"
+            out.append(f"  ⚠️  FAVORITE TRAP — model predicted {wp_str} on "
+                       f"PP {worst_pp} but historical +EV picks at sub-"
+                       f"{min_odds:.1f} odds returned −59.9% ROI (5-day OOS)")
 
     # Pick N
     out.append("")
@@ -673,6 +790,11 @@ def render(track: str, race_date, pp_file: Path, bundle, races_df,
         out.append(f"Implied edge: {edge * 100:+.1f}%")
     else:
         out.append("No +EV single-race bets on this card.")
+    if min_odds > 0 and all_trapped:
+        trap_cost = sum(b["cost"] for b in all_trapped)
+        out.append(f"Favorite-trap filter blocked {len(all_trapped)} bet(s) "
+                   f"(~${trap_cost:,.2f} would-have-staked) across "
+                   f"{len({b['race'] for b in all_trapped})} race(s).")
     out.append(bar)
 
     return "\n".join(out) + "\n"
@@ -687,6 +809,11 @@ def main():
                     help="Minimum EV ratio to display (default 1.10)")
     ap.add_argument("--min-prob", type=float, default=0.001,
                     help="Minimum model probability to display (default 0.001)")
+    ap.add_argument("--min-odds", type=float, default=3.0,
+                    help="Favorite-trap filter: drop +EV picks whose WIN "
+                         "position has ml_odds below this threshold "
+                         "(default 3.0 = 2/1). Set to 0 to disable. "
+                         "5-day OOS: sub-3.0 +EV picks returned −59.9% ROI.")
     ap.add_argument("--mandatory", action="store_true",
                     help="Mandatory-payout mode: treat exotic/pick-N takeouts "
                          "as 0% (carryover redistributes the pool).")
@@ -759,7 +886,8 @@ def main():
         print(line.strip())
 
     report = render(track, race_date, pp_file, bundle, df,
-                    args.min_ev, args.min_prob, args.mandatory, args.top,
+                    args.min_ev, args.min_prob, args.mandatory,
+                    min_odds=args.min_odds, top_per_race=args.top,
                     scratch_info=scratch_info,
                     live_odds=live_odds,
                     use_live_odds=args.use_live_odds,
