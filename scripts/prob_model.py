@@ -260,6 +260,15 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                "prime_power_c", "pp_missing",
                "days_off_c", "best_spd_c", "spd_missing",
                "best_e1_c",
+               # Phase 3 race-level pace scenarios (lp_x_duel, highE1_x_lone,
+               # lp_advantage_c) were tested 2026-06-20 and held out: 92.7%
+               # of training races have ZERO horses with E1 data (RESULTS-
+               # sourced rows dominate), so the speed-duel scenario fires
+               # in only 43 of 4693 races (0.9%) — the test is underpowered.
+               # The fitted lp_x_duel coefficient was +0.082 (a real signal
+               # in those 43 races) but global ΔR² stayed flat at +0.0094.
+               # build_cl_features still computes these columns so the
+               # experiment can be re-enabled once PP coverage grows.
                "jt_winpct_c", "jt_missing", "beaten_c", "class_delta_c",
                "horse_starts_c", "starts_missing",
                "improving",
@@ -409,6 +418,37 @@ def build_cl_features(df, stds=None):
     center("best_e1",  "best_e1_c")
     center("best_e2",  "best_e2_c")
     center("best_late","best_late_c")
+
+    # ── Race-level pace scenario features (Phase 3) ─────────────────────
+    # Per-horse pace columns describe ability; the scenario lives at the
+    # race level — multiple speed horses = duel = closers win; one lone
+    # speed horse = wire-to-wire candidate. Conditional logit is invariant
+    # to race-constant features, so the flags only matter via interactions
+    # with per-horse signals.
+    rid = df["race_id"]
+    e1_raw = pd.to_numeric(df["best_e1"], errors="coerce")
+    lp_raw = pd.to_numeric(df["best_late"], errors="coerce")
+    e1_med = e1_raw.groupby(rid).transform("median")
+    # Race std on E1; small fields (<3 finite values) get NaN — fall back to 0
+    # so the threshold is just the race median in those cases.
+    e1_std = e1_raw.groupby(rid).transform("std").fillna(0.0)
+    high_e1_thresh = e1_med + 0.5 * e1_std
+    df["is_high_e1"] = (e1_raw > high_e1_thresh).fillna(False).astype(float)
+    df["count_high_e1"] = df.groupby("race_id")["is_high_e1"].transform("sum")
+    df["speed_duel_flag"] = (df["count_high_e1"] >= 3).astype(float)
+    df["lone_speed_flag"] = (df["count_high_e1"] == 1).astype(float)
+
+    # lp_advantage_c: best_late centered on race MEDIAN (best_late_c above
+    # uses race mean). Median is more robust when one horse skews the field.
+    lp_med = lp_raw.groupby(rid).transform("median")
+    df["lp_advantage_c"] = (lp_raw - lp_med).fillna(0.0)
+
+    # Interactions — these are what the CL model actually sees:
+    #   lp_x_duel:      closers benefit when a speed duel is projected
+    #   highE1_x_lone:  the lone speed horse gets the wire-to-wire edge
+    df["lp_x_duel"] = df["lp_advantage_c"] * df["speed_duel_flag"]
+    df["highE1_x_lone"] = df["is_high_e1"] * df["lone_speed_flag"]
+
     center("jt_winpct", "jt_winpct_c", "jt_missing")
     # beaten lengths capped at 5: CV ablation showed the close-loss signal
     # lives under ~5 lengths (the public prices big losses correctly, and
@@ -449,6 +489,10 @@ def build_cl_features(df, stds=None):
         # printed coefficients are directly comparable.
         for c in ("prime_power_c", "days_off_c",
                   "best_spd_c", "best_e1_c", "best_e2_c", "best_late_c",
+                  # Phase 3 scenario columns: still bucketed so the same
+                  # stds are available when the experiment is rerun, even
+                  # though none of these are in CL_FEATURES today.
+                  "lp_advantage_c", "lp_x_duel", "highE1_x_lone",
                   "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
                   "pp_missing", "spd_missing", "jt_missing", "starts_missing"):
