@@ -1,0 +1,177 @@
+﻿Results GP [20260621]
+  File: GP062126USA.pdf 
+ 
+Processing GP062126USA.pdf [GP]...
+Found 9 race(s)
+
+========================================================================
+  RESULTS : GULFSTREAM PARK
+  Source  : GP062126USA.pdf
+========================================================================
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 1  â€”  CLM  |  5.5F  |  AW  |  $29,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  Chloe'sToy                        3.30  Vasquez,Miguel            Hurtak,Daniel           
+    2    3  AnyMoment                         3.40  Camacho,Samy              David,Carlos            
+    3    1  DrumRoll                          2.90  Herrera,Diego             David,Carlos            
+    4    6  Misprint                          2.10  Torres,Yolber             Baxter,Georgina         
+    5    4  TatorMade                        46.20  Figueroa,Heriberto        LopezOlmeda,Rachel      
+    6    2  RFirebird                        11.10  Reyes,Leonel              Budhoo,Steve            
+    7    7  CajunAnthem                      11.10  Pena,Pedro                Dominguez,Huber         
+
+  Time    : 1:03.79
+  Trainer : Hurtak, Daniel
+  Sire    : JimmyCreed
+
+  WIN    $8.60   PLC    $4.80   SHW    $3.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 2  â€”  MSW  |  5F  |  AW  |  $70,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    8  Detox                             0.50  Camacho,Samy              Casse,Mark              
+    2    3  PardonMyDolly                     7.30  Morelos,Jose              Cazares,Laura           
+    3    7  OsirisWhisper                    12.40  Reyes,Leonel              Lopez,Bernardo          
+    4    4  GrantMePeace                      4.70  Vasquez,Miguel            Palmer,Nicholas         
+    5    1  Swell                            34.50  Torres,Yolber             Lopez,Bernardo          
+    6    2  AmericanReign                     6.90  Maragh,Rajiv              David,Carlos            
+    7    5  Satira                           18.30  Perez,Edgar               Barboza,Jr.,Victor      
+
+  Time    : 58.89
+  Trainer : Casse, Mark
+  Sire    : Mandaloun
+
+  WIN    $3.00   PLC    $2.40   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 3  â€”  SOC  |  7F  |  Dirt  |  $42,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  Jestina                           1.00  Husbands,Micah            Joseph,Jr.,Saffie       
+    2    2  NastiZ                            1.00  Hughes,Rasheed            Joseph,Jr.,Saffie       
+    3    6  Dakota'sLilAuror                 12.20  Herrera,Diego             Miller,Herbert          
+    4    3  Questnbled'cisions               22.90  Perez,Edgar               Bennett,Mary            
+    5    4  StarshipJuliette                  8.00  Bravo,Joe                 Croft,Barry             
+
+  Time    : 1:23.70
+  Trainer : Joseph, Jr.,Saffie
+  Sire    : ValiantMinister
+
+  WIN    $4.00   PLC    $2.10   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 4  â€”  CLM  |  1M  |  Dirt  |  $26,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  Surfer'sJoy                       7.90  Herrera,Diego             Smullen,Heather         
+    2    5  SpiritoftheLaw                    3.00  Vasquez,Miguel            Palmer,Nicholas         
+    3    7  OperaHouseA.D.                   17.10  Pena,Pedro                Dominguez,Huber         
+    4    2  NoblePrince                       1.80  Camacho,Samy              Coy,Ronald              
+    5    1  Taparino                          3.60  Morelos,Jose              Antonucci,Jena          
+    6    3  LastShallBFirst                  44.40  Fuenmayor,Luis            Christie,Clifton        
+    7    8  Mully'sMoon                       5.00  Torres,Yolber             Castro,Jose             
+    8    6  SpongeTime                       22.30  Thomas,Anthony            Maragh,Aubrey           
+
+  Time    : 1:38.70
+  Trainer : Smullen, Heather
+  Sire    : Kitten'sJoy
+
+  WIN   $17.80   PLC    $8.20   SHW    $5.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 5  â€”  MCL  |  1 1/16M  |  AW  |  $28,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  DreamDiamond                     24.20  Pena,Pedro                Mongeon,Kathy           
+    2    8  StarlightLuna                     2.50  Maragh,Rajiv              CataneseIII,Joseph      
+    3    1  Loyalist                         21.80  Ocasio,Jonathan           Negrete,Javier          
+    4    2  FullExchange                     29.90  Fuenmayor,Luis            Parra,Hernan            
+    5    9  CodedElegance                     1.30  Herrera,Diego             O'Connell,Kathleen      
+    6    4  Harpy                            11.70  Figueroa,Heriberto        Smullen,Heather         
+    7    7  SillyRisk                         2.80  Torres,Yolber             D'Angelo,Jose           
+    8    3  RipNBeth                         20.70  Diaz,Sunday               Vazquez,Eduardo         
+
+  Time    : 1:45.73
+  Trainer : Mongeon, Kathy
+  Sire    : AlwaysDreaming
+
+  WIN   $50.40   PLC   $21.00   SHW   $10.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 6  â€”  SOC  |  5F  |  AW  |  $35,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  Nic'sBro                          4.60  Herrera,Diego             Puckett,Andrea          
+    2    6  ThreeZero                         3.40  Camacho,Jr.,Samuel        David,Carlos            
+    3    4  UrbanLegend                       6.40  Vasquez,Miguel            CataneseIII,Joseph      
+    4    1  Fulanito                          2.30  Torres,Yolber             D'Angelo,Jose           
+    5    3  IfNotforLuck                      1.60  Husbands,Micah            Chapman,Beau            
+
+  Time    : 56.48
+  Trainer : Puckett, Andrea
+  Sire    : Mshawish
+
+  WIN   $11.20   PLC    $5.00   SHW    $3.00
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 7  â€”  SOC  |  1M  |  AW  |  $35,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    8  LongbranchLou                     0.90  Vasquez,Miguel            Ramsey,Nolan            
+    2    1  GiveMeLiberty                     9.50  Thomas,Anthony            Dakin,Diley             
+    3    4  Carentan                          4.80  Camacho,Samy              Klesaris,Steve          
+    4    6  AlwaysTrue                       22.50  Hughes,Rasheed            Zanelli,Dante           
+    5    3  SalvattorePrince                  4.00  Bravo,Joe                 Duco,Luis               
+    6    7  GrandDavid                       15.60  Ocasio,Jonathan           Jehaludi,Amzadali       
+    7    9  Eton                             23.70  Herrera,Diego             Budhoo,Steve            
+    8   10  LasOlas                          27.00  Maragh,Rajiv              Campos,Bernardo         
+
+  Time    : 1:40.89
+  Trainer : Ramsey, Nolan
+  Sire    : BeeJersey
+
+  WIN    $3.80   PLC    $2.40   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 8  â€”  AOC  |  6F  |  Dirt  |  $70,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  PracticallyDark                   3.30  Camacho,Samy              Joseph,Jr.,Saffie       
+    2    5  LatchtheHatch                     1.30  Bravo,Joe                 Orseno,Joseph           
+    3    6  AdiosNow                          3.50  Husbands,Micah            Ramirez,Luis            
+    4    1  LethalSpeed                      25.50  Ocasio,Jonathan           Jehaludi,Amzadali       
+    5    3  Neshume                          22.70  Herrera,Diego             Cazares,Laura           
+    6    4  FourthandCentral                  9.30  Vasquez,Miguel            Yates,Michael           
+    7    2  EsAristocratico                   5.30  Reyes,Leonel              D'Angelo,Jose           
+
+  Time    : 1:09.92
+  Trainer : Joseph, Jr.,Saffie
+  Sire    : PracticalJoke
+
+  WIN    $8.60   PLC    $4.00   SHW    $2.60
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 9  â€”  MCL  |  1 1/16M  |  AW  |  $28,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  MischievousScout                  2.50  Morelos,Jose              Smullen,Heather         
+    2    8  ComeOnPoppi                       1.70  Herrera,Diego             Barboza,Jr.,Victor      
+    3    5  LunettaJak                        5.30  Thomas,Anthony            Dakin,Diley             
+    4    2  WhiskeyWhim                       6.00  Camacho,Samy              Perez,Carlos            
+    5    3  BabyGun                          39.00  Ocasio,Jonathan           Yanez,Reynaldo          
+    6    1  Sanyj                             9.30  Reyes,Leonel              Rodriguez,Arturo        
+    7   10  SmartLisa                        52.10  Figueroa,Heriberto        Collazo,Henry           
+    8    7  Kiona                            25.00  Rodriguez,Ronaldo         Narvaez,Carlos          
+
+  Time    : 1:45.51
+  Trainer : Smullen, Heather
+  Sire    : Girvin
+
+  WIN    $7.00   PLC    $3.00   SHW    $2.40
+
+========================================================================
+  9 race(s) processed
+========================================================================
+
