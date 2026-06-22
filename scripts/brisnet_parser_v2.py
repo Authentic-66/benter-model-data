@@ -527,6 +527,101 @@ def workout_features(works: list[dict]) -> dict:
     }
 
 
+# Equipment-change indicators in Brisnet PPs come through three channels:
+#   1. Angle/comment text near top of horse block, e.g.:
+#        "ñ May improve with Blinkers added today"
+#   2. Trainer-stat angle rows that only appear when the horse is in that
+#      category today, e.g.:
+#        "+1stTimeBlinkers    30 20%   40% -0.65"
+#        "Blinkers Off  N N-N-N N% ..."
+#        "1st time lasix  23 9% 48% -0.64"
+#   3. Today's weight: token after "Brdr: ..." like "L 120" (Lasix + lbs).
+#      Last race weight: 3 superscript digits glued to jockey name in the
+#      most recent PP race line (e.g. "OcasioJ¨©§" = OcasioJ + 120).
+_BLINKERS_ADD_RE = re.compile(r'[Bb]linkers\s+added\s+today', re.IGNORECASE)
+_BLINKERS_OFF_RE = re.compile(r'\b[Bb]linkers\s*[Oo]ff\b|\bBlinkersOff\b')
+_FIRST_BLINKERS_RE = re.compile(r'1st\s*Time\s*Blinkers', re.IGNORECASE)
+_FIRST_LASIX_RE = re.compile(r'\b1st\s*time\s*lasix\b', re.IGNORECASE)
+# Today's equip+weight token can land on any line in the horse header
+# block (Brdr/Dam/silks line, varies by track). The combination of a 1-3
+# letter equipment code (Lasix L / blinkers b / bandages B / furosemide F)
+# followed by a weight in the [105, 132] race-weight range is rare enough
+# elsewhere in the text to be reliable. We additionally require trailing
+# whitespace + a digit OR $ to avoid matching things like "L 100k" inside
+# claiming notes.
+_TODAY_EQ_RE = re.compile(r'(?<![A-Za-z0-9])([LBbFf]{1,3})\s+(1[0-3]\d)(?=\s+[\$\d])')
+_PP_JK_WEIGHT_RE = re.compile(
+    r"[A-Z][A-Za-z'.]{2,}([§¨©ª«¬\xad®¯°]{3})\s+[A-Za-z]{1,5}\s+\d+\.\d+"
+)
+
+
+def _decode_sup_weight(sup: str) -> int | None:
+    try:
+        return int(''.join(str(_SUP_DIGITS[c]) for c in sup))
+    except KeyError:
+        return None
+
+
+def extract_equipment_features(block_lines, block_text: str | None = None) -> dict:
+    """Return blinkers_added_today, blinkers_removed_today, first_time_lasix,
+    weight_change, equipment_change. Sources: angle text + trainer stat rows
+    in the block, today's weight from the Brdr area, last race's weight from
+    the most recent PP line's jockey superscript.
+
+    block_text is the joined block — caller can pass a pre-joined string to
+    avoid recomputing it. Falls back to joining block_lines.
+    """
+    if block_text is None:
+        block_text = "\n".join(block_lines)
+    feats = {
+        'blinkers_added_today': 0,
+        'blinkers_removed_today': 0,
+        'first_time_lasix': 0,
+        'weight_change': None,
+        'equipment_change': 0,
+    }
+    if _BLINKERS_ADD_RE.search(block_text) or _FIRST_BLINKERS_RE.search(block_text):
+        feats['blinkers_added_today'] = 1
+    if _BLINKERS_OFF_RE.search(block_text):
+        feats['blinkers_removed_today'] = 1
+    if _FIRST_LASIX_RE.search(block_text):
+        feats['first_time_lasix'] = 1
+
+    # Today's weight from "Brdr: ... L 120"
+    today_weight = None
+    m = _TODAY_EQ_RE.search(block_text)
+    if m:
+        try:
+            w = int(m.group(2))
+            if 100 <= w <= 135:
+                today_weight = w
+        except ValueError:
+            pass
+
+    # Last race weight: scan PP race lines, take first match (most recent)
+    last_weight = None
+    for line in block_lines:
+        if _pp_line_date(line) is None:
+            continue
+        jm = _PP_JK_WEIGHT_RE.search(line)
+        if jm:
+            last_weight = _decode_sup_weight(jm.group(1))
+            if last_weight is not None:
+                break
+
+    if today_weight is not None and last_weight is not None:
+        feats['weight_change'] = today_weight - last_weight
+
+    # equipment_change is the OR of any binary change indicator + a meaningful
+    # weight swing (≥2 lb is usually trainer intent, not a jockey re-pairing).
+    if (feats['blinkers_added_today'] or feats['blinkers_removed_today']
+            or feats['first_time_lasix']
+            or (feats['weight_change'] is not None
+                and abs(feats['weight_change']) >= 2)):
+        feats['equipment_change'] = 1
+    return feats
+
+
 def extract_pace_figures(block_lines):
     """Extract Brisnet pace figures (E1, E2, LP) from condensed PP race lines.
 
@@ -1014,6 +1109,9 @@ def parse_brisnet(text, track_code='GP', race_date=None):
             works = extract_workouts(block, race_date)
             wfeats = workout_features(works)
 
+            # ── Equipment-change features (Phase B) ─────────────────────────
+            eq_feats = extract_equipment_features(block)
+
             # ── Hot J/T and 0% J/T from angles ────────────────────────────────
             _HOT_JT_RE = re.compile(r'hot.*?(?:trainer|jockey|j/?t|combo)', re.IGNORECASE)
             hot_jt = any(_HOT_JT_RE.search(a) for a in pos_angles)
@@ -1080,6 +1178,11 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'workout_avg_pace': wfeats['workout_avg_pace'],
                 'workout_count_60d': wfeats['workout_count_60d'],
                 'has_recent_bullet': wfeats['has_recent_bullet'],
+                'blinkers_added_today': eq_feats['blinkers_added_today'],
+                'blinkers_removed_today': eq_feats['blinkers_removed_today'],
+                'first_time_lasix': eq_feats['first_time_lasix'],
+                'weight_change': eq_feats['weight_change'],
+                'equipment_change': eq_feats['equipment_change'],
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
                 'last_class': last_class, 'last_dist': last_dist,
@@ -1371,9 +1474,11 @@ def write_entries_db(races, track_code, race_date):
                     "best_e1,best_e2,best_late,"
                     "bullet_count_60d,days_since_last_workout,workout_avg_pace,"
                     "workout_count_60d,has_recent_bullet,"
+                    "blinkers_added_today,blinkers_removed_today,first_time_lasix,"
+                    "weight_change,equipment_change,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
                     "class_delta,distance_delta,signal_types,horse_starts,is_pick)"
-                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -1395,6 +1500,11 @@ def write_entries_db(races, track_code, race_date):
                      h.get('workout_avg_pace'),
                      h.get('workout_count_60d'),
                      h.get('has_recent_bullet'),
+                     h.get('blinkers_added_today'),
+                     h.get('blinkers_removed_today'),
+                     h.get('first_time_lasix'),
+                     h.get('weight_change'),
+                     h.get('equipment_change'),
                      ','.join(str(s) for s in h.get('recent_spd', [])) or None,
                      int(bool(h.get('improving'))),
                      int(bool(h.get('jt_zero'))),

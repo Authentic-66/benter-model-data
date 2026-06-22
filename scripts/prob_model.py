@@ -263,6 +263,8 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                "bullet_count_60d_c", "workout_missing",
                "days_since_workout_c",
                "workout_count_60d_c",
+               "equipment_change_c",
+               "weight_change_c", "weight_change_missing",
                # Phase 3 race-level pace scenarios (lp_x_duel, highE1_x_lone,
                # lp_advantage_c) were tested 2026-06-20 and held out: 92.7%
                # of training races have ZERO horses with E1 data (RESULTS-
@@ -335,6 +337,11 @@ SELECT
     e.workout_avg_pace,
     e.workout_count_60d,
     e.has_recent_bullet,
+    e.blinkers_added_today,
+    e.blinkers_removed_today,
+    e.first_time_lasix,
+    e.weight_change,
+    e.equipment_change,
     e.jt_winpct,
     e.beaten_lengths,
     e.class_delta,
@@ -446,6 +453,20 @@ def build_cl_features(df, stds=None):
         - df.groupby("race_id")["has_recent_bullet"].transform("mean")
     ).fillna(0.0)
 
+    # ── Equipment-change features (Phase B) ─────────────────────────────
+    # Binary trainer-intent flags (blinkers added/removed, first-time
+    # Lasix, equipment_change) are 0/1 with missing → 0. Within-race
+    # centering picks up "this horse has the flag, the others don't."
+    # weight_change is continuous (lbs); center to remove race-constant
+    # weight-by-conditions effects.
+    for col in ("blinkers_added_today", "blinkers_removed_today",
+                "first_time_lasix", "equipment_change"):
+        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
+        df[col + "_c"] = (
+            df[col] - df.groupby("race_id")[col].transform("mean")
+        ).fillna(0.0)
+    center("weight_change", "weight_change_c", "weight_change_missing")
+
     # ── Race-level pace scenario features (Phase 3) ─────────────────────
     # Per-horse pace columns describe ability; the scenario lives at the
     # race level — multiple speed horses = duel = closers win; one lone
@@ -523,10 +544,13 @@ def build_cl_features(df, stds=None):
                   "bullet_count_60d_c", "days_since_workout_c",
                   "workout_pace_c", "workout_count_60d_c",
                   "has_recent_bullet_c",
+                  "blinkers_added_today_c", "blinkers_removed_today_c",
+                  "first_time_lasix_c", "equipment_change_c",
+                  "weight_change_c",
                   "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
                   "pp_missing", "spd_missing", "jt_missing", "starts_missing",
-                  "workout_missing"):
+                  "workout_missing", "weight_change_missing"):
             v = df.loc[pp_mask, c] if pp_mask.any() else df[c]
             stds[c] = float(v.std()) or 1.0
 

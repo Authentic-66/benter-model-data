@@ -120,6 +120,11 @@ CREATE TABLE IF NOT EXISTS entries (
     workout_avg_pace         REAL,
     workout_count_60d        INTEGER,
     has_recent_bullet        INTEGER,
+    blinkers_added_today     INTEGER,
+    blinkers_removed_today   INTEGER,
+    first_time_lasix         INTEGER,
+    weight_change            INTEGER,
+    equipment_change         INTEGER,
     recent_spd    TEXT,
     improving     INTEGER,
     jt_zero       INTEGER,
@@ -192,6 +197,18 @@ def ensure_prob_columns(conn):
         ('workout_avg_pace',         'REAL'),
         ('workout_count_60d',        'INTEGER'),
         ('has_recent_bullet',        'INTEGER'),
+    ):
+        if col not in existing_e:
+            conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")
+            print(f"  schema: added entries.{col}")
+    # Equipment-change features (Phase B): trainer intent signals parsed from
+    # Brisnet's angle/stat-row markers + today/last-race weight comparison.
+    for col, ctype in (
+        ('blinkers_added_today',     'INTEGER'),
+        ('blinkers_removed_today',   'INTEGER'),
+        ('first_time_lasix',         'INTEGER'),
+        ('weight_change',            'INTEGER'),
+        ('equipment_change',         'INTEGER'),
     ):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")
