@@ -367,6 +367,166 @@ def extract_speed_figures(block_lines):
     return [races[d] for d in sorted(races, reverse=True)]
 
 
+# Workout line entries: "[×]DDMon[YY] TRK <dist><unit> <surf> :<time>[frac] B[g]<rank>/<total>"
+# Examples seen in GP/CT/EVD PPs:
+#   27May GP 3f ft :37ª B1/8
+#   13Dec'25 Tam 4f ft :51ª B46/52
+#   15Feb Tam 3f ft :36« Bg6/21          (gate work)
+#   ×04Mar Tam 3f ft :36ª B1/11           (× = recently-noted / significant)
+#   05Oct'25 GP 4f ft :48« B9/12
+# Time fractions are FIFTHS of a second (standard horse-racing convention).
+_WORKOUT_TIME_FIFTHS = {
+    '§': 0.0, '¨': 0.2, '©': 0.4, 'ª': 0.6, '«': 0.8,
+}
+_WORKOUT_RE = re.compile(
+    r"(?:×\s*)?"                                            # optional × prefix
+    r"(\d{1,2})([A-Z][a-z]{2})(?:'(\d{2}))?"                # date: 27May or 13Dec'25
+    r"\s+"
+    r"([A-Za-z]{2,5})"                                      # track code (Tam, GP, Sar, etc.)
+    r"\s+"
+    r"(\d{1,2})([½¼¾]?)([mf])"                              # distance: 3f, 5½f, 1m
+    r"\s+"
+    r"([a-z]{2,3})"                                         # surface: ft, sl, gd, my
+    r"\s+"
+    r":(\d+(?::\d+)?)([§¨©ª«¬\xad®¯°]?)"                    # time: :37ª or :1:01¨
+    r"\s+"
+    r"B\s*(g?)\s*(\d+)/(\d+)"                               # ranking: B1/8, B 1/8, Bg6/21
+)
+
+
+def _parse_workout_distance(num: str, frac: str, unit: str) -> float | None:
+    try:
+        n = int(num)
+    except ValueError:
+        return None
+    f = {'½': 0.5, '¼': 0.25, '¾': 0.75}.get(frac, 0.0)
+    if unit == 'f':
+        return n + f
+    if unit == 'm':
+        return (n + f) * 8.0
+    return None
+
+
+def _parse_workout_time(digits: str, sup: str) -> float | None:
+    try:
+        if ':' in digits:
+            mm, ss = digits.split(':', 1)
+            sec = int(mm) * 60 + int(ss)
+        else:
+            sec = int(digits)
+    except ValueError:
+        return None
+    sec += _WORKOUT_TIME_FIFTHS.get(sup, 0.0)
+    return float(sec)
+
+
+def _parse_workout_date(day: str, mon: str, yy: str,
+                        race_date: date | None) -> date | None:
+    month = _PP_MONTHS.get(mon.lower())
+    if month is None:
+        return None
+    try:
+        d_int = int(day)
+    except ValueError:
+        return None
+    if yy:
+        try:
+            return date(2000 + int(yy), month, d_int)
+        except ValueError:
+            return None
+    # No year suffix: use race_year, fall back to year-1 if that puts the
+    # workout after the race (workouts always precede the race).
+    if race_date is None:
+        return None
+    for year in (race_date.year, race_date.year - 1):
+        try:
+            d = date(year, month, d_int)
+        except ValueError:
+            continue
+        if d <= race_date:
+            return d
+    return None
+
+
+def extract_workouts(block_lines, race_date: date | None) -> list[dict]:
+    """Parse the workout-history lines at the bottom of a horse's PP block.
+
+    Returns a list of dicts with keys: date, days_ago, track, furlongs,
+    surface, seconds, sec_per_f, is_bullet, is_gate, rank, total. Older
+    entries (>1 year) and unparseable rows are dropped.
+    """
+    if race_date is None:
+        return []
+    works = []
+    seen_keys = set()
+    for line in block_lines:
+        for m in _WORKOUT_RE.finditer(line):
+            (day, mon, yy, trk, dnum, dfrac, dunit, surf,
+             tdigits, tfrac, gflag, rank, total) = m.groups()
+            wdate = _parse_workout_date(day, mon, yy, race_date)
+            if wdate is None:
+                continue
+            days_ago = (race_date - wdate).days
+            if days_ago < 0 or days_ago > 540:
+                continue
+            # De-dupe — Brisnet's two-column layout sometimes prints the
+            # same workout in left and right copies.
+            key = (wdate, trk, dnum + dfrac + dunit, tdigits + tfrac)
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
+            furlongs = _parse_workout_distance(dnum, dfrac, dunit)
+            seconds = _parse_workout_time(tdigits, tfrac)
+            sec_per_f = (seconds / furlongs
+                         if seconds is not None and furlongs and furlongs > 0
+                         else None)
+            try:
+                rank_i, total_i = int(rank), int(total)
+            except ValueError:
+                continue
+            works.append({
+                'date': wdate, 'days_ago': days_ago,
+                'track': trk, 'furlongs': furlongs, 'surface': surf,
+                'seconds': seconds, 'sec_per_f': sec_per_f,
+                'is_bullet': rank_i == 1,
+                'is_gate': bool(gflag),
+                'rank': rank_i, 'total': total_i,
+            })
+    works.sort(key=lambda w: w['days_ago'])
+    return works
+
+
+def workout_features(works: list[dict]) -> dict:
+    """Aggregate a horse's workout history into model features.
+
+    Returns dict with the 5 features (None for missing):
+      bullet_count_60d         — count of B1/N in last 60 days
+      days_since_last_workout  — days_ago of the most recent work
+      workout_avg_pace         — avg sec_per_f of last 3 timed workouts
+      workout_count_60d        — total works in last 60 days
+      has_recent_bullet        — 1 if any B1/N in last 14 days, else 0
+    """
+    if not works:
+        return {'bullet_count_60d': None, 'days_since_last_workout': None,
+                'workout_avg_pace': None, 'workout_count_60d': None,
+                'has_recent_bullet': None}
+    recent_60 = [w for w in works if w['days_ago'] <= 60]
+    bullets_60 = [w for w in recent_60 if w['is_bullet']]
+    bullets_14 = [w for w in works
+                  if w['days_ago'] <= 14 and w['is_bullet']]
+    timed_recent3 = [w['sec_per_f'] for w in works[:3]
+                     if w['sec_per_f'] is not None]
+    avg_pace = (sum(timed_recent3) / len(timed_recent3)
+                if timed_recent3 else None)
+    return {
+        'bullet_count_60d': len(bullets_60),
+        'days_since_last_workout': works[0]['days_ago'],
+        'workout_avg_pace': avg_pace,
+        'workout_count_60d': len(recent_60),
+        'has_recent_bullet': int(bool(bullets_14)),
+    }
+
+
 def extract_pace_figures(block_lines):
     """Extract Brisnet pace figures (E1, E2, LP) from condensed PP race lines.
 
@@ -850,6 +1010,10 @@ def parse_brisnet(text, track_code='GP', race_date=None):
             best_e2   = max((e for _, e, _ in pace_figs if e is not None), default=None)
             best_late = max((l for _, _, l in pace_figs if l is not None), default=None)
 
+            # ── Workout features — bottom-of-block workout history ──────────
+            works = extract_workouts(block, race_date)
+            wfeats = workout_features(works)
+
             # ── Hot J/T and 0% J/T from angles ────────────────────────────────
             _HOT_JT_RE = re.compile(r'hot.*?(?:trainer|jockey|j/?t|combo)', re.IGNORECASE)
             hot_jt = any(_HOT_JT_RE.search(a) for a in pos_angles)
@@ -911,6 +1075,11 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'recent_spd': recent_spd, 'best_spd': best_spd,
                 'best_spd_turf': best_spd_turf, 'best_spd_aw': best_spd_aw,
                 'best_e1': best_e1, 'best_e2': best_e2, 'best_late': best_late,
+                'bullet_count_60d': wfeats['bullet_count_60d'],
+                'days_since_last_workout': wfeats['days_since_last_workout'],
+                'workout_avg_pace': wfeats['workout_avg_pace'],
+                'workout_count_60d': wfeats['workout_count_60d'],
+                'has_recent_bullet': wfeats['has_recent_bullet'],
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
                 'last_class': last_class, 'last_dist': last_dist,
@@ -1200,9 +1369,11 @@ def write_entries_db(races, track_code, race_date):
                     "ml_odds,prime_power,pp_rank,trainer,jockey,sire,"
                     "days_off,claim_price,best_spd,best_spd_turf,best_spd_aw,"
                     "best_e1,best_e2,best_late,"
+                    "bullet_count_60d,days_since_last_workout,workout_avg_pace,"
+                    "workout_count_60d,has_recent_bullet,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
                     "class_delta,distance_delta,signal_types,horse_starts,is_pick)"
-                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -1219,6 +1390,11 @@ def write_entries_db(races, track_code, race_date):
                      h.get('best_e1'),
                      h.get('best_e2'),
                      h.get('best_late'),
+                     h.get('bullet_count_60d'),
+                     h.get('days_since_last_workout'),
+                     h.get('workout_avg_pace'),
+                     h.get('workout_count_60d'),
+                     h.get('has_recent_bullet'),
                      ','.join(str(s) for s in h.get('recent_spd', [])) or None,
                      int(bool(h.get('improving'))),
                      int(bool(h.get('jt_zero'))),

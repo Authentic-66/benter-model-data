@@ -343,6 +343,11 @@ def score_card(pp_file: Path, track: str) -> pd.DataFrame:
                 "best_e1": h.get("best_e1"),
                 "best_e2": h.get("best_e2"),
                 "best_late": h.get("best_late"),
+                "bullet_count_60d": h.get("bullet_count_60d"),
+                "days_since_last_workout": h.get("days_since_last_workout"),
+                "workout_avg_pace": h.get("workout_avg_pace"),
+                "workout_count_60d": h.get("workout_count_60d"),
+                "has_recent_bullet": h.get("has_recent_bullet"),
                 "jt_winpct": h.get("jt_winpct"),
                 "beaten_lengths": h.get("beaten_len"),
                 "class_delta": h.get("class_delta"),
@@ -358,6 +363,8 @@ def score_card(pp_file: Path, track: str) -> pd.DataFrame:
     # and crashes. cl_predict has the same latent bug.
     for col in ("ml_odds", "final_odds", "prime_power", "days_off",
                 "best_spd", "best_e1", "best_e2", "best_late",
+                "bullet_count_60d", "days_since_last_workout",
+                "workout_avg_pace", "workout_count_60d", "has_recent_bullet",
                 "jt_winpct", "beaten_lengths",
                 "class_delta", "distance_delta"):
         df[col] = pd.to_numeric(df[col], errors="coerce")

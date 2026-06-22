@@ -115,6 +115,11 @@ CREATE TABLE IF NOT EXISTS entries (
     best_e1       INTEGER,
     best_e2       INTEGER,
     best_late     INTEGER,
+    bullet_count_60d         INTEGER,
+    days_since_last_workout  INTEGER,
+    workout_avg_pace         REAL,
+    workout_count_60d        INTEGER,
+    has_recent_bullet        INTEGER,
     recent_spd    TEXT,
     improving     INTEGER,
     jt_zero       INTEGER,
@@ -178,6 +183,18 @@ def ensure_prob_columns(conn):
     for col in ('best_e1', 'best_e2', 'best_late'):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} INTEGER")
+            print(f"  schema: added entries.{col}")
+    # Workout history aggregates from Brisnet's bottom-of-block workout line.
+    # workout_avg_pace is sec/furlong (REAL); the rest are counts / day-spans.
+    for col, ctype in (
+        ('bullet_count_60d',         'INTEGER'),
+        ('days_since_last_workout',  'INTEGER'),
+        ('workout_avg_pace',         'REAL'),
+        ('workout_count_60d',        'INTEGER'),
+        ('has_recent_bullet',        'INTEGER'),
+    ):
+        if col not in existing_e:
+            conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")
             print(f"  schema: added entries.{col}")
     conn.commit()
 

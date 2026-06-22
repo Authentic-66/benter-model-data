@@ -260,6 +260,9 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                "prime_power_c", "pp_missing",
                "days_off_c", "best_spd_c", "spd_missing",
                "best_e1_c",
+               "bullet_count_60d_c", "workout_missing",
+               "days_since_workout_c",
+               "workout_count_60d_c",
                # Phase 3 race-level pace scenarios (lp_x_duel, highE1_x_lone,
                # lp_advantage_c) were tested 2026-06-20 and held out: 92.7%
                # of training races have ZERO horses with E1 data (RESULTS-
@@ -327,6 +330,11 @@ SELECT
     e.best_e1,
     e.best_e2,
     e.best_late,
+    e.bullet_count_60d,
+    e.days_since_last_workout,
+    e.workout_avg_pace,
+    e.workout_count_60d,
+    e.has_recent_bullet,
     e.jt_winpct,
     e.beaten_lengths,
     e.class_delta,
@@ -419,6 +427,25 @@ def build_cl_features(df, stds=None):
     center("best_e2",  "best_e2_c")
     center("best_late","best_late_c")
 
+    # ── Workout features ─────────────────────────────────────────────────
+    # Within-race centering of bullet count and workout count surfaces the
+    # relative fitness signal (most-worked horse in the field, freshest
+    # bullet, etc.) rather than absolute counts that vary by track culture.
+    # workout_avg_pace is sec/furlong — LOWER is faster; coefficient will be
+    # negative if faster works correlate with wins.
+    center("bullet_count_60d",        "bullet_count_60d_c", "workout_missing")
+    center("days_since_last_workout", "days_since_workout_c")
+    center("workout_avg_pace",        "workout_pace_c")
+    center("workout_count_60d",       "workout_count_60d_c")
+    # has_recent_bullet is already 0/1 — center to surface the within-race
+    # contrast (one bullet horse in a field of non-bullet rivals).
+    df["has_recent_bullet"] = pd.to_numeric(
+        df["has_recent_bullet"], errors="coerce").fillna(0.0)
+    df["has_recent_bullet_c"] = (
+        df["has_recent_bullet"]
+        - df.groupby("race_id")["has_recent_bullet"].transform("mean")
+    ).fillna(0.0)
+
     # ── Race-level pace scenario features (Phase 3) ─────────────────────
     # Per-horse pace columns describe ability; the scenario lives at the
     # race level — multiple speed horses = duel = closers win; one lone
@@ -493,9 +520,13 @@ def build_cl_features(df, stds=None):
                   # stds are available when the experiment is rerun, even
                   # though none of these are in CL_FEATURES today.
                   "lp_advantage_c", "lp_x_duel", "highE1_x_lone",
+                  "bullet_count_60d_c", "days_since_workout_c",
+                  "workout_pace_c", "workout_count_60d_c",
+                  "has_recent_bullet_c",
                   "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
-                  "pp_missing", "spd_missing", "jt_missing", "starts_missing"):
+                  "pp_missing", "spd_missing", "jt_missing", "starts_missing",
+                  "workout_missing"):
             v = df.loc[pp_mask, c] if pp_mask.any() else df[c]
             stds[c] = float(v.std()) or 1.0
 
