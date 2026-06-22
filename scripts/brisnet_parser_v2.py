@@ -759,6 +759,83 @@ def distance_surface_record_features(records: dict,
     return feats
 
 
+# Connection-change features (Phase C). Today's jockey appears in two
+# formats: the silks line ("VASQUEZ MIGUEL A" — uppercase, space-separated)
+# and the PP race lines ("VasquezMA" — last name + first-initial(s)
+# compressed). Normalize both to lowercase last-name + initials.
+_PP_JOCKEY_RE = re.compile(
+    r"([A-Z][A-Za-z'.]{2,})[§¨©ª«¬\xad®¯°]{3}"
+)
+
+
+def _normalize_jockey(name: str | None) -> str | None:
+    if not name:
+        return None
+    name = name.strip()
+    if ' ' in name:
+        parts = [p for p in name.split() if p]
+        if not parts:
+            return None
+        last = parts[0].lower()
+        initials = ''.join(p[0].lower() for p in parts[1:] if p)
+        return last + initials if last else None
+    m = re.match(r"^([A-Z][a-z'.]+)([A-Z]+)$", name)
+    if m:
+        return (m.group(1) + m.group(2)).lower()
+    return name.lower().replace(' ', '')
+
+
+def extract_past_jockeys(block_lines) -> list[str]:
+    """List of normalized past-race jockey names, most recent first,
+    deduped by race date."""
+    seen_dates = set()
+    out = []
+    for line in block_lines:
+        d = _pp_line_date(line)
+        if d is None or d in seen_dates:
+            continue
+        m = _PP_JOCKEY_RE.search(line)
+        if not m:
+            continue
+        norm = _normalize_jockey(m.group(1))
+        if norm:
+            seen_dates.add(d)
+            out.append(norm)
+    return out
+
+
+def connection_features(today_jockey: str | None,
+                        past_jockeys: list[str],
+                        jt_winpct: float | int | None,
+                        hot_jt_threshold: float = 20.0) -> dict:
+    """jockey_change: 1 if today's jockey differs from the most recent PP
+    line's jockey (NaN when no past PPs). jockey_first_time: 1 if today's
+    jockey never appears in past PP lines. hot_jt_combo: 1 when the
+    JKYw/Trn L60 win rate (jt_winpct) clears threshold."""
+    feats = {'jockey_change': None, 'jockey_first_time': None,
+             'hot_jt_combo': None}
+    today_norm = _normalize_jockey(today_jockey)
+    if today_norm is None:
+        # No today's jockey — leave change/first as missing
+        pass
+    elif not past_jockeys:
+        # First-time starter (or no parseable PPs): every connection is
+        # new. Setting first_time=1 surfaces FTS as a connection signal,
+        # but leave jockey_change as None (no last-race comparison
+        # available) to avoid double-counting with starts_missing.
+        feats['jockey_first_time'] = 1
+    else:
+        feats['jockey_change'] = int(today_norm != past_jockeys[0])
+        feats['jockey_first_time'] = int(today_norm not in past_jockeys)
+
+    if jt_winpct is not None:
+        try:
+            feats['hot_jt_combo'] = int(float(jt_winpct) >= hot_jt_threshold)
+        except (TypeError, ValueError):
+            pass
+    return feats
+
+
 def extract_pace_figures(block_lines):
     """Extract Brisnet pace figures (E1, E2, LP) from condensed PP race lines.
 
@@ -1260,6 +1337,14 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 block, today_furlongs, today_surface_str
             )
 
+            # ── Connection-change features (Phase C) ────────────────────────
+            past_jks = extract_past_jockeys(block)
+            conn_feats = connection_features(
+                today_jockey=jockey if jockey != '?' else None,
+                past_jockeys=past_jks,
+                jt_winpct=jt_winpct,
+            )
+
             # ── Hot J/T and 0% J/T from angles ────────────────────────────────
             _HOT_JT_RE = re.compile(r'hot.*?(?:trainer|jockey|j/?t|combo)', re.IGNORECASE)
             hot_jt = any(_HOT_JT_RE.search(a) for a in pos_angles)
@@ -1338,6 +1423,9 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'surface_winpct': ds_feats['surface_winpct'],
                 'combo_starts': combo_s,
                 'combo_wins': combo_w,
+                'jockey_change': conn_feats['jockey_change'],
+                'jockey_first_time': conn_feats['jockey_first_time'],
+                'hot_jt_combo': conn_feats['hot_jt_combo'],
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
                 'last_class': last_class, 'last_dist': last_dist,
@@ -1633,9 +1721,10 @@ def write_entries_db(races, track_code, race_date):
                     "weight_change,equipment_change,"
                     "dist_wins,dist_starts,surface_wins,surface_starts,"
                     "surface_winpct,combo_starts,combo_wins,"
+                    "jockey_change,jockey_first_time,hot_jt_combo,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
                     "class_delta,distance_delta,signal_types,horse_starts,is_pick)"
-                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -1669,6 +1758,9 @@ def write_entries_db(races, track_code, race_date):
                      h.get('surface_winpct'),
                      h.get('combo_starts'),
                      h.get('combo_wins'),
+                     h.get('jockey_change'),
+                     h.get('jockey_first_time'),
+                     h.get('hot_jt_combo'),
                      ','.join(str(s) for s in h.get('recent_spd', [])) or None,
                      int(bool(h.get('improving'))),
                      int(bool(h.get('jt_zero'))),

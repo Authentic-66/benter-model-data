@@ -132,6 +132,9 @@ CREATE TABLE IF NOT EXISTS entries (
     surface_winpct           REAL,
     combo_starts             INTEGER,
     combo_wins               INTEGER,
+    jockey_change            INTEGER,
+    jockey_first_time        INTEGER,
+    hot_jt_combo             INTEGER,
     recent_spd    TEXT,
     improving     INTEGER,
     jt_zero       INTEGER,
@@ -230,6 +233,16 @@ def ensure_prob_columns(conn):
         ('surface_winpct',  'REAL'),
         ('combo_starts',    'INTEGER'),
         ('combo_wins',      'INTEGER'),
+    ):
+        if col not in existing_e:
+            conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")
+            print(f"  schema: added entries.{col}")
+    # Connection-change features (Phase C): trainer-intent signals from
+    # comparing today's jockey to the most recent / all PP-line jockeys.
+    for col, ctype in (
+        ('jockey_change',     'INTEGER'),
+        ('jockey_first_time', 'INTEGER'),
+        ('hot_jt_combo',      'INTEGER'),
     ):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")

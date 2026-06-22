@@ -265,6 +265,15 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                "workout_count_60d_c",
                "equipment_change_c",
                "weight_change_c", "weight_change_missing",
+               # Phase C connection-change features (jockey_change_c,
+               # jockey_first_time_c, hot_jt_combo_c) tested 2026-06-22
+               # and held out. Per-feature ablation showed every config
+               # regressed PP-rich ΔR² (-0.0005 to -0.0025); none cleared
+               # the +0.001 ship threshold. Hypothesis: jockey changes
+               # are fully visible to the public ML pre-race — no
+               # information asymmetry like workouts/equipment have.
+               # hot_jt_combo is also redundant with existing sig_hotjt
+               # (angle-text marker) and jt_winpct_c (continuous).
                # Phase D distance/surface record features (dist_wins_c,
                # dist_starts_c, surface_wins_c, surface_winpct_c,
                # combo_wins_c) tested 2026-06-22 and held out: every
@@ -358,6 +367,9 @@ SELECT
     e.surface_winpct,
     e.combo_starts,
     e.combo_wins,
+    e.jockey_change,
+    e.jockey_first_time,
+    e.hot_jt_combo,
     e.jt_winpct,
     e.beaten_lengths,
     e.class_delta,
@@ -493,6 +505,16 @@ def build_cl_features(df, stds=None):
     center("surface_winpct", "surface_winpct_c")
     center("combo_wins",     "combo_wins_c")
 
+    # ── Connection-change features (Phase C) ────────────────────────────
+    # Within-race centering surfaces "this horse has a different jockey,
+    # the others didn't change" type contrast. Missing→0 keeps FTS from
+    # spuriously moving the flag (they get jockey_first_time=1 separately).
+    for col in ("jockey_change", "jockey_first_time", "hot_jt_combo"):
+        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
+        df[col + "_c"] = (
+            df[col] - df.groupby("race_id")[col].transform("mean")
+        ).fillna(0.0)
+
     # ── Race-level pace scenario features (Phase 3) ─────────────────────
     # Per-horse pace columns describe ability; the scenario lives at the
     # race level — multiple speed horses = duel = closers win; one lone
@@ -575,6 +597,7 @@ def build_cl_features(df, stds=None):
                   "weight_change_c",
                   "dist_wins_c", "dist_starts_c", "surface_wins_c",
                   "surface_winpct_c", "combo_wins_c",
+                  "jockey_change_c", "jockey_first_time_c", "hot_jt_combo_c",
                   "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
                   "pp_missing", "spd_missing", "jt_missing", "starts_missing",
