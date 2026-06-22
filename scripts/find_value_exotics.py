@@ -353,6 +353,13 @@ def score_card(pp_file: Path, track: str) -> pd.DataFrame:
                 "first_time_lasix": h.get("first_time_lasix"),
                 "weight_change": h.get("weight_change"),
                 "equipment_change": h.get("equipment_change"),
+                "dist_wins": h.get("dist_wins"),
+                "dist_starts": h.get("dist_starts"),
+                "surface_wins": h.get("surface_wins"),
+                "surface_starts": h.get("surface_starts"),
+                "surface_winpct": h.get("surface_winpct"),
+                "combo_starts": h.get("combo_starts"),
+                "combo_wins": h.get("combo_wins"),
                 "jt_winpct": h.get("jt_winpct"),
                 "beaten_lengths": h.get("beaten_len"),
                 "class_delta": h.get("class_delta"),
@@ -372,6 +379,8 @@ def score_card(pp_file: Path, track: str) -> pd.DataFrame:
                 "workout_avg_pace", "workout_count_60d", "has_recent_bullet",
                 "blinkers_added_today", "blinkers_removed_today",
                 "first_time_lasix", "weight_change", "equipment_change",
+                "dist_wins", "dist_starts", "surface_wins", "surface_starts",
+                "surface_winpct", "combo_starts", "combo_wins",
                 "jt_winpct", "beaten_lengths",
                 "class_delta", "distance_delta"):
         df[col] = pd.to_numeric(df[col], errors="coerce")

@@ -265,6 +265,15 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                "workout_count_60d_c",
                "equipment_change_c",
                "weight_change_c", "weight_change_missing",
+               # Phase D distance/surface record features (dist_wins_c,
+               # dist_starts_c, surface_wins_c, surface_winpct_c,
+               # combo_wins_c) tested 2026-06-22 and held out: every
+               # individual feature regressed PP-rich ΔR² (combined: -0.0139).
+               # Career records are redundant with prime_power_c +
+               # best_spd_c at this sample size. Columns are parsed and
+               # stored in entries (Dis/Fst/Off/Trf/AW + PP-line combo
+               # scan) so re-enabling is a one-line CL_FEATURES edit if
+               # more data accumulates.
                # Phase 3 race-level pace scenarios (lp_x_duel, highE1_x_lone,
                # lp_advantage_c) were tested 2026-06-20 and held out: 92.7%
                # of training races have ZERO horses with E1 data (RESULTS-
@@ -342,6 +351,13 @@ SELECT
     e.first_time_lasix,
     e.weight_change,
     e.equipment_change,
+    e.dist_wins,
+    e.dist_starts,
+    e.surface_wins,
+    e.surface_starts,
+    e.surface_winpct,
+    e.combo_starts,
+    e.combo_wins,
     e.jt_winpct,
     e.beaten_lengths,
     e.class_delta,
@@ -467,6 +483,16 @@ def build_cl_features(df, stds=None):
         ).fillna(0.0)
     center("weight_change", "weight_change_c", "weight_change_missing")
 
+    # ── Distance/surface record features (Phase D) ──────────────────────
+    # All centered within race — surfaces the "this horse has done it at
+    # this distance/surface and rivals haven't" signal that's invisible to
+    # absolute counts (which conflate experience with ability).
+    center("dist_wins",      "dist_wins_c",     "dist_record_missing")
+    center("dist_starts",    "dist_starts_c")
+    center("surface_wins",   "surface_wins_c")
+    center("surface_winpct", "surface_winpct_c")
+    center("combo_wins",     "combo_wins_c")
+
     # ── Race-level pace scenario features (Phase 3) ─────────────────────
     # Per-horse pace columns describe ability; the scenario lives at the
     # race level — multiple speed horses = duel = closers win; one lone
@@ -547,10 +573,13 @@ def build_cl_features(df, stds=None):
                   "blinkers_added_today_c", "blinkers_removed_today_c",
                   "first_time_lasix_c", "equipment_change_c",
                   "weight_change_c",
+                  "dist_wins_c", "dist_starts_c", "surface_wins_c",
+                  "surface_winpct_c", "combo_wins_c",
                   "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
                   "pp_missing", "spd_missing", "jt_missing", "starts_missing",
-                  "workout_missing", "weight_change_missing"):
+                  "workout_missing", "weight_change_missing",
+                  "dist_record_missing"):
             v = df.loc[pp_mask, c] if pp_mask.any() else df[c]
             stds[c] = float(v.std()) or 1.0
 

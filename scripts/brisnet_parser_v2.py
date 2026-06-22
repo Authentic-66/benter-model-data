@@ -622,6 +622,143 @@ def extract_equipment_features(block_lines, block_text: str | None = None) -> di
     return feats
 
 
+# Career-record block on the right side of the horse header:
+#   "Dis (99) 9 0- 0- 0 $500 60"      → distance: par 99, 9 starts, 0-0-0
+#   "Fst (101) 18  4- 4- 4 $75,367 83" → fast dirt
+#   "Off (97) 5  4- 2- 1 $60,408 83"  → off track (mud/sloppy/etc.)
+#   "Trf (101) 1"                     → turf (some rows omit W-P-S)
+#   "AW  10 0 - 2 - 1"                → all-weather (no par in parens)
+_CAREER_RECORD_RE = re.compile(
+    r'\b(Fst|Off|Dis|Trf)\s*\(\s*\d+\??\s*\)\s+(\d+)'
+    r'(?:\s+(\d+)\s*-\s*(\d+)\s*-\s*(\d+))?'
+)
+_AW_RECORD_RE = re.compile(
+    r'\bAW\s+(\d+)(?:\s+(\d+)\s*-\s*(\d+)\s*-\s*(\d+))?'
+)
+
+
+def extract_career_records(block_lines) -> dict:
+    """Parse the Dis/Fst/Off/Trf/AW career records from a horse block.
+    Returns dict keyed by label → (starts, wins) tuple. Wins defaults to 0
+    when the W-P-S triple is missing (Brisnet sometimes truncates AW/Trf
+    rows when the horse only has a few starts).
+    """
+    text = '\n'.join(block_lines)
+    out: dict[str, tuple[int, int]] = {}
+    for m in _CAREER_RECORD_RE.finditer(text):
+        label = m.group(1)
+        if label in out:
+            continue
+        try:
+            starts = int(m.group(2))
+        except (TypeError, ValueError):
+            continue
+        try:
+            wins = int(m.group(3)) if m.group(3) is not None else 0
+        except ValueError:
+            wins = 0
+        out[label] = (starts, wins)
+    if 'AW' not in out:
+        am = _AW_RECORD_RE.search(text)
+        if am:
+            try:
+                starts = int(am.group(1))
+                wins = int(am.group(2)) if am.group(2) is not None else 0
+                out['AW'] = (starts, wins)
+            except ValueError:
+                pass
+    return out
+
+
+def _surface_label(today_surface: str | None) -> str:
+    """Map race surface string to the matching career-record label."""
+    if not today_surface:
+        return 'Fst'
+    s = today_surface.strip().lower()
+    if 'turf' in s:
+        return 'Trf'
+    if 'all weather' in s or 'aw' in s or 'tapeta' in s or 'synthetic' in s:
+        return 'AW'
+    return 'Fst'   # dirt default; assume fast at predict time
+
+
+def _pp_line_surface(line: str) -> str:
+    """Surface category for a PP race line: 'T' (turf), 'AW', or 'D' (dirt)."""
+    if '(T)' in line or _TURF_GOING_RE.search(line):
+        return 'T'
+    if re.search(r'\bAW\b|Tapeta|Polytrack|All.?Weather', line):
+        return 'AW'
+    return 'D'
+
+
+def _today_surface_category(today_surface: str | None) -> str:
+    """Map today's surface (race header string) to PP-line category."""
+    if not today_surface:
+        return 'D'
+    s = today_surface.strip().lower()
+    if 'turf' in s:
+        return 'T'
+    if 'all weather' in s or s == 'aw' or 'tapeta' in s or 'synthetic' in s:
+        return 'AW'
+    return 'D'
+
+
+def distance_surface_combo_record(block_lines,
+                                  today_furlongs: float | None,
+                                  today_surface: str | None,
+                                  tolerance: float = 0.5) -> tuple[int, int]:
+    """Count starts and wins at races matching today's distance (within
+    tolerance furlongs) AND surface. Wins are detected from the FIN call
+    in the PP line (position == 1). Returns (combo_starts, combo_wins).
+    """
+    if today_furlongs is None:
+        return 0, 0
+    target_cat = _today_surface_category(today_surface)
+    starts = wins = 0
+    seen = set()
+    for line in block_lines:
+        d = _pp_line_date(line)
+        if d is None or d in seen:
+            continue
+        seen.add(d)
+        f = _ppline_furlongs(line)
+        if f is None or abs(f - today_furlongs) > tolerance:
+            continue
+        if _pp_line_surface(line) != target_cat:
+            continue
+        starts += 1
+        fin_m = _PP_FIN_RE.search(line)
+        if fin_m:
+            try:
+                if int(fin_m.group(1)) == 1:
+                    wins += 1
+            except ValueError:
+                pass
+    return starts, wins
+
+
+def distance_surface_record_features(records: dict,
+                                     today_surface: str | None) -> dict:
+    """Extract per-horse distance/surface feature aggregates."""
+    feats = {
+        'dist_wins': None, 'dist_starts': None,
+        'surface_wins': None, 'surface_starts': None,
+        'surface_winpct': None,
+    }
+    if 'Dis' in records:
+        s, w = records['Dis']
+        feats['dist_starts'] = s
+        feats['dist_wins'] = w
+    surf_label = _surface_label(today_surface)
+    if surf_label in records:
+        s, w = records[surf_label]
+        feats['surface_starts'] = s
+        feats['surface_wins'] = w
+        if s > 0:
+            feats['surface_winpct'] = w / s
+    return feats
+
+
 def extract_pace_figures(block_lines):
     """Extract Brisnet pace figures (E1, E2, LP) from condensed PP race lines.
 
@@ -1112,6 +1249,17 @@ def parse_brisnet(text, track_code='GP', race_date=None):
             # ── Equipment-change features (Phase B) ─────────────────────────
             eq_feats = extract_equipment_features(block)
 
+            # ── Distance/surface records (Phase D) ──────────────────────────
+            today_surface_str = races[current_race].get('surface')
+            today_furlongs = _header_furlongs(
+                races[current_race].get('conditions', '')
+            )
+            career_recs = extract_career_records(block)
+            ds_feats = distance_surface_record_features(career_recs, today_surface_str)
+            combo_s, combo_w = distance_surface_combo_record(
+                block, today_furlongs, today_surface_str
+            )
+
             # ── Hot J/T and 0% J/T from angles ────────────────────────────────
             _HOT_JT_RE = re.compile(r'hot.*?(?:trainer|jockey|j/?t|combo)', re.IGNORECASE)
             hot_jt = any(_HOT_JT_RE.search(a) for a in pos_angles)
@@ -1183,6 +1331,13 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'first_time_lasix': eq_feats['first_time_lasix'],
                 'weight_change': eq_feats['weight_change'],
                 'equipment_change': eq_feats['equipment_change'],
+                'dist_wins': ds_feats['dist_wins'],
+                'dist_starts': ds_feats['dist_starts'],
+                'surface_wins': ds_feats['surface_wins'],
+                'surface_starts': ds_feats['surface_starts'],
+                'surface_winpct': ds_feats['surface_winpct'],
+                'combo_starts': combo_s,
+                'combo_wins': combo_w,
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
                 'last_class': last_class, 'last_dist': last_dist,
@@ -1476,9 +1631,11 @@ def write_entries_db(races, track_code, race_date):
                     "workout_count_60d,has_recent_bullet,"
                     "blinkers_added_today,blinkers_removed_today,first_time_lasix,"
                     "weight_change,equipment_change,"
+                    "dist_wins,dist_starts,surface_wins,surface_starts,"
+                    "surface_winpct,combo_starts,combo_wins,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
                     "class_delta,distance_delta,signal_types,horse_starts,is_pick)"
-                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -1505,6 +1662,13 @@ def write_entries_db(races, track_code, race_date):
                      h.get('first_time_lasix'),
                      h.get('weight_change'),
                      h.get('equipment_change'),
+                     h.get('dist_wins'),
+                     h.get('dist_starts'),
+                     h.get('surface_wins'),
+                     h.get('surface_starts'),
+                     h.get('surface_winpct'),
+                     h.get('combo_starts'),
+                     h.get('combo_wins'),
                      ','.join(str(s) for s in h.get('recent_spd', [])) or None,
                      int(bool(h.get('improving'))),
                      int(bool(h.get('jt_zero'))),

@@ -125,6 +125,13 @@ CREATE TABLE IF NOT EXISTS entries (
     first_time_lasix         INTEGER,
     weight_change            INTEGER,
     equipment_change         INTEGER,
+    dist_wins                INTEGER,
+    dist_starts              INTEGER,
+    surface_wins             INTEGER,
+    surface_starts           INTEGER,
+    surface_winpct           REAL,
+    combo_starts             INTEGER,
+    combo_wins               INTEGER,
     recent_spd    TEXT,
     improving     INTEGER,
     jt_zero       INTEGER,
@@ -209,6 +216,20 @@ def ensure_prob_columns(conn):
         ('first_time_lasix',         'INTEGER'),
         ('weight_change',            'INTEGER'),
         ('equipment_change',         'INTEGER'),
+    ):
+        if col not in existing_e:
+            conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")
+            print(f"  schema: added entries.{col}")
+    # Distance/surface career-record features (Phase D): from the right-side
+    # Dis/Fst/Off/Trf/AW stat lines + per-PP combo scan.
+    for col, ctype in (
+        ('dist_wins',       'INTEGER'),
+        ('dist_starts',     'INTEGER'),
+        ('surface_wins',    'INTEGER'),
+        ('surface_starts',  'INTEGER'),
+        ('surface_winpct',  'REAL'),
+        ('combo_starts',    'INTEGER'),
+        ('combo_wins',      'INTEGER'),
     ):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")
