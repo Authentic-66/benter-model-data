@@ -265,6 +265,15 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                "workout_count_60d_c",
                "equipment_change_c",
                "weight_change_c", "weight_change_missing",
+               # Phase E1: ablation showed count_positive_angles_c +
+               # trainer_angle_missing is the ONLY combination that
+               # flips PP-rich ΔR² POSITIVE (+0.0007). The other three
+               # (trainer_angle_winpct_c, trainer_angle_starts_c,
+               # has_strong_angle_c) all regressed individually and
+               # the winpct coefficient came in NEGATIVE (-0.111)
+               # due to collinearity with starts. Columns are stored
+               # in entries for future re-test.
+               "count_positive_angles_c", "trainer_angle_missing",
                # Phase C connection-change features (jockey_change_c,
                # jockey_first_time_c, hot_jt_combo_c) tested 2026-06-22
                # and held out. Per-feature ablation showed every config
@@ -370,6 +379,10 @@ SELECT
     e.jockey_change,
     e.jockey_first_time,
     e.hot_jt_combo,
+    e.trainer_today_angle_winpct,
+    e.trainer_today_angle_starts,
+    e.has_strong_angle,
+    e.count_positive_angles,
     e.jt_winpct,
     e.beaten_lengths,
     e.class_delta,
@@ -515,6 +528,20 @@ def build_cl_features(df, stds=None):
             df[col] - df.groupby("race_id")[col].transform("mean")
         ).fillna(0.0)
 
+    # ── Trainer-angle features (Phase E1) ───────────────────────────────
+    # trainer_today_angle_winpct is the starts-weighted average win% across
+    # angles matching today (surface, distance band, class, equipment).
+    # Within-race centering picks up "this trainer is stronger in today's
+    # specific conditions than the rivals' trainers."
+    center("trainer_today_angle_winpct", "trainer_angle_winpct_c",
+           "trainer_angle_missing")
+    center("trainer_today_angle_starts", "trainer_angle_starts_c")
+    for col in ("has_strong_angle", "count_positive_angles"):
+        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
+        df[col + "_c"] = (
+            df[col] - df.groupby("race_id")[col].transform("mean")
+        ).fillna(0.0)
+
     # ── Race-level pace scenario features (Phase 3) ─────────────────────
     # Per-horse pace columns describe ability; the scenario lives at the
     # race level — multiple speed horses = duel = closers win; one lone
@@ -598,11 +625,13 @@ def build_cl_features(df, stds=None):
                   "dist_wins_c", "dist_starts_c", "surface_wins_c",
                   "surface_winpct_c", "combo_wins_c",
                   "jockey_change_c", "jockey_first_time_c", "hot_jt_combo_c",
+                  "trainer_angle_winpct_c", "trainer_angle_starts_c",
+                  "has_strong_angle_c", "count_positive_angles_c",
                   "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
                   "pp_missing", "spd_missing", "jt_missing", "starts_missing",
                   "workout_missing", "weight_change_missing",
-                  "dist_record_missing"):
+                  "dist_record_missing", "trainer_angle_missing"):
             v = df.loc[pp_mask, c] if pp_mask.any() else df[c]
             stds[c] = float(v.std()) or 1.0
 

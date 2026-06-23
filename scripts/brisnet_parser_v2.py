@@ -836,6 +836,222 @@ def connection_features(today_jockey: str | None,
     return feats
 
 
+# Trainer-angle stat rows (Phase E1). Format:
+#   "<name>  <starts>  <winpct>%  <itm%>  <roi>"
+# Examples (from real Brisnet PPs):
+#   "Maiden Clming  93 8%  25% -0.72"
+#   "All Weather   125 8%  21% -0.73"
+#   "Sprints       135 13% 35% -0.62"
+#   "+1stTimeBlinkers 30 20% 40% -0.65"
+# Jockey rows use a "JKYw/" prefix ("+JKYw/ P types 279 18% 48% -0.71")
+# and are filtered out — they're Phase E2 territory.
+_ANGLE_ROW_RE = re.compile(
+    r'(?:^|\s)([+\-]?)([A-Za-z][A-Za-z0-9 /\-\']{1,28}?)'
+    r'\s+(\d{1,5})\s+(\d{1,3})%\s+(\d{1,3})%\s+([+\-]?\d+\.\d+)'
+)
+
+# Trainer-angle classifier: map known angle names (lowercased) to canonical
+# categories. Only angles in this map are kept — random matches like
+# "2026 36 3% 25% -1.76" (year stats, not matchable to today's conditions)
+# are dropped so the Sprint/Dirt/etc. signals stay clean.
+TRAINER_ANGLE_TYPES = {
+    # Surface
+    'dirt':              'surface_dirt',
+    'turf':              'surface_turf',
+    'all weather':       'surface_aw',
+    'allweather':        'surface_aw',
+    'aw':                'surface_aw',
+    'synth':             'surface_aw',
+    # Distance band
+    'sprint':            'dist_sprint',
+    'sprints':           'dist_sprint',
+    'route':             'dist_route',
+    'routes':            'dist_route',
+    # Class type
+    'maiden':            'class_mdn',
+    'mdn':               'class_mdn',
+    'maiden clming':     'class_mdn',
+    'maiden claming':    'class_mdn',
+    'claming':           'class_clm',
+    'clming':            'class_clm',
+    'claim':             'class_clm',
+    'claiming':          'class_clm',
+    'allowance':         'class_alw',
+    'alw':               'class_alw',
+    'stakes':            'class_stk',
+    'oc':                'class_alw',  # OC ~= Optional Claiming, behaves like Alw
+    # Track condition (when known)
+    'off':               'condition_off',
+    'wet':               'condition_off',
+    'mud':               'condition_off',
+    'muddy':             'condition_off',
+    # Equipment-change angles (match if today has same change)
+    '1sttimeblinkers':   'eq_first_blinkers',
+    '1st time blinkers': 'eq_first_blinkers',
+    'blinkersoff':       'eq_blinkers_off',
+    'blinkers off':      'eq_blinkers_off',
+    '1st time lasix':    'eq_first_lasix',
+    '1sttimelasix':      'eq_first_lasix',
+}
+
+
+def extract_trainer_angles(block_lines) -> list[dict]:
+    """Parse trainer-side angle stat rows from a horse's block.
+
+    Returns list of {sign, name, type, starts, winpct, itm_pct, roi}. Filters
+    out jockey rows (JKYw/ prefix) and angles whose name isn't in the
+    TRAINER_ANGLE_TYPES map (year/decade stats etc. that don't condition
+    on today's race).
+    """
+    text = '\n'.join(block_lines)
+    out: list[dict] = []
+    seen = set()
+    for m in _ANGLE_ROW_RE.finditer(text):
+        sign, name, starts, winpct, itm, roi = m.groups()
+        name = name.strip()
+        name_norm = re.sub(r'\s+', ' ', name).lower()
+        # Skip jockey rows — Phase E2 will handle these
+        if 'jkyw' in name_norm or name_norm.startswith('jky'):
+            continue
+        # Filter to known trainer angles (longest-match first)
+        angle_type = TRAINER_ANGLE_TYPES.get(name_norm)
+        if angle_type is None:
+            for kw, t in sorted(TRAINER_ANGLE_TYPES.items(),
+                                key=lambda kv: -len(kv[0])):
+                if kw in name_norm:
+                    angle_type = t
+                    break
+        if angle_type is None:
+            continue
+        try:
+            s = int(starts)
+            wp = int(winpct)
+        except ValueError:
+            continue
+        if not (1 <= s <= 99999) or wp > 100:
+            continue
+        key = (angle_type, s, wp)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({
+            'sign': sign or '',
+            'name': name,
+            'type': angle_type,
+            'starts': s,
+            'winpct': wp,
+            'itm_pct': int(itm),
+            'roi': float(roi),
+        })
+    return out
+
+
+def _today_class_type(conditions: str | None) -> str | None:
+    """Map race conditions string ('MC 12500 Ì 5 Furlongs ...') to one of
+    {mdn, clm, alw, stk}. Returns None when no class indicator is found."""
+    if not conditions:
+        return None
+    s = conditions.upper()
+    # Order matters — MC is maiden claiming = mdn, but MSW also = mdn.
+    if 'MSW' in s or 'MDN' in s or s.startswith('MC') or 'MAIDEN' in s:
+        return 'mdn'
+    if s.startswith('STK') or 'STAKES' in s or s.startswith('STAKES'):
+        return 'stk'
+    if 'ALW' in s or s.startswith('AOC') or s.startswith('OC'):
+        return 'alw'
+    if 'CLM' in s or 'CLAIM' in s or s.startswith('STR'):
+        return 'clm'
+    return None
+
+
+def _angle_matches_today(angle_type: str,
+                         today_surface: str | None,
+                         today_furlongs: float | None,
+                         today_class: str | None,
+                         blinkers_added_today: int,
+                         blinkers_removed_today: int,
+                         first_time_lasix: int) -> bool:
+    """Return True if a parsed angle type applies to today's race conditions."""
+    if angle_type == 'surface_dirt':
+        return (today_surface or '').strip().lower().startswith('dirt')
+    if angle_type == 'surface_turf':
+        return (today_surface or '').strip().lower().startswith('turf')
+    if angle_type == 'surface_aw':
+        s = (today_surface or '').strip().lower()
+        return 'all weather' in s or s == 'aw' or 'tapeta' in s
+    if angle_type == 'dist_sprint':
+        return today_furlongs is not None and today_furlongs < 8.0
+    if angle_type == 'dist_route':
+        return today_furlongs is not None and today_furlongs >= 8.0
+    if angle_type == 'class_mdn':
+        return today_class == 'mdn'
+    if angle_type == 'class_clm':
+        return today_class == 'clm'
+    if angle_type == 'class_alw':
+        return today_class == 'alw'
+    if angle_type == 'class_stk':
+        return today_class == 'stk'
+    if angle_type == 'condition_off':
+        # We don't know post-time condition pre-race; skip
+        return False
+    if angle_type == 'eq_first_blinkers':
+        return blinkers_added_today == 1
+    if angle_type == 'eq_blinkers_off':
+        return blinkers_removed_today == 1
+    if angle_type == 'eq_first_lasix':
+        return first_time_lasix == 1
+    return False
+
+
+def trainer_angle_features(angles: list[dict],
+                           today_surface: str | None,
+                           today_furlongs: float | None,
+                           today_class: str | None,
+                           blinkers_added_today: int,
+                           blinkers_removed_today: int,
+                           first_time_lasix: int,
+                           hot_threshold: int = 20,
+                           min_starts: int = 10) -> dict:
+    """Aggregate trainer angles that apply to today's race conditions.
+
+    trainer_today_angle_winpct: starts-weighted win% across matching angles
+                                (None when no matching angle has starts)
+    trainer_today_angle_starts: sum of starts across matching angles
+                                (counts can double-count when multiple
+                                 angles overlap — that's OK as a signal)
+    has_strong_angle:           1 if any matching angle has winpct
+                                >= hot_threshold AND starts >= min_starts
+    count_positive_angles:      number of matching angles with '+' sign
+    """
+    matching = [a for a in angles if _angle_matches_today(
+        a['type'], today_surface, today_furlongs, today_class,
+        blinkers_added_today, blinkers_removed_today, first_time_lasix,
+    )]
+    if not matching:
+        return {
+            'trainer_today_angle_winpct': None,
+            'trainer_today_angle_starts': None,
+            'has_strong_angle': None,
+            'count_positive_angles': None,
+        }
+    total_starts = sum(a['starts'] for a in matching)
+    if total_starts > 0:
+        weighted = sum(a['starts'] * a['winpct'] for a in matching) / total_starts
+    else:
+        weighted = None
+    has_strong = any(
+        a['winpct'] >= hot_threshold and a['starts'] >= min_starts
+        for a in matching
+    )
+    count_pos = sum(1 for a in matching if a['sign'] == '+')
+    return {
+        'trainer_today_angle_winpct': weighted,
+        'trainer_today_angle_starts': total_starts,
+        'has_strong_angle': int(has_strong),
+        'count_positive_angles': count_pos,
+    }
+
+
 def extract_pace_figures(block_lines):
     """Extract Brisnet pace figures (E1, E2, LP) from condensed PP race lines.
 
@@ -1345,6 +1561,19 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 jt_winpct=jt_winpct,
             )
 
+            # ── Trainer-angle features (Phase E1) ───────────────────────────
+            trn_angles = extract_trainer_angles(block)
+            today_class = _today_class_type(races[current_race].get('conditions',''))
+            tang_feats = trainer_angle_features(
+                trn_angles,
+                today_surface_str,
+                today_furlongs,
+                today_class,
+                eq_feats['blinkers_added_today'] or 0,
+                eq_feats['blinkers_removed_today'] or 0,
+                eq_feats['first_time_lasix'] or 0,
+            )
+
             # ── Hot J/T and 0% J/T from angles ────────────────────────────────
             _HOT_JT_RE = re.compile(r'hot.*?(?:trainer|jockey|j/?t|combo)', re.IGNORECASE)
             hot_jt = any(_HOT_JT_RE.search(a) for a in pos_angles)
@@ -1426,6 +1655,10 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'jockey_change': conn_feats['jockey_change'],
                 'jockey_first_time': conn_feats['jockey_first_time'],
                 'hot_jt_combo': conn_feats['hot_jt_combo'],
+                'trainer_today_angle_winpct': tang_feats['trainer_today_angle_winpct'],
+                'trainer_today_angle_starts': tang_feats['trainer_today_angle_starts'],
+                'has_strong_angle': tang_feats['has_strong_angle'],
+                'count_positive_angles': tang_feats['count_positive_angles'],
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
                 'last_class': last_class, 'last_dist': last_dist,
@@ -1722,9 +1955,11 @@ def write_entries_db(races, track_code, race_date):
                     "dist_wins,dist_starts,surface_wins,surface_starts,"
                     "surface_winpct,combo_starts,combo_wins,"
                     "jockey_change,jockey_first_time,hot_jt_combo,"
+                    "trainer_today_angle_winpct,trainer_today_angle_starts,"
+                    "has_strong_angle,count_positive_angles,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
                     "class_delta,distance_delta,signal_types,horse_starts,is_pick)"
-                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -1761,6 +1996,10 @@ def write_entries_db(races, track_code, race_date):
                      h.get('jockey_change'),
                      h.get('jockey_first_time'),
                      h.get('hot_jt_combo'),
+                     h.get('trainer_today_angle_winpct'),
+                     h.get('trainer_today_angle_starts'),
+                     h.get('has_strong_angle'),
+                     h.get('count_positive_angles'),
                      ','.join(str(s) for s in h.get('recent_spd', [])) or None,
                      int(bool(h.get('improving'))),
                      int(bool(h.get('jt_zero'))),
