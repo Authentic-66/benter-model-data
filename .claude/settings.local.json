@@ -68,7 +68,8 @@
       "Bash(py brisnet_parser_v2.py \"../Gulfstream Park/gp-pps-files/gpx0508y.pdf\" GP)",
       "Bash(echo \"Exit: $?\")",
       "Bash(python3)",
-      "Bash(break)"
+      "Bash(break)",
+      "Bash(grep -n \"^def extract_text\\\\|extract_text\\\\\\\\s*=\" \"scripts/brisnet_parser_v2.py\")"
     ]
   }
 }
