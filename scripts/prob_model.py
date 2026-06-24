@@ -274,6 +274,16 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                # due to collinearity with starts. Columns are stored
                # in entries for future re-test.
                "count_positive_angles_c", "trainer_angle_missing",
+               # Phase E2 (jockey angles): ablation showed
+               # jky_angle_winpct_c + jky_angle_missing is the winning
+               # pair (PP-rich +0.0048 vs E1 baseline +0.0007 = +0.0041
+               # swing). Unlike the trainer side, jockey winpct fits a
+               # CLEAN positive coefficient — jockey angles have smaller
+               # sample sizes (avg 227 vs trainer's 512) so winpct is
+               # more differentiating and not redundant with prime_power.
+               # has_strong_jky and count_positive_jky regressed when
+               # added on top of winpct. starts also regressed.
+               "jky_angle_winpct_c", "jky_angle_missing",
                # Phase C connection-change features (jockey_change_c,
                # jockey_first_time_c, hot_jt_combo_c) tested 2026-06-22
                # and held out. Per-feature ablation showed every config
