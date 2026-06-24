@@ -1052,6 +1052,162 @@ def trainer_angle_features(angles: list[dict],
     }
 
 
+# Jockey-angle stat rows (Phase E2). Same row format as trainer angles
+# but prefixed with "JKYw/" (jockey with ...). After stripping the
+# prefix the category is one of:
+#   sprints/routes        distance band — match today's distance
+#   e/ep/p/s/na types     running-style — match today's horse style
+#   dirt/turf             surface — match today's race surface
+#   trn l60               jockey-with-current-trainer last 60 days —
+#                         redundant with existing sig_hotjt / jt_winpct,
+#                         skip
+JOCKEY_ANGLE_TYPES = {
+    # Distance band
+    'sprints':    'dist_sprint',
+    'sprint':     'dist_sprint',
+    'routes':     'dist_route',
+    'route':      'dist_route',
+    # Running style (horse style indicator from silks header)
+    'e types':    'style_e',
+    'ep types':   'style_ep',
+    'e/p types':  'style_ep',
+    'p types':    'style_p',
+    's types':    'style_s',
+    'na types':   'style_na',
+    # Surface
+    'dirt':       'surface_dirt',
+    'turf':       'surface_turf',
+    'all weather':'surface_aw',
+    'aw':         'surface_aw',
+    # Class type — rare on the jockey side but include for completeness
+    'maiden':     'class_mdn',
+    'claming':    'class_clm',
+    'clming':     'class_clm',
+    'claiming':   'class_clm',
+    'allowance':  'class_alw',
+    'stakes':     'class_stk',
+}
+
+
+def extract_jockey_angles(block_lines) -> list[dict]:
+    """Parse JKYw/-prefixed jockey-angle stat rows. Skips "trn l60" because
+    it's redundant with existing sig_hotjt / jt_winpct."""
+    text = '\n'.join(block_lines)
+    out: list[dict] = []
+    seen = set()
+    for m in _ANGLE_ROW_RE.finditer(text):
+        sign, name, starts, winpct, itm, roi = m.groups()
+        name = name.strip()
+        name_norm = re.sub(r'\s+', ' ', name).lower()
+        if 'jkyw' not in name_norm:
+            continue
+        # Strip the JKYw/ prefix to expose the bare category
+        cat = re.sub(r'^.*?jkyw\s*/\s*', '', name_norm).strip()
+        if not cat or cat.startswith('trn '):
+            continue
+        angle_type = JOCKEY_ANGLE_TYPES.get(cat)
+        if angle_type is None:
+            for kw, t in sorted(JOCKEY_ANGLE_TYPES.items(),
+                                key=lambda kv: -len(kv[0])):
+                if kw in cat:
+                    angle_type = t
+                    break
+        if angle_type is None:
+            continue
+        try:
+            s = int(starts)
+            wp = int(winpct)
+        except ValueError:
+            continue
+        if not (1 <= s <= 99999) or wp > 100:
+            continue
+        key = (angle_type, s, wp)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({
+            'sign': sign or '',
+            'name': name,
+            'type': angle_type,
+            'starts': s,
+            'winpct': wp,
+            'itm_pct': int(itm),
+            'roi': float(roi),
+        })
+    return out
+
+
+# Horse running-style indicator from the silks-header line: "(E 7)",
+# "(E/P 3)", "(P 12)", "(S 5)", "(NA 0)". Normalize "E/P" → "ep".
+_HORSE_STYLE_RE = re.compile(r'\(([A-Z]{1,2}(?:/[A-Z]{1,2})?)\s+\d+\)')
+
+
+def _extract_horse_style(block_lines) -> str | None:
+    for line in block_lines[:8]:  # style indicator lives at top of block
+        m = _HORSE_STYLE_RE.search(line)
+        if m:
+            style = m.group(1).replace('/', '').lower()
+            if style in ('e', 'ep', 'p', 's', 'na'):
+                return style
+    return None
+
+
+def _jockey_angle_matches_today(angle_type: str,
+                                today_surface: str | None,
+                                today_furlongs: float | None,
+                                today_class: str | None,
+                                today_horse_style: str | None) -> bool:
+    """True iff the parsed jockey-angle category applies to today's race
+    AND this horse. Surface/distance/class match the race; style matches
+    the horse."""
+    if angle_type.startswith('style_'):
+        target = angle_type.split('_', 1)[1]
+        return today_horse_style is not None and today_horse_style == target
+    # Surface/distance/class — reuse the same logic as trainer angles
+    return _angle_matches_today(
+        angle_type, today_surface, today_furlongs, today_class,
+        blinkers_added_today=0, blinkers_removed_today=0,
+        first_time_lasix=0,
+    )
+
+
+def jockey_angle_features(angles: list[dict],
+                          today_surface: str | None,
+                          today_furlongs: float | None,
+                          today_class: str | None,
+                          today_horse_style: str | None,
+                          hot_threshold: int = 20,
+                          min_starts: int = 10) -> dict:
+    """Same shape as trainer_angle_features but for jockey angles."""
+    matching = [a for a in angles if _jockey_angle_matches_today(
+        a['type'], today_surface, today_furlongs, today_class,
+        today_horse_style,
+    )]
+    if not matching:
+        return {
+            'jky_angle_winpct': None,
+            'jky_angle_starts': None,
+            'has_strong_jky_angle': None,
+            'count_positive_jky_angles': None,
+        }
+    total_starts = sum(a['starts'] for a in matching)
+    if total_starts > 0:
+        weighted = sum(a['starts'] * a['winpct'] for a in matching) / total_starts
+    else:
+        weighted = None
+    has_strong = any(
+        a['winpct'] >= hot_threshold and a['starts'] >= min_starts
+        for a in matching
+    )
+    count_pos = sum(1 for a in matching if a['sign'] == '+')
+    return {
+        'jky_angle_winpct': weighted,
+        'jky_angle_starts': total_starts,
+        'has_strong_jky_angle': int(has_strong),
+        'count_positive_jky_angles': count_pos,
+    }
+
+
 def extract_pace_figures(block_lines):
     """Extract Brisnet pace figures (E1, E2, LP) from condensed PP race lines.
 
@@ -1574,6 +1730,14 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 eq_feats['first_time_lasix'] or 0,
             )
 
+            # ── Jockey-angle features (Phase E2) ────────────────────────────
+            today_horse_style = _extract_horse_style(block)
+            jky_angles = extract_jockey_angles(block)
+            jang_feats = jockey_angle_features(
+                jky_angles, today_surface_str, today_furlongs,
+                today_class, today_horse_style,
+            )
+
             # ── Hot J/T and 0% J/T from angles ────────────────────────────────
             _HOT_JT_RE = re.compile(r'hot.*?(?:trainer|jockey|j/?t|combo)', re.IGNORECASE)
             hot_jt = any(_HOT_JT_RE.search(a) for a in pos_angles)
@@ -1659,6 +1823,10 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'trainer_today_angle_starts': tang_feats['trainer_today_angle_starts'],
                 'has_strong_angle': tang_feats['has_strong_angle'],
                 'count_positive_angles': tang_feats['count_positive_angles'],
+                'jky_angle_winpct': jang_feats['jky_angle_winpct'],
+                'jky_angle_starts': jang_feats['jky_angle_starts'],
+                'has_strong_jky_angle': jang_feats['has_strong_jky_angle'],
+                'count_positive_jky_angles': jang_feats['count_positive_jky_angles'],
                 'improving': improving, 'jt_zero': jt_zero,
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
                 'last_class': last_class, 'last_dist': last_dist,
@@ -1957,9 +2125,11 @@ def write_entries_db(races, track_code, race_date):
                     "jockey_change,jockey_first_time,hot_jt_combo,"
                     "trainer_today_angle_winpct,trainer_today_angle_starts,"
                     "has_strong_angle,count_positive_angles,"
+                    "jky_angle_winpct,jky_angle_starts,"
+                    "has_strong_jky_angle,count_positive_jky_angles,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
                     "class_delta,distance_delta,signal_types,horse_starts,is_pick)"
-                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -2000,6 +2170,10 @@ def write_entries_db(races, track_code, race_date):
                      h.get('trainer_today_angle_starts'),
                      h.get('has_strong_angle'),
                      h.get('count_positive_angles'),
+                     h.get('jky_angle_winpct'),
+                     h.get('jky_angle_starts'),
+                     h.get('has_strong_jky_angle'),
+                     h.get('count_positive_jky_angles'),
                      ','.join(str(s) for s in h.get('recent_spd', [])) or None,
                      int(bool(h.get('improving'))),
                      int(bool(h.get('jt_zero'))),

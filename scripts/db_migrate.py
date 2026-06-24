@@ -139,6 +139,10 @@ CREATE TABLE IF NOT EXISTS entries (
     trainer_today_angle_starts  INTEGER,
     has_strong_angle            INTEGER,
     count_positive_angles       INTEGER,
+    jky_angle_winpct            REAL,
+    jky_angle_starts            INTEGER,
+    has_strong_jky_angle        INTEGER,
+    count_positive_jky_angles   INTEGER,
     recent_spd    TEXT,
     improving     INTEGER,
     jt_zero       INTEGER,
@@ -259,6 +263,17 @@ def ensure_prob_columns(conn):
         ('trainer_today_angle_starts', 'INTEGER'),
         ('has_strong_angle',           'INTEGER'),
         ('count_positive_angles',      'INTEGER'),
+    ):
+        if col not in existing_e:
+            conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")
+            print(f"  schema: added entries.{col}")
+    # Jockey-angle stats (Phase E2): JKYw/-prefixed rows matching today's
+    # race conditions + horse running-style (E/EP/P/S/NA types).
+    for col, ctype in (
+        ('jky_angle_winpct',           'REAL'),
+        ('jky_angle_starts',           'INTEGER'),
+        ('has_strong_jky_angle',       'INTEGER'),
+        ('count_positive_jky_angles',  'INTEGER'),
     ):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")

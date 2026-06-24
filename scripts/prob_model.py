@@ -383,6 +383,10 @@ SELECT
     e.trainer_today_angle_starts,
     e.has_strong_angle,
     e.count_positive_angles,
+    e.jky_angle_winpct,
+    e.jky_angle_starts,
+    e.has_strong_jky_angle,
+    e.count_positive_jky_angles,
     e.jt_winpct,
     e.beaten_lengths,
     e.class_delta,
@@ -537,6 +541,18 @@ def build_cl_features(df, stds=None):
            "trainer_angle_missing")
     center("trainer_today_angle_starts", "trainer_angle_starts_c")
     for col in ("has_strong_angle", "count_positive_angles"):
+        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
+        df[col + "_c"] = (
+            df[col] - df.groupby("race_id")[col].transform("mean")
+        ).fillna(0.0)
+
+    # ── Jockey-angle features (Phase E2) ────────────────────────────────
+    # Same shape as the trainer-angle block. Match is on today's surface/
+    # distance band/class type PLUS today's horse running-style (E/EP/P/
+    # S/NA) — Brisnet has dedicated jockey-with-style stats per horse.
+    center("jky_angle_winpct", "jky_angle_winpct_c", "jky_angle_missing")
+    center("jky_angle_starts", "jky_angle_starts_c")
+    for col in ("has_strong_jky_angle", "count_positive_jky_angles"):
         df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
         df[col + "_c"] = (
             df[col] - df.groupby("race_id")[col].transform("mean")
