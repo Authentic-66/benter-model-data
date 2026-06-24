@@ -643,11 +643,14 @@ def build_cl_features(df, stds=None):
                   "jockey_change_c", "jockey_first_time_c", "hot_jt_combo_c",
                   "trainer_angle_winpct_c", "trainer_angle_starts_c",
                   "has_strong_angle_c", "count_positive_angles_c",
+                  "jky_angle_winpct_c", "jky_angle_starts_c",
+                  "has_strong_jky_angle_c", "count_positive_jky_angles_c",
                   "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
                   "pp_missing", "spd_missing", "jt_missing", "starts_missing",
                   "workout_missing", "weight_change_missing",
-                  "dist_record_missing", "trainer_angle_missing"):
+                  "dist_record_missing", "trainer_angle_missing",
+                  "jky_angle_missing"):
             v = df.loc[pp_mask, c] if pp_mask.any() else df[c]
             stds[c] = float(v.std()) or 1.0
 

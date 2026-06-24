@@ -367,6 +367,10 @@ def score_card(pp_file: Path, track: str) -> pd.DataFrame:
                 "trainer_today_angle_starts": h.get("trainer_today_angle_starts"),
                 "has_strong_angle": h.get("has_strong_angle"),
                 "count_positive_angles": h.get("count_positive_angles"),
+                "jky_angle_winpct": h.get("jky_angle_winpct"),
+                "jky_angle_starts": h.get("jky_angle_starts"),
+                "has_strong_jky_angle": h.get("has_strong_jky_angle"),
+                "count_positive_jky_angles": h.get("count_positive_jky_angles"),
                 "jt_winpct": h.get("jt_winpct"),
                 "beaten_lengths": h.get("beaten_len"),
                 "class_delta": h.get("class_delta"),
@@ -391,6 +395,8 @@ def score_card(pp_file: Path, track: str) -> pd.DataFrame:
                 "jockey_change", "jockey_first_time", "hot_jt_combo",
                 "trainer_today_angle_winpct", "trainer_today_angle_starts",
                 "has_strong_angle", "count_positive_angles",
+                "jky_angle_winpct", "jky_angle_starts",
+                "has_strong_jky_angle", "count_positive_jky_angles",
                 "jt_winpct", "beaten_lengths",
                 "class_delta", "distance_delta"):
         df[col] = pd.to_numeric(df[col], errors="coerce")

@@ -1,0 +1,160 @@
+﻿Results FP [20260623]
+  File: FP062326USA.pdf 
+ 
+Processing FP062326USA.pdf [FP]...
+Found 8 race(s)
+
+========================================================================
+  RESULTS : FAIRMOUNT PARK
+  Source  : FP062326USA.pdf
+========================================================================
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 1  â€”  AOC  |  1M  |  Dirt  |  $38,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  Nella                             1.60  Santos,Ademar             Essenpreis,Eddie        
+    2    3  Hanabi                            3.80  Tavares,Javier            Coontz,Arthur           
+    3    7  IDidtheMath                       4.50  Ortega,Harold             Rednour,Jr.,John        
+    4    5  HarperBriana                     12.20  Lara,Victor               Martinez,Ralph          
+
+  Time    : 1:42.70
+  Trainer : Essenpreis, Eddie
+  Sire    : LordNelson
+
+  WIN    $5.20   PLC    $2.80   SHW    $2.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 2  â€”  CLM  |  6F  |  Dirt  |  $10,400
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  HeartbreakGame                    4.20  Lara,Victor               Lynch,Harry             
+    2    2  QualityStorm                      3.80  Giles,Emmanuel            Rodriguez,Jose          
+    3    6  AfterMyBrother                    4.60  Tavares,Javier            Sandrowski,Gene         
+    4    7  BadObsession                      5.50  Aranguren,Johanis         Irion,Heather           
+    5    8  Gibran                            3.00  Bendezu,Alexander         Martinez,Ralph          
+    6    3  Rumbling                         14.90  Reyes,Frank               Quinonez,Maximino       
+    7    9  StunningBruno                     6.90  Stanley,Angel             Anderson,Mark           
+    8    5  TwoStepJake                      20.90  Ortega,Javier             Wells,Duane             
+
+  Time    : 1:13.20
+  Trainer : Lynch, Harry
+  Sire    : GameWinner
+
+  WIN   $10.40   PLC    $5.20   SHW    $3.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 3  â€”  MCL  |  6F  |  Dirt  |  $13,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  Supremest                         3.00  Arrieta,Reynier           Irion,Heather           
+    2    8  AveryzDay                         7.10  Lara,Victor               Lynch,Harry             
+    3    3  Unconnected                      17.10  Felix,Julio               Lynch,Harry             
+    4    1  TuffHeart                        13.80  Tavares,Javier            Davis,Jr.,Charles       
+    5    7  RichochetRick                     0.80  Aranguren,Johanis         Irion,Heather           
+    6    2  BeLuckyAgain                      7.10  Wales,Travis              Becker,Scott            
+    7    6  Maya'sWarrior                    51.60  Ortega,Javier             Retana,Gabe             
+    8    5  AmericanBlend                    45.40  Diego,Javier              Wells,Duane             
+
+  Time    : 1:13.99
+  Trainer : Irion, Heather
+  Sire    : MaximusMischief
+
+  WIN    $8.00   PLC    $5.80   SHW    $4.60
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 4  â€”  CLM  |  5.5F  |  Dirt  |  $10,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  Lily'sWoofy                       0.70  Aranguren,Johanis         Martinez,Ralph          
+    2    6  FreedomAttack                     9.10  Stanley,Angel             Childers,Shane          
+    3    2  Primity                          12.00  Lara,Victor               Jelinski,Jessica        
+    4    7  RocktheBirdhouse                  3.10  Bendezu,Alexander         Martinez,Ralph          
+    5    1  MistySunday                       7.60  Ortega,Harold             Razvi,Omar              
+    6    5  JustAtMidnight                   19.50  Tavares,Javier            Nesbitt,Amy             
+    7    8  Betty'sSecret                    24.70  Ortega,Javier             Randazzo,Teddy          
+
+  Time    : 1:05.83
+  Trainer : Martinez, Ralph
+  Sire    : Dominus
+
+  WIN    $3.40   PLC    $2.40   SHW    $2.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 5  â€”  CLM  |  1M  |  Dirt  |  $19,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    7  Redfield                          3.90  Diego,Javier              Watkins,James           
+    2    1  CategoryTen                       2.20  Orm,Cory                  Straub,Marvel           
+    3    4  Runningforcash                   14.10  Bendezu,Alexander         Martinez,Ralph          
+    4    5  WickedGus                        16.40  Aranguren,Johanis         Straub,Marvel           
+    5    2  Roussette                         5.10  Santos,Ademar             Watkins,James           
+    6    3  LemonDropShot                     3.10  Tavares,Javier            Bahena,Fernando         
+    7    6  CampDaddy                         4.80  Wales,Travis              Hornsby,Tammy           
+
+  Time    : 1:43.34
+  Trainer : Watkins, James
+  Sire    : WestCoast
+
+  WIN    $9.80   PLC    $4.20   SHW    $3.40
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 6  â€”  AOC  |  6F  |  Dirt  |  $40,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    2  Weslan                           10.30  Santos,Ademar             Wainwright,John         
+    2    3  Grayhop                           4.80  Orm,Cory                  Plasters,Lori           
+    3    6  VolodymyrZ                        1.50  Wales,Travis              Becker,Scott            
+    4    1  TahoeRun                          1.70  Felix,Julio               Hernandez,Armando       
+    5    7  AdiosKid                         11.20  Bendezu,Alexander         Delong,Ben              
+    6    4  GodGunsNGuts                     18.50  Giles,Emmanuel            Rodriguez,Jose          
+    7    5  FastCrossTraffic                 15.50  Santiago,Victor           Plasters,Lori           
+
+  Time    : 1:13.18
+  Trainer : Wainwright, John
+  Sire    : MorSpirit
+
+  WIN   $22.60   PLC    $7.60   SHW    $3.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 7  â€”  AOC  |  6F  |  Dirt  |  $20,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    4  Mama'sMemories                    4.20  Wales,Travis              Manley,Steve            
+    2    7  WildcatBobbie                     6.70  Giles,Emmanuel            Coontz,Arthur           
+    3    9  HotDance                          3.10  Santiago,Victor           Becker,Scott            
+    4    8  Cantoo                           32.60  Diego,Javier              Wainwright,John         
+    5    3  TooMuchTuesday                    4.00  Felix,Julio               Watkins,James           
+    6    2  JetPack                           4.30  Santos,Ademar             Manley,Steve            
+    7    5  LitMissHatTrick                  12.10  Lara,Victor               Lynch,Harry             
+    8    1  ChanceTaker                       5.50  Bendezu,Alexander         Becker,Scott            
+
+  Time    : 1:12.71
+  Trainer : Manley, Steve
+  Sire    : Ghaaleb
+
+  WIN   $10.40   PLC    $5.40   SHW    $3.60
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 8  â€”  STA  |  1 1/16M  |  Dirt  |  $16,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  McMoney                           4.90  Lara,Victor               Lynch,Harry             
+    2    2  SwissGuard                        0.80  Santos,Ademar             Manley,Steve            
+    3    9  CodeRunner                       13.90  Bendezu,Alexander         Rodriguez,Hugo          
+    4   11  CoolMemory                       54.30  Stanley,Angel             Durham,Mike             
+    5    3  GetThrough                       24.30  Orm,Cory                  Plasters,Lori           
+    6    7  BigCommerce                       2.80  Aranguren,Johanis         Irion,Heather           
+    7   10  JetFlight                        27.90  Tavares,Javier            Mosier,Harold           
+    8    1  Danville                         31.50  Felix,Julio               Durham,Mike             
+
+  Time    : 1:46.07
+  Trainer : Lynch, Harry
+  Sire    : McCraken
+
+  WIN   $11.80   PLC    $3.80   SHW    $2.60
+
+========================================================================
+  8 race(s) processed
+========================================================================
+
