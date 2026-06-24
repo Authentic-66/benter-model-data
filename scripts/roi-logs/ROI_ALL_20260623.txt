@@ -1,0 +1,159 @@
+ROI All Tracks  [20260623] 
+ 
+######################################################################## 
+  BENTER MODEL -- ROI ALL TRACKS 
+######################################################################## 
+ 
+======================================================================== 
+  CHARLES TOWN (CT) 
+======================================================================== 
+  No result PDF found for picks date 20260620 - skipping CT 
+ 
+======================================================================== 
+  FAIRMOUNT PARK (FP) 
+======================================================================== 
+  Picks: picks_FP_06232026.txt 
+  Result: FP062326USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_FP_06232026.txt...
+  22 pick(s) loaded
+  8 pick(s) filtered before scoring (3 odds threshold, 5 race pick limit)
+
+Loading result PDFs...
+  Parsing FP062326USA.pdf [FP]...
+    8 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ FAIRMOUNT PARK (FP) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    LuckyMonica              TRAINER+H WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R1    Nella                    TRAINER+H WPS     1  $6.00  $10.40     +$4.40
+  R2    QualityStorm             TRAINER   WPS     2  $6.00  $ 8.60     +$2.60
+  R2    BadObsession             TRAINER+H WPS     4  $6.00  $ 0.00     -$6.00
+  R2    AirGerri                 TRAINER           â€”                              [RACE PICK LIMIT]
+  R3    BeLuckyAgain             TRAINER+H WPS     6  $6.00  $ 0.00     -$6.00
+  R3    RichochetRick            TRAINER+H         â€”                              [BELOW ODDS THRESHOLD]
+  R4    Lily'sWoofy              TRAINER+H WPS     1  $6.00  $ 8.00     +$2.00
+  R5    Roussette                TRAINER   WPS     5  $6.00  $ 0.00     -$6.00
+  R5    Redfield                 TRAINER   WPS     1  $6.00  $17.40    +$11.40
+  R6    GodGunsNGuts             TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R6    VolodymyrZ               TRAINER+H WPS     3  $6.00  $ 3.20     -$2.80
+  R7    JetPack                  TRAINER   WPS     6  $6.00  $ 0.00     -$6.00
+  R7    Mama'sMemories           TRAINER   WPS     1  $6.00  $19.40    +$13.40
+  R7    HotDance                 TRAINER+H         â€”                              [BELOW ODDS THRESHOLD]
+  R7    TooMuchTuesday           TRAINER           â€”                              [RACE PICK LIMIT]
+  R7    ChanceTaker              TRAINER           â€”                              [RACE PICK LIMIT]
+  R8    BigCommerce              TRAINER+H WPS     6  $6.00  $ 0.00     -$6.00
+  R8    CoolMemory               TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R8    SwissGuard               TRAINER           â€”                              [BELOW ODDS THRESHOLD]
+  R8    CodeRunner               TRAINER           â€”                              [RACE PICK LIMIT]
+  R8    Danville                 TRAINER           â€”                              [RACE PICK LIMIT]
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $84.00  $ 67.00    -$17.00  ROI: -20.2%
+
+============================================================================
+  OVERALL TOTAL                                    $84.00  $ 67.00    -$17.00  ROI: -20.2%
+============================================================================
+
+  Filter summary:
+    Below odds threshold (decimal ML < 3.0):  3 pick(s) not scored
+    Race pick limit (> 2/race):              5 pick(s) not scored
+
+ 
+======================================================================== 
+  GULFSTREAM PARK (GP) 
+======================================================================== 
+  Picks: picks_GP_06212026.txt 
+  Result: GP062126USA.pdf 
+ 
+
+Loading picks from C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\picks_GP_06212026.txt...
+  16 pick(s) loaded
+  5 pick(s) filtered before scoring (3 odds threshold, 2 race pick limit)
+  2 pick(s) below ML threshold but scored via TRAINER_EXEMPT
+
+Loading result PDFs...
+  Parsing GP062126USA.pdf [GP]...
+    9 race(s) loaded
+
+============================================================================
+  BENTER MODEL  â€”  ROI SUMMARY
+============================================================================
+
+  â”€â”€ GULFSTREAM PARK (GP) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Race  Horse                    Signal    Bets  Fin     Inv      Ret        P/L
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  R1    Misprint                 HORSE     WPS     4  $6.00  $ 0.00     -$6.00
+  R1    DrumRoll                 TRAINER+H         â€”                              [BELOW ODDS THRESHOLD]
+  R2    Satira                   TRAINER+H WPS     7  $6.00  $ 0.00     -$6.00
+  R2    CyberBelle               TRAINER+H WPS     ?  $6.00  $ 0.00     -$6.00  [NOT FOUND]
+  R2    Detox                    TRAINER           â€”                              [BELOW ODDS THRESHOLD]
+  R3    Jestina                  TRAINER+H WPS     1  $6.00  $ 8.20     +$2.20  [TRAINER EXEMPT]
+  R3    NastiZ                   TRAINER   WPS     2  $6.00  $ 4.20     -$1.80  [TRAINER EXEMPT]
+  R5    StarlightLuna            TRAINER   WPS     2  $6.00  $31.40    +$25.40
+  R5    SillyRisk                TRAINER           â€”                              [BELOW ODDS THRESHOLD]
+  R6    ThreeZero                TRAINER+H WPS     2  $6.00  $ 8.00     +$2.00
+  R6    Fulanito                 TRAINER   WPS     4  $6.00  $ 0.00     -$6.00
+  R6    UrbanLegend              TRAINER           â€”                              [RACE PICK LIMIT]
+  R8    LatchtheHatch            TRAINER   WPS     2  $6.00  $ 6.60     +$0.60
+  R8    PracticallyDark          TRAINER   WPS     1  $6.00  $15.20     +$9.20
+  R8    EsAristocratico          TRAINER           â€”                              [RACE PICK LIMIT]
+  R9    ComeOnPoppi              TRAINER+H WPS     2  $6.00  $ 5.40     -$0.60
+  Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·
+  SUBTOTAL                                         $66.00  $ 79.00    +$13.00  ROI: +19.7%
+
+============================================================================
+  OVERALL TOTAL                                    $66.00  $ 79.00    +$13.00  ROI: +19.7%
+============================================================================
+
+  Filter summary:
+    Below odds threshold (decimal ML < 3.0):  3 pick(s) not scored
+    Trainer exempt (scored below threshold):          2 pick(s) [TRAINER EXEMPT]
+    Race pick limit (> 2/race):              2 pick(s) not scored
+
+ 
+======================================================================== 
+  SARATOGA (SAR) 
+======================================================================== 
+  No picks_SAR_*.txt found - run parse_sar.bat first 
+ 
+======================================================================== 
+  SANTA ANITA (SA) 
+======================================================================== 
+  No picks_SA_*.txt found - run parse_sa.bat first 
+ 
+======================================================================== 
+  EVANGELINE DOWNS (EVD) 
+======================================================================== 
+  No result PDF found for picks date 20260620 - skipping EVD 
+ 
+======================================================================== 
+  DELTA DOWNS (DD) 
+======================================================================== 
+  No picks_DD_*.txt found - run parse_dd.bat first 
+ 
+======================================================================== 
+  FAIR GROUNDS (FG) 
+======================================================================== 
+  No picks_FG_*.txt found - run parse_fg.bat first 
+ 
+======================================================================== 
+  MAHONING VALLEY (MVR) 
+======================================================================== 
+  No picks_MVR_*.txt found - run parse_mvr.bat first 
+ 
+======================================================================== 
+  LAUREL PARK (LRL) 
+======================================================================== 
+  No picks_LRL_*.txt found - run parse_lrl.bat first 
+ 
+######################################################################## 
+  ALL TRACKS COMPLETE 
+######################################################################## 
+ 
+Log saved: C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\scripts\roi-logs\ROI_ALL_20260623.txt 
