@@ -278,6 +278,20 @@ def ensure_prob_columns(conn):
         if col not in existing_e:
             conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")
             print(f"  schema: added entries.{col}")
+    # Form-trajectory features (Phase E3): per-horse continuous slopes
+    # across the last 5 PP race lines. extract_form_trajectory computes
+    # these in brisnet_parser_v2; they fill the gap left by `improving`
+    # (a binary last-vs-prior flag) by capturing multi-race trends.
+    for col, ctype in (
+        ('speed_fig_slope',      'REAL'),
+        ('beaten_lengths_slope', 'REAL'),
+        ('class_drop_count',     'INTEGER'),
+        ('figure_high_recent',   'REAL'),
+        ('races_in_60d',         'INTEGER'),
+    ):
+        if col not in existing_e:
+            conn.execute(f"ALTER TABLE entries ADD COLUMN {col} {ctype}")
+            print(f"  schema: added entries.{col}")
     conn.commit()
 
 

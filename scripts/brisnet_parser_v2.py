@@ -1346,6 +1346,117 @@ def extract_horse_starts(block_lines):
                 if (d := _pp_line_date(line)) is not None})
 
 
+def _ols_slope(ys):
+    """Simple OLS slope of ys against x = [0, 1, ..., n-1].
+    Convention: x=0 is the OLDEST race, x=n-1 the MOST RECENT, so a
+    positive slope means the metric is rising over time. Returns None
+    when fewer than 2 points are present."""
+    n = len(ys)
+    if n < 2:
+        return None
+    x_mean = (n - 1) / 2.0
+    y_mean = sum(ys) / n
+    num = sum((i - x_mean) * (y - y_mean) for i, y in enumerate(ys))
+    den = sum((i - x_mean) ** 2 for i in range(n))
+    return num / den if den else None
+
+
+def extract_form_trajectory(block_lines, race_date, page_lines=None):
+    """Phase E3: continuous trajectory features across the horse's last 5
+    PP race lines. Captures improvement/decline patterns that the binary
+    `improving` flag (last vs second-last only) cannot.
+
+    Returns a dict with five keys, each None when insufficient data:
+      * speed_fig_slope: OLS slope of speed figures over time (oldest→newest)
+            so positive = improving form.
+      * beaten_lengths_slope: OLS slope of beaten lengths over time. The
+            sign convention is the RAW length: 0 = won, positive = behind,
+            so a NEGATIVE slope means the horse is finishing closer to the
+            winner over time (improving).
+      * class_drop_count: number of class drops in the last 5 races
+            (consecutive races where today's class < previous race's class).
+            Reads from oldest to newest in the trailing window.
+      * figure_high_recent: max(last 3 speed figs) / max(all stored figs).
+            Ratio in (0, 1]; 1.0 means recent form is at lifetime peak.
+      * races_in_60d: count of PP race lines dated within 60 days of
+            today's race_date. Fitness/freshness indicator.
+    """
+    # Speed figures: most-recent first; reverse to oldest-first for the
+    # slope so positive = improving.
+    spd_pairs = extract_speed_figures(block_lines)
+    spd_recent_to_old = [f for f, _ in spd_pairs[:5]]
+    spd_old_to_recent = list(reversed(spd_recent_to_old))
+    speed_fig_slope = _ols_slope(spd_old_to_recent)
+
+    last3 = spd_recent_to_old[:3]
+    figs_all = [f for f, _ in spd_pairs]
+    if last3 and figs_all:
+        lifetime_max = max(figs_all)
+        figure_high_recent = max(last3) / lifetime_max if lifetime_max else None
+    else:
+        figure_high_recent = None
+
+    # Beaten lengths per PP date — replicate extract_beaten_lengths but
+    # keep the full per-date map rather than collapsing to most-recent.
+    bl_by_date = {}
+    for line in block_lines:
+        d = _pp_line_date(line)
+        if d is None or bl_by_date.get(d) is not None:
+            continue
+        m = _PP_FIN_RE.search(line)
+        if m is None and page_lines:
+            key = line.strip()
+            if len(key) >= 40:
+                for fl in page_lines:
+                    fls = fl.strip()
+                    if len(fls) > len(key) and fls.startswith(key):
+                        m = _PP_FIN_RE.search(fls)
+                        if m:
+                            break
+        if m is None:
+            bl_by_date.setdefault(d, None)
+            continue
+        pos = int(m.group(1))
+        bl_by_date[d] = 0.0 if pos == 1 else _sup_to_lengths(m.group(2))
+    bl_recent_to_old = [bl_by_date[d] for d in sorted(bl_by_date, reverse=True)
+                        if bl_by_date[d] is not None][:5]
+    bl_old_to_recent = list(reversed(bl_recent_to_old))
+    beaten_lengths_slope = _ols_slope(bl_old_to_recent)
+
+    # Class drops in the last 5 races (oldest→newest). Drop = current
+    # class < previous class; count transitions, not absolute level.
+    class_by_date = {}
+    for line in block_lines:
+        d = _pp_line_date(line)
+        if d is None or class_by_date.get(d) is not None:
+            continue
+        class_by_date[d] = _class_money(line[:60])
+    class_recent_to_old = [class_by_date[d] for d in sorted(class_by_date, reverse=True)
+                           if class_by_date[d] is not None][:5]
+    class_old_to_recent = list(reversed(class_recent_to_old))
+    if len(class_old_to_recent) >= 2:
+        class_drop_count = sum(1 for i in range(1, len(class_old_to_recent))
+                               if class_old_to_recent[i] < class_old_to_recent[i - 1])
+    else:
+        class_drop_count = None
+
+    # Races in last 60 days — needs today's race_date for the window.
+    if race_date is None:
+        races_in_60d = None
+    else:
+        pp_dates = {d for line in block_lines
+                    if (d := _pp_line_date(line)) is not None}
+        races_in_60d = sum(1 for d in pp_dates if 0 <= (race_date - d).days <= 60)
+
+    return {
+        'speed_fig_slope':      speed_fig_slope,
+        'beaten_lengths_slope': beaten_lengths_slope,
+        'class_drop_count':     class_drop_count,
+        'figure_high_recent':   figure_high_recent,
+        'races_in_60d':         races_in_60d,
+    }
+
+
 def extract_last_class(block_lines):
     """Class money of the horse's most recent race, or None. Only the first
     60 chars are searched so Top Finishers / comment text can't match."""
@@ -1675,6 +1786,7 @@ def parse_brisnet(text, track_code='GP', race_date=None):
             last_class = extract_last_class(block)
             last_dist  = extract_last_distance(block)
             horse_starts = extract_horse_starts(block)
+            traj_feats = extract_form_trajectory(block, race_date, lines)
 
             # ── Speed figures from PP lines in block ──────────────────────────
             spd_figs   = extract_speed_figures(block)  # [(figure, surface), ...]
@@ -1831,6 +1943,11 @@ def parse_brisnet(text, track_code='GP', race_date=None):
                 'jt_winpct': jt_winpct, 'beaten_len': beaten_len,
                 'last_class': last_class, 'last_dist': last_dist,
                 'horse_starts': horse_starts,
+                'speed_fig_slope':      traj_feats['speed_fig_slope'],
+                'beaten_lengths_slope': traj_feats['beaten_lengths_slope'],
+                'class_drop_count':     traj_feats['class_drop_count'],
+                'figure_high_recent':   traj_feats['figure_high_recent'],
+                'races_in_60d':         traj_feats['races_in_60d'],
             }
 
             if not any(h['name'] == horse for h in races[current_race]['horses']):
@@ -2128,8 +2245,10 @@ def write_entries_db(races, track_code, race_date):
                     "jky_angle_winpct,jky_angle_starts,"
                     "has_strong_jky_angle,count_positive_jky_angles,"
                     "recent_spd,improving,jt_zero,jt_winpct,beaten_lengths,"
-                    "class_delta,distance_delta,signal_types,horse_starts,is_pick)"
-                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "class_delta,distance_delta,signal_types,horse_starts,"
+                    "speed_fig_slope,beaten_lengths_slope,class_drop_count,"
+                    "figure_high_recent,races_in_60d,is_pick)"
+                    " VALUES(?,?,?,?,?,?,'PP',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (race_id, tc, date_str, rn, h['pp'],
                      h['name'].replace(' ', ''),
                      ml_to_float(h['ml']),
@@ -2183,6 +2302,11 @@ def write_entries_db(races, track_code, race_date):
                      h.get('distance_delta'),
                      ','.join(s[0] for s in h['signals']) or None,
                      h.get('horse_starts'),
+                     h.get('speed_fig_slope'),
+                     h.get('beaten_lengths_slope'),
+                     h.get('class_drop_count'),
+                     h.get('figure_high_recent'),
+                     h.get('races_in_60d'),
                      int(is_strong_pick(h)))
                 )
                 n += 1

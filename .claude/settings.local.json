@@ -69,7 +69,9 @@
       "Bash(echo \"Exit: $?\")",
       "Bash(python3)",
       "Bash(break)",
-      "Bash(grep -n \"^def extract_text\\\\|extract_text\\\\\\\\s*=\" \"scripts/brisnet_parser_v2.py\")"
+      "Bash(grep -n \"^def extract_text\\\\|extract_text\\\\\\\\s*=\" \"scripts/brisnet_parser_v2.py\")",
+      "Bash(python backfill_entries.py)",
+      "Bash(python phase_e3_ablation.py)"
     ]
   }
 }

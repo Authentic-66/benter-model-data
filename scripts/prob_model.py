@@ -311,6 +311,22 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                # in those 43 races) but global ΔR² stayed flat at +0.0094.
                # build_cl_features still computes these columns so the
                # experiment can be re-enabled once PP coverage grows.
+               # Phase E3 form-trajectory features (speed_fig_slope_c,
+               # beaten_lengths_slope_c, class_drop_count_c, figure_high_
+               # recent_c, races_in_60d_c, trajectory_missing) tested
+               # 2026-06-24 and held out. Per-feature ablation
+               # (phase_e3_ablation.py) showed EVERY candidate regresses
+               # PP-rich ΔR² (range −0.0006 to −0.0027); the smallest
+               # miss was class_drop_count (−0.0006) but it still fell
+               # short of the +0.001 ship threshold. Capping outliers,
+               # combining survivors, and dropping the binary `improving`
+               # in favor of the continuous slope all regressed further.
+               # Hypothesis: at the current PP-rich sample (n=332 races)
+               # the trajectory signal is already captured by best_spd_c
+               # + beaten_c + binary `improving`; the additional degrees
+               # of freedom overfit the held-out fold. Columns persist
+               # in entries + build_cl_features so the experiment can be
+               # re-enabled when PP coverage doubles.
                "jt_winpct_c", "jt_missing", "beaten_c", "class_delta_c",
                "horse_starts_c", "starts_missing",
                "improving",
@@ -405,6 +421,11 @@ SELECT
     e.jt_zero,
     e.signal_types,
     e.horse_starts,
+    e.speed_fig_slope,
+    e.beaten_lengths_slope,
+    e.class_drop_count,
+    e.figure_high_recent,
+    e.races_in_60d,
     r.finish_pos
 FROM entries e
 JOIN results r ON r.race_id = e.race_id AND r.horse_name = e.horse_name
@@ -598,6 +619,23 @@ def build_cl_features(df, stds=None):
     df["lp_x_duel"] = df["lp_advantage_c"] * df["speed_duel_flag"]
     df["highE1_x_lone"] = df["is_high_e1"] * df["lone_speed_flag"]
 
+    # ── Form-trajectory features (Phase E3) ─────────────────────────────
+    # Continuous slopes/ratios across the last 5 PP race lines. The binary
+    # `improving` flag (last vs second-last only) captures a single
+    # transition; these capture multi-race direction. All four numeric
+    # columns are centered within race; class_drop_count is a small int
+    # (0-4) so within-race centering surfaces the "this horse is being
+    # dropped more than rivals" contrast.
+    # speed_fig_slope: shares a missing flag with beaten_lengths_slope
+    # (both require ≥2 dated PP lines — when the horse has only 0-1 PP
+    # races neither is computable), so a single trajectory_missing flag
+    # avoids fighting with the existing spd_missing/pp_missing pair.
+    center("speed_fig_slope",      "speed_fig_slope_c", "trajectory_missing")
+    center("beaten_lengths_slope", "beaten_lengths_slope_c")
+    center("class_drop_count",     "class_drop_count_c")
+    center("figure_high_recent",   "figure_high_recent_c")
+    center("races_in_60d",         "races_in_60d_c")
+
     center("jt_winpct", "jt_winpct_c", "jt_missing")
     # beaten lengths capped at 5: CV ablation showed the close-loss signal
     # lives under ~5 lengths (the public prices big losses correctly, and
@@ -657,10 +695,13 @@ def build_cl_features(df, stds=None):
                   "has_strong_jky_angle_c", "count_positive_jky_angles_c",
                   "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
+                  "speed_fig_slope_c", "beaten_lengths_slope_c",
+                  "class_drop_count_c", "figure_high_recent_c",
+                  "races_in_60d_c",
                   "pp_missing", "spd_missing", "jt_missing", "starts_missing",
                   "workout_missing", "weight_change_missing",
                   "dist_record_missing", "trainer_angle_missing",
-                  "jky_angle_missing"):
+                  "jky_angle_missing", "trajectory_missing"):
             v = df.loc[pp_mask, c] if pp_mask.any() else df[c]
             stds[c] = float(v.std()) or 1.0
 
