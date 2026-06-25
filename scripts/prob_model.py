@@ -630,11 +630,11 @@ def build_cl_features(df, stds=None):
     # (both require ≥2 dated PP lines — when the horse has only 0-1 PP
     # races neither is computable), so a single trajectory_missing flag
     # avoids fighting with the existing spd_missing/pp_missing pair.
-    center("speed_fig_slope",      "speed_fig_slope_c", "trajectory_missing")
-    center("beaten_lengths_slope", "beaten_lengths_slope_c")
-    center("class_drop_count",     "class_drop_count_c")
-    center("figure_high_recent",   "figure_high_recent_c")
-    center("races_in_60d",         "races_in_60d_c")
+    #center("speed_fig_slope",      "speed_fig_slope_c", "trajectory_missing")
+    #center("beaten_lengths_slope", "beaten_lengths_slope_c")
+    #center("class_drop_count",     "class_drop_count_c")
+    #center("figure_high_recent",   "figure_high_recent_c")
+    #center("races_in_60d",         "races_in_60d_c")
 
     center("jt_winpct", "jt_winpct_c", "jt_missing")
     # beaten lengths capped at 5: CV ablation showed the close-loss signal
