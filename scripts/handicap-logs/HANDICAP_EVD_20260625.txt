@@ -1,0 +1,788 @@
+Parsing C:\Users\bornr\OneDrive\Documents\GitHub Files\benter-model-data\Evangeline Downs\evd-pps-files\evd0625y.pdf for EVD...
+Found 8 races, 73 horses
+
+
+============================================================================
+🏇 EVANGELINE DOWNS — Today
+   Fast
+============================================================================
+
+────────────────────────────────────────────────────────────────────────────
+RACE 1    Dirt  $23,000
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Greatizlove                  20/1     50.6(7)  Tillis Jerry E
+        Sire: Gemologist                      J: Rodriguez Jose L
+        Recent SPD: 42, 36, 46, 46, 55   Best: 61
+        Stats: 3 sts 0-0-0 0%
+        ⏰ 95 days off
+        Claim: $20,000
+        ✅ 20% trainer: 1st on grass
+        ❌ 13Jun Ded 4f ft :50 B1/4 06Jun Ded 4f ft :51« B1/3 28Jan Ded 5f f
+
+  ⭐  2: The Boyz Real Deal           20/1     75.5(6)  Ward Ronnie P
+        Sire: El Deal                         J: Perez Carlos
+        Recent SPD: 62, 42, 37, 57, 39   Best: 62  ✅ IMPROVING FORM
+        Stats: 65 sts 13-14-7 20%
+        Claim: $20,000
+        🎯 [TRAINER] ✅ OVR EVD — El Deal specialty
+        🎯 [SIRE] 🔥 EVD+DD — 28 EVD + 21 DD wins
+        ✅ Highest last race speed rating
+        ✅ Dam has 1 winner from 3 starters (but 0 Turf winners)
+        ❌ 13Jun Ded 4f ft :50 B1/4 06Jun Ded 4f ft :51« B1/3 28Jan Ded 5f f
+
+      3: Too Many Titos                2/1     96.8(1)  Gelner Jayde J
+        Sire: Cloud Computing                 J: Hernandez Colby J
+        Recent SPD: 57, 70, 68, 65, 53   Best: 70
+        Stats: 23 sts 4-5-3 17%
+        Claim: $20,000
+        ✅ Drops in class today
+        ✅ Dam has 4 winners from 6 starters (but 0 Turf winners)
+
+  ·  4: Pericles                      4/1           ?  Thomas Lee
+        Sire: Apriority                       J: Barrera Elio J
+        Stats: 62 sts 9-7-9 15%
+        Claim: $20,000
+        🎯 [TRAINER] ✅ IRON EVD — 46W/Sassicaia spe
+        ✅ 18% trainer: Turf starts
+        ✅ Breeding suits today's sprint distance
+        ❌ 05Jun Evd 3f ft :36« Bg1/14 29May Evd 3f ft :37¨ B8/13 21May Evd 
+
+      5: Popa's Pride                  9/2     83.2(4)  Romero Markel D
+        Sire: Tyme for Willard                J: ?
+        Recent SPD: 68, 56   Best: 68
+        Stats: 1 sts 0-0-1 0%
+        ⏰ 77 days off
+        Claim: $20,000
+        ✅ Chance to improve while trying grass
+        ✅ 25% trainer: 46-90daysAway
+        ❌ 05Jun Evd 3f ft :36« Bg1/14 29May Evd 3f ft :37¨ B8/13 21May Evd 
+
+  ⭐  6: Diodorus                      8/1     84.0(3)  Thomas Lee
+        Sire: Apriority                       J: Pompell Thomas L
+        Recent SPD: 49, 59   Best: 59
+        Stats: 62 sts 9-7-9 15%
+        Claim: $20,000
+        🎯 [TRAINER] ✅ IRON EVD — 46W/Sassicaia spe
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Chance to improve while trying grass
+        ✅ Dam has 1 winner from 2 starters and 1 Turf winner
+        ❌ 12Jun Evd 3f ft :36© B1/16 20Mar Evd 3f ft :37ª Bg6/16 06Mar Evd 
+
+      7: Phchampagnejourney            3/1     80.8(5)  Zenon, Sr. Shelton J
+        Sire: Phoneforchampagne               J: Hernandez Javier A
+        Recent SPD: 53, 59   Best: 59
+        Stats: 47 sts 2-4-5 4%
+        Claim: $20,000
+        ✅ Chance to improve while trying grass
+        ❌ 21Apr Evd 3f ft :37« Bg1/4 11Apr Evd 3f ft :38 B15/19 02Apr Evd 3
+
+  ⭐  8: Coast Beach                  12/1           ?  Breaux Samuel
+        Sire: West Coast                      J: Hernandez Harry
+        Stats: 85 sts 7-15-14 8%
+        Claim: $20,000
+        🎯 [TRAINER] 🔥 IRON EVD — 67W/3yr/23%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Breeding suggests he will like the grass
+        ✅ 25% trainer: Debut Turf
+        ❌ 22May Evd 3f gd :36ª Bg1/7
+
+      9: Wildly Wicked                20/1     88.6(2)  Chatters Benard
+        Sire: Bobby's Wicked One              J: Santiago Edward
+        Recent SPD: 58, 42, 73, 39, 50   Best: 73
+        Stats: 30 sts 6-1-5 20%
+        ⏰ 69 days off
+        Claim: $15,000
+        ✅ High % trainer
+        ✅ May improve at the shorter distance
+        ❌ 17Jan Ded 3f ft :36ª Bg1/19 06Dec'25 Ded 5f ft
+
+  ★ MODEL PICKS R1:
+    PP 6: Diodorus                    (  8/1)  ✅ IRON EVD  🔥 TRAINER+HOT_JT
+    PP 8: Coast Beach                 ( 12/1)  🔥 IRON EVD  🔥 TRAINER+HOT_JT
+    PP 2: The Boyz Real Deal          ( 20/1)  ✅ OVR EVD + 🔥 EVD+DD
+
+────────────────────────────────────────────────────────────────────────────
+RACE 2    Dirt  $11,000
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Daddy's Code                  5/2    121.7(1)  Degeyter, Jr. Randy
+        Sire: Whence                          J: Melancon Jansen
+        Recent SPD: 84, 72, 73, 67, 77   Best: 84
+        Stats: 27 sts 7-10-3 26%
+        Claim: $5,000
+        🎯 [TRAINER] 🔥 IRON EVD — 32% win rate
+        ✅ High % trainer
+        ✅ High % Jockey
+
+  ·  2: Instamatical                  8/1    105.7(5)  Duhon Joe O
+        Sire: Instagrand                      J: Hernandez Harry
+        Recent SPD: 54, 78, 69, 72, 68   Best: 78
+        Stats: 31 sts 6-2-7 19%
+        Claim: $5,000
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ High % trainer
+        ✅ Switches to a high % jockey
+
+      3: Running Ragged               10/1    103.5(6)  Mouton Chadwick J
+        Sire: Spun to Run                     J: Castillo Isaac
+        Recent SPD: 62, 63, 81, 62, 66   Best: 81
+        Stats: 15 sts 2-3-0 13%
+        Claim: $5,000
+        ✅ High % Jockey
+        ✅ Best Dirt speed is faster than the Avg Winning Speed
+
+  ⭐  4: Seizethedaydude               5/1    110.3(3)  Terre David
+        Sire: Carpe Diem                      J: Hernandez Colby J
+        Recent SPD: 69, 27, 30, 51, 66   Best: 73
+        Stats: 14 sts 5-4-0 36%
+        Claim: $5,000
+        🎯 [TRAINER] ✅ POS EVD — David Jr positive
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (3 2-1-0)
+        ✅ High % trainer
+        ✅ Won last race (EVD 06/05 7f Dirt ft sClm5000n2l)
+
+  ⭐  5: Highstakes Hustler            7/2    110.0(4)  Breaux Samuel
+        Sire: Gunnevera                       J: ?
+        Recent SPD: 78, 76, 50, 71, 64   Best: 82  ✅ IMPROVING FORM
+        Stats: 85 sts 7-15-14 8%
+        Claim: $5,000
+        🎯 [TRAINER] 🔥 IRON EVD — 67W/3yr/23%
+        ✅ 17% trainer: Claiming
+        ✅ Best Dirt speed is close to the Avg Winning Speed
+
+  ⭐  6: Jamesy's Empire               2/1    113.0(2)  Brinkman Brett A
+        Sire: Union Rags                      J: Perez Carlos
+        Recent SPD: 76, 78, 79, 54, 58   Best: 79
+        Stats: 78 sts 8-15-9 10%
+        Claim: $5,000
+        🎯 [TRAINER] ✅ OVR EVD — Overlay — 5/1+
+        🎯 [SIRE] 🔥 7-TRACK — Universal iron sire
+        ✅ 19% trainer: Btn favorite
+        ✅ Ran 2nd vs similar in last race
+
+  ·  7: Tiz Marks Spirit             20/1     99.0(7)  Litfin Veronica
+        Sire: Mor Spirit                      J: Magnon Devin H
+        Recent SPD: 64, 50, 57, 51, 67   Best: 70
+        Stats: 7 sts 1-0-2 14%
+        Claim: $5,000
+        🎯 [SIRE] ✅ 3-TRACK — FP+MVR+DD
+        ✅ Eligible to improve in 2nd start since layoff
+        ✅ Best Dirt speed is close to the Avg Winning Speed
+
+  ★ MODEL PICKS R2:
+    PP 4: Seizethedaydude             (  5/1)  ✅ POS EVD  🔥 TRAINER+HOT_JT
+    PP 6: Jamesy's Empire             (  2/1)  ✅ OVR EVD + 🔥 7-TRACK  ⚠️ 0% J/T
+    PP 1: Daddy's Code                (  5/2)  🔥 IRON EVD
+    PP 5: Highstakes Hustler          (  7/2)  🔥 IRON EVD
+
+────────────────────────────────────────────────────────────────────────────
+RACE 3    Dirt  $17,500
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Iron in the Fire              5/2    112.8(5)  Larrosa Juan A
+        Sire: Iron Fist                       J: Perez Carlos
+        Recent SPD: 65, 80, 80, 91, 75   Best: 91
+        Stats: 105 sts 17-13-12 16%
+        Claim: $7,500
+        🎯 [TRAINER] 🔥 IRON EVD — 71W/3yr/24%
+        ✅ Rail post is winning at 18% clip
+        ✅ 18% trainer: Sprnt-Rte-Sprnt
+        ❌ 14Feb'25 Ded 4f ft :48« B1/22 18Jan'25 Ded 4f ft :51© B30/55 07De
+
+  ·  2: American Guy                  4/1    113.6(3)  Rodriguez-Torres Pedro
+        Sire: Star Guitar                     J: ?
+        Recent SPD: 76, 81, 56, 57, 63   Best: 81
+        Stats: 3 sts 0-0-2 0%
+        ⏰ 64 days off
+        Claim: $7,500
+        🎯 [SIRE] 🔥 EVD SIRE #1 — 42W/3yr — any trainer
+        ✅ 42% trainer: 46-90daysAway
+        ✅ Finished 3rd vs similar in last race
+        ❌ 14Feb'25 Ded 4f ft :48« B1/22 18Jan'25 Ded 4f ft :51© B30/55 07De
+
+  ·  3: El Dan                       15/1    105.6(9)  Martinez Sarah
+        Sire: El Deal                         J: ?
+        Recent SPD: 62, 80, 74, 68, 51   Best: 80
+        Stats: 19 sts 1-3-2 5%
+        Claim: $7,500
+        🎯 [SIRE] 🔥 EVD+DD — 28 EVD + 21 DD wins
+        ✅ Drops in class today
+        ✅ May improve while returning to a sprint
+        ❌ 29May Evd 5f ft 1:01ª B1/9 11Apr Evd 4f ft :50« B19/61 11Nov'25 C
+
+  ⭐  4: Stovall                      20/1    109.4(7)  Breaux Samuel
+        Sire: Half Ours                       J: Vargas Juan P
+        Recent SPD: 71, 68, 63, 75, 85   Best: 87  ✅ IMPROVING FORM
+        Stats: 85 sts 7-15-14 8%
+        Claim: $7,500
+        🎯 [TRAINER] 🔥 IRON EVD — 67W/3yr/23%
+        🎯 [SIRE] 🔥 EVD SIRE — 27W/3yr
+        ✅ 17% trainer: Claiming
+        ✅ May improve in 4th start since layoff
+        ❌ 29May Evd 5f ft 1:01ª B1/9 11Apr Evd 4f ft :50« B19/61 11Nov'25 C
+
+  ·  5: Deal Em Justice              12/1   101.6(10)  Robbins, Jr. Hance
+        Sire: El Deal                         J: Mudd Jamison
+        Recent SPD: 30, 72, 56, 74, 54   Best: 74
+        Stats: 12 sts 2-0-0 17%
+        Claim: $7,500
+        🎯 [SIRE] 🔥 EVD+DD — 28 EVD + 21 DD wins
+        ✅ Drops in class today
+        ✅ Early speed running style helps chances
+        ❌ 17Mar Cct 4f ft :50 B1/18 03Mar Cct 4f ft :54« B31/31 03Feb Cct 4
+
+  ⭐  6: Bind Faith                    7/2    114.8(2)  Landry Allen
+        Sire: Bind                            J: Fusilier Casey
+        Recent SPD: 74, 75, 79, 84, 85   Best: 85
+        Stats: 99 sts 25-18-15 25%
+        Claim: $7,500
+        🎯 [TRAINER] 🔥 IRON EVD — 73W/3yr/24%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (5 2-0-0)
+        ✅ High % trainer
+        ✅ Highest last race speed rating
+        ❌ 29Jan'25 Ded 4f ft :48© B1/30 08Nov'24 Ded 4f wf :49 B4/42 24Sep'
+
+  ⭐  7: Pasketee                     10/1    113.2(4)  Degeyter, Jr. Randy
+        Sire: Goldencents                     J: ?
+        Recent SPD: 73, 74, 71, 65, 37   Best: 82
+        Stats: 27 sts 7-10-3 26%
+        Claim: $7,500
+        🎯 [TRAINER] 🔥 IRON EVD — 32% win rate
+        🎯 [SIRE] 🔥 4-TRACK — FP+EVD+MVR+DD
+        ✅ 36% trainer: 1st after clm
+        ✅ Won last race (EVD 06/04 5f Dirt sy sClm5000n3lc)
+        ❌ 29Jan'25 Ded 4f ft :48© B1/30 08Nov'24 Ded 4f wf :49 B4/42 24Sep'
+
+  ·  8: Daddy's Gift                  8/1    109.3(8)  Ramirez Eduardo
+        Sire: Aurelius Maximus                J: Hernandez Harry
+        Recent SPD: 74, 61, 78, 73, 60   Best: 81
+        Stats: 46 sts 3-5-7 7%
+        Claim: $7,500
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ High % Jockey
+        ✅ 19% trainer: Claiming
+        ❌ 12Jly'25 Evd 4f ft :48© Bg1/51 28Jun'25 Evd 4
+
+      9: Alvarado Cat                  5/1    117.3(1)  Fuselier Jonah
+        Sire: Tale of the Cat                 J: Magnon Devin H
+        Recent SPD: 77, 73, 66, 84, 78   Best: 84  ✅ IMPROVING FORM
+        Stats: 16 sts 1-3-2 6%
+        Claim: $7,500
+        ✅ May improve in 4th start since layoff
+        ✅ Ran 2nd vs similar in last race
+        ❌ 16Nov'24 FG
+
+  ⭐ 10: Order Up                     20/1    112.5(6)  Landry Allen
+        Sire: Iron Fist                       J: Melancon Jansen
+        Recent SPD: 71, 76, 59, 48, 71   Best: 87
+        Stats: 99 sts 25-18-15 25%
+        Claim: $7,500
+        🎯 [TRAINER] 🔥 IRON EVD — 73W/3yr/24%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (9 4-1-1)
+        ✅ High % trainer
+        ✅ Switches to a high % jockey
+        ❌ 16Nov'24 FG
+
+  ★ MODEL PICKS R3:
+    PP 6: Bind Faith                  (  7/2)  🔥 IRON EVD  🔥 TRAINER+HOT_JT
+    PP10: Order Up                    ( 20/1)  🔥 IRON EVD  🔥 TRAINER+HOT_JT
+    PP 4: Stovall                     ( 20/1)  🔥 IRON EVD + 🔥 EVD SIRE
+    PP 7: Pasketee                    ( 10/1)  🔥 IRON EVD + 🔥 4-TRACK
+    PP 1: Iron in the Fire            (  5/2)  🔥 IRON EVD
+
+────────────────────────────────────────────────────────────────────────────
+RACE 4    Dirt  $33,000
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: My Boy Vander                 3/1    114.4(5)  Gelner Jayde J
+        Sire: Cloud Computing                 J: Melancon Jansen
+        Recent SPD: 75, 76, 54, 74, 68   Best: 103
+        Stats: 23 sts 4-5-3 17%
+        ✅ Switches to a high % jockey
+        ❌ 10Apr LS 4f ft :47« B1/38 29Mar Hou 4f ft :49 B6
+
+  ⭐  2: Princess Is Olivia            2/1    123.0(1)  Cano Juan M
+        Sire: Preservationist                 J: ?
+        Recent SPD: 81, 78, 82, 84, 78   Best: 84
+        Stats: 76 sts 16-10-11 21%
+        🎯 [TRAINER] 🔥 IRON EVD — 36W/Mr McGregor
+        ✅ High % trainer
+        ✅ Figures to improve while returning to Dirt
+        ❌ 10Apr LS 4f ft :47« B1/38 29Mar Hou 4f ft :49 B6
+
+  ·  3: Napping                       9/2    118.2(3)  Wilson Shane
+        Sire: Maclean's Music                 J: Castillo Isaac
+        Recent SPD: 83, 65, 59, 68, 71   Best: 83  ✅ IMPROVING FORM
+        Stats: 53 sts 11-4-10 21%
+        🎯 [TRAINER] ✅ POS EVD — Clearly Now 2026
+        ✅ High % Jockey
+        ✅ Highest last race speed rating
+        ❌ 09Feb FG 4f ft :47¨ Bg1/42 02Feb FG 5f ft 1:01¨ B11/24 25Jan FG 5
+
+  ⭐  4: It Ain't Like That           15/1    108.6(7)  Cano Juan M
+        Sire: Preservationist                 J: Barrera Elio J
+        Recent SPD: 61, 66, 67, 66, 69   Best: 73
+        Stats: 76 sts 16-10-11 21%
+        🎯 [TRAINER] 🔥 IRON EVD — 36W/Mr McGregor
+        ✅ High % trainer
+        ❌ 09Feb FG 4f ft :47¨ Bg1/42 02Feb FG 5f ft 1:01¨ B11/24 25Jan FG 5
+
+      5: Shesabeast                   12/1    114.2(6)  Ramaekers Eric
+        Sire: Mendelssohn                     J: Hernandez Javier A
+        Recent SPD: 79, 81, 77, 75, 53   Best: 81
+        Stats: 29 sts 3-3-2 10%
+        ✅ May improve while returning to Dirt
+        ❌ 21Mar Evd 5f ft 1:02¨ B1/12 13Mar Evd 5f ft 1:03« B9/13 05Mar Evd
+
+      6: Miss Maximus                  5/1    117.5(4)  Ducoing Sturges J
+        Sire: Maximus Mischief                J: Hernandez Colby J
+        Recent SPD: 80, 88, 75, 84, 80   Best: 88
+        Stats: 23 sts 1-5-5 4%
+        ✅ 18% trainer: Sprints
+        ✅ Best Dirt speed is close to the Avg Winning Speed
+        ❌ 27Sep'25 FG 5f ft 1:01 B1/10 19Jly'25 Evd 5f ft 1:02 Bg2/17 20Jun
+
+  ⭐  7: Jezebel                       6/1    122.0(2)  Wong Jonathan
+        Sire: Liam's Map                      J: ?
+        Recent SPD: 81, 78   Best: 81
+        Stats: 54 sts 8-7-9 15%
+        🎯 [TRAINER] 🔥 CHALK EVD — 28%/$3.93avg
+        ✅ 29% trainer: Btn favorite
+        ✅ Ran 2nd vs similar (on Turf) in last race
+        ❌ 27Sep'25 FG 5f ft 1:01 B1/10 19Jly'25 Evd 5f ft 1:02 Bg2/17 20Jun
+
+  ⭐  8: Opaque                       15/1    101.2(8)  Brinkman Brett A
+        Sire: Practical Joke                  J: Hernandez Harry
+        Recent SPD: 73, 51, 56, 57, 52   Best: 73
+        Stats: 78 sts 8-15-9 10%
+        🎯 [TRAINER] ✅ OVR EVD — Overlay — 5/1+
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ High % Jockey
+        ✅ Won last race (LAD 05/25 6f Dirt ft fMdSpWt)
+        ❌ 01Jun Lad 4f ft :48 B1/21 08May Lad 4f ft :50 B14/20 08Apr Lad 4f
+
+  ★ MODEL PICKS R4:
+    PP 8: Opaque                      ( 15/1)  ✅ OVR EVD  🔥 TRAINER+HOT_JT
+    PP 2: Princess Is Olivia          (  2/1)  🔥 IRON EVD
+    PP 4: It Ain't Like That          ( 15/1)  🔥 IRON EVD
+    PP 7: Jezebel                     (  6/1)  🔥 CHALK EVD
+
+────────────────────────────────────────────────────────────────────────────
+RACE 5    Dirt  $41,000
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Diamond Empress               6/1    90.0(13)  Govea Cesar
+        Sire: Outwork                         J: Roman Kevin
+        Recent SPD: 53, 71, 65, 70, 77   Best: 77
+        Stats: 67 sts 6-5-5 9%
+        ⏰ 252 days off
+        ✅ Best Turf Speed is fastest among today's starters
+        ✅ Sharp 3F workout (Jun-13)
+        ❌ 13Jun Evd 3f ft :35ª B1/17 29May Evd 4f ft :52« B29/30 16May Evd 
+
+      2: Call Me Susan                15/1    99.8(12)  Alberto Antonio
+        Sire: Aurelius Maximus                J: ?
+        Recent SPD: 69, 62, 65, 52, 59   Best: 69
+        Stats: 50 sts 8-6-10 16%
+        ✅ Dam has produced 2 Turf winners
+        ✅ Won last race (EVD 05/30 5f Dirt ft fsClm5000n3l)
+        ❌ 13Jun Evd 3f ft :35ª B1/17 29May Evd 4f ft :52« B29/30 16May Evd 
+
+  ·  3: Love Getaway                 12/1    109.1(8)  David, Jr. Sam B
+        Sire: Complexity                      J: Barrera Elio J
+        Recent SPD: 74, 69, 74, 76, 58   Best: 76
+        Stats: 46 sts 8-9-8 17%
+        🎯 [TRAINER] ✅ POS EVD — David Jr positive
+        ✅ Ran 2nd vs similar (on Dirt) in last race
+
+      4: One Line Ruler                5/1    115.2(2)  Henry Eric
+        Sire: One Liner                       J: Nieves Emanuel
+        Recent SPD: 75, 78, 79, 85, 77   Best: 85
+        Stats: 5 sts 1-1-0 20%
+        ✅ Drops in class today
+        ❌ 22Mar'25 Ev
+
+  ·  5: Snazzy Gal                    7/2    115.5(1)  Delhomme Jeff
+        Sire: Munnings                        J: Mudd Jamison
+        Recent SPD: 74, 67, 71, 74, 69   Best: 74
+        Stats: 7 sts 4-1-0 57%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (2 2-0-0)
+        ✅ May improve at the shorter distance
+        ✅ Best Turf speed is faster than the Avg Winning Speed
+        ❌ 22Mar'25 Ev
+
+  ⭐  6: Majestic Rags                 3/1    110.4(6)  Larrosa Juan A
+        Sire: Union Rags                      J: Hernandez Javier A
+        Recent SPD: 77, 71, 66, 75, 74   Best: 88  ✅ IMPROVING FORM
+        Stats: 105 sts 17-13-12 16%
+        🎯 [TRAINER] 🔥 IRON EVD — 71W/3yr/24%
+        🎯 [SIRE] 🔥 7-TRACK — Universal iron sire
+        ✅ Ran 2nd vs similar (on Dirt) in last race
+
+  ⭐  7: Complete Wrap                20/1    112.3(4)  Landry Allen
+        Sire: Independence Hall               J: Melancon Jansen
+        Recent SPD: 65, 72, 51, 78, 70   Best: 78
+        Stats: 99 sts 25-18-15 25%
+        🎯 [TRAINER] 🔥 IRON EVD — 73W/3yr/24%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (9 4-1-1)
+        ✅ High % trainer
+        ✅ High % Jockey
+
+  ⭐  8: Tensas Lu Lu                 12/1    109.9(7)  Landry Allen
+        Sire: Cloud Computing                 J: Fusilier Casey
+        Recent SPD: 75, 71, 78, 68, 75   Best: 82
+        Stats: 99 sts 25-18-15 25%
+        ⏰ 61 days off
+        🎯 [TRAINER] 🔥 IRON EVD — 73W/3yr/24%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (5 2-0-0)
+        ✅ High % trainer
+        ✅ Finished 3rd vs similar (on Dirt) in last race
+        ❌ 20Jan Cct 4f ft :48ª B1/26 13Jan Cct 4f ft :51¨
+
+  ·  9: Alyse Parker                 20/1   102.8(10)  Arey Anthony
+        Sire: Yorkton                         J: Pompell Thomas L
+        Recent SPD: 74, 62, 66, 69, 71   Best: 74
+        Stats: 10 sts 3-0-2 30%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Breeding suggests she will like the grass
+        ✅ 23% trainer: Wnr last race
+        ❌ 05Sep'25 Evd 4f ft :49 B1/11 08Jly'25 Cct 4
+
+     10: Mika Ella Pika                8/1    113.9(3)  Ney John
+        Sire: Time Bandit                     J: Castillo Isaac
+        Recent SPD: 81, 75, 64, 77, 69   Best: 81  ✅ IMPROVING FORM
+        Stats: 9 sts 0-2-0 0%
+        ⏰ 61 days off
+        ✅ Switches to a high % jockey
+        ✅ Highest last race speed rating
+        ❌ 05Sep'25 Evd 4f ft :49 B1/11 08Jly'25 Cct 4
+
+     11: Basile                       20/1   102.8(11)  Solis-Guevara Ismael
+        Sire: Cutting Humor                   J: Hernandez Colby J
+        Recent SPD: 61, 69, 58, 73, 61   Best: 73
+        Stats: 1 sts 0-0-0 0%
+        ✅ May improve at the shorter distance
+
+  · 12: Lady Cheryl's Song           12/1    111.5(5)  Ramirez Eduardo
+        Sire: Brave Dave                      J: Hernandez Harry
+        Recent SPD: 73, 69, 80, 77, 58   Best: 80
+        Stats: 46 sts 3-5-7 7%
+        ⏰ 61 days off
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Switches to a high % jockey
+        ✅ 18% trainer: Sprints
+
+  · 13: Takeittothehouse             10/1    103.7(9)  Ramirez Eduardo
+        Sire: Country House                   J: Hernandez Harry
+        Recent SPD: 68, 63, 76, 69, 66   Best: 110
+        Stats: 46 sts 3-5-7 7%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Switches to a high % jockey
+        ✅ 18% trainer: Sprints
+
+  ★ MODEL PICKS R5:
+    PP 7: Complete Wrap               ( 20/1)  🔥 IRON EVD  🔥 TRAINER+HOT_JT
+    PP 8: Tensas Lu Lu                ( 12/1)  🔥 IRON EVD  🔥 TRAINER+HOT_JT
+    PP 6: Majestic Rags               (  3/1)  🔥 IRON EVD + 🔥 7-TRACK  ⚠️ 0% J/T
+
+────────────────────────────────────────────────────────────────────────────
+RACE 6    Dirt  $12,000
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Oncoming Train               10/1    111.3(7)  Mocklin, Jr. Richard L
+        Sire: Mineshaft                       J: ?
+        Recent SPD: 68, 82, 81, 89, 88   Best: 92
+        Stats: 16 sts 2-6-0 13%
+        Claim: $5,000
+
+  ⭐  2: Julia's Warrior               6/1    116.8(2)  Larrosa Juan A
+        Sire: Outwork                         J: Hernandez Harry
+        Recent SPD: 110, 75, 84, 90, 62   Best: 110
+        Stats: 105 sts 17-13-12 16%
+        Claim: $5,000
+        🎯 [TRAINER] 🔥 IRON EVD — 71W/3yr/24%
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ High % Jockey
+        ✅ Highest last race speed rating
+
+      3: Knockalittlelouder            4/1    112.4(5)  Ney John
+        Sire: Ole Rebel                       J: Castillo Isaac
+        Recent SPD: 78, 76, 76, 78, 56   Best: 79
+        Stats: 9 sts 0-2-0 0%
+        Claim: $5,000
+        ✅ Switches to a high % jockey
+        ✅ Ran 2nd vs similar in last race
+        ❌ 25Feb FG 5f ft 1:01 B1/9 07Feb FG 4f ft :48ª B10/134 24Jan FG 5f 
+
+      4: Luni Sima                     9/2    115.6(3)  Jeansonne Justin
+        Sire: Keen Ice                        J: Hernandez Javier A
+        Recent SPD: 69, 85, 79, 77, 72   Best: 85
+        Stats: 18 sts 3-3-0 17%
+        Claim: $5,000
+        ✅ 21% trainer: 2nd after clm
+        ✅ May improve while returning to a sprint
+        ❌ 25Feb FG 5f ft 1:01 B1/9 07Feb FG 4f ft :48ª B10/134 24Jan FG 5f 
+
+  ·  5: Our Determination            15/1    108.4(8)  Sanchez Juan C
+        Sire: Half Ours                       J: Rodriguez Jose L
+        Recent SPD: 54, 79, 74, 73, 72   Best: 83
+        Stats: 26 sts 2-2-5 8%
+        Claim: $5,000
+        🎯 [SIRE] 🔥 EVD SIRE — 27W/3yr
+        ❌ 05Aug'25 Evd 5f ft 1:02¨ B1/5
+
+  ⭐  6: Blue Cheese                   7/2    113.9(4)  Breaux Samuel
+        Sire: Midshipman                      J: Vargas Juan P
+        Recent SPD: 77, 53, 78, 63, 47   Best: 87
+        Stats: 85 sts 7-15-14 8%
+        Claim: $5,000
+        🎯 [TRAINER] 🔥 IRON EVD — 67W/3yr/23%
+        🎯 [SIRE] 🔥 5-TRACK — CT+FP+EVD+MVR+DD
+        ✅ Drops in class today
+        ✅ 17% trainer: Claiming
+        ❌ 06Mar Evd 4f ft :48 B1/22 03Feb Ded 4f ft :51
+
+  ·  7: Tappin Fora Dance            20/1    105.7(9)  Romero Alvin
+        Sire: Tapiture                        J: Pompell Thomas L
+        Recent SPD: 77, 68, 77, 84, 71   Best: 84
+        Stats: 10 sts 0-1-0 0%
+        Claim: $5,000
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Hot Jockey in last 7 days (15 4-1-2)
+        ❌ 06Mar Evd 4f ft :48 B1/22 03Feb Ded 4f ft :51
+
+      8: Feelthebeat                  20/1    112.1(6)  Quinones Raul
+        Sire: Cupid                           J: Inirio Junior
+        Recent SPD: 63, 73, 73, 88, 75   Best: 88
+        Stats: 18 sts 1-0-0 6%
+        Claim: $5,000
+        ✅ Drops in class today
+        ✅ May improve while returning to a sprint
+        ❌ 18Jan'25 Fa
+
+  ⭐  9: Mahoney Road                  5/2    118.2(1)  Cano Juan M
+        Sire: Summer Front                    J: Perez Carlos
+        Recent SPD: 78, 84, 66, 81, 84   Best: 84
+        Stats: 76 sts 16-10-11 21%
+        ⏰ 119 days off
+        Claim: $5,000
+        🎯 [TRAINER] 🔥 IRON EVD — 36W/Mr McGregor
+        ✅ Switches to a high% trainer
+        ✅ Drops in class today
+        ❌ 29Nov'25 TP 4f ft
+
+  ★ MODEL PICKS R6:
+    PP 2: Julia's Warrior             (  6/1)  🔥 IRON EVD  🔥 TRAINER+HOT_JT
+    PP 6: Blue Cheese                 (  7/2)  🔥 IRON EVD + 🔥 5-TRACK
+    PP 9: Mahoney Road                (  5/2)  🔥 IRON EVD
+
+────────────────────────────────────────────────────────────────────────────
+RACE 7    Dirt  $43,000
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+  ⭐  1: Bet Towinit                   2/1    119.7(4)  Landry Allen
+        Sire: Star Guitar                     J: Pompell Thomas L
+        Recent SPD: 79, 76, 71, 83, 78   Best: 83  ✅ IMPROVING FORM
+        Stats: 99 sts 25-18-15 25%
+        🎯 [TRAINER] 🔥 IRON EVD — 73W/3yr/24%
+        🎯 [SIRE] 🔥 EVD SIRE #1 — 42W/3yr — any trainer
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ High % trainer
+        ✅ Finished 3rd (on Dirt) in last race
+        ❌ 24Apr Evd 4f ft :48©
+
+      2: Miss Priority                20/1    83.4(10)  Duhon Paul
+        Sire: Apriority                       J: Roman Kevin
+        Recent SPD: 61, 70, 80, 54, 73   Best: 83
+        Stats: 24 sts 3-1-6 13%
+        ✅ May improve at the shorter distance
+        ❌ 24Apr Evd 4f ft :48©
+
+      3: Ocean Jet                     6/1    115.1(7)  Averett Ronnie
+        Sire: Ocean Knight                    J: Hernandez Colby J
+        Recent SPD: 80, 71, 79, 74, 70   Best: 85
+        Stats: 43 sts 1-5-4 2%
+        ✅ Beaten only 1.60 lengths in last start
+        ✅ Best Turf speed is close to the Avg Winning Speed
+        ❌ 17Sep'25 Ded 3f ft :36« B1/7 19Jly'25 Evd 4f ft :51¨ B24/40 30Apr
+
+  ⭐  4: Guitar Solo                  15/1    113.6(8)  Landry Allen
+        Sire: Star Guitar                     J: Fusilier Casey
+        Recent SPD: 55, 73, 62, 87, 72   Best: 87
+        Stats: 99 sts 25-18-15 25%
+        🎯 [TRAINER] 🔥 IRON EVD — 73W/3yr/24%
+        🎯 [SIRE] 🔥 EVD SIRE #1 — 42W/3yr — any trainer
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (5 2-0-0)
+        ✅ High % trainer
+        ✅ Drops in class today
+        ❌ 17Sep'25 Ded 3f ft :36« B1/7 19Jly'25 Evd 4f ft :51¨ B24/40 30Apr
+
+  ⭐  5: She's a Live Wire             3/1    121.3(3)  Wilson Shane
+        Sire: Bobby's Wicked One              J: Hernandez Harry
+        Recent SPD: 83, 71, 82, 78, 41   Best: 83
+        Stats: 53 sts 11-4-10 21%
+        🎯 [TRAINER] ✅ POS EVD — Clearly Now 2026
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ High % Jockey
+        ✅ Highest last race speed rating
+        ❌ 21Mar Evd 4f ft :49© B1/60 13Mar Evd 5f ft 1:02© B3/13 28Feb Ded 
+
+      6: Gangster Flash               12/1    125.2(2)  Klanfer Alan
+        Sire: Instagrand                      J: Melancon Jansen
+        Recent SPD: 79, 84, 75, 74   Best: 84
+        Stats: 20 sts 1-5-2 5%
+        ✅ High % Jockey
+        ✅ 27% trainer: 1st on grass
+
+      7: Tommie G                      8/1    115.1(6)  West Patricia G
+        Sire: Court Vision                    J: Castillo Isaac
+        Recent SPD: 66, 73, 76, 67, 69   Best: 78
+        Stats: 17 sts 1-0-3 6%
+        ✅ Switches to a high % jockey
+        ✅ 19% trainer: Allowance
+
+      8: Bayou Bertie                  4/1    116.6(5)  Klanfer Alan
+        Sire: Country Day                     J: ?
+        Recent SPD: 67, 83, 68, 86, 71   Best: 86
+        Stats: 20 sts 1-5-2 5%
+        ⏰ 119 days off
+        Claim: $30,000
+        ✅ 23% trainer: 90+ days away
+
+      9: Fast Flame                   15/1    111.3(9)  Alberto Antonio
+        Sire: Flameaway                       J: Barrera Elio J
+        Recent SPD: 57, 81, 54, 66, 82   Best: 84
+        Stats: 50 sts 8-6-10 16%
+        ✅ Drops in class today
+
+  ⭐ 10: Beleout                       8/1    131.4(1)  Terre David
+        Sire: Flat Out                        J: Castillo Isaac
+        Recent SPD: 75, 95, 70, 70, 83   Best: 95
+        Stats: 14 sts 5-4-0 36%
+        🎯 [TRAINER] ✅ POS EVD — David Jr positive
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d (3 2-1-0)
+        ✅ High % trainer
+        ✅ High % Jockey
+
+  ★ MODEL PICKS R7:
+    PP 1: Bet Towinit                 (  2/1)  🔥 IRON EVD + 🔥 EVD SIRE #1  🔥 TRAINER+HOT_JT
+    PP 4: Guitar Solo                 ( 15/1)  🔥 IRON EVD + 🔥 EVD SIRE #1  🔥 TRAINER+HOT_JT
+    PP 5: She's a Live Wire           (  3/1)  ✅ POS EVD  🔥 TRAINER+HOT_JT
+    PP10: Beleout                     (  8/1)  ✅ POS EVD  🔥 TRAINER+HOT_JT
+
+────────────────────────────────────────────────────────────────────────────
+RACE 8    Dirt  $14,000
+────────────────────────────────────────────────────────────────────────────
+   PP Horse                          ML    PP Pwr  Trainer
+
+      1: Surprise Sunrise              8/1     95.4(3)  Dison Phillip M
+        Sire: Zong                            J: Fusilier Casey
+        Recent SPD: 57, 62, 46, 47, 47   Best: 77
+        Stats: 30 sts 4-2-2 13%
+        ⏰ 61 days off
+        Claim: $10,000
+        ✅ Highest last race speed rating
+        ✅ Rail post is winning at 18% clip
+
+      2: Sugah Gem                     7/2     97.0(2)  Giangrosso Russell
+        Sire: Takeover Target                 J: Hernandez Javier A
+        Recent SPD: 110, 50, 51   Best: 110
+        Stats: 12 sts 0-0-2 0%
+        Claim: $12,500
+
+      3: Just Sailing Along           10/1           ?  Woodley Carl J
+        Sire: Lone Sailor                     J: Magnon Devin H
+        Recent SPD: 51   Best: 51
+        Stats: 24 sts 1-2-2 4%
+        ⏰ 64 days off
+        Claim: $12,500
+        ✅ Dam has 2 winners from 2 starters
+
+      4: Global Dawn                   5/1           ?  Gelner Scott
+        Sire: Global Campaign                 J: Barrera Elio J
+        Stats: 29 sts 3-5-4 10%
+        Claim: $10,000
+        ✅ Dam has 2 winners from 2 starters
+        ✅ Dam has 1 winner from 2 starters
+
+  ⭐  5: Emmy Lou's Song              15/1     87.5(4)  Ward Ronnie P
+        Sire: Chamois                         J: Hernandez Harry
+        Recent SPD: 39   Best: 39
+        Stats: 65 sts 13-14-7 20%
+        Claim: $10,000
+        🎯 [TRAINER] ✅ OVR EVD — El Deal specialty
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ High % Jockey
+        ✅ Hot Jockey in last 7 days (15 4-0-4)
+        ❌ 28May Evd 4f sy :49 B1/15 16May Evd 4f ft :51« Bg24/41 08May Evd 
+
+  ⭐  6: Lee Circle                    5/2           ?  Thomas Lee
+        Sire: My Pal Charlie                  J: Pompell Thomas L
+        Stats: 62 sts 9-7-9 15%
+        Claim: $12,500
+        🎯 [TRAINER] ✅ IRON EVD — 46W/Sassicaia spe
+        🎯 [HOT_JT] 🔥 HOT J/T — Hot combo 14d
+        ✅ Breeding suits today's sprint distance
+        ✅ Hot Jockey in last 7 days (15 4-1-2)
+        ❌ 28May Evd 4f sy :49 B1/15 16May Evd 4f ft :51« Bg24/41 08May Evd 
+
+  ⭐  7: She's Wild Again              2/1    102.0(1)  Larrosa Juan A
+        Sire: Brave Dave                      J: ?
+        Recent SPD: 56, 55, 65, 62   Best: 65
+        Stats: 105 sts 17-13-12 16%
+        ⏰ 64 days off
+        Claim: $12,500
+        🎯 [TRAINER] 🔥 IRON EVD — 71W/3yr/24%
+        ✅ 23% trainer: Down 2+ classes
+        ✅ Early speed running style helps chances
+
+  ★ MODEL PICKS R8:
+    PP 5: Emmy Lou's Song             ( 15/1)  ✅ OVR EVD  🔥 TRAINER+HOT_JT
+    PP 6: Lee Circle                  (  5/2)  ✅ IRON EVD  🔥 TRAINER+HOT_JT
+    PP 7: She's Wild Again            (  2/1)  🔥 IRON EVD  ⚠️ 0% J/T
+
+============================================================================
+📊 MODEL SUMMARY — 29 ITM picks across 8 races
+============================================================================
+  R1 PP 2: The Boyz Real Deal          ( 20/1)  ✅ OVR EVD | 🔥 EVD+DD
+  R1 PP 6: Diodorus                    (  8/1)  ✅ IRON EVD 🔥 TRAINER+HOT_JT
+  R1 PP 8: Coast Beach                 ( 12/1)  🔥 IRON EVD 🔥 TRAINER+HOT_JT
+  R2 PP 1: Daddy's Code                (  5/2)  🔥 IRON EVD
+  R2 PP 4: Seizethedaydude             (  5/1)  ✅ POS EVD 🔥 TRAINER+HOT_JT
+  R2 PP 5: Highstakes Hustler          (  7/2)  🔥 IRON EVD
+  R2 PP 6: Jamesy's Empire             (  2/1)  ✅ OVR EVD | 🔥 7-TRACK ⚠️ 0% J/T
+  R3 PP 1: Iron in the Fire            (  5/2)  🔥 IRON EVD
+  R3 PP 4: Stovall                     ( 20/1)  🔥 IRON EVD | 🔥 EVD SIRE
+  R3 PP 6: Bind Faith                  (  7/2)  🔥 IRON EVD 🔥 TRAINER+HOT_JT
+  R3 PP 7: Pasketee                    ( 10/1)  🔥 IRON EVD | 🔥 4-TRACK
+  R3 PP10: Order Up                    ( 20/1)  🔥 IRON EVD 🔥 TRAINER+HOT_JT
+  R4 PP 2: Princess Is Olivia          (  2/1)  🔥 IRON EVD
+  R4 PP 4: It Ain't Like That          ( 15/1)  🔥 IRON EVD
+  R4 PP 7: Jezebel                     (  6/1)  🔥 CHALK EVD
+  R4 PP 8: Opaque                      ( 15/1)  ✅ OVR EVD 🔥 TRAINER+HOT_JT
+  R5 PP 6: Majestic Rags               (  3/1)  🔥 IRON EVD | 🔥 7-TRACK ⚠️ 0% J/T
+  R5 PP 7: Complete Wrap               ( 20/1)  🔥 IRON EVD 🔥 TRAINER+HOT_JT
+  R5 PP 8: Tensas Lu Lu                ( 12/1)  🔥 IRON EVD 🔥 TRAINER+HOT_JT
+  R6 PP 2: Julia's Warrior             (  6/1)  🔥 IRON EVD 🔥 TRAINER+HOT_JT
+  R6 PP 6: Blue Cheese                 (  7/2)  🔥 IRON EVD | 🔥 5-TRACK
+  R6 PP 9: Mahoney Road                (  5/2)  🔥 IRON EVD
+  R7 PP 1: Bet Towinit                 (  2/1)  🔥 IRON EVD | 🔥 EVD SIRE #1 🔥 TRAINER+HOT_JT
+  R7 PP 4: Guitar Solo                 ( 15/1)  🔥 IRON EVD | 🔥 EVD SIRE #1 🔥 TRAINER+HOT_JT
+  R7 PP 5: She's a Live Wire           (  3/1)  ✅ POS EVD 🔥 TRAINER+HOT_JT
+  R7 PP10: Beleout                     (  8/1)  ✅ POS EVD 🔥 TRAINER+HOT_JT
+  R8 PP 5: Emmy Lou's Song             ( 15/1)  ✅ OVR EVD 🔥 TRAINER+HOT_JT
+  R8 PP 6: Lee Circle                  (  5/2)  ✅ IRON EVD 🔥 TRAINER+HOT_JT
+  R8 PP 7: She's Wild Again            (  2/1)  🔥 IRON EVD ⚠️ 0% J/T
+============================================================================
+
+full-field entries → DB (73 horses)
+picks file → picks_EVD_06252026.txt
+win probabilities added → picks_EVD_06252026.txt (cols 9-10)
