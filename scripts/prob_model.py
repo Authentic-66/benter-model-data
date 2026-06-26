@@ -324,9 +324,10 @@ CL_FEATURES = ["log_ml_pp", "log_ml_results",
                # Hypothesis: at the current PP-rich sample (n=332 races)
                # the trajectory signal is already captured by best_spd_c
                # + beaten_c + binary `improving`; the additional degrees
-               # of freedom overfit the held-out fold. Columns persist
-               # in entries + build_cl_features so the experiment can be
-               # re-enabled when PP coverage doubles.
+               # of freedom overfit the held-out fold. Raw columns persist
+               # in entries (and the CL_SQL load) so the experiment can
+               # be re-enabled when PP coverage doubles — restore the
+               # center() calls from commit e56fbd8.
                "jt_winpct_c", "jt_missing", "beaten_c", "class_delta_c",
                "horse_starts_c", "starts_missing",
                "improving",
@@ -619,23 +620,6 @@ def build_cl_features(df, stds=None):
     df["lp_x_duel"] = df["lp_advantage_c"] * df["speed_duel_flag"]
     df["highE1_x_lone"] = df["is_high_e1"] * df["lone_speed_flag"]
 
-    # ── Form-trajectory features (Phase E3) ─────────────────────────────
-    # Continuous slopes/ratios across the last 5 PP race lines. The binary
-    # `improving` flag (last vs second-last only) captures a single
-    # transition; these capture multi-race direction. All four numeric
-    # columns are centered within race; class_drop_count is a small int
-    # (0-4) so within-race centering surfaces the "this horse is being
-    # dropped more than rivals" contrast.
-    # speed_fig_slope: shares a missing flag with beaten_lengths_slope
-    # (both require ≥2 dated PP lines — when the horse has only 0-1 PP
-    # races neither is computable), so a single trajectory_missing flag
-    # avoids fighting with the existing spd_missing/pp_missing pair.
-    #center("speed_fig_slope",      "speed_fig_slope_c", "trajectory_missing")
-    #center("beaten_lengths_slope", "beaten_lengths_slope_c")
-    #center("class_drop_count",     "class_drop_count_c")
-    #center("figure_high_recent",   "figure_high_recent_c")
-    #center("races_in_60d",         "races_in_60d_c")
-
     center("jt_winpct", "jt_winpct_c", "jt_missing")
     # beaten lengths capped at 5: CV ablation showed the close-loss signal
     # lives under ~5 lengths (the public prices big losses correctly, and
@@ -695,13 +679,10 @@ def build_cl_features(df, stds=None):
                   "has_strong_jky_angle_c", "count_positive_jky_angles_c",
                   "jt_winpct_c", "beaten_c",
                   "class_delta_c", "horse_starts_c",
-                  "speed_fig_slope_c", "beaten_lengths_slope_c",
-                  "class_drop_count_c", "figure_high_recent_c",
-                  "races_in_60d_c",
                   "pp_missing", "spd_missing", "jt_missing", "starts_missing",
                   "workout_missing", "weight_change_missing",
                   "dist_record_missing", "trainer_angle_missing",
-                  "jky_angle_missing", "trajectory_missing"):
+                  "jky_angle_missing"):
             v = df.loc[pp_mask, c] if pp_mask.any() else df[c]
             stds[c] = float(v.std()) or 1.0
 
