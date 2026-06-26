@@ -1,0 +1,189 @@
+{
+  "result_days": 4906,
+  "pp_days": 5608,
+  "both_days": 4906,
+  "res_only_days": 0,
+  "pp_only_days": 702,
+  "doug_coverage": {
+    "gp": {
+      "result_days": 193,
+      "pp_days": 326,
+      "matched_days": 193
+    },
+    "ct": {
+      "result_days": 164,
+      "pp_days": 167,
+      "matched_days": 164
+    },
+    "evd": {
+      "result_days": 107,
+      "pp_days": 107,
+      "matched_days": 107
+    },
+    "fp": {
+      "result_days": 0,
+      "pp_days": 0,
+      "matched_days": 0
+    },
+    "fg": {
+      "result_days": 78,
+      "pp_days": 78,
+      "matched_days": 78
+    },
+    "mnr": {
+      "result_days": 121,
+      "pp_days": 124,
+      "matched_days": 121
+    },
+    "mvr": {
+      "result_days": 101,
+      "pp_days": 102,
+      "matched_days": 101
+    },
+    "sa": {
+      "result_days": 91,
+      "pp_days": 93,
+      "matched_days": 91
+    },
+    "sar": {
+      "result_days": 40,
+      "pp_days": 40,
+      "matched_days": 40
+    },
+    "dmr": {
+      "result_days": 43,
+      "pp_days": 44,
+      "matched_days": 43
+    },
+    "op": {
+      "result_days": 68,
+      "pp_days": 68,
+      "matched_days": 68
+    }
+  },
+  "majors_coverage": {
+    "aqu": {
+      "result_days": 92,
+      "pp_days": 93,
+      "matched_days": 92
+    },
+    "bel": {
+      "result_days": 38,
+      "pp_days": 40,
+      "matched_days": 38
+    },
+    "cd": {
+      "result_days": 58,
+      "pp_days": 58,
+      "matched_days": 58
+    },
+    "kee": {
+      "result_days": 32,
+      "pp_days": 32,
+      "matched_days": 32
+    },
+    "lrl": {
+      "result_days": 137,
+      "pp_days": 280,
+      "matched_days": 137
+    },
+    "del": {
+      "result_days": 85,
+      "pp_days": 91,
+      "matched_days": 85
+    },
+    "tam": {
+      "result_days": 93,
+      "pp_days": 93,
+      "matched_days": 93
+    },
+    "haw": {
+      "result_days": 66,
+      "pp_days": 68,
+      "matched_days": 66
+    },
+    "lad": {
+      "result_days": 105,
+      "pp_days": 107,
+      "matched_days": 105
+    },
+    "lrc": {
+      "result_days": 21,
+      "pp_days": 21,
+      "matched_days": 21
+    },
+    "pim": {
+      "result_days": 23,
+      "pp_days": 39,
+      "matched_days": 23
+    },
+    "prx": {
+      "result_days": 151,
+      "pp_days": 151,
+      "matched_days": 151
+    },
+    "tdn": {
+      "result_days": 101,
+      "pp_days": 103,
+      "matched_days": 101
+    },
+    "wo": {
+      "result_days": 128,
+      "pp_days": 133,
+      "matched_days": 128
+    },
+    "ind": {
+      "result_days": 121,
+      "pp_days": 124,
+      "matched_days": 121
+    },
+    "mth": {
+      "result_days": 51,
+      "pp_days": 51,
+      "matched_days": 51
+    },
+    "prm": {
+      "result_days": 80,
+      "pp_days": 80,
+      "matched_days": 80
+    },
+    "rp": {
+      "result_days": 115,
+      "pp_days": 119,
+      "matched_days": 115
+    },
+    "tp": {
+      "result_days": 68,
+      "pp_days": 69,
+      "matched_days": 68
+    }
+  },
+  "result_only_sample": [],
+  "pp_only_sample": [
+    "aqu|2023-02-03",
+    "asd|2023-08-15",
+    "asd|2023-09-05",
+    "baq|2023-09-23",
+    "baq|2023-09-29",
+    "baq|2023-09-30",
+    "bca|2023-11-03",
+    "bcb|2023-11-04",
+    "bcc|2023-11-03",
+    "bcd|2023-11-03",
+    "bce|2023-11-04",
+    "bcg|2023-11-04",
+    "bct|2023-11-03",
+    "bel|2023-06-08",
+    "bel|2023-06-30",
+    "bkf|2023-09-04",
+    "btp|2023-06-28",
+    "btp|2023-07-28",
+    "btp|2023-08-24",
+    "cby|2023-08-19",
+    "cby|2023-08-23",
+    "ccp|2023-02-11",
+    "ccp|2023-02-18",
+    "ccp|2023-02-25",
+    "ccp|2023-03-04"
+  ]
+}
