@@ -1,0 +1,162 @@
+﻿Results EVD [20260625]
+  File: EVD062526USA.pdf 
+ 
+Processing EVD062526USA.pdf [EVD]...
+Found 8 race(s)
+
+========================================================================
+  RESULTS : EVANGELINE DOWNS
+  Source  : EVD062526USA.pdf
+========================================================================
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 1  â€”  MCL  |  5F  |  Turf  |  $23,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    3  TooManyTitos                      2.40  Hernandez,Colby           Gelner,Jayde            
+    2    2  TheBoyzRealDeal                  15.50  Perez,Carlos              Ward,Ronnie             
+    3    6  Diodorus                          7.60  Pompell,Thomas            Thomas,Lee              
+    4    9  WildlyWicked                      1.90  Santiago,Edward           Chatters,Benard         
+    5    5  Popa'sPride                       5.70  Ramirez,Jr.,Julio         Romero,Markel           
+    6    8  CoastBeach                        4.90  Hernandez,Harry           Breaux,Samuel           
+    7    1  Greatizlove                      54.70  Rodriguez,Jose            Tillis,Jerry            
+    8    7  Phchampagnejourney               13.80  Hernandez,Javier          Zenon,Sr.,Shelton       
+
+  Time    : 58.54
+  Trainer : Gelner, Jayde
+  Sire    : CloudComputing
+
+  WIN    $6.80   PLC    $3.20   SHW    $2.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 2  â€”  CLM  |  6.5F  |  Dirt  |  $11,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    1  Daddy'sCode                       0.40  Melancon,Jansen           Degeyter,Jr.,Randy      
+    2    5  HighstakesHustler                 6.30  McMahon,C.J.              Breaux,Samuel           
+    3    3  RunningRagged                    26.00  Castillo,Isaac            Mouton,Chadwick         
+    4    6  Jamesy'sEmpire                    3.70  Perez,Carlos              Brinkman,Brett          
+    5    4  Seizethedaydude                  11.10  Hernandez,Colby           Terre,David             
+    6    2  Instamatical                     16.50  Hernandez,Harry           Duhon,Joe               
+    7    7  TizMarksSpirit                   63.80  Magnon,Devin              Litfin,Veronica         
+
+  Time    : 1:17.27
+  Trainer : Degeyter, Jr.,Randy
+  Sire    : Whence
+
+  WIN    $2.80   PLC    $2.10   SHW    $2.10
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 3  â€”  CLM  |  5F  |  Dirt  |  $17,500
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    9  AlvaradoCat                       1.30  Magnon,Devin              Fuselier,Jonah          
+    2    7  Pasketee                          2.90  McMahon,C.J.              Degeyter,Jr.,Randy      
+    3   10  OrderUp                           7.40  Melancon,Jansen           Landry,Allen            
+    4    4  Stovall                           8.20  Vargas,Juan               Breaux,Samuel           
+    5    3  ElDan                            25.70  Ramirez,Jr.,Julio         Martinez,Sarah          
+    6    8  Daddy'sGift                      20.70  Hernandez,Harry           Ramirez,Eduardo         
+    7    1  IronintheFire                     8.90  Perez,Carlos              Larrosa,Juan            
+    8    2  AmericanGuy                      12.90  Nava-Marin,Jose           Rodriguez-Torres,Pedro  
+
+  Time    : 58.35
+  Trainer : Fuselier, Jonah
+  Sire    : TaleoftheCat
+
+  WIN    $4.60   PLC    $2.40   SHW    $2.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 4  â€”  ALW  |  6F  |  Dirt  |  $33,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  MissMaximus                       3.10  Hernandez,Colby           Ducoing,Sturges         
+    2    5  Shesabeast                       11.00  Hernandez,Javier          Ramaekers,Eric          
+    3    1  MyBoyVander                       2.30  Melancon,Jansen           Gelner,Jayde            
+    4    3  Napping                           1.30  Castillo,Isaac            Wilson,Shane            
+    5    7  Jezebel                           5.80  Nava-Marin,Jose           Wong,Jonathan           
+
+  Time    : 1:11.74
+  Trainer : Ducoing, Sturges
+  Sire    : MaximusMischief
+
+  WIN    $8.20   PLC    $3.80   SHW    $2.60
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 5  â€”  ALW  |  5F  |  Turf  |  $41,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    5  SnazzyGal                         3.10  Mudd,Jamison              Delhomme,Jeff           
+    2    3  LoveGetaway                       6.50  Barrera,Elio              David,Jr.,Sam           
+    3    1  DiamondEmpress                   18.00  Roman,Kevin               Govea,Cesar             
+    4   12  LadyCheryl'sSong                 10.60  Hernandez,Harry           Ramirez,Eduardo         
+    5   11  Basile                           13.60  Hernandez,Colby           Solis-Guevara,Ismael    
+    6    2  CallMeSusan                      14.20  McMahon,C.J.              Alberto,Antonio         
+    7    9  AlyseParker                      16.80  Pompell,Thomas            Arey,Anthony            
+    8   10  MikaEllaPika                      5.00  Castillo,Isaac            Ney,John                
+
+  Time    : 57.33
+  Trainer : Delhomme, Jeff
+  Sire    : Munnings
+
+  WIN    $8.20   PLC    $4.20   SHW    $3.20
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 6  â€”  CLM  |  6.5F  |  Dirt  |  $12,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    9  MahoneyRoad                       4.90  Perez,Carlos              Cano,Juan               
+    2    4  LuniSima                          6.00  Hernandez,Javier          Jeansonne,Justin        
+    3    1  OncomingTrain                    18.60  McMahon,C.J.              Mocklin,Jr.,Richard     
+    4    5  OurDetermination                 11.50  Rodriguez,Jose            Sanchez,Juan            
+    5    3  Knockalittlelouder                6.80  Castillo,Isaac            Ney,John                
+    6    6  BlueCheese                        8.90  Vargas,Juan               Breaux,Samuel           
+    7    8  Feelthebeat                      16.70  Inirio,Junior             Quinones,Raul           
+    8    7  TappinForaDance                  65.00  Pompell,Thomas            Romero,Alvin            
+
+  Time    : 1:17.50
+  Trainer : Cano, Juan
+  Sire    : SummerFront
+
+  WIN   $11.80   PLC    $5.80   SHW    $3.60
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 7  â€”  AOC  |  5F  |  Turf  |  $43,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    8  BayouBertie                       2.20  McMahon,C.J.              Klanfer,Alan            
+    2    5  She'saLiveWire                    2.90  Hernandez,Harry           Wilson,Shane            
+    3    1  BetTowinit                        1.90  Pompell,Thomas            Landry,Allen            
+    4    7  TommieG                          12.90  Castillo,Isaac            West,Patricia           
+    5    3  OceanJet                         10.00  Hernandez,Colby           Averett,Ronnie          
+    6    2  MissPriority                     58.50  Roman,Kevin               Duhon,Paul              
+    7    9  FastFlame                        23.80  Barrera,Elio              Alberto,Antonio         
+    8    4  GuitarSolo                       10.80  Fusilier,Casey            Landry,Allen            
+
+  Time    : 57.20
+  Trainer : Klanfer, Alan
+  Sire    : CountryDay
+
+  WIN    $6.40   PLC    $4.00   SHW    $2.80
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  RACE 8  â€”  MCL  |  5F  |  Dirt  |  $14,000
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Pos   PP  Horse                             Odds  Jockey                    Trainer                 
+    1    6  LeeCircle                         4.20  Pompell,Thomas            Thomas,Lee              
+    2    1  SurpriseSunrise                   3.60  Fusilier,Casey            Dison,Phillip           
+    3    2  SugahGem                          2.20  Hernandez,Javier          Giangrosso,Russell      
+    4    4  GlobalDawn                        4.60  Barrera,Elio              Gelner,Scott            
+    5    7  She'sWildAgain                    3.00  Ramirez,Jr.,Julio         Larrosa,Juan            
+    6    5  EmmyLou'sSong                    36.80  Hernandez,Harry           Ward,Ronnie             
+    7    3  JustSailingAlong                 18.90  Magnon,Devin              Woodley,Carl            
+
+  Time    : 59.57
+  Trainer : Thomas, Lee
+  Sire    : MyPalCharlie
+
+  WIN   $10.40   PLC    $5.60   SHW    $4.40
+
+========================================================================
+  8 race(s) processed
+========================================================================
+
