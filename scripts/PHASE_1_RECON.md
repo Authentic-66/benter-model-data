@@ -332,4 +332,157 @@ Mapping desired features → data source:
 
 ---
 
-*Recon complete. Awaiting Phase 2 architecture decision.*
+# Phase 1 Follow-up — Filter Decisions Applied (2026-06-26)
+
+Doug answered §7 questions. This section locks in the filtered training set, finalizes the track-code map, and adds findings from the PP-only sample. All counts below come from `scripts/phase1_filter.py` → `scripts/phase1_filtered.json`.
+
+## F1. Track-code rebranding: FP → FAN (confirmed)
+
+Spot-checked `2023 Result Charts/fan20230418tch.xml`:
+- `<TRACK><CODE>FAN</CODE><NAME>FANDUEL HORSE RACING</NAME></TRACK>`
+- `<RACE_TEXT>FANDUEL HORSE RACING RACE 1 5F Dirt CR: 79. Claiming Purse 10000…</RACE_TEXT>`
+
+**FAN = Fairmount Park rebrand. Verified 60 race-days, all TB-flat.** Track conditions, distances, and purse levels are consistent with Fairmount.
+
+**FPL is NOT Fairmount.** Single PP zip `SIMD20230406FPL_USA.zip`, no matching result file:
+- `<BreedType><Value>QH</Value></BreedType>` for every race
+- Horse names: "Soft Country Eyes", "Chicks Beduino", "Royal Quick Dash" — classic Quarter Horse naming
+- Colors include Red Roan, Sorrel, Blue Roan (QH color spectrum)
+- `<TrackID>FPL</TrackID>` with `<Country>U/C</Country>`
+
+→ FPL is an unidentified Quarter Horse fixture. Drops out of the filter regardless. Ignore.
+
+### Year-over-year code-change pattern to watch
+
+Track rebrandings, sales, and venue moves break code stability across seasons. The parser should accept a **track-code alias table** rather than hardcode codes:
+
+| Folder / current label | 2023 result-chart code | Notes |
+|---|---|---|
+| Fairmount Park | `fan` | Rebranded "FanDuel Horse Racing" for 2023 |
+| Belmont Park | `baq` (26 days), `bel` (38 days) | When the Belmont meet ran at Aqueduct during renovation, races filed as BAQ |
+| Pimlico | `pim` | Stable |
+| Saratoga | `sar` | Stable |
+
+The 2024+ data we already have shows FAN-era cards filed back as FP — confirm the parser handles both directions if we want to combine years.
+
+## F2. PP-only sample (10 dates) — cancellation vs missing
+
+Pulled 10 PP-only dates spanning GP, LRL, AQU, BAQ, BCA, PIM, DEL. **All 10 PP zips are substantial (122 KB – 660 KB), with full race conditions and starter blocks — these are real scheduled cards, not stubs.** No matching result file exists for any of them.
+
+| Code | Date | Day | PP zip size | Same-date results present? |
+|---|---|---|---|---|
+| GP | 2023-01-03 | Tue | 343 KB | other tracks only (mvr, prx, sun, tup) |
+| LRL | 2023-01-02 | Mon | 219 KB | other tracks only |
+| GP | 2023-01-09 | Mon | 659 KB | other tracks only |
+| GP | 2023-01-16 | Mon (MLK) | 586 KB | cmr, fg, gg, hou, lrl |
+| LRL | 2023-01-03 | Tue | 242 KB | other tracks only |
+| AQU | 2023-02-03 | Fri | 224 KB | gp + others (no aqu) |
+| BAQ | 2023-09-23 | Sat | 384 KB | cd, ct + others |
+| BCA | 2023-11-03 | Fri | 124 KB | aqu, cd + others |
+| PIM | 2023-05-10 | Wed | 394 KB | evd, prx + others |
+| DEL | 2023-06-07 | Wed | 259 KB | btp, asd + others |
+
+**Cancellation vs missing — verdict: indistinguishable without an external calendar.** All ten were scheduled cards published to the simulcast feed; no result chart was archived. Possibilities are roughly equal:
+1. Real cards that ran but the result chart wasn't downloaded — would explain GP/LRL Mon/Tue cards, AQU/PIM/DEL mid-week.
+2. Cancellations (weather / track maintenance) — common in Jan/Feb at GP, LRL, AQU.
+3. Cross-track BC fixtures (BCA/BCB/BCC/BCD) — the Friday/Saturday before-and-after Breeders' Cup days were simulcast-only special cards; their results may have been bundled with the main BC chart at another code.
+
+**Decision:** Drop all 702 PP-only days from training. If we ever want to recover them, the path is to (a) query Equibase for the missing TCH charts, or (b) cross-reference a 2023 cancellation calendar (Equibase publishes one) to separate the buckets.
+
+## F3. Filtered dataset stats (TB-flat only, CMR excluded)
+
+Applied filters:
+- `BREED = 'TB'` (drops QH, MX, AR)
+- `COURSE_DESC ∈ {Dirt, Turf, All Weather Track, Inner turf, Outer turf, Downhill turf}` (drops Hurdle, Timber)
+- Track code ≠ `cmr` (drops 1,525 CMR races, all already non-TB)
+
+| | Before | After | Δ |
+|---|---|---|---|
+| Files surveyed | 4,906 | 4,906 | — |
+| Total races | 42,618 | **34,309** | −19.5% |
+| Total entries | 318,702 | **254,420** | −20.2% |
+| Avg horses/race | 7.48 | 7.42 | minor |
+
+**Drop reasons (sorted):**
+| Reason | Races dropped |
+|---|---|
+| BREED = QH | 6,016 |
+| Track = cmr | 1,525 |
+| BREED = MX | 559 |
+| Course = Hurdle | 113 |
+| BREED = AR | 54 |
+| Course = Timber | 42 |
+
+**Kept-course mix:**
+| Course | Races |
+|---|---|
+| Dirt | 25,311 |
+| Turf | 4,501 |
+| All Weather Track | 3,871 |
+| Inner turf | 385 |
+| Outer turf | 180 |
+| Downhill turf | 61 |
+
+**Kept-field-size distribution (modes 6/7/8 = 60% of races, same shape as raw):**
+| horses | races | % |
+|---|---|---|
+| 5 | 3,666 | 10.7% |
+| **6** | **7,242** | **21.1%** |
+| **7** | **7,631** | **22.2%** |
+| **8** | **5,851** | **17.1%** |
+| 9 | 3,862 | 11.3% |
+| 10 | 2,825 | 8.2% |
+| 11 | 1,163 | 3.4% |
+| 12 | 983 | 2.9% |
+
+## F4. Final track-code map for Doug's bet list (TB-flat, post-filter)
+
+| Doug's label | 2023 Equibase code | Track name | Race-days | Races | Entries |
+|---|---|---|---|---|---|
+| **GP** | `gp` | Gulfstream Park | 193 | 1,846 | 14,231 |
+| **CT** | `ct` | Charles Town | 164 | 1,334 | 10,322 |
+| **DD** | `ded` ⚠ | **Delta Downs** | 82 | 727 | 5,950 |
+| **EVD** | `evd` | Evangeline Downs | 61 | 528 | 4,260 |
+| **FP** | `fan` ⚠ | Fairmount Park (FanDuel rebrand) | 60 | 454 | 3,017 |
+| **FG** | `fg` | Fair Grounds | 78 | 696 | 5,400 |
+| **MNR** | `mnr` | Mountaineer | 121 | 966 | 6,804 |
+| **MTN** | `mnr` ⚠ | likely same as MNR — see note | 121 | 966 | 6,804 |
+| **MVR** | `mvr` | Mahoning Valley | 101 | 823 | 6,131 |
+| **SA** | `sa` | Santa Anita | 91 | 855 | 6,251 |
+| **DMR** | `dmr` | Del Mar | 43 | 399 | 3,392 |
+| **OP** | `op` | Oaklawn Park | 68 | 654 | 5,774 |
+| **KEE** | `kee` | Keeneland | 32 | 302 | 2,736 |
+| **TUP** | `tup` | Turf Paradise | 82 | 606 | 4,249 |
+| **CD** | `cd` | Churchill Downs | 58 | 575 | 4,697 |
+| **ELP** | `elp` | Ellis Park | 38 | 353 | 2,744 |
+| (bonus) SAR | `sar` | Saratoga | 40 | 406 | 3,138 |
+
+**⚠ Notes:**
+- **DD ≠ `dd`.** Delta Downs is filed as `ded` (3-letter) in 2023 Equibase, matching the existing `dd-results-2024/` folder code mismatch. Confirm: the CLAUDE.md folder is `Delta Downs/dd-results-2024/` — the `dd-` prefix in folder names is a Doug-side abbreviation, not the Equibase code. Parser should map `ded` ↔ Delta Downs.
+- **FP ≠ `fp`.** No 2023 result chart filed under `fp`. 2023 = `fan`. Add alias: 2023 `fan` ↔ FP (2022 and earlier) ↔ `fan` (2023) ↔ `fp` (2024+).
+- **MTN:** no `mtn` code in the 2023 dataset. Best guess this is a typo / duplicate for MNR (Mountaineer). Other candidates that *don't* match: Meadowlands (harness, not in Equibase TB feed), Monmouth (mth). Want me to verify your intent before we lock the alias table?
+- All other codes match 1:1.
+
+### F4.1 Sum totals for Doug's tracks (post-filter)
+
+Distinct track codes after dedup (MNR = MTN): 15
+- **Race-days: 1,272** (37% of 2023 TB-flat days nationally)
+- **Races: 11,118** (32%)
+- **Entries: 79,956** (31%)
+
+Other tracks Doug doesn't specifically bet on but that are major training ammo (PRX 151 days, LRL 137, PEN 131, WO 128, GG 121, IND 116, TAM 93, AQU 92, DEL 85, MTH 51, etc.) add another ~22k races. Whether to include those in training is a Phase 2 decision — recommend yes for cross-track signal calibration (trainer/jockey/sire effects need more samples).
+
+## F5. Final training-set posture
+
+| | Count |
+|---|---|
+| 2023 race-days (TB-flat, ≥1 race kept, CMR excluded) | **~3,900** (≈ 4,906 − 702 PP-only − a few all-QH days) |
+| Training races | **34,309** |
+| Training entries | **254,420** |
+| Per-track Doug-priority share | 1,272 days / 11,118 races / 79,956 entries |
+
+That's ~10× the per-track sample our current 2024–2026 CL model trains on for any single track. Conditional-logit, multinomial, or pairwise-rank fits should be well-powered.
+
+---
+
+*Phase 1 recon complete. Filtered dataset locked. Ready for Phase 2 architecture design.*
